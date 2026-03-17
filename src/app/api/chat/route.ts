@@ -7,35 +7,64 @@ import path from 'path'
 
 export async function POST(req: Request) {
   try {
-    const { message, context } = await req.json()
-    const kbPath = path.join(process.cwd(), 'src/lib/ai/knowledge-base.md')
-    const kbContent = fs.readFileSync(kbPath, 'utf8')
-
+    const { message } = await req.json()
     const lowerMsg = message.toLowerCase()
-    let response = ""
-
-    // LOGICA DI RETRIEVAL (Semplificata ma efficace per la demo)
-    if (lowerMsg.includes('preventivo') || lowerMsg.includes('costo') || lowerMsg.includes('prezzo')) {
-      response = "Certamente! Per fornire un preventivo accurato, Fulgur Service offre sempre un SOPRALLUOGO GRATUITO entro 24 ore. Puoi compilare il form nella sezione Preventivo o chiamarci direttamente al +39 338 316 0091."
-    } else if (lowerMsg.includes('marmo') || lowerMsg.includes('pavimento') || lowerMsg.includes('cristallizzazione')) {
-      response = "Per il trattamento del marmo utilizziamo sistemi planetari Klindex (fino a 1300 RPM). Il nostro protocollo prevede la rimozione delle porosità e la cristallizzazione per un effetto a specchio duraturo, senza pellicole chimiche che si staccano."
-    } else if (lowerMsg.includes('industriale') || lowerMsg.includes('capannone') || lowerMsg.includes('magazzino')) {
-      response = "Nelle pulizie industriali impieghiamo aspiratori Nilfisk/CFM ad alta depressione (250 mBar) per polveri sottili H-Class e lavasciuga uomo a bordo per grandi metrature, garantendo la continuità operativa della vostra logistica."
-    } else if (lowerMsg.includes('sanificazione') || lowerMsg.includes('vapore') || lowerMsg.includes('batteri')) {
-      response = "Garantiamo l'abbattimento del 99.9% di virus e batteri tramite vapore saturo a 180°C. Questo metodo è ideale per ambienti sanitari (HACCP) e abitazioni con bambini, poiché non lascia residui chimici tossici."
-    } else if (lowerMsg.includes('fidenza') || lowerMsg.includes('parma') || lowerMsg.includes('collecchio')) {
-      response = "Operiamo capillarmente su tutta la provincia di Parma. Abbiamo squadre dedicate per Fidenza, Salsomaggiore e Collecchio, assicurando tempi di risposta rapidissimi."
-    } else {
-      // Risposta generica basata su visione aziendale se non ci sono match tecnici
-      response = "Fulgur Service è un'impresa che unisce 30 anni di esperienza a una visione innovativa. Ci prendiamo cura dei vostri ambienti come se fossero nostri. Per dettagli su questo servizio specifico, le consiglio un sopralluogo tecnico senza impegno."
+    
+    // HEURISTICS PRICING
+    const rates: Record<string, { min: number, max: number, label: string }> = {
+      ufficio: { min: 1.5, max: 2.5, label: "Uffici/Commerciale" },
+      aziendale: { min: 1.5, max: 2.5, label: "Aziendale" },
+      industriale: { min: 0.8, max: 1.5, label: "Capannone/Industriale" },
+      magazzino: { min: 0.8, max: 1.5, label: "Magazzino" },
+      marmo: { min: 12, max: 18, label: "Cristallizzazione Marmo" },
+      cantiere: { min: 3, max: 5, label: "Fine Cantiere" },
+      vapore: { min: 2, max: 4, label: "Sanificazione Vapore" },
+      casa: { min: 4, max: 7, label: "Civile/Appartamenti" },
+      abitazione: { min: 4, max: 7, label: "Civile/Appartamenti" },
     }
 
-    // Simulazione latenza "pensiero neurale"
+    // Extraction of numbers (MQ)
+    const mqMatch = lowerMsg.match(/(\d+)\s*(mq|metri|quadri|m2|square)/i) || lowerMsg.match(/(\d+)\s*$/)
+    const mq = mqMatch ? parseInt(mqMatch[1]) : null
+
+    // Pattern matching for service
+    let detectedService = ""
+    for (const key in rates) {
+      if (lowerMsg.includes(key)) {
+        detectedService = key
+        break
+      }
+    }
+
+    let response = ""
+
+    if (mq && detectedService) {
+      const rate = rates[detectedService]
+      const minPrice = (mq * rate.min).toFixed(2)
+      const maxPrice = (mq * rate.max).toFixed(2)
+      
+      response = `Ecco una bozza di preventivo per il servizio **${rate.label}** su una superficie di **${mq} mq**:
+      
+Il costo stimato è compreso tra **€${minPrice}** e **€${maxPrice}** (+ IVA).
+
+*Nota: Questa è una stima indicativa (bozza). Il prezzo finale può variare in base alle condizioni reali e verrà confermato solo dopo il sopralluogo gratuito.*
+
+Desideri che un nostro tecnico venga a fare un sopralluogo gratuito per confermare il prezzo?`
+    } else if (detectedService && !mq) {
+      response = `Ottimo, ci occupiamo di **${rates[detectedService].label}** quotidianamente. Per poterti dare una bozza di preventivo immediata, potresti indicarmi la **metratura approssimativa (mq)** dello spazio?`
+    } else if (mq && !detectedService) {
+      response = `Ho preso nota della metratura (**${mq} mq**). Di che tipo di ambiente si tratta? (es. Ufficio, Capannone, Casa privara, Marmo...)`
+    } else if (lowerMsg.includes('ciao') || lowerMsg.includes('buongiorno')) {
+      response = "Buongiorno! Sono il simulatore di preventivi di Fulgur Service. Se mi indichi il **tipo di servizio** e la **metratura**, posso farti una bozza di preventivo in tempo reale. Di cosa hai bisogno?"
+    } else {
+      response = "Sono specializzato nel fornire bozze di preventivo rapide per i servizi Fulgur Service. Indicami la **tipologia di ambiente** e i **mq** per ricevere una stima. Per domande generali, ti consiglio di contattarci direttamente al +39 338 316 0091."
+    }
+
     await new Promise(resolve => setTimeout(resolve, 800))
 
     return NextResponse.json({ 
       text: response,
-      source: "Fulgur Knowledge Base v2.1"
+      source: "Fulgur Estimator Engine v1.0"
     })
 
   } catch (error) {

@@ -1,12 +1,21 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion as m, AnimatePresence as AP } from 'framer-motion'
-import { Robot, X, ChatCircleDots, PaperPlaneRight } from '@phosphor-icons/react'
+import { Robot, X, ChatCircleDots, PaperPlaneRight, Sparkle } from '@phosphor-icons/react'
 import { AIChatInterface } from '@/components/ai/AIChatInterface'
 
 export function FloatingAI() {
   const [isOpen, setIsOpen] = useState(false)
+  const [showBubble, setShowBubble] = useState(false)
+
+  useEffect(() => {
+    // Show inviting bubble after 3 seconds if not open
+    const timer = setTimeout(() => {
+      if (!isOpen) setShowBubble(true)
+    }, 4000)
+    return () => clearTimeout(timer)
+  }, [isOpen])
 
   return (
     <div className="fixed bottom-6 left-6 z-[60] flex flex-col items-start gap-4">
@@ -39,14 +48,59 @@ export function FloatingAI() {
         )}
       </AP>
 
+      {/* Speech Bubble / Invite */}
+      <AP>
+        {showBubble && !isOpen && (
+          <m.div
+            initial={{ opacity: 0, x: -20, y: 10, scale: 0.9 }}
+            animate={{ opacity: 1, x: 0, y: 0, scale: 1 }}
+            exit={{ opacity: 0, x: -20, scale: 0.9 }}
+            className="absolute bottom-16 left-0 mb-4 pointer-events-none"
+          >
+            <div className="relative bg-[var(--tx-1)] text-white px-5 py-3 rounded-2xl border border-white/10 shadow-2xl">
+              <div className="flex items-center gap-2">
+                <div className="flex -space-x-1">
+                  <div className="h-4 w-4 rounded-full bg-emerald-500 animate-pulse" />
+                </div>
+                <span className="text-[11px] font-display font-medium leading-tight">
+                  Hai bisogno di un <br />
+                  <span className="text-[var(--accent)] font-bold">preventivo veloce?</span>
+                </span>
+              </div>
+              {/* Triangle Tail */}
+              <div className="absolute -bottom-2 left-6 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[8px] border-t-[var(--tx-1)]" />
+            </div>
+          </m.div>
+        )}
+      </AP>
+
       {/* Floating Toggle Button */}
       <m.button
-        onClick={() => setIsOpen(!isOpen)}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        className="relative flex h-14 w-14 items-center justify-center rounded-full bg-[var(--accent)] text-white shadow-[0_0_30px_rgba(78,203,160,0.3)] group overflow-hidden"
+        onClick={() => {
+          setIsOpen(!isOpen)
+          setShowBubble(false)
+        }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        className="relative flex h-16 w-16 items-center justify-center rounded-full bg-[var(--accent)] text-white shadow-[0_10px_40px_rgba(78,203,160,0.4)] group overflow-hidden border-2 border-white/20"
         aria-label="Apri Fulgur AI Agent"
       >
+        {/* Animated Rings for Pulse Effect */}
+        {!isOpen && (
+          <>
+            <m.div 
+              animate={{ scale: [1, 2], opacity: [0.5, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
+              className="absolute inset-0 rounded-full bg-[var(--accent)]"
+            />
+            <m.div 
+              animate={{ scale: [1, 1.6], opacity: [0.3, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeOut", delay: 0.5 }}
+              className="absolute inset-0 rounded-full bg-[var(--accent)]"
+            />
+          </>
+        )}
+
         <m.div 
           animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0.2, 0.5] }}
           transition={{ duration: 3, repeat: Infinity }}
@@ -60,19 +114,12 @@ export function FloatingAI() {
             </m.div>
           ) : (
             <m.div key="icon" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }}>
-              <Robot size={28} weight="fill" />
+              <Robot size={32} weight="fill" />
+              {/* Notification Indicator */}
+              <div className="absolute top-1 right-1 h-3.5 w-3.5 rounded-full bg-emerald-500 border-2 border-[var(--accent)]" />
             </m.div>
           )}
         </AP>
-        
-        {/* Tooltip */}
-        {!isOpen && (
-          <div className="absolute left-full ml-4 hidden lg:block pointer-events-none group-hover:opacity-100 opacity-0 transition-opacity">
-            <div className="bg-[var(--tx-1)] text-white text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-xl whitespace-nowrap border border-white/10">
-              Chiedi a Fulgur AI
-            </div>
-          </div>
-        )}
       </m.button>
     </div>
   )

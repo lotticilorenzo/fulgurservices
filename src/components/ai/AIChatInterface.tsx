@@ -23,8 +23,8 @@ export function AIChatInterface({ initialContext, className }: AIChatInterfacePr
     {
       id: '1',
       text: initialContext 
-        ? `Ciao! Sono il Fulgur AI specializzato in ${initialContext}. Come posso approfondire i dettagli tecnici con te oggi?`
-        : "Ciao! Sono Fulgur AI, il tuo consulente tecnico. Come posso aiutarti oggi con la pulizia o la manutenzione dei tuoi spazi?",
+        ? `Ciao! Sono il Fulgur AI pronto a farti un preventivo per ${initialContext}. Di quanti mq parliamo approssimativamente?`
+        : "Ciao! Sono il Simulatore di Preventivi Fulgur. Se mi indichi il **tipo di servizio** e la **metratura**, posso farti una bozza di preventivo immediata. Di cosa hai bisogno oggi?",
       sender: 'ai',
       timestamp: new Date(),
     }
@@ -32,6 +32,20 @@ export function AIChatInterface({ initialContext, className }: AIChatInterfacePr
   const [input, setInput] = useState('')
   const [isTyping, setIsTyping] = useState(false)
   const scrollRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (initialContext) {
+      setMessages([
+        {
+          id: Date.now().toString(),
+          text: `Ottima scelta! Parliamo di **${initialContext}**. \nInviando il messaggio qui sotto inizierò subito a elaborare le informazioni per te. Vuoi procedere?`,
+          sender: 'ai',
+          timestamp: new Date(),
+        }
+      ])
+      setInput(initialContext)
+    }
+  }, [initialContext])
 
   useEffect(() => {
     if (scrollRef.current) {
@@ -67,7 +81,7 @@ export function AIChatInterface({ initialContext, className }: AIChatInterfacePr
 
       const aiMessage: Message = {
         id: (Date.now() + 1).toString(),
-        text: data.text || "Mi scusi, ho avuto un piccolo glitch neurale. Può ripetere?",
+        text: data.text || "Mi scusi, ho avuto un piccolo glitch. Può ripetere?",
         sender: 'ai',
         timestamp: new Date(),
       }
@@ -77,7 +91,7 @@ export function AIChatInterface({ initialContext, className }: AIChatInterfacePr
       console.error('AI Chat Error:', error)
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
-        text: "Spiacente, la mia connessione neurale è temporaneamente interrotta. Riprova tra poco.",
+        text: "Spiacente, la sessione è scaduta. Ricarica la pagina per riprovare.",
         sender: 'ai',
         timestamp: new Date(),
       }
@@ -93,18 +107,18 @@ export function AIChatInterface({ initialContext, className }: AIChatInterfacePr
       <div className="p-6 border-b border-white/10 flex items-center justify-between bg-white/[0.02]">
         <div className="flex items-center gap-4">
           <div className="relative">
-            <div className="h-10 w-10 rounded-full bg-gradient-to-tr from-[var(--accent)] to-[var(--br-h)] flex items-center justify-center border border-white/20">
+            <div className="h-10 w-10 rounded-full bg-gradient-to-tr from-[var(--accent)] to-[var(--br-h)] flex items-center justify-center border border-white/20 shadow-[0_0_15px_rgba(78,203,160,0.3)]">
               <Robot size={24} weight="fill" className="text-white" />
             </div>
             <div className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-emerald-500 border-2 border-black" />
           </div>
           <div>
-            <h4 className="font-display font-bold text-white text-sm">Fulgur AI</h4>
-            <p className="text-[10px] text-[var(--accent)] font-mono-fulgur uppercase tracking-wider">Online · Consulente Tecnico</p>
+            <h4 className="font-display font-bold text-white text-sm">Fulgur Preventivo AI</h4>
+            <p className="text-[10px] text-[var(--accent)] font-mono-fulgur uppercase tracking-wider">Online · Simulatore Istantaneo</p>
           </div>
         </div>
         <div className="flex items-center gap-3 text-white/40">
-           <ArrowsOut size={20} className="hover:text-white transition-colors cursor-pointer" />
+           <ChatCircleDots size={20} className="hover:text-[var(--accent)] transition-colors cursor-pointer" />
         </div>
       </div>
 
@@ -130,7 +144,12 @@ export function AIChatInterface({ initialContext, className }: AIChatInterfacePr
                     ? 'bg-white/5 border border-white/10 text-white font-light' 
                     : 'bg-[var(--bg-2)] border border-white/5 text-[var(--tx-2)] font-light'
                 }`}>
-                  {msg.text}
+                  {msg.text.split('\n').map((line, i) => (
+                    <React.Fragment key={i}>
+                      {line}
+                      {i < msg.text.split('\n').length - 1 && <br />}
+                    </React.Fragment>
+                  ))}
                 </div>
               </div>
             </motion.div>
@@ -155,7 +174,7 @@ export function AIChatInterface({ initialContext, className }: AIChatInterfacePr
             type="text" 
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Chiedimi della sanificazione HACCP..."
+            placeholder="es. Pulizia ufficio 200mq..."
             className="w-full bg-[var(--bg-2)] border border-white/10 rounded-2xl pl-6 pr-14 py-4 text-sm text-white focus:ring-2 focus:ring-[var(--accent)]/50 focus:border-[var(--accent)] outline-none transition-all placeholder:text-white/20"
           />
           <button 
@@ -167,7 +186,7 @@ export function AIChatInterface({ initialContext, className }: AIChatInterfacePr
           </button>
         </form>
         <p className="mt-4 text-center text-[10px] text-white/30 font-sans tracking-wide">
-          Basato sulla Neural-RAG di Fulgur Service · Fornisce risposte tecniche verificate.
+          Bozza di preventivo calcolata istantaneamente su parametri Fulgur Service.
         </p>
       </div>
     </div>

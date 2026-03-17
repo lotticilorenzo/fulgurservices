@@ -50,7 +50,7 @@ export function HeroSection() {
   return (
     <section 
       ref={containerRef}
-      className="relative flex min-h-[100dvh] w-full items-center justify-center overflow-hidden bg-gradient-to-b from-white via-[var(--bg-2)] to-[var(--bg-3)] pt-[100px] pb-16"
+      className="relative flex min-h-[100dvh] w-full items-center justify-center overflow-hidden bg-gradient-to-b from-white via-[var(--bg-2)] to-[var(--bg-3)] pt-[140px] pb-16"
     >
       {/* Background Layer */}
       <ParticleField />
@@ -102,14 +102,14 @@ export function HeroSection() {
             <span className="bg-[var(--bg-2)] px-2.5 py-1.5 rounded-full border border-[var(--br)] whitespace-nowrap">12 settori</span>
           </div>
 
-          <div className="gs-reveal mt-12 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <Link href="/preventivo" tabIndex={-1}>
-              <MagneticButton as="div" intensity={0.15} className="group flex h-[54px] w-full items-center justify-center rounded-full bg-[var(--accent)] px-8 font-display text-[15px] font-bold text-white transition-all hover:bg-[var(--accent-d)] sm:w-auto">
+          <div className="gs-reveal mt-12 flex flex-col gap-5 sm:flex-row sm:items-center">
+            <Link href="/preventivo" tabIndex={-1} className="w-full sm:w-auto">
+              <MagneticButton as="div" intensity={0.15} className="group flex h-[60px] w-full items-center justify-center rounded-full bg-[var(--accent)] px-10 font-display text-[16px] font-bold text-white transition-all hover:bg-[var(--accent-d)] shadow-[0_10px_30px_rgba(78,203,160,0.25)]">
                 <span>Richiedi Sopralluogo Gratuito</span>
               </MagneticButton>
             </Link>
-            <Link href="/servizi" tabIndex={-1}>
-              <MagneticButton as="div" intensity={0.1} className="group flex h-[54px] w-full items-center justify-center rounded-full border border-[var(--br-solid)] px-8 font-display text-[15px] font-bold text-[var(--tx-1)] transition-colors hover:bg-[var(--accent)] hover:text-white sm:w-auto">
+            <Link href="/servizi" tabIndex={-1} className="w-full sm:w-auto">
+              <MagneticButton as="div" intensity={0.1} className="group flex h-[60px] w-full items-center justify-center rounded-full border border-[var(--br-solid)] px-10 font-display text-[16px] font-bold text-[var(--tx-1)] transition-colors hover:bg-[var(--accent)] hover:text-white">
                 <span>Scopri i Servizi →</span>
               </MagneticButton>
             </Link>

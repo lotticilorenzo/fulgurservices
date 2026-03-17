@@ -78,6 +78,7 @@ export function Footer() {
               <li><Link href="/chi-siamo" className="transition-colors hover:text-[var(--accent)]">Chi Siamo</Link></li>
               <li><Link href="/blog" className="transition-colors hover:text-[var(--accent)]">Blog & Authority</Link></li>
               <li><Link href="/macchinari" className="transition-colors hover:text-[var(--accent)]">Macchinari</Link></li>
+              <li><Link href="/lavora-con-noi" className="transition-colors hover:text-[var(--accent)] font-medium text-[var(--accent)]">Lavora con noi</Link></li>
               <li><Link href="/gallery" className="transition-colors hover:text-[var(--accent)]">Gallery</Link></li>
               <li><Link href="/preventivo" className="transition-colors hover:text-[var(--accent)]">Preventivo</Link></li>
               <li><Link href="/contatti" className="transition-colors hover:text-[var(--accent)]">Contatti</Link></li>

@@ -7,6 +7,7 @@ import { X, MagnifyingGlassPlus } from '@phosphor-icons/react'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { CTASection } from '@/components/home/CTASection'
 import { WipeReveal } from '@/components/ui/WipeReveal'
+import { ScrollReveal } from '@/components/ui/ScrollReveal'
 import { BeforeAfterSlider } from '@/components/ui/BeforeAfterSlider'
 import { CASE_STUDIES } from '@/lib/case-studies'
 
@@ -198,9 +199,9 @@ export default function GalleryPage() {
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
-                className={`relative px-6 py-2.5 rounded-full font-mono-fulgur text-[10px] font-bold uppercase tracking-widest transition-all ${
+                className={`relative px-7 py-3 rounded-full font-mono-fulgur text-[11px] font-bold uppercase tracking-[0.15em] transition-all ${
                   activeCategory === cat.id
-                    ? 'text-[var(--bg)] bg-[var(--accent)] shadow-[0_5px_15px_rgba(78,203,160,0.3)]'
+                    ? 'text-[var(--bg)] bg-[var(--accent)] shadow-[0_8px_20px_rgba(78,203,160,0.3)]'
                     : 'text-[var(--tx-3)] bg-[var(--bg-2)] border border-[var(--br)] hover:border-[var(--accent)]/50'
                 }`}
               >
@@ -268,15 +269,17 @@ export default function GalleryPage() {
       {/* BEFORE / AFTER SECTION */}
       <div className="w-full bg-[var(--bg-2)] py-32 border-t border-[var(--br)] relative z-10">
         <div className="mx-auto w-full max-w-7xl px-6 xl:px-8">
-          <div className="flex flex-col items-center text-center mb-20">
-            <SectionLabel className="mb-4">— RISULTATI CERTIFICATI</SectionLabel>
-            <h2 className="font-display text-4xl sm:text-5xl font-extrabold text-[var(--tx-1)] tracking-tight">
-              Il potere dei <span className="text-[var(--accent)]">risultati visibili.</span>
-            </h2>
-            <p className="mt-6 font-sans text-lg font-light text-[var(--tx-2)] max-w-2xl text-balance">
-              Usa lo slider per confrontare lo stato degli ambienti prima e dopo il nostro intervento professionale. La precisione è la nostra firma.
-            </p>
-          </div>
+          <ScrollReveal>
+            <div className="flex flex-col items-center text-center mb-20">
+              <SectionLabel className="mb-4">— RISULTATI CERTIFICATI</SectionLabel>
+              <h2 className="font-display text-4xl sm:text-5xl font-extrabold text-[var(--tx-1)] tracking-tight">
+                Il potere dei <span className="text-[var(--accent)]">risultati visibili.</span>
+              </h2>
+              <p className="mt-6 font-sans text-lg font-light text-[var(--tx-2)] max-w-2xl text-balance">
+                Usa lo slider per confrontare lo stato degli ambienti prima e dopo il nostro intervento professionale. La precisione è la nostra firma.
+              </p>
+            </div>
+          </ScrollReveal>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {CASE_STUDIES.map((study) => (

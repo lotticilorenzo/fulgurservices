@@ -10,6 +10,7 @@ import { FloatingAI } from '@/components/ui/FloatingAI'
 import { PageTransitionLoader } from '@/components/layout/PageTransitionLoader'
 import { CrystalCursor } from '@/components/ui/CrystalCursor'
 import SplashScreen from '@/components/layout/SplashScreen'
+import { SmoothScroll } from '@/components/layout/SmoothScroll'
 import { CookieBanner } from '@/components/layout/CookieBanner'
 import React from 'react'
 
@@ -74,7 +75,9 @@ export default function RootLayout({
         </React.Suspense>
         <Navbar />
         <CrystalCursor />
-        {children}
+        <SmoothScroll>
+          {children}
+        </SmoothScroll>
         <Footer />
         <WhatsAppButton />
         <FloatingAI />

@@ -9,12 +9,15 @@ import { MagneticButton } from '@/components/ui/MagneticButton'
 import { overlayVariants, menuVariants } from '@/lib/motion'
 import { Logo } from '@/components/ui/Logo'
 
-const LINKS = [
+const PRIMARY_LINKS = [
   { label: 'Servizi', href: '/servizi' },
-  { label: 'Blog', href: '/blog' },
+  { label: 'Macchinari', href: '/macchinari' },
   { label: 'Fulgur AI', href: '/fulgur-ai', isAI: true },
   { label: 'Chi Siamo', href: '/chi-siamo' },
-  { label: 'Macchinari', href: '/macchinari' },
+]
+
+const UTILITY_LINKS = [
+  { label: 'Blog', href: '/blog' },
   { label: 'Gallery', href: '/gallery' },
   { label: 'Contatti', href: '/contatti' },
 ]
@@ -22,6 +25,9 @@ const LINKS = [
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  // Combined links for mobile menu
+  const MOBILE_LINKS = [...PRIMARY_LINKS, ...UTILITY_LINKS]
 
   // Scroll logic via IntersectionObserver
   useEffect(() => {
@@ -50,43 +56,69 @@ export default function Navbar() {
   return (
     <>
       {/* Sentinel per l'isScrolled state */}
-      <div id="nav-sentinel" className="absolute top-20 left-0 w-px h-px pointer-events-none -z-10" aria-hidden="true" />
+      <div id="nav-sentinel" className="absolute top-2 left-0 w-px h-px pointer-events-none -z-10" aria-hidden="true" />
       
+      {/* 1. TOP UTILITY BAR (Absolute - scrolls away) */}
+      <div className="absolute top-0 left-0 right-0 z-50 hidden lg:block">
+        <div className="mx-auto flex max-w-7xl items-center justify-end gap-8 px-8 py-3.5">
+          <div className="flex items-center gap-6">
+            {UTILITY_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="font-mono-fulgur text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--tx-3)] hover:text-[var(--accent)] transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+          <div className="h-3 w-px bg-white/10" />
+          <a 
+            href="tel:+393383160091" 
+            className="flex items-center gap-2 font-mono-fulgur text-[10px] font-bold uppercase tracking-widest text-[var(--tx-2)] hover:text-[var(--accent)] transition-colors"
+          >
+            <PhoneCall size={14} weight="bold" className="text-[var(--accent)]" />
+            +39 338 316 0091
+          </a>
+        </div>
+      </div>
+
+      {/* 2. MAIN FLOATING NAVBAR (Fixed pill) */}
       <header
         className={cn(
-          'fixed left-1/2 top-4 lg:top-6 z-50 flex w-[calc(100%-1.5rem)] sm:w-[calc(100%-2rem)] max-w-7xl -translate-x-1/2 items-center justify-between rounded-full px-4 py-2.5 lg:py-3 xl:px-8',
-          'transition-[background,border,backdrop-filter] duration-400 ease-[cubic-bezier(0.16,1,0.3,1)]',
+          'fixed left-1/2 top-4 lg:top-14 z-50 flex w-[calc(100%-1.5rem)] sm:w-[calc(100%-2rem)] max-w-7xl -translate-x-1/2 items-center justify-between rounded-full px-4 py-2 lg:px-8 lg:py-2.5',
+          'transition-[background,border,backdrop-filter,transform,top] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]',
           isScrolled
-            ? 'border border-[var(--nav-border)] bg-[var(--nav-bg)] backdrop-blur-xl shadow-sm'
-            : 'border border-transparent bg-transparent backdrop-blur-none'
+            ? 'top-4 border border-[var(--nav-border)] bg-[var(--nav-bg)] backdrop-blur-xl shadow-2xl lg:shadow-xl scale-[0.98] lg:scale-100'
+            : 'border border-[var(--nav-border)] lg:border-transparent bg-[var(--nav-bg)] lg:bg-transparent backdrop-blur-xl lg:backdrop-blur-none shadow-lg lg:shadow-none'
         )}
       >
         {/* LOGO */}
         <Link
           href="/"
-          className="group flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-lg"
+          className="group flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-lg"
           aria-label="Fulgur Service — torna alla home"
         >
-          <Logo size={44} iconOnly variant="default" className="h-10 w-auto" />
-          <span className="font-display text-xl font-bold text-[var(--tx-1)] tracking-tight">
+          <Logo size={36} iconOnly variant="default" className="h-9 w-auto lg:h-10" />
+          <span className="font-display text-base font-bold text-[var(--tx-1)] tracking-tight whitespace-nowrap lg:text-lg xl:text-xl">
             Fulgur Service
           </span>
         </Link>
 
-        {/* DESKTOP LINKS */}
-        <nav className="hidden lg:flex items-center gap-10">
-          {LINKS.map((link) => (
+        {/* DESKTOP MAIN LINKS */}
+        <nav className="hidden lg:flex items-center gap-7 xl:gap-9">
+          {PRIMARY_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               className={cn(
-                'relative font-mono-fulgur text-[11px] font-bold uppercase tracking-widest text-[var(--tx-1)] transition-colors duration-200 hover:text-[var(--accent-d)]',
+                'relative font-mono-fulgur text-[11px] xl:text-[12px] font-bold uppercase tracking-[0.15em] text-[var(--tx-1)] transition-colors duration-200 hover:text-[var(--accent)]',
                 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm'
               )}
             >
               {link.label}
               {link.isAI && (
-                <span className="absolute -top-3 -right-6 flex h-3.5 items-center justify-center rounded-full bg-[var(--accent)] px-1 py-0.5 text-[7px] font-black text-white shadow-[0_0_10px_var(--accent)]">
+                <span className="absolute -top-3.5 -right-5 flex h-3.5 items-center justify-center rounded-full bg-[var(--accent)] px-1.5 py-0.5 text-[7px] font-black text-white shadow-[0_0_10px_var(--accent)]">
                   AI
                 </span>
               )}
@@ -94,23 +126,14 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* DESKTOP CTA & PHONE */}
-        <div className="hidden lg:flex items-center gap-10">
-          <a 
-            href="tel:+393383160091" 
-            className="flex items-center gap-2 font-mono-fulgur text-[11px] font-bold uppercase tracking-widest text-[var(--tx-2)] hover:text-[var(--accent)] transition-colors"
-          >
-            <PhoneCall size={18} weight="bold" />
-            +39 338 316 0091
-          </a>
-          
+        {/* DESKTOP CTA */}
+        <div className="hidden lg:block">
           <Link href="/preventivo" tabIndex={-1}>
             <MagneticButton
               as="div"
               intensity={0.1}
-              className="relative rounded-full bg-[var(--accent)] px-8 py-3 font-display text-sm font-bold text-white transition-[background-color,transform,shadow] duration-300 hover:bg-[var(--accent-d)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent outline-none group overflow-hidden"
+              className="relative rounded-full bg-[var(--accent)] px-8 py-2.5 xl:px-9 xl:py-3 font-display text-sm font-bold text-white transition-[background-color,transform,shadow] duration-300 hover:bg-[var(--accent-d)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent outline-none group overflow-hidden shadow-lg"
             >
-              {/* Subtle Glow Pulse - Framer Motion for better stability */}
                 <motion.span 
                   aria-hidden="true"
                   animate={{ 
@@ -136,7 +159,7 @@ export default function Navbar() {
           aria-label="Apri menu principale"
           aria-expanded={isMobileMenuOpen}
         >
-          <List size={24} />
+          <List size={22} />
         </button>
       </header>
 
@@ -165,7 +188,7 @@ export default function Navbar() {
               </div>
 
               <nav className="mt-16 flex flex-col gap-8">
-                {LINKS.map((link, i) => (
+                {MOBILE_LINKS.map((link, i) => (
                   <motion.div
                     key={link.href}
                     custom={i}

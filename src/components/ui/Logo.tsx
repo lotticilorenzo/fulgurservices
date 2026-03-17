@@ -18,8 +18,8 @@ export function Logo({ size = 40, className = '', variant = 'default', iconOnly 
   
   return (
     <div 
-      className={cn("relative flex items-center justify-center overflow-hidden", className)}
-      style={{ width: iconOnly ? size : size * 3.5, height: size }}
+      className={cn("relative flex items-center justify-center overflow-visible", className)}
+      style={{ width: iconOnly ? size : size * 3.8, height: size }}
     >
       <Image
         src="/images/logo-fulgur-service.png"
@@ -27,8 +27,8 @@ export function Logo({ size = 40, className = '', variant = 'default', iconOnly 
         fill
         className={cn(
           "object-contain transition-all duration-300",
-          variant === 'white' && "brightness-0 invert", // Forza bianco se richiesto
-          iconOnly && "scale-150" // Ingrandisci per focalizzare sull'icona se iconOnly
+          variant === 'white' && "brightness-0 invert",
+          "scale-100"
         )}
         priority
       />
