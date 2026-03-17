@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { MapPin } from '@phosphor-icons/react'
 import { SectionLabel } from '@/components/ui/SectionLabel'
@@ -10,7 +11,8 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal'
 const CITIES = [
   "Parma", "Fidenza", "Salsomaggiore Terme", "Collecchio", 
   "Noceto", "Medesano", "Montechiarugolo", "Langhirano",
-  "Traversetolo", "Felino", "Colorno", "Torrile"
+  "Traversetolo", "Felino", "Colorno", "Torrile",
+  "Fontanellato", "Busseto", "Fornovo di Taro", "Borgotaro"
 ]
 
 export function GeographicCoverage() {
@@ -27,22 +29,38 @@ export function GeographicCoverage() {
                 Parma e tutta <br /> la provincia.
               </h2>
               <p className="font-sans text-lg font-light text-[var(--tx-2)] mb-12">
-                Copriamo capillarmente tutto il territorio dell'Emilia-Romagna, 
-                garantendo puntualità e tempestività di intervento in ogni comune.
+                Come <strong>impresa di pulizie a Parma</strong>, copriamo capillarmente ogni comune della provincia e le aree limitrofe dell'Emilia-Romagna, 
+                garantendo puntualità e tempestività di intervento in ogni zona industriale, commerciale e residenziale.
               </p>
             </ScrollReveal>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-              {CITIES.map((city, i) => (
-                <ScrollReveal key={i} delay={i * 0.05}>
-                  <Link 
-                    href={`/servizi?zona=${city.toLowerCase().replace(/ /g, '-')}`}
-                    className="flex items-center gap-2 font-mono-fulgur text-[11px] font-bold text-[var(--tx-2)] uppercase tracking-wider hover:text-[var(--accent)] transition-all group"
-                  >
-                    <div className="h-1 w-1 rounded-full bg-[var(--accent)] group-hover:scale-150 transition-transform" />
-                    {city}
-                  </Link>
-                </ScrollReveal>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-y-4 gap-x-8">
+              {[
+                { name: 'Parma', slug: null },
+                { name: 'Fidenza', slug: 'fidenza' },
+                { name: 'Salsomaggiore', slug: 'salsomaggiore-terme' },
+                { name: 'Collecchio', slug: 'collecchio' },
+                { name: 'Noceto', slug: null },
+                { name: 'Montechiarugolo', slug: null },
+                { name: 'Langhirano', slug: null },
+                { name: 'Sorbolo Mezzani', slug: null },
+                { name: 'Traversetolo', slug: null },
+              ].map((city, i) => (
+                <div key={i} className="flex items-center gap-3">
+                  <div className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
+                  {city.slug ? (
+                    <Link 
+                      href={`/zone/${city.slug}`}
+                      className="font-sans text-sm font-medium text-[var(--tx-2)] hover:text-[var(--accent)] transition-colors underline decoration-[var(--accent)]/10 underline-offset-4"
+                    >
+                      {city.name}
+                    </Link>
+                  ) : (
+                    <span className="font-sans text-sm font-medium text-[var(--tx-2)]">
+                      {city.name}
+                    </span>
+                  )}
+                </div>
               ))}
             </div>
 
@@ -54,40 +72,32 @@ export function GeographicCoverage() {
             </ScrollReveal>
           </div>
 
-          {/* Right: Map Visual Placeholder */}
+          {/* Right: Map Visual with Illustration V2 */}
           <div className="relative">
             <ScrollReveal>
-              <div className="relative aspect-square w-full rounded-full border border-[var(--br)] bg-[var(--bg-2)] flex items-center justify-center p-12 overflow-hidden group">
-                {/* Decorative pulses */}
-                <div className="absolute inset-0 z-0">
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-[var(--accent)] rounded-full blur-3xl opacity-10 animate-pulse" />
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1 h-1 bg-[var(--accent)] rounded-full z-10 shadow-[0_0_20px_var(--accent)] shadow-accent" />
-                  
-                  {/* Radars */}
-                  <motion.div 
-                    initial={{ scale: 1, opacity: 0.5 }}
-                    animate={{ scale: [1, 3], opacity: [0.5, 0] }}
-                    transition={{ repeat: Infinity, duration: 2, ease: "easeOut" }}
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 border border-[var(--accent)]/30 rounded-full"
-                  />
-                  <motion.div 
-                    initial={{ scale: 1, opacity: 0.4 }}
-                    animate={{ scale: [1, 2.5], opacity: [0.4, 0] }}
-                    transition={{ repeat: Infinity, duration: 2, ease: "easeOut", delay: 0.6 }}
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 border border-[var(--accent)]/20 rounded-full"
-                  />
-                </div>
+              <div className="relative aspect-square w-full rounded-[48px] overflow-hidden flex items-center justify-center group">
+                {/* Decorative background glow */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-[var(--accent)]/5 to-transparent pointer-events-none" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-[var(--accent)] rounded-full blur-[120px] opacity-10" />
 
-                {/* City Labels floating around */}
-                <div className="relative z-10 w-full h-full flex items-center justify-center">
-                   <div className="absolute top-[20%] right-[30%] font-display text-sm font-bold text-[var(--tx-1)] opacity-40">Fidenza</div>
-                   <div className="absolute bottom-[25%] left-[20%] font-display text-sm font-bold text-[var(--tx-1)] opacity-40">Collecchio</div>
-                   <div className="absolute top-[40%] left-[10%] font-display text-sm font-bold text-[var(--tx-1)] opacity-40">Salsomaggiore</div>
-                   <div className="absolute bottom-[35%] right-[15%] font-display text-sm font-bold text-[var(--tx-1)] opacity-40">Langhirano</div>
-                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-8 font-display text-xl font-bold text-[var(--accent)]">PARMA</div>
-                </div>
-
-                <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent pointer-events-none" />
+                {/* Custom Likeness Illustration V3 */}
+                <motion.div
+                  animate={{ 
+                    y: [0, -15, 0],
+                  }}
+                  transition={{ 
+                    duration: 5, 
+                    repeat: Infinity, 
+                    ease: "easeInOut" 
+                  }}
+                  className="relative z-10 w-[95%] h-[95%]"
+                >
+                  <img 
+                    src="/images/parma-coverage-v3.png" 
+                    alt="Copertura Parma e Provincia - Fulgur Service (Founder Likeness)"
+                    className="w-full h-full object-contain drop-shadow-[0_30px_60px_rgba(78,203,160,0.2)]"
+                  />
+                </motion.div>
               </div>
             </ScrollReveal>
           </div>

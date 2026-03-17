@@ -1,9 +1,17 @@
+'use client'
+
 import React from 'react'
 import Link from 'next/link'
 import { InstagramLogo } from '@phosphor-icons/react/dist/ssr'
 import { SERVICES } from '@/lib/services-data'
 
 export function Footer() {
+  const [year, setYear] = React.useState<number | string>('...')
+  
+  React.useEffect(() => {
+    setYear(new Date().getFullYear())
+  }, [])
+
   const topServices = SERVICES.slice(0, 6)
 
   return (
@@ -68,6 +76,7 @@ export function Footer() {
             </h4>
             <ul className="mt-6 flex flex-col gap-3 font-sans text-sm font-light text-white/70">
               <li><Link href="/chi-siamo" className="transition-colors hover:text-[var(--accent)]">Chi Siamo</Link></li>
+              <li><Link href="/blog" className="transition-colors hover:text-[var(--accent)]">Blog & Authority</Link></li>
               <li><Link href="/macchinari" className="transition-colors hover:text-[var(--accent)]">Macchinari</Link></li>
               <li><Link href="/gallery" className="transition-colors hover:text-[var(--accent)]">Gallery</Link></li>
               <li><Link href="/preventivo" className="transition-colors hover:text-[var(--accent)]">Preventivo</Link></li>
@@ -80,12 +89,17 @@ export function Footer() {
             <h4 className="font-mono-fulgur text-xs font-bold uppercase tracking-widest text-white/40">
               Aree Servite
             </h4>
-            <ul className="mt-6 flex flex-col gap-2 font-mono-fulgur text-[10px] uppercase tracking-wider text-white/50">
+            <ul className="mt-6 grid grid-cols-2 gap-x-4 gap-y-2 font-mono-fulgur text-[10px] uppercase tracking-wider text-white/50">
               <li><Link href="/servizi?zona=parma" className="hover:text-[var(--accent)]">Parma</Link></li>
               <li><Link href="/servizi?zona=fidenza" className="hover:text-[var(--accent)]">Fidenza</Link></li>
               <li><Link href="/servizi?zona=salsomaggiore" className="hover:text-[var(--accent)]">Salsomaggiore</Link></li>
               <li><Link href="/servizi?zona=collecchio" className="hover:text-[var(--accent)]">Collecchio</Link></li>
+              <li><Link href="/servizi?zona=noceto" className="hover:text-[var(--accent)]">Noceto</Link></li>
+              <li><Link href="/servizi?zona=medesano" className="hover:text-[var(--accent)]">Medesano</Link></li>
+              <li><Link href="/servizi?zona=montechiarugolo" className="hover:text-[var(--accent)]">Montechiarugolo</Link></li>
+              <li><Link href="/servizi?zona=traversetolo" className="hover:text-[var(--accent)]">Traversetolo</Link></li>
               <li><Link href="/servizi?zona=langhirano" className="hover:text-[var(--accent)]">Langhirano</Link></li>
+              <li><Link href="/servizi?zona=sorbolo" className="hover:text-[var(--accent)]">Sorbolo</Link></li>
             </ul>
           </div>
 
@@ -127,12 +141,12 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-16 sm:mt-24 border-t border-white/5 pt-8 flex flex-col items-center justify-between gap-4 sm:flex-row font-mono-fulgur text-[11px] uppercase tracking-wider text-white/30">
-          <div suppressHydrationWarning>
-            © {new Date().getFullYear()} Fulgur Service S.R.L. <span className="mx-2 lg:inline hidden">|</span><br className="lg:hidden" /> P.IVA 03063010346 - REA 353051 - Cap. Soc. €10.000 i.v.
+          <div>
+            © {year} Fulgur Service S.R.L. <span className="mx-2 lg:inline hidden">|</span><br className="lg:hidden" /> P.IVA 03063010346 - REA 353051 - Cap. Soc. €10.000 i.v.
           </div>
           
           <div className="flex items-center gap-4">
-            <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy</Link>
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
             <Link href="/cookie-policy" className="hover:text-white transition-colors">Cookie</Link>
             
             <div className="h-4 w-[1px] bg-white/10" />

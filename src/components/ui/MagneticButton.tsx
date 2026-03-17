@@ -3,11 +3,13 @@
 import React, { useRef } from 'react'
 import { motion, useMotionValue, useSpring, useTransform, HTMLMotionProps } from 'framer-motion'
 
-interface MagneticButtonProps extends HTMLMotionProps<'button'> {
+interface MagneticButtonProps {
   children: React.ReactNode
   intensity?: number
   className?: string
   springConfig?: { stiffness: number; damping: number; mass: number }
+  as?: 'button' | 'div'
+  [key: string]: any // To allow remaining motion props
 }
 
 export function MagneticButton({
@@ -15,9 +17,10 @@ export function MagneticButton({
   intensity = 0.2, // Quanto il bottone sporge verso il mouse (0-1)
   className = '',
   springConfig = { stiffness: 150, damping: 15, mass: 0.1 },
+  as = 'button',
   ...props
 }: MagneticButtonProps) {
-  const ref = useRef<HTMLButtonElement>(null)
+  const ref = useRef<any>(null)
 
   // Valori raw
   const mouseX = useMotionValue(0)
@@ -36,7 +39,7 @@ export function MagneticButton({
   const contentX = useTransform(springX, (val) => Math.max(-8, Math.min(8, val * intensity * 0.7)))
   const contentY = useTransform(springY, (val) => Math.max(-8, Math.min(8, val * intensity * 0.7)))
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleMouseMove = (e: any) => {
     if (!ref.current) return
     const { clientX, clientY } = e
     const { height, width, left, top } = ref.current.getBoundingClientRect()
@@ -54,8 +57,10 @@ export function MagneticButton({
     mouseY.set(0)
   }
 
+  const Component = as === 'div' ? motion.div : motion.button
+
   return (
-    <motion.button
+    <Component
       ref={ref}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -69,7 +74,7 @@ export function MagneticButton({
       >
         {children}
       </motion.span>
-    </motion.button>
+    </Component>
   )
 }
 

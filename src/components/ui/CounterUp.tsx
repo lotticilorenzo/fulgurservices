@@ -21,9 +21,16 @@ export function CounterUp({
 }: CounterUpProps) {
   const ref = useRef<HTMLSpanElement>(null)
   const [count, setCount] = useState(0)
+  const [mounted, setMounted] = useState(false)
   const isInView = useInView(ref, { once: true, margin: '-50px 0px' })
 
   useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (!mounted || !isInView) return
+
     let startTime: number | null = null
     let animationFrame: number
 
@@ -44,21 +51,24 @@ export function CounterUp({
       }
     }
 
-    if (isInView) {
-      animationFrame = requestAnimationFrame(animateCount)
-    }
+    animationFrame = requestAnimationFrame(animateCount)
 
     return () => {
       if (animationFrame) cancelAnimationFrame(animationFrame)
     }
-  }, [value, duration, isInView])
+  }, [value, duration, isInView, mounted])
 
   const formattedCount = new Intl.NumberFormat('it-IT').format(count)
 
+  // Hydration safety: render matching structure even when not mounted
   return (
-    <span ref={ref} className={cn('inline-block tabular-nums', className)} {...props}>
+    <span 
+      ref={ref} 
+      className={cn('inline-block tabular-nums', className)} 
+      {...props}
+    >
       {prefix}
-      {formattedCount}
+      {mounted ? formattedCount : '0'}
       {suffix}
     </span>
   )

@@ -6,6 +6,12 @@ import NoiseOverlay from '@/components/layout/NoiseOverlay'
 import Navbar from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { WhatsAppButton } from '@/components/ui/WhatsAppButton'
+import { FloatingAI } from '@/components/ui/FloatingAI'
+import { PageTransitionLoader } from '@/components/layout/PageTransitionLoader'
+import { CrystalCursor } from '@/components/ui/CrystalCursor'
+import SplashScreen from '@/components/layout/SplashScreen'
+import { CookieBanner } from '@/components/layout/CookieBanner'
+import React from 'react'
 
 const syne = Syne({
   subsets: ['latin'],
@@ -35,8 +41,8 @@ export const metadata: Metadata = {
     template: '%s | Fulgur Service',
   },
   description:
-    'Impresa di pulizie professionali a Parma e provincia. Pulizie aziendali, industriali, sanitarie, condomini. Sopralluogo gratuito, preventivo in 24h.',
-  keywords: ['impresa pulizie Parma', 'pulizie professionali Parma', 'sanificazione Parma'],
+    'Cerchi un’impresa di pulizie a Parma? Fulgur Service offre pulizie professionali per uffici, industrie, condomini e studi medici. Sopralluogo gratuito in 24h.',
+  keywords: ['impresa pulizie Parma', 'ditta pulizie Parma', 'pulizie uffici Parma', 'pulizie industriali Parma', 'sanificazione ambienti Parma', 'pulizie condomini Parma', 'pulizie Parma e provincia'],
   authors: [{ name: 'Fulgur Service SRL' }],
   creator: 'Fulgur Service SRL',
   robots: { index: true, follow: true },
@@ -57,12 +63,22 @@ export default function RootLayout({
   return (
     <html lang="it" suppressHydrationWarning>
       <head />
-      <body className={`${syne.variable} ${dmSans.variable} ${dmMono.variable} font-sans text-[var(--tx-1)] antialiased bg-[var(--bg)] min-h-[100dvh]`}>
+      <body 
+        className={`${syne.variable} ${dmSans.variable} ${dmMono.variable} font-sans text-[var(--tx-1)] antialiased bg-[var(--bg)] min-h-[100dvh]`}
+        suppressHydrationWarning
+      >
         <NoiseOverlay />
+        <SplashScreen />
+        <React.Suspense>
+          <PageTransitionLoader />
+        </React.Suspense>
         <Navbar />
+        <CrystalCursor />
         {children}
         <Footer />
         <WhatsAppButton />
+        <FloatingAI />
+        <CookieBanner />
       </body>
     </html>
   )

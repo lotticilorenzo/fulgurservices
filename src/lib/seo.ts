@@ -6,16 +6,16 @@ const OG_DEFAULT = `${BASE_URL}/og/default.jpg`
 
 export const METADATA = {
   home: {
-    title: 'Fulgur Service — Impresa di Pulizie Professionali a Parma',
+    title: 'Fulgur Service — Impresa di Pulizie Professionali a Parma e Provincia',
     description:
-      'Impresa di pulizie professionali a Parma e provincia. Aziendali, industriali, sanitarie, condomini, hotel. Sopralluogo gratuito, preventivo in 24h. Chiama ora.',
-    keywords: 'impresa pulizie Parma, pulizie professionali Parma, sanificazione Parma',
+      'Cerchi un’impresa di pulizie a Parma? Fulgur Service offre pulizie professionali per uffici, industrie, condomini e studi medici. Sopralluogo gratuito in 24h. Puliamo il futuro.',
+    keywords: 'impresa pulizie Parma, ditta pulizie Parma, pulizie uffici Parma, pulizie industriali Parma, sanificazione ambienti Parma, pulizie condomini Parma, pulizie Parma e provincia',
     openGraph: {
-      title: 'Fulgur Service — Pulizie Professionali a Parma',
-      description: 'Impresa giovane con 30 anni di esperienza. Sopralluogo gratuito, preventivo in 24h.',
+      title: 'Fulgur Service — Impresa di Pulizie Professionali a Parma',
+      description: 'Soluzioni di pulizia avanzate per aziende e privati a Parma e provincia. 30 anni di esperienza, risultati garantiti.',
       url: BASE_URL,
       siteName: 'Fulgur Service',
-      images: [{ url: OG_DEFAULT, width: 1200, height: 630, alt: 'Fulgur Service — Pulizie Professionali Parma' }],
+      images: [{ url: OG_DEFAULT, width: 1200, height: 630, alt: 'Fulgur Service — Leader Pulizie Parma' }],
       locale: 'it_IT',
       type: 'website' as const,
     },
@@ -76,6 +76,83 @@ export const METADATA = {
       type: 'website' as const,
     },
   },
+  gallery: {
+    title: 'Gallery | Fulgur Service Parma — Pulizie Professionali',
+    description: 'Guarda i nostri lavori: pulizie aziendali, industriali, cantieri navali, pannelli fotovoltaici e molto altro a Parma e provincia.',
+    openGraph: {
+      title: 'Gallery — Fulgur Service Parma',
+      description: 'I nostri lavori in foto: pulizie professionali a Parma in tutti i settori.',
+      url: `${BASE_URL}/gallery`,
+      siteName: 'Fulgur Service',
+      images: [{ url: OG_DEFAULT, width: 1200, height: 630, alt: 'Gallery Fulgur Service' }],
+      locale: 'it_IT',
+      type: 'website' as const,
+    },
+  },
+  privacy: {
+    title: 'Privacy Policy | Fulgur Service Parma',
+    description: 'Informativa sulla privacy di Fulgur Service SRL. Trasparenza e protezione dei tuoi dati.',
+    openGraph: {
+      title: 'Privacy Policy — Fulgur Service',
+      url: `${BASE_URL}/privacy`,
+      siteName: 'Fulgur Service',
+      locale: 'it_IT',
+      type: 'website' as const,
+    },
+  },
+  cookiePolicy: {
+    title: 'Cookie Policy | Fulgur Service Parma',
+    description: 'Informativa sui cookie di Fulgur Service SRL. Scopri come utilizziamo i cookie sul nostro sito.',
+    openGraph: {
+      title: 'Cookie Policy — Fulgur Service',
+      url: `${BASE_URL}/cookie-policy`,
+      siteName: 'Fulgur Service',
+      locale: 'it_IT',
+      type: 'website' as const,
+    },
+  },
+  macchinari: {
+    title: 'Macchinari Professionali | Tecnologia Fulgur Service Parma',
+    description:
+      'Utilizziamo solo tecnologie all\'avanguardia: lavasciuga, aspiratori industriali CFM e sistemi Klindex per la lucidatura. Scopri le nostre attrezzature professionali.',
+    openGraph: {
+      title: 'Macchinari Professionali — Fulgur Service',
+      description: 'Tecnologia e potenza per pulizie industriali e civili impeccabili.',
+      url: `${BASE_URL}/macchinari`,
+      siteName: 'Fulgur Service',
+      images: [{ url: OG_DEFAULT, width: 1200, height: 630, alt: 'Macchinari Fulgur Service' }],
+      locale: 'it_IT',
+      type: 'website' as const,
+    },
+  },
+  blog: {
+    title: 'Blog & News | Consigli e Guide sulle Pulizie — Fulgur Service Parma',
+    description:
+      'Approfondimenti, guide e news sul mondo delle pulizie industriali, sanificazioni HACCP e manutenzione pannelli fotovoltaici a Parma e provincia.',
+    openGraph: {
+      title: 'Blog Fulgur Service — Authority nel Cleaning a Parma',
+      description: 'Scopri i segreti della pulizia professionale e della manutenzione industriale.',
+      url: `${BASE_URL}/blog`,
+      siteName: 'Fulgur Service',
+      images: [{ url: OG_DEFAULT, width: 1200, height: 630, alt: 'Blog Fulgur Service Parma' }],
+      locale: 'it_IT',
+      type: 'website' as const,
+    },
+  },
+  fulgurAI: {
+    title: 'Fulgur AI | Il tuo Consulente Intelligente — Fulgur Service',
+    description:
+      'Incontra Fulgur AI, il consulente virtuale basato su intelligenza artificiale di Fulgur Service. Risposte tecniche istantanee su pulizie industriali, sanificazioni e trattamenti.',
+    openGraph: {
+      title: 'Fulgur AI — L\'Intelligenza al servizio del Pulito',
+      description: 'Consulto tecnico istantaneo fornito dal nostro agente AI specializzato.',
+      url: `${BASE_URL}/fulgur-ai`,
+      siteName: 'Fulgur Service',
+      images: [{ url: OG_DEFAULT, width: 1200, height: 630, alt: 'Fulgur AI Consultant' }],
+      locale: 'it_IT',
+      type: 'website' as const,
+    },
+  },
 }
 
 // ─── Structured Data (LocalBusiness) ─────────────────────────────────────────
@@ -86,9 +163,9 @@ export const STRUCTURED_DATA = {
   name: 'Fulgur Service SRL',
   legalName: 'Fulgur Service SRL',
   url: BASE_URL,
-  logo: `${BASE_URL}/images/logo.svg`,
+  logo: `${BASE_URL}/images/logo-official.webp`,
   image: OG_DEFAULT,
-  description: 'Impresa di pulizie professionali a Parma e provincia',
+  description: 'Fulgur Service è l’impresa di pulizie di riferimento a Parma per pulizie civili, industriali e sanificazioni certificate. Operiamo a Parma, Fidenza, Salsomaggiore e tutta la provincia.',
   telephone: '+39-338-316-0091',
   email: 'fulgurservice@gmail.com',
   vatID: '03063010346',
@@ -121,6 +198,11 @@ export const STRUCTURED_DATA = {
       longitude: 10.3279,
     },
     geoRadius: '50000',
+  },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.9',
+    reviewCount: '47',
   },
 }
 

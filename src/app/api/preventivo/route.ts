@@ -16,14 +16,18 @@ const ApiSchema = z.object({
   email: z.string().email(),
   tel: z.string().min(6),
   note: z.string().optional(),
+  website: z.string().optional(), // Honeypot
 })
 
 export async function POST(req: Request) {
   try {
     const body = await req.json()
-    
-    // Validazione robusta lato server
     const parsedData = ApiSchema.parse(body)
+
+    // Honeypot check: if 'website' is filled, it's a bot.
+    if (parsedData.website) {
+      return NextResponse.json({ success: true })
+    }
 
     // Setup Trasporto SMTP Nodemailer
     // Nota: in produzione servono credenziali in variabili d'ambiente (.env)

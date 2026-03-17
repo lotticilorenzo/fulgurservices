@@ -23,7 +23,7 @@ export function HeroSection() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  useLayoutEffect(() => {
+  React.useEffect(() => {
     if (!containerRef.current || !leftContentRef.current) return
 
     const ctx = gsap.context(() => {
@@ -36,10 +36,10 @@ export function HeroSection() {
         { 
           y: 0, 
           opacity: 1, 
-          stagger: 0.1, 
-          duration: 1, 
+          stagger: 0.08, 
+          duration: 0.8, 
           ease: 'power3.out',
-          delay: 0.2 // Piccolo ritardo iniziale
+          delay: 0.1 // Ritardo ridotto per reattività
         }
       )
     }, containerRef)
@@ -68,10 +68,17 @@ export function HeroSection() {
             <GlowBadge className="mb-6">Parma · Dal 1994</GlowBadge>
           </div>
 
-          <h1 className="gs-reveal font-display text-[clamp(42px,6.5vw,88px)] font-extrabold leading-[0.95] tracking-tight">
-            <span className="block text-[var(--tx-1)]">Puliamo il Futuro</span>
-            <span className="block font-light text-[var(--accent-d)]">con l'Energia</span>
-            <span className="block text-[var(--accent)]">della Natura</span>
+          <div className="gs-reveal mb-6 inline-flex items-center gap-2 rounded-full bg-[var(--accent-glow)] px-4 py-2 border border-[var(--accent)]/20">
+            <span className="h-2 w-2 rounded-full bg-[var(--accent)] animate-pulse" />
+            <span className="font-mono-fulgur text-[10px] font-bold tracking-[0.2em] text-[var(--accent)] uppercase">
+              Parma · Fidenza · Salsomaggiore · Collecchio
+            </span>
+          </div>
+
+          <h1 className="gs-reveal font-display text-[11vw] font-black leading-[0.95] tracking-tight text-[var(--tx-1)] sm:text-[8vw] lg:text-7xl xl:text-8xl">
+            Puliamo il Futuro<br />
+            <span className="text-outline-accent">con l&apos;Energia</span><br />
+            <span className="text-[var(--accent)]">della Natura</span>
           </h1>
 
           <div className="gs-reveal mt-6 flex items-center gap-2 font-mono-fulgur text-xs text-[var(--tx-2)]">
@@ -81,45 +88,45 @@ export function HeroSection() {
             <span>4.9 su Google · 47 recensioni verificate</span>
           </div>
 
-          <p className="gs-reveal mt-8 max-w-xl font-sans text-base font-light text-[var(--tx-2)] lg:text-lg">
-            Impresa di pulizie professionali a Parma e provincia. <br className="hidden sm:block" />
-            30 anni di esperienza, tecnologie all'avanguardia, <br className="hidden sm:block" />
-            soluzioni sostenibili per ogni ambiente.
+          <p className="gs-reveal mt-8 max-w-xl font-body text-lg font-light leading-relaxed text-[var(--tx-2)] lg:text-xl">
+            Siamo l&apos;<strong>impresa di pulizie di riferimento a Parma e provincia</strong>. 
+            Oltre 30 anni di esperienza, tecnologie all&apos;avanguardia e soluzioni 
+            sostenibili per ogni tipo di ambiente e superficie.
           </p>
 
-          <div className="gs-reveal mt-10 flex flex-wrap items-center gap-x-4 gap-y-2 font-mono-fulgur text-xs font-medium uppercase tracking-widest text-[var(--tx-2)]">
-            <span>30+ anni</span>
-            <span className="text-[var(--accent)]">·</span>
-            <span>500+ clienti</span>
-            <span className="text-[var(--accent)]">·</span>
-            <span>12 settori</span>
+          <div className="gs-reveal mt-10 flex flex-wrap items-center gap-x-2 gap-y-2.5 font-mono-fulgur text-[9px] font-bold uppercase tracking-[0.15em] text-[var(--tx-3)] sm:gap-x-4 sm:text-xs sm:tracking-[0.2em]">
+            <span className="bg-[var(--bg-2)] px-2.5 py-1.5 rounded-full border border-[var(--br)] whitespace-nowrap">30+ anni</span>
+            <span className="hidden sm:inline text-[var(--accent)] opacity-50">·</span>
+            <span className="bg-[var(--bg-2)] px-2.5 py-1.5 rounded-full border border-[var(--br)] whitespace-nowrap">500+ clienti</span>
+            <span className="hidden sm:inline text-[var(--accent)] opacity-50">·</span>
+            <span className="bg-[var(--bg-2)] px-2.5 py-1.5 rounded-full border border-[var(--br)] whitespace-nowrap">12 settori</span>
           </div>
 
           <div className="gs-reveal mt-12 flex flex-col gap-4 sm:flex-row sm:items-center">
             <Link href="/preventivo" tabIndex={-1}>
-              <MagneticButton intensity={0.15} className="group flex h-[54px] w-full items-center justify-center rounded-full bg-[var(--accent)] px-8 font-display text-[15px] font-bold text-white transition-all hover:bg-[var(--accent-d)] sm:w-auto">
+              <MagneticButton as="div" intensity={0.15} className="group flex h-[54px] w-full items-center justify-center rounded-full bg-[var(--accent)] px-8 font-display text-[15px] font-bold text-white transition-all hover:bg-[var(--accent-d)] sm:w-auto">
                 <span>Richiedi Sopralluogo Gratuito</span>
               </MagneticButton>
             </Link>
             <Link href="/servizi" tabIndex={-1}>
-              <MagneticButton intensity={0.1} className="group flex h-[54px] w-full items-center justify-center rounded-full border border-[var(--br-solid)] px-8 font-display text-[15px] font-bold text-[var(--tx-1)] transition-colors hover:bg-[var(--accent)] hover:text-white sm:w-auto">
+              <MagneticButton as="div" intensity={0.1} className="group flex h-[54px] w-full items-center justify-center rounded-full border border-[var(--br-solid)] px-8 font-display text-[15px] font-bold text-[var(--tx-1)] transition-colors hover:bg-[var(--accent)] hover:text-white sm:w-auto">
                 <span>Scopri i Servizi →</span>
               </MagneticButton>
             </Link>
           </div>
 
-          <div className="gs-reveal mt-8 flex flex-wrap gap-6 font-mono-fulgur text-[11px] font-medium tracking-widest text-[var(--tx-3)] uppercase">
+          <div className="gs-reveal mt-8 mb-4 sm:mb-0 flex flex-wrap gap-x-6 gap-y-3 font-mono-fulgur text-[10px] font-medium tracking-widest text-[var(--tx-3)] uppercase">
             <div className="flex items-center gap-2">
-              <ShieldCheck size={16} className="text-[var(--accent)]" />
-              <span>Assicurati RCT €2M</span>
+              <ShieldCheck size={16} className="text-[var(--accent)]" aria-hidden="true" />
+              <span className="whitespace-nowrap">Assicurati RCT €2M</span>
             </div>
             <div className="flex items-center gap-2">
-              <Leaf size={16} className="text-[var(--accent)]" />
-              <span>Prodotti Eco Certificati</span>
+              <Leaf size={16} className="text-[var(--accent)]" aria-hidden="true" />
+              <span className="whitespace-nowrap">Prodotti Eco Certificati</span>
             </div>
             <div className="flex items-center gap-2">
-              <Clock size={16} className="text-[var(--accent)]" />
-              <span>Risposta in 24h</span>
+              <Clock size={16} className="text-[var(--accent)]" aria-hidden="true" />
+              <span className="whitespace-nowrap">Risposta in 24h</span>
             </div>
           </div>
         </div>
@@ -132,11 +139,10 @@ export function HeroSection() {
             <div className="absolute inset-0 rounded-full bg-[var(--accent)] opacity-20 blur-[60px]" />
             
             {/* Circular Image Container */}
-            {/* Circular Image Container */}
             <div className="relative h-full w-full overflow-hidden rounded-full border-2 border-[var(--br)] bg-white p-1 shadow-[0_10px_40px_rgba(42,140,122,0.1)] transition-colors duration-500 hover:border-[var(--accent)] hover:shadow-[0_15px_50px_rgba(42,140,122,0.2)]">
               <div className="relative h-full w-full overflow-hidden rounded-full">
                 <Image
-                  src="/images/fulgur-service-team-lavoro.jpg"
+                  src="/images/fulgur-service-team-ai.png"
                   alt="Il team Fulgur Service a Parma — pulizie professionali"
                   fill
                   sizes="(max-width: 768px) 300px, 420px"
@@ -151,11 +157,11 @@ export function HeroSection() {
               initial={{ y: -8 }}
               animate={{ y: [-8, 8, -8] }}
               transition={{ repeat: Infinity, duration: 4.2, ease: 'easeInOut' }}
-              className="absolute -right-6 top-6 lg:-right-14 lg:top-12 z-20 min-w-[140px] rounded-2xl border border-white/40 bg-white/70 backdrop-blur-md px-6 py-5 shadow-2xl shadow-green-900/20"
+              className="absolute -right-4 top-6 lg:-right-14 lg:top-12 z-20 min-w-[120px] rounded-2xl border border-white/40 bg-white/70 backdrop-blur-md px-5 py-4 shadow-2xl shadow-green-900/20 sm:min-w-[140px]"
             >
               <div className="flex flex-col items-start leading-tight">
-                <div className="font-display text-4xl font-extrabold text-[var(--accent)] tracking-tighter">30+</div>
-                <div className="mt-1 font-mono-fulgur text-[10px] font-bold uppercase tracking-widest text-[var(--tx-2)]">Anni esperienza</div>
+                <div className="font-display text-3xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-4xl">30+</div>
+                <div className="mt-1 font-mono-fulgur text-[9px] font-bold uppercase tracking-widest text-[var(--tx-2)] sm:text-[10px]">Anni esperienza</div>
               </div>
             </motion.div>
 
@@ -163,11 +169,11 @@ export function HeroSection() {
               initial={{ y: 8 }}
               animate={{ y: [8, -8, 8] }}
               transition={{ repeat: Infinity, duration: 5.2, ease: 'easeInOut', delay: 1 }}
-              className="absolute -left-8 bottom-12 lg:-left-16 lg:bottom-20 z-20 min-w-[140px] rounded-2xl border border-white/40 bg-white/70 backdrop-blur-md px-6 py-5 shadow-2xl shadow-green-900/20"
+              className="absolute -left-6 bottom-12 lg:-left-16 lg:bottom-20 z-20 min-w-[120px] rounded-2xl border border-white/40 bg-white/70 backdrop-blur-md px-5 py-4 shadow-2xl shadow-green-900/20 sm:min-w-[140px]"
             >
               <div className="flex flex-col items-start leading-tight">
-                <div className="font-display text-4xl font-extrabold text-[var(--accent)] tracking-tighter">500+</div>
-                <div className="mt-1 font-mono-fulgur text-[10px] font-bold uppercase tracking-widest text-[var(--tx-2)]">Clienti soddisfattI</div>
+                <div className="font-display text-3xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-4xl">500+</div>
+                <div className="mt-1 font-mono-fulgur text-[9px] font-bold uppercase tracking-widest text-[var(--tx-2)] sm:text-[10px]">Clienti soddisfattI</div>
               </div>
             </motion.div>
 
@@ -175,11 +181,11 @@ export function HeroSection() {
               initial={{ y: -6 }}
               animate={{ y: [-6, 6, -6] }}
               transition={{ repeat: Infinity, duration: 4.8, ease: 'easeInOut', delay: 2 }}
-              className="absolute -left-4 top-20 lg:-left-10 lg:top-32 z-20 min-w-[140px] rounded-2xl border border-white/40 bg-white/70 backdrop-blur-md px-6 py-5 shadow-2xl shadow-green-900/20"
+              className="absolute -left-2 top-20 lg:-left-10 lg:top-32 z-20 min-w-[120px] rounded-2xl border border-white/40 bg-white/70 backdrop-blur-md px-5 py-4 shadow-2xl shadow-green-900/20 sm:min-w-[140px]"
             >
               <div className="flex flex-col items-start leading-tight">
-                <div className="font-display text-4xl font-extrabold text-[var(--accent)] tracking-tighter">HACCP</div>
-                <div className="mt-1 font-mono-fulgur text-[10px] font-bold uppercase tracking-widest text-[var(--tx-2)]">Certificato</div>
+                <div className="font-display text-3xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-4xl">HACCP</div>
+                <div className="mt-1 font-mono-fulgur text-[9px] font-bold uppercase tracking-widest text-[var(--tx-2)] sm:text-[10px]">Certificato</div>
               </div>
             </motion.div>
           </div>

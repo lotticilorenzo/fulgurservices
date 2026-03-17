@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { SERVICES } from '@/lib/services-data'
 import { ServiceCard } from '@/components/servizi/ServiceCard'
 import { SectionLabel } from '@/components/ui/SectionLabel'
+import { ParallaxText } from '@/components/ui/ParallaxText'
 
 export function ServicesGrid() {
   // Row 1 & 2 specific targets
@@ -21,8 +22,13 @@ export function ServicesGrid() {
 
   return (
     <section className="relative w-full bg-white py-16 lg:py-24 border-y border-[var(--br)]" id="servizi">
+      {/* Background Architectural Text */}
+      <div className="absolute top-10 left-0 w-full opacity-10 pointer-events-none">
+        <ParallaxText text="SERVIZI" direction="left" distance={150} />
+      </div>
+
       {/* Container */}
-      <div className="mx-auto w-full max-w-7xl px-6 xl:px-8">
+      <div className="mx-auto w-full max-w-7xl px-6 xl:px-8 relative z-10">
         
         {/* Header Section */}
         <div className="mb-16 max-w-2xl sm:mb-20">

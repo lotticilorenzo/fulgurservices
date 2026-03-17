@@ -47,7 +47,7 @@ export function ServiceCard({ service, size = 'small', index, className }: Servi
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
           className={cn(
-            'relative flex h-full flex-col overflow-hidden rounded-2xl border border-[var(--br)] bg-[#0A140F] transition-all duration-500'
+            'relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-black/40 transition-all duration-500 glass-premium shine-effect'
           )}
         >
           {/* Main Visual */}
@@ -81,6 +81,13 @@ export function ServiceCard({ service, size = 'small', index, className }: Servi
               <p className="font-sans text-[12px] md:text-[14px] font-light text-white/70 max-w-[90%] line-clamp-2">
                 {service.shortDesc}
               </p>
+
+              {/* Persuasive Mini-badge */}
+              <div className="mt-4 flex">
+                <span className="inline-flex items-center rounded-full bg-[var(--accent)]/10 px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[var(--accent)] border border-[var(--accent)]/20 shadow-[0_0_15px_rgba(78,203,160,0.1)]">
+                  Sopralluogo Gratuito
+                </span>
+              </div>
             </div>
 
             {/* Bottom meta row */}

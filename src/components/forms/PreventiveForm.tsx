@@ -35,6 +35,7 @@ const FormSchema = z.object({
   privacy: z.boolean().refine((val) => val === true, {
     message: 'Devi accettare la privacy policy per continuare.',
   }),
+  website: z.string().optional(), // Honeypot
 })
 
 type FormData = z.infer<typeof FormSchema>
@@ -177,6 +178,11 @@ export function PreventiveForm() {
       {/* FORM CONTENT CONTAINER */}
       <div className="relative min-h-[480px] w-full p-8 lg:p-12">
         <form onSubmit={handleSubmit(onSubmit)} className="h-full">
+          {/* Honeypot field - Hidden from users */}
+          <div className="hidden" aria-hidden="true">
+            <input type="text" {...register('website')} tabIndex={-1} autoComplete="off" />
+          </div>
+
           <AnimatePresence initial={false} custom={direction} mode="wait">
             
             {/* STEP 1: Servizi grid */}

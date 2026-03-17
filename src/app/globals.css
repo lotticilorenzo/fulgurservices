@@ -120,6 +120,13 @@ body {
   overflow-x: hidden;
 }
 
+/* Hide default cursor on desktop for premium experience */
+@media (hover: hover) and (pointer: fine) {
+  body, a, button, [role="button"] {
+    cursor: none !important;
+  }
+}
+
 /* ─── Reduced Motion ─── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -180,5 +187,41 @@ body {
 
   .animate-marquee-reverse {
     animation: marquee-reverse 28s linear infinite;
+  }
+
+  /* ─── Premium Glass & Shine ─── */
+  .glass-premium {
+    backdrop-filter: blur(12px) saturate(180%);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  .shine-effect {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shine-effect::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 20%;
+    height: 200%;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+    transform: rotate(30deg);
+    transition: none;
+    pointer-events: none;
+  }
+
+  .shine-effect:hover::after {
+    left: 120%;
+    transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
   }
 }

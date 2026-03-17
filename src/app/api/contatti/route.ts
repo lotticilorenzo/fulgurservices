@@ -7,12 +7,19 @@ const ContactApiSchema = z.object({
   email: z.string().email(),
   tel: z.string().min(5),
   messaggio: z.string().min(10),
+  website: z.string().optional(), // Honeypot
 })
 
 export async function POST(req: Request) {
   try {
     const body = await req.json()
     const parsedData = ContactApiSchema.parse(body)
+
+    // Honeypot check: if 'website' is filled, it's a bot.
+    // We return success to fool the bot without sending the email.
+    if (parsedData.website) {
+      return NextResponse.json({ success: true })
+    }
 
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST || 'smtp.gmail.com',

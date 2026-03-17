@@ -51,6 +51,7 @@ export function WhatsAppButton() {
             className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-full"
           >
             <MagneticButton
+              as="div"
               intensity={0.2}
               className="relative flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl transition-transform hover:scale-110"
             >

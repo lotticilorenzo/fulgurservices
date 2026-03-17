@@ -39,15 +39,19 @@ export function WhyChooseUs() {
           <div>
             <ScrollReveal>
               <SectionLabel className="mb-4">— PERCHÉ FULGUR</SectionLabel>
-              <h2 className="font-display text-4xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl mb-12">
-                La certezza di un lavoro <br className="hidden md:block" /> fatto bene.
-              </h2>
+            <h2 className="font-display text-4xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl mb-8">
+              L&apos;<strong>impresa di pulizie</strong> scelta da Parma e provincia.
+            </h2>
+            <p className="font-sans text-lg font-light text-[var(--tx-2)] mb-12">
+              Affidarsi a Fulgur Service significa scegliere un partner locale con 30 anni di esperienza, 
+              tecnologie industriali e un impegno costante per la qualità in ogni comune del territorio parmense.
+            </p>
             </ScrollReveal>
 
             <div className="grid grid-cols-1 gap-8">
               {BENEFITS.map((benefit, i) => (
                 <ScrollReveal key={i} delay={i * 0.1}>
-                  <div className="group flex gap-6 p-4 rounded-2xl hover:bg-white/5 transition-colors duration-300 border border-transparent hover:border-[var(--br)]">
+                  <div className="group flex gap-6 p-6 rounded-2xl bg-white/50 backdrop-blur-sm transition-all duration-300 border border-transparent hover:border-[var(--accent)]/30 glass-premium shine-effect shadow-sm hover:shadow-xl">
                     <div className="flex-shrink-0 font-mono-fulgur text-xl font-bold text-[var(--accent)] opacity-40 group-hover:opacity-100 transition-opacity">
                       {benefit.num}
                     </div>

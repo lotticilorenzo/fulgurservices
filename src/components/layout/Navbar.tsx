@@ -11,6 +11,8 @@ import { Logo } from '@/components/ui/Logo'
 
 const LINKS = [
   { label: 'Servizi', href: '/servizi' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Fulgur AI', href: '/fulgur-ai', isAI: true },
   { label: 'Chi Siamo', href: '/chi-siamo' },
   { label: 'Macchinari', href: '/macchinari' },
   { label: 'Gallery', href: '/gallery' },
@@ -21,16 +23,8 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
-  // IntersectionObserver trick per scroll performance senza window.addEventListener
+  // Scroll logic via IntersectionObserver
   useEffect(() => {
-    const sentinel = document.createElement('div')
-    sentinel.style.position = 'absolute'
-    sentinel.style.top = '80px'
-    sentinel.style.width = '1px'
-    sentinel.style.height = '1px'
-    sentinel.style.visibility = 'hidden'
-    document.body.prepend(sentinel)
-
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsScrolled(!entry.isIntersecting)
@@ -38,12 +32,10 @@ export default function Navbar() {
       { root: null, rootMargin: '0px', threshold: 0 }
     )
 
-    observer.observe(sentinel)
+    const sentinel = document.getElementById('nav-sentinel')
+    if (sentinel) observer.observe(sentinel)
 
-    return () => {
-      observer.disconnect()
-      if (sentinel.parentNode) sentinel.remove()
-    }
+    return () => observer.disconnect()
   }, [])
 
   // Blocca lo scroll quando il menu mobile è aperto
@@ -57,9 +49,12 @@ export default function Navbar() {
 
   return (
     <>
+      {/* Sentinel per l'isScrolled state */}
+      <div id="nav-sentinel" className="absolute top-20 left-0 w-px h-px pointer-events-none -z-10" aria-hidden="true" />
+      
       <header
         className={cn(
-          'fixed left-1/2 top-6 z-50 flex w-[calc(100%-2rem)] max-w-7xl -translate-x-1/2 items-center justify-between rounded-full px-4 py-3 xl:px-8',
+          'fixed left-1/2 top-4 lg:top-6 z-50 flex w-[calc(100%-1.5rem)] sm:w-[calc(100%-2rem)] max-w-7xl -translate-x-1/2 items-center justify-between rounded-full px-4 py-2.5 lg:py-3 xl:px-8',
           'transition-[background,border,backdrop-filter] duration-400 ease-[cubic-bezier(0.16,1,0.3,1)]',
           isScrolled
             ? 'border border-[var(--nav-border)] bg-[var(--nav-bg)] backdrop-blur-xl shadow-sm'
@@ -85,11 +80,16 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               className={cn(
-                'font-mono-fulgur text-[11px] font-bold uppercase tracking-widest text-[var(--tx-1)] transition-colors duration-200 hover:text-[var(--accent-d)]',
+                'relative font-mono-fulgur text-[11px] font-bold uppercase tracking-widest text-[var(--tx-1)] transition-colors duration-200 hover:text-[var(--accent-d)]',
                 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm'
               )}
             >
               {link.label}
+              {link.isAI && (
+                <span className="absolute -top-3 -right-6 flex h-3.5 items-center justify-center rounded-full bg-[var(--accent)] px-1 py-0.5 text-[7px] font-black text-white shadow-[0_0_10px_var(--accent)]">
+                  AI
+                </span>
+              )}
             </Link>
           ))}
         </nav>
@@ -106,12 +106,25 @@ export default function Navbar() {
           
           <Link href="/preventivo" tabIndex={-1}>
             <MagneticButton
-              intensity={0.15}
-              className="relative rounded-full bg-[var(--accent)] px-8 py-3 font-display text-sm font-bold text-white transition-colors hover:bg-[var(--accent-d)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent outline-none group"
+              as="div"
+              intensity={0.1}
+              className="relative rounded-full bg-[var(--accent)] px-8 py-3 font-display text-sm font-bold text-white transition-[background-color,transform,shadow] duration-300 hover:bg-[var(--accent-d)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent outline-none group overflow-hidden"
             >
-              {/* Pulse Ring Animation */}
-              <span className="absolute inset-0 rounded-full bg-[var(--accent)]/50 animate-[ping_3s_infinite]" />
-              <span className="relative">Sopralluogo Gratuito</span>
+              {/* Subtle Glow Pulse - Framer Motion for better stability */}
+                <motion.span 
+                  aria-hidden="true"
+                  animate={{ 
+                    scale: [1, 1.2, 1],
+                    opacity: [0.3, 0.1, 0.3]
+                  }}
+                transition={{ 
+                  duration: 4, 
+                  repeat: Infinity, 
+                  ease: "easeInOut" 
+                }}
+                className="absolute inset-0 rounded-full bg-white" 
+              />
+              <span className="relative z-10">Sopralluogo Gratuito</span>
             </MagneticButton>
           </Link>
         </div>
@@ -164,9 +177,14 @@ export default function Navbar() {
                     <Link
                       href={link.href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="font-display text-4xl font-bold tracking-tight text-[var(--tx-1)] transition-colors hover:text-[var(--accent)] focus-visible:text-[var(--accent)] focus-visible:outline-none"
+                      className="relative font-display text-4xl font-bold tracking-tight text-[var(--tx-1)] transition-colors hover:text-[var(--accent)] focus-visible:text-[var(--accent)] focus-visible:outline-none"
                     >
                       {link.label}
+                      {link.isAI && (
+                        <span className="absolute -top-1 -right-6 flex h-4 items-center justify-center rounded-full bg-[var(--accent)] px-1.5 py-0.5 text-[8px] font-black text-white shadow-[0_0_15px_var(--accent)]">
+                          AI
+                        </span>
+                      )}
                     </Link>
                   </motion.div>
                 ))}
@@ -177,7 +195,7 @@ export default function Navbar() {
                   href="tel:+393383160091"
                   className="flex w-full items-center justify-center gap-3 rounded-full border border-[var(--br)] bg-white/5 py-4 font-display text-lg font-bold text-[var(--tx-1)] transition-colors hover:bg-white/10"
                 >
-                  <PhoneCall size={24} weight="bold" className="text-[var(--accent)]" />
+                  <PhoneCall size={24} weight="bold" className="text-[var(--accent)]" aria-hidden="true" />
                   +39 338 316 0091
                 </a>
                 

@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
+import { ParallaxText } from '@/components/ui/ParallaxText'
 
 const VALUES = [
   'Prodotti a basso impatto ambientale quando possibile',
@@ -27,6 +28,11 @@ export function AboutSection() {
 
   return (
     <section id="chi-siamo" ref={sectionRef} className="relative overflow-hidden bg-[var(--bg-3)] py-24 lg:py-32">
+      {/* Background Architectural Text */}
+      <div className="absolute bottom-20 left-0 w-full opacity-10 pointer-events-none">
+        <ParallaxText text="FULGUR" direction="right" distance={150} />
+      </div>
+
       {/* Decorative Green Glow */}
       <div className="absolute -left-20 top-1/4 h-96 w-96 rounded-full bg-[var(--accent)] opacity-[0.05] blur-[120px]" />
       <div className="mx-auto w-full max-w-7xl px-6 xl:px-8">
@@ -60,21 +66,18 @@ export function AboutSection() {
             <ScrollReveal>
               <SectionLabel className="mb-4">— CHI SIAMO</SectionLabel>
               <h2 className="font-display text-4xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl lg:text-[56px] lg:leading-[1.1]">
-                Tradizione e innovazione,<br className="hidden lg:block" /> insieme.
+                L&apos;<strong>impresa di pulizie a Parma</strong> che unisce tradizione e innovazione.
               </h2>
             </ScrollReveal>
 
             <ScrollReveal delay={0.1}>
               <div className="mt-8 flex flex-col gap-6 font-sans text-base lg:text-lg font-light leading-relaxed text-[var(--tx-2)]">
                 <p>
-                  Fulgur Service è un'impresa giovane, nata da idee chiare e innovative, 
-                  con alle spalle 30 anni di esperienza: siamo il punto d'incontro tra 
-                  la visione fresca di una nuova generazione e la solidità del lavoro 
-                  costruito da mio padre.
+                  Fulgur Service non è solo un nome, ma una storia di eccellenza nel cleaning professionale. 
+                  Siamo il punto d'incontro tra la visione fresca di una nuova generazione e la solidità di 30 anni di esperienza sul territorio di <strong>Parma e provincia</strong>.
                 </p>
                 <p>
-                  Per noi la pulizia non è un'attività meccanica: non siamo semplici 
-                  fornitori, ma partner che si prendono cura dell'ambiente del cliente a 360°.
+                  Non siamo semplici fornitori: ci proponiamo come partner strategici che si prendono cura del tuo ambiente di lavoro o privato come se fosse il nostro.
                 </p>
               </div>
             </ScrollReveal>

@@ -11,6 +11,7 @@ const ContactSchema = z.object({
   email: z.string().email('Indirizzo email non valido.'),
   tel: z.string().min(5, 'Numero non valido.'),
   messaggio: z.string().min(10, 'Il messaggio è troppo corto.'),
+  website: z.string().optional(), // Honeypot
 })
 
 type ContactFormData = z.infer<typeof ContactSchema>
@@ -56,8 +57,16 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="w-full bg-white border border-[var(--br)] rounded-3xl p-8 flex flex-col gap-5 shadow-xl shadow-[rgba(42,140,122,0.08)]">
-      <h3 className="font-display text-2xl font-bold text-[var(--tx-1)] mb-2">Scrivici un messaggio</h3>
+      <div className="mb-2">
+        <h3 className="font-display text-2xl font-bold text-[var(--tx-1)]">Prendiamoci cura del tuo ambiente</h3>
+        <p className="font-sans text-sm font-light text-[var(--tx-3)] mt-1">Richiedi un sopralluogo gratuito o un preventivo personalizzato.</p>
+      </div>
       
+      {/* Honeypot field - Hidden from users */}
+      <div className="hidden" aria-hidden="true">
+        <input type="text" {...register('website')} tabIndex={-1} autoComplete="off" />
+      </div>
+
       <div className="flex flex-col gap-2">
         <label className="font-sans text-sm font-medium text-[var(--tx-1)]">Nome e Cognome *</label>
         <input 

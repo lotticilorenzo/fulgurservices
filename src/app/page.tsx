@@ -8,11 +8,12 @@ import { ProcessStepper } from '@/components/home/ProcessStepper'
 import { CTASection } from '@/components/home/CTASection'
 import { TrustBar } from '@/components/ui/TrustBar'
 import { PartnershipSection } from '@/components/ui/PartnershipSection'
-import { ReviewsStrip } from '@/components/home/ReviewsStrip'
+import { GoogleReviewsPlugin } from '@/components/home/GoogleReviewsPlugin'
 import { FAQSection } from '@/components/ui/FAQSection'
 import { IntegratedBento } from '@/components/servizi/IntegratedBento'
 import { WhyChooseUs } from '@/components/home/WhyChooseUs'
 import { GeographicCoverage } from '@/components/home/GeographicCoverage'
+import { WipeReveal } from '@/components/ui/WipeReveal'
 
 export const metadata: Metadata = {
   title: METADATA.home.title,
@@ -39,33 +40,55 @@ export default function Home() {
       <TrustBar />
 
       <div id="servizi" className="scroll-mt-24">
-        <ServicesGrid />
+        <WipeReveal direction="left">
+          <ServicesGrid />
+        </WipeReveal>
       </div>
 
-      <WhyChooseUs />
+      <WipeReveal direction="right" delay={0.2}>
+        <WhyChooseUs />
+      </WipeReveal>
       
-      <PartnershipSection />
+      <WipeReveal direction="left">
+        <PartnershipSection />
+      </WipeReveal>
 
       <div id="chi-siamo" className="scroll-mt-24">
-        <AboutSection />
+        <WipeReveal direction="right">
+          <AboutSection />
+        </WipeReveal>
       </div>
       
-      <PhilosophySection />
+      <WipeReveal direction="bottom">
+        <PhilosophySection />
+      </WipeReveal>
       
-      <IntegratedBento />
+      <WipeReveal direction="left">
+        <IntegratedBento />
+      </WipeReveal>
 
       <div id="processo" className="scroll-mt-24">
-        <ProcessStepper />
+        <WipeReveal direction="right">
+          <ProcessStepper />
+        </WipeReveal>
       </div>
 
-      <ReviewsStrip />
+      <WipeReveal direction="top">
+        <GoogleReviewsPlugin />
+      </WipeReveal>
 
-      <GeographicCoverage />
+      <WipeReveal direction="left">
+        <GeographicCoverage />
+      </WipeReveal>
       
-      <FAQSection />
+      <WipeReveal direction="bottom">
+        <FAQSection />
+      </WipeReveal>
 
       <div id="contatti" className="scroll-mt-24">
-        <CTASection />
+        <WipeReveal direction="top">
+          <CTASection />
+        </WipeReveal>
       </div>
     </main>
   )
