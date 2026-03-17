@@ -1,26 +1,184 @@
 @import "tailwindcss";
 
+/* ─── CSS Variables — Fulgur Service Brand ─── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Backgrounds */
+  --bg:           #FFFFFF;
+  --bg-2:         #F0F7F5;
+  --bg-3:         #E8F4F0;
+  --bg-card:      #FFFFFF;
+  --bg-card-h:    #F0F7F5;
+
+  /* Brand accent — verde acqua dal logo */
+  --accent:       #4ECBA0;
+  --accent-d:     #2A8C7A;
+  --accent-l:     #7DDFC0;
+  --accent-glow:  rgba(78, 203, 160, 0.15);
+  --accent-glow-h:rgba(78, 203, 160, 0.30);
+
+  /* Text */
+  --tx-1:         #0F1F1A;
+  --tx-2:         #3D6B61;
+  --tx-3:         #7A9E97;
+
+  /* Borders */
+  --br:           rgba(42, 140, 122, 0.15);
+  --br-h:         rgba(42, 140, 122, 0.40);
+  --br-solid:     #2A8C7A;
+
+  /* Navbar */
+  --nav-bg:       rgba(255,255,255,0.92);
+  --nav-border:   rgba(42,140,122,0.12);
+
+  /* Fonts */
+  --font-display: var(--font-syne);
+  --font-body:    var(--font-dm-sans);
+  --font-mono:    var(--font-dm-mono);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* ─── Tailwind v4 Theme Extensions ─── */
+@theme {
+  /* Font families */
+  --font-family-display: var(--font-syne), sans-serif;
+  --font-family-body:    var(--font-dm-sans), sans-serif;
+  --font-family-mono:    var(--font-dm-mono), monospace;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* Fulgur color palette */
+  --color-fulgur-bg:     #0D1117;
+  --color-fulgur-bg2:    #12151E;
+  --color-fulgur-card:   #161B24;
+  --color-fulgur-accent: #4ECBA0;
+  --color-fulgur-deep:   #2A8C7A;
+  --color-fulgur-light:  #6DD9B2;
+
+  /* Keyframes */
+  --animate-float:      float 5s ease-in-out infinite;
+  --animate-float-slow: float 8s ease-in-out infinite;
+  --animate-ticker:     ticker 28s linear infinite;
+  --animate-shimmer:    shimmer 2.5s linear infinite;
+  --animate-scan:       scan 3s ease-in-out infinite alternate;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-10px); }
+  }
+  @keyframes ticker {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  @keyframes shimmer {
+    0%   { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  @keyframes scan {
+    0%   { top: 0%; }
+    100% { top: 100%; }
   }
 }
 
+/* ─── Noise Overlay ─── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 128px 128px;
+}
+
+/* ─── Selection ─── */
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--accent-d); border-radius: 2px; }
+
+/* ─── Focus ─── */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ─── Smooth Scroll ─── */
+html { scroll-behavior: smooth; }
+
+/* ─── Body Base ─── */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--tx-1);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ─── Reduced Motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ─── Utility Classes ─── */
+@layer utilities {
+  .text-gradient-accent {
+    background: linear-gradient(135deg, var(--accent-l), var(--accent), var(--accent-d));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-outline-accent {
+    -webkit-text-stroke: 1.5px var(--accent);
+    color: transparent;
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 30px var(--accent-glow), 0 0 60px var(--accent-glow);
+  }
+
+  .border-accent-gradient {
+    border: 1px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .font-mono-fulgur {
+    font-family: var(--font-mono);
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-100% - 1.5rem)); }
+  }
+
+  @keyframes marquee-reverse {
+    from { transform: translateX(calc(-100% - 1.5rem)); }
+    to { transform: translateX(0); }
+  }
+
+  .animate-marquee {
+    animation: marquee 28s linear infinite;
+  }
+
+  .animate-marquee-reverse {
+    animation: marquee-reverse 28s linear infinite;
+  }
 }

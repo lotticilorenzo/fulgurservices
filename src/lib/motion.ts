@@ -1,0 +1,85 @@
+// lib/motion.ts — Framer Motion variants standard del progetto Fulgur Service
+import { Variants } from 'framer-motion'
+
+export const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] },
+  },
+}
+
+export const staggerContainer: Variants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.1, delayChildren: 0.1 },
+  },
+}
+
+export const fadeIn: Variants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.5 } },
+}
+
+export const slideInLeft: Variants = {
+  hidden: { opacity: 0, x: -40 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] },
+  },
+}
+
+export const slideInRight: Variants = {
+  hidden: { opacity: 0, x: 40 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] },
+  },
+}
+
+export const scaleIn: Variants = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] },
+  },
+}
+
+// Spring config premium — per hover/interazioni fisiche
+export const springConfig = { type: 'spring' as const, stiffness: 150, damping: 15 }
+export const springHeavy = { type: 'spring' as const, stiffness: 100, damping: 20 }
+
+// Slide lateral per form multi-step
+export const slideStep = {
+  enter: (direction: number) => ({
+    x: direction > 0 ? 300 : -300,
+    opacity: 0,
+  }),
+  center: {
+    x: 0,
+    opacity: 1,
+    transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] },
+  },
+  exit: (direction: number) => ({
+    x: direction < 0 ? 300 : -300,
+    opacity: 0,
+    transition: { duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] },
+  }),
+}
+
+// Overlay fullscreen (mobile nav)
+export const overlayVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.3 } },
+  exit: { opacity: 0, transition: { duration: 0.2 } },
+}
+
+export const menuVariants: Variants = {
+  hidden: { x: '100%' },
+  visible: { x: 0, transition: { type: 'spring' as const, stiffness: 120, damping: 20 } },
+  exit: { x: '100%', transition: { duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] } },
+}

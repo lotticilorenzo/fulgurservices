@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.fulgurservice.it/sitemap.xml
+
+# Per Googlebot: non indicizzare pagine private/API
+Disallow: /api/
+Disallow: /_next/
