@@ -59,7 +59,7 @@ export default function Navbar() {
     <>
       <header
         className={cn(
-          'fixed left-1/2 top-6 z-50 flex w-[calc(100%-2rem)] max-w-5xl -translate-x-1/2 items-center justify-between rounded-full px-4 py-3 xl:px-8',
+          'fixed left-1/2 top-6 z-50 flex w-[calc(100%-2rem)] max-w-7xl -translate-x-1/2 items-center justify-between rounded-full px-4 py-3 xl:px-8',
           'transition-[background,border,backdrop-filter] duration-400 ease-[cubic-bezier(0.16,1,0.3,1)]',
           isScrolled
             ? 'border border-[var(--nav-border)] bg-[var(--nav-bg)] backdrop-blur-xl shadow-sm'
@@ -79,13 +79,13 @@ export default function Navbar() {
         </Link>
 
         {/* DESKTOP LINKS */}
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-10">
           {LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               className={cn(
-                'font-mono-fulgur text-xs font-medium uppercase tracking-widest text-[var(--tx-1)] transition-colors duration-200 hover:text-[var(--accent-d)]',
+                'font-mono-fulgur text-[11px] font-bold uppercase tracking-widest text-[var(--tx-1)] transition-colors duration-200 hover:text-[var(--accent-d)]',
                 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm'
               )}
             >
@@ -95,19 +95,19 @@ export default function Navbar() {
         </nav>
 
         {/* DESKTOP CTA & PHONE */}
-        <div className="hidden lg:flex items-center gap-6">
+        <div className="hidden lg:flex items-center gap-10">
           <a 
             href="tel:+393383160091" 
             className="flex items-center gap-2 font-mono-fulgur text-[11px] font-bold uppercase tracking-widest text-[var(--tx-2)] hover:text-[var(--accent)] transition-colors"
           >
-            <PhoneCall size={16} weight="bold" />
+            <PhoneCall size={18} weight="bold" />
             +39 338 316 0091
           </a>
           
           <Link href="/preventivo" tabIndex={-1}>
             <MagneticButton
               intensity={0.15}
-              className="relative rounded-full bg-[var(--accent)] px-6 py-2.5 font-display text-sm font-bold text-white transition-colors hover:bg-[var(--accent-d)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent outline-none group"
+              className="relative rounded-full bg-[var(--accent)] px-8 py-3 font-display text-sm font-bold text-white transition-colors hover:bg-[var(--accent-d)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent outline-none group"
             >
               {/* Pulse Ring Animation */}
               <span className="absolute inset-0 rounded-full bg-[var(--accent)]/50 animate-[ping_3s_infinite]" />
