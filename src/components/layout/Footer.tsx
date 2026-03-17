@@ -127,7 +127,7 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-16 sm:mt-24 border-t border-white/5 pt-8 flex flex-col items-center justify-between gap-4 sm:flex-row font-mono-fulgur text-[11px] uppercase tracking-wider text-white/30">
-          <div>
+          <div suppressHydrationWarning>
             © {new Date().getFullYear()} Fulgur Service S.R.L. <span className="mx-2 lg:inline hidden">|</span><br className="lg:hidden" /> P.IVA 03063010346 - REA 353051 - Cap. Soc. €10.000 i.v.
           </div>
           

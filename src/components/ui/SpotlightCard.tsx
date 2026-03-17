@@ -29,16 +29,18 @@ export function SpotlightCard({ children, className, ...props }: SpotlightCardPr
       ref={ref}
       onMouseMove={handleMouseMove}
       className={cn(
-        'group relative overflow-hidden rounded-2xl border border-[var(--br)] bg-card p-8 transition-colors duration-300 hover:border-[var(--br-h)]',
+        'group relative overflow-hidden rounded-2xl border border-[var(--br)] bg-card transition-colors duration-300 hover:border-[var(--br-h)]',
         className
       )}
       {...props}
     >
       <motion.div
-        className="pointer-events-none absolute -inset-px opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        className="pointer-events-none absolute -inset-px z-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         style={{ background }}
       />
-      <div className="relative z-10">{children}</div>
+      <div className="relative z-20 h-full w-full">
+        {children}
+      </div>
     </div>
   )
 }

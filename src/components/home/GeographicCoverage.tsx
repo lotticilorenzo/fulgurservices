@@ -65,11 +65,13 @@ export function GeographicCoverage() {
                   
                   {/* Radars */}
                   <motion.div 
+                    initial={{ scale: 1, opacity: 0.5 }}
                     animate={{ scale: [1, 3], opacity: [0.5, 0] }}
                     transition={{ repeat: Infinity, duration: 2, ease: "easeOut" }}
                     className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 border border-[var(--accent)]/30 rounded-full"
                   />
                   <motion.div 
+                    initial={{ scale: 1, opacity: 0.4 }}
                     animate={{ scale: [1, 2.5], opacity: [0.4, 0] }}
                     transition={{ repeat: Infinity, duration: 2, ease: "easeOut", delay: 0.6 }}
                     className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 border border-[var(--accent)]/20 rounded-full"

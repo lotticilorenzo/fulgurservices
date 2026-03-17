@@ -148,6 +148,7 @@ export function HeroSection() {
 
             {/* Floating Mini Cards */}
             <motion.div
+              initial={{ y: -8 }}
               animate={{ y: [-8, 8, -8] }}
               transition={{ repeat: Infinity, duration: 4.2, ease: 'easeInOut' }}
               className="absolute -right-6 top-6 lg:-right-14 lg:top-12 z-20 min-w-[140px] rounded-2xl border border-white/40 bg-white/70 backdrop-blur-md px-6 py-5 shadow-2xl shadow-green-900/20"
@@ -159,6 +160,7 @@ export function HeroSection() {
             </motion.div>
 
             <motion.div
+              initial={{ y: 8 }}
               animate={{ y: [8, -8, 8] }}
               transition={{ repeat: Infinity, duration: 5.2, ease: 'easeInOut', delay: 1 }}
               className="absolute -left-8 bottom-12 lg:-left-16 lg:bottom-20 z-20 min-w-[140px] rounded-2xl border border-white/40 bg-white/70 backdrop-blur-md px-6 py-5 shadow-2xl shadow-green-900/20"
@@ -170,6 +172,7 @@ export function HeroSection() {
             </motion.div>
 
             <motion.div
+              initial={{ y: -6 }}
               animate={{ y: [-6, 6, -6] }}
               transition={{ repeat: Infinity, duration: 4.8, ease: 'easeInOut', delay: 2 }}
               className="absolute -left-4 top-20 lg:-left-10 lg:top-32 z-20 min-w-[140px] rounded-2xl border border-white/40 bg-white/70 backdrop-blur-md px-6 py-5 shadow-2xl shadow-green-900/20"
