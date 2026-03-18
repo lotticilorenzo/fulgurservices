@@ -35,7 +35,7 @@ export function WhatsAppButton() {
                 initial={{ opacity: 0, x: 20, scale: 0.9 }}
                 animate={{ opacity: 1, x: 0, scale: 1 }}
                 exit={{ opacity: 0, x: 10, scale: 0.9 }}
-                className="absolute right-[80px] origin-right rounded-full bg-[var(--circle)] border border-[var(--br)] px-4 py-2 font-mono-fulgur text-xs uppercase tracking-widest text-[var(--tx-1)] shadow-xl whitespace-nowrap"
+                className="absolute right-[80px] origin-right rounded-full bg-white border border-[var(--br)] px-4 py-2 font-mono-fulgur text-xs uppercase tracking-widest text-[var(--tx-1)] shadow-xl whitespace-nowrap"
               >
                 Scrivici su WhatsApp
               </motion.div>
@@ -55,7 +55,7 @@ export function WhatsAppButton() {
               intensity={0.2}
               className="relative flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl transition-transform hover:scale-110"
             >
-              <div className="absolute -inset-1 animate-pulse-ring rounded-full border-2 border-[#25D366] opacity-0" />
+              <div className="absolute -inset-2 animate-pulse-ring rounded-full border-2 border-[#25D366]" />
               <svg
                 width="28"
                 height="28"

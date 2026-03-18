@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { List, X, PhoneCall } from '@phosphor-icons/react'
 import { cn } from '@/lib/utils'
@@ -10,38 +11,41 @@ import { overlayVariants, menuVariants } from '@/lib/motion'
 import { Logo } from '@/components/ui/Logo'
 
 const PRIMARY_LINKS = [
-  { label: 'Servizi', href: '/servizi' },
-  { label: 'Macchinari', href: '/macchinari' },
-  { label: 'Fulgur AI', href: '/fulgur-ai', isAI: true },
-  { label: 'Chi Siamo', href: '/chi-siamo' },
+  { label: 'Servizi', href: '/servizi#servizi' },
+  { label: 'Settori', href: '/servizi' },
+  { label: 'Chi Siamo', href: '/#chi-siamo' },
 ]
 
 const UTILITY_LINKS = [
-  { label: 'Blog', href: '/blog' },
-  { label: 'Gallery', href: '/gallery' },
+  { label: 'Lavora con noi', href: '/lavora-con-noi' },
   { label: 'Contatti', href: '/contatti' },
 ]
 
 export default function Navbar() {
+  const pathname = usePathname()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  // Determina se siamo nella Hero della Home (dove lo sfondo è il video scuro)
+  const isHeroScene = pathname === '/' && !isScrolled
 
   // Combined links for mobile menu
   const MOBILE_LINKS = [...PRIMARY_LINKS, ...UTILITY_LINKS]
 
-  // Scroll logic via IntersectionObserver
+  // Scroll logic via scroll listener (più robusto di IntersectionObserver per Lenis)
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsScrolled(!entry.isIntersecting)
-      },
-      { root: null, rootMargin: '0px', threshold: 0 }
-    )
-
-    const sentinel = document.getElementById('nav-sentinel')
-    if (sentinel) observer.observe(sentinel)
-
-    return () => observer.disconnect()
+    const handleScroll = () => {
+      // Usiamo una soglia generosa per evitare flip-flop all'avvio
+      setIsScrolled(window.scrollY > 80)
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
+    // Sicurezza extra dopo un po' per via di Lenis
+    const timer = setTimeout(handleScroll, 500)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      clearTimeout(timer)
+    }
   }, [])
 
   // Blocca lo scroll quando il menu mobile è aperto
@@ -66,18 +70,24 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="font-mono-fulgur text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--tx-3)] hover:text-[var(--accent)] transition-colors"
+                className={cn(
+                  "font-mono-fulgur text-[10px] font-bold uppercase tracking-[0.2em] transition-colors",
+                  isHeroScene ? "text-white/60 hover:text-white" : "text-[var(--tx-3)] hover:text-[var(--accent)]"
+                )}
               >
                 {link.label}
               </Link>
             ))}
           </div>
-          <div className="h-3 w-px bg-white/10" />
+          <div className={cn("h-3 w-px transition-colors", isHeroScene ? "bg-white/20" : "bg-white/10")} />
           <a 
             href="tel:+393383160091" 
-            className="flex items-center gap-2 font-mono-fulgur text-[10px] font-bold uppercase tracking-widest text-[var(--tx-2)] hover:text-[var(--accent)] transition-colors"
+            className={cn(
+              "flex items-center gap-2 font-mono-fulgur text-[10px] font-bold uppercase tracking-widest transition-colors",
+              isHeroScene ? "text-white/80 hover:text-white" : "text-[var(--tx-2)] hover:text-[var(--accent)]"
+            )}
           >
-            <PhoneCall size={14} weight="bold" className="text-[var(--accent)]" />
+            <PhoneCall size={14} weight="bold" className={cn("transition-colors", isHeroScene ? "text-white" : "text-[var(--accent)]")} />
             +39 338 316 0091
           </a>
         </div>
@@ -86,11 +96,11 @@ export default function Navbar() {
       {/* 2. MAIN FLOATING NAVBAR (Fixed pill) */}
       <header
         className={cn(
-          'fixed left-1/2 top-4 lg:top-14 z-50 flex w-[calc(100%-1.5rem)] sm:w-[calc(100%-2rem)] max-w-7xl -translate-x-1/2 items-center justify-between rounded-full px-4 py-2 lg:px-8 lg:py-2.5',
-          'transition-[background,border,backdrop-filter,transform,top] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]',
-          isScrolled
-            ? 'top-4 border border-[var(--nav-border)] bg-[var(--nav-bg)] backdrop-blur-xl shadow-2xl lg:shadow-xl scale-[0.98] lg:scale-100'
-            : 'border border-[var(--nav-border)] lg:border-transparent bg-[var(--nav-bg)] lg:bg-transparent backdrop-blur-xl lg:backdrop-blur-none shadow-lg lg:shadow-none'
+          'fixed left-1/2 z-50 flex w-[calc(100%-1.5rem)] sm:w-[calc(100%-2rem)] max-w-7xl -translate-x-1/2 items-center justify-between rounded-full px-4 py-2 lg:px-8 lg:py-2.5',
+          'transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]',
+          isHeroScene
+            ? 'top-4 bg-transparent border-transparent shadow-none lg:top-14 lg:scale-100'
+            : 'top-4 border border-[var(--nav-border)] bg-[var(--nav-bg)] backdrop-blur-xl shadow-2xl lg:shadow-xl scale-[0.98] lg:scale-100'
         )}
       >
         {/* LOGO */}
@@ -99,8 +109,16 @@ export default function Navbar() {
           className="group flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-lg"
           aria-label="Fulgur Service — torna alla home"
         >
-          <Logo size={36} iconOnly variant="default" className="h-9 w-auto lg:h-10" />
-          <span className="font-display text-base font-bold text-[var(--tx-1)] tracking-tight whitespace-nowrap lg:text-lg xl:text-xl">
+          <Logo 
+            size={36} 
+            iconOnly 
+            variant={isHeroScene ? 'white' : 'default'} 
+            className="h-9 w-auto lg:h-10" 
+          />
+          <span className={cn(
+            "font-display text-base font-bold tracking-tight whitespace-nowrap lg:text-lg xl:text-xl transition-colors",
+            isHeroScene ? "text-white" : "text-[var(--tx-1)]"
+          )}>
             Fulgur Service
           </span>
         </Link>
@@ -112,16 +130,12 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               className={cn(
-                'relative font-mono-fulgur text-[11px] xl:text-[12px] font-bold uppercase tracking-[0.15em] text-[var(--tx-1)] transition-colors duration-200 hover:text-[var(--accent)]',
+                'relative font-mono-fulgur text-[11px] xl:text-[12px] font-bold uppercase tracking-[0.15em] transition-colors duration-200',
+                isHeroScene ? 'text-white/80 hover:text-white' : 'text-[var(--tx-1)] hover:text-[var(--accent)]',
                 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm'
               )}
             >
               {link.label}
-              {link.isAI && (
-                <span className="absolute -top-3.5 -right-5 flex h-3.5 items-center justify-center rounded-full bg-[var(--accent)] px-1.5 py-0.5 text-[7px] font-black text-white shadow-[0_0_10px_var(--accent)]">
-                  AI
-                </span>
-              )}
             </Link>
           ))}
         </nav>
@@ -154,7 +168,10 @@ export default function Navbar() {
 
         {/* MOBILE MENU TOGGLE */}
         <button
-          className="lg:hidden flex items-center justify-center p-2 text-[var(--tx-1)] hover:text-[var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-full transition-colors"
+          className={cn(
+            "lg:hidden flex items-center justify-center p-2 transition-colors",
+            isHeroScene ? "text-white hover:text-white/80" : "text-[var(--tx-1)] hover:text-[var(--accent)]"
+          )}
           onClick={() => setIsMobileMenuOpen(true)}
           aria-label="Apri menu principale"
           aria-expanded={isMobileMenuOpen}
@@ -203,11 +220,6 @@ export default function Navbar() {
                       className="relative font-display text-4xl font-bold tracking-tight text-[var(--tx-1)] transition-colors hover:text-[var(--accent)] focus-visible:text-[var(--accent)] focus-visible:outline-none"
                     >
                       {link.label}
-                      {link.isAI && (
-                        <span className="absolute -top-1 -right-6 flex h-4 items-center justify-center rounded-full bg-[var(--accent)] px-1.5 py-0.5 text-[8px] font-black text-white shadow-[0_0_15px_var(--accent)]">
-                          AI
-                        </span>
-                      )}
                     </Link>
                   </motion.div>
                 ))}

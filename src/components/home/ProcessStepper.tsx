@@ -2,131 +2,131 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { 
-  MagnifyingGlass, 
-  Receipt, 
-  Sparkle, 
-  ShieldCheck 
-} from '@phosphor-icons/react'
+import { MagnifyingGlass, Receipt, Sparkle, ShieldCheck } from '@phosphor-icons/react'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
+import Link from 'next/link'
 
 const STEPS = [
   {
-    id: "01",
-    title: "Sopralluogo gratuito",
-    desc: "Veniamo da te senza impegno. Valutiamo l'ambiente e ascoltiamo ogni dettaglio.",
-    icon: MagnifyingGlass
+    id: '01',
+    title: 'Sopralluogo gratuito',
+    desc: 'Veniamo da te senza impegno. Valutiamo l\'ambiente, capiamo le tue esigenze, ascoltiamo ogni dettaglio.',
+    icon: MagnifyingGlass,
+    color: '#4ECBA0',
   },
   {
-    id: "02",
-    title: "Preventivo in 24 ore",
-    desc: "Ricevi una proposta dettagliata e trasparente. Nessuna sorpresa o costo nascosto.",
-    icon: Receipt
+    id: '02',
+    title: 'Preventivo in 24 ore',
+    desc: 'Entro 24 ore ricevi un preventivo dettagliato e trasparente. Nessuna sorpresa, nessun costo nascosto.',
+    icon: Receipt,
+    color: '#3AB88D',
   },
   {
-    id: "03",
-    title: "Intervento professionale",
-    desc: "Il nostro team interviene con macchinari professionali e prodotti certificati.",
-    icon: Sparkle
+    id: '03',
+    title: 'Intervento professionale',
+    desc: 'Il nostro team qualificato interviene con macchinari professionali e prodotti certificati. Puntualità garantita.',
+    icon: Sparkle,
+    color: '#2AA07B',
   },
   {
-    id: "04",
-    title: "Controllo e garanzia",
-    desc: "Verifichiamo ogni risultato. La tua soddisfazione è la nostra misura del successo.",
-    icon: ShieldCheck
-  }
+    id: '04',
+    title: 'Controllo e garanzia',
+    desc: 'Verifichiamo ogni risultato prima di chiudere l\'intervento. La tua soddisfazione è la nostra misura del successo.',
+    icon: ShieldCheck,
+    color: '#1A8869',
+  },
 ]
 
 export function ProcessStepper() {
   return (
-    <section className="relative w-full bg-white py-20 lg:py-32 overflow-hidden">
-      {/* Background Decorative Elements */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-[var(--bg-2)] to-transparent opacity-50 pointer-events-none" />
-      <div className="absolute -left-24 bottom-1/4 w-96 h-96 bg-[var(--accent)]/5 rounded-full blur-3xl pointer-events-none" />
+    <section id="processo" className="relative w-full bg-[var(--bg-2)] py-20 lg:py-32 overflow-hidden border-y border-[var(--br)]">
+      {/* Decorative elements */}
+      <div className="absolute -left-32 bottom-1/4 w-96 h-96 bg-[var(--accent)] opacity-[0.05] rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute -right-32 top-1/4 w-96 h-96 bg-[var(--accent)] opacity-[0.04] rounded-full blur-[100px] pointer-events-none" />
 
       <div className="mx-auto w-full max-w-7xl px-6 xl:px-8">
         
-        <div className="text-center mb-20 lg:mb-28 relative z-10">
+        {/* Header */}
+        <div className="text-center mb-20 lg:mb-28">
           <ScrollReveal>
-            <SectionLabel className="mb-4 mx-auto">— IL NOSTRO PROCESSO</SectionLabel>
-            <h2 className="font-display text-4xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl lg:text-6xl">
-              Dall'idea all'ambiente <span className="text-[var(--accent)]">perfetto</span>.
+            <SectionLabel className="mb-5 mx-auto">— IL NOSTRO PROCESSO</SectionLabel>
+            <h2 className="font-display text-4xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl lg:text-6xl text-balance">
+              Dall'idea all'ambiente{' '}
+              <span className="text-[var(--accent)]">perfetto.</span>
             </h2>
-            <p className="mt-6 font-sans text-lg font-light text-[var(--tx-2)] max-w-2xl mx-auto">
-              Un percorso fluido e organizzato in 4 fasi per garantirti il massimo risultato senza complicazioni.
+            <p className="mt-6 font-sans text-lg font-light text-[var(--tx-2)] max-w-xl mx-auto leading-relaxed">
+              4 fasi fluide e trasparenti per garantirti il massimo risultato, senza complicazioni.
             </p>
           </ScrollReveal>
         </div>
 
-        <div className="relative grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-8">
-          {/* SVG Connector Line (Desktop only) */}
-          <div className="absolute top-[32px] left-[10%] right-[10%] hidden md:block z-0">
-            <svg width="100%" height="2" fill="none" className="overflow-visible opacity-20">
-              <motion.path
-                d="M 0 1 H 1000"
-                stroke="url(#lineGradient)"
-                strokeWidth="2"
-                strokeDasharray="12 12"
-                initial={{ pathLength: 0 }}
-                whileInView={{ pathLength: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 2, ease: "easeInOut" }}
-              />
-              <defs>
-                <linearGradient id="lineGradient" x1="0" y1="0" x2="100%" y2="0">
-                  <stop offset="0%" stopColor="var(--accent)" />
-                  <stop offset="100%" stopColor="var(--accent-d)" />
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
+        {/* Steps Grid */}
+        <div className="relative grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8">
+          
+          {/* Connector line (desktop only) */}
+          <div className="absolute top-[52px] left-[12.5%] right-[12.5%] hidden xl:block h-px bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent opacity-20 pointer-events-none z-0" />
 
-          {STEPS.map((step, i) => (
-            <ScrollReveal key={i} delay={i * 0.15}>
-              <div className="relative flex flex-col items-center md:items-start text-center md:text-left group">
-                
-                {/* Background Number (Decorative) */}
-                <div className="absolute -top-6 md:-top-10 left-1/2 md:-left-4 -translate-x-1/2 md:translate-x-0 font-display text-8xl font-black text-[var(--tx-1)] opacity-[0.03] select-none pointer-events-none group-hover:opacity-[0.06] transition-opacity duration-500">
-                  {step.id}
-                </div>
-
-                {/* Step Indicator Wrapper */}
-                <div className="relative z-10 mb-10">
-                  <div className="relative flex h-[64px] w-[64px] items-center justify-center rounded-2xl bg-white border border-[var(--br)] text-[var(--tx-1)] shadow-sm transition-all duration-500 group-hover:border-[var(--accent)] group-hover:shadow-[0_10px_30px_rgba(78,203,160,0.2)] group-hover:-translate-y-1">
-                    
-                    {/* Number Overlay (Default) */}
-                    <span className="font-mono-fulgur text-lg font-bold group-hover:opacity-0 transition-opacity duration-300">
-                      {step.id}
-                    </span>
-                    
-                    {/* Icon Overlay (Hover) */}
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-[var(--accent)]">
-                      <step.icon size={32} weight="duotone" />
-                    </div>
-
-                    {/* Outer Pulse Ring (Hover) */}
-                    <div className="absolute -inset-1 rounded-2xl border-2 border-[var(--accent)] opacity-0 scale-90 transition-all duration-500 group-hover:opacity-20 group-hover:scale-105" />
+          {STEPS.map((step, i) => {
+            const Icon = step.icon
+            return (
+              <ScrollReveal key={step.id} delay={i * 0.12}>
+                <motion.div
+                  whileHover={{ y: -8 }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                  className="relative flex flex-col gap-6 rounded-3xl bg-white border border-[var(--br)] p-8 shadow-sm hover:shadow-2xl hover:border-[var(--accent)]/30 transition-shadow duration-500 group h-full"
+                >
+                  {/* Step number (decorative bg) */}
+                  <div className="absolute -top-4 -right-1 font-display text-[100px] font-black text-[var(--tx-1)] opacity-[0.025] leading-none select-none pointer-events-none group-hover:opacity-[0.05] transition-opacity">
+                    {step.id}
                   </div>
-                </div>
 
-                <div className="relative z-10">
-                  <h3 className="font-display text-xl lg:text-2xl font-bold text-[var(--tx-1)] mb-4 group-hover:text-[var(--accent)] transition-colors duration-300">
-                    {step.title}
-                  </h3>
-                  <p className="font-sans text-sm lg:text-base font-light text-[var(--tx-2)] leading-relaxed max-w-[260px] md:max-w-none">
-                    {step.desc}
-                  </p>
-                </div>
+                  {/* Icon circle */}
+                  <div className="relative z-10 flex h-[60px] w-[60px] items-center justify-center rounded-2xl border border-[var(--br)] bg-[var(--bg-2)] group-hover:bg-[var(--accent)] group-hover:border-[var(--accent)] transition-all duration-400">
+                    <Icon size={28} weight="duotone" className="text-[var(--accent)] group-hover:text-white transition-colors" />
+                    {/* Outer ring on hover */}
+                    <div className="absolute -inset-2 rounded-2xl border border-[var(--accent)] opacity-0 group-hover:opacity-20 scale-90 group-hover:scale-100 transition-all duration-400" />
+                  </div>
 
-                {/* Vertical Line for Mobile */}
-                {i < STEPS.length - 1 && (
-                  <div className="md:hidden w-px h-12 bg-gradient-to-b from-[var(--accent)]/30 to-transparent mt-6" />
-                )}
-              </div>
-            </ScrollReveal>
-          ))}
+                  {/* Connector arrow for desktop */}
+                  {i < STEPS.length - 1 && (
+                    <div className="absolute top-[52px] -right-4 z-10 hidden xl:flex h-8 w-8 items-center justify-center rounded-full bg-white border border-[var(--br)] shadow-sm">
+                      <svg className="text-[var(--accent)]" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <path d="M1 6h10M7 2l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </div>
+                  )}
+
+                  {/* Content */}
+                  <div className="relative z-10 flex flex-col gap-2">
+                    <div className="font-mono-fulgur text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--accent)] opacity-60">
+                      Step {step.id}
+                    </div>
+                    <h3 className="font-display text-xl font-bold text-[var(--tx-1)] group-hover:text-[var(--accent)] transition-colors duration-300 leading-snug">
+                      {step.title}
+                    </h3>
+                    <p className="font-sans text-sm font-light text-[var(--tx-2)] leading-relaxed">
+                      {step.desc}
+                    </p>
+                  </div>
+                </motion.div>
+              </ScrollReveal>
+            )
+          })}
         </div>
+
+        {/* CTA below */}
+        <ScrollReveal delay={0.5}>
+          <div className="mt-16 flex justify-center">
+            <Link
+              href="/preventivo"
+              className="inline-flex items-center gap-3 rounded-full bg-[var(--accent)] px-10 py-4 font-display text-base font-bold text-white shadow-xl transition-all hover:bg-[var(--accent-d)] hover:shadow-2xl hover:-translate-y-0.5"
+            >
+              Inizia dal sopralluogo gratuito →
+            </Link>
+          </div>
+        </ScrollReveal>
+
       </div>
     </section>
   )

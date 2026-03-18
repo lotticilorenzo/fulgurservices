@@ -50,56 +50,58 @@ export function HeroSection() {
   return (
     <section 
       ref={containerRef}
-      className="relative flex min-h-[100dvh] w-full items-center justify-center overflow-hidden bg-gradient-to-b from-white via-[var(--bg-2)] to-[var(--bg-3)] pt-[140px] pb-16"
+      className="relative flex min-h-[100dvh] w-full items-center justify-center overflow-hidden pt-[140px] pb-16"
     >
-      {/* Background Layer */}
-      <ParticleField />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,var(--accent-glow),transparent_70%)] opacity-40 pointer-events-none" />
-      
-      {/* Decorative Blob */}
-      <div className="absolute -right-20 -top-20 h-[500px] w-[500px] rounded-full bg-[var(--accent)] opacity-5 blur-[120px] pointer-events-none" />
+      {/* Video Background */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="h-full w-full object-cover"
+          poster="/images/hero-fallback.jpg"
+        >
+          <source src="/videos/robot-pulizie.mp4" type="video/mp4" />
+        </video>
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/60 z-10" />
+      </div>
+
+      {/* Background Layer (Aggiuntivo se necessario) */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,var(--accent-glow),transparent_70%)] opacity-20 pointer-events-none z-20" />
 
       {/* Content Container */}
       <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 gap-16 px-6 lg:grid-cols-[55%_45%] lg:items-center xl:gap-24 xl:px-8">
         
         {/* LATO SINISTRO: Testo */}
         <div ref={leftContentRef} className="flex flex-col items-start pt-12 lg:pt-0">
-          <div className="gs-reveal">
-            <GlowBadge className="mb-6">Parma · Dal 1994</GlowBadge>
-          </div>
 
-          <div className="gs-reveal mb-6 inline-flex items-center gap-2 rounded-full bg-[var(--accent-glow)] px-4 py-2 border border-[var(--accent)]/20">
-            <span className="h-2 w-2 rounded-full bg-[var(--accent)] animate-pulse" />
-            <span className="font-mono-fulgur text-[10px] font-bold tracking-[0.2em] text-[var(--accent)] uppercase">
-              Parma · Fidenza · Salsomaggiore · Collecchio
-            </span>
-          </div>
-
-          <h1 className="gs-reveal font-display text-[11vw] font-black leading-[0.95] tracking-tight text-[var(--tx-1)] sm:text-[8vw] lg:text-7xl xl:text-8xl">
+          <h1 className="gs-reveal font-display text-[11vw] font-black leading-[0.95] tracking-tight text-white sm:text-[8vw] lg:text-7xl xl:text-8xl">
             Puliamo il Futuro<br />
             <span className="text-outline-accent">con l&apos;Energia</span><br />
             <span className="text-[var(--accent)]">della Natura</span>
           </h1>
 
-          <div className="gs-reveal mt-6 flex items-center gap-2 font-mono-fulgur text-xs text-[var(--tx-2)]">
+          <div className="gs-reveal mt-6 flex items-center gap-2 font-mono-fulgur text-xs text-white/70">
             <div className="flex text-[var(--accent)]">
               {[...Array(5)].map((_, i) => <Star key={i} size={14} weight="fill" />)}
             </div>
             <span>4.9 su Google · 47 recensioni verificate</span>
           </div>
 
-          <p className="gs-reveal mt-8 max-w-xl font-body text-lg font-light leading-relaxed text-[var(--tx-2)] lg:text-xl">
+          <p className="gs-reveal mt-8 max-w-xl font-body text-lg font-light leading-relaxed text-white/90 lg:text-xl">
             Siamo l&apos;<strong>impresa di pulizie di riferimento a Parma e provincia</strong>. 
             Oltre 30 anni di esperienza, tecnologie all&apos;avanguardia e soluzioni 
             sostenibili per ogni tipo di ambiente e superficie.
           </p>
 
-          <div className="gs-reveal mt-10 flex flex-wrap items-center gap-x-2 gap-y-2.5 font-mono-fulgur text-[9px] font-bold uppercase tracking-[0.15em] text-[var(--tx-3)] sm:gap-x-4 sm:text-xs sm:tracking-[0.2em]">
-            <span className="bg-[var(--bg-2)] px-2.5 py-1.5 rounded-full border border-[var(--br)] whitespace-nowrap">30+ anni</span>
+          <div className="gs-reveal mt-10 flex flex-wrap items-center gap-x-2 gap-y-2.5 font-mono-fulgur text-[9px] font-bold uppercase tracking-[0.15em] text-white/60 sm:gap-x-4 sm:text-xs sm:tracking-[0.2em]">
+            <span className="bg-white/10 px-2.5 py-1.5 rounded-full border border-white/10 backdrop-blur-sm whitespace-nowrap">30+ anni</span>
             <span className="hidden sm:inline text-[var(--accent)] opacity-50">·</span>
-            <span className="bg-[var(--bg-2)] px-2.5 py-1.5 rounded-full border border-[var(--br)] whitespace-nowrap">500+ clienti</span>
+            <span className="bg-white/10 px-2.5 py-1.5 rounded-full border border-white/10 backdrop-blur-sm whitespace-nowrap">500+ clienti</span>
             <span className="hidden sm:inline text-[var(--accent)] opacity-50">·</span>
-            <span className="bg-[var(--bg-2)] px-2.5 py-1.5 rounded-full border border-[var(--br)] whitespace-nowrap">12 settori</span>
+            <span className="bg-white/10 px-2.5 py-1.5 rounded-full border border-white/10 backdrop-blur-sm whitespace-nowrap">12 settori</span>
           </div>
 
           <div className="gs-reveal mt-12 flex flex-col gap-5 sm:flex-row sm:items-center">
@@ -109,24 +111,24 @@ export function HeroSection() {
               </MagneticButton>
             </Link>
             <Link href="/servizi" tabIndex={-1} className="w-full sm:w-auto">
-              <MagneticButton as="div" intensity={0.1} className="group flex h-[60px] w-full items-center justify-center rounded-full border border-[var(--br-solid)] px-10 font-display text-[16px] font-bold text-[var(--tx-1)] transition-colors hover:bg-[var(--accent)] hover:text-white">
+              <MagneticButton as="div" intensity={0.1} className="group flex h-[60px] w-full items-center justify-center rounded-full border border-white/30 px-10 font-display text-[16px] font-bold text-white transition-colors hover:bg-[var(--accent)] hover:border-[var(--accent)]">
                 <span>Scopri i Servizi →</span>
               </MagneticButton>
             </Link>
           </div>
 
-          <div className="gs-reveal mt-8 mb-4 sm:mb-0 flex flex-wrap gap-x-6 gap-y-3 font-mono-fulgur text-[10px] font-medium tracking-widest text-[var(--tx-3)] uppercase">
+          <div className="gs-reveal mt-8 mb-4 sm:mb-0 flex flex-wrap gap-x-6 gap-y-3 font-mono-fulgur text-[10px] font-medium tracking-widest text-white/50 uppercase">
             <div className="flex items-center gap-2">
               <ShieldCheck size={16} className="text-[var(--accent)]" aria-hidden="true" />
-              <span className="whitespace-nowrap">Assicurati RCT €2M</span>
+              <span className="whitespace-nowrap text-white/80">Assicurati RCT €2M</span>
             </div>
             <div className="flex items-center gap-2">
               <Leaf size={16} className="text-[var(--accent)]" aria-hidden="true" />
-              <span className="whitespace-nowrap">Prodotti Eco Certificati</span>
+              <span className="whitespace-nowrap text-white/80">Prodotti Eco Certificati</span>
             </div>
             <div className="flex items-center gap-2">
               <Clock size={16} className="text-[var(--accent)]" aria-hidden="true" />
-              <span className="whitespace-nowrap">Risposta in 24h</span>
+              <span className="whitespace-nowrap text-white/80">Risposta in 24h</span>
             </div>
           </div>
         </div>
@@ -172,9 +174,9 @@ export function HeroSection() {
               className="absolute -left-6 bottom-12 lg:-left-16 lg:bottom-20 z-20 min-w-[120px] rounded-2xl border border-white/40 bg-white/70 backdrop-blur-md px-5 py-4 shadow-2xl shadow-green-900/20 sm:min-w-[140px]"
             >
               <div className="flex flex-col items-start leading-tight">
-                <div className="font-display text-3xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-4xl">500+</div>
-                <div className="mt-1 font-mono-fulgur text-[9px] font-bold uppercase tracking-widest text-[var(--tx-2)] sm:text-[10px]">Clienti soddisfattI</div>
-              </div>
+                  <div className="font-display text-3xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-4xl">500+</div>
+                  <div className="mt-1 font-mono-fulgur text-[9px] font-bold uppercase tracking-widest text-[var(--tx-2)] sm:text-[10px]">Clienti soddisfatti</div>
+                </div>
             </motion.div>
 
             <motion.div
@@ -184,9 +186,9 @@ export function HeroSection() {
               className="absolute -left-2 top-20 lg:-left-10 lg:top-32 z-20 min-w-[120px] rounded-2xl border border-white/40 bg-white/70 backdrop-blur-md px-5 py-4 shadow-2xl shadow-green-900/20 sm:min-w-[140px]"
             >
               <div className="flex flex-col items-start leading-tight">
-                <div className="font-display text-3xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-4xl">HACCP</div>
-                <div className="mt-1 font-mono-fulgur text-[9px] font-bold uppercase tracking-widest text-[var(--tx-2)] sm:text-[10px]">Certificato</div>
-              </div>
+                  <div className="font-display text-3xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-4xl">12</div>
+                  <div className="mt-1 font-mono-fulgur text-[9px] font-bold uppercase tracking-widest text-[var(--tx-2)] sm:text-[10px]">Settori serviti</div>
+                </div>
             </motion.div>
           </div>
         </div>

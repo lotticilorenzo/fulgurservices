@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { SpotlightCard } from './SpotlightCard'
 import { ScrollReveal } from './ScrollReveal'
+import { SectionLabel } from './SectionLabel'
 
 const PARTNERS = [
   { name: 'Klindex', logo: '/images/brands/klindex.png' },
@@ -17,16 +18,17 @@ const PARTNERS = [
 
 export function PartnershipSection() {
   return (
-    <section className="relative py-12 lg:py-20 bg-white overflow-hidden border-t border-[var(--br)]">
+    <section className="relative py-16 lg:py-24 bg-[var(--bg-2)] overflow-hidden border-t border-[var(--br)]">
       <div className="mx-auto w-full max-w-7xl px-6 xl:px-8">
         
         <div className="text-center mb-16">
           <ScrollReveal>
+            <SectionLabel className="mb-4 mx-auto">— I NOSTRI MACCHINARI</SectionLabel>
             <h2 className="font-display text-3xl font-bold text-[var(--tx-1)] sm:text-4xl mb-4">
               Operiamo solo con il meglio.
             </h2>
-            <p className="font-sans text-[var(--tx-2)] font-light max-w-2xl mx-auto">
-              I nostri macchinari e prodotti sono gli stessi usati dalle imprese leader europee. 
+            <p className="font-sans text-[var(--tx-2)] font-light max-w-xl mx-auto">
+              I nostri macchinari e prodotti sono gli stessi usati dalle imprese leader europee.
               Garanzia di efficienza, sicurezza e rispetto delle superfici.
             </p>
           </ScrollReveal>
@@ -36,16 +38,16 @@ export function PartnershipSection() {
           {PARTNERS.map((partner, i) => (
             <ScrollReveal key={partner.name} delay={i * 0.05}>
               <SpotlightCard className="h-full">
-                <div className="aspect-[3/2] flex flex-col items-center justify-center p-8 rounded-2xl bg-white border border-[var(--br)] hover:border-[var(--accent)]/30 transition-all group">
+                <div className="aspect-[3/2] flex flex-col items-center justify-center p-8 rounded-2xl bg-white border border-[var(--br)] hover:border-[var(--accent)]/40 transition-all duration-500 group card-lift">
                   <div className="relative w-full h-12 mb-4">
                     <Image 
                       src={partner.logo} 
                       alt={`Logo ${partner.name}`}
                       fill
-                      className="object-contain grayscale group-hover:grayscale-0 transition-all duration-500 opacity-60 group-hover:opacity-100"
+                      className="object-contain grayscale group-hover:grayscale-0 transition-all duration-500 opacity-50 group-hover:opacity-100"
                     />
                   </div>
-                  <span className="font-mono-fulgur text-[10px] font-bold text-[var(--tx-3)] uppercase tracking-widest">
+                  <span className="font-mono-fulgur text-[10px] font-bold text-[var(--tx-3)] group-hover:text-[var(--accent)] uppercase tracking-widest transition-colors">
                     {partner.name}
                   </span>
                 </div>

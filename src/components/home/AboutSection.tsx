@@ -3,100 +3,119 @@
 import React, { useRef } from 'react'
 import Image from 'next/image'
 import { motion, useScroll, useTransform } from 'framer-motion'
+import { ShieldCheck, Leaf, UsersThree, Hourglass } from '@phosphor-icons/react'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
-import { ParallaxText } from '@/components/ui/ParallaxText'
 
 const VALORI = [
-  'Prodotti a basso impatto ambientale quando possibile',
-  'Referente unico per tutti i servizi integrati',
-  'Team qualificato, assicurato e formato continuamente',
-  'Sopralluogo sempre gratuito, preventivo in 24 ore',
+  { icon: Leaf,         text: 'Prodotti a basso impatto ambientale quando possibile' },
+  { icon: UsersThree,   text: 'Referente unico per tutti i servizi integrati' },
+  { icon: ShieldCheck,  text: 'Team qualificato, assicurato e formato continuamente' },
+  { icon: Hourglass,    text: 'Sopralluogo sempre gratuito, preventivo in 24 ore' },
 ]
 
 export function AboutSection() {
   const sectionRef = useRef<HTMLElement>(null)
   
-  // Parallax dell'immagine in base allo scroll
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ['start end', 'end start'],
   })
 
-  const imageY = useTransform(scrollYProgress, [0, 1], [0, -40])
+  const imageY = useTransform(scrollYProgress, [0, 1], [0, -50])
 
   return (
     <section id="chi-siamo" ref={sectionRef} className="relative overflow-hidden bg-[var(--bg-3)] py-24 lg:py-32">
-      {/* Background Architectural Text */}
-      <div className="absolute bottom-20 left-0 w-full opacity-10 pointer-events-none">
-        <ParallaxText text="FULGUR" direction="right" distance={150} />
-      </div>
-
+      
       {/* Decorative Green Glow */}
-      <div className="absolute -left-20 top-1/4 h-96 w-96 rounded-full bg-[var(--accent)] opacity-[0.05] blur-[120px]" />
+      <div className="absolute -right-20 top-1/4 h-96 w-96 rounded-full bg-[var(--accent)] opacity-[0.06] blur-[120px] pointer-events-none" />
       
       <div className="mx-auto w-full max-w-7xl px-6 xl:px-8 relative z-10">
-        <ScrollReveal>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-[80px] items-center">
-            
-            {/* LATO SINISTRO: Testi */}
-            <div className="flex flex-col items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[42%_58%] gap-14 lg:gap-20 items-center">
+          
+          {/* LATO SINISTRO: Immagine — 42% */}
+          <ScrollReveal className="order-2 lg:order-1">
+            <div className="relative w-full max-w-[480px] mx-auto lg:mx-0">
+              
+              {/* Image card */}
+              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[28px] border border-[var(--br)] shadow-2xl">
+                <motion.div style={{ y: imageY }} className="relative w-full h-[110%] -top-[5%]">
+                  <Image
+                    src="/images/chi-siamo-fulgur-service-parma.jpg"
+                    alt="Il team Fulgur Service — impresa di pulizie professionali a Parma"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 42vw"
+                  />
+                </motion.div>
+              </div>
+              
+              {/* Badge sovrapposto — in basso a sinistra */}
+              <div className="absolute -bottom-6 -left-5 z-20 rounded-2xl bg-[var(--accent)] px-7 py-5 text-white shadow-2xl flex flex-col items-center">
+                <span className="font-display text-5xl font-black leading-none">30</span>
+                <span className="font-mono-fulgur text-[10px] font-bold uppercase tracking-[0.18em] opacity-85 text-center leading-tight mt-1">
+                  anni di<br />know-how
+                </span>
+              </div>
+
+              {/* Second small badge: reviews */}
+              <div className="absolute -top-5 -right-4 z-20 rounded-2xl bg-white border border-[var(--br)] px-5 py-3.5 shadow-xl flex items-center gap-3">
+                <div className="flex flex-col">
+                  <span className="font-display text-sm font-bold text-[var(--tx-1)] leading-none">500+</span>
+                  <span className="font-mono-fulgur text-[9px] uppercase tracking-widest text-[var(--tx-3)] mt-0.5">Clienti</span>
+                </div>
+                <div className="h-8 w-px bg-[var(--br)]" />
+                <div className="flex flex-col">
+                  <span className="font-display text-sm font-bold text-[var(--accent)] leading-none">4.9★</span>
+                  <span className="font-mono-fulgur text-[9px] uppercase tracking-widest text-[var(--tx-3)] mt-0.5">Google</span>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* LATO DESTRO: Testi — 58% */}
+          <div className="order-1 lg:order-2 flex flex-col items-start">
+            <ScrollReveal>
               <SectionLabel className="mb-6">— CHI SIAMO</SectionLabel>
-              <h2 className="font-display text-4xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl lg:text-6xl mb-8 leading-[1.1]">
-                Tradizione e innovazione, <br />
+              <h2 className="font-display text-4xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl lg:text-[3.2rem] leading-[1.1]">
+                Tradizione e innovazione,{' '}<br />
                 <span className="text-[var(--accent)]">insieme.</span>
               </h2>
-              
-              <div className="space-y-6 font-body text-lg font-light text-[var(--tx-2)] leading-relaxed">
+            </ScrollReveal>
+            
+            <ScrollReveal delay={0.1}>
+              <div className="mt-7 space-y-5 font-body text-[1.05rem] font-light text-[var(--tx-2)] leading-relaxed">
                 <p>
-                  Fulgur Service è un’impresa giovane, nata da idee chiare e innovative, 
-                  con alle spalle 30 anni di esperienza: siamo il punto d’incontro tra 
-                  la visione fresca di una nuova generazione e la solidità del lavoro 
+                  Fulgur Service è un'impresa giovane, nata da idee chiare e innovative,
+                  con alle spalle 30 anni di esperienza: siamo il punto d'incontro tra
+                  la visione fresca di una nuova generazione e la solidità del lavoro
                   costruito da mio padre.
                 </p>
                 <p>
-                  Per noi la pulizia non è un’attività meccanica: non siamo semplici 
-                  fornitori, ma partner che si prendono cura dell’ambiente del cliente a 360°.
+                  Per noi la pulizia non è un'attività meccanica: non siamo semplici
+                  fornitori, ma partner che si prendono cura dell'ambiente del cliente a 360°.
                 </p>
               </div>
+            </ScrollReveal>
 
-              <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
-                {VALORI.map((valore, i) => (
-                  <div key={i} className="flex items-start gap-4">
-                    <div className="mt-1 h-5 w-5 rounded-full bg-[var(--accent-glow)] flex items-center justify-center border border-[var(--accent)]/20 shadow-[0_0_15px_rgba(78,203,160,0.1)]">
-                      <div className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
+            <ScrollReveal delay={0.2}>
+              <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+                {VALORI.map((valore, i) => {
+                  const Icon = valore.icon
+                  return (
+                    <div key={i} className="flex items-start gap-3.5 rounded-xl border border-[var(--br)] bg-white p-4 hover:border-[var(--accent)] hover:shadow-md transition-all duration-300">
+                      <div className="mt-0.5 h-8 w-8 rounded-lg bg-[var(--accent-glow)] flex items-center justify-center shrink-0 border border-[var(--accent)]/15">
+                        <Icon size={16} weight="duotone" className="text-[var(--accent)]" />
+                      </div>
+                      <span className="font-sans text-sm font-medium text-[var(--tx-1)] leading-snug">{valore.text}</span>
                     </div>
-                    <span className="font-sans text-sm font-medium text-[var(--tx-1)] leading-tight">{valore}</span>
-                  </div>
-                ))}
+                  )
+                })}
               </div>
-            </div>
-
-            {/* LATO DESTRO: Visual Parallax */}
-            <div className="relative order-1 lg:order-2 flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-[500px] lg:max-w-none">
-                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[32px] border border-[var(--br)] shadow-2xl z-10">
-                  <motion.div style={{ y: imageY, height: 'calc(100% + 40px)' }} className="relative w-full h-[120%] -top-[10px]">
-                    <Image
-                      src="/images/chi-siamo-fulgur-service-parma.jpg"
-                      alt="Il team Fulgur Service — impresa di pulizie professionali a Parma"
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                    />
-                  </motion.div>
-                </div>
-                
-                {/* Badge Sovrapposto */}
-                <div className="absolute -bottom-6 -right-6 z-20 rounded-2xl bg-[var(--accent)] px-8 py-6 text-white shadow-2xl lg:-bottom-10 lg:-right-10 flex flex-col items-center">
-                  <span className="font-display text-5xl font-black block leading-none mb-1">30</span>
-                  <span className="font-mono-fulgur text-[10px] font-bold uppercase tracking-[0.2em] opacity-80 text-center leading-tight">Anni di <br /> eccellenza</span>
-                </div>
-              </div>
-            </div>
-
+            </ScrollReveal>
           </div>
-        </ScrollReveal>
+
+        </div>
       </div>
     </section>
   )

@@ -4,10 +4,10 @@
 :root {
   /* Backgrounds */
   --bg:           #FFFFFF;
-  --bg-2:         #F0F7F5;
-  --bg-3:         #E8F4F0;
+  --bg-2:         #F7FBFA;
+  --bg-3:         #EDF5F3;
   --bg-card:      #FFFFFF;
-  --bg-card-h:    #F0F7F5;
+  --bg-card-h:    #F5FAF8;
 
   /* Brand accent — verde acqua dal logo */
   --accent:       #4ECBA0;
@@ -22,8 +22,8 @@
   --tx-3:         #7A9E97;
 
   /* Borders */
-  --br:           rgba(42, 140, 122, 0.15);
-  --br-h:         rgba(42, 140, 122, 0.40);
+  --br:           rgba(42, 140, 122, 0.08);
+  --br-h:         rgba(42, 140, 122, 0.20);
   --br-solid:     #2A8C7A;
 
   /* Navbar */
@@ -57,6 +57,7 @@
   --animate-ticker:     ticker 28s linear infinite;
   --animate-shimmer:    shimmer 2.5s linear infinite;
   --animate-scan:       scan 3s ease-in-out infinite alternate;
+  --animate-pulse-ring: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
 
   @keyframes float {
     0%, 100% { transform: translateY(0); }
@@ -73,6 +74,11 @@
   @keyframes scan {
     0%   { top: 0%; }
     100% { top: 100%; }
+  }
+  @keyframes pulse-ring {
+    0%   { transform: scale(0.8); box-shadow: 0 0 0 0 rgba(78, 203, 160, 0.6); }
+    70%  { transform: scale(1);   box-shadow: 0 0 0 12px rgba(78, 203, 160, 0); }
+    100% { transform: scale(0.8); box-shadow: 0 0 0 0 rgba(78, 203, 160, 0); }
   }
 }
 
@@ -122,9 +128,7 @@ body {
 
 /* Hide default cursor on desktop for premium experience */
 @media (hover: hover) and (pointer: fine) {
-  body, a, button, [role="button"] {
-    cursor: none !important;
-  }
+  /* cursor: none is removed so that we don't need Crystal Cursor */
 }
 
 /* ─── Reduced Motion ─── */
@@ -189,6 +193,10 @@ body {
     animation: marquee-reverse 28s linear infinite;
   }
 
+  .animate-pulse-ring {
+    animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  }
+
   /* ─── Premium Glass & Shine ─── */
   .glass-premium {
     backdrop-filter: blur(12px) saturate(180%);
@@ -223,5 +231,51 @@ body {
   .shine-effect:hover::after {
     left: 120%;
     transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  /* scrollbar-none */
+  .scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* text-balance */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* gradient-border */
+  .gradient-border {
+    position: relative;
+    border-radius: 1rem;
+  }
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, var(--accent-l), var(--accent), var(--accent-d));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* Premium card hover lift */
+  .card-lift {
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease;
+  }
+  .card-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 60px rgba(42,140,122,0.12), 0 8px 24px rgba(0,0,0,0.04);
+  }
+
+  /* Section separator: invisible div that adds breathing room */
+  .section-gap {
+    height: clamp(64px, 8vw, 128px);
   }
 }

@@ -51,7 +51,7 @@ export function PhilosophySection() {
   return (
     <section 
       ref={sectionRef} 
-      className="relative w-full bg-white py-[140px] lg:py-[200px] overflow-hidden border-y border-[var(--br)]"
+      className="relative w-full bg-[var(--bg-3)] py-[140px] lg:py-[180px] overflow-hidden border-y border-[var(--br)]"
     >
       {/* Background Architectural Text */}
       <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 opacity-20 pointer-events-none z-0">
@@ -74,7 +74,7 @@ export function PhilosophySection() {
         {/* Testo Intro */}
         <div className="mb-12 font-sans text-base lg:text-lg font-light text-[var(--tx-3)] max-w-2xl">
           <p>La maggior parte delle imprese di pulizie si concentra su:</p>
-          <p className="italic mt-2 text-[var(--tx-2)]">"Pulire veloce. Costo basso. Nessun pensiero."</p>
+          <p className="italic mt-2 text-[var(--tx-2)]">&ldquo;Pulire veloce, al prezzo più basso.&rdquo;</p>
         </div>
 
         {/* Testo Grande Manifesto */}

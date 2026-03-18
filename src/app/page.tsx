@@ -14,6 +14,7 @@ import { IntegratedBento } from '@/components/servizi/IntegratedBento'
 import { WhyChooseUs } from '@/components/home/WhyChooseUs'
 import { GeographicCoverage } from '@/components/home/GeographicCoverage'
 import { WipeReveal } from '@/components/ui/WipeReveal'
+import { ScrollVideoSection } from '@/components/home/ScrollVideoSection'
 
 export const metadata: Metadata = {
   title: METADATA.home.title,
@@ -36,6 +37,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(STRUCTURED_DATA) }}
       />
       <HeroSection />
+      <ScrollVideoSection />
       
       <TrustBar />
 

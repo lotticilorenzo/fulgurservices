@@ -29,7 +29,7 @@ const MARQUEE_ITEMS = [...BRANDS, ...BRANDS, ...BRANDS]
 function BrandPill({ brand }: { brand: BrandItem }) {
   const src = `${brand.logo}.${brand.ext}`
   return (
-    <div className="flex shrink-0 items-center justify-center rounded-xl border border-[var(--br)] bg-[var(--bg-2)] px-6 py-3 shadow-sm transition-all hover:border-[var(--accent)] hover:shadow-[0_10px_30px_rgba(42,140,122,0.1)] min-w-[140px] h-[68px]">
+    <div className="flex shrink-0 items-center justify-center rounded-xl border border-[var(--br)] bg-[var(--bg-card)] px-6 py-3 shadow-sm transition-all hover:border-[var(--accent)] hover:shadow-[0_10px_30px_rgba(42,140,122,0.1)] min-w-[140px] h-[68px]">
       {brand.logo ? (
         <div className="relative h-10 w-28 flex items-center justify-center">
           <Image
@@ -57,15 +57,15 @@ export function BrandsMarquee() {
 
       <div className="relative flex w-full flex-col gap-6 overflow-hidden group">
         
-        {/* Row 1: Scorre verso destra */}
-        <div className="flex w-max animate-marquee gap-6 group-hover:[animation-play-state:paused]">
+        {/* Row 1: Scorre verso destra (reverse) */}
+        <div className="flex w-max animate-marquee-reverse gap-6 group-hover:[animation-play-state:paused]">
           {MARQUEE_ITEMS.map((brand, i) => (
             <BrandPill key={`row1-${i}`} brand={brand} />
           ))}
         </div>
 
-        {/* Row 2: Scorre verso sinistra (reverse) */}
-        <div className="flex w-max animate-marquee-reverse gap-6 group-hover:[animation-play-state:paused]">
+        {/* Row 2: Scorre verso sinistra */}
+        <div className="flex w-max animate-marquee gap-6 group-hover:[animation-play-state:paused]">
           {MARQUEE_ITEMS.map((brand, i) => (
             <BrandPill key={`row2-${i}`} brand={brand} />
           ))}
