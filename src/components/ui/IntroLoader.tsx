@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Logo } from '@/components/ui/Logo'
+import Image from 'next/image'
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as [number, number, number, number]
 const EASE_IN  = [0.76, 0, 0.24, 1] as [number, number, number, number]
@@ -45,9 +45,18 @@ export function IntroLoader() {
             initial={{ scale: 0.8, opacity: 0, y: 20 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             transition={{ delay: 0.15, duration: 0.8, ease: EASE_OUT }}
-            className="mb-6 flex items-center justify-center p-4 bg-white rounded-3xl"
+            className="mb-8 flex items-center justify-center pointer-events-none"
           >
-            <Logo size={65} />
+            <div className="relative w-[75vw] max-w-[400px] aspect-[4/1]">
+              <Image
+                src="/images/logo-fulgur-service.png"
+                alt="Fulgur Service Logo"
+                fill
+                className="object-contain drop-shadow-[0_10px_30px_rgba(42,140,122,0.15)]"
+                priority
+                sizes="(max-width: 768px) 80vw, 400px"
+              />
+            </div>
           </motion.div>
 
           {/* ── Tagline ── */}
