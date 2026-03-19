@@ -194,10 +194,10 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* ── DESTRA ── */}
+        {/* ── DESTRA (Hidden su mobile per risparmiare spazio e velocizzare lettura) ── */}
         <div
           ref={rightRef}
-          className="relative flex items-center justify-center opacity-0"
+          className="relative hidden lg:flex items-center justify-center opacity-0"
         >
           {/* Grande cerchio immagine */}
           <div className="relative flex h-[260px] w-[260px] mt-10 sm:mt-0 items-center justify-center sm:h-[320px] sm:w-[320px] md:h-[380px] md:w-[380px] lg:h-[440px] lg:w-[440px] xl:h-[460px] xl:w-[460px]">
