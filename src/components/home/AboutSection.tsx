@@ -25,13 +25,13 @@ export function AboutSection() {
   const imageY = useTransform(scrollYProgress, [0, 1], [0, -50])
 
   return (
-    <section id="chi-siamo" ref={sectionRef} className="relative overflow-hidden bg-[var(--bg-3)] py-24 lg:py-32">
+    <section id="chi-siamo" ref={sectionRef} className="relative overflow-hidden bg-[var(--bg-3)] py-16 sm:py-24 lg:py-32">
       
       {/* Decorative Green Glow */}
       <div className="absolute -right-20 top-1/4 h-96 w-96 rounded-full bg-[var(--accent)] opacity-[0.06] blur-[120px] pointer-events-none" />
       
       <div className="mx-auto w-full max-w-7xl px-6 xl:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-[42%_58%] gap-14 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-[42%_58%] gap-10 md:gap-14 lg:gap-20 items-center">
           
           {/* LATO SINISTRO: Immagine — 42% */}
           <ScrollReveal className="order-2 lg:order-1">
@@ -41,8 +41,8 @@ export function AboutSection() {
               <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[28px] border border-[var(--br)] shadow-2xl">
                 <motion.div style={{ y: imageY }} className="relative w-full h-[110%] -top-[5%]">
                   <Image
-                    src="/images/chi-siamo-fulgur-service-parma.jpg"
-                    alt="Il team Fulgur Service — impresa di pulizie professionali a Parma"
+                    src="/images/chi-siamo.webp"
+                    alt="Lorenzo davanti al furgone Fulgur Service — impresa di pulizie professionali a Parma"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 42vw"
@@ -51,9 +51,9 @@ export function AboutSection() {
               </div>
               
               {/* Badge sovrapposto — in basso a sinistra */}
-              <div className="absolute -bottom-6 -left-5 z-20 rounded-2xl bg-[var(--accent)] px-7 py-5 text-white shadow-2xl flex flex-col items-center">
-                <span className="font-display text-5xl font-black leading-none">30</span>
-                <span className="font-mono-fulgur text-[10px] font-bold uppercase tracking-[0.18em] opacity-85 text-center leading-tight mt-1">
+              <div className="absolute -bottom-5 -left-3 sm:-bottom-6 sm:-left-5 z-20 rounded-2xl bg-[var(--accent)] px-5 py-3 sm:px-7 sm:py-5 text-white shadow-2xl flex flex-col items-center">
+                <span className="font-display text-4xl sm:text-5xl font-black leading-none">30</span>
+                <span className="font-mono-fulgur text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.18em] opacity-85 text-center leading-tight mt-1">
                   anni di<br />know-how
                 </span>
               </div>
@@ -84,7 +84,7 @@ export function AboutSection() {
             </ScrollReveal>
             
             <ScrollReveal delay={0.1}>
-              <div className="mt-7 space-y-5 font-body text-[1.05rem] font-light text-[var(--tx-2)] leading-relaxed">
+              <div className="mt-5 sm:mt-7 space-y-4 sm:space-y-5 font-body text-[0.95rem] sm:text-[1.05rem] font-light text-[var(--tx-2)] leading-relaxed">
                 <p>
                   Fulgur Service è un'impresa giovane, nata da idee chiare e innovative,
                   con alle spalle 30 anni di esperienza: siamo il punto d'incontro tra
@@ -98,8 +98,8 @@ export function AboutSection() {
               </div>
             </ScrollReveal>
 
-            <ScrollReveal delay={0.2}>
-              <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+            <ScrollReveal delay={0.2} className="w-full">
+              <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full pr-20 sm:pr-0">
                 {VALORI.map((valore, i) => {
                   const Icon = valore.icon
                   return (

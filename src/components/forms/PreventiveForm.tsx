@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useForm, Controller } from 'react-hook-form'
+import type { Path } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { CheckCircle, Warning, CaretLeft, Sparkle, Buildings, Factory, FirstAidKit, BuildingApartment, Bed, HardHat, ArrowsOutSimple, Sun, Anchor, Wind, House, Drop } from '@phosphor-icons/react'
@@ -46,7 +47,8 @@ type FormData = z.infer<typeof FormSchema>
 export function PreventiveForm() {
   const [step, setStep] = useState(1)
   const [isSubmitting, setIsSubmitting] = useState(false)
-  
+  const [submitError, setSubmitError] = useState<string | null>(null)
+
   // Step 6 equivale allo status di successo
   const isSuccess = step === 6
 
@@ -99,14 +101,14 @@ export function PreventiveForm() {
   const [[page, direction], setPage] = useState([1, 0])
 
   const goNext = async () => {
-    let fieldsToValidate: any[] = []
-    
-    // Valiudazione progressiva a step
-    if (step === 1) fieldsToValidate = ['servizi']
-    if (step === 2) fieldsToValidate = ['tipo_ambiente', 'metratura']
-    if (step === 3) fieldsToValidate = ['frequenza']
-    if (step === 4) fieldsToValidate = ['citta']
-    if (step === 5) fieldsToValidate = ['nome', 'email', 'tel', 'privacy']
+    const stepFields: Record<number, Path<FormData>[]> = {
+      1: ['servizi'],
+      2: ['tipo_ambiente', 'metratura'],
+      3: ['frequenza'],
+      4: ['citta'],
+      5: ['nome', 'email', 'tel', 'privacy'],
+    }
+    const fieldsToValidate = stepFields[step] ?? []
 
     const isStepValid = await trigger(fieldsToValidate)
     
@@ -125,25 +127,25 @@ export function PreventiveForm() {
 
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true)
+    setSubmitError(null)
     try {
       const response = await fetch('/api/preventivo', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       })
-      
-      const result = await response.json()
+
+      const result = await response.json() as { success: boolean; error?: string }
       if (result.success) {
         setPage([6, 1])
-        setStep(6) // Success State
-        // scrollToTop
+        setStep(6)
         window.scrollTo({ top: 0, behavior: 'smooth' })
       } else {
-        alert(result.error || 'Si è verificato un errore durante l\'invio. Riprova più tardi.')
+        setSubmitError(result.error ?? "Si è verificato un errore durante l'invio. Riprova più tardi.")
       }
     } catch (e) {
       console.error(e)
-      alert('Si è verificato un errore di rete. Controlla la tua connessione.')
+      setSubmitError('Errore di rete. Controlla la tua connessione e riprova.')
     } finally {
       setIsSubmitting(false)
     }
@@ -163,9 +165,16 @@ export function PreventiveForm() {
               Step {step} di 5
             </span>
           </div>
-          {/* Progress Bar Div */}
-          <div className="h-1.5 w-full bg-[var(--bg-3)] rounded-full overflow-hidden">
-            <motion.div 
+          {/* Progress Bar */}
+          <div
+            role="progressbar"
+            aria-valuenow={step}
+            aria-valuemin={1}
+            aria-valuemax={5}
+            aria-label={`Step ${step} di 5`}
+            className="h-1.5 w-full bg-[var(--bg-3)] rounded-full overflow-hidden"
+          >
+            <motion.div
               className="h-full bg-[var(--accent)] rounded-full"
               initial={{ width: `${((step - 1) / 5) * 100}%` }}
               animate={{ width: `${(step / 5) * 100}%` }}
@@ -276,7 +285,7 @@ export function PreventiveForm() {
                     <label className="font-sans text-sm font-medium text-[var(--tx-1)]">Tipo di ambiente</label>
                     <select
                       {...register('tipo_ambiente')}
-                      className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-5 py-4 font-sans text-sm text-[var(--tx-1)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:border-transparent transition-all outline-none appearance-none"
+                      className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-5 py-4 font-sans text-sm text-[var(--tx-1)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:shadow-[0_0_15px_var(--accent-glow)] focus:border-transparent transition-all outline-none appearance-none focus:bg-white"
                     >
                       <option value="">Seleziona...</option>
                       <option value="Ufficio / Spazio commerciale">Ufficio / Spazio commerciale</option>
@@ -300,7 +309,7 @@ export function PreventiveForm() {
                       type="number"
                       placeholder="es. 250"
                       {...register('metratura')}
-                      className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-5 py-4 font-sans text-sm text-[var(--tx-1)] placeholder-[var(--tx-3)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:border-transparent transition-all outline-none"
+                      className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-5 py-4 font-sans text-sm text-[var(--tx-1)] placeholder-[var(--tx-3)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:shadow-[0_0_15px_var(--accent-glow)] focus:border-transparent transition-all outline-none focus:bg-white"
                     />
                     {errors.metratura && (
                       <p className="flex items-center gap-2 text-sm text-red-400 mt-1"><Warning size={15} /> {errors.metratura.message}</p>
@@ -314,7 +323,7 @@ export function PreventiveForm() {
                       placeholder="Piani senza ascensore, particolarità specifiche..."
                       rows={3}
                       {...register('note_ambiente')}
-                      className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-5 py-4 font-sans text-sm text-[var(--tx-1)] placeholder-[var(--tx-3)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:border-transparent transition-all outline-none resize-none"
+                      className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-5 py-4 font-sans text-sm text-[var(--tx-1)] placeholder-[var(--tx-3)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:shadow-[0_0_15px_var(--accent-glow)] focus:border-transparent transition-all outline-none resize-none focus:bg-white"
                     />
                   </div>
                 </div>
@@ -405,7 +414,7 @@ export function PreventiveForm() {
                       type="text"
                       placeholder="es. Parma, Fidenza, Salsomaggiore..."
                       {...register('citta')}
-                      className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-5 py-4 font-sans text-sm text-[var(--tx-1)] placeholder-[var(--tx-3)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:border-transparent transition-all outline-none"
+                      className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-5 py-4 font-sans text-sm text-[var(--tx-1)] placeholder-[var(--tx-3)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:shadow-[0_0_15px_var(--accent-glow)] focus:border-transparent transition-all outline-none focus:bg-white"
                     />
                     {errors.citta && (
                       <p className="flex items-center gap-2 text-sm text-red-400 mt-1"><Warning size={15} /> {errors.citta.message}</p>
@@ -418,7 +427,7 @@ export function PreventiveForm() {
                       type="text"
                       placeholder="via / piazza..."
                       {...register('indirizzo')}
-                      className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-5 py-4 font-sans text-sm text-[var(--tx-1)] placeholder-[var(--tx-3)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:border-transparent transition-all outline-none"
+                      className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-5 py-4 font-sans text-sm text-[var(--tx-1)] placeholder-[var(--tx-3)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:shadow-[0_0_15px_var(--accent-glow)] focus:border-transparent transition-all outline-none focus:bg-white"
                     />
                   </div>
                 </div>
@@ -447,7 +456,7 @@ export function PreventiveForm() {
                       <input
                         type="text"
                         {...register('nome')}
-                        className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-4 py-3.5 font-sans text-sm text-[var(--tx-1)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] outline-none"
+                        className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-4 py-3.5 font-sans text-sm text-[var(--tx-1)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:shadow-[0_0_15px_var(--accent-glow)] outline-none focus:bg-white transition-all"
                       />
                       {errors.nome && <p className="flex items-center gap-1 text-xs text-red-400"><Warning size={14} /> {errors.nome.message}</p>}
                     </div>
@@ -457,7 +466,7 @@ export function PreventiveForm() {
                       <input
                         type="text"
                         {...register('azienda')}
-                        className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-4 py-3.5 font-sans text-sm text-[var(--tx-1)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] outline-none"
+                        className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-4 py-3.5 font-sans text-sm text-[var(--tx-1)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:shadow-[0_0_15px_var(--accent-glow)] outline-none focus:bg-white transition-all"
                       />
                     </div>
                   </div>
@@ -468,7 +477,7 @@ export function PreventiveForm() {
                       <input
                         type="email"
                         {...register('email')}
-                        className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-4 py-3.5 font-sans text-sm text-[var(--tx-1)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] outline-none"
+                        className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-4 py-3.5 font-sans text-sm text-[var(--tx-1)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:shadow-[0_0_15px_var(--accent-glow)] outline-none focus:bg-white transition-all"
                       />
                       {errors.email && <p className="flex items-center gap-1 text-xs text-red-400"><Warning size={14} /> {errors.email.message}</p>}
                     </div>
@@ -478,7 +487,7 @@ export function PreventiveForm() {
                       <input
                         type="tel"
                         {...register('tel')}
-                        className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-4 py-3.5 font-sans text-sm text-[var(--tx-1)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] outline-none"
+                        className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-4 py-3.5 font-sans text-sm text-[var(--tx-1)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:shadow-[0_0_15px_var(--accent-glow)] outline-none focus:bg-white transition-all"
                       />
                       {errors.tel && <p className="flex items-center gap-1 text-xs text-red-400"><Warning size={14} /> {errors.tel.message}</p>}
                     </div>
@@ -489,7 +498,7 @@ export function PreventiveForm() {
                     <textarea
                       rows={3}
                       {...register('note')}
-                      className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-4 py-3.5 font-sans text-sm text-[var(--tx-1)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] outline-none resize-none"
+                      className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-4 py-3.5 font-sans text-sm text-[var(--tx-1)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:shadow-[0_0_15px_var(--accent-glow)] outline-none resize-none focus:bg-white transition-all"
                     />
                   </div>
 
@@ -560,6 +569,14 @@ export function PreventiveForm() {
         </form>
       </div>
 
+      {/* ERRORE SUBMIT INLINE */}
+      {submitError && (
+        <div role="alert" className="mx-8 mb-0 mt-[-8px] flex items-start gap-2.5 rounded-xl border border-red-200 bg-red-50 px-5 py-3.5 text-sm text-red-700">
+          <Warning size={16} weight="bold" className="mt-0.5 shrink-0" />
+          <span className="font-sans">{submitError}</span>
+        </div>
+      )}
+
       {/* FOOTER ACTIONS (Navigazione) */}
       {!isSuccess && (
         <div className="w-full bg-[var(--bg-2)] px-8 py-5 border-t border-[var(--br)] flex items-center justify-between">
@@ -589,7 +606,7 @@ export function PreventiveForm() {
                  // Intercetta click esterno e fa scattare il submit di react-hook-form
                 onClick={handleSubmit(onSubmit)}
                 disabled={isSubmitting}
-                className="relative overflow-hidden flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[var(--accent-d)] font-display text-sm font-bold text-white shadow-[0_15px_40px_rgba(42,140,122,0.1)] hover:brightness-110 active:scale-95 transition-all disabled:opacity-75 disabled:cursor-not-allowed group"
+                className="relative overflow-hidden flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[var(--accent-d)] font-display text-sm font-bold text-white shadow-[0_15px_40px_rgba(42,140,122,0.1)] hover:brightness-110 active:scale-95 hover:-translate-y-0.5 transition-all disabled:opacity-75 disabled:transform-none disabled:cursor-not-allowed group"
               >
                 {/* Effetto Shimmering loading state */}
                 {isSubmitting && (

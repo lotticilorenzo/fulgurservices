@@ -5,7 +5,11 @@ import { STRUCTURED_DATA } from '@/lib/seo'
 import NoiseOverlay from '@/components/layout/NoiseOverlay'
 import Navbar from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
-import { WhatsAppButton } from '@/components/ui/WhatsAppButton'
+import { FloatingActions } from '@/components/ui/FloatingActions'
+import { CustomCursor } from '@/components/ui/CustomCursor'
+import { LenisProvider } from '@/components/layout/LenisProvider'
+import { IntroLoader } from '@/components/ui/IntroLoader'
+import { PageTransitionProvider } from '@/components/layout/PageTransitionProvider'
 import React from 'react'
 
 const syne = Syne({
@@ -67,11 +71,16 @@ export default function RootLayout({
         className={`${syne.variable} ${dmSans.variable} ${dmMono.variable} font-sans text-[var(--tx-1)] antialiased bg-[var(--bg)] min-h-[100dvh] flex flex-col`}
         suppressHydrationWarning
       >
-        <NoiseOverlay />
-        <Navbar />
-        {children}
-        <Footer />
-        <WhatsAppButton />
+        <PageTransitionProvider>
+          <LenisProvider />
+          <CustomCursor />
+          <IntroLoader />
+          <NoiseOverlay />
+          <Navbar />
+          {children}
+          <Footer />
+          <FloatingActions />
+        </PageTransitionProvider>
       </body>
     </html>
   )

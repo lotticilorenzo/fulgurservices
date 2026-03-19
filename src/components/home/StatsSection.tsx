@@ -1,8 +1,7 @@
 'use client'
 
-import React from 'react'
+import { motion } from 'framer-motion'
 import { CounterUp } from '@/components/ui/CounterUp'
-import { ScrollReveal } from '@/components/ui/ScrollReveal'
 
 const STATS = [
   {
@@ -31,29 +30,75 @@ const STATS = [
   },
 ]
 
+const EASE = [0.16, 1, 0.3, 1] as const
+
 export function StatsSection() {
   return (
-    <section className="relative py-12 lg:py-20 bg-white border-y border-[var(--br)] overflow-hidden">
-      <div className="mx-auto w-full max-w-7xl px-6 xl:px-8">
-        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0 lg:divide-x lg:divide-[var(--br)]">
-          {STATS.map((stat, index) => (
-            <ScrollReveal
-              key={index}
-              delay={index * 0.15}
-              className={`flex flex-col items-center justify-center text-center ${
-                index === 0 ? 'lg:pr-8' : index === 3 ? 'lg:pl-8' : 'lg:px-8'
-              }`}
+    <section
+      className="relative w-full overflow-hidden py-20 lg:py-28"
+      style={{ background: 'var(--accent)' }}
+    >
+      {/* Background texture */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage:
+            'radial-gradient(ellipse 80% 60% at 50% 50%, rgba(255,255,255,0.08) 0%, transparent 70%)',
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none opacity-[0.06]"
+        style={{
+          backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
+          backgroundSize: '28px 28px',
+        }}
+      />
+
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 xl:px-8">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 28, scale: 0.97 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, margin: '-6% 0px' }}
+          transition={{ duration: 0.7, ease: EASE }}
+          className="mb-8 sm:mb-12 lg:mb-14 text-center"
+        >
+          <p className="font-mono-fulgur text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.2em] text-white/60 mb-3">
+            — I NUMERI CHE CI DEFINISCONO
+          </p>
+          <h2 className="font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+            Risultati concreti,<br />ogni giorno.
+          </h2>
+        </motion.div>
+
+        {/* Stats grid */}
+        <div className="grid grid-cols-2 gap-px bg-white/10 rounded-2xl overflow-hidden lg:grid-cols-4">
+          {STATS.map((stat, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 24, scale: 0.96 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: '-6% 0px' }}
+              transition={{ duration: 0.65, delay: i * 0.1, ease: EASE }}
+              className="flex flex-col items-center justify-center gap-2 sm:gap-3 bg-white/5 px-4 py-7 sm:px-6 sm:py-8 lg:px-8 lg:py-10 text-center hover:bg-white/10 transition-colors duration-300"
             >
-              <div className="font-display font-extrabold leading-none tracking-tight text-[var(--accent)] text-[clamp(48px,6vw,72px)]">
-                <CounterUp value={stat.value} suffix={stat.suffix} duration={2500} />
+              <div
+                className="font-display font-black leading-none tracking-tight text-white"
+                style={{ fontSize: 'clamp(52px, 6vw, 80px)' }}
+              >
+                <CounterUp value={stat.value} suffix={stat.suffix} duration={2200} />
               </div>
-              <div className="mt-4 font-display text-base font-semibold leading-snug text-[var(--tx-1)]">
-                {stat.label}
+              <div className="flex flex-col gap-1">
+                <span className="font-display text-base font-bold text-white/90 leading-snug">
+                  {stat.label}
+                </span>
+                <span className="font-mono-fulgur text-[10px] font-medium uppercase tracking-wider text-white/50">
+                  {stat.sub}
+                </span>
               </div>
-              <div className="mt-2 max-w-[200px] font-sans text-[13px] font-light text-[var(--tx-3)]">
-                {stat.sub}
-              </div>
-            </ScrollReveal>
+            </motion.div>
           ))}
         </div>
       </div>

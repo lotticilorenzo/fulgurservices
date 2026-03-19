@@ -35,7 +35,7 @@ export function ServiceCard({ service, size = 'small', index, className }: Servi
   const Icon = IconMap[service.icon] || IconMap.Buildings
 
   const sizeClasses = {
-    large: 'col-span-1 lg:col-span-2 min-h-[380px] md:aspect-[16/7]',
+    large: 'col-span-1 lg:col-span-2 min-h-[380px]',
     medium: 'col-span-1 min-h-[380px]',
     small: 'col-span-1 min-h-[320px]',
   }
@@ -47,7 +47,7 @@ export function ServiceCard({ service, size = 'small', index, className }: Servi
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
           className={cn(
-            'relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-black/40 transition-all duration-500 glass-premium shine-effect'
+            'relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-black/40 transition-all duration-500 glass-premium shine-effect hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(78,203,160,0.15)] hover:border-[var(--accent)]/50'
           )}
         >
           {/* Main Visual */}
@@ -60,9 +60,9 @@ export function ServiceCard({ service, size = 'small', index, className }: Servi
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
             {/* Direct Gradient Overlay */}
-            <div 
-              className="absolute inset-0 z-10 transition-opacity duration-300" 
-              style={{ background: 'linear-gradient(to top, rgba(10,20,15,0.95) 0%, rgba(10,20,15,0.4) 40%, transparent 100%)' }}
+            <div
+              className="absolute inset-0 z-10 transition-opacity duration-300"
+              style={{ background: 'linear-gradient(to top, rgba(10,20,15,0.96) 0%, rgba(10,20,15,0.45) 40%, rgba(10,20,15,0.55) 100%)' }}
             />
           </div>
 

@@ -1,252 +1,374 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { List, X, PhoneCall } from '@phosphor-icons/react'
+import { List, X, PhoneCall, ArrowRight, WhatsappLogo, CaretDown } from '@phosphor-icons/react'
 import { cn } from '@/lib/utils'
-import { MagneticButton } from '@/components/ui/MagneticButton'
-import { overlayVariants, menuVariants } from '@/lib/motion'
 import { Logo } from '@/components/ui/Logo'
 
-const PRIMARY_LINKS = [
-  { label: 'Servizi', href: '/servizi#servizi' },
-  { label: 'Settori', href: '/servizi' },
-  { label: 'Chi Siamo', href: '/#chi-siamo' },
+/* ── Nav structure ── */
+const SERVICE_PREVIEWS = [
+  { label: 'Pulizie Aziendali',      href: '/servizi/pulizie-aziendali' },
+  { label: 'Pulizie Industriali',    href: '/servizi/pulizie-industriali' },
+  { label: 'Settore Sanitario',      href: '/servizi/settore-sanitario' },
+  { label: 'Pulizie Condomini',      href: '/servizi/pulizie-condomini' },
+  { label: 'Pannelli Fotovoltaici',  href: '/servizi/pannelli-fotovoltaici' },
+  { label: 'Trattamento Superfici',  href: '/servizi/trattamento-superfici' },
 ]
 
-const UTILITY_LINKS = [
+const NAV_ITEMS = [
+  { label: 'Servizi',   href: '/servizi',   dropdown: true },
+  { label: 'Gallery',   href: '/gallery' },
+  { label: 'Blog',      href: '/blog' },
+  { label: 'Chi Siamo', href: '/chi-siamo' },
+  { label: 'Macchinari',href: '/macchinari' },
+]
+
+const MOBILE_LINKS = [
+  { label: 'Home',           href: '/' },
+  { label: 'Servizi',        href: '/servizi' },
+  { label: 'Gallery',        href: '/gallery' },
+  { label: 'Blog',           href: '/blog' },
+  { label: 'Chi Siamo',      href: '/chi-siamo' },
+  { label: 'Macchinari',     href: '/macchinari' },
   { label: 'Lavora con noi', href: '/lavora-con-noi' },
-  { label: 'Contatti', href: '/contatti' },
+  { label: 'Contatti',       href: '/contatti' },
 ]
 
 export default function Navbar() {
   const pathname = usePathname()
   const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isMobileOpen, setIsMobileOpen] = useState(false)
+  const [servicesOpen, setServicesOpen] = useState(false)
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
-  // Determina se siamo nella Hero della Home (dove lo sfondo è il video scuro)
-  const isHeroScene = pathname === '/' && !isScrolled
-
-  // Combined links for mobile menu
-  const MOBILE_LINKS = [...PRIMARY_LINKS, ...UTILITY_LINKS]
-
-  // Scroll logic via scroll listener (più robusto di IntersectionObserver per Lenis)
   useEffect(() => {
-    const handleScroll = () => {
-      // Usiamo una soglia generosa per evitare flip-flop all'avvio
-      setIsScrolled(window.scrollY > 80)
-    }
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    handleScroll()
-    // Sicurezza extra dopo un po' per via di Lenis
-    const timer = setTimeout(handleScroll, 500)
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-      clearTimeout(timer)
-    }
+    const handle = () => setIsScrolled(window.scrollY > 40)
+    window.addEventListener('scroll', handle, { passive: true })
+    handle()
+    return () => window.removeEventListener('scroll', handle)
   }, [])
 
-  // Blocca lo scroll quando il menu mobile è aperto
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = 'auto'
-    }
-  }, [isMobileMenuOpen])
+    document.body.style.overflow = isMobileOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [isMobileOpen])
+
+  useEffect(() => { setIsMobileOpen(false) }, [pathname])
+
+  const openServices = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current)
+    setServicesOpen(true)
+  }
+  const closeServices = () => {
+    closeTimer.current = setTimeout(() => setServicesOpen(false), 150)
+  }
 
   return (
     <>
-      {/* Sentinel per l'isScrolled state */}
-      <div id="nav-sentinel" className="absolute top-2 left-0 w-px h-px pointer-events-none -z-10" aria-hidden="true" />
-      
-      {/* 1. TOP UTILITY BAR (Absolute - scrolls away) */}
-      <div className="absolute top-0 left-0 right-0 z-50 hidden lg:block">
-        <div className="mx-auto flex max-w-7xl items-center justify-end gap-8 px-8 py-3.5">
-          <div className="flex items-center gap-6">
-            {UTILITY_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={cn(
-                  "font-mono-fulgur text-[10px] font-bold uppercase tracking-[0.2em] transition-colors",
-                  isHeroScene ? "text-white/60 hover:text-white" : "text-[var(--tx-3)] hover:text-[var(--accent)]"
-                )}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-          <div className={cn("h-3 w-px transition-colors", isHeroScene ? "bg-white/20" : "bg-white/10")} />
-          <a 
-            href="tel:+393383160091" 
-            className={cn(
-              "flex items-center gap-2 font-mono-fulgur text-[10px] font-bold uppercase tracking-widest transition-colors",
-              isHeroScene ? "text-white/80 hover:text-white" : "text-[var(--tx-2)] hover:text-[var(--accent)]"
-            )}
-          >
-            <PhoneCall size={14} weight="bold" className={cn("transition-colors", isHeroScene ? "text-white" : "text-[var(--accent)]")} />
-            +39 338 316 0091
-          </a>
-        </div>
-      </div>
-
-      {/* 2. MAIN FLOATING NAVBAR (Fixed pill) */}
+      {/* ── FLOATING PILL ── */}
       <header
         className={cn(
-          'fixed left-1/2 z-50 flex w-[calc(100%-1.5rem)] sm:w-[calc(100%-2rem)] max-w-7xl -translate-x-1/2 items-center justify-between rounded-full px-4 py-2 lg:px-8 lg:py-2.5',
-          'transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]',
-          isHeroScene
-            ? 'top-4 bg-transparent border-transparent shadow-none lg:top-14 lg:scale-100'
-            : 'top-4 border border-[var(--nav-border)] bg-[var(--nav-bg)] backdrop-blur-xl shadow-2xl lg:shadow-xl scale-[0.98] lg:scale-100'
+          'fixed left-1/2 z-[200] -translate-x-1/2',
+          'flex w-[calc(100%-1.5rem)] sm:w-[calc(100%-2rem)] max-w-6xl items-center justify-between',
+          'rounded-full px-4 py-2 lg:px-5 lg:py-2',
+          'border border-[var(--nav-border)] bg-[var(--nav-bg)] backdrop-blur-xl',
+          'transition-all duration-500',
+          isScrolled
+            ? 'top-3 shadow-[0_8px_40px_rgba(42,140,122,0.14),0_1px_0_rgba(42,140,122,0.06)]'
+            : 'top-4 shadow-[0_4px_24px_rgba(42,140,122,0.08),0_1px_0_rgba(42,140,122,0.04)]'
         )}
       >
         {/* LOGO */}
         <Link
           href="/"
-          className="group flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-lg"
-          aria-label="Fulgur Service — torna alla home"
+          aria-label="Fulgur Service — home"
+          className="flex shrink-0 items-center gap-2 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
         >
-          <Logo 
-            size={36} 
-            iconOnly 
-            variant={isHeroScene ? 'white' : 'default'} 
-            className="h-9 w-auto lg:h-10" 
-          />
-          <span className={cn(
-            "font-display text-base font-bold tracking-tight whitespace-nowrap lg:text-lg xl:text-xl transition-colors",
-            isHeroScene ? "text-white" : "text-[var(--tx-1)]"
-          )}>
+          <Logo size={32} iconOnly variant="default" className="h-8 w-auto" />
+          <span className="font-display text-[14px] font-bold tracking-tight text-[var(--tx-1)] whitespace-nowrap hidden sm:block">
             Fulgur Service
           </span>
         </Link>
 
-        {/* DESKTOP MAIN LINKS */}
-        <nav className="hidden lg:flex items-center gap-7 xl:gap-9">
-          {PRIMARY_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={cn(
-                'relative font-mono-fulgur text-[11px] xl:text-[12px] font-bold uppercase tracking-[0.15em] transition-colors duration-200',
-                isHeroScene ? 'text-white/80 hover:text-white' : 'text-[var(--tx-1)] hover:text-[var(--accent)]',
-                'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm'
-              )}
-            >
-              {link.label}
-            </Link>
-          ))}
+        {/* DESKTOP NAV */}
+        <nav className="hidden lg:flex items-center gap-0.5" aria-label="Navigazione principale">
+          {NAV_ITEMS.map((item) => {
+            const isActive = pathname === item.href ||
+              (item.href !== '/' && pathname.startsWith(item.href))
+
+            if (item.dropdown) {
+              return (
+                <div
+                  key={item.href}
+                  className="relative"
+                  onMouseEnter={openServices}
+                  onMouseLeave={closeServices}
+                >
+                  <Link
+                    href={item.href}
+                    className={cn(
+                      'flex items-center gap-1 px-3.5 py-2 rounded-full',
+                      'font-mono-fulgur text-[10.5px] font-bold uppercase tracking-[0.12em]',
+                      'transition-colors duration-150',
+                      isActive
+                        ? 'text-[var(--accent)] bg-[var(--accent-glow)]'
+                        : 'text-[var(--tx-2)] hover:text-[var(--tx-1)] hover:bg-[var(--bg-2)]'
+                    )}
+                  >
+                    {item.label}
+                    <motion.span
+                      animate={{ rotate: servicesOpen ? 180 : 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="text-[7px] opacity-50 leading-none"
+                    >
+                      ▾
+                    </motion.span>
+                  </Link>
+
+                  {/* Dropdown */}
+                  <AnimatePresence>
+                    {servicesOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 6, scale: 0.97 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: 6, scale: 0.97 }}
+                        transition={{ duration: 0.16, ease: [0.16, 1, 0.3, 1] }}
+                        className="absolute top-full left-0 mt-2.5 w-64 rounded-2xl border border-[var(--br-h)] bg-white/95 backdrop-blur-sm p-2 shadow-xl shadow-[rgba(42,140,122,0.12)]"
+                        onMouseEnter={openServices}
+                        onMouseLeave={closeServices}
+                      >
+                        <div className="flex flex-col gap-0.5 mb-2">
+                          {SERVICE_PREVIEWS.map((s) => (
+                            <Link
+                              key={s.href}
+                              href={s.href}
+                              className="flex items-center gap-2.5 rounded-xl px-3 py-2.5 font-sans text-[13px] text-[var(--tx-2)] hover:text-[var(--accent)] hover:bg-[var(--accent-glow)] transition-colors"
+                            >
+                              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--accent)]" />
+                              {s.label}
+                            </Link>
+                          ))}
+                        </div>
+                        <Link
+                          href="/servizi"
+                          className="flex w-full items-center justify-center gap-1.5 rounded-xl bg-[var(--bg-2)] px-3 py-2.5 border border-[var(--br)] font-mono-fulgur text-[10px] font-bold uppercase tracking-widest text-[var(--tx-3)] hover:text-[var(--accent)] hover:border-[var(--accent)]/30 transition-colors"
+                        >
+                          Vedi tutti i 12 servizi
+                          <ArrowRight size={10} weight="bold" />
+                        </Link>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              )
+            }
+
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={cn(
+                  'relative flex items-center gap-1.5 px-3.5 py-2 rounded-full',
+                  'font-mono-fulgur text-[10.5px] font-bold uppercase tracking-[0.12em]',
+                  'transition-colors duration-150',
+                  isActive
+                    ? 'text-[var(--accent)] bg-[var(--accent-glow)]'
+                    : 'text-[var(--tx-2)] hover:text-[var(--tx-1)] hover:bg-[var(--bg-2)]'
+                )}
+              >
+                {item.label}
+                {isActive && (
+                  <span className="absolute bottom-0.5 left-1/2 -translate-x-1/2 h-px w-3 bg-[var(--accent)] rounded-full" />
+                )}
+              </Link>
+            )
+          })}
         </nav>
 
-        {/* DESKTOP CTA */}
-        <div className="hidden lg:block">
-          <Link href="/preventivo" tabIndex={-1}>
-            <MagneticButton
-              as="div"
-              intensity={0.1}
-              className="relative rounded-full bg-[var(--accent)] px-8 py-2.5 xl:px-9 xl:py-3 font-display text-sm font-bold text-white transition-[background-color,transform,shadow] duration-300 hover:bg-[var(--accent-d)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent outline-none group overflow-hidden shadow-lg"
-            >
-                <motion.span 
-                  aria-hidden="true"
-                  animate={{ 
-                    scale: [1, 1.2, 1],
-                    opacity: [0.3, 0.1, 0.3]
-                  }}
-                transition={{ 
-                  duration: 4, 
-                  repeat: Infinity, 
-                  ease: "easeInOut" 
-                }}
-                className="absolute inset-0 rounded-full bg-white" 
-              />
-              <span className="relative z-10">Sopralluogo Gratuito</span>
-            </MagneticButton>
+        {/* DESKTOP RIGHT */}
+        <div className="hidden lg:flex items-center gap-3 shrink-0">
+          <a
+            href="tel:+393383160091"
+            className="flex items-center gap-1.5 font-mono-fulgur text-[10px] font-bold uppercase tracking-widest text-[var(--tx-3)] hover:text-[var(--accent)] transition-colors"
+          >
+            <PhoneCall size={12} weight="bold" className="text-[var(--accent)]" aria-hidden="true" />
+            338 316 0091
+          </a>
+          <Link
+            href="/preventivo"
+            className="rounded-full bg-[var(--accent)] px-5 py-2.5 font-display text-[12px] font-bold text-white whitespace-nowrap shadow-[0_4px_16px_rgba(78,203,160,0.35)] transition-all hover:bg-[var(--accent-d)] hover:shadow-[0_6px_24px_rgba(78,203,160,0.45)]"
+          >
+            Preventivo Gratuito
           </Link>
         </div>
 
-        {/* MOBILE MENU TOGGLE */}
+        {/* MOBILE HAMBURGER */}
         <button
-          className={cn(
-            "lg:hidden flex items-center justify-center p-2 transition-colors",
-            isHeroScene ? "text-white hover:text-white/80" : "text-[var(--tx-1)] hover:text-[var(--accent)]"
-          )}
-          onClick={() => setIsMobileMenuOpen(true)}
+          className="lg:hidden flex items-center justify-center h-9 w-9 rounded-full border border-[var(--br-h)] text-[var(--tx-1)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
+          onClick={() => setIsMobileOpen(true)}
           aria-label="Apri menu principale"
-          aria-expanded={isMobileMenuOpen}
+          aria-expanded={isMobileOpen}
         >
-          <List size={22} />
+          <List size={18} />
         </button>
       </header>
 
-      {/* MOBILE MENU OVERLAY */}
+      {/* ── MOBILE OVERLAY ── */}
       <AnimatePresence>
-        {isMobileMenuOpen && (
+        {isMobileOpen && (
           <motion.div
-            variants={overlayVariants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            className="fixed inset-0 z-[100] bg-[var(--bg)]/98 backdrop-blur-md"
+            key="mobile-menu"
+            initial={{ opacity: 0, clipPath: 'circle(0% at calc(100% - 32px) 32px)' }}
+            animate={{ opacity: 1, clipPath: 'circle(160% at calc(100% - 32px) 32px)' }}
+            exit={{ opacity: 0, clipPath: 'circle(0% at calc(100% - 32px) 32px)' }}
+            transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+            className="fixed inset-0 z-[300] flex flex-col bg-[var(--bg)] overflow-y-auto"
           >
-            <div className="flex h-full flex-col px-6 pb-12 pt-6">
-              <div className="flex items-center justify-between">
-                <span className="font-display text-lg font-bold text-[var(--tx-1)] tracking-tight">
-                  Menu
-                </span>
-                <button
-                  className="flex items-center justify-center p-2 text-[var(--tx-1)] hover:text-[var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-full transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  aria-label="Chiudi menu principale"
-                >
-                  <X size={24} />
-                </button>
-              </div>
+            {/* Header del mobile overlay */}
+            <div className="flex shrink-0 items-center justify-between px-6 py-5 border-b border-[var(--br)]">
+              <Link
+                href="/"
+                onClick={() => setIsMobileOpen(false)}
+                className="flex items-center gap-2.5"
+              >
+                <Logo size={30} iconOnly variant="default" />
+                <span className="font-display text-base font-bold text-[var(--tx-1)]">Fulgur Service</span>
+              </Link>
+              <button
+                onClick={() => setIsMobileOpen(false)}
+                aria-label="Chiudi menu"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--br-h)] text-[var(--tx-2)] hover:border-[var(--accent)] focus-visible:ring-2 focus-visible:ring-[var(--accent)] hover:text-[var(--accent)] transition-colors"
+              >
+                <X size={20} />
+              </button>
+            </div>
 
-              <nav className="mt-16 flex flex-col gap-8">
-                {MOBILE_LINKS.map((link, i) => (
+            {/* Links scrollabili */}
+            <nav className="flex flex-col px-6 pt-4 pb-20 flex-1" aria-label="Menu mobile">
+              {MOBILE_LINKS.map((link, i) => {
+                const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href))
+                const delay = 0.12 + i * 0.045
+
+                if (link.href === '/servizi') {
+                  return (
+                    <motion.div
+                      key={link.href}
+                      initial={{ opacity: 0, x: -16 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay, duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                      className="border-b border-[var(--br)]"
+                    >
+                      <button
+                        onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                        className="flex w-full items-center justify-between py-4.5 focus-visible:outline-none"
+                      >
+                        <span className={cn(
+                          'font-display text-[22px] font-bold tracking-tight transition-colors',
+                          isActive ? 'text-[var(--accent)]' : 'text-[var(--tx-1)]'
+                        )}>
+                          {link.label}
+                        </span>
+                        <motion.div
+                          animate={{ rotate: mobileServicesOpen ? 180 : 0 }}
+                          transition={{ duration: 0.3, ease: 'easeOut' }}
+                          className="flex items-center justify-center h-8 w-8 rounded-full bg-[var(--bg-2)] border border-[var(--br)] text-[var(--tx-2)]"
+                        >
+                          <CaretDown size={14} weight="bold" />
+                        </motion.div>
+                      </button>
+                      
+                      <AnimatePresence>
+                        {mobileServicesOpen && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                            className="overflow-hidden"
+                          >
+                            <div className="flex flex-col gap-1 pb-4 pt-1 pl-3 border-l-2 border-[var(--accent)]/30 ml-2">
+                              {SERVICE_PREVIEWS.map((s) => (
+                                <Link
+                                  key={s.href}
+                                  href={s.href}
+                                  onClick={() => setIsMobileOpen(false)}
+                                  className="py-2.5 px-3 rounded-xl font-sans text-[15px] font-medium text-[var(--tx-2)] hover:text-[var(--accent)] hover:bg-[var(--accent-glow)] transition-colors"
+                                >
+                                  {s.label}
+                                </Link>
+                              ))}
+                              <Link
+                                href="/servizi"
+                                onClick={() => setIsMobileOpen(false)}
+                                className="inline-flex mt-2 ml-3 items-center gap-1.5 font-mono-fulgur text-[11px] font-bold uppercase tracking-widest text-[var(--accent)]"
+                              >
+                                Vedi tutti i 12 servizi <ArrowRight size={12} weight="bold" />
+                              </Link>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </motion.div>
+                  )
+                }
+
+                return (
                   <motion.div
                     key={link.href}
-                    custom={i}
-                    variants={menuVariants}
-                    initial="hidden"
-                    animate="visible"
-                    exit="exit"
+                    initial={{ opacity: 0, x: -16 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay, duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                   >
                     <Link
                       href={link.href}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className="relative font-display text-4xl font-bold tracking-tight text-[var(--tx-1)] transition-colors hover:text-[var(--accent)] focus-visible:text-[var(--accent)] focus-visible:outline-none"
+                      onClick={() => setIsMobileOpen(false)}
+                      className={cn(
+                        'flex items-center justify-between py-4.5 border-b border-[var(--br)] focus-visible:outline-none',
+                        'font-display text-[22px] font-bold tracking-tight transition-colors',
+                        isActive ? 'text-[var(--accent)]' : 'text-[var(--tx-1)] hover:text-[var(--accent)]'
+                      )}
                     >
                       {link.label}
+                      {isActive && (
+                        <span className="h-2 w-2 shrink-0 rounded-full bg-[var(--accent)] shadow-[0_0_12px_rgba(78,203,160,0.6)]" />
+                      )}
                     </Link>
                   </motion.div>
-                ))}
-              </nav>
+                )
+              })}
+            </nav>
 
-              <div className="mt-auto flex flex-col gap-4">
-                <a 
+            {/* Bottom CTAs (Sticky a fondo schermo) */}
+            <div className="shrink-0 sticky bottom-0 left-0 right-0 bg-gradient-to-t from-[var(--bg)] via-[var(--bg)] to-transparent px-6 pb-6 pt-8 flex flex-col gap-3">
+              <div className="flex gap-2.5">
+                <a
                   href="tel:+393383160091"
-                  className="flex w-full items-center justify-center gap-3 rounded-full border border-[var(--br)] bg-white/5 py-4 font-display text-lg font-bold text-[var(--tx-1)] transition-colors hover:bg-white/10"
+                  className="flex flex-1 items-center justify-center gap-2 rounded-2xl border border-[var(--br-h)] bg-white/50 backdrop-blur-md py-3.5 font-display text-[15px] font-bold text-[var(--tx-1)] shadow-sm hover:border-[var(--accent)] transition-all"
                 >
-                  <PhoneCall size={24} weight="bold" className="text-[var(--accent)]" aria-hidden="true" />
-                  +39 338 316 0091
+                  <PhoneCall size={20} weight="fill" className="text-[var(--accent)]" aria-hidden="true" />
+                  Chiama
                 </a>
-                
-                <Link
-                  href="/preventivo"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex w-full items-center justify-center rounded-full bg-[var(--accent)] py-4 font-display text-lg font-bold text-white transition-colors hover:bg-[var(--accent-d)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+                <a
+                  href="https://wa.me/393383160091?text=Ciao%2C%20vorrei%20richiedere%20un%20sopralluogo%20gratuito"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-1 items-center justify-center gap-2 rounded-2xl bg-[#25D366] py-3.5 font-display text-[15px] font-bold text-white shadow-[0_4px_16px_rgba(37,211,102,0.3)] hover:bg-[#20bd5a] transition-all"
                 >
-                  Sopralluogo Gratuito
-                </Link>
-                <div className="mt-8 flex items-center justify-center gap-6 font-mono-fulgur text-xs uppercase tracking-widest text-[var(--tx-2)]">
-                  <a href="tel:+393383160091" className="hover:text-[var(--accent)] transition-colors">Chiama</a>
-                  <span>·</span>
-                  <a href="mailto:fulgurservice@gmail.com" className="hover:text-[var(--accent)] transition-colors">Email</a>
-                </div>
+                  <WhatsappLogo size={20} weight="fill" aria-hidden="true" />
+                  WhatsApp
+                </a>
               </div>
+              <Link
+                href="/preventivo"
+                onClick={() => setIsMobileOpen(false)}
+                className="flex w-full items-center justify-center rounded-2xl bg-[var(--accent)] py-4 font-display text-base font-extrabold text-white shadow-[0_4px_24px_rgba(78,203,160,0.4)] hover:bg-[var(--accent-d)] transition-all"
+              >
+                Richiedi Sopralluogo Gratuito
+              </Link>
             </div>
           </motion.div>
         )}

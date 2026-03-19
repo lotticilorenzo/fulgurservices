@@ -165,6 +165,102 @@ const GALLERY_ITEMS = [
     category: 'speciali',
     span: 'col-span-1 row-span-1',
   },
+  {
+    id: 19,
+    src: '/images/gallery/gallery-project-1.jpg',
+    alt: 'Prima e Dopo Pulizie a Fondo Parma',
+    label: 'Prima E Dopo',
+    category: 'speciali',
+    span: 'col-span-1 row-span-1',
+  },
+  {
+    id: 20,
+    src: '/images/gallery/gallery-project-2.jpg',
+    alt: 'Prima e Dopo Trattamento Superfici',
+    label: 'Prima E Dopo',
+    category: 'industriali',
+    span: 'col-span-1 row-span-1',
+  },
+  {
+    id: 21,
+    src: '/images/gallery/gallery-project-3.jpg',
+    alt: 'Prima e Dopo Pavimenti',
+    label: 'Prima E Dopo',
+    category: 'aziendali',
+    span: 'col-span-1 row-span-1',
+  },
+  {
+    id: 22,
+    src: '/images/gallery/gallery-project-4.png',
+    alt: 'Team Operativo Fulgur Service',
+    label: 'Il Nostro Team',
+    category: 'azienda',
+    span: 'col-span-1 row-span-1',
+  },
+  {
+    id: 23,
+    src: '/images/gallery/gallery-project-5.jpg',
+    alt: 'Intervento in alta quota e vetrate',
+    label: 'Lavori In Quota',
+    category: 'speciali',
+    span: 'col-span-1 row-span-2',
+  },
+  {
+    id: 24,
+    src: '/images/gallery/gallery-project-6.jpg',
+    alt: 'Macchinari e attrezzature pulizie parma',
+    label: 'Intervento Professionale',
+    category: 'aziendali',
+    span: 'col-span-1 row-span-1',
+  },
+  {
+    id: 25,
+    src: '/images/gallery/gallery-project-7.jpg',
+    alt: 'Pulizie industriali pavimentazione e magazzini',
+    label: 'Pavimentazioni',
+    category: 'industriali',
+    span: 'col-span-1 row-span-1',
+  },
+  {
+    id: 26,
+    src: '/images/gallery/gallery-project-8.jpg',
+    alt: 'Risultato pulizia a fondo superfici',
+    label: 'Riserve e Dettagli',
+    category: 'residenziali',
+    span: 'col-span-1 row-span-1',
+  },
+  {
+    id: 27,
+    src: '/images/gallery/gallery-project-9.jpg',
+    alt: 'Risultati perfetti negli ambienti di lavoro',
+    label: 'Uffici',
+    category: 'aziendali',
+    span: 'col-span-1 row-span-1',
+  },
+  {
+    id: 28,
+    src: '/images/gallery/gallery-project-10.jpg',
+    alt: 'Cura e manutenzione condomini',
+    label: 'Intervento in Condominio',
+    category: 'residenziali',
+    span: 'col-span-1 row-span-1',
+  },
+  {
+    id: 29,
+    src: '/images/gallery/gallery-project-11.jpg',
+    alt: 'Sanificazione e trattamenti specifici',
+    label: 'Igiene Profonda',
+    category: 'speciali',
+    span: 'col-span-1 row-span-1',
+  },
+  {
+    id: 30,
+    src: '/images/gallery/gallery-project-12.jpg',
+    alt: 'Pulizie di fino post cantiere',
+    label: 'Fine Cantiere',
+    category: 'speciali',
+    span: 'col-span-1 row-span-1',
+  },
 ]
 
 export default function GalleryPage() {
@@ -224,7 +320,7 @@ export default function GalleryPage() {
         <LayoutGroup>
           <motion.div 
             layout
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 auto-rows-[220px] gap-4"
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 auto-rows-[160px] sm:auto-rows-[200px] md:auto-rows-[220px] lg:auto-rows-[260px] gap-3 sm:gap-4"
           >
             <AnimatePresence mode="popLayout">
               {filteredItems.map((item) => (
@@ -236,7 +332,7 @@ export default function GalleryPage() {
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                   onClick={() => setSelectedImage(item)}
-                  className={`group relative overflow-hidden rounded-2xl bg-[var(--bg-2)] border border-[var(--br)] shadow-sm cursor-zoom-in ${item.span}`}
+                  className={`group relative overflow-hidden rounded-2xl bg-[var(--bg-2)] border border-[var(--br)] shadow-sm hover:shadow-[0_20px_40px_rgba(78,203,160,0.15)] hover:border-[var(--accent)]/50 hover:z-10 transition-all duration-500 cursor-zoom-in ${item.span}`}
                 >
                   <Image
                     src={item.src}

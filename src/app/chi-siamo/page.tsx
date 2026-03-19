@@ -1,4 +1,3 @@
-import React from 'react'
 import type { Metadata } from 'next'
 import { METADATA } from '@/lib/seo'
 import { SectionLabel } from '@/components/ui/SectionLabel'
@@ -8,7 +7,7 @@ import { VisualGuarantees } from '@/components/ui/VisualGuarantees'
 import { ReviewsSection } from '@/components/ui/ReviewsSection'
 import { CTASection } from '@/components/home/CTASection'
 import Image from 'next/image'
-import * as Icons from '@phosphor-icons/react/dist/ssr'
+import { Leaf, ShieldStar, UsersThree, Handshake, CheckCircle } from '@phosphor-icons/react/dist/ssr'
 
 export const metadata: Metadata = {
   title: METADATA.chiSiamo.title,
@@ -18,25 +17,25 @@ export const metadata: Metadata = {
 
 const VALORI = [
   {
-    icon: 'Leaf',
+    Icon: Leaf,
     title: 'Sostenibilità reale',
-    desc: 'Utilizziamo prodotti a basso impatto ambientale e certificati Ecolabel ovunque sia possibile.'
+    desc: 'Utilizziamo prodotti a basso impatto ambientale e certificati Ecolabel ovunque sia possibile.',
   },
   {
-    icon: 'ShieldStar',
+    Icon: ShieldStar,
     title: 'Referente unico',
-    desc: 'Gestiamo servizi integrati per offrirti la comodità di un solo interlocutore di fiducia per ogni esigenza.'
+    desc: 'Gestiamo servizi integrati per offrirti la comodità di un solo interlocutore di fiducia per ogni esigenza.',
   },
   {
-    icon: 'Users',
+    Icon: UsersThree,
     title: 'Team qualificato',
-    desc: 'Personale regolarmente assunto, assicurato e formato continuamente sulle ultime tecniche del settore.'
+    desc: 'Personale regolarmente assunto, assicurato e formato continuamente sulle ultime tecniche del settore.',
   },
   {
-    icon: 'Handshake',
+    Icon: Handshake,
     title: 'Trasparenza totale',
-    desc: 'Sopralluogo sempre gratuito, preventivo dettagliato entro 24 ore e nessuna spesa nascosta.'
-  }
+    desc: 'Sopralluogo sempre gratuito, preventivo dettagliato entro 24 ore e nessuna spesa nascosta.',
+  },
 ]
 
 export default function ChiSiamoPage() {
@@ -47,7 +46,7 @@ export default function ChiSiamoPage() {
       <div className="mx-auto w-full max-w-7xl px-6 xl:px-8 mb-20 text-center flex flex-col items-center">
         <SectionLabel className="mb-4">— LA NOSTRA STORIA</SectionLabel>
         <h1 className="font-display text-4xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl lg:text-7xl max-w-4xl text-balance leading-[0.9]">
-          Tradizione e innovazione nel <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--accent)] to-[var(--br-h)]">cleaning a Parma.</span>
+          Tradizione e innovazione nel <span className="text-[var(--accent)]">cleaning a Parma.</span>
         </h1>
         <p className="mt-8 font-sans text-lg lg:text-xl font-light text-[var(--tx-2)] max-w-3xl leading-relaxed text-balance">
           Fulgur Service è l'<strong>impresa di pulizie a Parma</strong> che unisce l'esperienza tecnica di trent'anni alla visione dinamica di una nuova generazione. 
@@ -126,6 +125,31 @@ export default function ChiSiamoPage() {
 
       <TrustBar />
 
+      {/* VALORI — 4 pillars */}
+      <div className="w-full bg-[var(--bg-2)] border-y border-[var(--br)] py-24">
+        <div className="mx-auto w-full max-w-7xl px-6 xl:px-8">
+          <ScrollReveal>
+            <SectionLabel className="mb-10 mx-auto justify-center">— I NOSTRI VALORI</SectionLabel>
+          </ScrollReveal>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {VALORI.map((valore, i) => {
+              const { Icon, title, desc } = valore
+              return (
+                <ScrollReveal key={i} delay={i * 0.1}>
+                  <div className="flex flex-col gap-4 rounded-3xl border border-[var(--br)] bg-white p-8 h-full hover:border-[var(--accent)] hover:shadow-[0_15px_30px_rgba(42,140,122,0.12)] hover:-translate-y-1 transition-all duration-300 group">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--accent-glow)] border border-[var(--accent)]/20 group-hover:bg-[var(--accent)] transition-colors duration-300">
+                      <Icon size={22} weight="duotone" className="text-[var(--accent)] group-hover:text-white transition-colors" />
+                    </div>
+                    <h3 className="font-display text-lg font-bold text-[var(--tx-1)]">{title}</h3>
+                    <p className="font-body text-sm font-light text-[var(--tx-2)] leading-relaxed">{desc}</p>
+                  </div>
+                </ScrollReveal>
+              )
+            })}
+          </div>
+        </div>
+      </div>
+
       <VisualGuarantees />
 
       {/* TEAM SECTION */}
@@ -148,14 +172,14 @@ export default function ChiSiamoPage() {
                     'Discrezione e professionalità garantita'
                   ].map((item, i) => (
                     <li key={i} className="flex items-center gap-4 text-[var(--tx-1)] font-medium text-lg">
-                       <Icons.CheckCircle size={28} weight="fill" className="text-[var(--accent)] shrink-0" />
+                       <CheckCircle size={28} weight="fill" className="text-[var(--accent)] shrink-0" />
                        {item}
                     </li>
                   ))}
                </ul>
             </ScrollReveal>
             <ScrollReveal>
-               <div className="relative aspect-square rounded-[3rem] overflow-hidden border border-[var(--br)] shadow-2xl bg-[var(--bg-2)]">
+               <div className="relative aspect-square rounded-[3rem] overflow-hidden border border-[var(--br)] shadow-2xl bg-[var(--bg-2)] hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] transition-all duration-700">
                   <Image
                      src="/images/fulgur-service-team-ai.png"
                      alt="Operatori Fulgur Service"

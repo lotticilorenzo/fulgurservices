@@ -34,31 +34,83 @@ export function MacchinariClient() {
   }
 
   return (
-    <main className="bg-[var(--bg)] min-h-screen pt-32 sm:pt-40">
-      
-      {/* HEADER */}
-      <div className="mx-auto w-full max-w-7xl px-6 xl:px-8 mb-20 text-center flex flex-col items-center">
-        <ScrollReveal>
-          <SectionLabel className="mb-4">— LE NOSTRE ATTREZZATURE</SectionLabel>
-          <h1 className="font-display text-4xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl lg:text-6xl max-w-4xl">
-            Potenza industriale,<br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--br-h)] to-[var(--accent)]">
-              risultati chirurgici.
-            </span>
-          </h1>
-          <p className="mt-8 font-sans text-lg lg:text-xl font-light text-[var(--tx-2)] max-w-2xl leading-relaxed text-balance">
-            L'esperienza umana fa la differenza, ma senza i macchinari giusti è impossibile raggiungere l'eccellenza.
-            Investiamo continuamente nei migliori marchi mondiali di cleaning industriale.
-          </p>
-        </ScrollReveal>
-      </div>
+    <main className="bg-[var(--bg)] min-h-screen">
+
+      {/* ── HERO VIDEO ── */}
+      <section className="relative flex h-[100dvh] items-center justify-center overflow-hidden">
+        {/* Video sfondo */}
+        <video
+          suppressHydrationWarning
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover pointer-events-none"
+          src="/videos/macchina-pulitrice.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+
+        {/* Overlay scuro + gradiente in basso per fade verso contenuto bianco */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              'linear-gradient(to bottom, rgba(15,31,26,0.55) 0%, rgba(15,31,26,0.45) 60%, rgba(15,31,26,0.75) 100%)',
+          }}
+        />
+
+        {/* Accent glow verde dal basso */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              'radial-gradient(ellipse 70% 40% at 50% 110%, rgba(78,203,160,0.18), transparent)',
+          }}
+        />
+
+        {/* Contenuto centrato */}
+        <div className="relative z-10 mx-auto w-full max-w-5xl px-6 pt-20 pb-16 text-center">
+          <ScrollReveal>
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-2 backdrop-blur-sm">
+              <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
+              <span className="font-mono-fulgur text-[10px] font-bold uppercase tracking-[0.2em] text-white/80">
+                Le nostre attrezzature
+              </span>
+            </div>
+
+            <h1
+              className="font-display font-extrabold tracking-tight text-white text-balance"
+              style={{ fontSize: 'clamp(40px, 6vw, 84px)', lineHeight: 1.05 }}
+            >
+              Potenza industriale,{' '}
+              <span className="text-[var(--accent)]">risultati chirurgici.</span>
+            </h1>
+
+            <p className="mt-6 font-body text-lg font-light text-white/70 max-w-2xl mx-auto leading-relaxed">
+              L'esperienza umana fa la differenza, ma senza i macchinari giusti
+              è impossibile raggiungere l'eccellenza. Investiamo continuamente
+              nei migliori marchi mondiali di cleaning industriale.
+            </p>
+          </ScrollReveal>
+        </div>
+
+        {/* Freccia scroll giù */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40">
+          <span className="font-mono-fulgur text-[9px] uppercase tracking-[0.2em]">Scopri</span>
+          <svg width="16" height="24" viewBox="0 0 16 24" fill="none" aria-hidden="true">
+            <path d="M8 0v20M1 13l7 7 7-7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </div>
+      </section>
 
       {/* GALLERY MACCHINARI */}
-      <div className="mx-auto w-full max-w-7xl px-6 xl:px-8 mb-32">
+      <div className="mx-auto w-full max-w-7xl px-6 xl:px-8 pt-20 mb-32">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           
           <ScrollReveal delay={0.1}>
-            <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg">
+            <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
               <Image
                 src="/images/macchinari/klindex-polisher-ai.png"
                 alt="Macchinario Klindex per lucidatura pavimenti professionale"
@@ -74,7 +126,7 @@ export function MacchinariClient() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg">
+            <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
               <Image
                 src="/images/macchinari/industrial-vacuum-ai.png"
                 alt="Aspiratore industriale professionale CFM per grandi magazzini"
@@ -90,7 +142,7 @@ export function MacchinariClient() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.3}>
-            <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg">
+            <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
               <Image
                 src="/images/macchinari-pulizie-professionali.jpg"
                 alt="Lavasciuga pavimenti professionale"
@@ -122,8 +174,8 @@ export function MacchinariClient() {
                   <button 
                     onClick={() => handleBrandClick(brand.name)}
                     disabled={!hasData}
-                    className={`flex h-full w-full items-center justify-center p-8 rounded-2xl bg-[var(--bg)] border border-[var(--br)] transition-all group min-h-[140px] relative overflow-hidden ${
-                      hasData ? 'cursor-pointer hover:border-[var(--accent)]/50 hover:shadow-[0_20px_40px_rgba(78,203,160,0.05)]' : 'cursor-default opacity-60'
+                    className={`flex h-full w-full items-center justify-center p-8 rounded-2xl bg-[var(--bg)] border border-[var(--br)] transition-all duration-500 group min-h-[140px] relative overflow-hidden ${
+                      hasData ? 'cursor-pointer hover:border-[var(--accent)]/50 hover:shadow-[0_15px_30px_rgba(78,203,160,0.15)] hover:-translate-y-1' : 'cursor-default opacity-60'
                     }`}
                   >
                     {/* Subtle Background Glow on Hover */}
@@ -134,7 +186,7 @@ export function MacchinariClient() {
                         src={brand.logo}
                         alt={`Logo ${brand.name} — partner macchinari Fulgur Service`}
                         fill
-                        className="object-contain filter grayscale group-hover:grayscale-0 brightness-[0.9] group-hover:brightness-100 transition-all duration-500 scale-[0.85] group-hover:scale-100"
+                        className="object-contain filter grayscale group-hover:grayscale-0 brightness-[0.9] group-hover:brightness-100 transition-all duration-500 scale-[0.85] group-hover:scale-[1.05]"
                         sizes="180px"
                       />
                     </div>

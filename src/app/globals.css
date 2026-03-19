@@ -43,21 +43,26 @@
   --font-family-body:    var(--font-dm-sans), sans-serif;
   --font-family-mono:    var(--font-dm-mono), monospace;
 
-  /* Fulgur color palette */
-  --color-fulgur-bg:     #0D1117;
-  --color-fulgur-bg2:    #12151E;
-  --color-fulgur-card:   #161B24;
+  /* Fulgur color palette — light theme */
+  --color-fulgur-bg:     #FFFFFF;
+  --color-fulgur-bg2:    #F7FBFA;
+  --color-fulgur-card:   #FFFFFF;
   --color-fulgur-accent: #4ECBA0;
   --color-fulgur-deep:   #2A8C7A;
-  --color-fulgur-light:  #6DD9B2;
+  --color-fulgur-light:  #7DDFC0;
 
   /* Keyframes */
-  --animate-float:      float 5s ease-in-out infinite;
-  --animate-float-slow: float 8s ease-in-out infinite;
-  --animate-ticker:     ticker 28s linear infinite;
-  --animate-shimmer:    shimmer 2.5s linear infinite;
-  --animate-scan:       scan 3s ease-in-out infinite alternate;
-  --animate-pulse-ring: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  --animate-float:           float 5s ease-in-out infinite;
+  --animate-float-slow:      float 8s ease-in-out infinite;
+  --animate-float-delayed:   float 6s ease-in-out 2s infinite;
+  --animate-ticker:          ticker 28s linear infinite;
+  --animate-shimmer:         shimmer 2.5s linear infinite;
+  --animate-pulse-ring:      pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  --animate-orbit-sm:        orbit 8s linear infinite;
+  --animate-orbit-md:        orbit 12s linear infinite reverse;
+  --animate-orbit-lg:        orbit 18s linear infinite;
+  --animate-gradient-x:      gradient-x 6s ease infinite;
+  --animate-ping-slow:       ping-slow 3s cubic-bezier(0, 0, 0.2, 1) infinite;
 
   @keyframes float {
     0%, 100% { transform: translateY(0); }
@@ -71,34 +76,28 @@
     0%   { background-position: -200% 0; }
     100% { background-position: 200% 0; }
   }
-  @keyframes scan {
-    0%   { top: 0%; }
-    100% { top: 100%; }
-  }
   @keyframes pulse-ring {
     0%   { transform: scale(0.8); box-shadow: 0 0 0 0 rgba(78, 203, 160, 0.6); }
     70%  { transform: scale(1);   box-shadow: 0 0 0 12px rgba(78, 203, 160, 0); }
     100% { transform: scale(0.8); box-shadow: 0 0 0 0 rgba(78, 203, 160, 0); }
   }
-}
-
-/* ─── Noise Overlay ─── */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  pointer-events: none;
-  opacity: 0.025;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 128px 128px;
+  @keyframes orbit {
+    from { transform: rotate(0deg) translateX(var(--orbit-radius, 60px)) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(var(--orbit-radius, 60px)) rotate(-360deg); }
+  }
+  @keyframes gradient-x {
+    0%, 100% { background-position: 0% 50%; }
+    50%      { background-position: 100% 50%; }
+  }
+  @keyframes ping-slow {
+    75%, 100% { transform: scale(2); opacity: 0; }
+  }
 }
 
 /* ─── Selection ─── */
 ::selection {
   background: var(--accent);
-  color: var(--bg);
+  color: #fff;
 }
 
 /* ─── Scrollbar ─── */
@@ -126,13 +125,53 @@ body {
   overflow-x: hidden;
 }
 
-/* Hide default cursor on desktop for premium experience */
+/* ─── Custom Cursor — hide native cursor on pointer devices ─── */
 @media (hover: hover) and (pointer: fine) {
-  /* cursor: none is removed so that we don't need Crystal Cursor */
+  *, *::before, *::after {
+    cursor: none !important;
+  }
 }
+
+/* ─── GPU compositing hints — applicati agli elementi animati ─── */
+/* Framer Motion applica will-change automaticamente durante l'animazione;
+   qui forziamo la promozione a layer per Navbar e cursor che animano sempre */
+[data-framer-portal-host],
+[data-projection-id] {
+  backface-visibility: hidden;
+}
+
+/* ─── Scroll Reveal — CSS puro, compositor thread, zero JS overhead ─── */
+@keyframes sr-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.984);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Stato iniziale: nascosto finché la IO non aggiunge .sr-visible */
+.sr-hidden {
+  opacity: 0;
+  transform: translateY(28px) scale(0.984);
+  /* will-change viene rimosso dopo l'animazione per liberare layer memory */
+  will-change: opacity, transform;
+}
+
+/* Animazione in entrata — gestita dal compositor, non dal main thread JS */
+.sr-visible {
+  animation: sr-up 0.72s cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: auto;
+}
+
+/* Varianti delay — applicate dal componente via style.animationDelay */
 
 /* ─── Reduced Motion ─── */
 @media (prefers-reduced-motion: reduce) {
+  .sr-hidden { opacity: 1; transform: none; will-change: auto; }
+  .sr-visible { animation: none; }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
@@ -141,6 +180,13 @@ body {
 
 /* ─── Utility Classes ─── */
 @layer utilities {
+
+  /* Font helpers */
+  .font-display     { font-family: var(--font-display); }
+  .font-body        { font-family: var(--font-body); }
+  .font-mono-fulgur { font-family: var(--font-mono); }
+
+  /* ─── Text Styles ─── */
   .text-gradient-accent {
     background: linear-gradient(135deg, var(--accent-l), var(--accent), var(--accent-d));
     -webkit-background-clip: text;
@@ -149,105 +195,42 @@ body {
   }
 
   .text-outline-accent {
-    -webkit-text-stroke: 1.5px var(--accent);
+    -webkit-text-stroke: 2px var(--accent);
     color: transparent;
   }
 
+  /* ─── Glow Effects ─── */
   .glow-accent {
     box-shadow: 0 0 30px var(--accent-glow), 0 0 60px var(--accent-glow);
   }
 
-  .border-accent-gradient {
-    border: 1px solid transparent;
-    background-clip: padding-box;
-    position: relative;
+  .glow-accent-sm {
+    box-shadow: 0 0 15px var(--accent-glow);
   }
 
-  .font-display {
-    font-family: var(--font-display);
+  /* ─── Cards ─── */
+  .card-base {
+    border: 1px solid var(--br);
+    background: var(--bg-card);
+    box-shadow: 0 1px 3px rgba(15,31,26,0.06), 0 4px 12px rgba(15,31,26,0.04);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
   }
 
-  .font-body {
-    font-family: var(--font-body);
+  .card-base:hover {
+    border-color: var(--br-h);
+    box-shadow: 0 4px 20px rgba(78,203,160,0.12), 0 1px 3px rgba(15,31,26,0.08);
   }
 
-  .font-mono-fulgur {
-    font-family: var(--font-mono);
+  /* Premium card hover lift */
+  .card-lift {
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease;
+  }
+  .card-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 60px rgba(42,140,122,0.12), 0 8px 24px rgba(0,0,0,0.04);
   }
 
-  @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(calc(-100% - 1.5rem)); }
-  }
-
-  @keyframes marquee-reverse {
-    from { transform: translateX(calc(-100% - 1.5rem)); }
-    to { transform: translateX(0); }
-  }
-
-  .animate-marquee {
-    animation: marquee 28s linear infinite;
-  }
-
-  .animate-marquee-reverse {
-    animation: marquee-reverse 28s linear infinite;
-  }
-
-  .animate-pulse-ring {
-    animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
-  }
-
-  /* ─── Premium Glass & Shine ─── */
-  .glass-premium {
-    backdrop-filter: blur(12px) saturate(180%);
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
-  }
-
-  .shine-effect {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .shine-effect::after {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -60%;
-    width: 20%;
-    height: 200%;
-    background: linear-gradient(
-      to right,
-      transparent,
-      rgba(255, 255, 255, 0.1),
-      transparent
-    );
-    transform: rotate(30deg);
-    transition: none;
-    pointer-events: none;
-  }
-
-  .shine-effect:hover::after {
-    left: 120%;
-    transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-
-  /* scrollbar-none */
-  .scrollbar-none {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-  .scrollbar-none::-webkit-scrollbar {
-    display: none;
-  }
-
-  /* text-balance */
-  .text-balance {
-    text-wrap: balance;
-  }
-
-  /* gradient-border */
+  /* ─── Gradient Border ─── */
   .gradient-border {
     position: relative;
     border-radius: 1rem;
@@ -265,17 +248,114 @@ body {
     pointer-events: none;
   }
 
-  /* Premium card hover lift */
-  .card-lift {
-    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease;
-  }
-  .card-lift:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 24px 60px rgba(42,140,122,0.12), 0 8px 24px rgba(0,0,0,0.04);
+  /* ─── Glass Morphism ─── */
+  .glass-premium {
+    backdrop-filter: blur(12px) saturate(180%);
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(42, 140, 122, 0.12);
+    box-shadow: 0 8px 32px rgba(42, 140, 122, 0.08);
   }
 
-  /* Section separator: invisible div that adds breathing room */
-  .section-gap {
-    height: clamp(64px, 8vw, 128px);
+  .glass-white {
+    backdrop-filter: blur(16px) saturate(200%);
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  }
+
+  /* ─── Shine Effect ─── */
+  .shine-effect {
+    position: relative;
+    overflow: hidden;
+  }
+  .shine-effect::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 20%;
+    height: 200%;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.15), transparent);
+    transform: rotate(30deg);
+    pointer-events: none;
+  }
+  .shine-effect:hover::after {
+    left: 120%;
+    transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  /* ─── Marquee ─── */
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(calc(-100% - 1.5rem)); }
+  }
+  @keyframes marquee-reverse {
+    from { transform: translateX(calc(-100% - 1.5rem)); }
+    to   { transform: translateX(0); }
+  }
+
+  .animate-marquee         { animation: marquee 28s linear infinite; }
+  .animate-marquee-reverse { animation: marquee-reverse 28s linear infinite; }
+  .animate-marquee-fast    { animation: marquee 16s linear infinite; }
+
+  /* ─── Pulse Ring ─── */
+  .animate-pulse-ring {
+    animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  }
+
+  /* ─── Float ─── */
+  .animate-float          { animation: float 5s ease-in-out infinite; }
+  .animate-float-slow     { animation: float 8s ease-in-out infinite; }
+  .animate-float-delayed  { animation: float 6s ease-in-out 2s infinite; }
+
+  /* ─── Orbit (per CTA dots) ─── */
+  .animate-orbit-sm { animation: orbit 8s linear infinite; }
+  .animate-orbit-md { animation: orbit 12s linear infinite reverse; }
+  .animate-orbit-lg { animation: orbit 18s linear infinite; }
+
+  /* ─── Ping slow ─── */
+  .animate-ping-slow {
+    animation: ping-slow 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  /* ─── Gradient X ─── */
+  .animate-gradient-x {
+    background-size: 200% 200%;
+    animation: gradient-x 6s ease infinite;
+  }
+
+  /* ─── Scrollbar none ─── */
+  .scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .scrollbar-none::-webkit-scrollbar { display: none; }
+
+  /* ─── Text Balance ─── */
+  .text-balance { text-wrap: balance; }
+
+  /* ─── Section gap ─── */
+  .section-gap { height: clamp(64px, 8vw, 128px); }
+
+  /* ─── Accent bg on section (Stats) ─── */
+  .bg-accent-section {
+    background: var(--accent);
+  }
+
+  /* ─── Dot Grid Pattern ─── */
+  .dot-grid {
+    background-image: radial-gradient(circle, var(--br) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  /* ─── Diagonal Lines ─── */
+  .diagonal-lines {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 4px,
+      var(--br) 4px,
+      var(--br) 5px
+    );
   }
 }

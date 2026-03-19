@@ -23,7 +23,7 @@ export function BlogCard({ post, index }: BlogCardProps) {
       className="group"
     >
       <Link href={`/blog/${post.slug}`}>
-        <SpotlightCard className="h-full flex flex-col bg-[var(--bg-2)] border border-[var(--br)] rounded-3xl overflow-hidden transition-all duration-500 hover:border-[var(--accent)]/30 hover:shadow-2xl hover:shadow-[var(--accent)]/5">
+        <SpotlightCard className="h-full flex flex-col bg-[var(--bg-2)] border border-[var(--br)] rounded-3xl overflow-hidden transition-all duration-500 hover:border-[var(--accent)]/50 hover:shadow-[0_20px_40px_rgba(78,203,160,0.15)] hover:-translate-y-1">
           {/* Cover Image */}
           <div className="relative aspect-[16/10] overflow-hidden">
             <Image

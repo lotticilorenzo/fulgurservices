@@ -1,45 +1,46 @@
 'use client'
 
-import React, { useLayoutEffect, useRef } from 'react'
+import React, { useLayoutEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import gsap from 'gsap'
 import { motion } from 'framer-motion'
-import { ShieldCheck, Leaf, Clock, ArrowDown, Star } from '@phosphor-icons/react'
+import { ArrowDown, ShieldCheck, Leaf, Clock } from '@phosphor-icons/react'
 import { GlowBadge } from '@/components/ui/GlowBadge'
 import { MagneticButton } from '@/components/ui/MagneticButton'
 import { ParticleField } from '@/components/ui/ParticleField'
 
 export function HeroSection() {
   const containerRef = useRef<HTMLElement>(null)
-  const leftContentRef = useRef<HTMLDivElement>(null)
-  const [showScroll, setShowScroll] = React.useState(true)
+  const leftRef = useRef<HTMLDivElement>(null)
+  const rightRef = useRef<HTMLDivElement>(null)
+  const [showScroll, setShowScroll] = useState(true)
 
+  /* scroll indicator hide */
   React.useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 100) setShowScroll(false)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    const onScroll = () => setShowScroll(window.scrollY < 100)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  React.useEffect(() => {
-    if (!containerRef.current || !leftContentRef.current) return
+  /* GSAP reveal stagger — left column */
+  useLayoutEffect(() => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (prefersReduced || !containerRef.current || !leftRef.current) return
 
     const ctx = gsap.context(() => {
-      // Seleziona i figli diretti (elementi marcati con gs-reveal)
-      const elements = gsap.utils.toArray('.gs-reveal', leftContentRef.current)
-      
+      const els = gsap.utils.toArray<Element>('.hero-reveal', leftRef.current!)
+
       gsap.fromTo(
-        elements,
-        { y: 50, opacity: 0 },
-        { 
-          y: 0, 
-          opacity: 1, 
-          stagger: 0.08, 
-          duration: 0.8, 
+        els,
+        { y: 36, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          stagger: 0.08,
+          duration: 0.85,
           ease: 'power3.out',
-          delay: 0.1 // Ritardo ridotto per reattività
+          delay: 0.15,
         }
       )
     }, containerRef)
@@ -47,162 +48,254 @@ export function HeroSection() {
     return () => ctx.revert()
   }, [])
 
+  /* GSAP reveal — right column */
+  useLayoutEffect(() => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (prefersReduced || !rightRef.current) return
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        rightRef.current,
+        { opacity: 0, x: 40, scale: 0.96 },
+        { opacity: 1, x: 0, scale: 1, duration: 1.1, ease: 'power3.out', delay: 0.5 }
+      )
+    }, rightRef)
+
+    return () => ctx.revert()
+  }, [])
+
   return (
-    <section 
+    <section
       ref={containerRef}
-      className="relative flex min-h-[100dvh] w-full items-center justify-center overflow-hidden pt-[140px] pb-16"
+      className="relative flex min-h-[100dvh] w-full items-center overflow-hidden bg-[var(--bg)] pt-24 pb-12 sm:pt-28 sm:pb-16 lg:pt-36 lg:pb-20 xl:pt-[140px]"
     >
-      {/* Video Background */}
-      <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="h-full w-full object-cover"
-          poster="/images/hero-fallback.jpg"
-        >
-          <source src="/videos/robot-pulizie.mp4" type="video/mp4" />
-        </video>
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/60 z-10" />
+      {/* Video sfondo in loop */}
+      <video
+        suppressHydrationWarning
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover pointer-events-none"
+        src="/videos/entrata-fulgur.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
+
+      {/* Overlay scuro — mantiene brand leggibile col contrasto del video */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none"
+        style={{ background: 'rgba(13,17,23,0.6)' }}
+      />
+
+      {/* Particle field — sfondo sottile */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <ParticleField />
       </div>
 
-      {/* Background Layer (Aggiuntivo se necessario) */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,var(--accent-glow),transparent_70%)] opacity-20 pointer-events-none z-20" />
+      {/* Radial gradient accent low-opacity */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 z-0 pointer-events-none"
+        style={{
+          background:
+            'radial-gradient(ellipse 70% 60% at 70% 80%, rgba(78,203,160,0.07) 0%, transparent 70%)',
+        }}
+      />
 
-      {/* Content Container */}
-      <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 gap-16 px-6 lg:grid-cols-[55%_45%] lg:items-center xl:gap-24 xl:px-8">
-        
-        {/* LATO SINISTRO: Testo */}
-        <div ref={leftContentRef} className="flex flex-col items-start pt-12 lg:pt-0">
+      {/* Content */}
+      <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-10 px-6 lg:grid-cols-[55%_45%] md:gap-12 xl:gap-20 xl:px-8">
 
-          <h1 className="gs-reveal font-display text-[11vw] font-black leading-[0.95] tracking-tight text-white sm:text-[8vw] lg:text-7xl xl:text-8xl">
-            Puliamo il Futuro<br />
-            <span className="text-outline-accent">con l&apos;Energia</span><br />
-            <span className="text-[var(--accent)]">della Natura</span>
+        {/* ── SINISTRA ── */}
+        <div ref={leftRef} className="flex flex-col items-start">
+
+          {/* GlowBadge */}
+          <div className="hero-reveal">
+            <GlowBadge>Parma · Dal 1994</GlowBadge>
+          </div>
+
+          {/* H1 — tre righe */}
+          <h1 className="hero-reveal mt-6 font-display font-black leading-[0.93] tracking-tighter text-[clamp(44px,6.5vw,84px)]">
+            <span className="block text-white">Puliamo il Futuro</span>
+            <span className="block text-outline-accent">con l&apos;Energia</span>
+            <span className="block text-[var(--accent)]">della Natura</span>
           </h1>
 
-          <div className="gs-reveal mt-6 flex items-center gap-2 font-mono-fulgur text-xs text-white/70">
-            <div className="flex text-[var(--accent)]">
-              {[...Array(5)].map((_, i) => <Star key={i} size={14} weight="fill" />)}
-            </div>
-            <span>4.9 su Google · 47 recensioni verificate</span>
-          </div>
-
-          <p className="gs-reveal mt-8 max-w-xl font-body text-lg font-light leading-relaxed text-white/90 lg:text-xl">
-            Siamo l&apos;<strong>impresa di pulizie di riferimento a Parma e provincia</strong>. 
-            Oltre 30 anni di esperienza, tecnologie all&apos;avanguardia e soluzioni 
-            sostenibili per ogni tipo di ambiente e superficie.
+          {/* Subtitle */}
+          <p className="hero-reveal mt-5 sm:mt-7 max-w-[50ch] font-body text-[0.95rem] sm:text-[1.05rem] font-light leading-relaxed text-white/80">
+            Impresa di pulizie professionali a{' '}
+            <strong className="font-medium text-white">Parma e provincia</strong>.
+            30 anni di esperienza, tecnologie all&apos;avanguardia,
+            soluzioni sostenibili per ogni ambiente.
           </p>
 
-          <div className="gs-reveal mt-10 flex flex-wrap items-center gap-x-2 gap-y-2.5 font-mono-fulgur text-[9px] font-bold uppercase tracking-[0.15em] text-white/60 sm:gap-x-4 sm:text-xs sm:tracking-[0.2em]">
-            <span className="bg-white/10 px-2.5 py-1.5 rounded-full border border-white/10 backdrop-blur-sm whitespace-nowrap">30+ anni</span>
-            <span className="hidden sm:inline text-[var(--accent)] opacity-50">·</span>
-            <span className="bg-white/10 px-2.5 py-1.5 rounded-full border border-white/10 backdrop-blur-sm whitespace-nowrap">500+ clienti</span>
-            <span className="hidden sm:inline text-[var(--accent)] opacity-50">·</span>
-            <span className="bg-white/10 px-2.5 py-1.5 rounded-full border border-white/10 backdrop-blur-sm whitespace-nowrap">12 settori</span>
+          {/* Stats inline */}
+          <div className="hero-reveal mt-5 sm:mt-7 flex flex-wrap items-center gap-x-4 gap-y-2 sm:gap-x-5 font-mono-fulgur text-[9px] sm:text-[11px] font-bold uppercase tracking-[0.15em] text-white/70">
+            <span className="flex items-center gap-1.5">
+              <span className="text-[var(--accent)] text-base font-black">30+</span> anni
+            </span>
+            <span className="text-white/30">·</span>
+            <span className="flex items-center gap-1.5">
+              <span className="text-[var(--accent)] text-base font-black">500+</span> clienti
+            </span>
+            <span className="text-white/30">·</span>
+            <span className="flex items-center gap-1.5">
+              <span className="text-[var(--accent)] text-base font-black">12</span> settori
+            </span>
+            <span className="text-white/30">·</span>
+            <span>sopralluogo 100% gratuito</span>
           </div>
 
-          <div className="gs-reveal mt-12 flex flex-col gap-5 sm:flex-row sm:items-center">
+          {/* CTAs */}
+          <div className="hero-reveal mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
             <Link href="/preventivo" tabIndex={-1} className="w-full sm:w-auto">
-              <MagneticButton as="div" intensity={0.15} className="group flex h-[60px] w-full items-center justify-center rounded-full bg-[var(--accent)] px-10 font-display text-[16px] font-bold text-white transition-all hover:bg-[var(--accent-d)] shadow-[0_10px_30px_rgba(78,203,160,0.25)]">
-                <span>Richiedi Sopralluogo Gratuito</span>
+              <MagneticButton
+                as="div"
+                intensity={0.15}
+                aria-label="Richiedi sopralluogo gratuito"
+                className="group relative flex h-[58px] w-full items-center justify-center overflow-hidden rounded-full bg-[var(--accent)] px-9 font-display text-[15px] font-bold text-white shadow-[0_12px_32px_rgba(78,203,160,0.3)] transition-all hover:bg-[var(--accent-d)] hover:shadow-[0_16px_40px_rgba(78,203,160,0.4)] sm:w-auto shine-effect"
+              >
+                <span className="relative z-10">Richiedi Sopralluogo Gratuito</span>
               </MagneticButton>
             </Link>
             <Link href="/servizi" tabIndex={-1} className="w-full sm:w-auto">
-              <MagneticButton as="div" intensity={0.1} className="group flex h-[60px] w-full items-center justify-center rounded-full border border-white/30 px-10 font-display text-[16px] font-bold text-white transition-colors hover:bg-[var(--accent)] hover:border-[var(--accent)]">
-                <span>Scopri i Servizi →</span>
+              <MagneticButton
+                as="div"
+                intensity={0.1}
+                aria-label="Scopri i servizi di Fulgur Service"
+                className="group flex h-[58px] w-full items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 backdrop-blur-md px-9 font-display text-[15px] font-bold text-white transition-all hover:border-[var(--accent)] hover:text-[var(--accent)] hover:bg-white/10 sm:w-auto"
+              >
+                <span>Scopri i Servizi</span>
+                <span className="transition-transform group-hover:translate-x-1">→</span>
               </MagneticButton>
             </Link>
           </div>
 
-          <div className="gs-reveal mt-8 mb-4 sm:mb-0 flex flex-wrap gap-x-6 gap-y-3 font-mono-fulgur text-[10px] font-medium tracking-widest text-white/50 uppercase">
+          {/* Trust micro-badge */}
+          <div className="hero-reveal mt-8 flex flex-wrap gap-x-6 gap-y-2.5 font-mono-fulgur text-[10px] font-medium uppercase tracking-widest text-white/70">
             <div className="flex items-center gap-2">
-              <ShieldCheck size={16} className="text-[var(--accent)]" aria-hidden="true" />
-              <span className="whitespace-nowrap text-white/80">Assicurati RCT €2M</span>
+              <ShieldCheck size={14} className="text-[var(--accent)]" aria-hidden="true" />
+              <span>Assicurati RCT €2M</span>
             </div>
             <div className="flex items-center gap-2">
-              <Leaf size={16} className="text-[var(--accent)]" aria-hidden="true" />
-              <span className="whitespace-nowrap text-white/80">Prodotti Eco Certificati</span>
+              <Leaf size={14} className="text-[var(--accent)]" aria-hidden="true" />
+              <span>Prodotti Eco Certificati</span>
             </div>
             <div className="flex items-center gap-2">
-              <Clock size={16} className="text-[var(--accent)]" aria-hidden="true" />
-              <span className="whitespace-nowrap text-white/80">Risposta in 24h</span>
+              <Clock size={14} className="text-[var(--accent)]" aria-hidden="true" />
+              <span>Risposta 24h</span>
             </div>
           </div>
         </div>
 
-        {/* LATO DESTRO: Visual */}
-        <div className="relative flex items-center justify-center pb-12 lg:pb-0">
-          {/* Main Circle Component */}
-          <div className="relative flex h-[300px] w-[300px] sm:h-[350px] sm:w-[350px] lg:h-[420px] lg:w-[420px] items-center justify-center">
-            {/* Pulsing glow background */}
-            <div className="absolute inset-0 rounded-full bg-[var(--accent)] opacity-20 blur-[60px]" />
-            
-            {/* Circular Image Container */}
-            <div className="relative h-full w-full overflow-hidden rounded-full border-2 border-[var(--br)] bg-white p-1 shadow-[0_10px_40px_rgba(42,140,122,0.1)] transition-colors duration-500 hover:border-[var(--accent)] hover:shadow-[0_15px_50px_rgba(42,140,122,0.2)]">
+        {/* ── DESTRA ── */}
+        <div
+          ref={rightRef}
+          className="relative flex items-center justify-center opacity-0"
+        >
+          {/* Grande cerchio immagine */}
+          <div className="relative flex h-[260px] w-[260px] items-center justify-center sm:h-[320px] sm:w-[320px] md:h-[380px] md:w-[380px] lg:h-[440px] lg:w-[440px] xl:h-[460px] xl:w-[460px]">
+
+            {/* Glow aura */}
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 rounded-full"
+              style={{
+                background:
+                  'radial-gradient(circle, rgba(78,203,160,0.14) 40%, transparent 70%)',
+              }}
+            />
+
+            {/* Anello esterno pulsante */}
+            <div
+              aria-hidden="true"
+              className="absolute inset-[-16px] rounded-full border border-[var(--accent)] opacity-20 animate-ping-slow"
+            />
+
+            {/* Anello bordo accent */}
+            <div className="absolute inset-0 rounded-full border border-[var(--accent)] opacity-25" />
+
+            {/* Immagine circolare */}
+            <div className="relative h-full w-full overflow-hidden rounded-full border border-[var(--br-h)] bg-[var(--bg-2)] p-1.5 shadow-[0_20px_60px_rgba(42,140,122,0.12)]">
               <div className="relative h-full w-full overflow-hidden rounded-full">
                 <Image
                   src="/images/fulgur-service-team-ai.png"
-                  alt="Il team Fulgur Service a Parma — pulizie professionali"
+                  alt="Il team Fulgur Service a Parma — impresa di pulizie professionali"
                   fill
-                  sizes="(max-width: 768px) 300px, 420px"
+                  sizes="(max-width: 640px) 320px, (max-width: 1024px) 380px, 460px"
                   className="object-cover transition-transform duration-700 hover:scale-105"
                   priority
                 />
               </div>
             </div>
 
-            {/* Floating Mini Cards */}
-            <motion.div
-              initial={{ y: -8 }}
-              animate={{ y: [-8, 8, -8] }}
-              transition={{ repeat: Infinity, duration: 4.2, ease: 'easeInOut' }}
-              className="absolute -right-4 top-6 lg:-right-14 lg:top-12 z-20 min-w-[120px] rounded-2xl border border-white/40 bg-white/70 backdrop-blur-md px-5 py-4 shadow-2xl shadow-green-900/20 sm:min-w-[140px]"
-            >
-              <div className="flex flex-col items-start leading-tight">
-                <div className="font-display text-3xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-4xl">30+</div>
-                <div className="mt-1 font-mono-fulgur text-[9px] font-bold uppercase tracking-widest text-[var(--tx-2)] sm:text-[10px]">Anni esperienza</div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ y: 8 }}
-              animate={{ y: [8, -8, 8] }}
-              transition={{ repeat: Infinity, duration: 5.2, ease: 'easeInOut', delay: 1 }}
-              className="absolute -left-6 bottom-12 lg:-left-16 lg:bottom-20 z-20 min-w-[120px] rounded-2xl border border-white/40 bg-white/70 backdrop-blur-md px-5 py-4 shadow-2xl shadow-green-900/20 sm:min-w-[140px]"
-            >
-              <div className="flex flex-col items-start leading-tight">
-                  <div className="font-display text-3xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-4xl">500+</div>
-                  <div className="mt-1 font-mono-fulgur text-[9px] font-bold uppercase tracking-widest text-[var(--tx-2)] sm:text-[10px]">Clienti soddisfatti</div>
-                </div>
-            </motion.div>
-
+            {/* Card float: 30+ anni */}
             <motion.div
               initial={{ y: -6 }}
               animate={{ y: [-6, 6, -6] }}
-              transition={{ repeat: Infinity, duration: 4.8, ease: 'easeInOut', delay: 2 }}
-              className="absolute -left-2 top-20 lg:-left-10 lg:top-32 z-20 min-w-[120px] rounded-2xl border border-white/40 bg-white/70 backdrop-blur-md px-5 py-4 shadow-2xl shadow-green-900/20 sm:min-w-[140px]"
+              transition={{ repeat: Infinity, duration: 4.2, ease: 'easeInOut' }}
+              className="absolute -right-5 top-10 z-20 lg:-right-14 lg:top-16 glass-white rounded-2xl px-5 py-4 min-w-[130px] shadow-xl"
             >
               <div className="flex flex-col items-start leading-tight">
-                  <div className="font-display text-3xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-4xl">12</div>
-                  <div className="mt-1 font-mono-fulgur text-[9px] font-bold uppercase tracking-widest text-[var(--tx-2)] sm:text-[10px]">Settori serviti</div>
+                <div className="font-display text-3xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-4xl">30+</div>
+                <div className="mt-1 font-mono-fulgur text-[9px] font-bold uppercase tracking-widest text-[var(--tx-2)]">
+                  Anni<br />di know-how
                 </div>
+              </div>
+            </motion.div>
+
+            {/* Card float: 500+ clienti */}
+            <motion.div
+              initial={{ y: 8 }}
+              animate={{ y: [8, -8, 8] }}
+              transition={{ repeat: Infinity, duration: 5.2, ease: 'easeInOut', delay: 1.2 }}
+              className="absolute -left-6 bottom-14 z-20 lg:-left-16 lg:bottom-20 glass-white rounded-2xl px-5 py-4 min-w-[130px] shadow-xl"
+            >
+              <div className="flex flex-col items-start leading-tight">
+                <div className="font-display text-3xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-4xl">500+</div>
+                <div className="mt-1 font-mono-fulgur text-[9px] font-bold uppercase tracking-widest text-[var(--tx-2)]">
+                  Clienti<br />soddisfatti
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Card float: 12 settori */}
+            <motion.div
+              initial={{ y: -4 }}
+              animate={{ y: [-4, 8, -4] }}
+              transition={{ repeat: Infinity, duration: 4.8, ease: 'easeInOut', delay: 2.5 }}
+              className="absolute -left-4 top-20 z-20 lg:-left-12 lg:top-32 glass-white rounded-2xl px-5 py-4 min-w-[120px] shadow-xl hidden sm:flex"
+            >
+              <div className="flex flex-col items-start leading-tight">
+                <div className="font-display text-3xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-4xl">12</div>
+                <div className="mt-1 font-mono-fulgur text-[9px] font-bold uppercase tracking-widest text-[var(--tx-2)]">
+                  Settori<br />serviti
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
-
       </div>
 
-      {/* Scroll Indicator */}
-      <motion.div 
-        animate={{ opacity: showScroll ? 1 : 0, y: showScroll ? 0 : 20 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none"
+      {/* Gradient di uscita verso il basso (si fonde col nero della ScrollVideoSection seguente) */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute bottom-0 left-0 right-0 h-32 z-10"
+        style={{ background: 'linear-gradient(to bottom, transparent, #000000)' }}
+      />
+
+      {/* Scroll indicator */}
+      <motion.div
+        animate={{ opacity: showScroll ? 1 : 0, y: showScroll ? 0 : 16 }}
+        transition={{ duration: 0.4 }}
+        className="pointer-events-none absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-2"
+        aria-hidden="true"
       >
-        <span className="font-mono-fulgur text-[10px] font-bold uppercase tracking-widest text-[var(--tx-3)]">Scorri</span>
+        <span className="font-mono-fulgur text-[9px] font-bold uppercase tracking-[0.2em] text-white/60">
+          Scorri
+        </span>
         <motion.div
-          animate={{ y: [0, 8, 0] }}
+          animate={{ y: [0, 6, 0] }}
           transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
         >
           <ArrowDown size={14} className="text-[var(--accent)]" />

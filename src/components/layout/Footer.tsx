@@ -3,6 +3,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { InstagramLogo, WhatsappLogo, EnvelopeSimple, Phone, MapPin } from '@phosphor-icons/react/dist/ssr'
+import Image from 'next/image'
 import { SERVICES } from '@/lib/services-data'
 
 const COMPANY_LINKS = [
@@ -34,24 +35,23 @@ export function Footer() {
       {/* Top accent bar */}
       <div className="h-1 w-full bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent opacity-60" />
 
-      <div className="mx-auto w-full max-w-7xl px-6 xl:px-8 pt-16 pb-8 sm:pt-20">
+      <div className="mx-auto w-full max-w-7xl px-6 xl:px-8 pt-14 pb-6 sm:pt-20 sm:pb-8 lg:pb-12">
         
         {/* Main Grid: 4 columns */}
-        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1.4fr] lg:gap-10">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-8 lg:grid-cols-[2fr_1fr_1fr_1.4fr] lg:gap-10">
           
           {/* Col 1: Brand */}
           <div className="flex flex-col">
-            <Link href="/" className="inline-flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] rounded-lg w-fit">
-              <svg width="36" height="36" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <circle cx="20" cy="20" r="20" fill="#1A1A2E" />
-                <path d="M22.5 10L14 22H20.5L17.5 31L27 18.5H20.5L22.5 10Z" fill="url(#paint_footer_logo)" stroke="#4ECBA0" strokeWidth="1.5" strokeLinejoin="round"/>
-                <defs>
-                  <linearGradient id="paint_footer_logo" x1="14" y1="10" x2="27" y2="31" gradientUnits="userSpaceOnUse">
-                    <stop stopColor="#4ECBA0" />
-                    <stop offset="1" stopColor="#1B5E6E" />
-                  </linearGradient>
-                </defs>
-              </svg>
+            <Link href="/" className="inline-flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] rounded-xl w-fit">
+              <div className="rounded-xl bg-white p-1 shadow-sm border border-[var(--br)]">
+                <Image
+                  src="/images/logo-official.webp"
+                  alt="Fulgur Service logo"
+                  width={44}
+                  height={44}
+                  className="object-contain"
+                />
+              </div>
               <div className="flex flex-col">
                 <span className="font-display text-xl font-bold leading-none tracking-tight text-[var(--tx-1)]">FULGUR</span>
                 <span className="font-display text-sm font-bold leading-none tracking-tight text-[var(--accent)]">SERVICE</span>
@@ -167,7 +167,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-14 border-t border-[var(--br)] pt-7 flex flex-col items-center justify-between gap-4 sm:flex-row">
+        <div className="mt-10 sm:mt-14 border-t border-[var(--br)] pt-6 sm:pt-7 flex flex-col items-center justify-between gap-4 sm:flex-row">
           <p className="font-mono-fulgur text-[10px] uppercase tracking-wider text-[var(--tx-3)]">
             © {year} Fulgur Service S.R.L. — P.IVA 03063010346 · REA PR-353051 · Cap. Soc. €10.000 i.v.
           </p>

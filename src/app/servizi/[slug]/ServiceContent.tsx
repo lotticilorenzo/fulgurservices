@@ -20,7 +20,9 @@ interface ServiceContentProps {
 }
 
 export function ServiceContent({ service }: ServiceContentProps) {
-  const IconComponent = (Icons as any)[service.icon] || Icons.Briefcase
+  // Phosphor exports SSR namespace alongside components — cast through unknown
+  const IconLookup = Icons as unknown as Record<string, React.ElementType>
+  const IconComponent: React.ElementType = IconLookup[service.icon] ?? Icons.Briefcase
 
   return (
     <main className="bg-[var(--bg)] min-h-screen pt-32 sm:pt-40 relative overflow-hidden">
@@ -157,7 +159,7 @@ export function ServiceContent({ service }: ServiceContentProps) {
             <aside className="flex flex-col gap-8 lg:sticky lg:top-32 h-fit">
 
               {/* A CHI E' RIVOLTO */}
-              <div className="glass-premium rounded-3xl border border-[var(--br)] bg-[var(--bg-1)]/60 p-8 shadow-2xl backdrop-blur-xl">
+              <div className="glass-premium rounded-3xl border border-[var(--br)] bg-white/60 p-8 shadow-2xl backdrop-blur-xl">
                 <SectionLabel className="mb-6">— AMBITI DI APPLICAZIONE</SectionLabel>
                 <div className="flex flex-col gap-3">
                   {service.sectors.map((sector, i) => (
@@ -170,7 +172,7 @@ export function ServiceContent({ service }: ServiceContentProps) {
               </div>
 
               {/* TEASER IMPRESA 360 */}
-              <div className="rounded-3xl border border-[var(--accent)]/20 bg-gradient-to-br from-[var(--bg-1)] to-[var(--accent)]/10 p-8 text-center relative overflow-hidden group">
+              <div className="rounded-3xl border border-[var(--accent)]/20 bg-gradient-to-br from-[var(--bg)] to-[var(--accent)]/10 p-8 text-center relative overflow-hidden group">
                 <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:scale-125 transition-transform duration-700">
                   <Icons.Lightning size={120} weight="fill" />
                 </div>
@@ -197,7 +199,7 @@ export function ServiceContent({ service }: ServiceContentProps) {
       <div className="w-full bg-[var(--bg-2)] pb-32 relative z-10 overflow-hidden">
         <ScrollReveal>
           <div className="mx-auto w-full max-w-7xl px-6 xl:px-8">
-            <div className="flex flex-col lg:flex-row items-center gap-16 p-8 lg:p-16 rounded-[3rem] bg-gradient-to-br from-[var(--bg-1)] to-black border border-[var(--accent)]/10 shadow-2xl relative overflow-hidden">
+            <div className="flex flex-col lg:flex-row items-center gap-16 p-8 lg:p-16 rounded-[3rem] bg-gradient-to-br from-[#12151E] to-[#0D1117] border border-[var(--accent)]/10 shadow-2xl relative overflow-hidden">
                {/* Background Glow */}
                <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[var(--accent)]/10 rounded-full blur-[100px] -z-10" />
                
@@ -243,8 +245,8 @@ export function ServiceContent({ service }: ServiceContentProps) {
             </p>
             
             <Link href="/preventivo">
-              <MagneticButton className="px-12 py-6 rounded-2xl bg-[var(--accent)] font-display text-lg font-bold text-[var(--bg)] shadow-glow hover:scale-105 active:scale-95 transition-all">
-                Richiedi Sopralluogo Gratuito
+              <MagneticButton className="px-12 py-6 rounded-2xl bg-[var(--accent)] font-display text-lg font-bold text-white shadow-[0_10px_20px_var(--accent-glow)] transition-all duration-300 hover:shadow-[0_15px_30px_var(--accent-glow-h)] hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-3">
+                Richiedi Sopralluogo Gratuito <ArrowRight weight="bold" />
               </MagneticButton>
             </Link>
           </div>

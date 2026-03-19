@@ -20,7 +20,7 @@ export default function ContattiPage() {
         <div className="mb-20 text-center flex flex-col items-center">
           <SectionLabel className="mb-4">— SIAMO QUI PER TE</SectionLabel>
           <h1 className="font-display text-4xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl lg:text-6xl max-w-3xl">
-            Entriamo in <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--br-h)] to-[var(--accent)]">contatto.</span>
+            Entriamo in <span className="text-[var(--accent)]">contatto.</span>
           </h1>
           <p className="mt-6 font-sans text-lg font-light text-[var(--tx-2)] max-w-2xl text-balance">
             Hai domande su un servizio o necessiti di assistenza? Il nostro team a Parma è sempre disponibile.
@@ -107,7 +107,7 @@ export default function ContattiPage() {
               </div>
 
               {/* ZONE SERVITE */}
-              <div className="mt-4 p-8 rounded-3xl bg-[var(--bg-card)] border border-[var(--br)]">
+              <div className="mt-4 p-8 rounded-3xl bg-[var(--bg-card)] border border-[var(--br)] hover:shadow-[0_15px_30px_rgba(42,140,122,0.12)] hover:-translate-y-1 transition-all duration-300">
                 <h4 className="font-display font-bold text-[var(--tx-1)] text-lg mb-4">Dove operiamo</h4>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-y-3 gap-x-6">
                   {['Parma (Città)', 'Collecchio', 'Fidenza', 'Salsomaggiore', 'Langhirano', 'Traversetolo', 'Montechiarugolo', 'Felino', 'Sorbolo Mezzani', 'Noceto'].map((city) => (

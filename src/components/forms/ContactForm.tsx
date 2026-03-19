@@ -7,11 +7,11 @@ import { z } from 'zod'
 import { Warning, PaperPlaneRight, CheckCircle } from '@phosphor-icons/react'
 
 const ContactSchema = z.object({
-  nome: z.string().min(2, 'Inserisci il nome.'),
-  email: z.string().email('Indirizzo email non valido.'),
-  tel: z.string().min(5, 'Numero non valido.'),
-  messaggio: z.string().min(10, 'Il messaggio è troppo corto.'),
-  website: z.string().optional(), // Honeypot
+  nome:      z.string().min(2, 'Inserisci nome e cognome.'),
+  email:     z.string().email('Indirizzo email non valido.'),
+  tel:       z.string().min(5, 'Numero di telefono non valido.'),
+  messaggio: z.string().min(10, 'Il messaggio è troppo corto (minimo 10 caratteri).'),
+  website:   z.string().optional(), // Honeypot
 })
 
 type ContactFormData = z.infer<typeof ContactSchema>
@@ -19,27 +19,31 @@ type ContactFormData = z.infer<typeof ContactSchema>
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
+  const [submitError, setSubmitError] = useState<string | null>(null)
 
   const { register, handleSubmit, formState: { errors } } = useForm<ContactFormData>({
-    resolver: zodResolver(ContactSchema)
+    resolver: zodResolver(ContactSchema),
+    mode: 'onTouched',
   })
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true)
+    setSubmitError(null)
     try {
       const res = await fetch('/api/contatti', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       })
-      const result = await res.json()
+      const result = await res.json() as { success: boolean; error?: string }
       if (result.success) {
         setIsSuccess(true)
       } else {
-        alert(result.error)
+        setSubmitError(result.error ?? "Si è verificato un errore. Riprova più tardi.")
       }
     } catch (e) {
-      alert("Errore di rete.")
+      console.error(e)
+      setSubmitError('Errore di rete. Controlla la connessione e riprova.')
     } finally {
       setIsSubmitting(false)
     }
@@ -48,76 +52,140 @@ export function ContactForm() {
   if (isSuccess) {
     return (
       <div className="w-full bg-white border border-[var(--br)] rounded-3xl p-8 flex flex-col items-center justify-center text-center min-h-[400px] shadow-sm">
-        <CheckCircle size={64} className="text-[var(--accent)] mb-4" />
-        <h3 className="font-display text-2xl font-bold text-[var(--tx-1)]">Messaggio Inviato</h3>
-        <p className="font-sans text-[var(--tx-2)] mt-2">Ti risponderemo il prima possibile.</p>
+        <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-[var(--accent-glow)] border border-[var(--accent)]/20">
+          <CheckCircle size={36} weight="fill" className="text-[var(--accent)]" />
+        </div>
+        <h3 className="font-display text-2xl font-bold text-[var(--tx-1)]">Messaggio Inviato!</h3>
+        <p className="font-sans text-base font-light text-[var(--tx-2)] mt-3 max-w-xs">
+          Ti risponderemo entro 24 ore. Hai urgenza?{' '}
+          <a href="tel:+393383160091" className="text-[var(--accent)] font-medium hover:underline">
+            Chiamaci direttamente.
+          </a>
+        </p>
       </div>
     )
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="w-full bg-white border border-[var(--br)] rounded-3xl p-8 flex flex-col gap-5 shadow-xl shadow-[rgba(42,140,122,0.08)]">
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="w-full bg-white border border-[var(--br)] rounded-3xl p-8 flex flex-col gap-5 shadow-xl shadow-[rgba(42,140,122,0.08)]"
+      noValidate
+    >
       <div className="mb-2">
         <h3 className="font-display text-2xl font-bold text-[var(--tx-1)]">Prendiamoci cura del tuo ambiente</h3>
-        <p className="font-sans text-sm font-light text-[var(--tx-3)] mt-1">Richiedi un sopralluogo gratuito o un preventivo personalizzato.</p>
+        <p className="font-sans text-sm font-light text-[var(--tx-3)] mt-1">
+          Richiedi un sopralluogo gratuito o un preventivo personalizzato.
+        </p>
       </div>
-      
-      {/* Honeypot field - Hidden from users */}
+
+      {/* Honeypot — nascosto agli utenti */}
       <div className="hidden" aria-hidden="true">
         <input type="text" {...register('website')} tabIndex={-1} autoComplete="off" />
       </div>
 
+      {/* Nome */}
       <div className="flex flex-col gap-2">
-        <label className="font-sans text-sm font-medium text-[var(--tx-1)]">Nome e Cognome *</label>
-        <input 
-          type="text" 
-          {...register('nome')} 
-          className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-4 py-3 font-sans text-sm text-[var(--tx-1)] focus:ring-2 focus:ring-[var(--accent)] outline-none transition-all focus:bg-white"
+        <label htmlFor="cf-nome" className="font-sans text-sm font-medium text-[var(--tx-1)]">
+          Nome e Cognome *
+        </label>
+        <input
+          id="cf-nome"
+          type="text"
+          autoComplete="name"
+          aria-describedby={errors.nome ? 'cf-nome-err' : undefined}
+          aria-invalid={!!errors.nome}
+          {...register('nome')}
+          className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-4 py-3 font-sans text-sm text-[var(--tx-1)] focus:ring-2 focus:ring-[var(--accent)] outline-none transition-all focus:bg-white focus:shadow-[0_0_15px_var(--accent-glow)] aria-[invalid=true]:border-red-300"
         />
-        {errors.nome && <span className="text-red-500 text-xs font-medium flex items-center gap-1"><Warning size={14}/>{errors.nome.message}</span>}
+        {errors.nome && (
+          <span id="cf-nome-err" role="alert" className="flex items-center gap-1 text-xs text-red-500 font-medium">
+            <Warning size={14} aria-hidden="true" />{errors.nome.message}
+          </span>
+        )}
       </div>
 
+      {/* Email + Tel */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div className="flex flex-col gap-2">
-          <label className="font-sans text-sm font-medium text-[var(--tx-1)]">Email *</label>
-          <input 
-            type="email" 
-            {...register('email')} 
-            className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-4 py-3 font-sans text-sm text-[var(--tx-1)] focus:ring-2 focus:ring-[var(--accent)] outline-none transition-all focus:bg-white"
+          <label htmlFor="cf-email" className="font-sans text-sm font-medium text-[var(--tx-1)]">Email *</label>
+          <input
+            id="cf-email"
+            type="email"
+            autoComplete="email"
+            aria-describedby={errors.email ? 'cf-email-err' : undefined}
+            aria-invalid={!!errors.email}
+            {...register('email')}
+            className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-4 py-3 font-sans text-sm text-[var(--tx-1)] focus:ring-2 focus:ring-[var(--accent)] outline-none transition-all focus:bg-white focus:shadow-[0_0_15px_var(--accent-glow)] aria-[invalid=true]:border-red-300"
           />
-          {errors.email && <span className="text-red-500 text-xs font-medium flex items-center gap-1"><Warning size={14}/>{errors.email.message}</span>}
+          {errors.email && (
+            <span id="cf-email-err" role="alert" className="flex items-center gap-1 text-xs text-red-500 font-medium">
+              <Warning size={14} aria-hidden="true" />{errors.email.message}
+            </span>
+          )}
         </div>
         <div className="flex flex-col gap-2">
-          <label className="font-sans text-sm font-medium text-[var(--tx-1)]">Telefono *</label>
-          <input 
-            type="tel" 
-            {...register('tel')} 
-            className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-4 py-3 font-sans text-sm text-[var(--tx-1)] focus:ring-2 focus:ring-[var(--accent)] outline-none transition-all focus:bg-white"
+          <label htmlFor="cf-tel" className="font-sans text-sm font-medium text-[var(--tx-1)]">Telefono *</label>
+          <input
+            id="cf-tel"
+            type="tel"
+            autoComplete="tel"
+            aria-describedby={errors.tel ? 'cf-tel-err' : undefined}
+            aria-invalid={!!errors.tel}
+            {...register('tel')}
+            className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-4 py-3 font-sans text-sm text-[var(--tx-1)] focus:ring-2 focus:ring-[var(--accent)] outline-none transition-all focus:bg-white aria-[invalid=true]:border-red-300"
           />
-          {errors.tel && <span className="text-red-500 text-xs font-medium flex items-center gap-1"><Warning size={14}/>{errors.tel.message}</span>}
+          {errors.tel && (
+            <span id="cf-tel-err" role="alert" className="flex items-center gap-1 text-xs text-red-500 font-medium">
+              <Warning size={14} aria-hidden="true" />{errors.tel.message}
+            </span>
+          )}
         </div>
       </div>
 
+      {/* Messaggio */}
       <div className="flex flex-col gap-2">
-        <label className="font-sans text-sm font-medium text-[var(--tx-1)]">Messaggio *</label>
-        <textarea 
+        <label htmlFor="cf-messaggio" className="font-sans text-sm font-medium text-[var(--tx-1)]">Messaggio *</label>
+        <textarea
+          id="cf-messaggio"
           rows={4}
-          {...register('messaggio')} 
-          className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-4 py-3 font-sans text-sm text-[var(--tx-1)] focus:ring-2 focus:ring-[var(--accent)] outline-none resize-none transition-all focus:bg-white"
+          aria-describedby={errors.messaggio ? 'cf-msg-err' : undefined}
+          aria-invalid={!!errors.messaggio}
+          {...register('messaggio')}
+          className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-4 py-3 font-sans text-sm text-[var(--tx-1)] focus:ring-2 focus:ring-[var(--accent)] outline-none resize-none transition-all focus:bg-white focus:shadow-[0_0_15px_var(--accent-glow)] aria-[invalid=true]:border-red-300"
         />
-        {errors.messaggio && <span className="text-red-500 text-xs font-medium flex items-center gap-1"><Warning size={14}/>{errors.messaggio.message}</span>}
+        {errors.messaggio && (
+          <span id="cf-msg-err" role="alert" className="flex items-center gap-1 text-xs text-red-500 font-medium">
+            <Warning size={14} aria-hidden="true" />{errors.messaggio.message}
+          </span>
+        )}
       </div>
+
+      {/* Errore submit inline */}
+      {submitError && (
+        <div role="alert" className="flex items-start gap-2.5 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+          <Warning size={15} weight="bold" className="mt-0.5 shrink-0" aria-hidden="true" />
+          <span className="font-sans">{submitError}</span>
+        </div>
+      )}
 
       <button
         type="submit"
         disabled={isSubmitting}
-        className="mt-4 flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-[var(--tx-1)] text-[var(--bg)] font-display font-bold text-sm hover:bg-[var(--accent)] hover:text-[var(--bg)] transition-colors disabled:opacity-50"
+        className="mt-2 flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-[var(--tx-1)] text-[var(--bg)] font-display font-bold text-sm hover:bg-[var(--accent)] transition-all duration-300 hover:shadow-[0_8px_30px_var(--accent-glow-h)] hover:-translate-y-0.5 hover:scale-[1.01] disabled:transform-none disabled:shadow-none disabled:opacity-50 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2"
       >
-        {isSubmitting ? 'Invio in corso...' : <>Invia Messaggio <PaperPlaneRight weight="fill" /></>}
+        {isSubmitting
+          ? 'Invio in corso...'
+          : <><span>Invia Messaggio</span><PaperPlaneRight weight="fill" aria-hidden="true" /></>
+        }
       </button>
 
-      <p className="text-center font-sans text-xs text-[var(--tx-3)] mt-2">
-        Inviando questo form acconsenti alla Privacy Policy per la gestione della richiesta.
+      <p className="text-center font-sans text-xs text-[var(--tx-3)]">
+        Inviando acconsenti alla{' '}
+        <a href="/privacy" className="underline underline-offset-2 hover:text-[var(--accent)] transition-colors">
+          Privacy Policy
+        </a>
+        {' '}per la gestione della richiesta.
       </p>
     </form>
   )

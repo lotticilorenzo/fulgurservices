@@ -5,15 +5,9 @@ import { ServicesGrid } from '@/components/home/ServicesGrid'
 import { AboutSection } from '@/components/home/AboutSection'
 import { PhilosophySection } from '@/components/home/PhilosophySection'
 import { ProcessStepper } from '@/components/home/ProcessStepper'
+import { StatsSection } from '@/components/home/StatsSection'
+import { BrandsMarquee } from '@/components/home/BrandsMarquee'
 import { CTASection } from '@/components/home/CTASection'
-import { TrustBar } from '@/components/ui/TrustBar'
-import { PartnershipSection } from '@/components/ui/PartnershipSection'
-import { GoogleReviewsPlugin } from '@/components/home/GoogleReviewsPlugin'
-import { FAQSection } from '@/components/ui/FAQSection'
-import { IntegratedBento } from '@/components/servizi/IntegratedBento'
-import { WhyChooseUs } from '@/components/home/WhyChooseUs'
-import { GeographicCoverage } from '@/components/home/GeographicCoverage'
-import { WipeReveal } from '@/components/ui/WipeReveal'
 import { ScrollVideoSection } from '@/components/home/ScrollVideoSection'
 
 export const metadata: Metadata = {
@@ -27,72 +21,51 @@ export const metadata: Metadata = {
     description: METADATA.home.description,
     images: ['https://www.fulgurservice.it/og/default.jpg'],
   },
+  alternates: { canonical: 'https://www.fulgurservice.it' },
 }
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[var(--bg)]">
+    <main className="min-h-[100dvh] bg-[var(--bg)]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(STRUCTURED_DATA) }}
       />
+
+      {/* 1. Hero — The Opening Shot */}
       <HeroSection />
+
+      {/* 2. Scroll Video Scrubbing */}
       <ScrollVideoSection />
-      
-      <TrustBar />
 
+      {/* 3. Services Bento Grid */}
       <div id="servizi" className="scroll-mt-24">
-        <WipeReveal direction="left">
-          <ServicesGrid />
-        </WipeReveal>
+        <ServicesGrid />
       </div>
 
-      <WipeReveal direction="right" delay={0.2}>
-        <WhyChooseUs />
-      </WipeReveal>
-      
-      <WipeReveal direction="left">
-        <PartnershipSection />
-      </WipeReveal>
-
+      {/* 3. Chi Siamo — La Storia */}
       <div id="chi-siamo" className="scroll-mt-24">
-        <WipeReveal direction="right">
-          <AboutSection />
-        </WipeReveal>
+        <AboutSection />
       </div>
-      
-      <WipeReveal direction="bottom">
-        <PhilosophySection />
-      </WipeReveal>
-      
-      <WipeReveal direction="left">
-        <IntegratedBento />
-      </WipeReveal>
 
+      {/* 4. Philosophy — Il Manifesto */}
+      <PhilosophySection />
+
+      {/* 5. Process Steps — Come Lavoriamo */}
       <div id="processo" className="scroll-mt-24">
-        <WipeReveal direction="right">
-          <ProcessStepper />
-        </WipeReveal>
+        <ProcessStepper />
       </div>
 
-      <WipeReveal direction="top">
-        <GoogleReviewsPlugin />
-      </WipeReveal>
+      {/* 6. Stats — Sezione Invertita Accent */}
+      <StatsSection />
 
-      <WipeReveal direction="left">
-        <GeographicCoverage />
-      </WipeReveal>
-      
-      <WipeReveal direction="bottom">
-        <FAQSection />
-      </WipeReveal>
+      {/* 7. Brands Marquee — I nostri partner */}
+      <BrandsMarquee />
 
+      {/* 8. CTA — Chiudi col botto */}
       <div id="contatti" className="scroll-mt-24">
-        <WipeReveal direction="top">
-          <CTASection />
-        </WipeReveal>
+        <CTASection />
       </div>
     </main>
   )
 }
-

@@ -1,45 +1,70 @@
 'use client'
 
-import React, { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
-import { fadeUp, staggerContainer } from '@/lib/motion'
+import { useRef, useEffect } from 'react'
+import { motion } from 'framer-motion'
+import { staggerContainer } from '@/lib/motion'
 import { cn } from '@/lib/utils'
 
 interface ScrollRevealProps {
   children: React.ReactNode
   className?: string
-  width?: 'fit-content' | '100%'
   delay?: number
   staggerChildren?: boolean
 }
 
+/**
+ * ScrollReveal — due implementazioni:
+ *
+ * staggerChildren=false (default):
+ *   CSS animation + IntersectionObserver nativo.
+ *   Zero JS animation engine durante lo scroll → 60fps garantiti.
+ *   Il browser gestisce l'animazione sul compositor thread.
+ *
+ * staggerChildren=true:
+ *   Framer Motion per stagger automatico tra children.
+ *   Usato raramente (grids, liste).
+ */
 export function ScrollReveal({
   children,
   className,
-  width = '100%',
   delay = 0,
   staggerChildren = false,
 }: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null)
-  const [isMounted, setIsMounted] = React.useState(false)
-  
-  React.useEffect(() => {
-    setIsMounted(true)
-  }, [])
 
-  const isInView = useInView(ref, { once: true, margin: '-10% 0px' })
-  
-  // Se non montato o non in vista (e non siamo sul server), 
-  // resta in stato 'hidden' per matchare il server render
-  const activeAnimation = (isMounted && isInView) ? 'visible' : 'hidden'
+  useEffect(() => {
+    const el = ref.current
+    if (!el || staggerChildren) return
 
+    // prefers-reduced-motion: mostra subito
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      el.classList.remove('sr-hidden')
+      return
+    }
+
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return
+        el.style.animationDelay = delay > 0 ? `${delay}s` : ''
+        el.classList.remove('sr-hidden')
+        el.classList.add('sr-visible')
+        io.disconnect()
+      },
+      { rootMargin: '-5% 0px', threshold: 0.04 }
+    )
+
+    io.observe(el)
+    return () => io.disconnect()
+  }, [delay, staggerChildren])
+
+  /* ── stagger: Framer Motion gestisce i figli ── */
   if (staggerChildren) {
     return (
       <motion.div
-        ref={ref}
         variants={staggerContainer}
         initial="hidden"
-        animate={activeAnimation}
+        whileInView="visible"
+        viewport={{ once: true, margin: '-5% 0px' }}
         className={cn(className)}
       >
         {children}
@@ -47,23 +72,13 @@ export function ScrollReveal({
     )
   }
 
-  const customFadeUp: any = {
-    hidden: fadeUp.hidden,
-    visible: {
-      ...(fadeUp.visible as any),
-      transition: { ...(fadeUp.visible as any)?.transition, delay },
-    },
-  }
-
+  /* ── standard: CSS reveal ── */
   return (
-    <motion.div
+    <div
       ref={ref}
-      variants={customFadeUp}
-      initial="hidden"
-      animate={activeAnimation}
-      className={cn(className)}
+      className={cn('sr-hidden', className)}
     >
       {children}
-    </motion.div>
+    </div>
   )
 }

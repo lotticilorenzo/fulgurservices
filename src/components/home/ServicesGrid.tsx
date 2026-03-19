@@ -10,18 +10,10 @@ import { ParallaxText } from '@/components/ui/ParallaxText'
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
 import {
   Drop, Wrench, Recycle, Lightning,
-  Buildings, Factory, FirstAidKit, BuildingApartment,
-  Bed, Sparkle, HardHat, ArrowsOutSimple, Sun,
-  Anchor, Wind, House
 } from '@phosphor-icons/react'
 
 const IntegratedIconMap: Record<string, React.ElementType> = {
   Drop, Wrench, Recycle, Lightning,
-}
-const ServiceIconMap: Record<string, React.ElementType> = {
-  Buildings, Factory, FirstAidKit, BuildingApartment,
-  Bed, Sparkle, HardHat, ArrowsOutSimple, Sun,
-  Anchor, Wind, House
 }
 
 export function ServicesGrid() {
@@ -52,12 +44,12 @@ export function ServicesGrid() {
       <div className="mx-auto w-full max-w-7xl px-6 xl:px-8 relative z-10">
         
         {/* Header Section */}
-        <div className="mb-16 max-w-2xl sm:mb-20">
+        <div className="mb-10 sm:mb-16 max-w-2xl sm:mb-20">
           <SectionLabel className="mb-4">— I NOSTRI SERVIZI</SectionLabel>
-          <h2 className="font-display text-4xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl">
+          <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-[var(--tx-1)] lg:text-5xl">
             Ogni ambiente, <br /> un'unica soluzione.
           </h2>
-          <p className="mt-6 font-sans text-lg font-light text-[var(--tx-2)]">
+          <p className="mt-4 sm:mt-6 font-sans text-base sm:text-lg font-light text-[var(--tx-2)]">
             12 settori di intervento, team specializzato, preventivo in 24 ore.
           </p>
         </div>
@@ -65,19 +57,19 @@ export function ServicesGrid() {
         {/* Bento Grid Layout */}
         <div className="flex flex-col gap-6">
           {/* Row 1: Large(2) + Medium(1) */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             <ServiceCard service={aziendali} size="large" index={0} />
             <ServiceCard service={sanitario} size="medium" index={1} />
           </div>
 
           {/* Row 2: Medium(1) + Large(2) */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             <ServiceCard service={superfici} size="medium" index={2} />
             <ServiceCard service={industriali} size="large" index={3} />
           </div>
 
           {/* Row 3: 3 medium (1-1-1) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {row3Cards.map((service, idx) => (
               <ServiceCard
                 key={service.id}
@@ -88,54 +80,18 @@ export function ServicesGrid() {
             ))}
           </div>
 
-          {/* Row 4: Horizontal scrollable pill-strip of remaining */}
-          <ScrollReveal delay={0.2}>
-            <div className="relative">
-              {/* Fade edges */}
-              <div className="pointer-events-none absolute left-0 top-0 bottom-0 z-10 w-8 bg-gradient-to-r from-white to-transparent" />
-              <div className="pointer-events-none absolute right-0 top-0 bottom-0 z-10 w-8 bg-gradient-to-l from-white to-transparent" />
-
-              <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-none snap-x snap-mandatory">
-                {remainingServices.map((service, idx) => {
-                  const Icon = ServiceIconMap[service.icon] || ServiceIconMap.Buildings
-                  return (
-                    <Link
-                      key={service.id}
-                      href={`/servizi/${service.slug}`}
-                      className="flex-shrink-0 snap-start group"
-                    >
-                      <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: idx * 0.07, duration: 0.5 }}
-                        className="flex flex-col items-start gap-3 rounded-2xl border border-[var(--br)] bg-[var(--bg-2)] p-5 w-[200px] sm:w-[230px] hover:border-[var(--accent)] hover:bg-[var(--accent-glow)] hover:shadow-lg transition-all duration-300 group"
-                      >
-                        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white border border-[var(--br)] group-hover:bg-[var(--accent)] group-hover:border-[var(--accent)] transition-all duration-300">
-                          <Icon
-                            size={20}
-                            weight="duotone"
-                            className="text-[var(--accent)] group-hover:text-white transition-colors"
-                          />
-                        </div>
-                        <div>
-                          <div className="font-display text-sm font-bold text-[var(--tx-1)] group-hover:text-[var(--accent)] transition-colors leading-snug">
-                            {service.title}
-                          </div>
-                          <div className="mt-1 font-sans text-xs font-light text-[var(--tx-3)] line-clamp-2 leading-relaxed">
-                            {service.shortDesc}
-                          </div>
-                        </div>
-                        <div className="mt-auto font-mono-fulgur text-[9px] uppercase tracking-widest text-[var(--accent)] opacity-0 group-hover:opacity-100 transition-opacity">
-                          Scopri →
-                        </div>
-                      </motion.div>
-                    </Link>
-                  )
-                })}
-              </div>
-            </div>
-          </ScrollReveal>
+          {/* Row 4: Remaining services — same ServiceCard design */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            {remainingServices.map((service, idx) => (
+              <ServiceCard
+                key={service.id}
+                service={service}
+                size="small"
+                index={7 + idx}
+                className={idx === remainingServices.length - 1 ? 'sm:col-span-2 lg:col-span-2' : ''}
+              />
+            ))}
+          </div>
         </div>
 
         {/* ────────────────────────────────────────── */}
@@ -167,7 +123,7 @@ export function ServicesGrid() {
               <div className="flex flex-col items-start lg:items-end gap-4 self-center">
                 <Link
                   href="/preventivo"
-                  className="inline-flex items-center gap-2 rounded-full bg-[var(--accent)] px-8 py-3.5 font-display text-sm font-bold text-white shadow-lg transition-all hover:bg-[var(--accent-d)] hover:shadow-xl"
+                  className="inline-flex items-center gap-2 rounded-full bg-[var(--accent)] px-8 py-3.5 font-display text-sm font-bold text-white shadow-[0_10px_20px_var(--accent-glow)] transition-all duration-300 hover:bg-[var(--accent-d)] hover:shadow-[0_15px_30px_var(--accent-glow-h)] hover:-translate-y-0.5"
                 >
                   Richiedi un sopralluogo
                 </Link>
@@ -188,7 +144,7 @@ export function ServicesGrid() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.1 }}
-                    className="flex flex-col gap-4 rounded-2xl border border-[var(--br)] bg-white p-6 shadow-sm hover:shadow-md hover:border-[var(--accent)] transition-all duration-300 group"
+                    className="flex flex-col gap-4 rounded-2xl border border-[var(--br)] bg-white p-6 shadow-sm hover:shadow-[0_15px_30px_rgba(42,140,122,0.12)] hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-300 group"
                   >
                     <div className="h-10 w-10 rounded-xl bg-[var(--accent-glow)] flex items-center justify-center group-hover:bg-[var(--accent)] transition-colors duration-300">
                       <Icon size={20} weight="duotone" className="text-[var(--accent)] group-hover:text-white transition-colors" />

@@ -29,7 +29,7 @@ export function ParticleField() {
     const initParticles = () => {
       particles = []
       const isMobile = window.innerWidth < 768
-      const particleCount = isMobile ? 30 : 70
+      const particleCount = isMobile ? 18 : 40
 
       for (let i = 0; i < particleCount; i++) {
         particles.push({
