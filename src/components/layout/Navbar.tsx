@@ -228,7 +228,7 @@ export default function Navbar() {
             animate={{ opacity: 1, clipPath: 'circle(160% at calc(100% - 32px) 32px)' }}
             exit={{ opacity: 0, clipPath: 'circle(0% at calc(100% - 32px) 32px)' }}
             transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-[300] flex flex-col bg-[var(--bg)] overflow-y-auto"
+            className="fixed inset-0 z-[300] flex flex-col bg-[var(--bg)]/95 backdrop-blur-2xl overflow-y-auto"
           >
             {/* Header del mobile overlay */}
             <div className="flex shrink-0 items-center justify-between px-6 py-5 border-b border-[var(--br)]">
@@ -243,9 +243,9 @@ export default function Navbar() {
               <button
                 onClick={() => setIsMobileOpen(false)}
                 aria-label="Chiudi menu"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--br-h)] text-[var(--tx-2)] hover:border-[var(--accent)] focus-visible:ring-2 focus-visible:ring-[var(--accent)] hover:text-[var(--accent)] transition-colors"
+                className="flex h-12 w-12 items-center justify-center rounded-full border border-[var(--br-h)] bg-[var(--bg-2)] text-[var(--tx-1)] hover:border-[var(--accent)] focus-visible:ring-2 focus-visible:ring-[var(--accent)] hover:text-[var(--accent)] transition-colors shadow-sm"
               >
-                <X size={20} />
+                <X size={24} weight="bold" />
               </button>
             </div>
 
@@ -266,10 +266,10 @@ export default function Navbar() {
                     >
                       <button
                         onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                        className="flex w-full items-center justify-between py-4.5 focus-visible:outline-none"
+                        className="flex w-full items-center justify-between py-5 sm:py-6 focus-visible:outline-none"
                       >
                         <span className={cn(
-                          'font-display text-[22px] font-bold tracking-tight transition-colors',
+                          'font-display text-[26px] sm:text-[32px] font-bold tracking-tight transition-colors',
                           isActive ? 'text-[var(--accent)]' : 'text-[var(--tx-1)]'
                         )}>
                           {link.label}
@@ -329,14 +329,14 @@ export default function Navbar() {
                       href={link.href}
                       onClick={() => setIsMobileOpen(false)}
                       className={cn(
-                        'flex items-center justify-between py-4.5 border-b border-[var(--br)] focus-visible:outline-none',
-                        'font-display text-[22px] font-bold tracking-tight transition-colors',
+                        'flex items-center justify-between py-5 sm:py-6 border-b border-[var(--br)] focus-visible:outline-none',
+                        'font-display text-[26px] sm:text-[32px] font-bold tracking-tight transition-colors',
                         isActive ? 'text-[var(--accent)]' : 'text-[var(--tx-1)] hover:text-[var(--accent)]'
                       )}
                     >
                       {link.label}
                       {isActive && (
-                        <span className="h-2 w-2 shrink-0 rounded-full bg-[var(--accent)] shadow-[0_0_12px_rgba(78,203,160,0.6)]" />
+                        <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-[var(--accent)] shadow-[0_0_12px_rgba(78,203,160,0.6)]" />
                       )}
                     </Link>
                   </motion.div>

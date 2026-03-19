@@ -320,7 +320,7 @@ export default function GalleryPage() {
         <LayoutGroup>
           <motion.div 
             layout
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 auto-rows-[160px] sm:auto-rows-[200px] md:auto-rows-[220px] lg:auto-rows-[260px] gap-3 sm:gap-4"
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 auto-rows-[180px] sm:auto-rows-[220px] md:auto-rows-[220px] lg:auto-rows-[260px] gap-3 sm:gap-4"
           >
             <AnimatePresence mode="popLayout">
               {filteredItems.map((item) => (
@@ -341,8 +341,8 @@ export default function GalleryPage() {
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                     sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                   />
-                  {/* Overlay on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg)]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  {/* Base Gradient for mobile text readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500" />
                   
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     <div className="h-12 w-12 rounded-full bg-[var(--accent)] text-[var(--bg)] flex items-center justify-center scale-75 group-hover:scale-100 transition-transform duration-500 shadow-xl">
@@ -350,8 +350,8 @@ export default function GalleryPage() {
                     </div>
                   </div>
 
-                  <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                    <span className="font-mono-fulgur text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--accent)]">
+                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 translate-y-0 md:translate-y-4 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100 transition-all duration-500">
+                    <span className="font-mono-fulgur text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.2em] text-white md:text-[var(--accent)] drop-shadow-md">
                       {item.label}
                     </span>
                   </div>

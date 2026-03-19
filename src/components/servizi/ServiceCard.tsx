@@ -62,17 +62,17 @@ export function ServiceCard({ service, size = 'small', index, className }: Servi
             {/* Direct Gradient Overlay */}
             <div
               className="absolute inset-0 z-10 transition-opacity duration-300"
-              style={{ background: 'linear-gradient(to top, rgba(10,20,15,0.96) 0%, rgba(10,20,15,0.45) 40%, rgba(10,20,15,0.55) 100%)' }}
+              style={{ background: 'linear-gradient(to top, rgba(10,20,15,1) 0%, rgba(10,20,15,0.7) 35%, rgba(10,20,15,0.3) 100%)' }}
             />
           </div>
 
           {/* Minimalist Icon Block (Top Left) */}
-          <div className="absolute top-6 left-6 z-20 p-2 text-white/40">
+          <div className="absolute top-5 left-5 z-20 p-2 text-white/40">
             <Icon size={24} weight="regular" />
           </div>
 
           {/* Content Layer */}
-          <div className="relative z-20 flex h-full flex-col justify-end p-6 lg:p-8">
+          <div className="relative z-20 flex h-full flex-col justify-end p-5 md:p-6 lg:p-8">
             <div className="flex flex-col gap-2">
               <h3 className="font-display text-[18px] md:text-[22px] font-bold text-white transition-colors duration-300 group-hover:text-[var(--accent)]">
                 {service.title}

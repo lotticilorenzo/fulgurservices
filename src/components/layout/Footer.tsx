@@ -38,7 +38,7 @@ export function Footer() {
       <div className="mx-auto w-full max-w-7xl px-6 xl:px-8 pt-14 pb-6 sm:pt-20 sm:pb-8 lg:pb-12">
         
         {/* Main Grid: 4 columns */}
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-8 lg:grid-cols-[2fr_1fr_1fr_1.4fr] lg:gap-10">
+        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 sm:gap-8 lg:grid-cols-[2fr_1fr_1fr_1.4fr] lg:gap-10">
           
           {/* Col 1: Brand */}
           <div className="flex flex-col">
@@ -52,45 +52,45 @@ export function Footer() {
                   className="object-contain"
                 />
               </div>
-              <div className="flex flex-col">
-                <span className="font-display text-xl font-bold leading-none tracking-tight text-[var(--tx-1)]">FULGUR</span>
-                <span className="font-display text-sm font-bold leading-none tracking-tight text-[var(--accent)]">SERVICE</span>
+              <div className="flex flex-col justify-center">
+                <span className="font-display text-2xl sm:text-xl font-bold leading-none tracking-tight text-[var(--tx-1)]">FULGUR</span>
+                <span className="font-display text-base sm:text-sm font-bold leading-none tracking-tight text-[var(--accent)]">SERVICE</span>
               </div>
             </Link>
             
-            <p className="mt-5 max-w-[260px] font-sans text-sm font-light leading-relaxed text-[var(--tx-2)]">
+            <p className="mt-6 max-w-[260px] font-sans text-[15px] sm:text-sm font-light leading-relaxed text-[var(--tx-2)]">
               Puliamo il futuro con l'energia della natura. Parma e Emilia-Romagna, dal 1994.
             </p>
 
             {/* Social + WhatsApp */}
-            <div className="mt-6 flex items-center gap-3">
+            <div className="mt-8 flex items-center gap-4">
               <a
                 href="https://www.instagram.com/fulgurservice/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Seguici su Instagram"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--br)] bg-white text-[var(--tx-2)] transition-all hover:border-[var(--accent)] hover:text-[var(--accent)] hover:bg-[var(--accent-glow)]"
+                className="inline-flex h-12 w-12 sm:h-10 sm:w-10 items-center justify-center rounded-full border border-[var(--br)] bg-white text-[var(--tx-1)] transition-all hover:border-[var(--accent)] hover:text-[var(--accent)] hover:bg-[var(--accent-glow)] shadow-sm"
               >
-                <InstagramLogo size={18} weight="duotone" />
+                <InstagramLogo size={22} weight="duotone" className="sm:w-[18px] sm:h-[18px]" />
               </a>
               <a
                 href="https://wa.me/393383160091?text=Ciao%2C%20vorrei%20richiedere%20un%20sopralluogo%20gratuito"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Contattaci su WhatsApp"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--br)] bg-white text-[var(--tx-2)] transition-all hover:border-[#25D366] hover:text-[#25D366] hover:bg-[rgba(37,211,102,0.1)]"
+                className="inline-flex h-12 w-12 sm:h-10 sm:w-10 items-center justify-center rounded-full border border-[var(--br)] bg-white text-[var(--tx-1)] transition-all hover:border-[#25D366] hover:text-[#25D366] hover:bg-[rgba(37,211,102,0.1)] shadow-sm"
               >
-                <WhatsappLogo size={18} weight="duotone" />
+                <WhatsappLogo size={22} weight="duotone" className="sm:w-[18px] sm:h-[18px]" />
               </a>
             </div>
           </div>
 
           {/* Col 2: Servizi */}
           <div>
-            <h4 className="font-mono-fulgur text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--tx-3)]">
+            <h4 className="font-mono-fulgur text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--tx-3)]">
               Servizi
             </h4>
-            <ul className="mt-5 flex flex-col gap-2.5 font-sans text-sm text-[var(--tx-2)]">
+            <ul className="mt-6 flex flex-col gap-3.5 sm:gap-2.5 font-sans text-[15px] sm:text-sm text-[var(--tx-2)]">
               {topServices.map((service) => (
                 <li key={service.id}>
                   <Link 
@@ -111,10 +111,10 @@ export function Footer() {
 
           {/* Col 3: Azienda */}
           <div>
-            <h4 className="font-mono-fulgur text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--tx-3)]">
+            <h4 className="font-mono-fulgur text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--tx-3)]">
               Azienda
             </h4>
-            <ul className="mt-5 flex flex-col gap-2.5 font-sans text-sm text-[var(--tx-2)]">
+            <ul className="mt-6 flex flex-col gap-3.5 sm:gap-2.5 font-sans text-[15px] sm:text-sm text-[var(--tx-2)]">
               {COMPANY_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="transition-colors hover:text-[var(--accent)]">
@@ -127,11 +127,11 @@ export function Footer() {
 
           {/* Col 4: Contatti */}
           <div>
-            <h4 className="font-mono-fulgur text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--tx-3)]">
+            <h4 className="font-mono-fulgur text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--tx-3)]">
               Contatti
             </h4>
-            <ul className="mt-5 flex flex-col gap-4 font-sans text-sm text-[var(--tx-2)]">
-              <li className="flex items-start gap-3">
+            <ul className="mt-6 flex flex-col gap-4 font-sans text-[15px] sm:text-sm text-[var(--tx-2)]">
+              <li className="flex items-start gap-4 sm:gap-3">
                 <MapPin size={16} weight="duotone" className="mt-0.5 shrink-0 text-[var(--accent)]" />
                 <span className="leading-snug">Parma, Emilia-Romagna<br />Italia</span>
               </li>

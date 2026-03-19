@@ -194,7 +194,7 @@ export function HeroSection() {
           className="relative flex items-center justify-center opacity-0"
         >
           {/* Grande cerchio immagine */}
-          <div className="relative flex h-[220px] w-[220px] mt-4 sm:mt-0 items-center justify-center sm:h-[320px] sm:w-[320px] md:h-[380px] md:w-[380px] lg:h-[440px] lg:w-[440px] xl:h-[460px] xl:w-[460px]">
+          <div className="relative flex h-[260px] w-[260px] mt-10 sm:mt-0 items-center justify-center sm:h-[320px] sm:w-[320px] md:h-[380px] md:w-[380px] lg:h-[440px] lg:w-[440px] xl:h-[460px] xl:w-[460px]">
 
             {/* Glow aura */}
             <div
@@ -234,11 +234,11 @@ export function HeroSection() {
               initial={{ y: -6 }}
               animate={{ y: [-6, 6, -6] }}
               transition={{ repeat: Infinity, duration: 4.2, ease: 'easeInOut' }}
-              className="absolute -right-2 top-4 z-20 sm:-right-5 sm:top-10 lg:-right-14 lg:top-16 glass-white rounded-2xl px-4 py-3 sm:px-5 sm:py-4 min-w-[110px] sm:min-w-[130px] shadow-xl"
+              className="absolute -right-4 top-10 z-20 sm:-right-5 sm:top-10 lg:-right-14 lg:top-16 glass-white rounded-2xl px-5 py-4 min-w-[120px] sm:min-w-[130px] shadow-xl"
             >
               <div className="flex flex-col items-start leading-tight">
-                <div className="font-display text-2xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-3xl md:text-4xl">30+</div>
-                <div className="mt-1 font-mono-fulgur text-[8px] sm:text-[9px] font-bold uppercase tracking-widest text-[var(--tx-2)]">
+                <div className="font-display text-3xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-3xl md:text-4xl">30+</div>
+                <div className="mt-1 font-mono-fulgur text-[9px] font-bold uppercase tracking-widest text-[var(--tx-2)]">
                   Anni<br />di know-how
                 </div>
               </div>
@@ -249,11 +249,11 @@ export function HeroSection() {
               initial={{ y: 8 }}
               animate={{ y: [8, -8, 8] }}
               transition={{ repeat: Infinity, duration: 5.2, ease: 'easeInOut', delay: 1.2 }}
-              className="absolute -left-3 bottom-8 z-20 sm:-left-6 sm:bottom-14 lg:-left-16 lg:bottom-20 glass-white rounded-2xl px-4 py-3 sm:px-5 sm:py-4 min-w-[110px] sm:min-w-[130px] shadow-xl"
+              className="absolute -left-6 bottom-12 z-20 sm:-left-6 sm:bottom-14 lg:-left-16 lg:bottom-20 glass-white rounded-2xl px-5 py-4 min-w-[120px] sm:min-w-[130px] shadow-xl"
             >
               <div className="flex flex-col items-start leading-tight">
-                <div className="font-display text-2xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-3xl md:text-4xl">500+</div>
-                <div className="mt-1 font-mono-fulgur text-[8px] sm:text-[9px] font-bold uppercase tracking-widest text-[var(--tx-2)]">
+                <div className="font-display text-3xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-3xl md:text-4xl">500+</div>
+                <div className="mt-1 font-mono-fulgur text-[9px] font-bold uppercase tracking-widest text-[var(--tx-2)]">
                   Clienti<br />soddisfatti
                 </div>
               </div>
