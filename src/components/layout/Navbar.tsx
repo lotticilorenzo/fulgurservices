@@ -231,7 +231,7 @@ export default function Navbar() {
             className="fixed inset-0 z-[300] flex flex-col bg-[var(--bg)]/95 backdrop-blur-2xl h-[100dvh] overflow-hidden"
           >
             {/* Header del mobile overlay */}
-            <div className="flex shrink-0 items-center justify-between px-6 py-5 border-b border-[var(--br)]">
+            <div className="flex shrink-0 items-center justify-between px-6 py-4 border-b border-[var(--br)]">
               <Link
                 href="/"
                 onClick={() => setIsMobileOpen(false)}
@@ -250,7 +250,7 @@ export default function Navbar() {
             </div>
 
             {/* Links scrollabili */}
-            <nav className="flex flex-col px-6 py-4 flex-1 overflow-y-auto" aria-label="Menu mobile">
+            <nav className="flex flex-col px-6 py-2 flex-1 overflow-y-auto min-h-0" aria-label="Menu mobile">
               {MOBILE_LINKS.map((link, i) => {
                 const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href))
                 const delay = 0.12 + i * 0.045
@@ -266,10 +266,10 @@ export default function Navbar() {
                     >
                       <button
                         onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                        className="flex w-full items-center justify-between py-3 sm:py-4 focus-visible:outline-none"
+                        className="flex w-full items-center justify-between py-3 focus-visible:outline-none"
                       >
                         <span className={cn(
-                          'font-display text-[24px] sm:text-[28px] font-medium tracking-tight transition-colors',
+                          'font-display text-[20px] font-semibold tracking-tight transition-colors',
                           isActive ? 'text-[var(--accent)]' : 'text-[var(--tx-1)]'
                         )}>
                           {link.label}
@@ -329,8 +329,8 @@ export default function Navbar() {
                       href={link.href}
                       onClick={() => setIsMobileOpen(false)}
                       className={cn(
-                        'flex items-center justify-between py-4 sm:py-5 border-b border-[var(--br)] focus-visible:outline-none',
-                        'font-display text-[24px] sm:text-[28px] font-medium tracking-tight transition-colors',
+                        'flex items-center justify-between py-3 border-b border-[var(--br)] focus-visible:outline-none',
+                        'font-display text-[20px] font-semibold tracking-tight transition-colors',
                         isActive ? 'text-[var(--accent)]' : 'text-[var(--tx-1)] hover:text-[var(--accent)]'
                       )}
                     >
@@ -343,35 +343,35 @@ export default function Navbar() {
                 )
               })}
               {/* Spaziatore a fine scroll */}
-              <div className="h-6 shrink-0" />
+              <div className="h-4 shrink-0" />
             </nav>
 
             {/* Bottom CTAs (Fissi a fondo schermo) */}
-            <div className="shrink-0 bg-[var(--bg)] border-t border-[var(--br)] px-6 pb-12 pt-6 flex flex-col gap-3">
-              <div className="flex gap-2.5">
+            <div className="shrink-0 bg-[var(--bg)] border-t border-[var(--br)] px-6 pb-12 pt-4 flex flex-col gap-2.5">
+              <div className="flex gap-2">
                 <a
                   href="tel:+393383160091"
-                  className="flex flex-1 items-center justify-center gap-2 rounded-2xl border border-[var(--br-h)] bg-[var(--bg)]/80 backdrop-blur-md py-3.5 font-display text-[15px] font-semibold text-[var(--tx-1)] shadow-sm hover:border-[var(--accent)] transition-all"
+                  className="flex flex-1 items-center justify-center gap-1.5 rounded-xl border border-[var(--br-h)] bg-[var(--bg)]/80 backdrop-blur-md py-3 font-display text-[14px] font-semibold text-[var(--tx-1)] shadow-sm hover:border-[var(--accent)] transition-all"
                 >
-                  <PhoneCall size={20} weight="fill" className="text-[var(--accent)]" aria-hidden="true" />
+                  <PhoneCall size={18} weight="fill" className="text-[var(--accent)]" aria-hidden="true" />
                   Chiama
                 </a>
                 <a
                   href="https://wa.me/393383160091?text=Ciao%2C%20vorrei%20richiedere%20un%20sopralluogo%20gratuito"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-1 items-center justify-center gap-2 rounded-2xl border border-[#25D366]/30 bg-[#25D366]/10 py-3.5 font-display text-[15px] font-semibold text-[#1DA851] shadow-sm hover:bg-[#25D366]/20 transition-all"
+                  className="flex flex-1 items-center justify-center gap-1.5 rounded-xl border border-[#25D366]/30 bg-[#25D366]/10 py-3 font-display text-[14px] font-semibold text-[#1DA851] shadow-sm hover:bg-[#25D366]/20 transition-all"
                 >
-                  <WhatsappLogo size={20} weight="fill" aria-hidden="true" />
+                  <WhatsappLogo size={18} weight="fill" aria-hidden="true" />
                   WhatsApp
                 </a>
               </div>
               <Link
                 href="/preventivo"
                 onClick={() => setIsMobileOpen(false)}
-                className="flex w-full items-center justify-center rounded-2xl bg-[var(--accent)] py-4 font-display text-[16px] font-bold text-white shadow-[0_8px_24px_rgba(78,203,160,0.3)] hover:bg-[var(--accent-d)] transition-all"
+                className="flex w-full items-center justify-center rounded-xl bg-[var(--accent)] py-3 font-display text-[15px] font-bold text-white shadow-[0_4px_16px_rgba(78,203,160,0.3)] hover:bg-[var(--accent-d)] transition-all"
               >
-                Richiedi Sopralluogo Gratuito
+                Sopralluogo Gratuito
               </Link>
             </div>
           </motion.div>
