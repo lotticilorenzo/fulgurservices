@@ -38,7 +38,7 @@ export function Footer() {
       <div className="mx-auto w-full max-w-7xl px-6 xl:px-8 pt-14 pb-6 sm:pt-20 sm:pb-8 lg:pb-12">
         
         {/* Main Grid: 4 columns */}
-        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 sm:gap-8 lg:grid-cols-[2fr_1fr_1fr_1.4fr] lg:gap-10">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-8 lg:grid-cols-[2fr_1fr_1fr_1.4fr] lg:gap-10">
           
           {/* Col 1: Brand */}
           <div className="flex flex-col">
@@ -90,7 +90,7 @@ export function Footer() {
             <h4 className="font-mono-fulgur text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--tx-3)]">
               Servizi
             </h4>
-            <ul className="mt-4 flex flex-col gap-2 sm:gap-2.5 font-sans text-[15px] sm:text-sm text-[var(--tx-2)]">
+            <ul className="mt-5 flex flex-col gap-3.5 sm:gap-2.5 font-sans text-[16px] sm:text-sm text-[var(--tx-1)] sm:text-[var(--tx-2)]">
               {topServices.map((service) => (
                 <li key={service.id}>
                   <Link 
@@ -114,7 +114,7 @@ export function Footer() {
             <h4 className="font-mono-fulgur text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--tx-3)]">
               Azienda
             </h4>
-            <ul className="mt-4 flex flex-col gap-2 sm:gap-2.5 font-sans text-[15px] sm:text-sm text-[var(--tx-2)]">
+            <ul className="mt-5 flex flex-col gap-3.5 sm:gap-2.5 font-sans text-[16px] sm:text-sm text-[var(--tx-1)] sm:text-[var(--tx-2)]">
               {COMPANY_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="transition-colors hover:text-[var(--accent)]">
@@ -130,7 +130,7 @@ export function Footer() {
             <h4 className="font-mono-fulgur text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--tx-3)]">
               Contatti
             </h4>
-            <ul className="mt-4 flex flex-col gap-3 font-sans text-[15px] sm:text-sm text-[var(--tx-2)]">
+            <ul className="mt-5 flex flex-col gap-4 sm:gap-3 font-sans text-[15px] sm:text-sm text-[var(--tx-1)] sm:text-[var(--tx-2)]">
               <li className="flex items-start gap-4 sm:gap-3">
                 <MapPin size={16} weight="duotone" className="mt-0.5 shrink-0 text-[var(--accent)]" />
                 <span className="leading-snug">Parma, Emilia-Romagna<br />Italia</span>
@@ -158,7 +158,7 @@ export function Footer() {
             {/* CTA mini */}
             <Link
               href="/preventivo"
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-[var(--accent)] px-5 py-2.5 font-display text-sm font-bold text-white shadow-lg transition-all hover:bg-[var(--accent-d)] hover:shadow-xl"
+              className="mt-8 flex w-full sm:w-fit sm:inline-flex items-center justify-center gap-2 rounded-xl sm:rounded-full bg-[var(--accent)] px-5 py-3.5 sm:py-2.5 font-display text-[15px] sm:text-sm font-bold text-white shadow-lg transition-all hover:bg-[var(--accent-d)] hover:shadow-xl"
             >
               Preventivo gratuito
             </Link>
@@ -166,29 +166,31 @@ export function Footer() {
 
         </div>
 
-        {/* Bottom Bar — aintain pb-24 on mobile to not be covered by floating actions (WhatsApp, N badge) */}
-        <div className="mt-10 sm:mt-14 border-t border-[var(--br)] pt-6 sm:pt-7 pb-24 sm:pb-0 flex flex-col items-center justify-between gap-4 sm:flex-row">
-          <p className="font-mono-fulgur text-[10px] uppercase tracking-wider text-[var(--tx-2)] text-center sm:text-left">
-            © {year} Fulgur Service S.R.L. — P.IVA 03063010346 · REA PR-353051 · Cap. Soc. €10.000 i.v.
+        {/* Bottom Bar — maintain pb-32 on mobile to not be covered by floating actions (WhatsApp, N badge) */}
+        <div className="mt-12 sm:mt-14 border-t border-[var(--br)] pt-8 sm:pt-7 pb-32 sm:pb-0 flex flex-col items-center justify-between gap-6 sm:flex-row">
+          <p className="font-mono-fulgur text-[10px] sm:text-[10px] uppercase tracking-wider text-[var(--tx-2)] text-center sm:text-left leading-relaxed">
+            © {year} Fulgur Service S.R.L.<br className="block sm:hidden" /> P.IVA 03063010346 · REA PR-353051<br className="block sm:hidden" /> Cap. Soc. €10.000 i.v.
           </p>
           
-          <div className="flex items-center gap-5">
-            {LEGAL_LINKS.map((link) => (
-              <Link 
-                key={link.href} 
-                href={link.href} 
-                className="font-mono-fulgur text-[10px] uppercase tracking-wider text-[var(--tx-2)] hover:text-[var(--accent)] transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
-            <div className="h-3 w-px bg-[var(--br)]" />
-            <div className="flex items-center gap-2">
+          <div className="flex flex-col sm:flex-row items-center gap-5 sm:gap-5">
+            <div className="flex items-center gap-4">
+              {LEGAL_LINKS.map((link) => (
+                <Link 
+                  key={link.href} 
+                  href={link.href} 
+                  className="font-mono-fulgur text-[10.5px] sm:text-[10px] font-semibold sm:font-normal uppercase tracking-wider text-[var(--tx-2)] hover:text-[var(--accent)] transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+            <div className="hidden sm:block h-3 w-px bg-[var(--br)]" />
+            <div className="flex items-center gap-2 mt-1 sm:mt-0 px-4 py-1.5 sm:p-0 rounded-full border border-[var(--br)] sm:border-none bg-[var(--bg-2)] sm:bg-transparent">
               <span className="relative flex h-1.5 w-1.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--accent)] opacity-75" />
-                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[var(--accent)]" />
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#10B981] opacity-75" />
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#10B981]" />
               </span>
-              <span className="font-mono-fulgur text-[10px] uppercase tracking-wider text-[var(--tx-3)]">Operativi</span>
+              <span className="font-mono-fulgur text-[10px] font-bold uppercase tracking-widest text-[var(--tx-1)] sm:text-[var(--tx-3)]">Operativi</span>
             </div>
           </div>
         </div>
