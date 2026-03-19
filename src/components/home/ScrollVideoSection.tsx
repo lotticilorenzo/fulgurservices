@@ -98,42 +98,57 @@ export function ScrollVideoSection() {
     return 3
   }, [progress])
 
-  /* ─── MOBILE: layout statico a card ─── */
+  /* ─── MOBILE: layout statico pulito a card chiare ─── */
   if (isMobile) {
     return (
-      <section className="relative bg-[#0D1117] py-12 md:py-24 px-4 sm:px-6">
-        <div className="max-w-md mx-auto space-y-10 md:space-y-20">
-          {CHAPTERS.map((ch, i) => (
-            <div key={ch.id} className="relative rounded-[2rem] overflow-hidden min-h-[260px] md:min-h-[320px]">
-              {/* Background image */}
-              <div
-                className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: `url(${MOBILE_IMAGES[i]})` }}
-              />
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0D1117] via-[#0D1117]/70 to-transparent" />
-              {/* Content */}
-              <div className="relative z-10 flex flex-col justify-end h-full p-6 md:p-8 min-h-[260px] md:min-h-[320px]">
-                <span className="font-mono text-[10px] md:text-xs text-[#4ECBA0]/70 tracking-widest uppercase mb-2 md:mb-3">
-                  {ch.eyebrow}
-                </span>
-                <h2 className="font-display text-[1.35rem] leading-snug sm:text-2xl md:text-3xl font-bold text-white mb-2 hyphens-auto break-words">
-                  {ch.title}
-                </h2>
-                <p className="text-[#8A9BAE] text-sm leading-relaxed">{ch.subtitle}</p>
-                {ch.cta && (
-                  <a
-                    href="https://wa.me/393383160091?text=Ciao%2C%20vorrei%20richiedere%20un%20sopralluogo%20gratuito"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-5 inline-flex items-center gap-2 bg-[#4ECBA0] text-[#0D1117] font-semibold text-sm px-5 py-3 rounded-xl w-fit"
-                  >
-                    {ch.cta}
-                  </a>
-                )}
+      <section className="relative bg-[var(--bg)] py-16 px-6 sm:px-8 border-t border-b border-[var(--br)] overflow-hidden">
+        {/* Decorative background element */}
+        <div className="absolute top-0 right-0 -m-32 w-96 h-96 bg-[var(--accent)]/5 rounded-full blur-3xl pointer-events-none" />
+        
+        <div className="max-w-2xl mx-auto relative z-10">
+          <div className="mb-10 text-left sm:text-center">
+            <span className="font-mono-fulgur text-xs font-bold text-[var(--accent)] tracking-widest uppercase block mb-3">
+              Processo Operativo
+            </span>
+            <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-[var(--tx-1)]">
+              Il nostro metodo
+            </h2>
+          </div>
+
+          <div className="flex flex-col gap-4 sm:gap-6">
+            {CHAPTERS.map((ch, i) => (
+              <div 
+                key={ch.id} 
+                className="relative p-6 sm:p-8 rounded-3xl bg-[var(--bg-2)] border border-[var(--br)] shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div className="flex items-start gap-4 flex-col sm:flex-row">
+                  <div className="flex shrink-0 items-center justify-center w-12 h-12 rounded-xl bg-white border border-[var(--br)] shadow-sm">
+                    <span className="font-mono-fulgur text-sm font-bold text-[var(--accent)]">
+                      0{i + 1}
+                    </span>
+                  </div>
+                  <div className="flex-1 w-full">
+                    <h3 className="font-display text-xl sm:text-2xl font-bold text-[var(--tx-1)] mb-2 mt-1 sm:mt-0">
+                      {ch.title}
+                    </h3>
+                    <p className="font-sans text-sm sm:text-base text-[var(--tx-2)] leading-relaxed mb-1">
+                      {ch.subtitle}
+                    </p>
+                    {ch.cta && (
+                      <a
+                        href="https://wa.me/393383160091?text=Ciao%2C%20vorrei%20richiedere%20un%20sopralluogo%20gratuito"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-6 flex items-center justify-center gap-2 bg-[var(--accent)] hover:bg-[var(--accent-d)] text-white font-display font-bold text-[15px] px-6 py-3.5 rounded-xl transition-all shadow-[0_4px_16px_rgba(78,203,160,0.3)] w-full"
+                      >
+                        {ch.cta}
+                      </a>
+                    )}
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
     )
