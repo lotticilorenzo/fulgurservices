@@ -67,7 +67,7 @@ export function HeroSection() {
   return (
     <section
       ref={containerRef}
-      className="relative flex min-h-[100dvh] w-full items-center overflow-hidden bg-[var(--bg)] pt-[100px] pb-32 sm:pb-8 md:pt-28 md:pb-16 lg:pt-36 lg:pb-20 xl:pt-[140px]"
+      className="relative flex sm:min-h-[100dvh] w-full items-center overflow-hidden bg-[var(--bg)] pt-[120px] pb-24 md:pt-28 md:pb-16 lg:pt-36 lg:pb-20 xl:pt-[140px]"
     >
       {/* Video sfondo in loop */}
       <video
