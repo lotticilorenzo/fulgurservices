@@ -250,7 +250,7 @@ export default function Navbar() {
             </div>
 
             {/* Links scrollabili */}
-            <nav className="flex flex-col px-6 pt-4 pb-20 flex-1" aria-label="Menu mobile">
+            <nav className="flex flex-col px-6 pt-4 pb-36 flex-1" aria-label="Menu mobile">
               {MOBILE_LINKS.map((link, i) => {
                 const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href))
                 const delay = 0.12 + i * 0.045
@@ -266,10 +266,10 @@ export default function Navbar() {
                     >
                       <button
                         onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                        className="flex w-full items-center justify-between py-5 sm:py-6 focus-visible:outline-none"
+                        className="flex w-full items-center justify-between py-3 sm:py-4 focus-visible:outline-none"
                       >
                         <span className={cn(
-                          'font-display text-[26px] sm:text-[32px] font-bold tracking-tight transition-colors',
+                          'font-display text-[22px] sm:text-[28px] font-bold tracking-tight transition-colors',
                           isActive ? 'text-[var(--accent)]' : 'text-[var(--tx-1)]'
                         )}>
                           {link.label}
@@ -298,7 +298,7 @@ export default function Navbar() {
                                   key={s.href}
                                   href={s.href}
                                   onClick={() => setIsMobileOpen(false)}
-                                  className="py-2.5 px-3 rounded-xl font-sans text-[15px] font-medium text-[var(--tx-2)] hover:text-[var(--accent)] hover:bg-[var(--accent-glow)] transition-colors"
+                                  className="py-2 px-3 rounded-xl font-sans text-[14px] font-medium text-[var(--tx-2)] hover:text-[var(--accent)] hover:bg-[var(--accent-glow)] transition-colors"
                                 >
                                   {s.label}
                                 </Link>
@@ -329,8 +329,8 @@ export default function Navbar() {
                       href={link.href}
                       onClick={() => setIsMobileOpen(false)}
                       className={cn(
-                        'flex items-center justify-between py-5 sm:py-6 border-b border-[var(--br)] focus-visible:outline-none',
-                        'font-display text-[26px] sm:text-[32px] font-bold tracking-tight transition-colors',
+                        'flex items-center justify-between py-3 sm:py-4 border-b border-[var(--br)] focus-visible:outline-none',
+                        'font-display text-[22px] sm:text-[28px] font-bold tracking-tight transition-colors',
                         isActive ? 'text-[var(--accent)]' : 'text-[var(--tx-1)] hover:text-[var(--accent)]'
                       )}
                     >

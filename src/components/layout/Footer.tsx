@@ -90,7 +90,7 @@ export function Footer() {
             <h4 className="font-mono-fulgur text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--tx-3)]">
               Servizi
             </h4>
-            <ul className="mt-6 flex flex-col gap-3.5 sm:gap-2.5 font-sans text-[15px] sm:text-sm text-[var(--tx-2)]">
+            <ul className="mt-4 flex flex-col gap-2 sm:gap-2.5 font-sans text-[15px] sm:text-sm text-[var(--tx-2)]">
               {topServices.map((service) => (
                 <li key={service.id}>
                   <Link 
@@ -114,7 +114,7 @@ export function Footer() {
             <h4 className="font-mono-fulgur text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--tx-3)]">
               Azienda
             </h4>
-            <ul className="mt-6 flex flex-col gap-3.5 sm:gap-2.5 font-sans text-[15px] sm:text-sm text-[var(--tx-2)]">
+            <ul className="mt-4 flex flex-col gap-2 sm:gap-2.5 font-sans text-[15px] sm:text-sm text-[var(--tx-2)]">
               {COMPANY_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="transition-colors hover:text-[var(--accent)]">
@@ -130,7 +130,7 @@ export function Footer() {
             <h4 className="font-mono-fulgur text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--tx-3)]">
               Contatti
             </h4>
-            <ul className="mt-6 flex flex-col gap-4 font-sans text-[15px] sm:text-sm text-[var(--tx-2)]">
+            <ul className="mt-4 flex flex-col gap-3 font-sans text-[15px] sm:text-sm text-[var(--tx-2)]">
               <li className="flex items-start gap-4 sm:gap-3">
                 <MapPin size={16} weight="duotone" className="mt-0.5 shrink-0 text-[var(--accent)]" />
                 <span className="leading-snug">Parma, Emilia-Romagna<br />Italia</span>
@@ -166,8 +166,8 @@ export function Footer() {
 
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-10 sm:mt-14 border-t border-[var(--br)] pt-6 sm:pt-7 flex flex-col items-center justify-between gap-4 sm:flex-row">
+        {/* Bottom Bar — aintain pb-24 on mobile to not be covered by floating actions (WhatsApp, N badge) */}
+        <div className="mt-10 sm:mt-14 border-t border-[var(--br)] pt-6 sm:pt-7 pb-24 sm:pb-0 flex flex-col items-center justify-between gap-4 sm:flex-row">
           <p className="font-mono-fulgur text-[10px] uppercase tracking-wider text-[var(--tx-3)]">
             © {year} Fulgur Service S.R.L. — P.IVA 03063010346 · REA PR-353051 · Cap. Soc. €10.000 i.v.
           </p>
