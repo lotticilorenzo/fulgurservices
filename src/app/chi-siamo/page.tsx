@@ -45,7 +45,7 @@ export default function ChiSiamoPage() {
       {/* HERO STORIA */}
       <div className="mx-auto w-full max-w-7xl px-6 xl:px-8 mb-16 sm:mb-20 text-center flex flex-col items-center">
         <SectionLabel className="mb-4">— LA NOSTRA STORIA</SectionLabel>
-        <h1 className="font-display text-4xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl lg:text-7xl max-w-4xl text-balance leading-[0.9]">
+        <h1 className="font-display text-3xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl lg:text-7xl max-w-4xl text-balance leading-[0.9]">
           Tradizione e innovazione nel <span className="text-[var(--accent)]">cleaning a Parma.</span>
         </h1>
         <p className="mt-8 font-sans text-lg lg:text-xl font-light text-[var(--tx-2)] max-w-3xl leading-relaxed text-balance">
@@ -67,9 +67,9 @@ export default function ChiSiamoPage() {
           priority
         />
             <div className="absolute inset-x-0 bottom-0 aspect-[21/6] bg-gradient-to-t from-[var(--bg)] via-[var(--bg)]/40 to-transparent" />
-            <div className="absolute bottom-8 left-8 right-8 flex flex-col sm:flex-row justify-between items-end gap-6">
+            <div className="absolute bottom-6 left-6 right-6 sm:bottom-8 sm:left-8 sm:right-8 flex flex-col sm:flex-row justify-between items-end gap-6">
               <div className="text-left max-w-lg">
-                <h3 className="font-display text-2xl font-bold text-white mb-2">Una promessa di valore</h3>
+                <h3 className="font-display text-xl sm:text-2xl font-bold text-white mb-2">Una promessa di valore</h3>
                 <p className="font-sans text-sm text-white/90">Per noi la pulizia non è un'attività meccanica: non siamo semplici fornitori, ma partner che si prendono cura dell'ambiente del cliente a 360°.</p>
               </div>
               <div className="px-6 py-3 rounded-xl bg-[var(--accent)] text-[var(--bg)] font-mono-fulgur text-sm font-bold tracking-widest shrink-0">
@@ -157,7 +157,7 @@ export default function ChiSiamoPage() {
          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <ScrollReveal>
                <SectionLabel className="mb-6">— IL NOSTRO CAPITALE UMANO</SectionLabel>
-               <h2 className="font-display text-4xl sm:text-5xl font-extrabold text-[var(--tx-1)] mb-8 leading-tight tracking-tighter">
+               <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-[var(--tx-1)] mb-8 leading-tight tracking-tighter">
                   Specialisti delle pulizie al <span className="text-[var(--accent)]">servizio di Parma.</span>
                </h2>
                <p className="font-sans text-xl font-light text-[var(--tx-2)] leading-relaxed mb-10 opacity-90">

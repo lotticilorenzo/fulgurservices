@@ -64,7 +64,7 @@ export default function LavoraConNoiPage() {
         <div className="mx-auto max-w-7xl relative z-10">
           <ScrollReveal>
              <SectionLabel className="mb-6">— LAVORA CON NOI</SectionLabel>
-             <h1 className="font-display text-5xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-7xl lg:text-8xl max-w-4xl text-balance leading-[0.9]">
+             <h1 className="font-display text-4xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-6xl lg:text-8xl max-w-4xl text-balance leading-[0.9]">
                Cresci con l'energia di <br />
                <span className="text-[var(--accent)]">Fulgur Service.</span>
              </h1>
@@ -118,7 +118,7 @@ export default function LavoraConNoiPage() {
             <div>
               <ScrollReveal>
                 <SectionLabel className="mb-4">— CANDIDATURA</SectionLabel>
-                <h2 className="font-display text-4xl font-extrabold text-[var(--tx-1)] tracking-tight text-balance leading-tight">
+                <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-[var(--tx-1)] tracking-tight text-balance leading-tight">
                   Cerchiamo <span className="text-[var(--accent)]">persone motivate</span> per ampliare il nostro team.
                 </h2>
                 <p className="mt-8 font-sans text-lg font-light text-[var(--tx-2)] leading-relaxed">
@@ -133,7 +133,7 @@ export default function LavoraConNoiPage() {
             {/* APPLICATION FORM */}
             <div id="candidatura">
               <ScrollReveal>
-                <div className="p-8 lg:p-12 rounded-[3rem] bg-[var(--tx-1)] text-white shadow-2xl relative overflow-hidden">
+                <div className="p-6 md:p-12 rounded-3xl lg:rounded-[3rem] bg-[var(--tx-1)] text-white shadow-2xl relative overflow-hidden">
                    {/* Shine Effect */}
                    <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[var(--accent)]/20 to-transparent blur-3xl -z-0" />
 
@@ -239,11 +239,11 @@ export default function LavoraConNoiPage() {
       <section className="bg-[var(--accent)] py-20 overflow-hidden">
         <WipeReveal direction="left">
           <div className="mx-auto max-w-7xl px-6 xl:px-8 text-center sm:text-left flex flex-col md:flex-row items-center justify-between gap-12">
-            <h2 className="font-display text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-none">
+            <h2 className="font-display text-3xl lg:text-5xl font-extrabold text-white tracking-tight leading-none">
               Non trovi la posizione <br /> giusta per te?
             </h2>
             <MagneticButton as="div">
-              <a href="mailto:fulgurservice@gmail.com" className="px-10 py-5 bg-[var(--tx-1)] text-white rounded-full font-display font-bold text-sm shadow-xl hover:scale-105 transition-all">
+              <a href="mailto:fulgurservice@gmail.com" className="px-8 py-4 sm:px-10 sm:py-5 bg-[var(--tx-1)] text-white rounded-full font-display font-bold text-sm shadow-xl hover:scale-105 transition-all">
                 Candidatura Spontanea
               </a>
             </MagneticButton>

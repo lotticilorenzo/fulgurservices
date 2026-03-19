@@ -51,7 +51,7 @@ export function ContactForm() {
 
   if (isSuccess) {
     return (
-      <div className="w-full bg-white border border-[var(--br)] rounded-3xl p-8 flex flex-col items-center justify-center text-center min-h-[400px] shadow-sm">
+      <div className="w-full bg-white border border-[var(--br)] rounded-[2rem] sm:rounded-3xl p-6 sm:p-8 flex flex-col items-center justify-center text-center min-h-[400px] shadow-sm">
         <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-[var(--accent-glow)] border border-[var(--accent)]/20">
           <CheckCircle size={36} weight="fill" className="text-[var(--accent)]" />
         </div>
@@ -69,11 +69,11 @@ export function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="w-full bg-white border border-[var(--br)] rounded-3xl p-8 flex flex-col gap-5 shadow-xl shadow-[rgba(42,140,122,0.08)]"
+      className="w-full bg-white border border-[var(--br)] rounded-[2rem] sm:rounded-3xl p-6 sm:p-8 flex flex-col gap-5 shadow-xl shadow-[rgba(42,140,122,0.08)]"
       noValidate
     >
       <div className="mb-2">
-        <h3 className="font-display text-2xl font-bold text-[var(--tx-1)]">Prendiamoci cura del tuo ambiente</h3>
+        <h3 className="font-display text-xl sm:text-2xl font-bold text-[var(--tx-1)]">Prendiamoci cura del tuo ambiente</h3>
         <p className="font-sans text-sm font-light text-[var(--tx-3)] mt-1">
           Richiedi un sopralluogo gratuito o un preventivo personalizzato.
         </p>

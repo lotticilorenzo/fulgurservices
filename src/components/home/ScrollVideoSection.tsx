@@ -101,7 +101,7 @@ export function ScrollVideoSection() {
   /* ─── MOBILE: layout statico a card ─── */
   if (isMobile) {
     return (
-      <section className="relative bg-[#0D1117] py-12 md:py-24 px-6">
+      <section className="relative bg-[#0D1117] py-12 md:py-24 px-4 sm:px-6">
         <div className="max-w-md mx-auto space-y-10 md:space-y-20">
           {CHAPTERS.map((ch, i) => (
             <div key={ch.id} className="relative rounded-[2rem] overflow-hidden min-h-[260px] md:min-h-[320px]">

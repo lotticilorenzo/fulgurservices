@@ -185,7 +185,7 @@ export function PreventiveForm() {
       )}
 
       {/* FORM CONTENT CONTAINER */}
-      <div className="relative min-h-[480px] w-full p-8 lg:p-12">
+      <div className="relative min-h-[480px] w-full p-6 md:p-8 lg:p-12">
         <form onSubmit={handleSubmit(onSubmit)} className="h-full">
           {/* Honeypot field - Hidden from users */}
           <div className="hidden" aria-hidden="true">
@@ -205,7 +205,7 @@ export function PreventiveForm() {
                 className="w-full h-full"
               >
                 <div className="mb-8">
-                  <h3 className="font-display text-3xl font-bold text-[var(--tx-1)]">Di cosa hai bisogno?</h3>
+                  <h3 className="font-display text-2xl sm:text-3xl font-bold text-[var(--tx-1)]">Di cosa hai bisogno?</h3>
                   <p className="font-sans text-sm font-light mt-2 text-[var(--tx-2)]">Puoi selezionare più servizi contemporaneamente.</p>
                 </div>
 
@@ -221,7 +221,7 @@ export function PreventiveForm() {
                           return (
                             <label
                               key={s.id}
-                              className={`flex flex-col gap-3 cursor-pointer p-5 rounded-2xl border transition-all ${
+                              className={`flex flex-col gap-3 cursor-pointer p-4 sm:p-5 rounded-2xl border transition-all ${
                                 isSelected 
                                   ? 'border-[var(--accent)] bg-[var(--accent)]/5 shadow-[0_10px_30px_rgba(42,140,122,0.1)]' 
                                   : 'border-[var(--br)] bg-[var(--bg-2)] hover:border-[var(--accent)]'
@@ -275,7 +275,7 @@ export function PreventiveForm() {
                 className="w-full h-full max-w-xl mx-auto"
               >
                 <div className="mb-8">
-                  <h3 className="font-display text-3xl font-bold text-[var(--tx-1)]">Descrivici lo spazio</h3>
+                  <h3 className="font-display text-2xl sm:text-3xl font-bold text-[var(--tx-1)]">Descrivici lo spazio</h3>
                   <p className="font-sans text-sm font-light mt-2 text-[var(--tx-2)]">Ci aiuta a fornirti un preventivo ancora più preciso.</p>
                 </div>
 
@@ -341,7 +341,7 @@ export function PreventiveForm() {
                 className="w-full h-full max-w-2xl mx-auto"
               >
                 <div className="mb-8 text-center">
-                  <h3 className="font-display text-3xl font-bold text-[var(--tx-1)]">Con quale frequenza?</h3>
+                  <h3 className="font-display text-2xl sm:text-3xl font-bold text-[var(--tx-1)]">Con quale frequenza?</h3>
                   <p className="font-sans text-sm font-light mt-2 text-[var(--tx-2)]">Scegli la soluzione più adatta alle tue esigenze e routine.</p>
                 </div>
 
@@ -361,7 +361,7 @@ export function PreventiveForm() {
                           return (
                             <label
                               key={opt.id}
-                              className={`flex flex-col p-5 rounded-2xl border cursor-pointer transition-all ${
+                              className={`flex flex-col p-4 sm:p-5 rounded-2xl border cursor-pointer transition-all ${
                                 isSelected 
                                   ? 'border-[var(--accent)] bg-[var(--accent)]/5 shadow-[0_10px_30px_rgba(42,140,122,0.1)]' 
                                   : 'border-[var(--br)] bg-[var(--bg-2)] hover:border-[var(--accent)]'
@@ -403,7 +403,7 @@ export function PreventiveForm() {
                 className="w-full h-full max-w-xl mx-auto"
               >
                 <div className="mb-8">
-                  <h3 className="font-display text-3xl font-bold text-[var(--tx-1)]">Dove sei?</h3>
+                  <h3 className="font-display text-2xl sm:text-3xl font-bold text-[var(--tx-1)]">Dove sei?</h3>
                   <p className="font-sans text-sm font-light mt-2 text-[var(--tx-2)]">Operiamo attivamente a Parma e in tutta l'Emilia Romagna.</p>
                 </div>
 
@@ -445,7 +445,7 @@ export function PreventiveForm() {
                 className="w-full h-full max-w-xl mx-auto"
               >
                 <div className="mb-8">
-                  <h3 className="font-display text-3xl font-bold text-[var(--tx-1)]">Come possiamo contattarti?</h3>
+                  <h3 className="font-display text-2xl sm:text-3xl font-bold text-[var(--tx-1)]">Come possiamo contattarti?</h3>
                   <p className="font-sans text-sm font-light mt-2 text-[var(--tx-2)]">Inserisci i tuoi contatti, ti risponderemo entro 24 ore lavorative.</p>
                 </div>
 
@@ -552,7 +552,7 @@ export function PreventiveForm() {
                   <div className="absolute inset-0 bg-[var(--accent)]/20 blur-2xl rounded-full" />
                 </div>
                 
-                <h3 className="font-display text-4xl font-extrabold text-[var(--tx-1)]">Richiesta inviata!</h3>
+                <h3 className="font-display text-3xl sm:text-4xl font-extrabold text-[var(--tx-1)]">Richiesta inviata!</h3>
                 <p className="mt-4 font-sans text-base text-[var(--tx-2)] max-w-sm">
                   Grazie per averci contattato. Abbiamo ricevuto la tua richiesta e un membro del nostro team ti risponderà entro 24 ore.
                 </p>

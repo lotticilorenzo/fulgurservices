@@ -53,10 +53,10 @@ export function ServiceContent({ service }: ServiceContentProps) {
           >
             <IconComponent size={48} weight="duotone" />
           </div>
-          <h1 className="font-display text-5xl font-extrabold text-[var(--tx-1)] sm:text-7xl lg:text-8xl mb-8 tracking-tighter max-w-5xl leading-[1.1]">
+          <h1 className="font-display text-4xl font-extrabold text-[var(--tx-1)] sm:text-7xl lg:text-8xl mb-8 tracking-tighter max-w-5xl leading-[1.1]">
             {service.title}
           </h1>
-          <p className="font-sans text-xl font-light text-[var(--tx-2)] sm:text-2xl leading-relaxed max-w-3xl border-l-[3px] border-[var(--accent)] pl-8 py-3 bg-gradient-to-r from-[var(--accent)]/5 to-transparent">
+          <p className="font-sans text-xl font-light text-[var(--tx-2)] sm:text-2xl leading-relaxed max-w-3xl border-l-[3px] border-[var(--accent)] pl-5 sm:pl-8 py-3 bg-gradient-to-r from-[var(--accent)]/5 to-transparent">
             {service.shortDesc}
           </p>
         </WipeReveal>
@@ -92,14 +92,14 @@ export function ServiceContent({ service }: ServiceContentProps) {
               {/* DESCRIZIONE LUNGA */}
               <WipeReveal direction="top">
                 <SectionLabel className="mb-10">— DETTAGLI INTERVENTO</SectionLabel>
-                <p className="font-sans font-light text-[var(--tx-2)] leading-relaxed text-xl sm:text-2xl opacity-90 first-letter:text-5xl first-letter:font-display first-letter:font-bold first-letter:text-[var(--accent)] first-letter:mr-3 first-letter:float-left">
+                <p className="font-sans font-light text-[var(--tx-2)] leading-relaxed text-lg sm:text-2xl opacity-90 first-letter:text-5xl first-letter:font-display first-letter:font-bold first-letter:text-[var(--accent)] first-letter:mr-3 first-letter:float-left">
                   {service.longDesc}
                 </p>
               </WipeReveal>
 
               {/* BENEFITS / CHECKLIST */}
               <ScrollReveal>
-                <h2 className="font-display text-3xl font-bold text-[var(--tx-1)] mb-10 flex items-center gap-4">
+                <h2 className="font-display text-2xl sm:text-3xl font-bold text-[var(--tx-1)] mb-10 flex items-center gap-4">
                   <CheckCircle size={32} className="text-[var(--accent)]" />
                   Protocollo di eccellenza
                 </h2>
@@ -122,7 +122,7 @@ export function ServiceContent({ service }: ServiceContentProps) {
               {/* SPECIFIC CASE STUDY COMPARISON (IF EXISTS) */}
               {CASE_STUDIES.filter(cs => cs.serviceSlug === service.slug).map(study => (
                  <ScrollReveal key={study.id}>
-                    <div className="p-8 lg:p-12 rounded-[2.5rem] bg-[var(--bg)] border border-[var(--br)] shadow-2xl relative overflow-hidden group">
+                    <div className="p-6 sm:p-8 lg:p-12 rounded-3xl sm:rounded-[2.5rem] bg-[var(--bg)] border border-[var(--br)] shadow-2xl relative overflow-hidden group">
                        <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
                           <CheckCircle size={100} weight="fill" />
                        </div>
@@ -159,7 +159,7 @@ export function ServiceContent({ service }: ServiceContentProps) {
             <aside className="flex flex-col gap-8 lg:sticky lg:top-32 h-fit">
 
               {/* A CHI E' RIVOLTO */}
-              <div className="glass-premium rounded-3xl border border-[var(--br)] bg-white/60 p-8 shadow-2xl backdrop-blur-xl">
+              <div className="glass-premium rounded-3xl border border-[var(--br)] bg-white/60 p-6 sm:p-8 shadow-2xl backdrop-blur-xl">
                 <SectionLabel className="mb-6">— AMBITI DI APPLICAZIONE</SectionLabel>
                 <div className="flex flex-col gap-3">
                   {service.sectors.map((sector, i) => (
@@ -199,7 +199,7 @@ export function ServiceContent({ service }: ServiceContentProps) {
       <div className="w-full bg-[var(--bg-2)] pb-32 relative z-10 overflow-hidden">
         <ScrollReveal>
           <div className="mx-auto w-full max-w-7xl px-6 xl:px-8">
-            <div className="flex flex-col lg:flex-row items-center gap-16 p-8 lg:p-16 rounded-[3rem] bg-gradient-to-br from-[#12151E] to-[#0D1117] border border-[var(--accent)]/10 shadow-2xl relative overflow-hidden">
+            <div className="flex flex-col lg:flex-row items-center gap-10 sm:gap-16 p-6 sm:p-8 lg:p-16 rounded-[2rem] sm:rounded-[3rem] bg-gradient-to-br from-[#12151E] to-[#0D1117] border border-[var(--accent)]/10 shadow-2xl relative overflow-hidden">
                {/* Background Glow */}
                <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[var(--accent)]/10 rounded-full blur-[100px] -z-10" />
                
@@ -237,7 +237,7 @@ export function ServiceContent({ service }: ServiceContentProps) {
         <WipeReveal direction="top">
           <div className="mx-auto w-full max-w-4xl px-6 xl:px-8 text-center flex flex-col items-center">
             <SectionLabel className="mb-6">— AZIONE IMMEDIATA</SectionLabel>
-            <h2 className="font-display text-4xl sm:text-7xl font-extrabold text-[var(--tx-1)] mb-8 tracking-tighter">
+            <h2 className="font-display text-3xl sm:text-6xl lg:text-7xl font-extrabold text-[var(--tx-1)] mb-8 tracking-tighter">
               Il tuo spazio merita <span className="text-[var(--accent)]">brillantezza.</span>
             </h2>
             <p className="font-sans text-xl font-light text-[var(--tx-2)] mb-12 max-w-2xl text-balance leading-relaxed italic">
@@ -245,7 +245,7 @@ export function ServiceContent({ service }: ServiceContentProps) {
             </p>
             
             <Link href="/preventivo">
-              <MagneticButton className="px-12 py-6 rounded-2xl bg-[var(--accent)] font-display text-lg font-bold text-white shadow-[0_10px_20px_var(--accent-glow)] transition-all duration-300 hover:shadow-[0_15px_30px_var(--accent-glow-h)] hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-3">
+              <MagneticButton className="px-8 py-5 sm:px-12 sm:py-6 rounded-2xl bg-[var(--accent)] font-display text-[15px] sm:text-lg font-bold text-white shadow-[0_10px_20px_var(--accent-glow)] transition-all duration-300 hover:shadow-[0_15px_30px_var(--accent-glow-h)] hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-3">
                 Richiedi Sopralluogo Gratuito <ArrowRight weight="bold" />
               </MagneticButton>
             </Link>

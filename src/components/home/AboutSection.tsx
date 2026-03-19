@@ -77,7 +77,7 @@ export function AboutSection() {
           <div className="order-1 lg:order-2 flex flex-col items-start">
             <ScrollReveal>
               <SectionLabel className="mb-6">— CHI SIAMO</SectionLabel>
-              <h2 className="font-display text-4xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl lg:text-[3.2rem] leading-[1.1]">
+              <h2 className="font-display text-3xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl lg:text-[3.2rem] leading-[1.1]">
                 Tradizione e innovazione,{' '}<br />
                 <span className="text-[var(--accent)]">insieme.</span>
               </h2>
@@ -99,7 +99,7 @@ export function AboutSection() {
             </ScrollReveal>
 
             <ScrollReveal delay={0.2} className="w-full">
-              <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full pr-20 sm:pr-0">
+              <div className="mt-8 sm:mt-10 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 w-full">
                 {VALORI.map((valore, i) => {
                   const Icon = valore.icon
                   return (

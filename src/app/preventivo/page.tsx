@@ -18,7 +18,7 @@ export default function PreventivoPage() {
         {/* Header Section */}
         <div className="mb-16 text-center max-w-3xl mx-auto flex flex-col items-center">
           <SectionLabel className="mb-4">— PREVENTIVO GRATUITO E SENZA IMPEGNO</SectionLabel>
-          <h1 className="font-display text-4xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl lg:text-6xl">
+          <h1 className="font-display text-3xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl lg:text-6xl">
             Raccontaci il tuo <span className="text-[var(--accent)]">spazio.</span>
           </h1>
           <p className="mt-6 font-sans text-lg font-light text-[var(--tx-2)] sm:text-xl leading-relaxed">
@@ -38,7 +38,7 @@ export default function PreventivoPage() {
           <div className="sticky top-32 flex flex-col gap-6">
             
             {/* Box Contatti Diretti */}
-            <div className="rounded-3xl border border-[var(--br)] bg-white p-8 shadow-sm hover:shadow-[0_15px_30px_rgba(42,140,122,0.12)] hover:-translate-y-1 transition-all duration-300">
+            <div className="rounded-[2.5rem] border border-[var(--br)] bg-white p-6 md:p-8 shadow-sm hover:shadow-[0_15px_30px_rgba(42,140,122,0.12)] hover:-translate-y-1 transition-all duration-300">
               <h3 className="font-display text-xl font-bold text-[var(--tx-1)] mb-6">Contatti diretti</h3>
               
               <div className="flex flex-col gap-6 font-mono-fulgur text-sm text-[var(--tx-2)]">
