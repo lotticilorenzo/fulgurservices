@@ -117,7 +117,7 @@ export function ScrollVideoSection() {
                 <span className="font-mono text-[10px] md:text-xs text-[#4ECBA0]/70 tracking-widest uppercase mb-2 md:mb-3">
                   {ch.eyebrow}
                 </span>
-                <h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-2 leading-tight">
+                <h2 className="font-display text-[1.35rem] leading-snug sm:text-2xl md:text-3xl font-bold text-white mb-2 hyphens-auto break-words">
                   {ch.title}
                 </h2>
                 <p className="text-[#8A9BAE] text-sm leading-relaxed">{ch.subtitle}</p>

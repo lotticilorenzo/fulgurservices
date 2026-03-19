@@ -209,7 +209,7 @@ export function PreventiveForm() {
                   <p className="font-sans text-sm font-light mt-2 text-[var(--tx-2)]">Puoi selezionare più servizi contemporaneamente.</p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4">
                   <Controller
                     name="servizi"
                     control={control}
@@ -221,9 +221,9 @@ export function PreventiveForm() {
                           return (
                             <label
                               key={s.id}
-                              className={`flex flex-col gap-3 cursor-pointer p-4 sm:p-5 rounded-2xl border transition-all ${
+                              className={`flex flex-row items-center gap-3 cursor-pointer p-3 sm:p-5 rounded-xl border transition-all ${
                                 isSelected 
-                                  ? 'border-[var(--accent)] bg-[var(--accent)]/5 shadow-[0_10px_30px_rgba(42,140,122,0.1)]' 
+                                  ? 'border-[var(--accent)] bg-[var(--accent)]/5 shadow-[0_4px_12px_rgba(42,140,122,0.1)]' 
                                   : 'border-[var(--br)] bg-[var(--bg-2)] hover:border-[var(--accent)]'
                               }`}
                             >
@@ -241,12 +241,12 @@ export function PreventiveForm() {
                                 }}
                                 checked={isSelected}
                               />
-                              <div className={`h-10 w-10 flex items-center justify-center rounded-xl transition-colors ${
-                                isSelected ? 'bg-[var(--accent)] text-white' : 'bg-white text-[var(--tx-1)]'
+                              <div className={`shrink-0 h-9 w-9 sm:h-10 sm:w-10 flex items-center justify-center rounded-lg transition-colors ${
+                                isSelected ? 'bg-[var(--accent)] text-white' : 'bg-white text-[var(--tx-1)] shadow-sm border border-[var(--br)]'
                               }`}>
-                                <Icon size={20} weight={isSelected ? 'fill' : 'duotone'} />
+                                <Icon size={18} weight={isSelected ? 'fill' : 'duotone'} className="sm:w-5 sm:h-5" />
                               </div>
-                              <span className={`font-display text-sm font-bold ${isSelected ? 'text-[var(--accent)]' : 'text-[var(--tx-1)]'}`}>
+                              <span className={`font-display text-[13px] sm:text-sm font-bold leading-tight ${isSelected ? 'text-[var(--accent)]' : 'text-[var(--tx-1)]'}`}>
                                 {s.title}
                               </span>
                             </label>

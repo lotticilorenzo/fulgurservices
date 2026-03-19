@@ -178,7 +178,7 @@ export function HeroSection() {
           </div>
 
           {/* Trust micro-badge */}
-          <div className="hero-reveal mt-6 flex flex-wrap gap-x-5 gap-y-2 font-mono-fulgur text-[9.5px] font-medium uppercase tracking-widest text-white/70">
+          <div className="hero-reveal mt-6 flex flex-col sm:flex-row flex-wrap gap-x-5 gap-y-3 font-mono-fulgur text-[9.5px] font-medium uppercase tracking-widest text-white/70">
             <div className="flex items-center gap-2">
               <ShieldCheck size={14} className="text-[var(--accent)]" aria-hidden="true" />
               <span>Assicurati RCT €2M</span>

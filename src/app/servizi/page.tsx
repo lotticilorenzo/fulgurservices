@@ -44,7 +44,7 @@ export default function ServiziPage() {
       <TrustBar />
 
       {/* GRID COMPLETA 12 SERVIZI */}
-      <div className="mx-auto w-full max-w-7xl px-6 xl:px-8 mb-32">
+      <div className="mx-auto w-full max-w-7xl px-6 xl:px-8 mt-12 mb-20 sm:mb-32">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Riga 1: Grande (Pulizie Aziendali) + Media (Settore Sanitario) */}
           <ServiceCard service={SERVICES.find(s => s.slug === 'pulizie-aziendali')!} index={0} size="large" />

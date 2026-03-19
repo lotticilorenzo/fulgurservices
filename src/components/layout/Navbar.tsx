@@ -88,7 +88,7 @@ export default function Navbar() {
           aria-label="Fulgur Service — home"
           className="flex shrink-0 items-center gap-2 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
         >
-          <Logo size={36} iconOnly variant="default" className="shrink-0" />
+          <Logo size={44} iconOnly variant="default" className="shrink-0" />
           <span className="font-display text-[14px] font-bold tracking-tight text-[var(--tx-1)] whitespace-nowrap hidden sm:block">
             Fulgur Service
           </span>
@@ -237,7 +237,7 @@ export default function Navbar() {
                 onClick={() => setIsMobileOpen(false)}
                 className="flex items-center gap-2.5"
               >
-                <Logo size={30} iconOnly variant="default" />
+                <Logo size={40} iconOnly variant="default" />
                 <span className="font-display text-base font-bold text-[var(--tx-1)]">Fulgur Service</span>
               </Link>
               <button

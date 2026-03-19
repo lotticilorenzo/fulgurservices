@@ -168,7 +168,7 @@ export function Footer() {
 
         {/* Bottom Bar — aintain pb-24 on mobile to not be covered by floating actions (WhatsApp, N badge) */}
         <div className="mt-10 sm:mt-14 border-t border-[var(--br)] pt-6 sm:pt-7 pb-24 sm:pb-0 flex flex-col items-center justify-between gap-4 sm:flex-row">
-          <p className="font-mono-fulgur text-[10px] uppercase tracking-wider text-[var(--tx-3)]">
+          <p className="font-mono-fulgur text-[10px] uppercase tracking-wider text-[var(--tx-2)] text-center sm:text-left">
             © {year} Fulgur Service S.R.L. — P.IVA 03063010346 · REA PR-353051 · Cap. Soc. €10.000 i.v.
           </p>
           
@@ -177,7 +177,7 @@ export function Footer() {
               <Link 
                 key={link.href} 
                 href={link.href} 
-                className="font-mono-fulgur text-[10px] uppercase tracking-wider text-[var(--tx-3)] hover:text-[var(--accent)] transition-colors"
+                className="font-mono-fulgur text-[10px] uppercase tracking-wider text-[var(--tx-2)] hover:text-[var(--accent)] transition-colors"
               >
                 {link.label}
               </Link>
