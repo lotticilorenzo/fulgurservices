@@ -59,10 +59,10 @@ export function ServiceCard({ service, size = 'small', index, className }: Servi
               className="object-cover transition-transform duration-[700ms] ease-in-out group-hover:scale-[1.05]"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
-            {/* Direct Gradient Overlay */}
+            {/* Direct Gradient Overlay (Stronger for readability) */}
             <div
-              className="absolute inset-0 z-10 transition-opacity duration-300"
-              style={{ background: 'linear-gradient(to top, rgba(10,20,15,1) 0%, rgba(10,20,15,0.7) 35%, rgba(10,20,15,0.3) 100%)' }}
+              className="absolute inset-0 z-10 transition-opacity duration-300 bg-[#0A140F]/30"
+              style={{ background: 'linear-gradient(to top, rgba(10,20,15,0.95) 0%, rgba(10,20,15,0.8) 50%, rgba(10,20,15,0.4) 100%)' }}
             />
           </div>
 
@@ -74,11 +74,11 @@ export function ServiceCard({ service, size = 'small', index, className }: Servi
           {/* Content Layer */}
           <div className="relative z-20 flex h-full flex-col justify-end p-5 md:p-6 lg:p-8">
             <div className="flex flex-col gap-2">
-              <h3 className="font-display text-[18px] md:text-[22px] font-bold text-white transition-colors duration-300 group-hover:text-[var(--accent)]">
+              <h3 className="font-display text-[18px] md:text-[22px] font-bold text-white drop-shadow-md transition-colors duration-300 group-hover:text-[var(--accent)]">
                 {service.title}
               </h3>
               
-              <p className="font-sans text-[12px] md:text-[14px] font-light text-white/70 max-w-[90%] line-clamp-2">
+              <p className="font-sans text-[13px] md:text-[14px] text-white/90 max-w-[95%] line-clamp-2 drop-shadow-sm">
                 {service.shortDesc}
               </p>
 
