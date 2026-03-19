@@ -146,6 +146,7 @@ export default function Navbar() {
                             <Link
                               key={s.href}
                               href={s.href}
+                              onClick={() => setServicesOpen(false)}
                               className="flex items-center gap-2.5 rounded-xl px-3 py-2.5 font-sans text-[13px] text-[var(--tx-2)] hover:text-[var(--accent)] hover:bg-[var(--accent-glow)] transition-colors"
                             >
                               <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--accent)]" />
@@ -155,6 +156,7 @@ export default function Navbar() {
                         </div>
                         <Link
                           href="/servizi"
+                          onClick={() => setServicesOpen(false)}
                           className="flex w-full items-center justify-center gap-1.5 rounded-xl bg-[var(--bg-2)] px-3 py-2.5 border border-[var(--br)] font-mono-fulgur text-[10px] font-bold uppercase tracking-widest text-[var(--tx-3)] hover:text-[var(--accent)] hover:border-[var(--accent)]/30 transition-colors"
                         >
                           Vedi tutti i 12 servizi

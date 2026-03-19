@@ -56,7 +56,7 @@ export function MacchinariClient() {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              'linear-gradient(to bottom, rgba(15,31,26,0.55) 0%, rgba(15,31,26,0.45) 60%, rgba(15,31,26,0.75) 100%)',
+              'linear-gradient(to bottom, rgba(5,10,15,0.7) 0%, rgba(5,10,15,0.65) 60%, rgba(5,10,15,0.95) 100%)',
           }}
         />
 
@@ -88,7 +88,7 @@ export function MacchinariClient() {
               <span className="text-[var(--accent)]">risultati chirurgici.</span>
             </h1>
 
-            <p className="mt-6 font-body text-lg font-light text-white/70 max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-6 font-body text-lg font-light text-white/90 max-w-2xl mx-auto leading-relaxed drop-shadow-md">
               L'esperienza umana fa la differenza, ma senza i macchinari giusti
               è impossibile raggiungere l'eccellenza. Investiamo continuamente
               nei migliori marchi mondiali di cleaning industriale.
@@ -115,6 +115,7 @@ export function MacchinariClient() {
                 src="/images/macchinari/klindex-polisher-ai.png"
                 alt="Macchinario Klindex per lucidatura pavimenti professionale"
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -131,6 +132,7 @@ export function MacchinariClient() {
                 src="/images/macchinari/industrial-vacuum-ai.png"
                 alt="Aspiratore industriale professionale CFM per grandi magazzini"
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -147,6 +149,7 @@ export function MacchinariClient() {
                 src="/images/macchinari-pulizie-professionali.jpg"
                 alt="Lavasciuga pavimenti professionale"
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

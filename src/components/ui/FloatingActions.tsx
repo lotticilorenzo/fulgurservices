@@ -267,7 +267,7 @@ export function FloatingActions() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
             transition={{ type: 'spring', stiffness: 260, damping: 22 }}
-            className="fixed bottom-6 right-4 sm:right-6 z-[90] flex flex-col items-end gap-3"
+            className="fixed bottom-6 right-4 sm:right-6 z-[90] flex flex-col items-end gap-3 pointer-events-none"
           >
             {/* ── Preventivo Rapido button ── */}
             <motion.button
@@ -276,7 +276,7 @@ export function FloatingActions() {
               transition={{ delay: 0.1, type: 'spring', stiffness: 280, damping: 22 }}
               onClick={() => setModalOpen(true)}
               aria-label="Preventivo Rapido"
-              className="group flex items-center gap-2.5 rounded-full bg-[var(--accent)] px-4 py-3 shadow-[0_8px_28px_rgba(78,203,160,0.4)] transition-all hover:bg-[var(--accent-d)] hover:shadow-[0_10px_36px_rgba(78,203,160,0.5)] hover:gap-3"
+              className="group flex pointer-events-auto items-center gap-2.5 rounded-full bg-[var(--accent)] px-4 py-3 shadow-[0_8px_28px_rgba(78,203,160,0.4)] transition-all hover:bg-[var(--accent-d)] hover:shadow-[0_10px_36px_rgba(78,203,160,0.5)] hover:gap-3"
             >
               {/* Lightning icon */}
               <svg viewBox="0 0 24 24" fill="white" className="h-5 w-5 shrink-0" aria-hidden="true">
