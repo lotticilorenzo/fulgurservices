@@ -94,6 +94,18 @@ export function ServicesGrid() {
           </div>
         </div>
 
+        {/* View All Services CTA (Esplicita e posizionata SUBITO SOTTO i servizi di pulizia) */}
+        <div className="mt-8 sm:mt-12 mb-16 flex justify-center">
+          <Link 
+            href="/servizi" 
+            className="group flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl sm:rounded-none bg-[var(--bg-2)] sm:bg-transparent border sm:border-transparent border-[var(--br)] px-6 py-4 sm:p-0 font-display text-base sm:text-sm font-bold text-[var(--tx-1)] sm:text-[var(--tx-2)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-all"
+          >
+            <span>Vedi tutti i 12 settori di pulizia</span>
+            <span className="transition-transform group-hover:translate-x-1 sm:hidden">→</span>
+            <span className="hidden sm:inline transition-transform group-hover:translate-x-1">→</span>
+          </Link>
+        </div>
+
         {/* ────────────────────────────────────────── */}
         {/* IMPRESA 360° — Servizi Integrati */}
         {/* ────────────────────────────────────────── */}
@@ -158,18 +170,6 @@ export function ServicesGrid() {
               })}
             </div>
           </ScrollReveal>
-        </div>
-
-        {/* View All Services CTA (Esplicita per chi naviga da Mobile) */}
-        <div className="mt-8 sm:mt-12 flex justify-center">
-          <Link 
-            href="/servizi" 
-            className="group flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl sm:rounded-none bg-[var(--bg-2)] sm:bg-transparent border sm:border-transparent border-[var(--br)] px-6 py-4 sm:p-0 font-display text-base sm:text-sm font-bold text-[var(--tx-1)] sm:text-[var(--tx-2)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-all"
-          >
-            <span>Vedi tutti i 12 settori di pulizia</span>
-            <span className="transition-transform group-hover:translate-x-1 sm:hidden">→</span>
-            <span className="hidden sm:inline transition-transform group-hover:translate-x-1">→</span>
-          </Link>
         </div>
       </div>
     </section>
