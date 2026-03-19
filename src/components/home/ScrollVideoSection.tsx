@@ -101,7 +101,7 @@ export function ScrollVideoSection() {
   /* ─── MOBILE: layout statico pulito a card chiare ─── */
   if (isMobile) {
     return (
-      <section className="relative bg-[var(--bg)] py-16 px-6 sm:px-8 border-t border-b border-[var(--br)] overflow-hidden">
+      <section ref={sectionRef} className="relative bg-[var(--bg)] py-16 px-6 sm:px-8 border-t border-b border-[var(--br)] overflow-hidden">
         {/* Decorative background element */}
         <div className="absolute top-0 right-0 -m-32 w-96 h-96 bg-[var(--accent)]/5 rounded-full blur-3xl pointer-events-none" />
         
