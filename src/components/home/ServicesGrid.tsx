@@ -68,8 +68,8 @@ export function ServicesGrid() {
             <ServiceCard service={industriali} size="large" index={3} />
           </div>
 
-          {/* Row 3: 3 medium (1-1-1) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          {/* Row 3: 3 medium (1-1-1) - Hidden on Mobile to save space */}
+          <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {row3Cards.map((service, idx) => (
               <ServiceCard
                 key={service.id}
@@ -80,8 +80,8 @@ export function ServicesGrid() {
             ))}
           </div>
 
-          {/* Row 4: Remaining services — same ServiceCard design */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          {/* Row 4: Remaining services - Hidden on Mobile */}
+          <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {remainingServices.map((service, idx) => (
               <ServiceCard
                 key={service.id}
@@ -160,14 +160,15 @@ export function ServicesGrid() {
           </ScrollReveal>
         </div>
 
-        {/* View All Services CTA */}
-        <div className="mt-12 flex justify-center">
+        {/* View All Services CTA (Esplicita per chi naviga da Mobile) */}
+        <div className="mt-8 sm:mt-12 flex justify-center">
           <Link 
             href="/servizi" 
-            className="group flex items-center gap-2 font-display text-sm font-bold text-[var(--tx-2)] hover:text-[var(--accent)] transition-colors"
+            className="group flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl sm:rounded-none bg-[var(--bg-2)] sm:bg-transparent border sm:border-transparent border-[var(--br)] px-6 py-4 sm:p-0 font-display text-base sm:text-sm font-bold text-[var(--tx-1)] sm:text-[var(--tx-2)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-all"
           >
-            <span>Vedi tutti i 12 servizi</span>
-            <span className="transition-transform group-hover:translate-x-1">→</span>
+            <span>Vedi tutti i 12 settori di pulizia</span>
+            <span className="transition-transform group-hover:translate-x-1 sm:hidden">→</span>
+            <span className="hidden sm:inline transition-transform group-hover:translate-x-1">→</span>
           </Link>
         </div>
       </div>
