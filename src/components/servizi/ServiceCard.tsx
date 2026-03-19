@@ -35,9 +35,9 @@ export function ServiceCard({ service, size = 'small', index, className }: Servi
   const Icon = IconMap[service.icon] || IconMap.Buildings
 
   const sizeClasses = {
-    large: 'col-span-1 lg:col-span-2 min-h-[380px]',
-    medium: 'col-span-1 min-h-[380px]',
-    small: 'col-span-1 min-h-[320px]',
+    large: 'col-span-1 lg:col-span-2 min-h-[280px] md:min-h-[380px]',
+    medium: 'col-span-1 min-h-[280px] md:min-h-[380px]',
+    small: 'col-span-1 min-h-[260px] md:min-h-[320px]',
   }
 
   return (

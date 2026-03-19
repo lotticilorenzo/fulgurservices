@@ -273,10 +273,10 @@ export default function GalleryPage() {
   }, [activeCategory])
 
   return (
-    <main className="min-h-screen bg-[var(--bg)] pt-32 pb-0 sm:pt-40">
+    <main className="min-h-screen bg-[var(--bg)] pt-24 pb-0 md:pt-32 lg:pt-40">
       <WipeReveal direction="top">
         {/* HEADER */}
-        <div className="mx-auto w-full max-w-7xl px-6 xl:px-8 mb-16 text-center flex flex-col items-center">
+        <div className="mx-auto w-full max-w-7xl px-6 xl:px-8 mb-10 md:mb-16 text-center flex flex-col items-center">
           <SectionLabel className="mb-4">— I NOSTRI LAVORI</SectionLabel>
           <h1 className="font-display text-4xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl lg:text-6xl max-w-3xl">
             Ogni spazio pulito racconta{' '}
@@ -290,7 +290,7 @@ export default function GalleryPage() {
           </p>
 
           {/* FILTER PILLS */}
-          <div className="mt-12 flex flex-wrap justify-center gap-2">
+          <div className="mt-8 md:mt-12 flex flex-wrap justify-center gap-2">
             {CATEGORIES.map((cat) => (
               <button
                 key={cat.id}
@@ -316,7 +316,7 @@ export default function GalleryPage() {
       </WipeReveal>
 
       {/* BENTO GRID GALLERY */}
-      <div className="mx-auto w-full max-w-7xl px-6 xl:px-8 mb-32">
+      <div className="mx-auto w-full max-w-7xl px-6 xl:px-8 mb-16 md:mb-32">
         <LayoutGroup>
           <motion.div 
             layout
@@ -362,11 +362,11 @@ export default function GalleryPage() {
         </LayoutGroup>
       </div>
 
-      {/* BEFORE / AFTER SECTION */}
-      <div className="w-full bg-[var(--bg-2)] py-32 border-t border-[var(--br)] relative z-10">
+      {/* AFTER SECTION */}
+      <div className="w-full bg-[var(--bg-2)] py-16 md:py-32 border-t border-[var(--br)] relative z-10">
         <div className="mx-auto w-full max-w-7xl px-6 xl:px-8">
           <ScrollReveal>
-            <div className="flex flex-col items-center text-center mb-20">
+            <div className="flex flex-col items-center text-center mb-12 md:mb-20">
               <SectionLabel className="mb-4">— RISULTATI CERTIFICATI</SectionLabel>
               <h2 className="font-display text-4xl sm:text-5xl font-extrabold text-[var(--tx-1)] tracking-tight">
                 Il potere dei <span className="text-[var(--accent)]">risultati visibili.</span>

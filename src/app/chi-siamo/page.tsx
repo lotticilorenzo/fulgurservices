@@ -40,10 +40,10 @@ const VALORI = [
 
 export default function ChiSiamoPage() {
   return (
-    <main className="bg-[var(--bg)] min-h-screen pt-32 sm:pt-40">
+    <main className="bg-[var(--bg)] min-h-screen pt-24 sm:pt-40">
       
       {/* HERO STORIA */}
-      <div className="mx-auto w-full max-w-7xl px-6 xl:px-8 mb-20 text-center flex flex-col items-center">
+      <div className="mx-auto w-full max-w-7xl px-6 xl:px-8 mb-16 sm:mb-20 text-center flex flex-col items-center">
         <SectionLabel className="mb-4">— LA NOSTRA STORIA</SectionLabel>
         <h1 className="font-display text-4xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl lg:text-7xl max-w-4xl text-balance leading-[0.9]">
           Tradizione e innovazione nel <span className="text-[var(--accent)]">cleaning a Parma.</span>
@@ -55,7 +55,7 @@ export default function ChiSiamoPage() {
       </div>
 
       {/* MULTI MEDIA SEZIONE - TEAM AI PHOTO */}
-      <div className="mx-auto w-full max-w-7xl px-6 xl:px-8 mb-32">
+      <div className="mx-auto w-full max-w-7xl px-6 xl:px-8 mb-20 md:mb-32">
         <ScrollReveal>
           <div className="w-full aspect-[21/9] rounded-3xl overflow-hidden relative border border-[var(--br)] bg-[var(--bg-2)] shadow-xl">
             <Image
@@ -81,10 +81,10 @@ export default function ChiSiamoPage() {
       </div>
 
       {/* TIMELINE / STORIA */}
-      <div className="w-full bg-[var(--bg-2)] border-t border-[var(--br)] py-24">
+      <div className="w-full bg-[var(--bg-2)] border-t border-[var(--br)] py-16 md:py-24">
         <div className="mx-auto w-full max-w-4xl px-6 xl:px-8">
-          <SectionLabel className="mb-12 text-center">— 30 ANNI DI ESPERIENZA</SectionLabel>
-          <div className="relative border-l border-[var(--br)] ml-4 sm:ml-8 flex flex-col gap-16">
+          <SectionLabel className="mb-10 lg:mb-12 text-center">— 30 ANNI DI ESPERIENZA</SectionLabel>
+          <div className="relative border-l border-[var(--br)] ml-4 sm:ml-8 flex flex-col gap-12 sm:gap-16">
             
             <ScrollReveal>
               <div className="relative pl-8 sm:pl-12">
@@ -126,17 +126,17 @@ export default function ChiSiamoPage() {
       <TrustBar />
 
       {/* VALORI — 4 pillars */}
-      <div className="w-full bg-[var(--bg-2)] border-y border-[var(--br)] py-24">
+      <div className="w-full bg-[var(--bg-2)] border-y border-[var(--br)] py-16 md:py-24">
         <div className="mx-auto w-full max-w-7xl px-6 xl:px-8">
           <ScrollReveal>
-            <SectionLabel className="mb-10 mx-auto justify-center">— I NOSTRI VALORI</SectionLabel>
+            <SectionLabel className="mb-8 lg:mb-10 mx-auto justify-center">— I NOSTRI VALORI</SectionLabel>
           </ScrollReveal>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {VALORI.map((valore, i) => {
               const { Icon, title, desc } = valore
               return (
                 <ScrollReveal key={i} delay={i * 0.1}>
-                  <div className="flex flex-col gap-4 rounded-3xl border border-[var(--br)] bg-white p-8 h-full hover:border-[var(--accent)] hover:shadow-[0_15px_30px_rgba(42,140,122,0.12)] hover:-translate-y-1 transition-all duration-300 group">
+                  <div className="flex flex-col gap-4 rounded-3xl border border-[var(--br)] bg-white p-6 md:p-8 h-full hover:border-[var(--accent)] hover:shadow-[0_15px_30px_rgba(42,140,122,0.12)] hover:-translate-y-1 transition-all duration-300 group">
                     <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--accent-glow)] border border-[var(--accent)]/20 group-hover:bg-[var(--accent)] transition-colors duration-300">
                       <Icon size={22} weight="duotone" className="text-[var(--accent)] group-hover:text-white transition-colors" />
                     </div>
@@ -153,8 +153,8 @@ export default function ChiSiamoPage() {
       <VisualGuarantees />
 
       {/* TEAM SECTION */}
-      <div className="mx-auto w-full max-w-7xl px-6 xl:px-8 py-32 border-t border-[var(--br)]">
-         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      <div className="mx-auto w-full max-w-7xl px-6 xl:px-8 py-16 md:py-32 border-t border-[var(--br)]">
+         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <ScrollReveal>
                <SectionLabel className="mb-6">— IL NOSTRO CAPITALE UMANO</SectionLabel>
                <h2 className="font-display text-4xl sm:text-5xl font-extrabold text-[var(--tx-1)] mb-8 leading-tight tracking-tighter">

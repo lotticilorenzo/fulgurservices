@@ -67,7 +67,7 @@ export function HeroSection() {
   return (
     <section
       ref={containerRef}
-      className="relative flex min-h-[100dvh] w-full items-center overflow-hidden bg-[var(--bg)] pt-24 pb-12 sm:pt-28 sm:pb-16 lg:pt-36 lg:pb-20 xl:pt-[140px]"
+      className="relative flex min-h-[100dvh] w-full items-center overflow-hidden bg-[var(--bg)] pt-[100px] pb-8 md:pt-28 md:pb-16 lg:pt-36 lg:pb-20 xl:pt-[140px]"
     >
       {/* Video sfondo in loop */}
       <video
@@ -88,15 +88,15 @@ export function HeroSection() {
         style={{ background: 'rgba(13,17,23,0.6)' }}
       />
 
-      {/* Particle field — sfondo sottile */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
+      {/* Particle field — nascondiamo su mobile per non affaticare la CPU e ripulire il design */}
+      <div className="absolute inset-0 z-0 pointer-events-none hidden md:block">
         <ParticleField />
       </div>
 
       {/* Radial gradient accent low-opacity */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 z-0 pointer-events-none"
+        className="absolute inset-0 z-0 pointer-events-none hidden md:block"
         style={{
           background:
             'radial-gradient(ellipse 70% 60% at 70% 80%, rgba(78,203,160,0.07) 0%, transparent 70%)',
@@ -104,7 +104,7 @@ export function HeroSection() {
       />
 
       {/* Content */}
-      <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-10 px-6 lg:grid-cols-[55%_45%] md:gap-12 xl:gap-20 xl:px-8">
+      <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-8 md:gap-12 px-6 lg:grid-cols-[55%_45%] xl:gap-20 xl:px-8">
 
         {/* ── SINISTRA ── */}
         <div ref={leftRef} className="flex flex-col items-start">
@@ -115,7 +115,7 @@ export function HeroSection() {
           </div>
 
           {/* H1 — tre righe */}
-          <h1 className="hero-reveal mt-6 font-display font-black leading-[0.93] tracking-tighter text-[clamp(44px,6.5vw,84px)]">
+          <h1 className="hero-reveal mt-5 font-display font-black leading-[0.93] tracking-tighter text-[clamp(40px,9vw,84px)]">
             <span className="block text-white">Puliamo il Futuro</span>
             <span className="block text-outline-accent">con l&apos;Energia</span>
             <span className="block text-[var(--accent)]">della Natura</span>
@@ -130,7 +130,7 @@ export function HeroSection() {
           </p>
 
           {/* Stats inline */}
-          <div className="hero-reveal mt-5 sm:mt-7 flex flex-wrap items-center gap-x-4 gap-y-2 sm:gap-x-5 font-mono-fulgur text-[9px] sm:text-[11px] font-bold uppercase tracking-[0.15em] text-white/70">
+          <div className="hero-reveal mt-4 sm:mt-7 flex flex-wrap items-center gap-x-3 gap-y-1.5 sm:gap-x-5 font-mono-fulgur text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.10em] sm:tracking-[0.15em] text-white/70">
             <span className="flex items-center gap-1.5">
               <span className="text-[var(--accent)] text-base font-black">30+</span> anni
             </span>
@@ -147,7 +147,7 @@ export function HeroSection() {
           </div>
 
           {/* CTAs */}
-          <div className="hero-reveal mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
+          <div className="hero-reveal mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Link href="/preventivo" tabIndex={-1} className="w-full sm:w-auto">
               <MagneticButton
                 as="div"
@@ -172,7 +172,7 @@ export function HeroSection() {
           </div>
 
           {/* Trust micro-badge */}
-          <div className="hero-reveal mt-8 flex flex-wrap gap-x-6 gap-y-2.5 font-mono-fulgur text-[10px] font-medium uppercase tracking-widest text-white/70">
+          <div className="hero-reveal mt-6 flex flex-wrap gap-x-5 gap-y-2 font-mono-fulgur text-[9.5px] font-medium uppercase tracking-widest text-white/70">
             <div className="flex items-center gap-2">
               <ShieldCheck size={14} className="text-[var(--accent)]" aria-hidden="true" />
               <span>Assicurati RCT €2M</span>
@@ -194,7 +194,7 @@ export function HeroSection() {
           className="relative flex items-center justify-center opacity-0"
         >
           {/* Grande cerchio immagine */}
-          <div className="relative flex h-[260px] w-[260px] items-center justify-center sm:h-[320px] sm:w-[320px] md:h-[380px] md:w-[380px] lg:h-[440px] lg:w-[440px] xl:h-[460px] xl:w-[460px]">
+          <div className="relative flex h-[220px] w-[220px] mt-4 sm:mt-0 items-center justify-center sm:h-[320px] sm:w-[320px] md:h-[380px] md:w-[380px] lg:h-[440px] lg:w-[440px] xl:h-[460px] xl:w-[460px]">
 
             {/* Glow aura */}
             <div
@@ -234,11 +234,11 @@ export function HeroSection() {
               initial={{ y: -6 }}
               animate={{ y: [-6, 6, -6] }}
               transition={{ repeat: Infinity, duration: 4.2, ease: 'easeInOut' }}
-              className="absolute -right-5 top-10 z-20 lg:-right-14 lg:top-16 glass-white rounded-2xl px-5 py-4 min-w-[130px] shadow-xl"
+              className="absolute -right-2 top-4 z-20 sm:-right-5 sm:top-10 lg:-right-14 lg:top-16 glass-white rounded-2xl px-4 py-3 sm:px-5 sm:py-4 min-w-[110px] sm:min-w-[130px] shadow-xl"
             >
               <div className="flex flex-col items-start leading-tight">
-                <div className="font-display text-3xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-4xl">30+</div>
-                <div className="mt-1 font-mono-fulgur text-[9px] font-bold uppercase tracking-widest text-[var(--tx-2)]">
+                <div className="font-display text-2xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-3xl md:text-4xl">30+</div>
+                <div className="mt-1 font-mono-fulgur text-[8px] sm:text-[9px] font-bold uppercase tracking-widest text-[var(--tx-2)]">
                   Anni<br />di know-how
                 </div>
               </div>
@@ -249,11 +249,11 @@ export function HeroSection() {
               initial={{ y: 8 }}
               animate={{ y: [8, -8, 8] }}
               transition={{ repeat: Infinity, duration: 5.2, ease: 'easeInOut', delay: 1.2 }}
-              className="absolute -left-6 bottom-14 z-20 lg:-left-16 lg:bottom-20 glass-white rounded-2xl px-5 py-4 min-w-[130px] shadow-xl"
+              className="absolute -left-3 bottom-8 z-20 sm:-left-6 sm:bottom-14 lg:-left-16 lg:bottom-20 glass-white rounded-2xl px-4 py-3 sm:px-5 sm:py-4 min-w-[110px] sm:min-w-[130px] shadow-xl"
             >
               <div className="flex flex-col items-start leading-tight">
-                <div className="font-display text-3xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-4xl">500+</div>
-                <div className="mt-1 font-mono-fulgur text-[9px] font-bold uppercase tracking-widest text-[var(--tx-2)]">
+                <div className="font-display text-2xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-3xl md:text-4xl">500+</div>
+                <div className="mt-1 font-mono-fulgur text-[8px] sm:text-[9px] font-bold uppercase tracking-widest text-[var(--tx-2)]">
                   Clienti<br />soddisfatti
                 </div>
               </div>

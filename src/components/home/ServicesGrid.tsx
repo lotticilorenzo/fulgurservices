@@ -34,7 +34,7 @@ export function ServicesGrid() {
   const remainingServices = SERVICES.filter((s) => !usedSlugs.includes(s.slug))
 
   return (
-    <section className="relative w-full bg-white py-16 lg:py-24 border-y border-[var(--br)] overflow-hidden" id="servizi">
+    <section className="relative w-full bg-white py-12 md:py-16 lg:py-24 border-y border-[var(--br)] overflow-hidden" id="servizi">
       {/* Background Architectural Text */}
       <div className="absolute top-10 left-0 w-full opacity-[0.035] pointer-events-none select-none">
         <ParallaxText text="SERVIZI" direction="left" distance={150} />
@@ -44,7 +44,7 @@ export function ServicesGrid() {
       <div className="mx-auto w-full max-w-7xl px-6 xl:px-8 relative z-10">
         
         {/* Header Section */}
-        <div className="mb-10 sm:mb-16 max-w-2xl sm:mb-20">
+        <div className="mb-8 md:mb-16 max-w-2xl lg:mb-20">
           <SectionLabel className="mb-4">— I NOSTRI SERVIZI</SectionLabel>
           <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-[var(--tx-1)] lg:text-5xl">
             Ogni ambiente, <br /> un'unica soluzione.
@@ -97,7 +97,7 @@ export function ServicesGrid() {
         {/* ────────────────────────────────────────── */}
         {/* IMPRESA 360° — Servizi Integrati */}
         {/* ────────────────────────────────────────── */}
-        <div className="mt-20 relative overflow-hidden rounded-3xl border border-[var(--br)] bg-gradient-to-br from-[var(--bg-2)] to-[var(--bg-3)] p-10 lg:p-14">
+        <div className="mt-12 md:mt-20 relative overflow-hidden rounded-3xl md:rounded-[2.5rem] border border-[var(--br)] bg-gradient-to-br from-[var(--bg-2)] to-[var(--bg-3)] p-6 sm:p-10 lg:p-14">
           
           {/* Decorative glow */}
           <div className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-[var(--accent)] opacity-[0.06] blur-[80px] pointer-events-none" />
@@ -134,7 +134,7 @@ export function ServicesGrid() {
             </div>
 
             {/* Integrated service cards */}
-            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div className="mt-8 md:mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
               {INTEGRATED_SERVICES.map((service, idx) => {
                 const Icon = IntegratedIconMap[service.icon] || Drop
                 return (

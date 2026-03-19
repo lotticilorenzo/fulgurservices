@@ -43,9 +43,9 @@ export function ProcessStepper() {
       id="processo"
       className="relative w-full bg-[var(--bg-2)] border-y border-[var(--br)]"
     >
-      <div className="mx-auto w-full max-w-4xl px-6 py-20 xl:px-8 lg:py-32">
+      <div className="mx-auto w-full max-w-4xl px-6 py-16 xl:px-8 lg:py-32">
         <ScrollReveal>
-          <div className="text-center mb-16 sm:mb-24">
+          <div className="text-center mb-12 sm:mb-24">
             <SectionLabel className="mb-5 mx-auto">— IL NOSTRO PROCESSO</SectionLabel>
             <h2
               className="font-display font-extrabold tracking-tight text-[var(--tx-1)] text-balance"
@@ -104,9 +104,9 @@ function StepCard({ step, index, total }: { step: any; index: number; total: num
       }}
     >
       <motion.div
-        className="flex w-full flex-col justify-between rounded-[32px] sm:rounded-[40px] border border-[var(--br)] bg-white p-6 sm:p-10 lg:p-14 shadow-[0_30px_80px_rgba(42,140,122,0.12)] overflow-hidden"
+        className="flex w-full flex-col justify-between rounded-3xl md:rounded-[40px] border border-[var(--br)] bg-white p-5 md:p-10 lg:p-14 shadow-[0_30px_80px_rgba(42,140,122,0.12)] overflow-hidden"
         style={{
-          minHeight: 'clamp(400px, 60vh, 500px)',
+          minHeight: 'clamp(340px, 60vh, 500px)',
           scale,
           opacity,
           filter,
@@ -131,7 +131,7 @@ function StepCard({ step, index, total }: { step: any; index: number; total: num
         </div>
 
         {/* Content */}
-        <div className="relative z-10 my-auto py-8 w-full flex-1 flex flex-col justify-center">
+        <div className="relative z-10 my-auto py-6 md:py-8 w-full flex-1 flex flex-col justify-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-[var(--accent)]/20 bg-[var(--accent-glow)] px-3.5 py-1.5 mb-5 sm:mb-6 shadow-sm w-fit">
             <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent)] animate-pulse" />
             <span className="font-mono-fulgur text-[11px] font-bold uppercase tracking-[0.15em] text-[var(--accent)]">

@@ -101,10 +101,10 @@ export function ScrollVideoSection() {
   /* ─── MOBILE: layout statico a card ─── */
   if (isMobile) {
     return (
-      <section className="relative bg-[#0D1117] py-24 px-6">
-        <div className="max-w-md mx-auto space-y-20">
+      <section className="relative bg-[#0D1117] py-12 md:py-24 px-6">
+        <div className="max-w-md mx-auto space-y-10 md:space-y-20">
           {CHAPTERS.map((ch, i) => (
-            <div key={ch.id} className="relative rounded-2xl overflow-hidden min-h-[320px]">
+            <div key={ch.id} className="relative rounded-[2rem] overflow-hidden min-h-[260px] md:min-h-[320px]">
               {/* Background image */}
               <div
                 className="absolute inset-0 bg-cover bg-center"
@@ -113,11 +113,11 @@ export function ScrollVideoSection() {
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#0D1117] via-[#0D1117]/70 to-transparent" />
               {/* Content */}
-              <div className="relative z-10 flex flex-col justify-end h-full p-6 min-h-[320px]">
-                <span className="font-mono text-xs text-[#4ECBA0]/70 tracking-widest uppercase mb-3">
+              <div className="relative z-10 flex flex-col justify-end h-full p-6 md:p-8 min-h-[260px] md:min-h-[320px]">
+                <span className="font-mono text-[10px] md:text-xs text-[#4ECBA0]/70 tracking-widest uppercase mb-2 md:mb-3">
                   {ch.eyebrow}
                 </span>
-                <h2 className="font-display text-3xl font-bold text-white mb-2 leading-tight">
+                <h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-2 leading-tight">
                   {ch.title}
                 </h2>
                 <p className="text-[#8A9BAE] text-sm leading-relaxed">{ch.subtitle}</p>

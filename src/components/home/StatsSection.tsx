@@ -35,7 +35,7 @@ const EASE = [0.16, 1, 0.3, 1] as const
 export function StatsSection() {
   return (
     <section
-      className="relative w-full overflow-hidden py-20 lg:py-28"
+      className="relative w-full overflow-hidden py-12 md:py-20 lg:py-28"
       style={{ background: 'var(--accent)' }}
     >
       {/* Background texture */}
@@ -82,11 +82,11 @@ export function StatsSection() {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, margin: '-6% 0px' }}
               transition={{ duration: 0.65, delay: i * 0.1, ease: EASE }}
-              className="flex flex-col items-center justify-center gap-2 sm:gap-3 bg-white/5 px-4 py-7 sm:px-6 sm:py-8 lg:px-8 lg:py-10 text-center hover:bg-white/10 transition-colors duration-300"
+              className="flex flex-col items-center justify-center gap-1.5 sm:gap-3 bg-white/5 px-3 py-5 md:px-6 md:py-8 lg:px-8 lg:py-10 text-center hover:bg-white/10 transition-colors duration-300"
             >
               <div
                 className="font-display font-black leading-none tracking-tight text-white"
-                style={{ fontSize: 'clamp(52px, 6vw, 80px)' }}
+                style={{ fontSize: 'clamp(40px, 8vw, 80px)' }}
               >
                 <CounterUp value={stat.value} suffix={stat.suffix} duration={2200} />
               </div>

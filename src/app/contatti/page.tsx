@@ -13,11 +13,11 @@ export const metadata: Metadata = {
 
 export default function ContattiPage() {
   return (
-    <main className="min-h-screen bg-[var(--bg)] pt-32 pb-24 sm:pt-40">
+    <main className="min-h-screen bg-[var(--bg)] pt-24 pb-12 md:pt-32 md:pb-24 lg:pt-40">
       <div className="mx-auto w-full max-w-7xl px-6 xl:px-8">
         
         {/* HEADER */}
-        <div className="mb-20 text-center flex flex-col items-center">
+        <div className="mb-12 md:mb-20 text-center flex flex-col items-center">
           <SectionLabel className="mb-4">— SIAMO QUI PER TE</SectionLabel>
           <h1 className="font-display text-4xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl lg:text-6xl max-w-3xl">
             Entriamo in <span className="text-[var(--accent)]">contatto.</span>
@@ -28,12 +28,12 @@ export default function ContattiPage() {
         </div>
 
         {/* LAYOUT CONTATTI: INFO (Left) e FORM (Right) */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_500px] gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_500px] gap-10 md:gap-12 lg:gap-16 items-start">
           
           {/* LATO SINISTRO (Info Store / Map) */}
-          <div className="flex flex-col gap-12">
+          <div className="flex flex-col gap-10 md:gap-12">
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
               
               <div className="flex flex-col gap-4">
                 <div className="h-12 w-12 rounded-2xl bg-[var(--bg-card)] border border-[var(--br)] flex items-center justify-center text-[var(--accent)]">
