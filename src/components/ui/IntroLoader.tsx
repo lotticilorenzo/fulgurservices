@@ -47,14 +47,14 @@ export function IntroLoader() {
             transition={{ delay: 0.15, duration: 0.8, ease: EASE_OUT }}
             className="mb-8 flex items-center justify-center pointer-events-none"
           >
-            <div className="relative w-[75vw] max-w-[400px] aspect-[4/1]">
+            <div className="flex w-[75vw] max-w-[400px] items-center justify-center">
               <Image
                 src="/images/logo-fulgur-service.png"
                 alt="Fulgur Service Logo"
-                fill
-                className="object-contain drop-shadow-[0_10px_30px_rgba(42,140,122,0.15)]"
+                width={400}
+                height={100}
+                className="h-auto w-full object-contain drop-shadow-[0_10px_30px_rgba(42,140,122,0.15)]"
                 priority
-                sizes="(max-width: 768px) 80vw, 400px"
               />
             </div>
           </motion.div>

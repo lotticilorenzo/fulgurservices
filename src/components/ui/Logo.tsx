@@ -24,10 +24,10 @@ export function Logo({ size = 40, className = '', variant = 'default', iconOnly 
       <Image
         src="/images/logo-fulgur-service.png"
         alt="Fulgur Service Logo"
-        fill
-        sizes="(max-width: 640px) 150px, 300px"
+        width={300}
+        height={80}
         className={cn(
-          "object-contain transition-all duration-300",
+          "h-full w-full object-contain transition-all duration-300",
           variant === 'white' && "brightness-0 invert",
           "scale-100"
         )}
