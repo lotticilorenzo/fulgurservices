@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Logo } from '@/components/ui/Logo'
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as [number, number, number, number]
 const EASE_IN  = [0.76, 0, 0.24, 1] as [number, number, number, number]
@@ -39,30 +40,15 @@ export function IntroLoader() {
           exit={{ y: '-100%' }}
           transition={{ duration: 0.85, ease: EASE_IN }}
         >
-          {/* ── Bolt icon ── */}
+          {/* ── Official Logo ── */}
           <motion.div
-            initial={{ scale: 0.4, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.15, duration: 0.65, ease: EASE_OUT }}
-            className="mb-6 flex h-[72px] w-[72px] items-center justify-center rounded-[20px] bg-[var(--accent)] shadow-[0_20px_60px_rgba(78,203,160,0.4)]"
+            initial={{ scale: 0.8, opacity: 0, y: 20 }}
+            animate={{ scale: 1, opacity: 1, y: 0 }}
+            transition={{ delay: 0.15, duration: 0.8, ease: EASE_OUT }}
+            className="mb-6 flex items-center justify-center p-4 bg-white rounded-3xl"
           >
-            {/* Fulmine SVG — simbolo del brand */}
-            <svg viewBox="0 0 24 24" fill="white" className="h-9 w-9" aria-hidden="true">
-              <path d="M13 2 4.09 12.96A1 1 0 0 0 5 14.5h6.5L10 22l10.5-12A1 1 0 0 0 19.5 8.5H13V2z" />
-            </svg>
+            <Logo size={65} />
           </motion.div>
-
-          {/* ── Brand name ── */}
-          <div className="overflow-hidden">
-            <motion.p
-              className="font-display text-[28px] font-black tracking-tight text-[var(--tx-1)]"
-              initial={{ y: '110%' }}
-              animate={{ y: '0%' }}
-              transition={{ delay: 0.38, duration: 0.65, ease: EASE_OUT }}
-            >
-              Fulgur Service
-            </motion.p>
-          </div>
 
           {/* ── Tagline ── */}
           <div className="overflow-hidden mb-10">
