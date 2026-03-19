@@ -228,7 +228,7 @@ export default function Navbar() {
             animate={{ opacity: 1, clipPath: 'circle(160% at calc(100% - 32px) 32px)' }}
             exit={{ opacity: 0, clipPath: 'circle(0% at calc(100% - 32px) 32px)' }}
             transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-[300] flex flex-col bg-[var(--bg)]/95 backdrop-blur-2xl overflow-y-auto"
+            className="fixed inset-0 z-[300] flex flex-col bg-[var(--bg)]/95 backdrop-blur-2xl h-[100dvh] overflow-hidden"
           >
             {/* Header del mobile overlay */}
             <div className="flex shrink-0 items-center justify-between px-6 py-5 border-b border-[var(--br)]">
@@ -250,7 +250,7 @@ export default function Navbar() {
             </div>
 
             {/* Links scrollabili */}
-            <nav className="flex flex-col px-6 pt-4 pb-64 flex-1" aria-label="Menu mobile">
+            <nav className="flex flex-col px-6 py-4 flex-1 overflow-y-auto" aria-label="Menu mobile">
               {MOBILE_LINKS.map((link, i) => {
                 const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href))
                 const delay = 0.12 + i * 0.045
@@ -342,11 +342,13 @@ export default function Navbar() {
                   </motion.div>
                 )
               })}
+              {/* Spaziatore a fine scroll */}
+              <div className="h-6 shrink-0" />
             </nav>
 
-            {/* Bottom CTAs (Sticky a fondo schermo) */}
-            <div className="shrink-0 sticky bottom-0 left-0 right-0 bg-gradient-to-t from-[var(--bg)] via-[var(--bg)] to-transparent px-6 pb-16 pt-8 flex flex-col gap-3 pointer-events-none">
-              <div className="flex gap-2.5 pointer-events-auto">
+            {/* Bottom CTAs (Fissi a fondo schermo) */}
+            <div className="shrink-0 bg-[var(--bg)] border-t border-[var(--br)] px-6 pb-12 pt-6 flex flex-col gap-3">
+              <div className="flex gap-2.5">
                 <a
                   href="tel:+393383160091"
                   className="flex flex-1 items-center justify-center gap-2 rounded-2xl border border-[var(--br-h)] bg-[var(--bg)]/80 backdrop-blur-md py-3.5 font-display text-[15px] font-semibold text-[var(--tx-1)] shadow-sm hover:border-[var(--accent)] transition-all"
@@ -367,7 +369,7 @@ export default function Navbar() {
               <Link
                 href="/preventivo"
                 onClick={() => setIsMobileOpen(false)}
-                className="flex w-full items-center justify-center rounded-2xl bg-[var(--accent)] py-4 font-display text-[16px] font-bold text-white shadow-[0_8px_24px_rgba(78,203,160,0.3)] hover:bg-[var(--accent-d)] transition-all pointer-events-auto"
+                className="flex w-full items-center justify-center rounded-2xl bg-[var(--accent)] py-4 font-display text-[16px] font-bold text-white shadow-[0_8px_24px_rgba(78,203,160,0.3)] hover:bg-[var(--accent-d)] transition-all"
               >
                 Richiedi Sopralluogo Gratuito
               </Link>
