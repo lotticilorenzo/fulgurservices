@@ -67,7 +67,7 @@ export function HeroSection() {
   return (
     <section
       ref={containerRef}
-      className="relative flex min-h-[100dvh] w-full items-center overflow-hidden bg-[var(--bg)] pt-[100px] pb-8 md:pt-28 md:pb-16 lg:pt-36 lg:pb-20 xl:pt-[140px]"
+      className="relative flex min-h-[100dvh] w-full items-center overflow-hidden bg-[var(--bg)] pt-[100px] pb-32 sm:pb-8 md:pt-28 md:pb-16 lg:pt-36 lg:pb-20 xl:pt-[140px]"
     >
       {/* Video sfondo in loop */}
       <video
@@ -84,8 +84,14 @@ export function HeroSection() {
       {/* Overlay scuro — mantiene brand leggibile col contrasto del video */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 pointer-events-none"
+        className="absolute inset-0 pointer-events-none hidden sm:block"
         style={{ background: 'rgba(13,17,23,0.6)' }}
+      />
+      {/* Overlay dedicato esplosivo per Mobile (Vignetta) */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none block sm:hidden"
+        style={{ background: 'linear-gradient(to bottom, rgba(13,17,23,0.7) 0%, rgba(13,17,23,0.95) 100%)' }}
       />
 
       {/* Particle field — nascondiamo su mobile per non affaticare la CPU e ripulire il design */}
@@ -115,9 +121,9 @@ export function HeroSection() {
           </div>
 
           {/* H1 — tre righe */}
-          <h1 className="hero-reveal mt-5 font-display font-black leading-[0.93] tracking-tighter text-[clamp(40px,9vw,84px)]">
+          <h1 className="hero-reveal mt-5 font-display font-black leading-[0.93] tracking-tighter text-[clamp(40px,9vw,84px)] drop-shadow-2xl">
             <span className="block text-white">Puliamo il Futuro</span>
-            <span className="block text-outline-accent">con l&apos;Energia</span>
+            <span className="block text-[var(--accent)] sm:text-outline-accent">con l&apos;Energia</span>
             <span className="block text-[var(--accent)]">della Natura</span>
           </h1>
 

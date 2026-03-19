@@ -88,7 +88,7 @@ export default function Navbar() {
           aria-label="Fulgur Service — home"
           className="flex shrink-0 items-center gap-2 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
         >
-          <Logo size={32} iconOnly variant="default" className="h-8 w-auto" />
+          <Logo size={36} iconOnly variant="default" className="shrink-0" />
           <span className="font-display text-[14px] font-bold tracking-tight text-[var(--tx-1)] whitespace-nowrap hidden sm:block">
             Fulgur Service
           </span>
