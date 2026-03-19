@@ -250,7 +250,7 @@ export default function Navbar() {
             </div>
 
             {/* Links scrollabili */}
-            <nav className="flex flex-col px-6 pt-4 pb-36 flex-1" aria-label="Menu mobile">
+            <nav className="flex flex-col px-6 pt-4 pb-64 flex-1" aria-label="Menu mobile">
               {MOBILE_LINKS.map((link, i) => {
                 const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href))
                 const delay = 0.12 + i * 0.045
@@ -269,7 +269,7 @@ export default function Navbar() {
                         className="flex w-full items-center justify-between py-3 sm:py-4 focus-visible:outline-none"
                       >
                         <span className={cn(
-                          'font-display text-[22px] sm:text-[28px] font-bold tracking-tight transition-colors',
+                          'font-display text-[24px] sm:text-[28px] font-medium tracking-tight transition-colors',
                           isActive ? 'text-[var(--accent)]' : 'text-[var(--tx-1)]'
                         )}>
                           {link.label}
@@ -329,8 +329,8 @@ export default function Navbar() {
                       href={link.href}
                       onClick={() => setIsMobileOpen(false)}
                       className={cn(
-                        'flex items-center justify-between py-3 sm:py-4 border-b border-[var(--br)] focus-visible:outline-none',
-                        'font-display text-[22px] sm:text-[28px] font-bold tracking-tight transition-colors',
+                        'flex items-center justify-between py-4 sm:py-5 border-b border-[var(--br)] focus-visible:outline-none',
+                        'font-display text-[24px] sm:text-[28px] font-medium tracking-tight transition-colors',
                         isActive ? 'text-[var(--accent)]' : 'text-[var(--tx-1)] hover:text-[var(--accent)]'
                       )}
                     >
@@ -345,11 +345,11 @@ export default function Navbar() {
             </nav>
 
             {/* Bottom CTAs (Sticky a fondo schermo) */}
-            <div className="shrink-0 sticky bottom-0 left-0 right-0 bg-gradient-to-t from-[var(--bg)] via-[var(--bg)] to-transparent px-6 pb-6 pt-8 flex flex-col gap-3">
-              <div className="flex gap-2.5">
+            <div className="shrink-0 sticky bottom-0 left-0 right-0 bg-gradient-to-t from-[var(--bg)] via-[var(--bg)] to-transparent px-6 pb-16 pt-8 flex flex-col gap-3 pointer-events-none">
+              <div className="flex gap-2.5 pointer-events-auto">
                 <a
                   href="tel:+393383160091"
-                  className="flex flex-1 items-center justify-center gap-2 rounded-2xl border border-[var(--br-h)] bg-white/50 backdrop-blur-md py-3.5 font-display text-[15px] font-bold text-[var(--tx-1)] shadow-sm hover:border-[var(--accent)] transition-all"
+                  className="flex flex-1 items-center justify-center gap-2 rounded-2xl border border-[var(--br-h)] bg-[var(--bg)]/80 backdrop-blur-md py-3.5 font-display text-[15px] font-semibold text-[var(--tx-1)] shadow-sm hover:border-[var(--accent)] transition-all"
                 >
                   <PhoneCall size={20} weight="fill" className="text-[var(--accent)]" aria-hidden="true" />
                   Chiama
@@ -358,7 +358,7 @@ export default function Navbar() {
                   href="https://wa.me/393383160091?text=Ciao%2C%20vorrei%20richiedere%20un%20sopralluogo%20gratuito"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-1 items-center justify-center gap-2 rounded-2xl bg-[#25D366] py-3.5 font-display text-[15px] font-bold text-white shadow-[0_4px_16px_rgba(37,211,102,0.3)] hover:bg-[#20bd5a] transition-all"
+                  className="flex flex-1 items-center justify-center gap-2 rounded-2xl border border-[#25D366]/30 bg-[#25D366]/10 py-3.5 font-display text-[15px] font-semibold text-[#1DA851] shadow-sm hover:bg-[#25D366]/20 transition-all"
                 >
                   <WhatsappLogo size={20} weight="fill" aria-hidden="true" />
                   WhatsApp
@@ -367,7 +367,7 @@ export default function Navbar() {
               <Link
                 href="/preventivo"
                 onClick={() => setIsMobileOpen(false)}
-                className="flex w-full items-center justify-center rounded-2xl bg-[var(--accent)] py-4 font-display text-base font-extrabold text-white shadow-[0_4px_24px_rgba(78,203,160,0.4)] hover:bg-[var(--accent-d)] transition-all"
+                className="flex w-full items-center justify-center rounded-2xl bg-[var(--accent)] py-4 font-display text-[16px] font-bold text-white shadow-[0_8px_24px_rgba(78,203,160,0.3)] hover:bg-[var(--accent-d)] transition-all pointer-events-auto"
               >
                 Richiedi Sopralluogo Gratuito
               </Link>
