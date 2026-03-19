@@ -1,12 +1,10 @@
 'use client'
 
-import React, { useRef, useLayoutEffect } from 'react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import React, { useRef } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import { MagnifyingGlass, Receipt, Sparkle, ShieldCheck } from '@phosphor-icons/react'
 import { SectionLabel } from '@/components/ui/SectionLabel'
-
-gsap.registerPlugin(ScrollTrigger)
+import { ScrollReveal } from '@/components/ui/ScrollReveal'
 
 const STEPS = [
   {
@@ -40,166 +38,134 @@ const STEPS = [
 ]
 
 export function ProcessStepper() {
-  const sectionRef = useRef<HTMLElement>(null)
-  const containerRef = useRef<HTMLDivElement>(null)
-  const cardsRef = useRef<HTMLDivElement[]>([])
-
-  useLayoutEffect(() => {
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (prefersReduced || !sectionRef.current || !containerRef.current) return
-
-    const cards = cardsRef.current
-    if (cards.length === 0) return
-
-    const ctx = gsap.context(() => {
-      // Create a timeline linked to scroll
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top 15%', // Pin just slightly below navbar
-          end: `+=${(cards.length - 1) * 100}%`,
-          scrub: 1.2, // Smooth, cinematic scrub delay
-          pin: true,
-          pinSpacing: true,
-        },
-      })
-
-      // Setup cards initial state
-      cards.forEach((card, i) => {
-        if (i === 0) {
-          gsap.set(card, { y: '0%', opacity: 1, scale: 1 })
-          return
-        }
-        // Start pushed far down
-        gsap.set(card, { y: '100%', opacity: 0, scale: 1 })
-      })
-
-      // Animate cards sequentially along the timeline
-      cards.forEach((card, i) => {
-        if (i === 0) return
-
-        // 1. Enter animation for the new card
-        tl.to(
-          card,
-          {
-            y: '0%',
-            opacity: 1,
-            duration: 1,
-            ease: 'power2.out',
-          },
-          i // Position absolutely in the timeline
-        )
-
-        // 2. Hide animation for the previous card
-        if (cards[i - 1]) {
-          tl.to(
-            cards[i - 1],
-            {
-              scale: 0.94,
-              opacity: 0, // Fully hide so they don't bleed through
-              duration: 0.8,
-              ease: 'power2.out',
-            },
-            i // Animate concurrently
-          )
-        }
-      })
-    }, sectionRef)
-
-    return () => ctx.revert()
-  }, [])
-
   return (
     <section
-      ref={sectionRef}
       id="processo"
       className="relative w-full bg-[var(--bg-2)] border-y border-[var(--br)]"
     >
-      {/* Section header (above the pinned area) */}
-      <div className="mx-auto w-full max-w-7xl px-6 py-20 xl:px-8 lg:py-28">
-        <div className="text-center mb-16">
-          <SectionLabel className="mb-5 mx-auto">— IL NOSTRO PROCESSO</SectionLabel>
-          <h2
-            className="font-display font-extrabold tracking-tight text-[var(--tx-1)] text-balance"
-            style={{ fontSize: 'clamp(32px, 4vw, 56px)' }}
-          >
-            Dall&apos;idea all&apos;ambiente{' '}
-            <span className="text-[var(--accent)]">perfetto.</span>
-          </h2>
-          <p className="mt-5 font-body text-base font-light text-[var(--tx-2)] max-w-md mx-auto leading-relaxed">
-            4 fasi trasparenti per garantirti il massimo risultato, senza complicazioni.
-          </p>
-        </div>
+      <div className="mx-auto w-full max-w-4xl px-6 py-20 xl:px-8 lg:py-32">
+        <ScrollReveal>
+          <div className="text-center mb-16 sm:mb-24">
+            <SectionLabel className="mb-5 mx-auto">— IL NOSTRO PROCESSO</SectionLabel>
+            <h2
+              className="font-display font-extrabold tracking-tight text-[var(--tx-1)] text-balance"
+              style={{ fontSize: 'clamp(32px, 4vw, 56px)' }}
+            >
+              Dall&apos;idea all&apos;ambiente{' '}
+              <span className="text-[var(--accent)]">perfetto.</span>
+            </h2>
+            <p className="mt-5 font-body text-base font-light text-[var(--tx-2)] max-w-md mx-auto leading-relaxed">
+              4 fasi trasparenti per garantirti il massimo risultato, senza complicazioni.
+            </p>
+          </div>
+        </ScrollReveal>
 
-        {/* Pinned stack container */}
-        <div
-          ref={containerRef}
-          className="relative mx-auto max-w-2xl"
-          style={{ height: 'clamp(340px, 50vw, 420px)' }}
-        >
-          {STEPS.map((step, i) => {
-            const Icon = step.icon
-            return (
-              <div
-                key={step.id}
-                ref={(el) => { if (el) cardsRef.current[i] = el }}
-                className="absolute inset-0 flex flex-col justify-between rounded-3xl border border-[var(--br)] bg-white p-5 sm:p-7 lg:p-10 shadow-[0_8px_40px_rgba(42,140,122,0.08)]"
-                style={{ willChange: 'transform, opacity, filter' }}
-              >
-                {/* Top row */}
-                <div className="flex items-start justify-between">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--accent-glow)] border border-[var(--accent)]/20">
-                    <Icon size={26} weight="duotone" className="text-[var(--accent)]" />
-                  </div>
-                  <span
-                    className="font-display font-black text-[var(--tx-1)] opacity-[0.06] leading-none select-none"
-                    style={{ fontSize: 'clamp(72px, 10vw, 120px)' }}
-                    aria-hidden="true"
-                  >
-                    {step.id}
-                  </span>
-                </div>
-
-                {/* Content */}
-                <div>
-                  <div className="inline-flex items-center gap-2 rounded-full border border-[var(--accent)]/25 bg-[var(--accent-glow)] px-3 py-1 mb-4">
-                    <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
-                    <span className="font-mono-fulgur text-[10px] font-bold uppercase tracking-[0.15em] text-[var(--accent)]">
-                      {step.id} / {STEPS.length}
-                    </span>
-                  </div>
-                  <h3 className="font-display text-xl sm:text-2xl font-bold text-[var(--tx-1)] leading-snug mb-2 sm:mb-3">
-                    {step.title}
-                  </h3>
-                  <p className="font-body text-sm sm:text-[15px] font-light text-[var(--tx-2)] leading-relaxed max-w-[52ch]">
-                    {step.desc}
-                  </p>
-                </div>
-
-                {/* Bottom row */}
-                <div className="flex items-center justify-between border-t border-[var(--br)] pt-5 mt-2">
-                  <span className="font-mono-fulgur text-[10px] uppercase tracking-widest text-[var(--tx-3)]">
-                    {step.detail}
-                  </span>
-                  {/* Progress dots */}
-                  <div className="flex gap-1.5">
-                    {STEPS.map((_, j) => (
-                      <div
-                        key={j}
-                        className={`h-1.5 rounded-full transition-all duration-300 ${
-                          j <= i
-                            ? 'bg-[var(--accent)] w-4'
-                            : 'bg-[var(--br-h)] w-1.5'
-                        }`}
-                      />
-                    ))}
-                  </div>
-                </div>
-              </div>
-            )
-          })}
+        {/* CSS Sticky 3D Stacking Container */}
+        <div className="relative mx-auto flex flex-col pb-32">
+          {STEPS.map((step, i) => (
+            <StepCard key={step.id} step={step} index={i} total={STEPS.length} />
+          ))}
         </div>
       </div>
     </section>
+  )
+}
+
+function StepCard({ step, index, total }: { step: any; index: number; total: number }) {
+  const containerRef = useRef<HTMLDivElement>(null)
+  
+  // Track scroll inside the space taken by the margin below this card
+  // When top of container is at 15vh (the sticky top), progress starts
+  // When top of container is at -60vh (meaning it has scrolled up 75vh), progress is 1
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start 15vh', 'start -60vh'],
+  })
+
+  // We only scale down if it's NOT the last card
+  const isLast = index === total - 1
+  
+  const scale = useTransform(scrollYProgress, [0, 1], [1, isLast ? 1 : 0.92])
+  const opacity = useTransform(scrollYProgress, [0, 1], [1, isLast ? 1 : 0.25])
+  const filter = useTransform(scrollYProgress, [0, 1], ['blur(0px)', isLast ? 'blur(0px)' : 'blur(8px)'])
+
+  const Icon = step.icon
+
+  return (
+    <div
+      ref={containerRef}
+      className="sticky flex items-start justify-center"
+      style={{
+        // Each card stacks slightly lower than the one behind it
+        top: `calc(15vh + ${index * 16}px)`,
+        zIndex: index + 1,
+        // The distance between this card's sticky point and the next card
+        marginBottom: isLast ? '0' : '65vh',
+      }}
+    >
+      <motion.div
+        className="flex w-full flex-col justify-between rounded-[32px] sm:rounded-[40px] border border-[var(--br)] bg-white p-6 sm:p-10 lg:p-14 shadow-[0_30px_80px_rgba(42,140,122,0.12)] overflow-hidden"
+        style={{
+          minHeight: 'clamp(400px, 60vh, 500px)',
+          scale,
+          opacity,
+          filter,
+          transformOrigin: 'top center',
+        }}
+      >
+        {/* Subtle gradient background on the card */}
+        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[var(--bg-2)]/50 to-transparent pointer-events-none" />
+
+        {/* Top row */}
+        <div className="relative flex items-start justify-between z-10 w-full shrink-0">
+          <div className="flex h-16 w-16 items-center justify-center rounded-[20px] bg-[var(--accent-glow)] border border-[var(--accent)]/15 shadow-inner">
+            <Icon size={32} weight="duotone" className="text-[var(--accent)]" />
+          </div>
+          <span
+            className="font-display font-black text-[var(--tx-1)] opacity-[0.04] leading-none select-none tracking-tighter"
+            style={{ fontSize: 'clamp(80px, 12vw, 160px)' }}
+            aria-hidden="true"
+          >
+            {step.id}
+          </span>
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 my-auto py-8 w-full flex-1 flex flex-col justify-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[var(--accent)]/20 bg-[var(--accent-glow)] px-3.5 py-1.5 mb-5 sm:mb-6 shadow-sm w-fit">
+            <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent)] animate-pulse" />
+            <span className="font-mono-fulgur text-[11px] font-bold uppercase tracking-[0.15em] text-[var(--accent)]">
+              {step.id} / {total}
+            </span>
+          </div>
+          <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[var(--tx-1)] leading-tight mb-4 tracking-tight">
+            {step.title}
+          </h3>
+          <p className="font-body text-base lg:text-lg font-light text-[var(--tx-2)] leading-relaxed max-w-[48ch]">
+            {step.desc}
+          </p>
+        </div>
+
+        {/* Bottom row */}
+        <div className="relative z-10 flex flex-col sm:flex-row gap-4 sm:items-center justify-between border-t border-[var(--br)] pt-6 mt-auto w-full shrink-0">
+          <span className="font-mono-fulgur text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-[var(--tx-3)]">
+            {step.detail}
+          </span>
+          {/* Progress dots */}
+          <div className="flex gap-1.5 shrink-0">
+            {Array.from({ length: total }).map((_, j) => (
+              <div
+                key={j}
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  j <= index
+                    ? 'bg-[var(--accent)] shadow-[0_0_10px_rgba(78,203,160,0.5)] w-5 sm:w-6'
+                    : 'bg-[var(--br-h)] w-1.5 sm:w-2'
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+      </motion.div>
+    </div>
   )
 }
