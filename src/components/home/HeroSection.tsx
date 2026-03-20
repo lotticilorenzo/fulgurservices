@@ -69,12 +69,12 @@ export function HeroSection() {
       ref={containerRef}
       className="relative flex sm:min-h-[100dvh] w-full items-center overflow-hidden bg-[var(--bg)] pt-[120px] pb-24 md:pt-28 md:pb-16 lg:pt-36 lg:pb-20 xl:pt-[140px]"
     >
-      {/* Video sfondo in loop */}
+      {/* Video sfondo in loop (ottimizzato) */}
       <video
         suppressHydrationWarning
         aria-hidden="true"
         className="absolute inset-0 h-full w-full object-cover pointer-events-none"
-        src="/videos/entrata-fulgur.mp4"
+        src="/videos/robot-pulizie.mp4"
         autoPlay
         loop
         muted
@@ -121,9 +121,9 @@ export function HeroSection() {
           </div>
 
           {/* H1 — tre righe */}
-          <h1 className="hero-reveal mt-5 font-display font-black leading-[0.93] tracking-tighter text-[clamp(40px,9vw,84px)] drop-shadow-2xl">
+          <h1 className="hero-reveal mt-5 font-display font-black leading-[1.05] sm:leading-[0.93] tracking-tight sm:tracking-tighter text-[clamp(42px,10vw,84px)] drop-shadow-2xl">
             <span className="block text-white">Puliamo il Futuro</span>
-            <span className="block text-[var(--accent)] sm:text-outline-accent">con l&apos;Energia</span>
+            <span className="block text-outline-accent">con l&apos;Energia</span>
             <span className="block text-[var(--accent)]">della Natura</span>
           </h1>
 
@@ -136,20 +136,20 @@ export function HeroSection() {
           </p>
 
           {/* Stats inline */}
-          <div className="hero-reveal mt-4 sm:mt-7 flex flex-wrap items-center gap-x-3 gap-y-1.5 sm:gap-x-5 font-mono-fulgur text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.10em] sm:tracking-[0.15em] text-white/70">
-            <span className="flex items-center gap-1.5">
-              <span className="text-[var(--accent)] text-base font-black">30+</span> anni
+          <div className="hero-reveal mt-6 sm:mt-7 grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-y-4 gap-x-2 sm:gap-x-5 font-mono-fulgur text-[10.5px] sm:text-[11px] font-bold uppercase tracking-[0.08em] sm:tracking-[0.15em] text-white/80">
+            <span className="flex items-center gap-2">
+              <span className="text-[var(--accent)] text-[16px] sm:text-base font-black">30+</span> anni
             </span>
-            <span className="text-white/30">·</span>
-            <span className="flex items-center gap-1.5">
-              <span className="text-[var(--accent)] text-base font-black">500+</span> clienti
+            <span className="hidden sm:inline text-white/30">·</span>
+            <span className="flex items-center gap-2">
+              <span className="text-[var(--accent)] text-[16px] sm:text-base font-black">500+</span> clienti
             </span>
-            <span className="text-white/30">·</span>
-            <span className="flex items-center gap-1.5">
-              <span className="text-[var(--accent)] text-base font-black">12</span> settori
+            <span className="hidden sm:inline text-white/30">·</span>
+            <span className="flex items-center gap-2">
+              <span className="text-[var(--accent)] text-[16px] sm:text-base font-black">12</span> settori
             </span>
-            <span className="text-white/30">·</span>
-            <span>sopralluogo 100% gratuito</span>
+            <span className="hidden sm:inline text-white/30">·</span>
+            <span className="col-span-2 text-[var(--accent)] tracking-widest mt-1 sm:mt-0 opacity-90">Sopralluogo 100% gratuito</span>
           </div>
 
           {/* CTAs */}
@@ -159,17 +159,17 @@ export function HeroSection() {
                 as="div"
                 intensity={0.15}
                 aria-label="Richiedi sopralluogo gratuito"
-                className="group relative flex h-[58px] w-full items-center justify-center overflow-hidden rounded-full bg-[var(--accent)] px-9 font-display text-[15px] font-bold text-white shadow-[0_12px_32px_rgba(78,203,160,0.3)] transition-all hover:bg-[var(--accent-d)] hover:shadow-[0_16px_40px_rgba(78,203,160,0.4)] sm:w-auto shine-effect"
+                className="group relative flex h-[54px] sm:h-[58px] w-full items-center justify-center overflow-hidden rounded-full bg-[var(--accent)] px-8 font-display text-[15px] font-bold text-white shadow-[0_12px_32px_rgba(78,203,160,0.3)] transition-all hover:bg-[var(--accent-d)] hover:shadow-[0_16px_40px_rgba(78,203,160,0.4)] sm:w-auto shine-effect"
               >
-                <span className="relative z-10">Richiedi Sopralluogo Gratuito</span>
+                <span className="relative z-10 tracking-wide">Richiedi Sopralluogo</span>
               </MagneticButton>
             </Link>
-            <Link href="/servizi" tabIndex={-1} className="w-full sm:w-auto">
+            <Link href="/servizi" tabIndex={-1} className="w-full sm:w-auto mt-2 sm:mt-0">
               <MagneticButton
                 as="div"
                 intensity={0.1}
                 aria-label="Scopri i servizi di Fulgur Service"
-                className="group flex h-[58px] w-full items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 backdrop-blur-md px-9 font-display text-[15px] font-bold text-white transition-all hover:border-[var(--accent)] hover:text-[var(--accent)] hover:bg-white/10 sm:w-auto"
+                className="group flex h-[54px] sm:h-[58px] w-full items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 backdrop-blur-md px-8 font-display text-[15px] font-bold text-white transition-all hover:border-[var(--accent)] hover:text-[var(--accent)] hover:bg-white/10 sm:w-auto"
               >
                 <span>Scopri i Servizi</span>
                 <span className="transition-transform group-hover:translate-x-1">→</span>
