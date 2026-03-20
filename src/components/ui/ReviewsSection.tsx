@@ -32,17 +32,17 @@ const REVIEWS = [
   }
 ]
 
-export function ReviewsSection() {
-  return (
-    <section className="relative py-12 lg:py-20 bg-[var(--bg-2)] overflow-hidden border-y border-[var(--br)]">
-      <div className="mx-auto w-full max-w-7xl px-6 xl:px-8">
-        
-        <div className="text-center mb-16">
-          <ScrollReveal>
-            <h2 className="font-display text-3xl font-bold text-[var(--tx-1)] sm:text-4xl mb-4">
-              Cosa dicono i nostri clienti.
-            </h2>
-            <p className="font-sans text-[var(--tx-2)] font-light max-w-2xl mx-auto">
+  export function ReviewsSection() {
+    return (
+      <section className="relative py-16 sm:py-20 lg:py-24 bg-[var(--bg-2)] overflow-hidden border-y border-[var(--br)]">
+        <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8">
+          
+          <div className="text-center mb-12 sm:mb-16">
+            <ScrollReveal>
+              <h2 className="font-display text-[32px] sm:text-4xl font-bold text-[var(--tx-1)] mb-4 text-balance leading-tight">
+                Cosa dicono i nostri clienti.
+              </h2>
+              <p className="font-sans text-[var(--tx-2)] font-light max-w-2xl mx-auto text-balance">
               Oltre 500 clienti soddisfatti in Emilia-Romagna hanno scelto <br className="hidden md:block" /> 
               di affidare i loro spazi alla nostra cura professionale.
             </p>

@@ -36,17 +36,17 @@ const GUARANTEES = [
   }
 ]
 
-export function VisualGuarantees() {
-  return (
-    <section className="py-24 bg-white">
-      <div className="mx-auto w-full max-w-7xl px-6 xl:px-8">
-        
-        <div className="text-center mb-16 px-4">
-          <ScrollReveal>
-            <h2 className="font-display text-3xl font-bold text-[var(--tx-1)] sm:text-4xl mb-4">
-              Perché oltre 500 aziende <br className="hidden sm:block" /> ci hanno scelto.
-            </h2>
-            <p className="font-sans text-[var(--tx-2)] font-light max-w-2xl mx-auto">
+  export function VisualGuarantees() {
+    return (
+      <section className="py-16 sm:py-24 bg-white">
+        <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8">
+          
+          <div className="text-center mb-12 sm:mb-16 px-4">
+            <ScrollReveal>
+              <h2 className="font-display text-[32px] sm:text-4xl font-bold text-[var(--tx-1)] mb-4 text-balance leading-tight">
+                Perché oltre 500 aziende <br className="hidden sm:block" /> ci hanno scelto.
+              </h2>
+              <p className="font-sans text-[var(--tx-2)] font-light max-w-2xl mx-auto text-balance">
               Non solo promesse, ma garanzie scritte e standard certificati per proteggere il tuo ambiente di lavoro.
             </p>
           </ScrollReveal>
