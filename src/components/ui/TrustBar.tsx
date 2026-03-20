@@ -45,11 +45,11 @@ export function TrustBar() {
             <ScrollReveal key={i} delay={i * 0.1}>
               <Link 
                 href={item.link}
-                className={`p-5 sm:p-8 md:p-12 flex flex-col items-start border-t-[3px] border-transparent hover:border-[var(--accent)] transition-all duration-500 group relative block h-full ${i < TRUST_DATA.length - 1 ? 'md:border-r border-[var(--br)]' : ''}`}
+                className={`p-4 sm:p-6 md:p-8 lg:p-12 flex flex-col items-start border-t-[3px] border-transparent hover:border-[var(--accent)] transition-all duration-500 group relative block h-full ${i < TRUST_DATA.length - 1 ? 'md:border-r border-[var(--br)]' : ''}`}
               >
                 <div className="absolute top-0 left-0 w-full h-[3px] bg-[var(--accent)] opacity-100" />
                 
-                <div className="font-display text-[clamp(32px,5vw,56px)] font-extrabold text-[var(--tx-1)] mb-3 tracking-tight">
+                <div className="font-display text-[clamp(28px,7vw,56px)] font-extrabold text-[var(--tx-1)] mb-2 sm:mb-3 tracking-tight">
                   {item.isText ? (
                     item.value
                   ) : (
@@ -66,7 +66,7 @@ export function TrustBar() {
                   {item.label}
                 </span>
                 
-                <p className="font-sans text-[13px] font-light text-[var(--tx-2)] leading-relaxed">
+                <p className="font-sans text-[12px] sm:text-[13px] font-light text-[var(--tx-2)] leading-relaxed">
                   {item.desc}
                 </p>
               </Link>

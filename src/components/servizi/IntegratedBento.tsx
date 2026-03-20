@@ -12,22 +12,22 @@ import { cn } from '@/lib/utils'
 export function IntegratedBento() {
   return (
     <section className="relative py-12 lg:py-20 bg-[var(--bg)] overflow-hidden">
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 xl:px-8">
-        <div className="flex flex-col lg:grid lg:grid-cols-[38%_62%] gap-12 lg:gap-16 items-center">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8">
+        <div className="flex flex-col lg:grid lg:grid-cols-[38%_62%] gap-10 sm:gap-12 lg:gap-16 items-center">
           
           {/* LEFT: TEXT & BADGE */}
           <div className="w-full">
             <ScrollReveal>
               <SectionLabel className="mb-6">— IMPRESA 360°</SectionLabel>
-              <h2 className="font-display text-4xl sm:text-5xl font-extrabold text-[var(--tx-1)] leading-[1.1] mb-8">
-                Un partner <br />
+              <h2 className="font-display text-[32px] sm:text-4xl lg:text-5xl font-extrabold text-[var(--tx-1)] leading-[1.1] mb-6 sm:mb-8 text-balance">
+                Un partner <br className="hidden sm:block" />
                 unico per tutto.
               </h2>
-              <div className="font-sans text-lg font-light text-[var(--tx-2)] leading-relaxed mb-10 max-w-md">
+              <div className="font-sans text-base sm:text-lg font-light text-[var(--tx-2)] leading-relaxed mb-8 sm:mb-10 max-w-md">
                 Per i nostri clienti la pulizia è solo l'inizio. Garantiamo stabilità e continuità ai tuoi spazi occupandoci anche delle manutenzioni ordinarie.
               </div>
               
-              <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/20 text-[var(--accent)] font-mono-fulgur text-[10px] font-bold uppercase tracking-widest">
+              <div className="inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/20 text-[var(--accent)] font-mono-fulgur text-[9px] sm:text-[10px] font-bold uppercase tracking-widest w-full sm:w-auto justify-center">
                 <ListChecks size={18} weight="bold" />
                 4 servizi integrati inclusi
               </div>
@@ -91,9 +91,9 @@ function BentoCard({ index, title, img, icon: Icon, overlayOpacity = "bg-black/4
         </div>
         
         {/* Content Layer */}
-        <div className="relative z-20 flex h-full flex-col justify-end p-6 lg:p-8">
+        <div className="relative z-20 flex h-full flex-col justify-end p-5 sm:p-6 lg:p-8">
           {/* Minimal Icon */}
-          <div className="absolute top-6 right-6 text-white/30 group-hover:text-[var(--accent)] transition-colors">
+          <div className="absolute top-4 sm:top-6 right-4 sm:right-6 text-white/30 group-hover:text-[var(--accent)] transition-colors">
             <Icon size={24} weight="regular" />
           </div>
 

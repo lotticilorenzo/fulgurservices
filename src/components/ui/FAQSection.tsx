@@ -93,10 +93,10 @@ export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   return (
-    <section className="relative py-20 lg:py-32 bg-white overflow-hidden border-t border-[var(--br)]">
-      <div className="mx-auto w-full max-w-7xl px-6 xl:px-8">
+    <section className="relative py-16 sm:py-20 lg:py-32 bg-white overflow-hidden border-t border-[var(--br)]">
+      <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8">
         
-        <div className="grid grid-cols-1 lg:grid-cols-[38%_58%] gap-16 lg:gap-20 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[38%_58%] gap-12 sm:gap-16 lg:gap-20 items-start">
           
           {/* Left: Sticky header */}
           <div className="lg:sticky lg:top-28">
