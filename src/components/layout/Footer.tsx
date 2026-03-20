@@ -59,7 +59,7 @@ export function Footer() {
             </Link>
             
             <p className="mt-6 max-w-[260px] font-sans text-[15px] sm:text-sm font-light leading-relaxed text-[var(--tx-2)]">
-              Puliamo il futuro con l'energia della natura. Parma e Emilia-Romagna, dal 1994.
+              Puliamo il futuro con l&apos;energia della natura. Parma e Emilia-Romagna, dal 1994.
             </p>
 
             {/* Social + WhatsApp */}

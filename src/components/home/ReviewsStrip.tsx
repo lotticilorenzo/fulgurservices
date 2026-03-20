@@ -91,7 +91,7 @@ export function ReviewsStrip() {
                 <div className="relative mb-8">
                   <Quotes size={32} weight="fill" className="absolute -top-4 -left-4 text-[var(--accent)] opacity-10 group-hover:opacity-20 transition-opacity" />
                   <p className="relative font-sans text-base lg:text-lg font-light text-[var(--tx-2)] leading-relaxed italic">
-                    "{review.text}"
+                    &quot;{review.text}&quot;
                   </p>
                 </div>
 

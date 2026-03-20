@@ -93,8 +93,8 @@ export function MacchinariClient() {
             </h1>
 
             <p className="mt-6 font-body text-lg font-light text-white/90 max-w-2xl mx-auto leading-relaxed drop-shadow-md">
-              L'esperienza umana fa la differenza, ma senza i macchinari giusti
-              è impossibile raggiungere l'eccellenza. Investiamo continuamente
+              L&apos;esperienza umana fa la differenza, ma senza i macchinari giusti
+              è impossibile raggiungere l&apos;eccellenza. Investiamo continuamente
               nei migliori marchi mondiali di cleaning industriale.
             </p>
           </ScrollReveal>
@@ -218,7 +218,7 @@ export function MacchinariClient() {
         <ScrollReveal>
           <h3 className="font-display text-3xl font-bold text-[var(--tx-1)] mb-6">Perché scegliamo questi Partner?</h3>
           <p className="font-sans text-lg font-light text-[var(--tx-2)] leading-relaxed mb-6">
-            Siamo partner dei top player del settore perché non accettiamo compromessi sulla qualità dell'aria (filtri HEPA H14, sistemi di captazione polveri), sulla potenza di aspirazione e sulla meccanica dei ponti lavanti.
+            Siamo partner dei top player del settore perché non accettiamo compromessi sulla qualità dell&apos;aria (filtri HEPA H14, sistemi di captazione polveri), sulla potenza di aspirazione e sulla meccanica dei ponti lavanti.
           </p>
           <p className="font-sans text-lg font-light text-[var(--tx-2)] leading-relaxed">
             Le nostre monospazzole per la cristallizzazione (es. <em>Klindex</em> o <em>Künzle & Tasin</em>) e i sistemi di sanificazione al vapore continuo a 180° garantiscono trattamenti irraggiungibili con macchinari commerciali, preservando le superfici pregiate senza usare agenti chimici inutili.

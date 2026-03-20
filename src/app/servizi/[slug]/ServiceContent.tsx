@@ -142,7 +142,7 @@ export function ServiceContent({ service }: ServiceContentProps) {
                                {study.title}
                              </h3>
                              <p className="font-sans text-lg font-light text-[var(--tx-2)] leading-relaxed italic mb-8 border-l-2 border-[var(--accent)] pl-6">
-                               "{study.description}"
+                               &quot;{study.description}&quot;
                              </p>
                              <div className="flex items-center gap-3 text-xs font-mono-fulgur font-bold uppercase tracking-widest text-[var(--accent)]">
                                 <Icons.Sparkle size={20} weight="fill" />

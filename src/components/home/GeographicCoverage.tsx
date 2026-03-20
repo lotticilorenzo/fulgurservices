@@ -41,7 +41,7 @@ export function GeographicCoverage() {
               </h2>
               <p className="mt-6 font-sans text-lg font-light text-[var(--tx-2)] leading-relaxed max-w-lg">
                 Come impresa di pulizie a Parma, copriamo ogni comune della provincia 
-                e le aree limitrofe dell'Emilia-Romagna. Puntualità garantita, 
+                e le aree limitrofe dell&apos;Emilia-Romagna. Puntualità garantita, 
                 interventi in 24h su tutto il territorio.
               </p>
             </ScrollReveal>

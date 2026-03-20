@@ -62,7 +62,7 @@ const REVIEWS = [
                 </div>
                 
                 <blockquote className="flex-1 font-sans text-[var(--tx-2)] text-[15px] leading-relaxed italic mb-8">
-                  "{rev.text}"
+                  &quot;{rev.text}&quot;
                 </blockquote>
 
                 <div className="flex items-center gap-4 pt-6 border-t border-[var(--br)]">

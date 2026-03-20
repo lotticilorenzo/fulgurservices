@@ -89,7 +89,7 @@ export function WhyChooseUs() {
             <ScrollReveal>
               <SectionLabel className="mb-5">— PERCHÉ FULGUR</SectionLabel>
               <h2 className="font-display text-4xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl text-balance leading-[1.1]">
-                L'impresa di pulizie <br />
+                L&apos;impresa di pulizie <br />
                 <span className="text-[var(--accent)]">scelta a Parma.</span>
               </h2>
               <p className="mt-6 font-sans text-lg font-light text-[var(--tx-2)] leading-relaxed max-w-lg">

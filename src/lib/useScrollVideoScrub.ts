@@ -34,10 +34,13 @@ export function useScrollVideoScrub(
   // Rilevamento media query per mobile
   useEffect(() => {
     const mq = window.matchMedia('(max-width: 768px)')
-    setIsMobile(mq.matches)
+    const initT = setTimeout(() => setIsMobile(mq.matches), 0)
     const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches)
     mq.addEventListener('change', handler)
-    return () => mq.removeEventListener('change', handler)
+    return () => {
+      clearTimeout(initT)
+      mq.removeEventListener('change', handler)
+    }
   }, [])
 
   // 1. Lettura pura e priva di attrito dello scroll lungo il target (section)

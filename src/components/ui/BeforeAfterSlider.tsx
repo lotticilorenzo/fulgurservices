@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useCallback } from 'react'
 import Image from 'next/image'
-import { motion, useMotionValue, useSpring } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { ArrowsLeftRight } from '@phosphor-icons/react'
 
 interface BeforeAfterSliderProps {
@@ -24,7 +24,17 @@ export function BeforeAfterSlider({
 }: BeforeAfterSliderProps) {
   const [sliderPosition, setSliderPosition] = useState(50)
   const [isDragging, setIsDragging] = useState(false)
+  const [containerWidth, setContainerWidth] = useState<number | undefined>(undefined)
   const containerRef = useRef<HTMLDivElement>(null)
+
+  React.useEffect(() => {
+    if (!containerRef.current) return
+    const ro = new ResizeObserver((entries) => {
+      for (const entry of entries) setContainerWidth(entry.contentRect.width)
+    })
+    ro.observe(containerRef.current)
+    return () => ro.disconnect()
+  }, [])
 
   const handleMove = useCallback((clientX: number) => {
     if (!containerRef.current) return
@@ -77,7 +87,7 @@ export function BeforeAfterSlider({
       >
         <div className="absolute inset-0 w-[100vw] h-full h-full pointer-events-none">
           {/* We use a fixed width container for the inner image to prevent squashing */}
-          <div className={`relative h-full ${aspectRatio}`} style={{ width: containerRef.current?.clientWidth }}>
+          <div className={`relative h-full ${aspectRatio}`} style={{ width: containerWidth }}>
             <Image
               src={beforeImage}
               alt="Prima del trattamento"

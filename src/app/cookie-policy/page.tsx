@@ -20,7 +20,7 @@ export default function CookiePolicyPage() {
           <section>
             <h2 className="text-xl font-bold text-[var(--tx-1)] mb-4">1. Cosa sono i Cookie</h2>
             <p>
-              I cookie sono piccoli file di testo che i siti visitati dall'utente inviano al suo terminale, dove vengono memorizzati per essere poi ritrasmessi agli stessi siti alla visita successiva.
+              I cookie sono piccoli file di testo che i siti visitati dall&apos;utente inviano al suo terminale, dove vengono memorizzati per essere poi ritrasmessi agli stessi siti alla visita successiva.
             </p>
           </section>
 
@@ -42,7 +42,7 @@ export default function CookiePolicyPage() {
           <section>
             <h2 className="text-xl font-bold text-[var(--tx-1)] mb-4">3. Gestione del Consenso</h2>
             <p>
-              Visitando il sito per la prima volta, un banner ti ha informato dell'uso dei cookie. Puoi cambiare le tue preferenze cancellando la cache del browser o modificando le impostazioni sulla privacy del tuo browser.
+              Visitando il sito per la prima volta, un banner ti ha informato dell&apos;uso dei cookie. Puoi cambiare le tue preferenze cancellando la cache del browser o modificando le impostazioni sulla privacy del tuo browser.
             </p>
           </section>
 

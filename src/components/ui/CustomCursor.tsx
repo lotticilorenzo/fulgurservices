@@ -20,7 +20,7 @@ export function CustomCursor() {
     // Only show on true pointer devices (not touch)
     const isTouch = window.matchMedia('(hover: none)').matches
     if (isTouch) return
-    setIsTouchDevice(false)
+    const initT = setTimeout(() => setIsTouchDevice(false), 0)
 
     // VIOL-11: RAF guard — evita saturazione main thread su display a 120Hz
     let rafPending = false
@@ -40,11 +40,12 @@ export function CustomCursor() {
         })
       }
     }
-
-    const onLeave = () => setVisible(false)
-    const onEnter = () => setVisible(true)
-    const onDown  = () => setClicking(true)
-    const onUp    = () => setClicking(false)
+    
+    // Using down/up to trigger clicking state for shrinking animation
+    const onDown = () => setClicking(true)
+    const onUp = () => setClicking(false)
+    const onEnter = () => setHovering(true)
+    const onLeave = () => setHovering(false)
 
     // Event delegation — works for dynamic elements too
     const onOver = (e: MouseEvent) => {
@@ -54,17 +55,14 @@ export function CustomCursor() {
       setHovering(!!hoverable)
     }
 
-    document.addEventListener('mousemove', onMove, { passive: true })
-    document.addEventListener('mouseleave', onLeave)
-    document.addEventListener('mouseenter', onEnter)
-    document.addEventListener('mousedown', onDown)
-    document.addEventListener('mouseup', onUp)
-    document.addEventListener('mouseover', onOver)
+    window.addEventListener('mousemove', onMove, { passive: true })
+    window.addEventListener('mousedown', onDown, { passive: true })
+    window.addEventListener('mouseup', onUp, { passive: true })
+    document.addEventListener('mouseleave', () => setVisible(false)) // Keep original logic for visibility on leave
+    document.addEventListener('mouseenter', () => setVisible(true)) // Keep original logic for visibility on enter
+    document.addEventListener('mouseover', onOver) // Keep original logic for hoverable elements
 
     return () => {
-      document.removeEventListener('mousemove', onMove)
-      document.removeEventListener('mouseleave', onLeave)
-      document.removeEventListener('mouseenter', onEnter)
       document.removeEventListener('mousedown', onDown)
       document.removeEventListener('mouseup', onUp)
       document.removeEventListener('mouseover', onOver)

@@ -24,7 +24,7 @@ export function IntegratedBento() {
                 unico per tutto.
               </h2>
               <div className="font-sans text-base sm:text-lg font-light text-[var(--tx-2)] leading-relaxed mb-8 sm:mb-10 max-w-md">
-                Per i nostri clienti la pulizia è solo l'inizio. Garantiamo stabilità e continuità ai tuoi spazi occupandoci anche delle manutenzioni ordinarie.
+                Per i nostri clienti la pulizia è solo l&apos;inizio. Garantiamo stabilità e continuità ai tuoi spazi occupandoci anche delle manutenzioni ordinarie.
               </div>
               
               <div className="inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/20 text-[var(--accent)] font-mono-fulgur text-[9px] sm:text-[10px] font-bold uppercase tracking-widest w-full sm:w-auto justify-center">
@@ -72,7 +72,7 @@ export function IntegratedBento() {
   )
 }
 
-function BentoCard({ index, title, img, icon: Icon, overlayOpacity = "bg-black/40" }: { index: number, title: string, img: string, icon: any, overlayOpacity?: string }) {
+function BentoCard({ index, title, img, icon: Icon, overlayOpacity = "bg-black/40" }: { index: number, title: string, img: string, icon: React.ElementType, overlayOpacity?: string }) {
   return (
     <ScrollReveal delay={index * 0.1} className="h-full">
       <SpotlightCard className="relative h-full min-h-[240px] rounded-2xl overflow-hidden group bg-[#0A140F]">

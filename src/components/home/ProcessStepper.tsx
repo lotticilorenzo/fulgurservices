@@ -71,7 +71,7 @@ export function ProcessStepper() {
   )
 }
 
-function StepCard({ step, index, total }: { step: any; index: number; total: number }) {
+function StepCard({ step, index, total }: { step: { id: string; title: string; desc: string; icon: React.ElementType; detail: string }; index: number; total: number }) {
   const containerRef = useRef<HTMLDivElement>(null)
   
   // Track scroll inside the space taken by the margin below this card

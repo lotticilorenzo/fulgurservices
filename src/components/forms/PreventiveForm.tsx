@@ -318,7 +318,7 @@ export function PreventiveForm() {
 
                   {/* Note Ambiente */}
                   <div className="flex flex-col gap-2">
-                    <label className="font-sans text-sm font-medium text-[var(--tx-1)]">Note sull'ambiente (opzionale)</label>
+                    <label className="font-sans text-sm font-medium text-[var(--tx-1)]">Note sull&apos;ambiente (opzionale)</label>
                     <textarea
                       placeholder="Piani senza ascensore, particolarità specifiche..."
                       rows={3}
@@ -404,7 +404,7 @@ export function PreventiveForm() {
               >
                 <div className="mb-8">
                   <h3 className="font-display text-2xl sm:text-3xl font-bold text-[var(--tx-1)]">Dove sei?</h3>
-                  <p className="font-sans text-sm font-light mt-2 text-[var(--tx-2)]">Operiamo attivamente a Parma e in tutta l'Emilia Romagna.</p>
+                  <p className="font-sans text-sm font-light mt-2 text-[var(--tx-2)]">Operiamo attivamente a Parma e in tutta l&apos;Emilia Romagna.</p>
                 </div>
 
                 <div className="flex flex-col gap-6">
@@ -515,7 +515,7 @@ export function PreventiveForm() {
                         </div>
                       </div>
                       <span className="font-sans text-[13px] text-[var(--tx-2)] leading-tight">
-                        Dichiaro di aver letto la Privacy Policy e acconsento al trattamento dei miei dati personali ai fini dell'erogazione del modulo di contatto. *
+                        Dichiaro di aver letto la Privacy Policy e acconsento al trattamento dei miei dati personali ai fini dell&apos;erogazione del modulo di contatto. *
                       </span>
                     </label>
                     {errors.privacy && <p className="flex items-center gap-1 text-xs text-red-400 mt-1"><Warning size={14} /> {errors.privacy.message}</p>}

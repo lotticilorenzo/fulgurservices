@@ -47,7 +47,7 @@ export function CertificationsSection() {
                <span className="font-mono-fulgur text-[10px] font-bold text-[var(--tx-3)] uppercase tracking-[0.2em]">Garanzie & Standard</span>
             </div>
             <h2 className="font-display text-3xl font-bold text-[var(--tx-1)] sm:text-4xl max-w-2xl">
-              La certezza di un lavoro <br className="hidden sm:block" /> eseguito a regola d'arte.
+              La certezza di un lavoro <br className="hidden sm:block" /> eseguito a regola d&apos;arte.
             </h2>
           </ScrollReveal>
         </div>

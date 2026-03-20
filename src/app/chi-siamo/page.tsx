@@ -49,8 +49,8 @@ export default function ChiSiamoPage() {
           Tradizione e innovazione nel <span className="text-[var(--accent)]">cleaning a Parma.</span>
         </h1>
         <p className="mt-8 font-sans text-lg lg:text-xl font-light text-[var(--tx-2)] max-w-3xl leading-relaxed text-balance">
-          Fulgur Service è l'<strong>impresa di pulizie a Parma</strong> che unisce l'esperienza tecnica di trent'anni alla visione dinamica di una nuova generazione. 
-          Siamo il punto d'incontro tra la solidità del lavoro costruito sul territorio e l'innovazione tecnologica costante.
+          Fulgur Service è l&apos;<strong>impresa di pulizie a Parma</strong> che unisce l&apos;esperienza tecnica di trent&apos;anni alla visione dinamica di una nuova generazione. 
+          Siamo il punto d&apos;incontro tra la solidità del lavoro costruito sul territorio e l&apos;innovazione tecnologica costante.
         </p>
       </div>
 
@@ -70,7 +70,7 @@ export default function ChiSiamoPage() {
             <div className="absolute bottom-6 left-6 right-6 sm:bottom-8 sm:left-8 sm:right-8 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6">
               <div className="text-left max-w-lg">
                 <h3 className="font-display text-xl sm:text-2xl font-bold text-white mb-2">Una promessa di valore</h3>
-                <p className="font-sans text-sm text-white/90">Per noi la pulizia non è un'attività meccanica: non siamo semplici fornitori, ma partner che si prendono cura dell'ambiente del cliente a 360°.</p>
+                <p className="font-sans text-sm text-white/90">Per noi la pulizia non è un&apos;attività meccanica: non siamo semplici fornitori, ma partner che si prendono cura dell&apos;ambiente del cliente a 360°.</p>
               </div>
               <div className="px-6 py-3 rounded-xl bg-[var(--accent)] text-[var(--bg)] font-mono-fulgur text-sm font-bold tracking-widest shrink-0">
                 DAL 1994
@@ -94,7 +94,7 @@ export default function ChiSiamoPage() {
                 <h3 className="font-mono-fulgur text-[var(--accent)] font-bold mb-2 uppercase tracking-widest text-xs">1994</h3>
                 <h4 className="font-display text-2xl font-bold text-[var(--tx-1)] mb-4">Le fondamenta</h4>
                 <p className="font-sans font-light text-[var(--tx-2)] leading-relaxed text-lg">
-                  L'inizio dell'avventura nel cleaning professionale. Anni dedicati a sviluppare la conoscenza perfetta dei materiali, delle superfici e delle reazioni chimiche dei detergenti per garantire l'eccellenza.
+                  L&apos;inizio dell&apos;avventura nel cleaning professionale. Anni dedicati a sviluppare la conoscenza perfetta dei materiali, delle superfici e delle reazioni chimiche dei detergenti per garantire l&apos;eccellenza.
                 </p>
               </div>
             </ScrollReveal>
@@ -102,10 +102,10 @@ export default function ChiSiamoPage() {
             <ScrollReveal>
               <div className="relative pl-8 sm:pl-12">
                 <div className="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full bg-[var(--accent)] shadow-[0_0_10px_var(--accent)]" />
-                <h3 className="font-mono-fulgur text-[var(--accent)] font-bold mb-2 uppercase tracking-widest text-xs">L'Evoluzione</h3>
+                <h3 className="font-mono-fulgur text-[var(--accent)] font-bold mb-2 uppercase tracking-widest text-xs">L&apos;Evoluzione</h3>
                 <h4 className="font-display text-2xl font-bold text-[var(--tx-1)] mb-4">Metodologia e Tecnologie</h4>
                 <p className="font-sans font-light text-[var(--tx-2)] leading-relaxed text-lg">
-                  L'ingresso di macchinari industriali e protocolli rigidi come l'HACCP porta l'azienda ad ampliare il suo raggio d'azione nel settore alberghiero, sanitario e dei grandi insediamenti logistici.
+                  L&apos;ingresso di macchinari industriali e protocolli rigidi come l&apos;HACCP porta l&apos;azienda ad ampliare il suo raggio d&apos;azione nel settore alberghiero, sanitario e dei grandi insediamenti logistici.
                 </p>
               </div>
             </ScrollReveal>

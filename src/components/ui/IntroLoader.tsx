@@ -22,11 +22,14 @@ export function IntroLoader() {
     if (sessionStorage.getItem('fs-intro-v3')) return
     sessionStorage.setItem('fs-intro-v3', '1')
 
-    setShow(true)
+    const tInit = setTimeout(() => setShow(true), 0)
 
     // VIOL-09: ridotto da 2000ms a 1000ms — abbassa LCP misurato da Lighthouse
     const t = setTimeout(() => setExiting(true), 1000)
-    return () => clearTimeout(t)
+    return () => {
+      clearTimeout(tInit)
+      clearTimeout(t)
+    }
   }, [])
 
   if (!show) return null

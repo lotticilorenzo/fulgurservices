@@ -104,7 +104,7 @@ export function FAQSection() {
               <SectionLabel className="mb-5">— FAQ</SectionLabel>
               <h2 className="font-display text-4xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl text-balance leading-[1.1]">
                 Tutto quello che<br />
-                <span className="text-[var(--accent)]">c'è da sapere.</span>
+                <span className="text-[var(--accent)]">c&apos;è da sapere.</span>
               </h2>
               <p className="mt-6 font-sans text-base font-light text-[var(--tx-2)] leading-relaxed max-w-xs">
                 Trasparenza e chiarezza sono alla base del nostro rapporto con ogni cliente.

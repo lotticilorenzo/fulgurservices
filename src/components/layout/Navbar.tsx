@@ -57,7 +57,10 @@ export default function Navbar() {
     return () => { document.body.style.overflow = '' }
   }, [isMobileOpen])
 
-  useEffect(() => { setIsMobileOpen(false) }, [pathname])
+  useEffect(() => { 
+    const t = setTimeout(() => setIsMobileOpen(false), 0);
+    return () => clearTimeout(t);
+  }, [pathname])
 
   const openServices = () => {
     if (closeTimer.current) clearTimeout(closeTimer.current)

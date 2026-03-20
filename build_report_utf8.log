@@ -1,0 +1,527 @@
+﻿
+> fulgur-service@0.1.0 lint
+> eslint
+
+
+C:\Users\lotti\Desktop\fulgurservices\scripts\fase7_execution.js
+  1:12  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  2:14  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+C:\Users\lotti\Desktop\fulgurservices\src\app\api\chat\route.ts
+  2:8  warning  'fs' is defined but never used    @typescript-eslint/no-unused-vars
+  3:8  warning  'path' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\lotti\Desktop\fulgurservices\src\app\blog\[slug]\page.tsx
+  7:10  warning  'SectionLabel' is defined but never used    @typescript-eslint/no-unused-vars
+  8:44  warning  'BookmarkSimple' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\lotti\Desktop\fulgurservices\src\app\chi-siamo\page.tsx
+   52:29   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   52:86   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   52:114  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   53:27   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   53:92   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   73:91   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   73:178  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   97:20   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   97:32   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   97:208  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  105:121  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  108:20   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  108:82   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  108:96   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  108:132  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\lotti\Desktop\fulgurservices\src\app\cookie-policy\page.tsx
+  23:75  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  45:83  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\lotti\Desktop\fulgurservices\src\app\fulgur-ai\page.tsx
+  4:15  warning  'Metadata' is defined but never used  @typescript-eslint/no-unused-vars
+  5:10  warning  'METADATA' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\lotti\Desktop\fulgurservices\src\app\lavora-con-noi\page.tsx
+  2:10  warning  'METADATA' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\lotti\Desktop\fulgurservices\src\app\not-found.tsx
+  6:10  warning  'ArrowLeft' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\lotti\Desktop\fulgurservices\src\app\privacy\page.tsx
+  56:146  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  68:86   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\lotti\Desktop\fulgurservices\src\app\servizi\[slug]\ServiceContent.tsx
+  145:32  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  145:52  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\lotti\Desktop\fulgurservices\src\app\servizi\page.tsx
+  4:20  warning  'INTEGRATED_SERVICES' is defined but never used  @typescript-eslint/no-unused-vars
+  8:10  warning  'ScrollReveal' is defined but never used         @typescript-eslint/no-unused-vars
+  9:13  warning  'Icons' is defined but never used                @typescript-eslint/no-unused-vars
+
+C:\Users\lotti\Desktop\fulgurservices\src\components\ai\AIChatInterface.tsx
+  5:10  warning  'Cpu' is defined but never used            @typescript-eslint/no-unused-vars
+  5:45  warning  'X' is defined but never used              @typescript-eslint/no-unused-vars
+  5:48  warning  'ArrowsOut' is defined but never used      @typescript-eslint/no-unused-vars
+  6:10  warning  'SpotlightCard' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\lotti\Desktop\fulgurservices\src\components\ai\AIGuidedExperience.tsx
+    7:3   warning  'House' is defined but never used                                @typescript-eslint/no-unused-vars
+    9:3   warning  'FirstAidKit' is defined but never used                          @typescript-eslint/no-unused-vars
+   16:10  warning  'cn' is defined but never used                                   @typescript-eslint/no-unused-vars
+  135:84  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\lotti\Desktop\fulgurservices\src\components\forms\PreventiveForm.tsx
+   11:10   warning  'SectionLabel' is defined but never used                         @typescript-eslint/no-unused-vars
+   60:5    warning  'watch' is assigned a value but never used                       @typescript-eslint/no-unused-vars
+  101:11   warning  'page' is assigned a value but never used                        @typescript-eslint/no-unused-vars
+  321:98   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  407:128  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  518:130  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\lotti\Desktop\fulgurservices\src\components\gallery\GalleryClient.tsx
+  42:116  error  Parsing error: ',' expected
+
+C:\Users\lotti\Desktop\fulgurservices\src\components\home\AboutSection.tsx
+  89:38  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  90:74  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  95:46  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  96:66  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\lotti\Desktop\fulgurservices\src\components\home\GeographicCoverage.tsx
+  44:41  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\lotti\Desktop\fulgurservices\src\components\home\GoogleReviewsPlugin.tsx
+  4:10  warning  'motion' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\lotti\Desktop\fulgurservices\src\components\home\ProcessStepper.tsx
+  74:51  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\lotti\Desktop\fulgurservices\src\components\home\ReviewsStrip.tsx
+  94:21  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  94:35  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\lotti\Desktop\fulgurservices\src\components\home\ScrollVideoSection.tsx
+  44:7  warning  'MOBILE_IMAGES' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\lotti\Desktop\fulgurservices\src\components\home\WhyChooseUs.tsx
+  92:18  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\lotti\Desktop\fulgurservices\src\components\lavora-con-noi\LavoraConNoiClient.tsx
+   8:3   warning  'Handshake' is defined but never used      @typescript-eslint/no-unused-vars
+  12:3   warning  'Briefcase' is defined but never used      @typescript-eslint/no-unused-vars
+  13:3   warning  'TrendUp' is defined but never used        @typescript-eslint/no-unused-vars
+  19:10  warning  'SpotlightCard' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\lotti\Desktop\fulgurservices\src\components\layout\Footer.tsx
+  62:38  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\lotti\Desktop\fulgurservices\src\components\layout\Navbar.tsx
+  60:21  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\lotti\Desktop\fulgurservices\src\components\layout\Navbar.tsx:60:21
+  58 |   }, [isMobileOpen])
+  59 |
+> 60 |   useEffect(() => { setIsMobileOpen(false) }, [pathname])
+     |                     ^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  61 |
+  62 |   const openServices = () => {
+  63 |     if (closeTimer.current) clearTimeout(closeTimer.current)  react-hooks/set-state-in-effect
+
+C:\Users\lotti\Desktop\fulgurservices\src\components\macchinari\MacchinariClient.tsx
+   96:16   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   97:42   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  221:106  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\lotti\Desktop\fulgurservices\src\components\servizi\IntegratedBento.tsx
+   5:10   warning  'motion' is defined but never used                               @typescript-eslint/no-unused-vars
+   6:56   warning  'ArrowRight' is defined but never used                           @typescript-eslint/no-unused-vars
+  27:57   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  75:138  error    Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+
+C:\Users\lotti\Desktop\fulgurservices\src\components\servizi\ServiceCard.tsx
+   5:10  warning  'motion' is defined but never used              @typescript-eslint/no-unused-vars
+   5:18  warning  'AnimatePresence' is defined but never used     @typescript-eslint/no-unused-vars
+  34:10  warning  'isHovered' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\lotti\Desktop\fulgurservices\src\components\ui\AnimatedHeading.tsx
+  18:7  warning  'WORD_VARIANTS' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\lotti\Desktop\fulgurservices\src\components\ui\BeforeAfterSlider.tsx
+   5:18  warning  'useMotionValue' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       @typescript-eslint/no-unused-vars
+   5:34  warning  'useSpring' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            @typescript-eslint/no-unused-vars
+  80:68  error    Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+C:\Users\lotti\Desktop\fulgurservices\src\components\ui\BeforeAfterSlider.tsx:80:68
+  78 |         <div className="absolute inset-0 w-[100vw] h-full h-full pointer-events-none">
+  79 |           {/* We use a fixed width container for the inner image to prevent squashing */}
+> 80 |           <div className={`relative h-full ${aspectRatio}`} style={{ width: containerRef.current?.clientWidth }}>
+     |                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Cannot access ref value during render
+  81 |             <Image
+  82 |               src={beforeImage}
+  83 |               alt="Prima del trattamento"  react-hooks/refs
+  80:77  error    Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+C:\Users\lotti\Desktop\fulgurservices\src\components\ui\BeforeAfterSlider.tsx:80:77
+  78 |         <div className="absolute inset-0 w-[100vw] h-full h-full pointer-events-none">
+  79 |           {/* We use a fixed width container for the inner image to prevent squashing */}
+> 80 |           <div className={`relative h-full ${aspectRatio}`} style={{ width: containerRef.current?.clientWidth }}>
+     |                                                                             ^^^^^^^^^^^^^^^^^^^^ Cannot access ref value during render
+  81 |             <Image
+  82 |               src={beforeImage}
+  83 |               alt="Prima del trattamento"                 react-hooks/refs
+  80:77  error    Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+C:\Users\lotti\Desktop\fulgurservices\src\components\ui\BeforeAfterSlider.tsx:80:77
+  78 |         <div className="absolute inset-0 w-[100vw] h-full h-full pointer-events-none">
+  79 |           {/* We use a fixed width container for the inner image to prevent squashing */}
+> 80 |           <div className={`relative h-full ${aspectRatio}`} style={{ width: containerRef.current?.clientWidth }}>
+     |                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Cannot access ref value during render
+  81 |             <Image
+  82 |               src={beforeImage}
+  83 |               alt="Prima del trattamento"    react-hooks/refs
+
+C:\Users\lotti\Desktop\fulgurservices\src\components\ui\CertificationsSection.tsx
+   4:10  warning  'motion' is defined but never used                               @typescript-eslint/no-unused-vars
+  50:94  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\lotti\Desktop\fulgurservices\src\components\ui\CounterUp.tsx
+  28:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\lotti\Desktop\fulgurservices\src\components\ui\CounterUp.tsx:28:5
+  26 |
+  27 |   useEffect(() => {
+> 28 |     setMounted(true)
+     |     ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  29 |   }, [])
+  30 |
+  31 |   useEffect(() => {  react-hooks/set-state-in-effect
+
+C:\Users\lotti\Desktop\fulgurservices\src\components\ui\CustomCursor.tsx
+  23:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\lotti\Desktop\fulgurservices\src\components\ui\CustomCursor.tsx:23:5
+  21 |     const isTouch = window.matchMedia('(hover: none)').matches
+  22 |     if (isTouch) return
+> 23 |     setIsTouchDevice(false)
+     |     ^^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  24 |
+  25 |     // VIOL-11: RAF guard ÔÇö evita saturazione main thread su display a 120Hz
+  26 |     let rafPending = false  react-hooks/set-state-in-effect
+
+C:\Users\lotti\Desktop\fulgurservices\src\components\ui\FAQSection.tsx
+  107:57  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\lotti\Desktop\fulgurservices\src\components\ui\IntroLoader.tsx
+  25:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\lotti\Desktop\fulgurservices\src\components\ui\IntroLoader.tsx:25:5
+  23 |     sessionStorage.setItem('fs-intro-v3', '1')
+  24 |
+> 25 |     setShow(true)
+     |     ^^^^^^^ Avoid calling setState() directly within an effect
+  26 |
+  27 |     // VIOL-09: ridotto da 2000ms a 1000ms ÔÇö abbassa LCP misurato da Lighthouse
+  28 |     const t = setTimeout(() => setExiting(true), 1000)  react-hooks/set-state-in-effect
+
+C:\Users\lotti\Desktop\fulgurservices\src\components\ui\MachineryModal.tsx
+  5:44  warning  'ArrowRight' is defined but never used     @typescript-eslint/no-unused-vars
+  7:10  warning  'SpotlightCard' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\lotti\Desktop\fulgurservices\src\components\ui\MagneticWrapper.tsx
+  3:25  warning  'useState' is defined but never used   @typescript-eslint/no-unused-vars
+  3:35  warning  'useEffect' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\lotti\Desktop\fulgurservices\src\components\ui\ReviewsSection.tsx
+   4:10  warning  'motion' is defined but never used                               @typescript-eslint/no-unused-vars
+   5:10  warning  'Star' is defined but never used                                 @typescript-eslint/no-unused-vars
+   5:16  warning  'Checks' is defined but never used                               @typescript-eslint/no-unused-vars
+   5:24  warning  'GoogleLogo' is defined but never used                           @typescript-eslint/no-unused-vars
+  65:19  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  65:30  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\lotti\Desktop\fulgurservices\src\components\ui\VisualGuarantees.tsx
+  5:10  warning  'motion' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\lotti\Desktop\fulgurservices\src\lib\useScrollVideoScrub.ts
+  29:3  warning  '_opts' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            @typescript-eslint/no-unused-vars
+  37:5  error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\lotti\Desktop\fulgurservices\src\lib\useScrollVideoScrub.ts:37:5
+  35 |   useEffect(() => {
+  36 |     const mq = window.matchMedia('(max-width: 768px)')
+> 37 |     setIsMobile(mq.matches)
+     |     ^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  38 |     const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches)
+  39 |     mq.addEventListener('change', handler)
+  40 |     return () => mq.removeEventListener('change', handler)  react-hooks/set-state-in-effect
+
+C:\Users\lotti\Desktop\fulgurservices\tmp_old_scroll.tsx
+  1:0  error  Parsing error: File appears to be binary
+
+Ô£û 102 problems (56 errors, 46 warnings)
+
+src/components/gallery/GalleryClient.tsx(42,117): error TS1005: ',' expected.
+src/components/gallery/GalleryClient.tsx(42,128): error TS1005: ',' expected.
+src/components/gallery/GalleryClient.tsx(42,131): error TS1005: ',' expected.
+src/components/gallery/GalleryClient.tsx(42,140): error TS1005: ',' expected.
+src/components/gallery/GalleryClient.tsx(42,142): error TS1005: ',' expected.
+src/components/gallery/GalleryClient.tsx(42,148): error TS1005: ',' expected.
+src/components/gallery/GalleryClient.tsx(42,152): error TS1005: ',' expected.
+src/components/gallery/GalleryClient.tsx(42,155): error TS1005: ',' expected.
+src/components/gallery/GalleryClient.tsx(42,163): error TS1005: ',' expected.
+src/components/gallery/GalleryClient.tsx(42,166): error TS1005: ',' expected.
+src/components/gallery/GalleryClient.tsx(42,171): error TS1005: ',' expected.
+src/components/gallery/GalleryClient.tsx(42,182): error TS1005: ':' expected.
+src/components/gallery/GalleryClient.tsx(42,188): error TS1005: ',' expected.
+src/components/gallery/GalleryClient.tsx(42,190): error TS1005: ',' expected.
+src/components/gallery/GalleryClient.tsx(42,194): error TS1005: ',' expected.
+src/components/gallery/GalleryClient.tsx(42,208): error TS1005: ':' expected.
+src/components/gallery/GalleryClient.tsx(42,216): error TS1005: ',' expected.
+src/components/gallery/GalleryClient.tsx(42,226): error TS1005: ':' expected.
+src/components/gallery/GalleryClient.tsx(42,237): error TS1005: ',' expected.
+src/components/gallery/GalleryClient.tsx(42,240): error TS1005: ',' expected.
+src/components/gallery/GalleryClient.tsx(42,247): error TS1005: ',' expected.
+src/components/gallery/GalleryClient.tsx(42,251): error TS1002: Unterminated string literal.
+src/components/gallery/GalleryClient.tsx(43,3): error TS1005: ',' expected.
+
+> fulgur-service@0.1.0 build
+> next build
+
+Ôû▓ Next.js 16.1.6 (Turbopack)
+
+  Creating an optimized production build ...
+node.exe : 
+In riga:1 car:1
++ & "C:\Program 
+Files\nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo 
+...
++ ~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~
+    + CategoryInfo     
+         : NotSpecifi  
+  ed: (:String) [],    
+ RemoteException
+    + FullyQualifiedEr 
+   rorId : NativeComm  
+  andError
+ 
+> Build error occurred
+Error: Turbopack build 
+failed with 1 errors:
+./src/components/galler
+y/GalleryClient.tsx:42:
+117
+Parsing ecmascript 
+source code failed
+[0m [90m 40 |[39m   
+{ id[33m:[39m [35m17
+[39m[33m,[39m 
+src[33m:[39m [32m'/i
+mages/flotta-furgoni-im
+presa-pulizie-parma.web
+p'[39m[33m,[39m 
+alt[33m:[39m 
+[32m"La flotta di 
+Fulgur Service ÔÇö 
+furgoni moderni e 
+attrezzati sempre 
+pronti all'intervento 
+a 
+Parma"[39m[33m,[39m 
+label[33m:[39m 
+[32m'La Nostra Flotta'
+[39m[33m,[39m 
+category[33m:[39m [3
+2m'azienda'[39m[33m,
+[39m span[33m:[39m 
+[32m'col-span-1 
+row-span-1'[39m 
+}[33m,[39m
+ [90m 41 |[39m   { 
+id[33m:[39m [35m18[
+39m[33m,[39m 
+src[33m:[39m [32m'/i
+mages/servizi/pulizia-f
+acciate-parma.jpg'[39m
+[33m,[39m 
+alt[33m:[39m 
+[32m'Pulizia facciate 
+edifici a Parma ÔÇö 
+Fulgur Service'[39m[3
+3m,[39m 
+label[33m:[39m 
+[32m'Pulizia Facciate'
+[39m[33m,[39m 
+category[33m:[39m [3
+2m'speciali'[39m[33m,
+[39m span[33m:[39m 
+[32m'col-span-1 
+row-span-1'[39m 
+}[33m,[39m
+[31m[1m>[22m[39m[9
+0m 42 |[39m   { 
+id[33m:[39m [35m19[
+39m[33m,[39m 
+src[33m:[39m [32m'/i
+mages/gallery/pulizie-a
+-fondo-prima-dopo-parma
+.jpg'[39m[33m,[39m 
+alt[33m:[39m 
+[32m'Risultato 
+eccellente: prima e 
+dopo l'[39mintervento 
+di pulitura a fondo 
+per un cliente di 
+[33mParma[39m[32m', 
+label: 
+'[39m[33mPrima[39m 
+[33mE[39m 
+[33mDopo[39m[32m', 
+category: 
+'[39mspeciali[32m', 
+span: '[39mcol[33m-[
+39mspan[33m-[39m[35m
+1[39m row[33m-[39msp
+an[33m-[39m[35m1[39
+m[32m' },[39m
+ [90m    |[39m       
+                       
+                       
+                       
+                       
+                  [31m
+[1m^[22m[39m[31m[1
+m^[22m[39m[31m[1m^
+[22m[39m[31m[1m^[22
+m[39m[31m[1m^[22m[
+39m[31m[1m^[22m[39m
+[31m[1m^[22m[39m[3
+1m[1m^[22m[39m[31m
+[1m^[22m[39m[31m[1m
+^[22m[39m
+ [90m 43 |[39m   { 
+id[33m:[39m [35m20[
+39m[33m,[39m 
+src[33m:[39m [32m'/i
+mages/gallery/trattamen
+to-superfici-pavimenti-
+prima-dopo-parma.jpg'[
+39m[33m,[39m 
+alt[33m:[39m 
+[32m'Differenza netta 
+sul pavimento 
+industriale prima e 
+dopo il nostro 
+trattamento professiona
+le'[39m[33m,[39m 
+label[33m:[39m 
+[32m'Prima E 
+Dopo'[39m[33m,[39m 
+category[33m:[39m [3
+2m'industriali'[39m[3
+3m,[39m 
+span[33m:[39m 
+[32m'col-span-1 
+row-span-1'[39m 
+}[33m,[39m
+ [90m 44 |[39m   { 
+id[33m:[39m [35m21[
+39m[33m,[39m 
+src[33m:[39m [32m'/i
+mages/gallery/lucidatur
+a-marmo-gres-risultato-
+parma.jpg'[39m[33m,[
+39m alt[33m:[39m 
+[32m'Pavimento 
+riportato a nuovo 
+tramite i nostri 
+processi di lucidatura 
+e sgrassamento'[39m[3
+3m,[39m 
+label[33m:[39m 
+[32m'Prima E 
+Dopo'[39m[33m,[39m 
+category[33m:[39m [3
+2m'aziendali'[39m[33m
+,[39m span[33m:[39m 
+[32m'col-span-1 
+row-span-1'[39m 
+}[33m,[39m
+ [90m 45 |[39m   { 
+id[33m:[39m [35m22[
+39m[33m,[39m 
+src[33m:[39m [32m'/i
+mages/gallery/operatori
+-squadra-pulizie-fulgur
+-service.png'[39m[33m
+,[39m alt[33m:[39m 
+[32m'La squadra 
+operativa Fulgur 
+Service impiegata in 
+un intervento struttura
+to'[39m[33m,[39m 
+label[33m:[39m 
+[32m'Il Nostro 
+Team'[39m[33m,[39m 
+category[33m:[39m [3
+2m'azienda'[39m[33m,
+[39m span[33m:[39m 
+[32m'col-span-1 
+row-span-1'[39m 
+}[33m,[39m[0m
+
+Expected ',', got 
+'ident'
+
+Import trace:
+  Server Component:
+    ./src/components/ga
+llery/GalleryClient.tsx
+    ./src/app/gallery/p
+age.tsx
+
+
+    at <unknown> (./src
+/components/gallery/Gal
+leryClient.tsx:42:117)

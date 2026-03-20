@@ -53,7 +53,7 @@ export default function PrivacyPage() {
           <section>
             <h2 className="text-xl font-bold text-[var(--tx-1)] mb-4">4. Base Giuridica</h2>
             <p>
-              Il trattamento si fonda sul tuo consenso espresso o sulla necessità di eseguire misure pre-contrattuali (preventivi) richieste dall'interessato.
+              Il trattamento si fonda sul tuo consenso espresso o sulla necessità di eseguire misure pre-contrattuali (preventivi) richieste dall&apos;interessato.
             </p>
           </section>
 
@@ -65,7 +65,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-[var(--tx-1)] mb-4">6. Diritti dell'Interessato</h2>
+            <h2 className="text-xl font-bold text-[var(--tx-1)] mb-4">6. Diritti dell&apos;Interessato</h2>
             <p>
               In conformità al GDPR (Regolamento UE 2016/679), hai il diritto di:
             </p>

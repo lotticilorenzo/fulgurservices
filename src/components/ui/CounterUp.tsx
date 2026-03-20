@@ -25,7 +25,8 @@ export function CounterUp({
   const isInView = useInView(ref, { once: true, margin: '-50px 0px' })
 
   useEffect(() => {
-    setMounted(true)
+    const t = setTimeout(() => setMounted(true), 0)
+    return () => clearTimeout(t)
   }, [])
 
   useEffect(() => {

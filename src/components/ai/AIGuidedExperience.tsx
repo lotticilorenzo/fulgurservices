@@ -132,7 +132,7 @@ export function AIGuidedExperience({ onSelectPrompt }: AIGuidedExperienceProps) 
                 <span className="text-[var(--accent)]">{selectedCat.icon}</span>
                 {selectedCat.title}
               </h3>
-              <p className="text-sm font-light text-[var(--tx-3)] mt-2">Seleziona l'argomento per iniziare la conversazione guidata:</p>
+              <p className="text-sm font-light text-[var(--tx-3)] mt-2">Seleziona l&apos;argomento per iniziare la conversazione guidata:</p>
             </div>
 
             <div className="flex flex-col gap-3">
