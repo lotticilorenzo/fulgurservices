@@ -55,7 +55,7 @@ export function WhatsAppButton() {
               intensity={0.2}
               className="relative flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl transition-transform hover:scale-110"
             >
-              <div className="absolute -inset-2 animate-pulse-ring rounded-full border-2 border-[#25D366]" />
+              <div className="absolute -inset-2 animate-pulse-ring rounded-full" />
               <svg
                 width="28"
                 height="28"

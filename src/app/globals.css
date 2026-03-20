@@ -77,9 +77,12 @@
     100% { background-position: 200% 0; }
   }
   @keyframes pulse-ring {
-    0%   { transform: scale(0.8); box-shadow: 0 0 0 0 rgba(78, 203, 160, 0.6); }
-    70%  { transform: scale(1);   box-shadow: 0 0 0 12px rgba(78, 203, 160, 0); }
-    100% { transform: scale(0.8); box-shadow: 0 0 0 0 rgba(78, 203, 160, 0); }
+    /* FIX VIOL-02: rimosso box-shadow (non-compositable).
+       Il ripple ora è un pseudo-elemento ::before su .animate-pulse-ring
+       animato solo con scale + opacity → 100% compositor thread, zero repaint */
+    0%   { transform: scale(0.85); opacity: 0.7; }
+    70%  { transform: scale(1.55); opacity: 0; }
+    100% { transform: scale(0.85); opacity: 0; }
   }
   @keyframes orbit {
     from { transform: rotate(0deg) translateX(var(--orbit-radius, 60px)) rotate(0deg); }
@@ -264,6 +267,8 @@ body {
   }
 
   /* ─── Shine Effect ─── */
+  /* FIX VIOL-03: animazione migrata da `left` (geometry) a `transform:translateX`
+     Rimosso `transition: all` → sostituito con `transition: transform` (compositor only) */
   .shine-effect {
     position: relative;
     overflow: hidden;
@@ -272,16 +277,17 @@ body {
     content: "";
     position: absolute;
     top: -50%;
-    left: -60%;
+    left: 0;
     width: 20%;
     height: 200%;
     background: linear-gradient(to right, transparent, rgba(255,255,255,0.15), transparent);
-    transform: rotate(30deg);
+    transform: rotate(30deg) translateX(-300%);
+    transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
     pointer-events: none;
+    will-change: transform;
   }
   .shine-effect:hover::after {
-    left: 120%;
-    transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+    transform: rotate(30deg) translateX(700%);
   }
 
   /* ─── Marquee ─── */
@@ -299,8 +305,20 @@ body {
   .animate-marquee-fast    { animation: marquee 16s linear infinite; }
 
   /* ─── Pulse Ring ─── */
+  /* FIX VIOL-02: il ripple è ora un ::before posizionato absolute, animato SOLO con
+     scale + opacity → compositor thread puro, zero box-shadow repaint.
+     L'host deve avere position: relative e overflow: visible */
   .animate-pulse-ring {
+    position: relative;
+  }
+  .animate-pulse-ring::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 9999px;
+    border: 2px solid #25D366;
     animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+    pointer-events: none;
   }
 
   /* ─── Float ─── */

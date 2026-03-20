@@ -116,11 +116,12 @@ function PreventivoModal({ onClose }: { onClose: () => void }) {
           </button>
         </div>
 
-        {/* Progress bar */}
-        <div className="h-[2px] bg-[var(--br)] mx-6">
+        {/* Progress bar — FIX VIOL-04: scaleX puro → compositor thread, zero layout */}
+        <div className="h-[2px] bg-[var(--br)] mx-6 overflow-hidden">
           <motion.div
-            className="h-full bg-[var(--accent)] rounded-full"
-            animate={{ width: `${((step + 1) / total) * 100}%` }}
+            className="h-full w-full bg-[var(--accent)] rounded-full origin-left"
+            animate={{ scaleX: (step + 1) / total }}
+            initial={{ scaleX: 1 / total }}
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
           />
         </div>
@@ -324,7 +325,7 @@ export function FloatingActions() {
                   intensity={0.2}
                   className="relative flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl transition-transform hover:scale-110"
                 >
-                  <div className="absolute -inset-2 animate-pulse-ring rounded-full border-2 border-[#25D366]" />
+                  <div className="absolute -inset-2 animate-pulse-ring rounded-full" />
                   <WaIcon className="w-5 h-5 sm:w-[26px] sm:h-[26px]" />
                 </MagneticButton>
               </a>

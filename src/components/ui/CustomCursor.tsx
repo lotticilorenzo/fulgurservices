@@ -63,6 +63,7 @@ export function CustomCursor() {
   return (
     <>
       {/* ── Outer ring — follows with spring lag ── */}
+      {/* FIX VIOL-01: dimensione fissa 40px, animazione via scale puro → compositor thread */}
       <motion.div
         aria-hidden="true"
         className="pointer-events-none fixed top-0 left-0 z-[9999] rounded-full border border-solid"
@@ -71,23 +72,20 @@ export function CustomCursor() {
           y: ringY,
           translateX: '-50%',
           translateY: '-50%',
+          width: 40,
+          height: 40,
         }}
         animate={{
-          width:  hovering ? 52 : clicking ? 28 : 40,
-          height: hovering ? 52 : clicking ? 28 : 40,
-          opacity: visible ? 1 : 0,
-          borderColor: hovering
-            ? 'rgba(78, 203, 160, 1)'
-            : 'rgba(78, 203, 160, 0.55)',
-          backgroundColor: hovering
-            ? 'rgba(78, 203, 160, 0.10)'
-            : 'rgba(78, 203, 160, 0)',
-          scale: clicking ? 0.85 : 1,
+          scale:           hovering ? 1.3 : clicking ? 0.7 : 1,
+          opacity:         visible ? 1 : 0,
+          borderColor:     hovering ? 'rgba(78, 203, 160, 1)' : 'rgba(78, 203, 160, 0.55)',
+          backgroundColor: hovering ? 'rgba(78, 203, 160, 0.10)' : 'rgba(78, 203, 160, 0)',
         }}
         transition={{ duration: 0.18, ease: 'easeOut' }}
       />
 
       {/* ── Inner dot — exact cursor position ── */}
+      {/* FIX VIOL-01: dimensione fissa 6px, scale puro per le variazioni dimensionali */}
       <motion.div
         aria-hidden="true"
         className="pointer-events-none fixed top-0 left-0 z-[9999] rounded-full"
@@ -96,13 +94,13 @@ export function CustomCursor() {
           y: mouseY,
           translateX: '-50%',
           translateY: '-50%',
+          width: 6,
+          height: 6,
           backgroundColor: 'var(--accent)',
         }}
         animate={{
-          width:  hovering ? 7 : clicking ? 12 : 6,
-          height: hovering ? 7 : clicking ? 12 : 6,
+          scale:   hovering ? 1.17 : clicking ? 2 : 1,
           opacity: visible ? 1 : 0,
-          scale: clicking ? 0.7 : 1,
         }}
         transition={{ duration: 0.1 }}
       />
