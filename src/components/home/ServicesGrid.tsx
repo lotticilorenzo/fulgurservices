@@ -34,20 +34,20 @@ export function ServicesGrid() {
   const remainingServices = SERVICES.filter((s) => !usedSlugs.includes(s.slug))
 
   return (
-    <section className="relative w-full bg-white py-12 md:py-16 lg:py-24 border-y border-[var(--br)] overflow-hidden" id="servizi">
-      {/* Background Architectural Text */}
-      <div className="absolute top-10 left-0 w-full opacity-[0.035] pointer-events-none select-none">
+    <section className="relative w-full bg-white py-12 md:py-16 lg:py-24 border-y border-[var(--br)] overflow-x-clip" id="servizi">
+      {/* Background Architectural Text — overflow-x:clip previene ghost scroll su mobile */}
+      <div className="absolute top-10 left-0 w-full opacity-[0.035] pointer-events-none select-none hidden sm:block">
         <ParallaxText text="SERVIZI" direction="left" distance={150} />
       </div>
 
       {/* Container */}
-      <div className="mx-auto w-full max-w-7xl px-6 xl:px-8 relative z-10">
+      <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8 relative z-10">
         
         {/* Header Section */}
         <div className="mb-8 md:mb-16 max-w-2xl lg:mb-20">
           <SectionLabel className="mb-4">— I NOSTRI SERVIZI</SectionLabel>
-          <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-[var(--tx-1)] lg:text-5xl">
-            Ogni ambiente, <br /> un'unica soluzione.
+          <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-[var(--tx-1)] lg:text-5xl text-balance">
+            Ogni ambiente, <br className="hidden sm:block" /> un’unica soluzione.
           </h2>
           <p className="mt-4 sm:mt-6 font-sans text-base sm:text-lg font-light text-[var(--tx-2)]">
             12 settori di intervento, team specializzato, preventivo in 24 ore.
@@ -94,15 +94,14 @@ export function ServicesGrid() {
           </div>
         </div>
 
-        {/* View All Services CTA (Esplicita e posizionata SUBITO SOTTO i servizi di pulizia) */}
+        {/* View All Services CTA */}
         <div className="mt-8 sm:mt-12 mb-16 flex justify-center">
           <Link 
             href="/servizi" 
-            className="group flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl sm:rounded-none bg-[var(--bg-2)] sm:bg-transparent border sm:border-transparent border-[var(--br)] px-6 py-4 sm:p-0 font-display text-base sm:text-sm font-bold text-[var(--tx-1)] sm:text-[var(--tx-2)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-all"
+            className="group flex min-h-[44px] w-full sm:w-auto items-center justify-center gap-2 rounded-xl sm:rounded-none bg-[var(--bg-2)] sm:bg-transparent border sm:border-transparent border-[var(--br)] px-6 py-3 sm:p-0 font-display text-base sm:text-sm font-bold text-[var(--tx-1)] sm:text-[var(--tx-2)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-all"
           >
             <span>Vedi tutti i 12 settori di pulizia</span>
-            <span className="transition-transform group-hover:translate-x-1 sm:hidden">→</span>
-            <span className="hidden sm:inline transition-transform group-hover:translate-x-1">→</span>
+            <span className="transition-transform group-hover:translate-x-1">→</span>
           </Link>
         </div>
 

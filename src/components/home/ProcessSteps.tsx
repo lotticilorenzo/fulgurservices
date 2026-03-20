@@ -130,34 +130,33 @@ export function ProcessSteps() {
 
   return (
     <section ref={containerRef} className="relative w-full bg-[var(--bg)] pb-[120px] pt-16">
-      <div className="mx-auto w-full max-w-5xl px-6 xl:px-8">
+      <div className="mx-auto w-full max-w-5xl px-5 sm:px-6 xl:px-8">
         
         {/* Container for Stacking Cards */}
         <div className="flex flex-col gap-8 lg:gap-12 relative w-full pt-8 pb-32">
           {STEPS.map((step, index) => (
             <div 
               key={index}
-              className="process-card sticky w-full h-[85vh] max-h-[600px] overflow-hidden rounded-3xl border border-[var(--br)] bg-white shadow-[0_20px_60px_rgba(42,140,122,0.1)]"
-              // L'offset top cresce così le carte si impilano creando un header visibile
+              className="process-card sticky w-full h-[75vh] max-h-[500px] overflow-hidden rounded-3xl border border-[var(--br)] bg-white shadow-[0_20px_60px_rgba(42,140,122,0.1)]"
               style={{ top: `calc(10vh + ${index * 30}px)` }} 
             >
               <div className="flex w-full h-full flex-col lg:flex-row">
                 
                 {/* LATO SINISTROTesto */}
-                <div className="flex h-1/2 w-full flex-col justify-center p-8 lg:h-full lg:w-1/2 lg:p-16">
-                  <div 
-                    className="font-mono-fulgur text-xl font-bold uppercase tracking-widest"
-                    style={{ color: step.accent }}
-                  >
-                    {step.num}
+                  <div className="flex h-1/2 w-full flex-col justify-center p-6 sm:p-8 lg:h-full lg:w-1/2 lg:p-16">
+                    <div 
+                      className="font-mono-fulgur text-xl font-bold uppercase tracking-widest"
+                      style={{ color: step.accent }}
+                    >
+                      {step.num}
+                    </div>
+                    <h3 className="mt-3 sm:mt-4 font-display text-2xl sm:text-3xl font-bold text-[var(--tx-1)] lg:text-4xl text-balance leading-tight">
+                      {step.title}
+                    </h3>
+                    <p className="mt-3 sm:mt-4 font-sans text-sm sm:text-base font-light leading-relaxed text-[var(--tx-2)] lg:text-lg">
+                      {step.desc}
+                    </p>
                   </div>
-                  <h3 className="mt-4 font-display text-3xl font-bold text-[var(--tx-1)] lg:text-4xl">
-                    {step.title}
-                  </h3>
-                  <p className="mt-4 font-sans text-base font-light leading-relaxed text-[var(--tx-2)] lg:text-lg">
-                    {step.desc}
-                  </p>
-                </div>
 
                 {/* LATO DESTRO: Visual SVG */}
                 <div 
