@@ -132,14 +132,14 @@ export function ServicesGrid() {
               </div>
 
               {/* Right: CTA */}
-              <div className="flex flex-col items-start lg:items-end gap-4 self-center">
+              <div className="flex flex-col items-start lg:items-end gap-3 sm:gap-4 self-center w-full lg:w-auto">
                 <Link
                   href="/preventivo"
-                  className="inline-flex items-center gap-2 rounded-full bg-[var(--accent)] px-8 py-3.5 font-display text-sm font-bold text-white shadow-[0_10px_20px_var(--accent-glow)] transition-all duration-300 hover:bg-[var(--accent-d)] hover:shadow-[0_15px_30px_var(--accent-glow-h)] hover:-translate-y-0.5"
+                  className="inline-flex w-full sm:w-auto justify-center items-center gap-2 rounded-full bg-[var(--accent)] px-8 py-3.5 font-display text-[15px] sm:text-sm font-bold text-white shadow-[0_10px_20px_var(--accent-glow)] transition-all duration-300 hover:bg-[var(--accent-d)] hover:shadow-[0_15px_30px_var(--accent-glow-h)] hover:-translate-y-0.5"
                 >
                   Richiedi un sopralluogo
                 </Link>
-                <span className="font-mono-fulgur text-[10px] uppercase tracking-widest text-[var(--tx-3)]">
+                <span className="font-mono-fulgur text-[10px] uppercase tracking-widest text-[var(--tx-3)] mx-auto lg:mx-0">
                   Sopralluogo gratuito · 24h
                 </span>
               </div>

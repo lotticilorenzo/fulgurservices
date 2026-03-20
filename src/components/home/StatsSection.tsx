@@ -82,7 +82,7 @@ export function StatsSection() {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, margin: '-6% 0px' }}
               transition={{ duration: 0.65, delay: i * 0.1, ease: EASE }}
-              className="flex flex-col items-center justify-center gap-1.5 sm:gap-3 bg-white/5 px-3 py-5 md:px-6 md:py-8 lg:px-8 lg:py-10 text-center hover:bg-white/10 transition-colors duration-300"
+              className="flex flex-col items-center justify-center gap-1.5 sm:gap-3 bg-white/5 px-1.5 py-4 sm:px-3 sm:py-5 md:px-6 md:py-8 lg:px-8 lg:py-10 text-center hover:bg-white/10 transition-colors duration-300"
             >
               <div
                 className="font-display font-black leading-none tracking-tight text-white"

@@ -30,8 +30,8 @@ export function AboutSection() {
       {/* Decorative Green Glow */}
       <div className="absolute -right-20 top-1/4 h-96 w-96 rounded-full bg-[var(--accent)] opacity-[0.06] blur-[120px] pointer-events-none" />
       
-      <div className="mx-auto w-full max-w-7xl px-6 xl:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-[42%_58%] gap-10 md:gap-14 lg:gap-20 items-center">
+      <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-[42%_58%] gap-8 sm:gap-10 md:gap-14 lg:gap-20 items-center">
           
           {/* LATO SINISTRO: Immagine — 42% */}
           <ScrollReveal className="order-2 lg:order-1">
@@ -77,8 +77,8 @@ export function AboutSection() {
           <div className="order-1 lg:order-2 flex flex-col items-start">
             <ScrollReveal>
               <SectionLabel className="mb-6">— CHI SIAMO</SectionLabel>
-              <h2 className="font-display text-3xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl lg:text-[3.2rem] leading-[1.1]">
-                Tradizione e innovazione,{' '}<br />
+              <h2 className="font-display text-[32px] sm:text-5xl lg:text-[3.2rem] font-extrabold tracking-tight text-[var(--tx-1)] leading-[1.05] text-balance">
+                Tradizione e innovazione,{' '}<br className="hidden sm:block" />
                 <span className="text-[var(--accent)]">insieme.</span>
               </h2>
             </ScrollReveal>

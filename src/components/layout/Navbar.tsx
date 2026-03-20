@@ -348,7 +348,7 @@ export default function Navbar() {
 
             {/* Bottom CTAs (Fissi a fondo schermo) */}
             <div className="shrink-0 bg-[var(--bg)] border-t border-[var(--br)] px-6 pb-12 pt-4 flex flex-col gap-2.5">
-              <div className="flex gap-2">
+              <div className="flex flex-col sm:flex-row gap-2">
                 <a
                   href="tel:+393383160091"
                   className="flex flex-1 items-center justify-center gap-1.5 rounded-xl border border-[var(--br-h)] bg-[var(--bg)]/80 backdrop-blur-md py-3 font-display text-[14px] font-semibold text-[var(--tx-1)] shadow-sm hover:border-[var(--accent)] transition-all"

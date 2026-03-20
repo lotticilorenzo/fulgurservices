@@ -76,9 +76,9 @@ export function CTASection() {
           <Link href="/preventivo" tabIndex={-1} className="w-full sm:w-auto">
             <MagneticButton
               intensity={0.15}
-              className="group relative flex h-16 w-full items-center justify-center gap-2 rounded-full bg-[var(--accent)] px-10 font-display text-[16px] font-bold text-white shadow-[0_12px_36px_rgba(78,203,160,0.35)] transition-all hover:bg-[var(--accent-d)] hover:shadow-[0_16px_48px_rgba(78,203,160,0.45)] sm:w-auto shine-effect"
+              className="group relative flex h-16 w-full items-center justify-center gap-2 rounded-full bg-[var(--accent)] px-5 sm:px-10 font-display text-[15px] sm:text-[16px] font-bold text-white shadow-[0_12px_36px_rgba(78,203,160,0.35)] transition-all hover:bg-[var(--accent-d)] hover:shadow-[0_16px_48px_rgba(78,203,160,0.45)] sm:w-auto shine-effect"
             >
-              <span className="relative z-10">Richiedi Sopralluogo Gratuito</span>
+              <span className="relative z-10 w-full sm:w-auto text-center">Richiedi Sopralluogo Gratuito</span>
               <ArrowUpRight
                 size={20}
                 className="relative z-10 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
