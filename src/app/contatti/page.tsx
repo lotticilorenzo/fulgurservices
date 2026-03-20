@@ -14,15 +14,15 @@ export const metadata: Metadata = {
 export default function ContattiPage() {
   return (
     <main className="min-h-screen bg-[var(--bg)] pt-24 pb-12 md:pt-32 md:pb-24 lg:pt-40">
-      <div className="mx-auto w-full max-w-7xl px-6 xl:px-8">
+      <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8">
         
         {/* HEADER */}
         <div className="mb-12 md:mb-20 text-center flex flex-col items-center">
           <SectionLabel className="mb-4">— SIAMO QUI PER TE</SectionLabel>
-          <h1 className="font-display text-3xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl lg:text-6xl max-w-3xl">
+          <h1 className="font-display text-[32px] sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--tx-1)] max-w-3xl text-balance leading-[1.1]">
             Entriamo in <span className="text-[var(--accent)]">contatto.</span>
           </h1>
-          <p className="mt-6 font-sans text-lg font-light text-[var(--tx-2)] max-w-2xl text-balance">
+          <p className="mt-4 sm:mt-6 font-sans text-base sm:text-lg font-light text-[var(--tx-2)] max-w-2xl text-balance">
             Hai domande su un servizio o necessiti di assistenza? Il nostro team a Parma è sempre disponibile.
           </p>
         </div>
@@ -107,7 +107,7 @@ export default function ContattiPage() {
               </div>
 
               {/* ZONE SERVITE */}
-              <div className="mt-4 p-6 sm:p-8 rounded-[2rem] sm:rounded-3xl bg-[var(--bg-card)] border border-[var(--br)] hover:shadow-[0_15px_30px_rgba(42,140,122,0.12)] hover:-translate-y-1 transition-all duration-300">
+              <div className="mt-4 p-5 sm:p-8 rounded-[2rem] sm:rounded-3xl bg-[var(--bg-card)] border border-[var(--br)] hover:shadow-[0_15px_30px_rgba(42,140,122,0.12)] hover:-translate-y-1 transition-all duration-300">
                 <h4 className="font-display font-bold text-[var(--tx-1)] text-lg mb-4">Dove operiamo</h4>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-y-3 gap-x-6">
                   {['Parma (Città)', 'Collecchio', 'Fidenza', 'Salsomaggiore', 'Langhirano', 'Traversetolo', 'Montechiarugolo', 'Felino', 'Sorbolo Mezzani', 'Noceto'].map((city) => (
