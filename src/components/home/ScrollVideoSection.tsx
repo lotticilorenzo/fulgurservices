@@ -40,13 +40,7 @@ const CHAPTERS = [
   },
 ]
 
-/* ─── Immagini fallback mobile — immagini progetto esistenti ─── */
-const MOBILE_IMAGES = [
-  '/images/pulizie-professionali-parma-hero.jpg',
-  '/images/fulgur-service-team-lavoro.jpg',
-  '/images/fulgur-service-pulizie-sostenibili.jpg',
-  '/images/macchinari-pulizie-professionali.jpg',
-]
+
 
 /* ─── Motion variants ─── */
 const textVariants: Variants = {
@@ -169,9 +163,10 @@ export function ScrollVideoSection() {
         <video
           ref={videoRef}
           src="/videos/metodo-lavoro-pulizie-parma-processo.mp4"
+          poster="/images/team-operatori-pulizie-professionali-parma.webp"
           muted
           playsInline
-          preload="auto"
+          preload="metadata"
           disablePictureInPicture
           className="absolute inset-0 w-full h-full object-cover"
           aria-hidden="true"
