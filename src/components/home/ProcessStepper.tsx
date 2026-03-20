@@ -94,7 +94,7 @@ function StepCard({ step, index, total }: { step: any; index: number; total: num
   return (
     <div
       ref={containerRef}
-      className="sticky flex items-start justify-center"
+      className="sticky w-full flex items-start justify-center"
       style={{
         // Each card stacks slightly lower than the one behind it
         top: `calc(15vh + ${index * 16}px)`,
@@ -104,7 +104,7 @@ function StepCard({ step, index, total }: { step: any; index: number; total: num
       }}
     >
       <motion.div
-        className="flex w-full flex-col justify-between rounded-3xl md:rounded-[40px] border border-[var(--br)] bg-white p-5 md:p-10 lg:p-14 shadow-[0_30px_80px_rgba(42,140,122,0.12)] overflow-hidden"
+        className="flex w-full flex-col justify-between rounded-3xl md:rounded-[40px] border border-[var(--br)] bg-white p-6 sm:p-10 lg:p-14 shadow-[0_30px_80px_rgba(42,140,122,0.12)] overflow-hidden"
         style={{
           minHeight: 'clamp(340px, 60vh, 500px)',
           scale,
@@ -118,8 +118,8 @@ function StepCard({ step, index, total }: { step: any; index: number; total: num
 
         {/* Top row */}
         <div className="relative flex items-start justify-between z-10 w-full shrink-0">
-          <div className="flex h-16 w-16 items-center justify-center rounded-[20px] bg-[var(--accent-glow)] border border-[var(--accent)]/15 shadow-inner">
-            <Icon size={32} weight="duotone" className="text-[var(--accent)]" />
+          <div className="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-[20px] bg-[var(--accent-glow)] border border-[var(--accent)]/15 shadow-inner">
+            <Icon size={28} weight="duotone" className="text-[var(--accent)] sm:w-8 sm:h-8" />
           </div>
           <span
             className="font-display font-black text-[var(--tx-1)] opacity-[0.04] leading-none select-none tracking-tighter"
@@ -141,14 +141,14 @@ function StepCard({ step, index, total }: { step: any; index: number; total: num
           <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[var(--tx-1)] leading-tight mb-4 tracking-tight">
             {step.title}
           </h3>
-          <p className="font-body text-base lg:text-lg font-light text-[var(--tx-2)] leading-relaxed max-w-[48ch]">
+          <p className="font-body text-[15px] sm:text-base lg:text-lg font-light text-[var(--tx-2)] leading-relaxed w-full sm:max-w-[48ch] break-words">
             {step.desc}
           </p>
         </div>
 
         {/* Bottom row */}
-        <div className="relative z-10 flex flex-col sm:flex-row gap-4 sm:items-center justify-between border-t border-[var(--br)] pt-6 mt-auto w-full shrink-0">
-          <span className="font-mono-fulgur text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-[var(--tx-3)]">
+        <div className="relative z-10 flex flex-col sm:flex-row gap-4 sm:items-center justify-between border-t border-[var(--br)] pt-5 sm:pt-6 mt-auto w-full shrink-0">
+          <span className="font-mono-fulgur text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-[var(--tx-3)] pr-4 sm:pr-0">
             {step.detail}
           </span>
           {/* Progress dots */}
