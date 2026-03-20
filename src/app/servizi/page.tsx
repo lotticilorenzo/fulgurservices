@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 export default function ServiziPage() {
   return (
-    <main className="min-h-screen bg-[var(--bg)] pt-32 pb-0 sm:pt-40">
+    <main className="min-h-[100dvh] bg-[var(--bg)] pt-32 pb-0 sm:pt-40">
       
       {/* HEADER SERVIZI */}
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8 mb-8 text-center flex flex-col items-center">

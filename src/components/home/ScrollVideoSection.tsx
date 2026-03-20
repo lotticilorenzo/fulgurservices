@@ -163,7 +163,7 @@ export function ScrollVideoSection() {
       aria-label="Scroll per scoprire il nostro processo"
     >
       {/* ── Sticky container ── */}
-      <div className="sticky top-0 h-screen w-full overflow-hidden bg-black">
+      <div className="sticky top-0 h-[100dvh] w-full overflow-hidden bg-black">
 
         {/* Video fullscreen scrubbed */}
         <video

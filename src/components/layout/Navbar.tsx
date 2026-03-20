@@ -228,7 +228,7 @@ export default function Navbar() {
             animate={{ opacity: 1, clipPath: 'circle(160% at calc(100% - 32px) 32px)' }}
             exit={{ opacity: 0, clipPath: 'circle(0% at calc(100% - 32px) 32px)' }}
             transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-[300] flex flex-col bg-[var(--bg)]/95 backdrop-blur-2xl h-[100dvh] overflow-hidden"
+            className="fixed inset-0 z-[300] flex flex-col bg-[var(--bg)]/95 backdrop-blur-2xl h-[100dvh] overflow-hidden overscroll-contain"
           >
             {/* Header del mobile overlay */}
             <div className="flex shrink-0 items-center justify-between px-6 py-4 border-b border-[var(--br)]">

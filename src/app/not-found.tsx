@@ -7,7 +7,7 @@ import { ArrowLeft, House } from '@phosphor-icons/react'
 
 export default function NotFound() {
   return (
-    <main className="relative min-h-screen bg-white flex items-center justify-center overflow-hidden">
+    <main className="relative min-h-[100dvh] bg-white flex items-center justify-center overflow-hidden">
       
       {/* Background dot grid */}
       <div

@@ -96,7 +96,7 @@ export function ContactForm() {
           aria-describedby={errors.nome ? 'cf-nome-err' : undefined}
           aria-invalid={!!errors.nome}
           {...register('nome')}
-          className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-4 py-3 font-sans text-sm text-[var(--tx-1)] focus:ring-2 focus:ring-[var(--accent)] outline-none transition-all focus:bg-white focus:shadow-[0_0_15px_var(--accent-glow)] aria-[invalid=true]:border-red-300"
+          className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-4 py-3 font-sans text-base text-[var(--tx-1)] appearance-none focus:ring-2 focus:ring-[var(--accent)] outline-none transition-all focus:bg-white focus:shadow-[0_0_15px_var(--accent-glow)] aria-[invalid=true]:border-red-300"
         />
         {errors.nome && (
           <span id="cf-nome-err" role="alert" className="flex items-center gap-1 text-xs text-red-500 font-medium">
@@ -116,7 +116,7 @@ export function ContactForm() {
             aria-describedby={errors.email ? 'cf-email-err' : undefined}
             aria-invalid={!!errors.email}
             {...register('email')}
-            className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-4 py-3 font-sans text-sm text-[var(--tx-1)] focus:ring-2 focus:ring-[var(--accent)] outline-none transition-all focus:bg-white focus:shadow-[0_0_15px_var(--accent-glow)] aria-[invalid=true]:border-red-300"
+            className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-4 py-3 font-sans text-base text-[var(--tx-1)] appearance-none focus:ring-2 focus:ring-[var(--accent)] outline-none transition-all focus:bg-white focus:shadow-[0_0_15px_var(--accent-glow)] aria-[invalid=true]:border-red-300"
           />
           {errors.email && (
             <span id="cf-email-err" role="alert" className="flex items-center gap-1 text-xs text-red-500 font-medium">
@@ -133,7 +133,7 @@ export function ContactForm() {
             aria-describedby={errors.tel ? 'cf-tel-err' : undefined}
             aria-invalid={!!errors.tel}
             {...register('tel')}
-            className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-4 py-3 font-sans text-sm text-[var(--tx-1)] focus:ring-2 focus:ring-[var(--accent)] outline-none transition-all focus:bg-white aria-[invalid=true]:border-red-300"
+            className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-4 py-3 font-sans text-base text-[var(--tx-1)] appearance-none focus:ring-2 focus:ring-[var(--accent)] outline-none transition-all focus:bg-white aria-[invalid=true]:border-red-300"
           />
           {errors.tel && (
             <span id="cf-tel-err" role="alert" className="flex items-center gap-1 text-xs text-red-500 font-medium">
@@ -152,7 +152,7 @@ export function ContactForm() {
           aria-describedby={errors.messaggio ? 'cf-msg-err' : undefined}
           aria-invalid={!!errors.messaggio}
           {...register('messaggio')}
-          className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-4 py-3 font-sans text-sm text-[var(--tx-1)] focus:ring-2 focus:ring-[var(--accent)] outline-none resize-none transition-all focus:bg-white focus:shadow-[0_0_15px_var(--accent-glow)] aria-[invalid=true]:border-red-300"
+          className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-4 py-3 font-sans text-base text-[var(--tx-1)] appearance-none focus:ring-2 focus:ring-[var(--accent)] outline-none resize-none transition-all focus:bg-white focus:shadow-[0_0_15px_var(--accent-glow)] aria-[invalid=true]:border-red-300"
         />
         {errors.messaggio && (
           <span id="cf-msg-err" role="alert" className="flex items-center gap-1 text-xs text-red-500 font-medium">

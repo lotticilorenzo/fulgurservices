@@ -57,7 +57,7 @@ export function LavoraConNoiClient() {
   }
 
   return (
-    <main className="min-h-screen bg-[var(--bg)] pt-24 lg:pt-32">
+    <main className="min-h-[100dvh] bg-[var(--bg)] pt-24 lg:pt-32">
       {/* HERO SECTION */}
       <section className="relative px-6 py-20 lg:py-32 overflow-hidden">
         <div className="mx-auto max-w-7xl relative z-10">
@@ -159,11 +159,11 @@ export function LavoraConNoiClient() {
                               >
                                 <div>
                                   <label className="block font-mono-fulgur text-[10px] uppercase tracking-widest text-[var(--accent)] mb-2">Nome e Cognome</label>
-                                  <input type="text" required placeholder="Mario Rossi" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-sm focus:ring-2 focus:ring-[var(--accent)] outline-none transition-all" />
+                                  <input type="text" required placeholder="Mario Rossi" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-base appearance-none focus:ring-2 focus:ring-[var(--accent)] outline-none transition-all" />
                                 </div>
                                 <div>
                                   <label className="block font-mono-fulgur text-[10px] uppercase tracking-widest text-[var(--accent)] mb-2">Email</label>
-                                  <input type="email" required placeholder="mario@email.it" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-sm focus:ring-2 focus:ring-[var(--accent)] outline-none transition-all" />
+                                  <input type="email" required placeholder="mario@email.it" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-base appearance-none focus:ring-2 focus:ring-[var(--accent)] outline-none transition-all" />
                                 </div>
                                 <div className="flex justify-end pt-4">
                                   <MagneticButton as="div">
@@ -181,7 +181,7 @@ export function LavoraConNoiClient() {
                               >
                                 <div>
                                   <label className="block font-mono-fulgur text-[10px] uppercase tracking-widest text-[var(--accent)] mb-2">Città di residenza</label>
-                                  <input type="text" required placeholder="es. Parma" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-sm focus:ring-2 focus:ring-[var(--accent)] outline-none transition-all" />
+                                  <input type="text" required placeholder="es. Parma" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-base appearance-none focus:ring-2 focus:ring-[var(--accent)] outline-none transition-all" />
                                 </div>
                                 <div>
                                   <label className="block font-mono-fulgur text-[10px] uppercase tracking-widest text-[var(--accent)] mb-2">Il tuo CV (Opzionale)</label>

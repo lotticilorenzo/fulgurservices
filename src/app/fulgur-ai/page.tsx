@@ -46,7 +46,7 @@ export default function FulgurAIPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[var(--bg)] pt-32 pb-0 sm:pt-40 overflow-hidden">
+    <main className="min-h-[100dvh] bg-[var(--bg)] pt-32 pb-0 sm:pt-40 overflow-hidden">
       
       {/* Background Decorative elements */}
       <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[var(--accent)]/10 rounded-full blur-[150px] pointer-events-none -z-10" />

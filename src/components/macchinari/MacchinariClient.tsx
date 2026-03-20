@@ -34,7 +34,7 @@ export function MacchinariClient() {
   }
 
   return (
-    <main className="bg-[var(--bg)] min-h-screen">
+    <main className="bg-[var(--bg)] min-h-[100dvh]">
 
       {/* ── HERO VIDEO ── */}
       <section className="relative flex h-[100dvh] items-center justify-center overflow-hidden">

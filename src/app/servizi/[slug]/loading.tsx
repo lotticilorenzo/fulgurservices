@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function LoadingSlug() {
   return (
-    <main className="bg-[var(--bg)] min-h-screen pt-32 sm:pt-40">
+    <main className="bg-[var(--bg)] min-h-[100dvh] pt-32 sm:pt-40">
       
       {/* BREADCRUMBS SKELETON */}
       <div className="mx-auto w-full max-w-4xl px-6 xl:px-8 mb-8">

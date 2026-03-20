@@ -63,7 +63,7 @@ export function GalleryClient() {
   }, [activeCategory])
 
   return (
-    <main className="min-h-screen bg-[var(--bg)] pt-24 pb-0 md:pt-32 lg:pt-40">
+    <main className="min-h-[100dvh] bg-[var(--bg)] pt-24 pb-0 md:pt-32 lg:pt-40">
       <WipeReveal direction="top">
         {/* HEADER */}
         <div className="mx-auto w-full max-w-7xl px-6 xl:px-8 mb-10 md:mb-16 text-center flex flex-col items-center">

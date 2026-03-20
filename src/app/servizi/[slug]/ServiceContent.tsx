@@ -25,7 +25,7 @@ export function ServiceContent({ service }: ServiceContentProps) {
   const IconComponent: React.ElementType = IconLookup[service.icon] ?? Icons.Briefcase
 
   return (
-    <main className="bg-[var(--bg)] min-h-screen pt-32 sm:pt-40 relative overflow-hidden">
+    <main className="bg-[var(--bg)] min-h-[100dvh] pt-32 sm:pt-40 relative overflow-hidden">
       
       {/* PARALLAX BACKGROUND TEXT — nascosto su mobile per ghost scroll prevention */}
       <div className="absolute top-[10%] left-0 w-full z-0 opacity-40 pointer-events-none hidden sm:block">

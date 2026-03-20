@@ -39,7 +39,7 @@ export default function TownPage({ params }: TownPageProps) {
   if (!town) notFound()
 
   return (
-    <main className="bg-[var(--bg)] min-h-screen">
+    <main className="bg-[var(--bg)] min-h-[100dvh]">
       {/* LOCAL HERO */}
       <section className="relative pt-32 pb-24 sm:pt-48 sm:pb-32 overflow-hidden border-b border-[var(--br)]">
         <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">

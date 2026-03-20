@@ -43,7 +43,7 @@ export default async function BlogPostPage(props: { params: Promise<{ slug: stri
   if (!post) notFound()
 
   return (
-    <main className="bg-[var(--bg)] min-h-screen pt-32 sm:pt-40">
+    <main className="bg-[var(--bg)] min-h-[100dvh] pt-32 sm:pt-40">
       <article>
         {/* Post Header */}
         <header className="mx-auto w-full max-w-4xl px-6 lg:px-8 mb-16">

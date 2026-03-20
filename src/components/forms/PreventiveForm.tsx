@@ -285,7 +285,7 @@ export function PreventiveForm() {
                     <label className="font-sans text-sm font-medium text-[var(--tx-1)]">Tipo di ambiente</label>
                     <select
                       {...register('tipo_ambiente')}
-                      className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-5 py-4 font-sans text-sm text-[var(--tx-1)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:shadow-[0_0_15px_var(--accent-glow)] focus:border-transparent transition-all outline-none appearance-none focus:bg-white"
+                      className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-5 py-4 font-sans text-base text-[var(--tx-1)] appearance-none focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:shadow-[0_0_15px_var(--accent-glow)] focus:border-transparent transition-all outline-none appearance-none focus:bg-white"
                     >
                       <option value="">Seleziona...</option>
                       <option value="Ufficio / Spazio commerciale">Ufficio / Spazio commerciale</option>
@@ -309,7 +309,7 @@ export function PreventiveForm() {
                       type="number"
                       placeholder="es. 250"
                       {...register('metratura')}
-                      className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-5 py-4 font-sans text-sm text-[var(--tx-1)] placeholder-[var(--tx-3)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:shadow-[0_0_15px_var(--accent-glow)] focus:border-transparent transition-all outline-none focus:bg-white"
+                      className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-5 py-4 font-sans text-base text-[var(--tx-1)] appearance-none placeholder-[var(--tx-3)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:shadow-[0_0_15px_var(--accent-glow)] focus:border-transparent transition-all outline-none focus:bg-white"
                     />
                     {errors.metratura && (
                       <p className="flex items-center gap-2 text-sm text-red-400 mt-1"><Warning size={15} /> {errors.metratura.message}</p>
@@ -323,7 +323,7 @@ export function PreventiveForm() {
                       placeholder="Piani senza ascensore, particolarità specifiche..."
                       rows={3}
                       {...register('note_ambiente')}
-                      className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-5 py-4 font-sans text-sm text-[var(--tx-1)] placeholder-[var(--tx-3)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:shadow-[0_0_15px_var(--accent-glow)] focus:border-transparent transition-all outline-none resize-none focus:bg-white"
+                      className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-5 py-4 font-sans text-base text-[var(--tx-1)] appearance-none placeholder-[var(--tx-3)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:shadow-[0_0_15px_var(--accent-glow)] focus:border-transparent transition-all outline-none resize-none focus:bg-white"
                     />
                   </div>
                 </div>
@@ -414,7 +414,7 @@ export function PreventiveForm() {
                       type="text"
                       placeholder="es. Parma, Fidenza, Salsomaggiore..."
                       {...register('citta')}
-                      className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-5 py-4 font-sans text-sm text-[var(--tx-1)] placeholder-[var(--tx-3)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:shadow-[0_0_15px_var(--accent-glow)] focus:border-transparent transition-all outline-none focus:bg-white"
+                      className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-5 py-4 font-sans text-base text-[var(--tx-1)] appearance-none placeholder-[var(--tx-3)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:shadow-[0_0_15px_var(--accent-glow)] focus:border-transparent transition-all outline-none focus:bg-white"
                     />
                     {errors.citta && (
                       <p className="flex items-center gap-2 text-sm text-red-400 mt-1"><Warning size={15} /> {errors.citta.message}</p>
@@ -427,7 +427,7 @@ export function PreventiveForm() {
                       type="text"
                       placeholder="via / piazza..."
                       {...register('indirizzo')}
-                      className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-5 py-4 font-sans text-sm text-[var(--tx-1)] placeholder-[var(--tx-3)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:shadow-[0_0_15px_var(--accent-glow)] focus:border-transparent transition-all outline-none focus:bg-white"
+                      className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-5 py-4 font-sans text-base text-[var(--tx-1)] appearance-none placeholder-[var(--tx-3)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:shadow-[0_0_15px_var(--accent-glow)] focus:border-transparent transition-all outline-none focus:bg-white"
                     />
                   </div>
                 </div>
@@ -456,7 +456,7 @@ export function PreventiveForm() {
                       <input
                         type="text"
                         {...register('nome')}
-                        className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-4 py-3.5 font-sans text-sm text-[var(--tx-1)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:shadow-[0_0_15px_var(--accent-glow)] outline-none focus:bg-white transition-all"
+                        className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-4 py-3.5 font-sans text-base text-[var(--tx-1)] appearance-none focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:shadow-[0_0_15px_var(--accent-glow)] outline-none focus:bg-white transition-all"
                       />
                       {errors.nome && <p className="flex items-center gap-1 text-xs text-red-400"><Warning size={14} /> {errors.nome.message}</p>}
                     </div>
@@ -466,7 +466,7 @@ export function PreventiveForm() {
                       <input
                         type="text"
                         {...register('azienda')}
-                        className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-4 py-3.5 font-sans text-sm text-[var(--tx-1)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:shadow-[0_0_15px_var(--accent-glow)] outline-none focus:bg-white transition-all"
+                        className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-4 py-3.5 font-sans text-base text-[var(--tx-1)] appearance-none focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:shadow-[0_0_15px_var(--accent-glow)] outline-none focus:bg-white transition-all"
                       />
                     </div>
                   </div>
@@ -477,7 +477,7 @@ export function PreventiveForm() {
                       <input
                         type="email"
                         {...register('email')}
-                        className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-4 py-3.5 font-sans text-sm text-[var(--tx-1)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:shadow-[0_0_15px_var(--accent-glow)] outline-none focus:bg-white transition-all"
+                        className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-4 py-3.5 font-sans text-base text-[var(--tx-1)] appearance-none focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:shadow-[0_0_15px_var(--accent-glow)] outline-none focus:bg-white transition-all"
                       />
                       {errors.email && <p className="flex items-center gap-1 text-xs text-red-400"><Warning size={14} /> {errors.email.message}</p>}
                     </div>
@@ -487,7 +487,7 @@ export function PreventiveForm() {
                       <input
                         type="tel"
                         {...register('tel')}
-                        className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-4 py-3.5 font-sans text-sm text-[var(--tx-1)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:shadow-[0_0_15px_var(--accent-glow)] outline-none focus:bg-white transition-all"
+                        className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-4 py-3.5 font-sans text-base text-[var(--tx-1)] appearance-none focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:shadow-[0_0_15px_var(--accent-glow)] outline-none focus:bg-white transition-all"
                       />
                       {errors.tel && <p className="flex items-center gap-1 text-xs text-red-400"><Warning size={14} /> {errors.tel.message}</p>}
                     </div>
@@ -498,7 +498,7 @@ export function PreventiveForm() {
                     <textarea
                       rows={3}
                       {...register('note')}
-                      className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-4 py-3.5 font-sans text-sm text-[var(--tx-1)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:shadow-[0_0_15px_var(--accent-glow)] outline-none resize-none focus:bg-white transition-all"
+                      className="w-full bg-[var(--bg-2)] border border-[var(--br)] rounded-xl px-4 py-3.5 font-sans text-base text-[var(--tx-1)] appearance-none focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:shadow-[0_0_15px_var(--accent-glow)] outline-none resize-none focus:bg-white transition-all"
                     />
                   </div>
 

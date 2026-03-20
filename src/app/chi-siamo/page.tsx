@@ -40,7 +40,7 @@ const VALORI = [
 
 export default function ChiSiamoPage() {
   return (
-    <main className="bg-[var(--bg)] min-h-screen pt-24 sm:pt-40">
+    <main className="bg-[var(--bg)] min-h-[100dvh] pt-24 sm:pt-40">
       
       {/* HERO STORIA */}
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8 mb-16 sm:mb-20 text-center flex flex-col items-center">

@@ -127,7 +127,7 @@ function PreventivoModal({ onClose }: { onClose: () => void }) {
         </div>
 
         {/* Body */}
-        <div className="px-6 py-6 min-h-[260px]">
+        <div className="px-6 py-6 min-h-[260px] overflow-y-auto overscroll-contain">
           <AnimatePresence mode="wait">
 
             {/* Step 0 — Servizio */}

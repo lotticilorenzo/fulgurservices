@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function PreventivoPage() {
   return (
-    <main className="min-h-screen bg-[var(--bg)] pt-32 pb-24 sm:pt-40 sm:pb-32">
+    <main className="min-h-[100dvh] bg-[var(--bg)] pt-32 pb-24 sm:pt-40 sm:pb-32">
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8">
         
         {/* Header Section */}
