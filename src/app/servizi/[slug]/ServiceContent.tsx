@@ -14,6 +14,7 @@ import { AIChatInterface } from '@/components/ai/AIChatInterface'
 import { BeforeAfterSlider } from '@/components/ui/BeforeAfterSlider'
 import { CASE_STUDIES } from '@/lib/case-studies'
 import { Service } from '@/lib/services-data'
+import { CTASection } from '@/components/home/CTASection'
 
 interface ServiceContentProps {
   service: Service
@@ -253,6 +254,7 @@ export function ServiceContent({ service }: ServiceContentProps) {
         </WipeReveal>
       </div>
 
+      <CTASection />
     </main>
   )
 }

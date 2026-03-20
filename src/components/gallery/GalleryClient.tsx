@@ -37,7 +37,7 @@ const GALLERY_ITEMS = [
   { id: 14, src: '/images/fulgur-service-pulizie-sostenibili.jpg', alt: 'Pulizie sostenibili prodotti eco-certificati Fulgur Service Parma', label: 'Sostenibilità', category: 'azienda', span: 'col-span-1 row-span-1' },
   { id: 15, src: '/images/operatori-pulizie-professionali-parma.jpg', alt: 'Operatori pulizie professionali al lavoro a Parma — Fulgur Service', label: 'I Nostri Operatori', category: 'azienda', span: 'col-span-1 row-span-2' },
   { id: 16, src: '/images/servizi/pulizie-palestre-strutture-sportive-parma.jpg', alt: 'Pulizie palestre strutture sportive a Parma — Fulgur Service', label: 'Strutture Sportive', category: 'industriali', span: 'col-span-1 row-span-1' },
-  { id: 17, src: '/images/fulgur-service-van-ai.png', alt: "La flotta di Fulgur Service — furgoni moderni e attrezzati sempre pronti all'intervento a Parma", label: 'La Nostra Flotta', category: 'azienda', span: 'col-span-1 row-span-1' },
+  { id: 17, src: '/images/real-van-fulgur.webp', alt: "La flotta di Fulgur Service — furgoni moderni e attrezzati sempre pronti all'intervento a Parma", label: 'La Nostra Flotta', category: 'azienda', span: 'col-span-1 row-span-1' },
   { id: 18, src: '/images/servizi/pulizia-facciate-parma.jpg', alt: 'Pulizia facciate edifici a Parma — Fulgur Service', label: 'Pulizia Facciate', category: 'speciali', span: 'col-span-1 row-span-1' },
   { id: 19, src: '/images/gallery/gallery-project-1.jpg', alt: 'Prima e Dopo Pulizie a Fondo Parma', label: 'Prima E Dopo', category: 'speciali', span: 'col-span-1 row-span-1' },
   { id: 20, src: '/images/gallery/gallery-project-2.jpg', alt: 'Prima e Dopo Trattamento Superfici', label: 'Prima E Dopo', category: 'industriali', span: 'col-span-1 row-span-1' },

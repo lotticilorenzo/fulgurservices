@@ -17,7 +17,7 @@ export function CTASection() {
         suppressHydrationWarning
         aria-hidden="true"
         className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-        poster="/images/fulgur-service-team-ai.png"
+        poster="/images/real-team-fulgur.webp"
         autoPlay
         loop
         muted

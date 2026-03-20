@@ -59,8 +59,8 @@ export default function ChiSiamoPage() {
         <ScrollReveal>
           <div className="w-full aspect-[4/3] sm:aspect-[21/9] rounded-3xl overflow-hidden relative border border-[var(--br)] bg-[var(--bg-2)] shadow-xl">
             <Image
-          src="/images/fulgur-service-team-ai.png"
-          alt="Team Fulgur Service — professionisti delle pulizie a Parma"
+          src="/images/real-team-fulgur.webp"
+          alt="La nuova generazione di Fulgur Service con il fondatore"
           fill
           className="object-cover transition-transform duration-700 hover:scale-105"
           sizes="100vw"
@@ -183,7 +183,7 @@ export default function ChiSiamoPage() {
             <ScrollReveal>
                <div className="relative aspect-square rounded-[3rem] overflow-hidden border border-[var(--br)] shadow-2xl bg-[var(--bg-2)] hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] transition-all duration-700">
                   <Image
-                     src="/images/fulgur-service-team-ai.png"
+                     src="/images/real-team-fulgur.webp"
                      alt="Il team Fulgur Service — specialisti di pulizie professionali a Parma"
                      fill
                      className="object-cover hover:scale-105 transition-transform duration-1000"

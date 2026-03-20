@@ -43,7 +43,7 @@ export function MacchinariClient() {
           suppressHydrationWarning
           aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover pointer-events-none"
-          poster="/images/fulgur-service-team-ai.png"
+          poster="/images/real-team-fulgur.webp"
           autoPlay
           loop
           muted

@@ -73,8 +73,8 @@ export function HeroSection() {
       <video
         suppressHydrationWarning
         aria-hidden="true"
-        className="absolute inset-0 h-full w-full object-cover pointer-events-none"
-        poster="/images/fulgur-service-team-ai.png"
+        className="absolute inset-0 h-[100dvh] w-full object-cover pointer-events-none"
+        poster="/images/real-team-fulgur.webp"
         autoPlay
         loop
         muted
@@ -230,8 +230,8 @@ export function HeroSection() {
             <div className="relative h-full w-full overflow-hidden rounded-full border border-[var(--br-h)] bg-[var(--bg-2)] p-1.5 shadow-[0_20px_60px_rgba(42,140,122,0.12)]">
               <div className="relative h-full w-full overflow-hidden rounded-full">
                 <Image
-                  src="/images/fulgur-service-team-ai.png"
-                  alt="Il team Fulgur Service a Parma — impresa di pulizie professionali"
+                  src="/images/real-team-fulgur.webp"
+                  alt="Operatori Fulgur Service a Parma — impresa di pulizie professionali"
                   fill
                   sizes="(max-width: 640px) 320px, (max-width: 1024px) 380px, 460px"
                   className="object-cover transition-transform duration-700 hover:scale-105"
