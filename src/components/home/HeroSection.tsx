@@ -69,16 +69,18 @@ export function HeroSection() {
       ref={containerRef}
       className="relative flex sm:min-h-[100dvh] w-full items-center overflow-hidden bg-[var(--bg)] pt-[120px] pb-24 md:pt-28 md:pb-16 lg:pt-36 lg:pb-20 xl:pt-[140px]"
     >
-      {/* Video sfondo in loop (ottimizzato) */}
+      {/* Video sfondo (Ripristinato "entrata-fulgur" con preload ottimizzato per ridurre scatti) */}
       <video
         suppressHydrationWarning
         aria-hidden="true"
         className="absolute inset-0 h-full w-full object-cover pointer-events-none"
-        src="/videos/robot-pulizie.mp4"
+        src="/videos/entrata-fulgur.mp4"
         autoPlay
         loop
         muted
         playsInline
+        preload="auto"
+        disablePictureInPicture
       />
 
       {/* Overlay scuro — mantiene brand leggibile col contrasto del video */}
