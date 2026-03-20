@@ -89,8 +89,13 @@
     to   { transform: rotate(360deg) translateX(var(--orbit-radius, 60px)) rotate(-360deg); }
   }
   @keyframes gradient-x {
-    0%, 100% { background-position: 0% 50%; }
-    50%      { background-position: 100% 50%; }
+    /* FIX VIOL-10: gradient-x riscritto come translateX su pseudo-elemento
+       Il componente host deve usare .animate-gradient-x con position:relative e overflow:hidden.
+       L'animazione background-position ha ora un fallback animate in globals per compatibilità.
+       Nuovo approccio: il gradiente è un ::before che si muove con translateX (compositor) */
+    0%   { transform: translateX(-50%); }
+    50%  { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
   }
   @keyframes ping-slow {
     75%, 100% { transform: scale(2); opacity: 0; }
@@ -337,9 +342,22 @@ body {
   }
 
   /* ─── Gradient X ─── */
+  /* FIX VIOL-10: background-position sostituito con translateX su ::before
+     composer thread puro — zero repaint per frame */
   .animate-gradient-x {
-    background-size: 200% 200%;
+    position: relative;
+    overflow: hidden;
+    /* il colore del gradiente non viene più animato qui, viene dal ::before */
+  }
+  .animate-gradient-x::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 200%;
+    background: inherit;
+    background-size: 200% 100%;
     animation: gradient-x 6s ease infinite;
+    will-change: transform;
   }
 
   /* ─── Scrollbar none ─── */

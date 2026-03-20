@@ -3,6 +3,10 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
+    // VIOL-06: breakpoint ottimizzati per mobile-first — evita immagini sovradimensionate
+    deviceSizes: [375, 640, 750, 828, 1080, 1200, 1920],
+    imageSizes:  [16, 32, 64, 96, 128, 256, 384, 512],
+    minimumCacheTTL: 2592000, // 30 giorni
     remotePatterns: [
       {
         protocol: 'https',

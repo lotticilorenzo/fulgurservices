@@ -24,8 +24,8 @@ export function IntroLoader() {
 
     setShow(true)
 
-    // Dopo 2s avvia l'uscita
-    const t = setTimeout(() => setExiting(true), 2000)
+    // VIOL-09: ridotto da 2000ms a 1000ms — abbassa LCP misurato da Lighthouse
+    const t = setTimeout(() => setExiting(true), 1000)
     return () => clearTimeout(t)
   }, [])
 
@@ -36,9 +36,11 @@ export function IntroLoader() {
       {!exiting && (
         <motion.div
           key="intro"
+          data-nosnippet
+          aria-hidden="true"
           className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-white select-none pointer-events-none"
           exit={{ y: '-100%' }}
-          transition={{ duration: 0.85, ease: EASE_IN }}
+          transition={{ duration: 0.7, ease: EASE_IN }}
         >
           {/* ── Official Logo ── */}
           <motion.div

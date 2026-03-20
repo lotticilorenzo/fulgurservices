@@ -80,7 +80,7 @@ export function HeroSection() {
         loop
         muted
         playsInline
-        preload="auto"
+        preload="none"
         disablePictureInPicture
       />
 

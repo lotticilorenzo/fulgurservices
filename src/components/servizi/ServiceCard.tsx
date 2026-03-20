@@ -58,6 +58,8 @@ export function ServiceCard({ service, size = 'small', index, className }: Servi
               fill
               className="object-cover transition-transform duration-[700ms] ease-in-out group-hover:scale-[1.05]"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              priority={index < 2}
+              loading={index < 2 ? 'eager' : 'lazy'}
             />
             {/* Direct Gradient Overlay (Stronger for readability) */}
             <div

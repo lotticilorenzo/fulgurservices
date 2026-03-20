@@ -22,16 +22,29 @@ export function CustomCursor() {
     if (isTouch) return
     setIsTouchDevice(false)
 
+    // VIOL-11: RAF guard — evita saturazione main thread su display a 120Hz
+    let rafPending = false
+    let lastX = -200
+    let lastY = -200
+
     const onMove = (e: MouseEvent) => {
-      mouseX.set(e.clientX)
-      mouseY.set(e.clientY)
+      lastX = e.clientX
+      lastY = e.clientY
       setVisible(true)
+      if (!rafPending) {
+        rafPending = true
+        requestAnimationFrame(() => {
+          mouseX.set(lastX)
+          mouseY.set(lastY)
+          rafPending = false
+        })
+      }
     }
 
     const onLeave = () => setVisible(false)
     const onEnter = () => setVisible(true)
-    const onDown = () => setClicking(true)
-    const onUp = () => setClicking(false)
+    const onDown  = () => setClicking(true)
+    const onUp    = () => setClicking(false)
 
     // Event delegation — works for dynamic elements too
     const onOver = (e: MouseEvent) => {
