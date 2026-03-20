@@ -44,10 +44,12 @@ export function MacchinariClient() {
           aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover pointer-events-none"
           src="/videos/macchina-pulitrice.mp4"
+          poster="/images/fulgur-service-team-ai.png"
           autoPlay
           loop
           muted
           playsInline
+          preload="none"
         />
 
         {/* Overlay scuro + gradiente in basso per fade verso contenuto bianco */}

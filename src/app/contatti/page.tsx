@@ -36,7 +36,7 @@ export default function ContattiPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
               
               <div className="flex flex-col gap-4">
-                <div className="h-12 w-12 rounded-2xl bg-[var(--bg-card)] border border-[var(--br)] flex items-center justify-center text-[var(--accent)]">
+                <div className="h-12 w-12 rounded-2xl bg-[var(--bg-card)] border border-[var(--br)] flex items-center justify-center text-[var(--accent)]" aria-hidden="true">
                   <Phone size={24} weight="fill" />
                 </div>
                 <div>
@@ -48,7 +48,7 @@ export default function ContattiPage() {
               </div>
 
               <div className="flex flex-col gap-4">
-                <div className="h-12 w-12 rounded-2xl bg-[var(--bg-card)] border border-[var(--br)] flex items-center justify-center text-[var(--accent)]">
+                <div className="h-12 w-12 rounded-2xl bg-[var(--bg-card)] border border-[var(--br)] flex items-center justify-center text-[var(--accent)]" aria-hidden="true">
                   <EnvelopeSimple size={24} weight="fill" />
                 </div>
                 <div>
@@ -60,7 +60,7 @@ export default function ContattiPage() {
               </div>
 
               <div className="flex flex-col gap-4">
-                <div className="h-12 w-12 rounded-2xl bg-[var(--bg-card)] border border-[var(--br)] flex items-center justify-center text-[var(--accent)]">
+                <div className="h-12 w-12 rounded-2xl bg-[var(--bg-card)] border border-[var(--br)] flex items-center justify-center text-[var(--accent)]" aria-hidden="true">
                   <MapPin size={24} weight="fill" />
                 </div>
                 <div>
@@ -73,7 +73,7 @@ export default function ContattiPage() {
               </div>
 
               <div className="flex flex-col gap-4">
-                <div className="h-12 w-12 rounded-2xl bg-[var(--bg-card)] border border-[var(--br)] flex items-center justify-center text-[var(--accent)]">
+                <div className="h-12 w-12 rounded-2xl bg-[var(--bg-card)] border border-[var(--br)] flex items-center justify-center text-[var(--accent)]" aria-hidden="true">
                   <Clock size={24} weight="fill" />
                 </div>
                 <div>
@@ -108,7 +108,7 @@ export default function ContattiPage() {
 
               {/* ZONE SERVITE */}
               <div className="mt-4 p-5 sm:p-8 rounded-[2rem] sm:rounded-3xl bg-[var(--bg-card)] border border-[var(--br)] hover:shadow-[0_15px_30px_rgba(42,140,122,0.12)] hover:-translate-y-1 transition-all duration-300">
-                <h4 className="font-display font-bold text-[var(--tx-1)] text-lg mb-4">Dove operiamo</h4>
+                <h3 className="font-display font-bold text-[var(--tx-1)] text-lg mb-4">Dove operiamo</h3>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-y-3 gap-x-6">
                   {['Parma (Città)', 'Collecchio', 'Fidenza', 'Salsomaggiore', 'Langhirano', 'Traversetolo', 'Montechiarugolo', 'Felino', 'Sorbolo Mezzani', 'Noceto'].map((city) => (
                     <div key={city} className="flex items-center gap-2 font-sans text-sm text-[var(--tx-2)]">

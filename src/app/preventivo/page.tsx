@@ -8,6 +8,8 @@ import { SectionLabel } from '@/components/ui/SectionLabel'
 export const metadata: Metadata = {
   title: METADATA.preventivo.title,
   description: METADATA.preventivo.description,
+  openGraph: METADATA.preventivo.openGraph,                 // FIX SEO-01
+  alternates: { canonical: 'https://www.fulgurservice.it/preventivo' },
 }
 
 export default function PreventivoPage() {

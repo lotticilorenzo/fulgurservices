@@ -83,6 +83,8 @@ export default function ChiSiamoPage() {
       {/* TIMELINE / STORIA */}
       <div className="w-full bg-[var(--bg-2)] border-t border-[var(--br)] py-16 md:py-24">
         <div className="mx-auto w-full max-w-4xl px-5 sm:px-6 xl:px-8">
+          {/* FIX SEM-01: h2 sr-only ripristina cascata H1→H2→H3→H4 senza alterare il design */}
+          <h2 className="sr-only">La nostra storia</h2>
           <SectionLabel className="mb-10 lg:mb-12 text-center">— 30 ANNI DI ESPERIENZA</SectionLabel>
           <div className="relative border-l border-[var(--br)] ml-4 sm:ml-8 flex flex-col gap-12 sm:gap-16">
             
@@ -182,9 +184,10 @@ export default function ChiSiamoPage() {
                <div className="relative aspect-square rounded-[3rem] overflow-hidden border border-[var(--br)] shadow-2xl bg-[var(--bg-2)] hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] transition-all duration-700">
                   <Image
                      src="/images/fulgur-service-team-ai.png"
-                     alt="Operatori Fulgur Service"
+                     alt="Il team Fulgur Service — specialisti di pulizie professionali a Parma"
                      fill
                      className="object-cover hover:scale-105 transition-transform duration-1000"
+                     sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-tr from-[var(--accent)]/10 to-transparent pointer-events-none" />
                </div>

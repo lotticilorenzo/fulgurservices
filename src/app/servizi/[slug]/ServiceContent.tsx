@@ -36,9 +36,9 @@ export function ServiceContent({ service }: ServiceContentProps) {
       {/* BREADCRUMBS */}
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8 mb-8 relative z-10">
         <nav aria-label="Breadcrumb" className="flex items-center gap-2 font-mono-fulgur text-[10px] font-bold tracking-[0.2em] uppercase text-[var(--tx-3)]">
-          <Link href="/" className="hover:text-[var(--accent)] transition-colors">Home</Link>
+          <Link href="/" className="hover:text-[var(--accent)] transition-colors" aria-label="Vai alla home page">Home</Link>
           <CaretRight size={10} aria-hidden="true" />
-          <Link href="/servizi" className="hover:text-[var(--accent)] transition-colors">Servizi</Link>
+          <Link href="/servizi" className="hover:text-[var(--accent)] transition-colors" aria-label="Vai a tutti i servizi">Servizi</Link>
           <CaretRight size={10} aria-hidden="true" />
           <span className="text-[var(--tx-1)]" aria-current="page">{service.title}</span>
         </nav>
