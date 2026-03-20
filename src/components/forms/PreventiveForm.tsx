@@ -156,9 +156,9 @@ export function PreventiveForm() {
       
       {/* HEADER DELLA FORM: PROGRESS BAR */}
       {!isSuccess && (
-        <div className="w-full bg-[var(--bg-2)] px-8 py-5 border-b border-[var(--br)] flex flex-col gap-3">
+        <div className="w-full bg-[var(--bg-2)] px-5 py-4 sm:px-8 sm:py-5 border-b border-[var(--br)] flex flex-col gap-3">
           <div className="flex items-center justify-between">
-            <span className="font-mono-fulgur text-xs font-bold tracking-widest uppercase text-[var(--tx-1)]">
+            <span className="font-mono-fulgur text-[10px] sm:text-xs font-bold tracking-widest uppercase text-[var(--tx-1)]">
               Preventivo Rapido
             </span>
             <span className="font-mono-fulgur text-xs font-bold tracking-widest uppercase text-[var(--accent)]">
@@ -185,7 +185,7 @@ export function PreventiveForm() {
       )}
 
       {/* FORM CONTENT CONTAINER */}
-      <div className="relative min-h-[480px] w-full p-6 md:p-8 lg:p-12">
+      <div className="relative min-h-[480px] w-full p-5 sm:p-6 md:p-8 lg:p-12">
         <form onSubmit={handleSubmit(onSubmit)} className="h-full">
           {/* Honeypot field - Hidden from users */}
           <div className="hidden" aria-hidden="true">
@@ -571,7 +571,7 @@ export function PreventiveForm() {
 
       {/* ERRORE SUBMIT INLINE */}
       {submitError && (
-        <div role="alert" className="mx-8 mb-0 mt-[-8px] flex items-start gap-2.5 rounded-xl border border-red-200 bg-red-50 px-5 py-3.5 text-sm text-red-700">
+        <div role="alert" className="mx-5 sm:mx-8 mb-0 mt-[-8px] flex items-start gap-2.5 rounded-xl border border-red-200 bg-red-50 px-5 py-3.5 text-sm text-red-700">
           <Warning size={16} weight="bold" className="mt-0.5 shrink-0" />
           <span className="font-sans">{submitError}</span>
         </div>
@@ -579,14 +579,14 @@ export function PreventiveForm() {
 
       {/* FOOTER ACTIONS (Navigazione) */}
       {!isSuccess && (
-        <div className="w-full bg-[var(--bg-2)] px-8 py-5 border-t border-[var(--br)] flex items-center justify-between">
+        <div className="w-full bg-[var(--bg-2)] px-5 py-4 sm:px-8 sm:py-5 border-t border-[var(--br)] flex items-center justify-between gap-2 sm:gap-4">
           <div>
             {step > 1 && (
               <button
                 type="button"
                 onClick={goBack}
                 disabled={isSubmitting}
-                className="flex items-center gap-2 font-mono-fulgur text-xs font-bold uppercase tracking-widest text-[var(--tx-2)] hover:text-[var(--tx-1)] transition-colors disabled:opacity-50"
+                className="flex items-center gap-1 sm:gap-2 font-mono-fulgur text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[var(--tx-2)] hover:text-[var(--tx-1)] transition-colors disabled:opacity-50"
               >
                 <CaretLeft size={16} weight="bold" /> Indietro
               </button>
@@ -597,7 +597,7 @@ export function PreventiveForm() {
               <button
                 type="button"
                 onClick={goNext}
-                className="flex items-center gap-2 px-6 py-3 rounded-xl bg-[var(--accent)] font-display text-sm font-bold text-white shadow-[0_10px_30px_rgba(42,140,122,0.1)] hover:scale-105 active:scale-95 transition-transform"
+                className="flex items-center gap-1 sm:gap-2 px-5 sm:px-6 py-3 rounded-xl bg-[var(--accent)] font-display text-[13px] sm:text-sm font-bold text-white shadow-[0_10px_30px_rgba(42,140,122,0.1)] hover:scale-105 active:scale-95 transition-transform"
               >
                 Continua →
               </button>
@@ -606,7 +606,7 @@ export function PreventiveForm() {
                  // Intercetta click esterno e fa scattare il submit di react-hook-form
                 onClick={handleSubmit(onSubmit)}
                 disabled={isSubmitting}
-                className="relative overflow-hidden flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[var(--accent-d)] font-display text-sm font-bold text-white shadow-[0_15px_40px_rgba(42,140,122,0.1)] hover:brightness-110 active:scale-95 hover:-translate-y-0.5 transition-all disabled:opacity-75 disabled:transform-none disabled:cursor-not-allowed group"
+                className="relative overflow-hidden flex items-center justify-center gap-2 px-4 sm:px-8 py-3 sm:py-3.5 rounded-xl bg-[var(--accent-d)] font-display text-[12px] sm:text-sm font-bold text-white shadow-[0_15px_40px_rgba(42,140,122,0.1)] hover:brightness-110 active:scale-95 hover:-translate-y-0.5 transition-all disabled:opacity-75 disabled:transform-none disabled:cursor-not-allowed group text-center"
               >
                 {/* Effetto Shimmering loading state */}
                 {isSubmitting && (

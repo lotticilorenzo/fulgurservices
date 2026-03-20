@@ -13,15 +13,15 @@ export const metadata: Metadata = {
 export default function PreventivoPage() {
   return (
     <main className="min-h-screen bg-[var(--bg)] pt-32 pb-24 sm:pt-40 sm:pb-32">
-      <div className="mx-auto w-full max-w-7xl px-6 xl:px-8">
+      <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8">
         
         {/* Header Section */}
-        <div className="mb-16 text-center max-w-3xl mx-auto flex flex-col items-center">
+        <div className="mb-12 sm:mb-16 text-center max-w-3xl mx-auto flex flex-col items-center">
           <SectionLabel className="mb-4">— PREVENTIVO GRATUITO E SENZA IMPEGNO</SectionLabel>
-          <h1 className="font-display text-3xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl lg:text-6xl">
+          <h1 className="font-display text-[32px] sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--tx-1)] text-balance leading-[1.1]">
             Raccontaci il tuo <span className="text-[var(--accent)]">spazio.</span>
           </h1>
-          <p className="mt-6 font-sans text-lg font-light text-[var(--tx-2)] sm:text-xl leading-relaxed">
+          <p className="mt-4 sm:mt-6 font-sans text-base sm:text-xl font-light text-[var(--tx-2)] leading-relaxed text-balance">
             Rispondi a poche semplici domande per permetterci di studiare la soluzione perfetta per te. Il preventivo elaborato arriverà entro 24 ore.
           </p>
         </div>
