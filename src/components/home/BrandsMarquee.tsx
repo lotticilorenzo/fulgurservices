@@ -25,20 +25,20 @@ const EASE = [0.16, 1, 0.3, 1] as const
 export function BrandsMarquee() {
   return (
     <section className="relative w-full border-y border-[var(--br)] bg-[var(--bg-2)] py-16 lg:py-24 overflow-hidden">
-      <div className="mx-auto w-full max-w-7xl px-6 xl:px-8">
+      <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8">
 
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-12 lg:mb-16">
           <div>
             <SectionLabel className="mb-4">— I NOSTRI PARTNER</SectionLabel>
-            <h2 className="font-display text-2xl sm:text-3xl font-extrabold tracking-tight text-[var(--tx-1)]">
+            <h2 className="font-display text-2xl sm:text-3xl font-extrabold tracking-tight text-[var(--tx-1)] text-balance">
               Operiamo con i migliori<br className="hidden sm:block" />
               {' '}<span className="text-[var(--accent)]">macchinari al mondo.</span>
             </h2>
           </div>
           <Link
             href="/macchinari"
-            className="inline-flex items-center gap-2 rounded-full border border-[var(--br-h)] bg-white px-5 py-2.5 font-mono-fulgur text-[10px] font-bold uppercase tracking-widest text-[var(--tx-2)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors shrink-0 self-start sm:self-auto"
+            className="inline-flex min-h-[44px] items-center gap-2 rounded-full border border-[var(--br-h)] bg-white px-5 py-2.5 font-mono-fulgur text-[10px] font-bold uppercase tracking-widest text-[var(--tx-2)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors shrink-0 self-start sm:self-auto"
           >
             Scopri tutti
             <ArrowUpRight size={12} weight="bold" />
@@ -57,7 +57,7 @@ export function BrandsMarquee() {
             >
               <Link
                 href="/macchinari"
-                className="group flex h-20 sm:h-24 items-center justify-center rounded-2xl border border-[var(--br)] bg-white px-4 py-3 transition-all duration-300 hover:border-[var(--accent)] hover:shadow-[0_8px_24px_rgba(78,203,160,0.12)] hover:-translate-y-0.5"
+                className="group flex min-h-[56px] sm:h-24 items-center justify-center rounded-2xl border border-[var(--br)] bg-white px-4 py-3 transition-all duration-300 hover:border-[var(--accent)] hover:shadow-[0_8px_24px_rgba(78,203,160,0.12)] hover:-translate-y-0.5"
               >
                 <div className="relative h-10 w-full">
                   <Image

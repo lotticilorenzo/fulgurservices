@@ -101,7 +101,7 @@ export function ScrollVideoSection() {
   /* ─── MOBILE: layout statico pulito a card chiare ─── */
   if (isMobile) {
     return (
-      <section ref={sectionRef} className="relative bg-[var(--bg)] py-16 px-6 sm:px-8 border-t border-b border-[var(--br)] overflow-hidden">
+      <section ref={sectionRef} className="relative bg-[var(--bg)] py-16 px-5 sm:px-8 border-t border-b border-[var(--br)] overflow-hidden">
         {/* Decorative background element */}
         <div className="absolute top-0 right-0 -m-32 w-96 h-96 bg-[var(--accent)]/5 rounded-full blur-3xl pointer-events-none" />
         
@@ -110,7 +110,7 @@ export function ScrollVideoSection() {
             <span className="font-mono-fulgur text-xs font-bold text-[var(--accent)] tracking-widest uppercase block mb-3">
               Processo Operativo
             </span>
-            <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-[var(--tx-1)]">
+            <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-[var(--tx-1)] text-balance">
               Il nostro metodo
             </h2>
           </div>
@@ -119,7 +119,7 @@ export function ScrollVideoSection() {
             {CHAPTERS.map((ch, i) => (
               <div 
                 key={ch.id} 
-                className="relative p-6 sm:p-8 rounded-3xl bg-[var(--bg-2)] border border-[var(--br)] shadow-sm hover:shadow-md transition-shadow"
+                className="relative p-5 sm:p-8 rounded-3xl bg-[var(--bg-2)] border border-[var(--br)] shadow-sm hover:shadow-md transition-shadow"
               >
                 <div className="flex items-start gap-4 flex-col sm:flex-row">
                   <div className="flex shrink-0 items-center justify-center w-12 h-12 rounded-xl bg-white border border-[var(--br)] shadow-sm">
@@ -128,7 +128,7 @@ export function ScrollVideoSection() {
                     </span>
                   </div>
                   <div className="flex-1 w-full">
-                    <h3 className="font-display text-xl sm:text-2xl font-bold text-[var(--tx-1)] mb-2 mt-1 sm:mt-0">
+                    <h3 className="font-display text-[20px] sm:text-2xl font-bold text-[var(--tx-1)] mb-2 mt-1 sm:mt-0 text-balance leading-tight">
                       {ch.title}
                     </h3>
                     <p className="font-sans text-sm sm:text-base text-[var(--tx-2)] leading-relaxed mb-1">
@@ -139,7 +139,7 @@ export function ScrollVideoSection() {
                         href="https://wa.me/393383160091?text=Ciao%2C%20vorrei%20richiedere%20un%20sopralluogo%20gratuito"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-6 flex items-center justify-center gap-2 bg-[var(--accent)] hover:bg-[var(--accent-d)] text-white font-display font-bold text-[15px] px-6 py-3.5 rounded-xl transition-all shadow-[0_4px_16px_rgba(78,203,160,0.3)] w-full"
+                        className="mt-5 flex min-h-[44px] items-center justify-center gap-2 bg-[var(--accent)] hover:bg-[var(--accent-d)] text-white font-display font-bold text-[15px] px-6 py-3 rounded-xl transition-all shadow-[0_4px_16px_rgba(78,203,160,0.3)] w-full"
                       >
                         {ch.cta}
                       </a>

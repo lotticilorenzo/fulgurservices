@@ -32,12 +32,12 @@ const BENEFITS = [
 
 export function WhyChooseUs() {
   return (
-    <section className="relative w-full bg-[var(--bg-2)] py-20 lg:py-32 overflow-hidden">
+    <section className="relative w-full bg-[var(--bg-2)] py-16 sm:py-20 lg:py-32 overflow-hidden">
       {/* Decorative blobs */}
       <div className="absolute -right-24 top-20 w-64 h-64 rounded-full bg-[var(--accent)] opacity-[0.06] blur-[80px] pointer-events-none" />
       
-      <div className="mx-auto w-full max-w-7xl px-6 xl:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+      <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16 lg:gap-24 items-center">
           
           {/* Left: Image Visual */}
           <ScrollReveal className="relative order-2 lg:order-1">

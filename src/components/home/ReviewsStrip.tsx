@@ -40,12 +40,12 @@ export function ReviewsStrip() {
         <Quotes size={600} weight="fill" className="text-[var(--tx-1)]" />
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 xl:px-8">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8">
         
         <div className="mb-16 lg:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
           <ScrollReveal className="max-w-2xl text-center md:text-left">
             <SectionLabel className="mb-4">— COSA DICONO I CLIENTI</SectionLabel>
-            <h2 className="font-display text-4xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl lg:text-6xl">
+            <h2 className="font-display text-4xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl lg:text-6xl text-balance">
               Oltre <span className="text-[var(--accent)]">500</span> clienti <br className="hidden lg:block" /> soddisfatti.
             </h2>
           </ScrollReveal>
@@ -67,7 +67,7 @@ export function ReviewsStrip() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {REVIEWS.map((review, i) => (
             <ScrollReveal key={i} delay={i * 0.1}>
-              <SpotlightCard className="h-full flex flex-col p-8 lg:p-10 bg-white border border-[var(--br)] rounded-[32px] shadow-sm hover:shadow-[0_20px_50px_rgba(42,140,122,0.1)] transition-all duration-500 group">
+              <SpotlightCard className="h-full flex flex-col p-6 sm:p-8 lg:p-10 bg-white border border-[var(--br)] rounded-[32px] shadow-sm hover:shadow-[0_20px_50px_rgba(42,140,122,0.1)] transition-all duration-500 group">
                 
                 <div className="flex justify-between items-start mb-8">
                   <div className="flex gap-1 text-[var(--accent)]">
@@ -130,7 +130,7 @@ export function ReviewsStrip() {
               href="https://www.google.it/maps/place/Fulgur+Service+Parma" 
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-5 px-8 py-4 rounded-2xl border border-[var(--br)] bg-white hover:border-[var(--accent)] hover:shadow-lg transition-all group"
+              className="flex min-h-[44px] items-center gap-4 sm:gap-5 px-5 sm:px-8 py-3 sm:py-4 rounded-2xl border border-[var(--br)] bg-white hover:border-[var(--accent)] hover:shadow-lg transition-all group"
             >
               <div className="flex items-center gap-2">
                 <svg viewBox="0 0 24 24" width="20" height="20" className="h-5 w-5">

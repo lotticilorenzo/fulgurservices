@@ -28,8 +28,8 @@ export function GeographicCoverage() {
         style={{ backgroundImage: 'radial-gradient(circle, var(--tx-1) 1px, transparent 1px)', backgroundSize: '28px 28px' }} 
       />
       
-      <div className="mx-auto w-full max-w-7xl px-6 xl:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+      <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16 lg:gap-20 items-center">
           
           {/* Left: Content */}
           <div>
@@ -55,7 +55,7 @@ export function GeographicCoverage() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.06, duration: 0.4 }}
-                    className={`flex items-center gap-2 rounded-xl px-3 py-2.5 text-left transition-all ${
+                    className={`flex min-h-[36px] items-center gap-2 rounded-xl px-3 py-2 text-left transition-all ${
                       city.isMain 
                         ? 'bg-[var(--accent)] shadow-lg' 
                         : 'bg-[var(--bg-2)] hover:bg-[var(--accent-glow)] border border-[var(--br)] hover:border-[var(--accent)]'
@@ -80,14 +80,14 @@ export function GeographicCoverage() {
               <div className="mt-10 flex items-center gap-4">
                 <Link
                   href="/preventivo"
-                  className="inline-flex items-center gap-2 rounded-full bg-[var(--accent)] px-7 py-3 font-display text-sm font-bold text-white shadow-md transition-all hover:bg-[var(--accent-d)] hover:shadow-xl"
+                  className="inline-flex min-h-[44px] items-center gap-2 rounded-full bg-[var(--accent)] px-7 py-3 font-display text-sm font-bold text-white shadow-md transition-all hover:bg-[var(--accent-d)] hover:shadow-xl"
                 >
                   Richiedi preventivo
                   <ArrowRight size={16} />
                 </Link>
                 <Link
                   href="/contatti"
-                  className="inline-flex items-center gap-2 font-display text-sm font-bold text-[var(--tx-2)] hover:text-[var(--accent)] transition-colors"
+                  className="inline-flex min-h-[44px] items-center gap-2 font-display text-sm font-bold text-[var(--tx-2)] hover:text-[var(--accent)] transition-colors"
                 >
                   Contatti →
                 </Link>
