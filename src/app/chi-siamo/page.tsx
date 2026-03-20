@@ -45,7 +45,7 @@ export default function ChiSiamoPage() {
       {/* HERO STORIA */}
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8 mb-16 sm:mb-20 text-center flex flex-col items-center">
         <SectionLabel className="mb-4">— LA NOSTRA STORIA</SectionLabel>
-        <h1 className="font-display text-3xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl lg:text-7xl max-w-4xl text-balance leading-[0.9]">
+        <h1 className="font-display text-3xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl lg:text-7xl max-w-4xl text-balance leading-tight sm:leading-[0.9]">
           Tradizione e innovazione nel <span className="text-[var(--accent)]">cleaning a Parma.</span>
         </h1>
         <p className="mt-8 font-sans text-lg lg:text-xl font-light text-[var(--tx-2)] max-w-3xl leading-relaxed text-balance">
@@ -57,7 +57,7 @@ export default function ChiSiamoPage() {
       {/* MULTI MEDIA SEZIONE - TEAM AI PHOTO */}
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8 mb-20 md:mb-32">
         <ScrollReveal>
-          <div className="w-full aspect-[21/9] rounded-3xl overflow-hidden relative border border-[var(--br)] bg-[var(--bg-2)] shadow-xl">
+          <div className="w-full aspect-[4/3] sm:aspect-[21/9] rounded-3xl overflow-hidden relative border border-[var(--br)] bg-[var(--bg-2)] shadow-xl">
             <Image
           src="/images/fulgur-service-team-ai.png"
           alt="Team Fulgur Service — professionisti delle pulizie a Parma"
@@ -154,7 +154,7 @@ export default function ChiSiamoPage() {
 
       {/* TEAM SECTION */}
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8 py-16 md:py-32 border-t border-[var(--br)]">
-         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-center">
             <ScrollReveal>
                <SectionLabel className="mb-6">— IL NOSTRO CAPITALE UMANO</SectionLabel>
                <h2 className="font-display text-[32px] sm:text-5xl font-extrabold text-[var(--tx-1)] mb-6 sm:mb-8 text-balance leading-[1.05] sm:leading-tight tracking-tighter">

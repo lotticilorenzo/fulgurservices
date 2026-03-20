@@ -19,7 +19,7 @@ export default function ContattiPage() {
         {/* HEADER */}
         <div className="mb-12 md:mb-20 text-center flex flex-col items-center">
           <SectionLabel className="mb-4">— SIAMO QUI PER TE</SectionLabel>
-          <h1 className="font-display text-[32px] sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--tx-1)] max-w-3xl text-balance leading-[1.1]">
+          <h1 className="font-display text-[32px] sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--tx-1)] max-w-3xl text-balance leading-tight sm:leading-[1.1]">
             Entriamo in <span className="text-[var(--accent)]">contatto.</span>
           </h1>
           <p className="mt-4 sm:mt-6 font-sans text-base sm:text-lg font-light text-[var(--tx-2)] max-w-2xl text-balance">
@@ -88,7 +88,7 @@ export default function ContattiPage() {
 
             {/* MAPPA PLACEHOLDER E SOCIAL */}
             <div className="flex flex-col gap-6 w-full">
-              <div className="w-full aspect-[16/9] bg-[var(--bg-2)] rounded-3xl border border-[var(--br)] relative overflow-hidden flex flex-col items-center justify-center">
+              <div className="w-full aspect-[4/3] sm:aspect-[21/9] rounded-3xl overflow-hidden relative border border-[var(--br)] bg-[var(--bg-2)] shadow-xl flex flex-col items-center justify-center">
                 {/* Simulated Map Background */}
                 <div className="absolute inset-0 opacity-[0.1]" style={{ backgroundImage: 'radial-gradient(circle at center, var(--accent) 1px, transparent 1px)', backgroundSize: '16px 16px' }} />
                 <MapPin size={48} className="text-[var(--accent)] mb-4" />
@@ -100,7 +100,7 @@ export default function ContattiPage() {
                   href="https://www.instagram.com/fulgurservice/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-[var(--br)] bg-[var(--bg)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all font-mono-fulgur text-sm font-bold uppercase tracking-widest text-[var(--tx-2)]"
+                  className="flex min-h-[44px] items-center justify-center gap-2 px-6 py-3 rounded-xl border border-[var(--br)] bg-[var(--bg)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all font-mono-fulgur text-sm font-bold uppercase tracking-widest text-[var(--tx-2)]"
                 >
                   <InstagramLogo size={20} /> Instagram
                 </a>

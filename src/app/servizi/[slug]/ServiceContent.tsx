@@ -27,8 +27,8 @@ export function ServiceContent({ service }: ServiceContentProps) {
   return (
     <main className="bg-[var(--bg)] min-h-screen pt-32 sm:pt-40 relative overflow-hidden">
       
-      {/* PARALLAX BACKGROUND TEXT */}
-      <div className="absolute top-[10%] left-0 w-full z-0 opacity-40 pointer-events-none">
+      {/* PARALLAX BACKGROUND TEXT — nascosto su mobile per ghost scroll prevention */}
+      <div className="absolute top-[10%] left-0 w-full z-0 opacity-40 pointer-events-none hidden sm:block">
         <ParallaxText text={service.title} direction="right" distance={300} />
         <ParallaxText text="FULGUR SERVICE" direction="left" distance={200} className="mt-[-5vw]" />
       </div>
@@ -53,7 +53,7 @@ export function ServiceContent({ service }: ServiceContentProps) {
           >
             <IconComponent size={48} weight="duotone" />
           </div>
-          <h1 className="font-display text-[40px] font-extrabold text-[var(--tx-1)] sm:text-7xl lg:text-8xl mb-6 sm:mb-8 tracking-tighter max-w-5xl leading-[1.05] text-balance">
+          <h1 className="font-display text-[36px] font-extrabold text-[var(--tx-1)] sm:text-7xl lg:text-8xl mb-6 sm:mb-8 tracking-tighter max-w-5xl leading-tight sm:leading-[1.05] text-balance">
             {service.title}
           </h1>
           <p className="font-sans text-lg font-light text-[var(--tx-2)] sm:text-2xl leading-relaxed max-w-3xl border-l-[3px] border-[var(--accent)] pl-5 sm:pl-8 py-3 bg-gradient-to-r from-[var(--accent)]/5 to-transparent text-balance">
@@ -92,7 +92,7 @@ export function ServiceContent({ service }: ServiceContentProps) {
               {/* DESCRIZIONE LUNGA */}
               <WipeReveal direction="top">
                 <SectionLabel className="mb-10">— DETTAGLI INTERVENTO</SectionLabel>
-                <p className="font-sans font-light text-[var(--tx-2)] leading-relaxed text-lg sm:text-2xl opacity-90 first-letter:text-5xl first-letter:font-display first-letter:font-bold first-letter:text-[var(--accent)] first-letter:mr-3 first-letter:float-left">
+                <p className="font-sans font-light text-[var(--tx-2)] leading-relaxed text-base sm:text-lg md:text-2xl opacity-90 first-letter:text-4xl sm:first-letter:text-5xl first-letter:font-display first-letter:font-bold first-letter:text-[var(--accent)] first-letter:mr-3 first-letter:float-left">
                   {service.longDesc}
                 </p>
               </WipeReveal>
@@ -110,10 +110,10 @@ export function ServiceContent({ service }: ServiceContentProps) {
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ delay: i * 0.1 }}
-                      className="flex items-start gap-4 p-6 rounded-2xl bg-[var(--bg)] border border-[var(--br)] shadow-sm hover:border-[var(--accent)]/30 transition-colors"
+                      className="flex items-start gap-3 sm:gap-4 p-4 sm:p-6 rounded-2xl bg-[var(--bg)] border border-[var(--br)] shadow-sm hover:border-[var(--accent)]/30 transition-colors"
                     >
-                      <CheckCircle size={28} weight="fill" className="text-[var(--accent)] shrink-0" aria-hidden="true" />
-                      <span className="font-sans text-[var(--tx-1)] font-medium text-lg pt-0.5">{benefit}</span>
+                      <CheckCircle size={24} weight="fill" className="text-[var(--accent)] shrink-0 mt-0.5" aria-hidden="true" />
+                      <span className="font-sans text-[var(--tx-1)] font-medium text-base sm:text-lg">{benefit}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -199,7 +199,7 @@ export function ServiceContent({ service }: ServiceContentProps) {
       <div className="w-full bg-[var(--bg-2)] pb-16 sm:pb-32 relative z-10 overflow-hidden">
         <ScrollReveal>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8">
-            <div className="flex flex-col lg:flex-row items-center gap-10 sm:gap-16 px-5 py-8 sm:p-8 lg:p-16 rounded-[2rem] sm:rounded-[3rem] bg-gradient-to-br from-[#12151E] to-[#0D1117] border border-[var(--accent)]/10 shadow-2xl relative overflow-hidden">
+            <div className="flex flex-col lg:flex-row items-center gap-8 sm:gap-16 p-5 sm:p-8 lg:p-16 rounded-[2rem] sm:rounded-[3rem] bg-gradient-to-br from-[#12151E] to-[#0D1117] border border-[var(--accent)]/10 shadow-2xl relative overflow-hidden">
                {/* Background Glow */}
                <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[var(--accent)]/10 rounded-full blur-[100px] -z-10" />
                
@@ -245,7 +245,7 @@ export function ServiceContent({ service }: ServiceContentProps) {
             </p>
             
             <Link href="/preventivo" className="w-full sm:w-auto">
-              <MagneticButton className="w-full sm:w-auto px-6 py-5 sm:px-12 sm:py-6 rounded-2xl bg-[var(--accent)] font-display text-[15px] sm:text-lg font-bold text-white shadow-[0_10px_20px_var(--accent-glow)] transition-all duration-300 hover:shadow-[0_15px_30px_var(--accent-glow-h)] hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-3">
+              <MagneticButton className="w-full sm:w-auto min-h-[56px] px-6 py-4 sm:px-12 sm:py-6 rounded-2xl bg-[var(--accent)] font-display text-[15px] sm:text-lg font-bold text-white shadow-[0_10px_20px_var(--accent-glow)] transition-all duration-300 hover:shadow-[0_15px_30px_var(--accent-glow-h)] hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-3">
                 Richiedi Sopralluogo Gratuito <ArrowRight weight="bold" />
               </MagneticButton>
             </Link>
