@@ -27,7 +27,7 @@ PRINCIPI OPERATIVI:
 ## 1. CHI È IL CLIENTE
 
 **Fulgur Service SRL** — Impresa di pulizie professionali  
-**Città:** Parma, Italia (opera in tutta la provincia e Emilia-Romagna)  
+**Indirizzo:** Via Alfredo Veroni, 20 - 43122 Parma (PR)  
 **P.IVA:** 03063010346 | **REA:** 353051 | **URI:** PARMA  
 **Cap. Soc.:** €10.000  
 **Tel:** +39 338 316 0091 *(cliccabile su mobile)*  
@@ -550,7 +550,7 @@ export const METADATA = {
   },
   contatti: {
     title: 'Contatti | Fulgur Service Parma',
-    description: 'Contatta Fulgur Service: +39 338 316 0091 · fulgurservice@gmail.com · Parma, Italia. Risposta garantita entro 24 ore.',
+    description: 'Contatta Fulgur Service: +39 338 316 0091 · fulgurservice@gmail.com · Via Alfredo Veroni, 20 - 43122 Parma. Risposta garantita entro 24 ore.',
   },
 }
 
@@ -570,14 +570,16 @@ export const STRUCTURED_DATA = {
   "vatID": "03063010346",
   "address": {
     "@type": "PostalAddress",
+    "streetAddress": "Via Alfredo Veroni, 20",
     "addressLocality": "Parma",
-    "addressRegion": "Emilia-Romagna",
+    "addressRegion": "PR",
+    "postalCode": "43122",
     "addressCountry": "IT"
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": 44.8015,
-    "longitude": 10.3279
+    "latitude": 44.8197,
+    "longitude": 10.3541
   },
   "openingHoursSpecification": [
     {
@@ -593,7 +595,7 @@ export const STRUCTURED_DATA = {
   "priceRange": "€€",
   "areaServed": {
     "@type": "GeoCircle",
-    "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 44.8015, "longitude": 10.3279 },
+    "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 44.8197, "longitude": 10.3541 },
     "geoRadius": "50000"
   }
 }

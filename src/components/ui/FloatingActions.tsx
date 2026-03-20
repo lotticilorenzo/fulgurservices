@@ -3,6 +3,7 @@
 import React, { useEffect, useState, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, ArrowLeft, ArrowRight, CheckCircle } from '@phosphor-icons/react'
+import { QRCodeSVG } from 'qrcode.react'
 import { MagneticButton } from '@/components/ui/MagneticButton'
 
 /* ── WhatsApp URL smart: web su desktop, app su mobile ── */
@@ -251,13 +252,17 @@ export function FloatingActions() {
   const [visible, setVisible] = useState(false)
   const [modalOpen, setModalOpen] = useState(false)
   const [waHovered, setWaHovered] = useState(false)
+  const [isMobileDevice, setIsMobileDevice] = useState(true)
 
   useEffect(() => {
+    setIsMobileDevice(/Android|Windows Phone|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
     const t = setTimeout(() => setVisible(true), 2500)
     return () => clearTimeout(t)
   }, [])
 
-  const waUrl = getWhatsAppUrl('Ciao Fulgur Service! Vorrei richiedere un sopralluogo gratuito.')
+  const waPreset = 'Ciao Fulgur Service, vi contatto dal sito per richiedere informazioni sui vostri servizi di pulizia.'
+  const qrCodeUrl = `https://wa.me/393383160091?text=${encodeURIComponent(waPreset)}`
+  const fallbackDesktopUrl = `https://web.whatsapp.com/send?phone=393383160091&text=${encodeURIComponent(waPreset)}`
 
   return (
     <>
@@ -298,37 +303,74 @@ export function FloatingActions() {
               onMouseEnter={() => setWaHovered(true)}
               onMouseLeave={() => setWaHovered(false)}
             >
-              {/* Tooltip */}
+              {/* Tooltip Hybrid */}
               <AnimatePresence>
                 {waHovered && (
-                  <motion.span
+                  <motion.div
                     initial={{ opacity: 0, x: 16, scale: 0.9 }}
                     animate={{ opacity: 1, x: 0, scale: 1 }}
                     exit={{ opacity: 0, x: 10, scale: 0.9 }}
-                    transition={{ duration: 0.18 }}
-                    className="absolute right-[72px] rounded-full bg-white border border-[var(--br)] px-4 py-2 font-mono-fulgur text-xs uppercase tracking-widest text-[var(--tx-1)] shadow-xl whitespace-nowrap"
+                    transition={{ duration: 0.2 }}
+                    className={`absolute rounded-2xl bg-white border border-[var(--br)] shadow-2xl flex flex-col items-center origin-right overflow-hidden z-50 ${isMobileDevice ? 'right-[72px] sm:right-[80px] px-4 py-2' : 'right-[72px] sm:right-[84px] p-5 gap-3 w-64'}`}
                   >
-                    Scrivici ora
-                  </motion.span>
+                    {isMobileDevice ? (
+                      <span className="font-mono-fulgur text-xs uppercase tracking-widest text-[var(--tx-1)] whitespace-nowrap">
+                        Scrivici ora
+                      </span>
+                    ) : (
+                      <>
+                        <p className="font-display text-[15px] font-extrabold text-[var(--tx-1)] text-center leading-tight">
+                          Inquadra il QR Code
+                        </p>
+                        <p className="font-body text-[11px] text-[var(--tx-3)] text-center leading-tight -mt-1.5 px-2">
+                          Scansiona con il telefono per chattare subito con noi
+                        </p>
+                        <div className="p-2 bg-white rounded-xl border border-[var(--br)] shadow-sm mt-1">
+                          <QRCodeSVG value={qrCodeUrl} size={140} level="M" />
+                        </div>
+                        <p className="font-mono-fulgur text-[9px] uppercase tracking-widest text-[var(--accent)] mt-1 opacity-70">
+                          {`Oppure clicca l'icona (Desktop)`}
+                        </p>
+                      </>
+                    )}
+                  </motion.div>
                 )}
               </AnimatePresence>
 
-              <a
-                href={waUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Contattaci su WhatsApp"
-                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 rounded-full"
-              >
-                <MagneticButton
-                  as="div"
-                  intensity={0.2}
-                  className="relative flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl transition-transform hover:scale-110"
+              {isMobileDevice ? (
+                <a
+                  href={qrCodeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Contattaci su WhatsApp"
+                  className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 rounded-full relative z-[60]"
                 >
-                  <div className="absolute -inset-2 animate-pulse-ring rounded-full" />
-                  <WaIcon className="w-5 h-5 sm:w-[26px] sm:h-[26px]" />
-                </MagneticButton>
-              </a>
+                  <MagneticButton
+                    as="div"
+                    intensity={0.2}
+                    className="relative flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl transition-transform hover:scale-110"
+                  >
+                    <div className="absolute -inset-2 animate-pulse-ring rounded-full" />
+                    <WaIcon className="w-5 h-5 sm:w-[26px] sm:h-[26px]" />
+                  </MagneticButton>
+                </a>
+              ) : (
+                <button
+                  type="button"
+                  aria-label="Contattaci su WhatsApp Web"
+                  onClick={() => window.open(fallbackDesktopUrl, '_blank')}
+                  className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 rounded-full relative z-[60]"
+                >
+                  <MagneticButton
+                    as="div"
+                    intensity={0.2}
+                    className="relative flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl transition-transform hover:scale-110"
+                  >
+                    <div className="absolute -inset-2 animate-pulse-ring rounded-full" />
+                    <WaIcon className="w-[26px] h-[26px]" />
+                  </MagneticButton>
+                </button>
+              )}
             </motion.div>
           </motion.div>
         )}

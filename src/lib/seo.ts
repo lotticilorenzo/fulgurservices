@@ -171,14 +171,16 @@ export const STRUCTURED_DATA = {
   vatID: '03063010346',
   address: {
     '@type': 'PostalAddress',
+    streetAddress: 'Via Alfredo Veroni, 20',
     addressLocality: 'Parma',
-    addressRegion: 'Emilia-Romagna',
+    addressRegion: 'PR',
+    postalCode: '43122',
     addressCountry: 'IT',
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: 44.8015,
-    longitude: 10.3279,
+    latitude: 44.8197,
+    longitude: 10.3541,
   },
   openingHoursSpecification: [
     {
@@ -194,8 +196,8 @@ export const STRUCTURED_DATA = {
     '@type': 'GeoCircle',
     geoMidpoint: {
       '@type': 'GeoCoordinates',
-      latitude: 44.8015,
-      longitude: 10.3279,
+      latitude: 44.8197,
+      longitude: 10.3541,
     },
     geoRadius: '50000',
   },
@@ -226,8 +228,10 @@ export function makeServiceJsonLd(service: {
       telephone: '+39-338-316-0091',
       address: {
         '@type': 'PostalAddress',
+        streetAddress: 'Via Alfredo Veroni, 20',
         addressLocality: 'Parma',
-        addressRegion: 'Emilia-Romagna',
+        addressRegion: 'PR',
+        postalCode: '43122',
         addressCountry: 'IT',
       },
     },
@@ -235,8 +239,8 @@ export function makeServiceJsonLd(service: {
       '@type': 'GeoCircle',
       geoMidpoint: {
         '@type': 'GeoCoordinates',
-        latitude: 44.8015,
-        longitude: 10.3279,
+        latitude: 44.8197,
+        longitude: 10.3541,
       },
       geoRadius: '50000',
     },

@@ -183,13 +183,35 @@ export function LavoraConNoiClient() {
                                   <label className="block font-mono-fulgur text-[10px] uppercase tracking-widest text-[var(--accent)] mb-2">Città di residenza</label>
                                   <input type="text" required placeholder="es. Parma" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-base appearance-none focus:ring-2 focus:ring-[var(--accent)] outline-none transition-all" />
                                 </div>
-                                <div>
-                                  <label className="block font-mono-fulgur text-[10px] uppercase tracking-widest text-[var(--accent)] mb-2">Il tuo CV (Opzionale)</label>
-                                  <div className="relative h-32 w-full border-2 border-dashed border-white/10 rounded-2xl flex flex-col items-center justify-center gap-2 hover:border-[var(--accent)]/50 transition-colors cursor-pointer group">
-                                     <UploadSimple size={24} className="text-white/20 group-hover:text-[var(--accent)] transition-colors" aria-hidden="true" />
-                                     <span className="text-[10px] font-mono-fulgur text-white/40 uppercase tracking-widest">Trascina qui o clicca per caricare</span>
-                                     <input type="file" className="absolute inset-0 opacity-0 cursor-pointer" aria-label="Carica il tuo curriculum" />
-                                  </div>
+                                 <div>
+                                   <label className="block font-mono-fulgur text-[10px] uppercase tracking-widest text-[var(--accent)] mb-2">Il tuo CV (Opzionale)</label>
+                                   <div className="relative h-32 w-full border-2 border-dashed border-white/10 rounded-2xl flex flex-col items-center justify-center gap-2 hover:border-[var(--accent)]/50 transition-colors cursor-pointer group">
+                                      <UploadSimple size={24} className="text-white/20 group-hover:text-[var(--accent)] transition-colors" aria-hidden="true" />
+                                      <span className="text-[10px] font-mono-fulgur text-white/40 uppercase tracking-widest">Trascina qui o clicca per caricare</span>
+                                      <input type="file" className="absolute inset-0 opacity-0 cursor-pointer" aria-label="Carica il tuo curriculum" />
+                                   </div>
+                                   <p className="mt-2 text-[10px] text-white/30 font-sans leading-tight">
+                                     I dati contenuti nel tuo CV verranno trattati esclusivamente per finalità di selezione del personale, nel rispetto del regolamento GDPR.
+                                   </p>
+                                </div>
+
+                                {/* Privacy Consent Checkbox */}
+                                <div className="pt-2">
+                                  <label className="flex items-start gap-3 cursor-pointer group">
+                                    <div className="relative flex items-start pt-1">
+                                      <input
+                                        type="checkbox"
+                                        required
+                                        className="peer sr-only"
+                                      />
+                                      <div className="w-5 h-5 rounded-[4px] border border-white/20 bg-white/5 peer-checked:bg-[var(--accent)] peer-checked:border-[var(--accent)] transition-colors flex items-center justify-center">
+                                        <CheckCircle weight="bold" className="text-white opacity-0 peer-checked:opacity-100 transition-opacity" size={14} />
+                                      </div>
+                                    </div>
+                                    <span className="font-sans text-[12px] text-white/60 leading-tight">
+                                      Dichiaro di aver letto la <a href="/privacy" target="_blank" className="text-[var(--accent)] underline underline-offset-2">Privacy Policy</a> e acconsento al trattamento dei miei dati. *
+                                    </span>
+                                  </label>
                                 </div>
                                 <div className="flex justify-between pt-4">
                                   <button onClick={() => setFormStep(1)} className="text-[var(--accent)] text-xs font-mono-fulgur uppercase tracking-widest hover:underline" type="button">Indietro</button>

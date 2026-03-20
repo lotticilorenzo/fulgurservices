@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
-import { Warning, PaperPlaneRight, CheckCircle } from '@phosphor-icons/react'
+import { Warning, PaperPlaneRight, CheckCircle, Check } from '@phosphor-icons/react'
 
 const ContactSchema = z.object({
   nome:      z.string().min(2, 'Inserisci nome e cognome.'),
@@ -12,6 +12,9 @@ const ContactSchema = z.object({
   tel:       z.string().min(5, 'Numero di telefono non valido.'),
   messaggio: z.string().min(10, 'Il messaggio è troppo corto (minimo 10 caratteri).'),
   website:   z.string().optional(), // Honeypot
+  privacy:   z.boolean().refine(val => val === true, {
+    message: 'Devi accettare la Privacy Policy per continuare',
+  }),
 })
 
 type ContactFormData = z.infer<typeof ContactSchema>
@@ -161,13 +164,30 @@ export function ContactForm() {
         )}
       </div>
 
-      {/* Errore submit inline */}
-      {submitError && (
-        <div role="alert" className="flex items-start gap-2.5 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
-          <Warning size={15} weight="bold" className="mt-0.5 shrink-0" aria-hidden="true" />
-          <span className="font-sans">{submitError}</span>
-        </div>
-      )}
+      {/* Privacy Consent Checkbox */}
+      <div className="flex flex-col gap-2">
+        <label className="flex items-start gap-3 cursor-pointer group">
+          <div className="relative flex items-start pt-1">
+            <input
+              type="checkbox"
+              required
+              {...register('privacy', { required: 'Devi accettare la Privacy Policy per continuare' })}
+              className="peer sr-only"
+            />
+            <div className="w-5 h-5 rounded-[4px] border border-[var(--br)] bg-[var(--bg-2)] peer-checked:bg-[var(--accent)] peer-checked:border-[var(--accent)] transition-colors flex items-center justify-center">
+              <Check weight="bold" className="text-white opacity-0 peer-checked:opacity-100 transition-opacity" size={14} />
+            </div>
+          </div>
+          <span className="font-sans text-[13px] text-[var(--tx-2)] leading-tight">
+            Dichiaro di aver letto la <a href="/privacy" target="_blank" className="text-[var(--accent)] underline underline-offset-2">Privacy Policy</a> e acconsento al trattamento dei miei dati personali per la gestione della richiesta. *
+          </span>
+        </label>
+        {errors.privacy && (
+          <span className="flex items-center gap-1 text-xs text-red-500 font-medium">
+            <Warning size={14} aria-hidden="true" />{errors.privacy.message as string}
+          </span>
+        )}
+      </div>
 
       <button
         type="submit"

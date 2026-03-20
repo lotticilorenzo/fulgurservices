@@ -65,10 +65,15 @@ export default function ContattiPage() {
                 </div>
                 <div>
                   <h3 className="font-mono-fulgur text-xs font-bold tracking-widest uppercase text-[var(--tx-3)] mb-1">Sede Operativa</h3>
-                  <p className="font-sans text-lg font-medium text-[var(--tx-1)]">
-                    Parma, Emilia-Romagna<br/>
-                    <span className="text-[var(--tx-3)] text-sm">Operiamo in tutta la provincia</span>
-                  </p>
+                  <a 
+                    href="https://www.google.com/maps/place/Via+Alfredo+Veroni,+20,+43122+Parma+PR"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-sans text-lg font-medium text-[var(--tx-1)] hover:text-[var(--accent)] transition-colors"
+                  >
+                    Via Alfredo Veroni, 20<br/>
+                    43122 Parma (PR)
+                  </a>
                 </div>
               </div>
 
@@ -88,11 +93,17 @@ export default function ContattiPage() {
 
             {/* MAPPA PLACEHOLDER E SOCIAL */}
             <div className="flex flex-col gap-6 w-full">
-              <div className="w-full aspect-[4/3] sm:aspect-[21/9] rounded-3xl overflow-hidden relative border border-[var(--br)] bg-[var(--bg-2)] shadow-xl flex flex-col items-center justify-center">
-                {/* Simulated Map Background */}
-                <div className="absolute inset-0 opacity-[0.1]" style={{ backgroundImage: 'radial-gradient(circle at center, var(--accent) 1px, transparent 1px)', backgroundSize: '16px 16px' }} />
-                <MapPin size={48} className="text-[var(--accent)] mb-4" />
-                <p className="font-sans text-[var(--tx-3)] uppercase tracking-widest text-xs font-bold">Parma, IT</p>
+              <div className="w-full aspect-[4/3] sm:aspect-[21/9] rounded-3xl overflow-hidden relative border border-[var(--br)] bg-[var(--bg-2)] shadow-xl">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m12!1m3!1d2828.9734375051187!2d10.3479!3d44.8015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4780164c4c4c4c4d%3A0x4c4c4c4c4c4c4c4c!2sVia%20Alfredo%20Veroni%2C%2020%2C%2043122%20Parma%20PR!5e0!3m2!1sit!2sit!4v1620000000000!5m2!1sit!2sit" 
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="grayscale hover:grayscale-0 transition-all duration-700"
+                />
               </div>
               
               <div className="flex items-center gap-4">

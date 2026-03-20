@@ -10,6 +10,7 @@ import { CustomCursor } from '@/components/ui/CustomCursor'
 import { LenisProvider } from '@/components/layout/LenisProvider'
 import { IntroLoader } from '@/components/ui/IntroLoader'
 import { PageTransitionProvider } from '@/components/layout/PageTransitionProvider'
+import { CookieBanner } from '@/components/layout/CookieBanner'
 import React from 'react'
 
 const syne = Syne({
@@ -80,6 +81,7 @@ export default function RootLayout({
           {children}
           <Footer />
           <FloatingActions />
+          <CookieBanner />
         </PageTransitionProvider>
       </body>
     </html>

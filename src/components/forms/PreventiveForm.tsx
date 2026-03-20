@@ -7,6 +7,7 @@ import type { Path } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { CheckCircle, Warning, CaretLeft, Sparkle, Buildings, Factory, FirstAidKit, BuildingApartment, Bed, HardHat, ArrowsOutSimple, Sun, Anchor, Wind, House, Drop } from '@phosphor-icons/react'
+import Link from 'next/link'
 import { SERVICES } from '@/lib/services-data'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 
@@ -515,7 +516,7 @@ export function PreventiveForm() {
                         </div>
                       </div>
                       <span className="font-sans text-[13px] text-[var(--tx-2)] leading-tight">
-                        Dichiaro di aver letto la Privacy Policy e acconsento al trattamento dei miei dati personali ai fini dell&apos;erogazione del modulo di contatto. *
+                        Dichiaro di aver letto la <Link href="/privacy" target="_blank" className="text-[var(--accent)] underline underline-offset-2">Privacy Policy</Link> e acconsento al trattamento dei miei dati personali ai fini dell&apos;erogazione del modulo di contatto. *
                       </span>
                     </label>
                     {errors.privacy && <p className="flex items-center gap-1 text-xs text-red-400 mt-1"><Warning size={14} /> {errors.privacy.message}</p>}

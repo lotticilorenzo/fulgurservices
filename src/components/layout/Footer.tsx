@@ -132,8 +132,15 @@ export function Footer() {
             </h4>
             <ul className="mt-5 flex flex-col gap-4 sm:gap-3 font-sans text-[15px] sm:text-sm text-[var(--tx-1)] sm:text-[var(--tx-2)]">
               <li className="flex items-start gap-4 sm:gap-3">
-                <MapPin size={16} weight="duotone" className="mt-0.5 shrink-0 text-[var(--accent)]" />
-                <span className="leading-snug">Parma, Emilia-Romagna<br />Italia</span>
+                <a 
+                  href="https://www.google.com/maps/place/Via+Alfredo+Veroni,+20,+43122+Parma+PR"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3 hover:text-[var(--accent)] transition-colors group"
+                >
+                  <MapPin size={16} weight="duotone" className="mt-0.5 shrink-0 text-[var(--accent)]" />
+                  <span className="leading-snug">Via Alfredo Veroni, 20<br />43122 Parma (PR)</span>
+                </a>
               </li>
               <li>
                 <a 
