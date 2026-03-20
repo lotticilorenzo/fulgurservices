@@ -71,7 +71,7 @@ export function useScrollVideoScrub(
   // Aggiorniamo solo un ref quando useSpring cambia...
   const targetTime = useRef(0)
   useMotionValueEvent(smoothProgress, 'change', (latest) => {
-    if (isMobile) return
+    // Note: Scrubber abilited on mobile as well!
     const video = videoRef.current
     if (video && video.duration) {
       targetTime.current = latest * video.duration
@@ -81,7 +81,7 @@ export function useScrollVideoScrub(
   // ...e applichiamo il `currentTime` al video DOM solo se NON sta già decodificando (seeking).
   // Questo previene scatti violenti (stutter) quando il file MP4 è complesso o ha pochi keyframe.
   useEffect(() => {
-    if (isMobile) return
+    // Note: renderLoop active on mobile!
     const video = videoRef.current
     if (!video) return
 

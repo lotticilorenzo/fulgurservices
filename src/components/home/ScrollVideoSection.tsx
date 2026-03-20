@@ -98,63 +98,9 @@ export function ScrollVideoSection() {
     return 3
   }, [progress])
 
-  /* ─── MOBILE: layout statico pulito a card chiare ─── */
-  if (isMobile) {
-    return (
-      <section ref={sectionRef} className="relative bg-[var(--bg)] py-16 px-6 sm:px-8 border-t border-b border-[var(--br)] overflow-hidden">
-        {/* Decorative background element */}
-        <div className="absolute top-0 right-0 -m-32 w-96 h-96 bg-[var(--accent)]/5 rounded-full blur-3xl pointer-events-none" />
-        
-        <div className="max-w-2xl mx-auto relative z-10">
-          <div className="mb-10 text-left sm:text-center">
-            <span className="font-mono-fulgur text-xs font-bold text-[var(--accent)] tracking-widest uppercase block mb-3">
-              Processo Operativo
-            </span>
-            <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-[var(--tx-1)]">
-              Il nostro metodo
-            </h2>
-          </div>
+  // Il layout è ora UNIFICATO per desktop e mobile: lo scrubbing funzionerà ovunque
 
-          <div className="flex flex-col gap-4 sm:gap-6">
-            {CHAPTERS.map((ch, i) => (
-              <div 
-                key={ch.id} 
-                className="relative p-6 sm:p-8 rounded-3xl bg-[var(--bg-2)] border border-[var(--br)] shadow-sm hover:shadow-md transition-shadow"
-              >
-                <div className="flex items-start gap-4 flex-col sm:flex-row">
-                  <div className="flex shrink-0 items-center justify-center w-12 h-12 rounded-xl bg-white border border-[var(--br)] shadow-sm">
-                    <span className="font-mono-fulgur text-sm font-bold text-[var(--accent)]">
-                      0{i + 1}
-                    </span>
-                  </div>
-                  <div className="flex-1 w-full">
-                    <h3 className="font-display text-xl sm:text-2xl font-bold text-[var(--tx-1)] mb-2 mt-1 sm:mt-0">
-                      {ch.title}
-                    </h3>
-                    <p className="font-sans text-sm sm:text-base text-[var(--tx-2)] leading-relaxed mb-1">
-                      {ch.subtitle}
-                    </p>
-                    {ch.cta && (
-                      <a
-                        href="https://wa.me/393383160091?text=Ciao%2C%20vorrei%20richiedere%20un%20sopralluogo%20gratuito"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mt-6 flex items-center justify-center gap-2 bg-[var(--accent)] hover:bg-[var(--accent-d)] text-white font-display font-bold text-[15px] px-6 py-3.5 rounded-xl transition-all shadow-[0_4px_16px_rgba(78,203,160,0.3)] w-full"
-                      >
-                        {ch.cta}
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    )
-  }
-
-  /* ─── DESKTOP: video scrub + testi animati ─── */
+  /* ─── SCROLL SCRUBBING UI ─── */
   return (
     <section
       ref={sectionRef}
@@ -163,17 +109,17 @@ export function ScrollVideoSection() {
       aria-label="Scroll per scoprire il nostro processo"
     >
       {/* ── Sticky container ── */}
-      <div className="sticky top-0 h-screen w-full overflow-hidden bg-black">
+      <div className="sticky top-0 h-[100dvh] w-full overflow-hidden bg-black">
 
-        {/* Video fullscreen scrubbed */}
+        {/* Video fullscreen scrubbed (Ottimizzato per scrubbing fluido) */}
         <video
           ref={videoRef}
-          src="/videos/scroll-section.mp4"
+          src="/videos/dasporcoapulito_scrub.mp4"
           muted
           playsInline
           preload="auto"
           disablePictureInPicture
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-[100dvh] object-cover"
           aria-hidden="true"
         />
 
@@ -195,8 +141,8 @@ export function ScrollVideoSection() {
         </div>
 
         {/* ── Testi animati ── */}
-        <div className="absolute inset-0 z-20 flex items-center">
-          <div className="max-w-7xl mx-auto w-full px-8 lg:px-16">
+        <div className="absolute inset-0 z-20 flex items-center pt-24 sm:pt-0">
+          <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-16">
             <div className="max-w-xl">
               <AnimatePresence mode="wait">
                 <motion.div
@@ -208,7 +154,7 @@ export function ScrollVideoSection() {
                   {/* Eyebrow */}
                   <motion.span
                     variants={eyebrowVariants}
-                    className="block font-mono text-xs tracking-[0.25em] uppercase text-[#4ECBA0]/80 mb-4"
+                    className="block font-mono text-[10px] sm:text-xs tracking-[0.25em] uppercase text-[#4ECBA0]/80 mb-3 sm:mb-4"
                   >
                     {CHAPTERS[activeChapter].eyebrow}
                   </motion.span>
@@ -216,7 +162,7 @@ export function ScrollVideoSection() {
                   {/* Titolo */}
                   <motion.h2
                     variants={textVariants}
-                    className="font-display text-5xl lg:text-7xl font-extrabold text-white leading-[1.05] mb-4"
+                    className="font-display text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white leading-[1.05] mb-3 sm:mb-4 pr-6 sm:pr-0"
                   >
                     {CHAPTERS[activeChapter].title}
                   </motion.h2>
@@ -224,7 +170,7 @@ export function ScrollVideoSection() {
                   {/* Sottotitolo */}
                   <motion.p
                     variants={subtitleVariants}
-                    className="text-[#8A9BAE] text-lg lg:text-xl leading-relaxed mb-8"
+                    className="text-[#8A9BAE] text-base sm:text-lg lg:text-xl leading-relaxed mb-6 sm:mb-8 pr-8 sm:pr-0"
                   >
                     {CHAPTERS[activeChapter].subtitle}
                   </motion.p>
@@ -252,7 +198,7 @@ export function ScrollVideoSection() {
         </div>
 
         {/* ── Indicatore capitoli (dots destra) ── */}
-        <div className="absolute right-8 top-1/2 -translate-y-1/2 z-30 flex flex-col gap-3">
+        <div className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-30 flex flex-col gap-2 sm:gap-3">
           {CHAPTERS.map((_, i) => (
             <div
               key={i}
