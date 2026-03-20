@@ -74,7 +74,6 @@ export function HeroSection() {
         suppressHydrationWarning
         aria-hidden="true"
         className="absolute inset-0 h-full w-full object-cover pointer-events-none"
-        src="/videos/entrata-fulgur.mp4"
         poster="/images/fulgur-service-team-ai.png"
         autoPlay
         loop
@@ -82,7 +81,10 @@ export function HeroSection() {
         playsInline
         preload="none"
         disablePictureInPicture
-      />
+      >
+        <source src="/videos/entrata-fulgur-mobile.mp4" media="(max-width: 767px)" type="video/mp4" />
+        <source src="/videos/entrata-fulgur.mp4" media="(min-width: 768px)" type="video/mp4" />
+      </video>
 
       {/* Overlay scuro — mantiene brand leggibile col contrasto del video */}
       <div
