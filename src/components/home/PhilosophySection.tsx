@@ -52,8 +52,8 @@ export function PhilosophySection() {
       ref={sectionRef}
       className="relative w-full bg-[var(--bg-2)] py-16 sm:py-24 lg:py-28 xl:py-32 overflow-hidden border-y border-[var(--br)]"
     >
-      {/* Background parallax text */}
-      <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 opacity-[0.06] pointer-events-none z-0 select-none">
+      {/* Background parallax text — nascosto su mobile: testo in scala 1.6x causa ghost scroll su viewport stretti */}
+      <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 opacity-[0.06] pointer-events-none z-0 select-none hidden sm:block">
         <ParallaxText text="CURA" direction="right" distance={250} outline={true} className="scale-[1.6]" />
       </div>
 
@@ -76,7 +76,7 @@ export function PhilosophySection() {
         }}
       />
 
-      <div className="relative z-10 mx-auto w-full max-w-5xl px-6 xl:px-8 text-center flex flex-col items-center">
+      <div className="relative z-10 mx-auto w-full max-w-5xl px-5 sm:px-6 xl:px-8 text-center flex flex-col items-center">
         <SectionLabel className="mb-12 mx-auto">— MANIFESTO DELLA CURA</SectionLabel>
 
         {/* "Wrong" approach — crossed out */}

@@ -69,12 +69,13 @@ export function HeroSection() {
       ref={containerRef}
       className="relative flex sm:min-h-[100dvh] w-full items-center overflow-hidden bg-[var(--bg)] pt-[120px] pb-24 md:pt-28 md:pb-16 lg:pt-36 lg:pb-20 xl:pt-[140px]"
     >
-      {/* Video sfondo (Ripristinato "entrata-fulgur" con preload ottimizzato per ridurre scatti) */}
+      {/* Video sfondo */}
       <video
         suppressHydrationWarning
         aria-hidden="true"
         className="absolute inset-0 h-full w-full object-cover pointer-events-none"
         src="/videos/entrata-fulgur.mp4"
+        poster="/images/fulgur-service-team-ai.png"
         autoPlay
         loop
         muted
@@ -122,8 +123,8 @@ export function HeroSection() {
             <GlowBadge>Parma · Dal 1994</GlowBadge>
           </div>
 
-          {/* H1 — tre righe */}
-          <h1 className="hero-reveal mt-5 font-display font-black leading-[1.05] sm:leading-[0.93] tracking-tight sm:tracking-tighter text-[clamp(42px,10vw,84px)] drop-shadow-2xl">
+          {/* H1 — tre righe. leading-[1.0] su mobile evita il salto CLS verso sm:leading-[0.93] */}
+          <h1 className="hero-reveal mt-5 font-display font-black leading-[1.0] sm:leading-[0.93] tracking-tight sm:tracking-tighter text-[clamp(42px,10vw,84px)] drop-shadow-2xl">
             <span className="block text-white">Puliamo il Futuro</span>
             <span className="block text-outline-accent">con l&apos;Energia</span>
             <span className="block text-[var(--accent)]">della Natura</span>
@@ -154,8 +155,8 @@ export function HeroSection() {
             <span className="col-span-2 text-[var(--accent)] tracking-widest mt-1 sm:mt-0 opacity-90">Sopralluogo 100% gratuito</span>
           </div>
 
-          {/* CTAs */}
-          <div className="hero-reveal mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+          {/* CTAs — gap-4 (16px) per separazione pollice sicura */}
+          <div className="hero-reveal mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
             <Link href="/preventivo" tabIndex={-1} className="w-full sm:w-auto">
               <MagneticButton
                 as="div"
@@ -179,8 +180,8 @@ export function HeroSection() {
             </Link>
           </div>
 
-          {/* Trust micro-badge */}
-          <div className="hero-reveal mt-6 flex flex-col sm:flex-row flex-wrap gap-x-5 gap-y-3 font-mono-fulgur text-[9.5px] font-medium uppercase tracking-widest text-white/70">
+          {/* Trust micro-badge — mt-4 su mobile (più vicino ai CTA), mt-6 su sm+ */}
+          <div className="hero-reveal mt-4 sm:mt-6 flex flex-col sm:flex-row flex-wrap gap-x-5 gap-y-3 font-mono-fulgur text-[9.5px] font-medium uppercase tracking-widest text-white/70">
             <div className="flex items-center gap-2">
               <ShieldCheck size={14} className="text-[var(--accent)]" aria-hidden="true" />
               <span>Assicurati RCT €2M</span>

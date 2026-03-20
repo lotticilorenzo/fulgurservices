@@ -86,7 +86,7 @@ export function StatsSection() {
             >
               <div
                 className="font-display font-black leading-none tracking-tight text-white"
-                style={{ fontSize: 'clamp(40px, 8vw, 80px)' }}
+                style={{ fontSize: 'clamp(36px, 9vw, 80px)' }}
               >
                 <CounterUp value={stat.value} suffix={stat.suffix} duration={2200} />
               </div>

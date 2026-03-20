@@ -50,16 +50,16 @@ export function AboutSection() {
                 </motion.div>
               </div>
               
-              {/* Badge sovrapposto — in basso a sinistra */}
-              <div className="absolute -bottom-5 -left-3 sm:-bottom-6 sm:-left-5 z-20 rounded-2xl bg-[var(--accent)] px-5 py-3 sm:px-7 sm:py-5 text-white shadow-2xl flex flex-col items-center">
+              {/* Badge sovrapposto — left-0 su mobile evita overflow del viewport <375px */}
+              <div className="absolute -bottom-5 left-0 sm:-bottom-6 sm:-left-3 md:-left-5 z-20 rounded-2xl bg-[var(--accent)] px-5 py-3 sm:px-7 sm:py-5 text-white shadow-2xl flex flex-col items-center">
                 <span className="font-display text-4xl sm:text-5xl font-black leading-none">30</span>
                 <span className="font-mono-fulgur text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.18em] opacity-85 text-center leading-tight mt-1">
                   anni di<br />know-how
                 </span>
               </div>
 
-              {/* Second small badge: reviews */}
-              <div className="absolute -top-5 -right-4 z-20 rounded-2xl bg-white border border-[var(--br)] px-5 py-3.5 shadow-xl flex items-center gap-3">
+              {/* Second small badge: reviews — right-0 su mobile evita ghost scroll */}
+              <div className="absolute -top-5 right-0 sm:-right-4 z-20 rounded-2xl bg-white border border-[var(--br)] px-5 py-3.5 shadow-xl flex items-center gap-3">
                 <div className="flex flex-col">
                   <span className="font-display text-sm font-bold text-[var(--tx-1)] leading-none">500+</span>
                   <span className="font-mono-fulgur text-[9px] uppercase tracking-widest text-[var(--tx-3)] mt-0.5">Clienti</span>
