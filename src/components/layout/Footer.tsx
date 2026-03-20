@@ -35,7 +35,7 @@ export function Footer() {
       {/* Top accent bar */}
       <div className="h-1 w-full bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent opacity-60" />
 
-      <div className="mx-auto w-full max-w-7xl px-6 xl:px-8 pt-14 pb-6 sm:pt-20 sm:pb-8 lg:pb-12">
+      <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8 pt-14 pb-6 sm:pt-20 sm:pb-8 lg:pb-12">
         
         {/* Main Grid: 4 columns */}
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-8 lg:grid-cols-[2fr_1fr_1fr_1.4fr] lg:gap-10">
@@ -90,19 +90,19 @@ export function Footer() {
             <h4 className="font-mono-fulgur text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--tx-3)]">
               Servizi
             </h4>
-            <ul className="mt-5 flex flex-col gap-3.5 sm:gap-2.5 font-sans text-[16px] sm:text-sm text-[var(--tx-1)] sm:text-[var(--tx-2)]">
+            <ul className="mt-5 flex flex-col gap-1 sm:gap-0.5 font-sans text-[16px] sm:text-sm text-[var(--tx-1)] sm:text-[var(--tx-2)]">
               {topServices.map((service) => (
                 <li key={service.id}>
                   <Link 
                     href={`/servizi/${service.slug}`} 
-                    className="transition-colors hover:text-[var(--accent)]"
+                    className="flex min-h-[44px] sm:min-h-[32px] items-center transition-colors hover:text-[var(--accent)]"
                   >
                     {service.title}
                   </Link>
                 </li>
               ))}
-              <li className="pt-1">
-                <Link href="/servizi" className="font-medium text-[var(--accent)] hover:text-[var(--accent-d)] hover:underline underline-offset-4 transition-colors">
+              <li>
+                <Link href="/servizi" className="flex min-h-[44px] sm:min-h-[32px] items-center font-medium text-[var(--accent)] hover:text-[var(--accent-d)] hover:underline underline-offset-4 transition-colors">
                   Tutti i servizi →
                 </Link>
               </li>
@@ -114,10 +114,10 @@ export function Footer() {
             <h4 className="font-mono-fulgur text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--tx-3)]">
               Azienda
             </h4>
-            <ul className="mt-5 flex flex-col gap-3.5 sm:gap-2.5 font-sans text-[16px] sm:text-sm text-[var(--tx-1)] sm:text-[var(--tx-2)]">
+            <ul className="mt-5 flex flex-col gap-1 sm:gap-0.5 font-sans text-[16px] sm:text-sm text-[var(--tx-1)] sm:text-[var(--tx-2)]">
               {COMPANY_LINKS.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="transition-colors hover:text-[var(--accent)]">
+                  <Link href={link.href} className="flex min-h-[44px] sm:min-h-[32px] items-center transition-colors hover:text-[var(--accent)]">
                     {link.label}
                   </Link>
                 </li>
@@ -167,7 +167,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar — maintain pb-32 on mobile to not be covered by floating actions (WhatsApp, N badge) */}
-        <div className="mt-12 sm:mt-14 border-t border-[var(--br)] pt-8 sm:pt-7 pb-32 sm:pb-0 flex flex-col items-center justify-between gap-6 sm:flex-row">
+        <div className="mt-12 sm:mt-14 border-t border-[var(--br)] pt-8 sm:pt-7 pb-24 sm:pb-0 flex flex-col items-center justify-between gap-6 sm:flex-row">
           <p className="font-mono-fulgur text-[10px] sm:text-[10px] uppercase tracking-wider text-[var(--tx-2)] text-center sm:text-left leading-relaxed">
             © {year} Fulgur Service S.R.L.<br className="block sm:hidden" /> P.IVA 03063010346 · REA PR-353051<br className="block sm:hidden" /> Cap. Soc. €10.000 i.v.
           </p>
