@@ -163,7 +163,6 @@ export function ScrollVideoSection() {
         <video
           ref={videoRef}
           src="/videos/metodo-lavoro-pulizie-parma-processo.mp4"
-          poster="/images/team-operatori-pulizie-professionali-parma.webp"
           muted
           playsInline
           preload="metadata"

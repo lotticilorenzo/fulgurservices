@@ -4,7 +4,6 @@ import { useEffect, useState, useRef } from 'react'
 import {
   useScroll,
   useTransform,
-  useSpring,
   useMotionValueEvent,
 } from 'framer-motion'
 
@@ -56,24 +55,14 @@ export function useScrollVideoScrub(
     clamp: true,
   })
 
-  // 3. Modello fisico perfetto: assorbe gli scatti bruschi della rotellina del mouse (wheel events)
-  // e li trasforma in curve matematiche accelerate o decelerate.
-  const smoothProgress = useSpring(bufferedProgress, {
-    stiffness: 80, // Quanto "rigida" è la molla (più bassa = più fluida ma lenta)
-    damping: 25, // Quanta frizione (previene il bouncing)
-    restDelta: 0.0001, // Precisione per millisecondo
-  })
-
-  // 4. Per la UI (es. barra di caricamento, capitoli), teniamo lo stato reattivo sincronizzato:
-  // Questo aggiorna i testi e i "pallini" all'istante (mentre il video continua dolcemente dietro)
+  // 4. Per la UI (es. barra di caricamento, capitoli), teniamo lo stato reattivo sincronizzato
   useMotionValueEvent(bufferedProgress, 'change', (latest) => {
     setProgress(latest)
   })
 
   // 5. Disaccoppiamento per performance (Bypass the Video Decoder bottleneck):
-  // Aggiorniamo solo un ref quando useSpring cambia...
   const targetTime = useRef(0)
-  useMotionValueEvent(smoothProgress, 'change', (latest) => {
+  useMotionValueEvent(bufferedProgress, 'change', (latest) => {
     if (isMobile) return
     const video = videoRef.current
     if (video && video.duration) {
@@ -88,14 +77,22 @@ export function useScrollVideoScrub(
     const video = videoRef.current
     if (!video) return
 
+    // Assicuriamo il corretto pre-loading logico all'inizio
+    video.currentTime = 0
+
     let rafId: number
+    let currentLerp = 0
+    const lerpFactor = 0.1 // Smorzamento inerziale della testina
 
     const renderLoop = () => {
+      // 1. Calcolo matematico disaccoppiato dal decoder (Insegue targetTime)
+      currentLerp += (targetTime.current - currentLerp) * lerpFactor
+
       if (video.readyState >= 2) {
-        // Se dobbiamo muovere il video, e il decoder ha finito il lavoro precedente:
-        const diff = Math.abs(video.currentTime - targetTime.current)
-        if (!video.seeking && diff > 0.02) {
-          video.currentTime = targetTime.current
+        // 2. Controllo scostamento reale
+        const diff = Math.abs(video.currentTime - currentLerp)
+        if (!video.seeking && diff > 0.01) {
+          video.currentTime = currentLerp
         }
       }
       rafId = requestAnimationFrame(renderLoop)
