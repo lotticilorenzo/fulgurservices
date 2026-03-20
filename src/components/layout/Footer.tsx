@@ -45,8 +45,8 @@ export function Footer() {
             <Link href="/" className="inline-flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] rounded-xl w-fit">
               <div className="rounded-xl bg-white p-1 shadow-sm border border-[var(--br)]">
                 <Image
-                  src="/images/logo-official.webp"
-                  alt="Fulgur Service logo"
+                  src="/images/logo-fulgur-service-impresa-pulizie-parma.webp"
+                  alt="Fulgur Service — Logo Ufficiale dell'impresa di pulizie professionali a Parma"
                   width={44}
                   height={44}
                   className="object-contain"

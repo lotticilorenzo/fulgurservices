@@ -168,7 +168,7 @@ export function ScrollVideoSection() {
         {/* Video fullscreen scrubbed */}
         <video
           ref={videoRef}
-          src="/videos/scroll-section.mp4"
+          src="/videos/metodo-lavoro-pulizie-parma-processo.mp4"
           muted
           playsInline
           preload="auto"

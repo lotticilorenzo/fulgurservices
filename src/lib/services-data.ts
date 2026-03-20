@@ -91,7 +91,7 @@ export const SERVICES: Service[] = [
     sectors: ['Hotel e Alberghi', 'B&B e affittacamere', 'Agriturismi', 'Residence Turistici'],
     metaTitle: 'Pulizie Hotel e Settore Alberghiero Parma | Fulgur Service',
     metaDescription: 'Servizi professionali di pulizia e housekeeping per hotel e B&B a Parma. Esperienza e discrezione garantite.',
-    image: '/images/servizi/pulizie-hotel-alberghi-parma.png',
+    image: '/images/servizi/pulizie-settore-alberghiero-hotel-bed-breakfast-parma.png',
   },
   {
     id: '06',
@@ -151,7 +151,7 @@ export const SERVICES: Service[] = [
     sectors: ['Impianti Fotovoltaici Casa', 'Aziende con impianti solari', 'Campi fotovoltaici industriali'],
     metaTitle: 'Pulizia Pannelli Fotovoltaici e Solari Parma | Fulgur Service',
     metaDescription: 'Ottimizza la resa del tuo impianto fotovoltaico a Parma. Pulizia professionale con acqua demineralizzata. Preventivo gratuito.',
-    image: '/images/servizi/pulizia-pannelli-fotovoltaici-parma.png',
+    image: '/images/servizi/lavaggio-pulizia-pannelli-fotovoltaici-parma.png',
   },
   {
     id: '10',

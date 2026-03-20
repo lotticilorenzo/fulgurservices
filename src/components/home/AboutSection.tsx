@@ -41,8 +41,8 @@ export function AboutSection() {
               <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[28px] border border-[var(--br)] shadow-2xl">
                 <motion.div style={{ y: imageY }} className="relative w-full h-[110%] -top-[5%]">
                   <Image
-                    src="/images/chi-siamo.webp"
-                    alt="Lorenzo davanti al furgone Fulgur Service — impresa di pulizie professionali a Parma"
+                    src="/images/fondatore-impresa-pulizie-fulgur-service-parma.webp"
+                    alt="Il fondatore di Fulgur Service davanti al furgone aziendale: la nostra impresa di pulizie a Parma"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 42vw"

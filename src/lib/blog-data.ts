@@ -97,7 +97,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: '05 Marzo 2026',
     author: 'Team Fulgur',
     category: 'Tecniche',
-    image: '/images/servizi/pulizia-pannelli-fotovoltaici-parma.png',
+    image: '/images/servizi/lavaggio-pulizia-pannelli-fotovoltaici-parma.png',
     readTime: '6 min',
     keywords: ['pulizia pannelli fotovoltaici Parma', 'manutenzione solare', 'efficienza energetica']
   }

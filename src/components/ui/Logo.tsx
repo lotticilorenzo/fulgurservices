@@ -12,7 +12,7 @@ interface LogoProps {
 }
 
 export function Logo({ size = 40, className = '', variant = 'default', iconOnly = false }: LogoProps) {
-  // Il logo ufficiale è in /images/logo-fulgur-service.png
+  // Il logo ufficiale è in /images/logo-impresa-di-pulizie-parma-fulgur.png
   // Se iconOnly è true, potremmo voler croppare o usare un'altra versione, 
   // ma per ora usiamo la stessa immagine con overflow-hidden se necessario.
   
@@ -22,8 +22,8 @@ export function Logo({ size = 40, className = '', variant = 'default', iconOnly 
       style={{ width: iconOnly ? size : size * 3.8, height: size }}
     >
       <Image
-        src="/images/logo-fulgur-service.png"
-        alt="Fulgur Service Logo"
+        src="/images/logo-impresa-di-pulizie-parma-fulgur.png"
+        alt="Fulgur Service Logo — Impresa Pulizie Parma"
         width={300}
         height={80}
         className={cn(

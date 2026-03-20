@@ -163,7 +163,7 @@ export const STRUCTURED_DATA = {
   name: 'Fulgur Service SRL',
   legalName: 'Fulgur Service SRL',
   url: BASE_URL,
-  logo: `${BASE_URL}/images/logo-official.webp`,
+  logo: `${BASE_URL}/images/logo-fulgur-service-impresa-pulizie-parma.webp`,
   image: OG_DEFAULT,
   description: 'Fulgur Service è l’impresa di pulizie di riferimento a Parma per pulizie civili, industriali e sanificazioni certificate. Operiamo a Parma, Fidenza, Salsomaggiore e tutta la provincia.',
   telephone: '+39-338-316-0091',

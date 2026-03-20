@@ -74,7 +74,7 @@ export function HeroSection() {
         suppressHydrationWarning
         aria-hidden="true"
         className="absolute inset-0 h-[100dvh] w-full object-cover pointer-events-none"
-        poster="/images/real-team-fulgur.webp"
+        poster="/images/team-operatori-pulizie-professionali-parma.webp"
         autoPlay
         loop
         muted
@@ -82,8 +82,8 @@ export function HeroSection() {
         preload="none"
         disablePictureInPicture
       >
-        <source src="/videos/entrata-fulgur-mobile.mp4" media="(max-width: 767px)" type="video/mp4" />
-        <source src="/videos/entrata-fulgur.mp4" media="(min-width: 768px)" type="video/mp4" />
+        <source src="/videos/impresa-pulizie-parma-videopresentazione-mobile.mp4" media="(max-width: 767px)" type="video/mp4" />
+        <source src="/videos/impresa-pulizie-parma-videopresentazione.mp4" media="(min-width: 768px)" type="video/mp4" />
       </video>
 
       {/* Overlay scuro — mantiene brand leggibile col contrasto del video */}
@@ -230,7 +230,7 @@ export function HeroSection() {
             <div className="relative h-full w-full overflow-hidden rounded-full border border-[var(--br-h)] bg-[var(--bg-2)] p-1.5 shadow-[0_20px_60px_rgba(42,140,122,0.12)]">
               <div className="relative h-full w-full overflow-hidden rounded-full">
                 <Image
-                  src="/images/real-team-fulgur.webp"
+                  src="/images/team-operatori-pulizie-professionali-parma.webp"
                   alt="Operatori Fulgur Service a Parma — impresa di pulizie professionali"
                   fill
                   sizes="(max-width: 640px) 320px, (max-width: 1024px) 380px, 460px"

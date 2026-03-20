@@ -43,15 +43,15 @@ export function MacchinariClient() {
           suppressHydrationWarning
           aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover pointer-events-none"
-          poster="/images/real-team-fulgur.webp"
+          poster="/images/team-operatori-pulizie-professionali-parma.webp"
           autoPlay
           loop
           muted
           playsInline
           preload="none"
         >
-          <source src="/videos/macchina-pulitrice-mobile.mp4" media="(max-width: 767px)" type="video/mp4" />
-          <source src="/videos/macchina-pulitrice.mp4" media="(min-width: 768px)" type="video/mp4" />
+          <source src="/videos/pulizie-industriali-macchinari-parma-mobile.mp4" media="(max-width: 767px)" type="video/mp4" />
+          <source src="/videos/pulizie-industriali-macchinari-parma.mp4" media="(min-width: 768px)" type="video/mp4" />
         </video>
 
         {/* Overlay scuro + gradiente in basso per fade verso contenuto bianco */}
@@ -116,8 +116,8 @@ export function MacchinariClient() {
           <ScrollReveal delay={0.1}>
             <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
               <Image
-                src="/images/macchinari/klindex-polisher-ai.png"
-                alt="Macchinario Klindex per lucidatura pavimenti professionale"
+                src="/images/macchinari/monospazzola-lucidatrice-parma-klindex.png"
+                alt="Monospazzola professionale Klindex usata per la lucidatura e la cristallizzazione dei pavimenti"
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -133,8 +133,8 @@ export function MacchinariClient() {
           <ScrollReveal delay={0.2}>
             <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
               <Image
-                src="/images/macchinari/industrial-vacuum-ai.png"
-                alt="Aspiratore industriale professionale CFM per grandi magazzini"
+                src="/images/macchinari/aspiratore-industriale-polveri-cfm-parma.png"
+                alt="Aspiratore industriale professionale CFM utilizzato per l'aspirazione di polveri e macerie nei capannoni"
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-110"

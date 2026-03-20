@@ -100,8 +100,8 @@ export function GeographicCoverage() {
             <div className="relative">
               <div className="relative aspect-square rounded-[36px] overflow-hidden border border-[var(--br)] shadow-2xl">
                 <Image
-                  src="/images/parma-copertura-territorio.jpg"
-                  alt="Vista aerea di Parma e provincia — Area di copertura Fulgur Service"
+                  src="/images/zone-copertura-servizi-pulizie-parma-provincia.jpg"
+                  alt="Mappa aerea di Parma e provincia, l'area coperta dai nostri servizi di pulizia professionali"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"

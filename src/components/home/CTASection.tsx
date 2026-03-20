@@ -17,15 +17,15 @@ export function CTASection() {
         suppressHydrationWarning
         aria-hidden="true"
         className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-        poster="/images/real-team-fulgur.webp"
+        poster="/images/team-operatori-pulizie-professionali-parma.webp"
         autoPlay
         loop
         muted
         playsInline
         preload="none"
       >
-        <source src="/videos/goccia-acqua-mobile.mp4" media="(max-width: 767px)" type="video/mp4" />
-        <source src="/videos/goccia-acqua.mp4" media="(min-width: 768px)" type="video/mp4" />
+        <source src="/videos/pulizie-professionali-ecosostenibili-acqua-mobile.mp4" media="(max-width: 767px)" type="video/mp4" />
+        <source src="/videos/pulizie-professionali-ecosostenibili-acqua.mp4" media="(min-width: 768px)" type="video/mp4" />
       </video>
 
       {/* Overlay bianco semitrasparente — mantiene leggibilità e brand chiaro */}

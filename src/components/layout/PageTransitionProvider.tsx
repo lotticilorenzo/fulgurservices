@@ -125,7 +125,7 @@ export function PageTransitionProvider({ children }: { children: React.ReactNode
           >
             <div className="flex h-32 w-32 items-center justify-center rounded-full bg-white shadow-[0_8px_40px_rgba(0,0,0,0.15)]">
               <Image
-                src="/images/logo-official.webp"
+                src="/images/logo-fulgur-service-impresa-pulizie-parma.webp"
                 alt="Fulgur Service"
                 width={104}
                 height={104}

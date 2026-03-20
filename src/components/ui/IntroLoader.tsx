@@ -51,8 +51,8 @@ export function IntroLoader() {
           >
             <div className="flex w-[75vw] max-w-[400px] items-center justify-center">
               <Image
-                src="/images/logo-fulgur-service.png"
-                alt="Fulgur Service Logo"
+                src="/images/logo-impresa-di-pulizie-parma-fulgur.png"
+                alt="Fulgur Service Logo — Impresa Pulizie Parma"
                 width={400}
                 height={100}
                 className="h-auto w-full object-contain drop-shadow-[0_10px_30px_rgba(42,140,122,0.15)]"
