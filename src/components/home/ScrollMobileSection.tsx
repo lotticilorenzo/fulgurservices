@@ -15,7 +15,7 @@ export function ScrollMobileSection() {
   const [scrollProgress, setScrollProgress] = useState(0)
   const [videoReady,     setVideoReady]     = useState(false)
   const [videoError,     setVideoError]     = useState(false)
-  const [isMobile,       setIsMobile]       = useState(false)
+  const [isMobile,       setIsMobile]       = useState(() => typeof window !== 'undefined' && window.matchMedia('(max-width: 768px)').matches)
 
   // Previene setState dopo unmount
   useEffect(() => {
@@ -94,10 +94,10 @@ export function ScrollMobileSection() {
       })
     }
 
-    if (video.readyState >= 4) {
+    if (video.readyState >= 1) {
       initST()
     } else {
-      video.addEventListener('canplaythrough', initST, { once: true })
+      video.addEventListener('loadedmetadata', initST, { once: true })
     }
 
     return () => {
@@ -179,12 +179,13 @@ export function ScrollMobileSection() {
         <video
           ref={videoRef}
           src={isMobile ? '/videos/scroll-mobile.mp4' : undefined}
+          poster="/images/fulgur-service-pulizie-sostenibili.jpg"
           preload={isMobile ? 'auto' : 'none'}
           muted
           playsInline
           className="w-full h-full object-cover"
           style={{ willChange: 'transform' }}
-          onCanPlayThrough={() => { if (mountedRef.current) setVideoReady(true) }}
+          onCanPlay={() => { if (mountedRef.current) setVideoReady(true) }}
           onError={() => { if (mountedRef.current) setVideoError(true) }}
         />
 
