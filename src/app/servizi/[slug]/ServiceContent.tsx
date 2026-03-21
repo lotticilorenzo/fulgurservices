@@ -10,7 +10,6 @@ import { CaretRight, CheckCircle, ArrowRight, Star, ShieldCheck, Gauge } from '@
 import { ParallaxText } from '@/components/ui/ParallaxText'
 import { WipeReveal } from '@/components/ui/WipeReveal'
 import { MagneticButton } from '@/components/ui/MagneticButton'
-import { AIChatInterface } from '@/components/ai/AIChatInterface'
 import { BeforeAfterSlider } from '@/components/ui/BeforeAfterSlider'
 import { CASE_STUDIES } from '@/lib/case-studies'
 import { Service } from '@/lib/services-data'
@@ -246,43 +245,6 @@ export function ServiceContent({ service }: ServiceContentProps) {
           </div>
         </div>
       )}
-
-      {/* AI TECHNICAL CONSULTATION BOX */}
-      <div className="w-full bg-[var(--bg-2)] pb-16 sm:pb-32 relative z-10 overflow-hidden">
-        <ScrollReveal>
-          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8">
-            <div className="flex flex-col lg:flex-row items-center gap-8 sm:gap-16 p-5 sm:p-8 lg:p-16 rounded-[2rem] sm:rounded-[3rem] bg-gradient-to-br from-[#12151E] to-[#0D1117] border border-[var(--accent)]/10 shadow-2xl relative overflow-hidden">
-               {/* Background Glow */}
-               <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[var(--accent)]/10 rounded-full blur-[100px] -z-10" />
-               
-               <div className="flex-1">
-                  <SectionLabel className="mb-6">— SUPPORTO INTELLIGENTE</SectionLabel>
-                  <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-white mb-6 leading-[1.1] text-balance">
-                    Consulto Tecnico <br /> <span className="text-[var(--accent)]">Istantaneo via AI</span>
-                  </h2>
-                  <p className="font-sans text-lg font-light text-[var(--tx-2)] mb-8 leading-relaxed max-w-xl">
-                    Hai domande specifiche su <strong>{service.title}</strong>? <br />
-                    Il nostro agente AI è addestrato sui protocolli tecnici di Fulgur Service e può darti risposte immediate su procedure, tempi e materiali.
-                  </p>
-                  
-                  <div className="flex flex-col gap-4">
-                    <div className="flex items-center gap-3 text-sm text-[var(--tx-3)] font-mono-fulgur uppercase tracking-wider">
-                      <div className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                      Neural-RAG Engine Attivo
-                    </div>
-                </div>
-               </div>
-
-               <div className="w-full lg:w-[450px]">
-                  <AIChatInterface 
-                    initialContext={service.title} 
-                    className="h-[500px] border-none shadow-none bg-transparent" 
-                  />
-               </div>
-            </div>
-          </div>
-        </ScrollReveal>
-      </div>
 
       {/* CALL TO ACTION MONUMENTALE */}
       <div className="w-full bg-[var(--bg)] py-16 sm:py-32 border-t border-[var(--br)] relative z-10">

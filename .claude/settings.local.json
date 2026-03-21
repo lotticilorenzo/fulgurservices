@@ -5,7 +5,8 @@
       "Bash(npx next:*)",
       "Bash(.node_modules.binnext build:*)",
       "Bash(node_modules/.bin/next build:*)",
-      "Bash(node -e \"const p = require\\(''./node_modules/lenis/package.json''\\); console.log\\(p.version, Object.keys\\(p.exports || {}\\)\\)\")"
+      "Bash(node -e \"const p = require\\(''./node_modules/lenis/package.json''\\); console.log\\(p.version, Object.keys\\(p.exports || {}\\)\\)\")",
+      "Bash(git push:*)"
     ]
   }
 }
