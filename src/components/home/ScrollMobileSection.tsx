@@ -178,7 +178,7 @@ export function ScrollMobileSection() {
         {/* ── Video — src solo su mobile, nessun download su desktop ── */}
         <video
           ref={videoRef}
-          src={isMobile ? '/videos/scroll-mobile.mp4' : ''}
+          src={isMobile ? '/videos/scroll-mobile.mp4' : undefined}
           preload={isMobile ? 'auto' : 'none'}
           muted
           playsInline
