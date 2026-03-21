@@ -60,7 +60,7 @@ export function ContactForm() {
         </div>
         <h3 className="font-display text-2xl font-bold text-[var(--tx-1)]">Messaggio Inviato!</h3>
         <p className="font-sans text-base font-light text-[var(--tx-2)] mt-3 max-w-xs">
-          Ti risponderemo entro 24 ore. Hai urgenza?{' '}
+          Ti risponderemo entro 48 ore. Hai urgenza?{' '}
           <a href="tel:+393383160091" className="text-[var(--accent)] font-medium hover:underline">
             Chiamaci direttamente.
           </a>

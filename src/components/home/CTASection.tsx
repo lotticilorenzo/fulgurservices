@@ -24,8 +24,7 @@ export function CTASection() {
         playsInline
         preload="none"
       >
-        <source src="/videos/pulizie-professionali-ecosostenibili-acqua-mobile.mp4" media="(max-width: 767px)" type="video/mp4" />
-        <source src="/videos/pulizie-professionali-ecosostenibili-acqua.mp4" media="(min-width: 768px)" type="video/mp4" />
+        <source src="/videos/pulizie-professionali-ecosostenibili-acqua.mp4" type="video/mp4" />
       </video>
 
       {/* Overlay bianco semitrasparente — mantiene leggibilità e brand chiaro */}
@@ -69,7 +68,7 @@ export function CTASection() {
           <p className="mt-5 sm:mt-6 font-body text-base sm:text-lg lg:text-xl font-light text-[var(--tx-2)] max-w-xl mx-auto">
             Sopralluogo gratuito{' '}
             <span className="text-[var(--tx-3)] mx-1.5">·</span>{' '}
-            Preventivo in 24h{' '}
+            Preventivo in 48h{' '}
             <span className="text-[var(--tx-3)] mx-1.5">·</span>{' '}
             Nessun impegno
           </p>

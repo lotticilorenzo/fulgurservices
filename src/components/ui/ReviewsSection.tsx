@@ -43,8 +43,8 @@ const REVIEWS = [
                 Cosa dicono i nostri clienti.
               </h2>
               <p className="font-sans text-[var(--tx-2)] font-light max-w-2xl mx-auto text-balance">
-              Oltre 500 clienti soddisfatti in Emilia-Romagna hanno scelto <br className="hidden md:block" /> 
-              di affidare i loro spazi alla nostra cura professionale.
+              Clienti in Emilia-Romagna scelgono Fulgur Service <br className="hidden md:block" />
+              e valutano il nostro lavoro 4.9 stelle su Google.
             </p>
           </ScrollReveal>
         </div>

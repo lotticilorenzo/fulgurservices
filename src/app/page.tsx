@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { METADATA, STRUCTURED_DATA } from '@/lib/seo'
+import { METADATA } from '@/lib/seo'
 import { HeroSection } from '@/components/home/HeroSection'
 import { ServicesGrid } from '@/components/home/ServicesGrid'
 import { AboutSection } from '@/components/home/AboutSection'
@@ -9,6 +9,7 @@ import { StatsSection } from '@/components/home/StatsSection'
 import { BrandsMarquee } from '@/components/home/BrandsMarquee'
 import { CTASection } from '@/components/home/CTASection'
 import { ScrollVideoSection } from '@/components/home/ScrollVideoSection'
+import { ScrollMobileSection } from '@/components/home/ScrollMobileSection'
 
 export const metadata: Metadata = {
   title: METADATA.home.title,
@@ -27,15 +28,13 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className="min-h-[100dvh] bg-[var(--bg)]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(STRUCTURED_DATA) }}
-      />
-
       {/* 1. Hero — The Opening Shot */}
       <HeroSection />
 
-      {/* 2. Scroll Video Scrubbing */}
+      {/* 2a. Scroll Video Scrubbing — mobile only */}
+      <ScrollMobileSection />
+
+      {/* 2b. Scroll Video Scrubbing — desktop only */}
       <ScrollVideoSection />
 
       {/* 3. Services Bento Grid */}

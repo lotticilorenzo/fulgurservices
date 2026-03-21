@@ -28,12 +28,12 @@ export default function ServiziPage() {
           Ogni ambiente ha bisogno di una <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--accent)] to-[var(--br-h)]">cura specifica.</span>
         </h1>
         <p className="mt-4 sm:mt-6 font-sans text-base sm:text-lg font-light text-[var(--tx-2)] max-w-2xl leading-relaxed mb-6 sm:mb-8 text-balance">
-          Scegliamo attrezzature, prodotti e protocolli in base alle tue esatte esigenze. Scopri i 12 settori in cui possiamo fare la differenza.
+          Scegliamo attrezzature, prodotti e protocolli in base alle tue esatte esigenze. Scopri le 15 aree in cui possiamo fare la differenza.
         </p>
         
         {/* INFO PILLS */}
         <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
-          {["12 Servizi", "Parma e Provincia", "Sopralluogo Gratuito"].map((pill) => (
+          {["15 Aree", "Parma e Provincia", "Sopralluogo Gratuito"].map((pill) => (
             <span key={pill} className="bg-[var(--bg-2)] border border-[var(--br)] font-mono-fulgur text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-[var(--tx-3)] rounded-full px-3 py-1.5 sm:px-4 sm:py-2">
               {pill}
             </span>

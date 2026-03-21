@@ -32,7 +32,7 @@ export const MACHINERY_DATA: MachineBrand[] = [
     name: 'Lindhaus',
     description: 'Specialisti mondiali nella filtrazione e pulizia sanitaria.',
     usage: 'Sanificazione ambienti medici, cliniche, hotel 5 stelle e uffici ad alto traffico.',
-    image: '/images/brands/lindhaus.png',
+    image: '/images/macchinari/lindhaus.jpg',
     specs: [
       { label: 'Filtrazione', value: 'HEPA S-Class Certificata' },
       { label: 'Efficienza', value: '99.97% a 0.3 micron' },
@@ -58,7 +58,7 @@ export const MACHINERY_DATA: MachineBrand[] = [
     name: 'Vapor Systems',
     description: 'Generazione continua di vapore saturo a 180° per igienizzazione chimica-free.',
     usage: 'Sanificazione cucine industriali, bagni pubblici, aree sanitarie e rimozione allergeni.',
-    image: '/images/brands/vapor-systems.png',
+    image: '/images/macchinari/gioel.svg',
     specs: [
       { label: 'Temperatura', value: '180', unit: '°C' },
       { label: 'Pressione', value: '10', unit: 'Bar' },

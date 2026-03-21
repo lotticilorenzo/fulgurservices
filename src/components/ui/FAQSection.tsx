@@ -10,7 +10,7 @@ import Link from 'next/link'
 const FAQS = [
   {
     q: 'Il sopralluogo è davvero gratuito?',
-    a: 'Assolutamente sì. Veniamo presso la tua sede senza alcun impegno per valutare lo stato degli ambienti, ascoltare le tue necessità e fornirti un preventivo dettagliato entro 24 ore. Zero spese, zero impegni.',
+    a: 'Assolutamente sì. Veniamo presso la tua sede senza alcun impegno per valutare lo stato degli ambienti, ascoltare le tue necessità e fornirti un preventivo dettagliato entro 48 ore. Zero spese, zero impegni.',
   },
   {
     q: 'Siete assicurati contro eventuali danni?',
@@ -30,7 +30,7 @@ const FAQS = [
   },
   {
     q: 'Quanto tempo ci vuole per ricevere il preventivo?',
-    a: 'Garantiamo un preventivo dettagliato entro 24 ore dal sopralluogo. Il documento è chiaro, trasparente e suddiviso per voci. Nessun costo nascosto, nessuna sorpresa in fase di fatturazione.',
+    a: 'Garantiamo un preventivo dettagliato entro 48 ore dal sopralluogo. Il documento è chiaro, trasparente e suddiviso per voci. Nessun costo nascosto, nessuna sorpresa in fase di fatturazione.',
   },
 ]
 

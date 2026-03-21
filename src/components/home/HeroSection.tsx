@@ -82,8 +82,8 @@ export function HeroSection() {
         preload="none"
         disablePictureInPicture
       >
-        <source src="/videos/impresa-pulizie-parma-videopresentazione-mobile.mp4" media="(max-width: 767px)" type="video/mp4" />
-        <source src="/videos/impresa-pulizie-parma-videopresentazione.mp4" media="(min-width: 768px)" type="video/mp4" />
+        <source src="/videos/sfondo-mobile-hero.mp4" media="(max-width: 767px)" type="video/mp4" />
+        <source src="/videos/impresa-pulizie-parma-videopresentazione.mp4" type="video/mp4" />
       </video>
 
       {/* Overlay scuro — mantiene brand leggibile col contrasto del video */}
@@ -136,22 +136,22 @@ export function HeroSection() {
           <p className="hero-reveal mt-5 sm:mt-7 max-w-[50ch] font-body text-[0.95rem] sm:text-[1.05rem] font-light leading-relaxed text-white/80">
             Impresa di pulizie professionali a{' '}
             <strong className="font-medium text-white">Parma e provincia</strong>.
-            30 anni di esperienza, tecnologie all&apos;avanguardia,
+            40 anni di esperienza, tecnologie all&apos;avanguardia,
             soluzioni sostenibili per ogni ambiente.
           </p>
 
           {/* Stats inline */}
           <div className="hero-reveal mt-6 sm:mt-7 grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-y-4 gap-x-2 sm:gap-x-5 font-mono-fulgur text-[10.5px] sm:text-[11px] font-bold uppercase tracking-[0.08em] sm:tracking-[0.15em] text-white/80">
             <span className="flex items-center gap-2">
-              <span className="text-[var(--accent)] text-[16px] sm:text-base font-black">30+</span> anni
+              <span className="text-[var(--accent)] text-[16px] sm:text-base font-black">40+</span> anni
             </span>
             <span className="hidden sm:inline text-white/30">·</span>
             <span className="flex items-center gap-2">
-              <span className="text-[var(--accent)] text-[16px] sm:text-base font-black">500+</span> clienti
+              <span className="text-[var(--accent)] text-[16px] sm:text-base font-black">4.9★</span> Google
             </span>
             <span className="hidden sm:inline text-white/30">·</span>
             <span className="flex items-center gap-2">
-              <span className="text-[var(--accent)] text-[16px] sm:text-base font-black">12</span> settori
+              <span className="text-[var(--accent)] text-[16px] sm:text-base font-black">15</span> aree
             </span>
             <span className="hidden sm:inline text-white/30">·</span>
             <span className="col-span-2 text-[var(--accent)] tracking-widest mt-1 sm:mt-0 opacity-90">Sopralluogo 100% gratuito</span>
@@ -194,7 +194,7 @@ export function HeroSection() {
             </div>
             <div className="flex items-center gap-2">
               <Clock size={14} className="text-[var(--accent)]" aria-hidden="true" />
-              <span>Risposta 24h</span>
+              <span>Risposta 48h</span>
             </div>
           </div>
         </div>
@@ -240,7 +240,7 @@ export function HeroSection() {
               </div>
             </div>
 
-            {/* Card float: 30+ anni */}
+            {/* Card float: 40+ anni */}
             <motion.div
               initial={{ y: -6 }}
               animate={{ y: [-6, 6, -6] }}
@@ -248,7 +248,7 @@ export function HeroSection() {
               className="absolute -right-4 top-10 z-20 sm:-right-5 sm:top-10 lg:-right-14 lg:top-16 glass-white rounded-2xl px-5 py-4 min-w-[120px] sm:min-w-[130px] shadow-xl"
             >
               <div className="flex flex-col items-start leading-tight">
-                <div className="font-display text-3xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-3xl md:text-4xl">30+</div>
+                <div className="font-display text-3xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-3xl md:text-4xl">40+</div>
                 <div className="mt-1 font-mono-fulgur text-[9px] font-bold uppercase tracking-widest text-[var(--tx-2)]">
                   Anni<br />di know-how
                 </div>
@@ -263,14 +263,14 @@ export function HeroSection() {
               className="absolute -left-6 bottom-12 z-20 sm:-left-6 sm:bottom-14 lg:-left-16 lg:bottom-20 glass-white rounded-2xl px-5 py-4 min-w-[120px] sm:min-w-[130px] shadow-xl"
             >
               <div className="flex flex-col items-start leading-tight">
-                <div className="font-display text-3xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-3xl md:text-4xl">500+</div>
+                <div className="font-display text-3xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-3xl md:text-4xl">4.9★</div>
                 <div className="mt-1 font-mono-fulgur text-[9px] font-bold uppercase tracking-widest text-[var(--tx-2)]">
-                  Clienti<br />soddisfatti
+                  Rating<br />su Google
                 </div>
               </div>
             </motion.div>
 
-            {/* Card float: 12 settori */}
+            {/* Card float: 15 aree */}
             <motion.div
               initial={{ y: -4 }}
               animate={{ y: [-4, 8, -4] }}
@@ -278,9 +278,9 @@ export function HeroSection() {
               className="absolute -left-4 top-20 z-20 lg:-left-12 lg:top-32 glass-white rounded-2xl px-5 py-4 min-w-[120px] shadow-xl hidden sm:flex"
             >
               <div className="flex flex-col items-start leading-tight">
-                <div className="font-display text-3xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-4xl">12</div>
+                <div className="font-display text-3xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-4xl">15</div>
                 <div className="mt-1 font-mono-fulgur text-[9px] font-bold uppercase tracking-widest text-[var(--tx-2)]">
-                  Settori<br />serviti
+                  Aree<br />servite
                 </div>
               </div>
             </motion.div>

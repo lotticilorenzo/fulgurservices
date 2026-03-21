@@ -40,7 +40,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: '17 Marzo 2026',
     author: 'Team Fulgur',
     category: 'Industriale',
-    image: '/images/pulizie-industriali-parma.jpg',
+    image: '/images/servizi/pulizie-industriali-parma.jpg',
     readTime: '5 min',
     keywords: ['pulizie industriali Parma', 'manutenzione capannoni', 'cleaning industriale']
   },

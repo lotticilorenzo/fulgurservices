@@ -23,7 +23,7 @@ const VALUES = [
   {
     icon: <RocketLaunch size={32} weight="duotone" />,
     title: "Innovazione",
-    desc: "Uniamo 30 anni di esperienza a tecnologie all'avanguardia per risultati impeccabili."
+    desc: "Uniamo 40 anni di esperienza a tecnologie all'avanguardia per risultati impeccabili."
   },
   {
     icon: <Users size={32} weight="duotone" />,

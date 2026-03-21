@@ -12,7 +12,7 @@ export const METADATA = {
     keywords: 'impresa pulizie Parma, ditta pulizie Parma, pulizie uffici Parma, pulizie industriali Parma, sanificazione ambienti Parma, pulizie condomini Parma, pulizie Parma e provincia',
     openGraph: {
       title: 'Fulgur Service — Impresa di Pulizie Professionali a Parma',
-      description: 'Soluzioni di pulizia avanzate per aziende e privati a Parma e provincia. 30 anni di esperienza, risultati garantiti.',
+      description: 'Soluzioni di pulizia avanzate per aziende e privati a Parma e provincia. 40 anni di esperienza, risultati garantiti.',
       url: BASE_URL,
       siteName: 'Fulgur Service',
       images: [{ url: OG_DEFAULT, width: 1200, height: 630, alt: 'Fulgur Service — Leader Pulizie Parma' }],
@@ -23,10 +23,10 @@ export const METADATA = {
   servizi: {
     title: 'Tutti i Servizi | Fulgur Service Parma',
     description:
-      '12 settori di intervento: pulizie aziendali, industriali, sanitarie, condomini, hotel, trattamento superfici e molto altro. Parma e provincia.',
+      '15 aree di intervento: pulizie aziendali, industriali, sanitarie, condomini, hotel, trattamento superfici e molto altro. Parma e provincia.',
     openGraph: {
       title: 'Tutti i Servizi — Fulgur Service Parma',
-      description: '12 settori di intervento con team specializzato e macchinari professionali.',
+      description: '15 aree di intervento con team specializzato e macchinari professionali.',
       url: `${BASE_URL}/servizi`,
       siteName: 'Fulgur Service',
       images: [{ url: OG_DEFAULT, width: 1200, height: 630, alt: 'Servizi Fulgur Service Parma' }],
@@ -35,12 +35,12 @@ export const METADATA = {
     },
   },
   chiSiamo: {
-    title: 'Chi Siamo | 30 Anni di Esperienza — Fulgur Service Parma',
+    title: 'Chi Siamo | 40 Anni di Esperienza — Fulgur Service Parma',
     description:
-      'Fulgur Service: impresa giovane con 30 anni di esperienza del settore. Team qualificato, prodotti eco-sostenibili, referente unico per tutti i tuoi spazi.',
+      'Fulgur Service: impresa giovane con 40 anni di esperienza del settore. Team qualificato, prodotti eco-sostenibili, referente unico per tutti i tuoi spazi.',
     openGraph: {
       title: 'Chi Siamo — Fulgur Service',
-      description: '30 anni di esperienza, visione nuova. La nostra storia.',
+      description: '40 anni di esperienza, visione nuova. La nostra storia.',
       url: `${BASE_URL}/chi-siamo`,
       siteName: 'Fulgur Service',
       images: [{ url: OG_DEFAULT, width: 1200, height: 630, alt: 'Team Fulgur Service' }],
@@ -49,12 +49,12 @@ export const METADATA = {
     },
   },
   preventivo: {
-    title: 'Richiedi Preventivo Gratuito | Sopralluogo in 24h — Fulgur Service',
+    title: 'Richiedi Preventivo Gratuito | Fulgur Service Parma',
     description:
-      'Richiedi un sopralluogo gratuito. Preventivo personalizzato in 24 ore, nessun impegno. Fulgur Service, impresa di pulizie a Parma.',
+      'Richiedi un sopralluogo gratuito. Preventivo personalizzato in 48 ore, nessun impegno. Fulgur Service, impresa di pulizie a Parma.',
     openGraph: {
       title: 'Preventivo Gratuito — Fulgur Service',
-      description: 'Sopralluogo gratuito e preventivo personalizzato in 24 ore.',
+      description: 'Sopralluogo gratuito e preventivo personalizzato in 48 ore.',
       url: `${BASE_URL}/preventivo`,
       siteName: 'Fulgur Service',
       images: [{ url: OG_DEFAULT, width: 1200, height: 630, alt: 'Preventivo Fulgur Service' }],
@@ -65,7 +65,7 @@ export const METADATA = {
   contatti: {
     title: 'Contatti | Fulgur Service Parma',
     description:
-      'Contatta Fulgur Service: +39 338 316 0091 · fulgurservice@gmail.com · Parma, Italia. Risposta garantita entro 24 ore.',
+      'Contatta Fulgur Service: +39 338 316 0091 · fulgurservice@gmail.com · Parma, Italia. Risposta garantita entro 48 ore.',
     openGraph: {
       title: 'Contatti — Fulgur Service',
       description: '+39 338 316 0091 · fulgurservice@gmail.com · Parma, Italia.',

@@ -8,8 +8,8 @@ import { ScrollReveal } from './ScrollReveal'
 const GUARANTEES = [
   {
     id: 1,
-    title: "30 anni di esperienza",
-    data: "1994-2024",
+    title: "40 anni di esperienza",
+    data: "Dal 1984",
     img: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80",
     size: "large"
   },
@@ -44,7 +44,7 @@ const GUARANTEES = [
           <div className="text-center mb-12 sm:mb-16 px-4">
             <ScrollReveal>
               <h2 className="font-display text-[32px] sm:text-4xl font-bold text-[var(--tx-1)] mb-4 text-balance leading-tight">
-                Perché oltre 500 aziende <br className="hidden sm:block" /> ci hanno scelto.
+                Perché il 97% dei clienti <br className="hidden sm:block" /> ci rinnova ogni anno.
               </h2>
               <p className="font-sans text-[var(--tx-2)] font-light max-w-2xl mx-auto text-balance">
               Non solo promesse, ma garanzie scritte e standard certificati per proteggere il tuo ambiente di lavoro.

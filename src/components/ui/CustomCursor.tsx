@@ -12,17 +12,20 @@ export function CustomCursor() {
   const mouseX = useMotionValue(-200)
   const mouseY = useMotionValue(-200)
 
-  // Ring follows with spring delay for a smooth trailing effect
-  const ringX = useSpring(mouseX, { stiffness: 260, damping: 28, mass: 0.3 })
-  const ringY = useSpring(mouseY, { stiffness: 260, damping: 28, mass: 0.3 })
+  // Il fulmine segue il mouse con una molla morbida
+  const boltX = useSpring(mouseX, { stiffness: 260, damping: 28, mass: 0.3 })
+  const boltY = useSpring(mouseY, { stiffness: 260, damping: 28, mass: 0.3 })
+
+  // L'aura è più pigra: crea un effetto "scia" visivo
+  const auraX = useSpring(mouseX, { stiffness: 140, damping: 20, mass: 0.6 })
+  const auraY = useSpring(mouseY, { stiffness: 140, damping: 20, mass: 0.6 })
 
   useEffect(() => {
-    // Only show on true pointer devices (not touch)
     const isTouch = window.matchMedia('(hover: none)').matches
     if (isTouch) return
     const initT = setTimeout(() => setIsTouchDevice(false), 0)
 
-    // VIOL-11: RAF guard — evita saturazione main thread su display a 120Hz
+    // RAF guard — evita saturazione main thread su display a 120Hz
     let rafPending = false
     let lastX = -200
     let lastY = -200
@@ -40,14 +43,11 @@ export function CustomCursor() {
         })
       }
     }
-    
-    // Using down/up to trigger clicking state for shrinking animation
-    const onDown = () => setClicking(true)
-    const onUp = () => setClicking(false)
-    const onEnter = () => setHovering(true)
-    const onLeave = () => setHovering(false)
 
-    // Event delegation — works for dynamic elements too
+    const onDown = () => setClicking(true)
+    const onUp   = () => setClicking(false)
+
+    // Event delegation — funziona anche per elementi dinamici
     const onOver = (e: MouseEvent) => {
       const hoverable = (e.target as Element).closest(
         'a, button, [role="button"], label, input, textarea, select, [data-hover]'
@@ -55,17 +55,24 @@ export function CustomCursor() {
       setHovering(!!hoverable)
     }
 
+    const onDocLeave  = () => setVisible(false)
+    const onDocEnter  = () => setVisible(true)
+
     window.addEventListener('mousemove', onMove, { passive: true })
     window.addEventListener('mousedown', onDown, { passive: true })
-    window.addEventListener('mouseup', onUp, { passive: true })
-    document.addEventListener('mouseleave', () => setVisible(false)) // Keep original logic for visibility on leave
-    document.addEventListener('mouseenter', () => setVisible(true)) // Keep original logic for visibility on enter
-    document.addEventListener('mouseover', onOver) // Keep original logic for hoverable elements
+    window.addEventListener('mouseup',   onUp,   { passive: true })
+    document.addEventListener('mouseleave', onDocLeave)
+    document.addEventListener('mouseenter', onDocEnter)
+    document.addEventListener('mouseover',  onOver)
 
     return () => {
-      document.removeEventListener('mousedown', onDown)
-      document.removeEventListener('mouseup', onUp)
-      document.removeEventListener('mouseover', onOver)
+      clearTimeout(initT)
+      window.removeEventListener('mousemove', onMove)
+      window.removeEventListener('mousedown', onDown)
+      window.removeEventListener('mouseup',   onUp)
+      document.removeEventListener('mouseleave', onDocLeave)
+      document.removeEventListener('mouseenter', onDocEnter)
+      document.removeEventListener('mouseover',  onOver)
     }
   }, [mouseX, mouseY])
 
@@ -73,48 +80,90 @@ export function CustomCursor() {
 
   return (
     <>
-      {/* ── Outer ring — follows with spring lag ── */}
-      {/* FIX VIOL-01: dimensione fissa 40px, animazione via scale puro → compositor thread */}
+      {/* ── Aura — scia morbida più lenta, radial glow ── */}
       <motion.div
         aria-hidden="true"
-        className="pointer-events-none fixed top-0 left-0 z-[9999] rounded-full border border-solid"
+        className="pointer-events-none fixed top-0 left-0 z-[9997]"
         style={{
-          x: ringX,
-          y: ringY,
+          x: auraX,
+          y: auraY,
           translateX: '-50%',
           translateY: '-50%',
           width: 40,
           height: 40,
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(78,203,160,0.28) 0%, transparent 70%)',
         }}
         animate={{
-          scale:           hovering ? 1.3 : clicking ? 0.7 : 1,
-          opacity:         visible ? 1 : 0,
-          borderColor:     hovering ? 'rgba(78, 203, 160, 1)' : 'rgba(78, 203, 160, 0.55)',
-          backgroundColor: hovering ? 'rgba(78, 203, 160, 0.10)' : 'rgba(78, 203, 160, 0)',
+          opacity: visible ? (hovering ? 0.8 : 0.4) : 0,
+          scale:   hovering ? 2.4 : clicking ? 0.5 : 1,
         }}
-        transition={{ duration: 0.18, ease: 'easeOut' }}
+        transition={{ duration: 0.4, ease: 'easeOut' }}
       />
 
-      {/* ── Inner dot — exact cursor position ── */}
-      {/* FIX VIOL-01: dimensione fissa 6px, scale puro per le variazioni dimensionali */}
+      {/* ── Ring — cerchio leggero centrato sul fulmine ── */}
       <motion.div
         aria-hidden="true"
-        className="pointer-events-none fixed top-0 left-0 z-[9999] rounded-full"
+        className="pointer-events-none fixed top-0 left-0 z-[9998]"
         style={{
-          x: mouseX,
-          y: mouseY,
+          x: boltX,
+          y: boltY,
           translateX: '-50%',
           translateY: '-50%',
-          width: 6,
-          height: 6,
-          backgroundColor: 'var(--accent)',
+          width: 32,
+          height: 32,
+          borderRadius: '50%',
+          border: '1px solid rgba(78,203,160,0.5)',
         }}
         animate={{
-          scale:   hovering ? 1.17 : clicking ? 2 : 1,
           opacity: visible ? 1 : 0,
+          scale:   hovering ? 1.75 : clicking ? 0.6 : 1,
         }}
-        transition={{ duration: 0.1 }}
+        transition={{
+          opacity: { duration: 0.15 },
+          scale:   { type: 'spring', stiffness: 320, damping: 22 },
+        }}
       />
+
+      {/* ── Fulmine SVG — sopra il ring ── */}
+      <motion.div
+        aria-hidden="true"
+        className="pointer-events-none fixed top-0 left-0 z-[9999] text-[var(--accent)]"
+        style={{
+          x: boltX,
+          y: boltY,
+          translateX: '-50%',
+          translateY: '-50%',
+          originX: '50%',
+          originY: '50%',
+        }}
+        animate={{
+          opacity: visible ? 1 : 0,
+          scale:   hovering ? 1.35 : clicking ? 0.7 : 1,
+          rotate:  hovering ? -12 : clicking ? 8 : 0,
+          filter:  clicking
+            ? 'drop-shadow(0 0 10px rgba(78,203,160,1)) drop-shadow(0 0 20px rgba(78,203,160,0.6))'
+            : hovering
+            ? 'drop-shadow(0 0 6px rgba(78,203,160,0.85))'
+            : 'drop-shadow(0 0 2px rgba(78,203,160,0.4))',
+        }}
+        transition={{
+          opacity: { duration: 0.15 },
+          scale:   { type: 'spring', stiffness: 400, damping: 22 },
+          rotate:  { type: 'spring', stiffness: 300, damping: 18 },
+          filter:  { duration: 0.2 },
+        }}
+      >
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 14 24"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path d="M10 1L3 13h5L6 23 14 10H9z" />
+        </svg>
+      </motion.div>
     </>
   )
 }
