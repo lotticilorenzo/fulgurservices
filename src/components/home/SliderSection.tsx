@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { SectionLabel } from '@/components/ui/SectionLabel'
@@ -79,6 +79,7 @@ export function SliderSection() {
               src={SLIDES[currentSlide].srcDesktop!}
               alt={SLIDES[currentSlide].title}
               fill
+              sizes="100vw"
               className="object-cover"
             />
           )}
