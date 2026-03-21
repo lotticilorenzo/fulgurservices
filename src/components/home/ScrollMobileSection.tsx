@@ -50,22 +50,28 @@ export function ScrollMobileSection() {
 
     let st: ReturnType<typeof ScrollTrigger.create> | null = null
 
+    // Safari/Chrome mobile ignorano preload="auto" per risparmiare dati.
+    // .load() esplicito forza il browser a iniziare il buffering.
+    video.load()
+
+    // Fallback: se loadeddata non scatta entro 3s (connessione lenta / browser restrittivo)
+    // mostriamo comunque la sezione con il poster, lo scrub partirà quando il video è pronto.
+    const fallbackTimer = setTimeout(() => {
+      if (mountedRef.current) setVideoReady(true)
+    }, 3000)
+
     const initST = () => {
       if (!mountedRef.current) return
       st = ScrollTrigger.create({
         trigger:             section,
         start:               'top top',
         end:                 '+=250%',
-        // scrub: 0.3 — GSAP gestisce il suo smoothing interno via ticker RAF.
-        // NON usare scrub > 0.5 + LERP esterno: doppio smoothing = video disconnesso dal dito.
         scrub:               0.3,
         pin:                 true,
         anticipatePin:       1,
         invalidateOnRefresh: true,
         refreshPriority:     1,
         onUpdate: (self) => {
-          // Assign diretto: nessun RAF esterno, nessun LERP manuale.
-          // GSAP chiama onUpdate già a 60fps durante il suo tween interno.
           if (video.duration) {
             video.currentTime = self.progress * video.duration
           }
@@ -77,15 +83,16 @@ export function ScrollMobileSection() {
       })
     }
 
-    // readyState >= 2 = HAVE_CURRENT_DATA: primo frame decodificato, duration nota.
-    // Con preload="auto" ci arriviamo rapidamente — non serve aspettare canplaythrough.
     if (video.readyState >= 2) {
       initST()
     } else {
       video.addEventListener('loadeddata', initST, { once: true })
     }
 
-    return () => { st?.kill() }
+    return () => {
+      clearTimeout(fallbackTimer)
+      st?.kill()
+    }
   }, [isMobile])
 
   // ── Fallback errore video ─────────────────────────────────────────────────
