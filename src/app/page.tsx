@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { METADATA } from '@/lib/seo'
 import { HeroSection } from '@/components/home/HeroSection'
-import { SliderSection } from '@/components/home/SliderSection'
 import { ServicesGrid } from '@/components/home/ServicesGrid'
 import { AboutSection } from '@/components/home/AboutSection'
 import { PhilosophySection } from '@/components/home/PhilosophySection'
@@ -32,8 +31,6 @@ export default function Home() {
       {/* 1. Hero — The Opening Shot */}
       <HeroSection />
 
-      {/* 1.1. Technology & Method Slider — The moving text section */}
-      <SliderSection />
 
       {/* 2a. Scroll Video Scrubbing — mobile only */}
       <ScrollMobileSection />
