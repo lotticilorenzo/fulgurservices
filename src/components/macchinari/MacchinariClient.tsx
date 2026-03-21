@@ -54,13 +54,21 @@ export function MacchinariClient() {
           <source src="/videos/pulizie-industriali-macchinari-parma.mp4" media="(min-width: 768px)" type="video/mp4" />
         </video>
 
-        {/* Overlay scuro + gradiente in basso per fade verso contenuto bianco */}
+        {/* Overlay scuro + gradiente in basso per fade verso contenuto bianco (più coprente su mobile) */}
         <div
           aria-hidden="true"
-          className="absolute inset-0 pointer-events-none"
+          className="absolute inset-0 pointer-events-none hidden sm:block"
           style={{
             background:
               'linear-gradient(to bottom, rgba(5,10,15,0.7) 0%, rgba(5,10,15,0.65) 60%, rgba(5,10,15,0.95) 100%)',
+          }}
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 pointer-events-none block sm:hidden"
+          style={{
+            background:
+              'linear-gradient(to bottom, rgba(5,10,15,0.85) 0%, rgba(5,10,15,0.8) 60%, rgba(5,10,15,0.98) 100%)',
           }}
         />
 
@@ -111,59 +119,101 @@ export function MacchinariClient() {
 
       {/* GALLERY MACCHINARI */}
       <div className="mx-auto w-full max-w-7xl px-6 xl:px-8 pt-20 mb-32">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          
-          <ScrollReveal delay={0.1}>
-            <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
-              <Image
-                src="/images/macchinari/monospazzola-lucidatrice-parma-klindex.png"
-                alt="Monospazzola professionale Klindex usata per la lucidatura e la cristallizzazione dei pavimenti"
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="absolute bottom-0 left-0 right-0 p-8 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                <h3 className="font-display text-xl font-bold text-white mb-2">Levigatrici Klindex</h3>
-                <p className="font-sans text-sm text-white/70">Punte di diamante per la cristallizzazione del marmo e il ripristino di superfici dure.</p>
+        {/* GRUPPO 1: LAVAGGIO PRINCIPALE */}
+        <div className="mb-12">
+          <SectionLabel className="mb-6">— LAVAGGIO PRINCIPALE</SectionLabel>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <ScrollReveal delay={0.1}>
+              <div className="group relative aspect-[4/5] md:aspect-[16/10] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
+                <Image
+                  src="/images/macchinari-pulizie-professionali.jpg"
+                  alt="Lavasciuga pavimenti professionale"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A140F]/80 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute bottom-0 left-0 right-0 p-8 translate-y-2 opacity-90 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                  <h3 className="font-display text-2xl font-bold text-white mb-2">Lavasciuga Uomo a Bordo</h3>
+                  <p className="font-sans text-base text-white/80 max-w-md">Efficienza massima e produttività elevata per la pulizia di grandi superfici commerciali e capannoni industriali.</p>
+                </div>
               </div>
-            </div>
-          </ScrollReveal>
+            </ScrollReveal>
 
-          <ScrollReveal delay={0.2}>
-            <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
-              <Image
-                src="/images/macchinari/aspiratore-industriale-polveri-cfm-parma.png"
-                alt="Aspiratore industriale professionale CFM utilizzato per l'aspirazione di polveri e macerie nei capannoni"
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="absolute bottom-0 left-0 right-0 p-8 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                <h3 className="font-display text-xl font-bold text-white mb-2">Sistemi di Aspirazione CFM</h3>
-                <p className="font-sans text-sm text-white/70">Potenza industriale per la rimozione di polveri sottili in ambienti logistici e produttivi.</p>
+            <ScrollReveal delay={0.2}>
+              <div className="group relative aspect-[4/5] md:aspect-[16/10] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
+                <Image
+                  src="/images/macchinari/monospazzola-lucidatrice-parma-klindex.png"
+                  alt="Monospazzola professionale Klindex usata per la lucidatura e la cristallizzazione dei pavimenti"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A140F]/80 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute bottom-0 left-0 right-0 p-8 translate-y-2 opacity-90 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                  <h3 className="font-display text-2xl font-bold text-white mb-2">Levigatrici Klindex</h3>
+                  <p className="font-sans text-base text-white/80 max-w-md">Punte di diamante per la cristallizzazione del marmo, la levigatura e il ripristino chirurgico di superfici dure.</p>
+                </div>
               </div>
-            </div>
-          </ScrollReveal>
+            </ScrollReveal>
+          </div>
+        </div>
 
-          <ScrollReveal delay={0.3}>
-            <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
-              <Image
-                src="/images/macchinari-pulizie-professionali.jpg"
-                alt="Lavasciuga pavimenti professionale"
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="absolute bottom-0 left-0 right-0 p-8 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                <h3 className="font-display text-xl font-bold text-white mb-2">Lavasciuga Uomo a Bordo</h3>
-                <p className="font-sans text-sm text-white/70">Efficienza massima per grandi superfici commerciali e industriali.</p>
+        {/* GRUPPO 2: TECNOLOGIE SPECIALISTICHE */}
+        <div>
+          <SectionLabel className="mb-6">— TECNOLOGIE SPECIALISTICHE</SectionLabel>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <ScrollReveal delay={0.1}>
+              <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
+                <Image
+                  src="/images/macchinari/aspiratore-industriale-polveri-cfm-parma.png"
+                  alt="Aspiratore industriale professionale CFM utilizzato per l'aspirazione di polveri e macerie nei capannoni"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A140F]/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-2 opacity-90 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                  <h3 className="font-display text-xl font-bold text-white mb-2">Sistemi di Aspirazione</h3>
+                  <p className="font-sans text-sm text-white/70">Potenza industriale per la rimozione di polveri sottili in ambienti logistici e produttivi.</p>
+                </div>
               </div>
-            </div>
-          </ScrollReveal>
+            </ScrollReveal>
 
+            <ScrollReveal delay={0.2}>
+              <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
+                <Image
+                  src="/images/fulgur-service-pulizie-sostenibili.jpg"
+                  alt="Macchina pulizia a vapore 180°"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A140F]/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-2 opacity-90 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                  <h3 className="font-display text-xl font-bold text-white mb-2">Macchine a Vapore 180°C</h3>
+                  <p className="font-sans text-sm text-white/70">Sanificazione naturale e profonda. Ideale per ambienti sanitari e superfici sensibili.</p>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.3}>
+              <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
+                <Image
+                  src="/images/servizi/pulizia-vetrate-altezza-parma.jpg"
+                  alt="Sistema ad osmosi inversa per vetrate"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A140F]/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-2 opacity-90 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                  <h3 className="font-display text-xl font-bold text-white mb-2">Macchine a Osmosi</h3>
+                  <p className="font-sans text-sm text-white/70">Lavaggio ecologico di facciate e vetrate continue in altezza utilizzando acqua pura demineralizzata.</p>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
         </div>
       </div>
 

@@ -196,6 +196,57 @@ export function ServiceContent({ service }: ServiceContentProps) {
         </div>
       </div>
 
+      {/* SEZIONE SETTORE ALBERGHIERO (Visibile solo per questo servizio) */}
+      {service.slug === 'settore-alberghiero' && (
+        <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8 mt-16 mb-24 relative z-10">
+          <SectionLabel className="mb-10 text-center sm:text-left">— I NOSTRI SERVIZI ALBERGHIERI</SectionLabel>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="p-8 rounded-3xl bg-[var(--bg-card)] border border-[var(--br)] shadow-sm hover:border-[var(--accent)]/50 transition-colors">
+              <h3 className="font-display text-xl font-bold text-[var(--tx-1)] mb-3 flex items-center gap-3">
+                <Icons.Bed className="text-[var(--accent)]" size={24} weight="duotone" />
+                Housekeeping
+              </h3>
+              <p className="font-sans text-sm text-[var(--tx-2)] leading-relaxed">Riassetto quotidiano, sanificazione bagni e cambio biancheria con personale formato alla massima discrezione e agli standard di hotellerie di lusso.</p>
+            </div>
+            <div className="p-8 rounded-3xl bg-[var(--bg-card)] border border-[var(--br)] shadow-sm hover:border-[var(--accent)]/50 transition-colors">
+              <h3 className="font-display text-xl font-bold text-[var(--tx-1)] mb-3 flex items-center gap-3">
+                <Icons.Armchair className="text-[var(--accent)]" size={24} weight="duotone" />
+                Aree Comuni & Hall
+              </h3>
+              <p className="font-sans text-sm text-[var(--tx-2)] leading-relaxed">Mantenimento costante della pulizia in lobby, lounge, ascensori e corridoi, per accogliere gli ospiti in un ambiente sempre perfetto.</p>
+            </div>
+            <div className="p-8 rounded-3xl bg-[var(--bg-card)] border border-[var(--br)] shadow-sm hover:border-[var(--accent)]/50 transition-colors">
+              <h3 className="font-display text-xl font-bold text-[var(--tx-1)] mb-3 flex items-center gap-3">
+                <Icons.Waves className="text-[var(--accent)]" size={24} weight="duotone" />
+                Spa & Benessere
+              </h3>
+              <p className="font-sans text-sm text-[var(--tx-2)] leading-relaxed">Protocolli di igienizzazione severi per piscine, saune e percorsi wellness, con trattamenti antiscivolo e antifungini garantiti.</p>
+            </div>
+            <div className="p-8 rounded-3xl bg-[var(--bg-card)] border border-[var(--br)] shadow-sm hover:border-[var(--accent)]/50 transition-colors">
+              <h3 className="font-display text-xl font-bold text-[var(--tx-1)] mb-3 flex items-center gap-3">
+                <Icons.Drop className="text-[var(--accent)]" size={24} weight="duotone" />
+                Lavaggio Moquette
+              </h3>
+              <p className="font-sans text-sm text-[var(--tx-2)] leading-relaxed">Estrazione e lavaggio profondo di moquette, tendaggi, materassi e tessuti per eliminare macchie, allergeni e cattivi odori in camera.</p>
+            </div>
+            <div className="p-8 rounded-3xl bg-[var(--bg-card)] border border-[var(--br)] shadow-sm hover:border-[var(--accent)]/50 transition-colors">
+              <h3 className="font-display text-xl font-bold text-[var(--tx-1)] mb-3 flex items-center gap-3">
+                <Icons.ForkKnife className="text-[var(--accent)]" size={24} weight="duotone" />
+                Ristorazione
+              </h3>
+              <p className="font-sans text-sm text-[var(--tx-2)] leading-relaxed">Sanificazione serale e notturna delle aree food & beverage secondo normative HACCP, sgrassamento intensivo cappe e piani di lavoro.</p>
+            </div>
+            <div className="p-8 rounded-3xl bg-[var(--bg-card)] border border-[var(--br)] shadow-sm hover:border-[var(--accent)]/50 transition-colors">
+              <h3 className="font-display text-xl font-bold text-[var(--tx-1)] mb-3 flex items-center gap-3">
+                <Icons.Sparkle className="text-[var(--accent)]" size={24} weight="duotone" />
+                Trattamenti Speciali
+              </h3>
+              <p className="font-sans text-sm text-[var(--tx-2)] leading-relaxed">Cristallizzazione marmi della hall, lavaggio vetrate continue in quota, pulizia parcheggi interrati e mantenimento aree verdi esterne.</p>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* AI TECHNICAL CONSULTATION BOX */}
       <div className="w-full bg-[var(--bg-2)] pb-16 sm:pb-32 relative z-10 overflow-hidden">
         <ScrollReveal>
@@ -242,7 +293,7 @@ export function ServiceContent({ service }: ServiceContentProps) {
               Il tuo spazio merita <span className="text-[var(--accent)]">brillantezza.</span>
             </h2>
             <p className="font-sans text-lg sm:text-xl font-light text-[var(--tx-2)] mb-10 sm:mb-12 max-w-2xl text-balance leading-relaxed italic">
-              Sopralluogo gratuito per {service.title} entro 24 ore. Massima professionalità, nessun impegno.
+              Sopralluogo gratuito per {service.title} entro 48 ore. Massima professionalità, nessun impegno.
             </p>
             
             <Link href="/preventivo" className="w-full sm:w-auto">

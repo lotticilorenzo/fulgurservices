@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 import { motion, useMotionValue, useSpring } from 'framer-motion'
+import { Lightning } from '@phosphor-icons/react'
 
 export function CustomCursor() {
   const [visible, setVisible] = useState(false)
@@ -95,26 +96,28 @@ export function CustomCursor() {
         transition={{ duration: 0.18, ease: 'easeOut' }}
       />
 
-      {/* ── Inner dot — exact cursor position ── */}
-      {/* FIX VIOL-01: dimensione fissa 6px, scale puro per le variazioni dimensionali */}
+      {/* ── Inner lightning — exact cursor position ── */}
+      {/* FIX VIOL-01: dimensione fissa, scale puro per le variazioni dimensionali */}
       <motion.div
         aria-hidden="true"
-        className="pointer-events-none fixed top-0 left-0 z-[9999] rounded-full"
+        className="pointer-events-none fixed top-0 left-0 z-[9999] flex items-center justify-center text-[var(--accent)]"
         style={{
           x: mouseX,
           y: mouseY,
           translateX: '-50%',
           translateY: '-50%',
-          width: 6,
-          height: 6,
-          backgroundColor: 'var(--accent)',
+          width: 24,
+          height: 24,
         }}
         animate={{
-          scale:   hovering ? 1.17 : clicking ? 2 : 1,
+          scale:   hovering ? 1.5 : clicking ? 0.8 : 1,
           opacity: visible ? 1 : 0,
+          rotate: clicking ? 15 : 0
         }}
-        transition={{ duration: 0.1 }}
-      />
+        transition={{ duration: 0.15 }}
+      >
+        <Lightning weight="fill" size={24} />
+      </motion.div>
     </>
   )
 }

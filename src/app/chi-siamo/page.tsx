@@ -34,7 +34,7 @@ const VALORI = [
   {
     Icon: Handshake,
     title: 'Trasparenza totale',
-    desc: 'Sopralluogo sempre gratuito, preventivo dettagliato entro 24 ore e nessuna spesa nascosta.',
+    desc: 'Sopralluogo sempre gratuito, preventivo dettagliato entro 48 ore e nessuna spesa nascosta.',
   },
 ]
 
@@ -49,7 +49,7 @@ export default function ChiSiamoPage() {
           Tradizione e innovazione nel <span className="text-[var(--accent)]">cleaning a Parma.</span>
         </h1>
         <p className="mt-8 font-sans text-lg lg:text-xl font-light text-[var(--tx-2)] max-w-3xl leading-relaxed text-balance">
-          Fulgur Service è l&apos;<strong>impresa di pulizie a Parma</strong> che unisce l&apos;esperienza tecnica di trent&apos;anni alla visione dinamica di una nuova generazione. 
+          Fulgur Service è l&apos;<strong>impresa di pulizie a Parma</strong> che unisce l&apos;esperienza tecnica di quarant&apos;anni alla visione dinamica di una nuova generazione. 
           Siamo il punto d&apos;incontro tra la solidità del lavoro costruito sul territorio e l&apos;innovazione tecnologica costante.
         </p>
       </div>
@@ -66,8 +66,8 @@ export default function ChiSiamoPage() {
           sizes="100vw"
           priority
         />
-            <div className="absolute inset-x-0 bottom-0 aspect-[21/6] bg-gradient-to-t from-[var(--bg)] via-[var(--bg)]/40 to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6 sm:bottom-8 sm:left-8 sm:right-8 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6">
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0D1117]/95 via-[#0D1117]/40 to-transparent" />
+            <div className="absolute bottom-6 left-6 right-6 sm:bottom-8 sm:left-8 sm:right-8 z-10 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6">
               <div className="text-left max-w-lg">
                 <h3 className="font-display text-xl sm:text-2xl font-bold text-white mb-2">Una promessa di valore</h3>
                 <p className="font-sans text-sm text-white/90">Per noi la pulizia non è un&apos;attività meccanica: non siamo semplici fornitori, ma partner che si prendono cura dell&apos;ambiente del cliente a 360°.</p>
@@ -85,7 +85,7 @@ export default function ChiSiamoPage() {
         <div className="mx-auto w-full max-w-4xl px-5 sm:px-6 xl:px-8">
           {/* FIX SEM-01: h2 sr-only ripristina cascata H1→H2→H3→H4 senza alterare il design */}
           <h2 className="sr-only">La nostra storia</h2>
-          <SectionLabel className="mb-10 lg:mb-12 text-center">— 30 ANNI DI ESPERIENZA</SectionLabel>
+          <SectionLabel className="mb-10 lg:mb-12 text-center">— 40 ANNI DI ESPERIENZA</SectionLabel>
           <div className="relative border-l border-[var(--br)] ml-4 sm:ml-8 flex flex-col gap-12 sm:gap-16">
             
             <ScrollReveal>
@@ -116,7 +116,7 @@ export default function ChiSiamoPage() {
                 <h3 className="font-mono-fulgur text-[var(--tx-1)] font-bold mb-2 uppercase tracking-widest text-xs">Oggi</h3>
                 <h4 className="font-display text-2xl font-bold text-[var(--tx-1)] mb-4">Fulgur Service SRL</h4>
                 <p className="font-sans font-light text-[var(--tx-2)] leading-relaxed text-lg">
-                  Il passaggio generazionale fonda Fulgur Service: un brand giovane che eredita 30 anni di know-how paterno unendolo a gestioni digitali smart, sostenibilità ambientale certificata ed engineering dei processi integrati.
+                  Il passaggio generazionale fonda Fulgur Service: un brand giovane che eredita 40 anni di know-how paterno unendolo a gestioni digitali smart, sostenibilità ambientale certificata ed engineering dei processi integrati.
                 </p>
               </div>
             </ScrollReveal>

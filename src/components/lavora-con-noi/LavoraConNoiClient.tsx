@@ -41,19 +41,50 @@ export function LavoraConNoiClient() {
   const [formStep, setFormStep] = useState(1)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSent, setIsSent] = useState(false)
+  const [formData, setFormData] = useState({
+    nome: '',
+    email: '',
+    citta: '',
+    lettera: '',
+  })
+  const [cvFile, setCvFile] = useState<File | null>(null)
 
   const handleNext = (e: React.FormEvent) => {
     e.preventDefault()
     setFormStep(prev => prev + 1)
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    setTimeout(() => {
+
+    try {
+      const data = new FormData()
+      data.append('nome', formData.nome)
+      data.append('email', formData.email)
+      data.append('citta', formData.citta)
+      data.append('lettera', formData.lettera)
+      if (cvFile) {
+        data.append('cv', cvFile)
+      }
+
+      const response = await fetch('/api/job', {
+        method: 'POST',
+        body: data,
+      })
+
+      if (response.ok) {
+        setIsSent(true)
+      } else {
+        const err = await response.json()
+        alert(err.message || "Errore durante l'invio della candidatura. Riprova più tardi.")
+      }
+    } catch (error) {
+      console.error('Submission error:', error)
+      alert("Si è verificato un errore di rete. Controlla la tua connessione.")
+    } finally {
       setIsSubmitting(false)
-      setIsSent(true)
-    }, 2000)
+    }
   }
 
   return (
@@ -159,11 +190,25 @@ export function LavoraConNoiClient() {
                               >
                                 <div>
                                   <label className="block font-mono-fulgur text-[10px] uppercase tracking-widest text-[var(--accent)] mb-2">Nome e Cognome</label>
-                                  <input type="text" required placeholder="Mario Rossi" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-base appearance-none focus:ring-2 focus:ring-[var(--accent)] outline-none transition-all" />
+                                  <input 
+                                    type="text" 
+                                    required 
+                                    placeholder="Mario Rossi" 
+                                    value={formData.nome}
+                                    onChange={(e) => setFormData({ ...formData, nome: e.target.value })}
+                                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-base appearance-none focus:ring-2 focus:ring-[var(--accent)] outline-none transition-all" 
+                                  />
                                 </div>
                                 <div>
                                   <label className="block font-mono-fulgur text-[10px] uppercase tracking-widest text-[var(--accent)] mb-2">Email</label>
-                                  <input type="email" required placeholder="mario@email.it" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-base appearance-none focus:ring-2 focus:ring-[var(--accent)] outline-none transition-all" />
+                                  <input 
+                                    type="email" 
+                                    required 
+                                    placeholder="mario@email.it" 
+                                    value={formData.email}
+                                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-base appearance-none focus:ring-2 focus:ring-[var(--accent)] outline-none transition-all" 
+                                  />
                                 </div>
                                 <div className="flex justify-end pt-4">
                                   <MagneticButton as="div">
@@ -181,17 +226,43 @@ export function LavoraConNoiClient() {
                               >
                                 <div>
                                   <label className="block font-mono-fulgur text-[10px] uppercase tracking-widest text-[var(--accent)] mb-2">Città di residenza</label>
-                                  <input type="text" required placeholder="es. Parma" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-base appearance-none focus:ring-2 focus:ring-[var(--accent)] outline-none transition-all" />
+                                  <input 
+                                    type="text" 
+                                    required 
+                                    placeholder="es. Parma" 
+                                    value={formData.citta}
+                                    onChange={(e) => setFormData({ ...formData, citta: e.target.value })}
+                                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-base appearance-none focus:ring-2 focus:ring-[var(--accent)] outline-none transition-all" 
+                                  />
                                 </div>
-                                 <div>
-                                   <label className="block font-mono-fulgur text-[10px] uppercase tracking-widest text-[var(--accent)] mb-2">Il tuo CV (Opzionale)</label>
-                                   <div className="relative h-32 w-full border-2 border-dashed border-white/10 rounded-2xl flex flex-col items-center justify-center gap-2 hover:border-[var(--accent)]/50 transition-colors cursor-pointer group">
-                                      <UploadSimple size={24} className="text-white/20 group-hover:text-[var(--accent)] transition-colors" aria-hidden="true" />
-                                      <span className="text-[10px] font-mono-fulgur text-white/40 uppercase tracking-widest">Trascina qui o clicca per caricare</span>
-                                      <input type="file" className="absolute inset-0 opacity-0 cursor-pointer" aria-label="Carica il tuo curriculum" />
+                                <div>
+                                  <label className="block font-mono-fulgur text-[10px] uppercase tracking-widest text-[var(--accent)] mb-2">Perché dovrei lavorare con voi? (Note)</label>
+                                  <textarea 
+                                    placeholder="Parlaci brevemente di te..." 
+                                    rows={4}
+                                    value={formData.lettera}
+                                    onChange={(e) => setFormData({ ...formData, lettera: e.target.value })}
+                                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-base appearance-none focus:ring-2 focus:ring-[var(--accent)] outline-none transition-all resize-none"
+                                  />
+                                </div>
+                                 <div className="relative">
+                                   <label className="block font-mono-fulgur text-[10px] uppercase tracking-widest text-[var(--accent)] mb-2">Il tuo CV (PDF o Word)</label>
+                                   <div className={`relative h-28 w-full border-2 border-dashed rounded-2xl flex flex-col items-center justify-center gap-2 transition-all cursor-pointer group ${cvFile ? 'border-[var(--accent)] bg-[var(--accent)]/5' : 'border-white/10 hover:border-[var(--accent)]/50'}`}>
+                                      <UploadSimple size={24} className={cvFile ? 'text-[var(--accent)]' : 'text-white/20 group-hover:text-[var(--accent)]'} aria-hidden="true" />
+                                      <span className="text-[10px] font-mono-fulgur text-white/40 uppercase tracking-widest px-4 text-center">
+                                        {cvFile ? `File pronto: ${cvFile.name}` : 'Trascina qui o clicca per caricare il CV'}
+                                      </span>
+                                      <input 
+                                        type="file" 
+                                        accept=".pdf,.doc,.docx"
+                                        required
+                                        onChange={(e) => setCvFile(e.target.files?.[0] || null)}
+                                        className="absolute inset-0 opacity-0 cursor-pointer" 
+                                        aria-label="Carica il tuo curriculum" 
+                                      />
                                    </div>
-                                   <p className="mt-2 text-[10px] text-white/30 font-sans leading-tight">
-                                     I dati contenuti nel tuo CV verranno trattati esclusivamente per finalità di selezione del personale, nel rispetto del regolamento GDPR.
+                                    <p className="mt-2 text-[10px] text-white/30 font-sans leading-tight">
+                                     Formati accettati: PDF, Word. Max 5MB.
                                    </p>
                                 </div>
 

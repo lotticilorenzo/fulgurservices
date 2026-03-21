@@ -10,11 +10,53 @@ import { GlowBadge } from '@/components/ui/GlowBadge'
 import { MagneticButton } from '@/components/ui/MagneticButton'
 import { ParticleField } from '@/components/ui/ParticleField'
 
+const SLIDES = [
+  {
+    type: 'video',
+    title: 'Puliamo',
+    subtitle: 'Impresa di pulizie professionali a Parma e provincia. Puliamo ogni ambiente una sola...',
+    srcMobile: '/videos/impresa-pulizie-parma-videopresentazione-mobile.mp4',
+    srcDesktop: '/videos/impresa-pulizie-parma-videopresentazione.mp4',
+    poster: '/images/team-operatori-pulizie-professionali-parma.webp',
+    titleClass: 'text-white'
+  },
+  {
+    type: 'image',
+    title: 'Il futuro',
+    subtitle: 'Tecnologie all\'avanguardia e 40 anni di esperienza per spazi sempre all\'altezza.',
+    srcDesktop: '/images/macchinari-pulizie-professionali.jpg',
+    titleClass: 'text-white'
+  },
+  {
+    type: 'image',
+    title: 'L\'energia',
+    subtitle: 'Interventi mirati con personale qualificato e protocolli certificati.',
+    srcDesktop: '/images/servizi/pulizie-industriali-parma.jpg',
+    titleClass: 'text-outline-accent'
+  },
+  {
+    type: 'image',
+    title: 'Natura',
+    subtitle: 'Soluzioni sostenibili, prodotti eco-compatibili e rispetto totale per ogni ambiente.',
+    srcDesktop: '/images/fulgur-service-pulizie-sostenibili.jpg',
+    titleClass: 'text-[var(--accent)]'
+  }
+]
+
 export function HeroSection() {
   const containerRef = useRef<HTMLElement>(null)
   const leftRef = useRef<HTMLDivElement>(null)
   const rightRef = useRef<HTMLDivElement>(null)
   const [showScroll, setShowScroll] = useState(true)
+  const [currentSlide, setCurrentSlide] = useState(0)
+
+  /* Timer per lo slider automatico */
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % SLIDES.length)
+    }, 6000)
+    return () => clearInterval(timer)
+  }, [])
 
   /* scroll indicator hide */
   React.useEffect(() => {
@@ -54,6 +96,11 @@ export function HeroSection() {
     if (prefersReduced || !rightRef.current) return
 
     const ctx = gsap.context(() => {
+      if (prefersReduced) {
+        gsap.set(rightRef.current, { opacity: 1, x: 0, scale: 1 })
+        return
+      }
+
       gsap.fromTo(
         rightRef.current,
         { opacity: 0, x: 40, scale: 0.96 },
@@ -69,22 +116,40 @@ export function HeroSection() {
       ref={containerRef}
       className="relative flex sm:min-h-[100dvh] w-full items-center overflow-hidden bg-[var(--bg)] pt-[120px] pb-24 md:pt-28 md:pb-16 lg:pt-36 lg:pb-20 xl:pt-[140px]"
     >
-      {/* Video sfondo */}
-      <video
-        suppressHydrationWarning
-        aria-hidden="true"
-        className="absolute inset-0 h-[100dvh] w-full object-cover pointer-events-none"
-        poster="/images/team-operatori-pulizie-professionali-parma.webp"
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="none"
-        disablePictureInPicture
-      >
-        <source src="/videos/impresa-pulizie-parma-videopresentazione-mobile.mp4" media="(max-width: 767px)" type="video/mp4" />
-        <source src="/videos/impresa-pulizie-parma-videopresentazione.mp4" media="(min-width: 768px)" type="video/mp4" />
-      </video>
+      {/* Sfondi Slider */}
+      {SLIDES.map((slide, idx) => (
+        <div
+          key={idx}
+          className="absolute inset-0 h-[100dvh] w-full transition-opacity duration-[1500ms] ease-in-out pointer-events-none"
+          style={{ opacity: currentSlide === idx ? 1 : 0 }}
+        >
+          {slide.type === 'video' ? (
+            <video
+              suppressHydrationWarning
+              aria-hidden="true"
+              className="h-full w-full object-cover"
+              poster={slide.poster}
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="none"
+              disablePictureInPicture
+            >
+              <source src={slide.srcMobile} media="(max-width: 767px)" type="video/mp4" />
+              <source src={slide.srcDesktop} media="(min-width: 768px)" type="video/mp4" />
+            </video>
+          ) : (
+            <Image
+              src={slide.srcDesktop!}
+              alt={slide.title}
+              fill
+              className="object-cover"
+              priority={idx === 0 || idx === 1}
+            />
+          )}
+        </div>
+      ))}
 
       {/* Overlay scuro — mantiene brand leggibile col contrasto del video */}
       <div
@@ -115,43 +180,43 @@ export function HeroSection() {
       />
 
       {/* Content */}
-      <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-8 md:gap-12 px-6 lg:grid-cols-[55%_45%] xl:gap-20 xl:px-8">
+      <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-8 md:gap-12 px-6 md:grid-cols-[55%_45%] xl:gap-20 xl:px-8">
 
         {/* ── SINISTRA ── */}
         <div ref={leftRef} className="flex flex-col items-start">
 
-          {/* GlowBadge */}
-          <div className="hero-reveal">
-            <GlowBadge>Parma · Dal 1994</GlowBadge>
+
+          {/* Slider Testi H1 e Subtitle */}
+          <div className="hero-reveal mt-5 relative h-[180px] sm:h-[190px] w-full flex items-center">
+            {SLIDES.map((slide, idx) => (
+              <div
+                key={idx}
+                className="absolute left-0 top-0 w-full transition-all duration-[1200ms] ease-out flex flex-col items-start"
+                style={{
+                  opacity: currentSlide === idx ? 1 : 0,
+                  transform: currentSlide === idx ? 'translateY(0)' : 'translateY(15px)',
+                  pointerEvents: currentSlide === idx ? 'auto' : 'none'
+                }}
+              >
+                <h1 className="font-display font-black leading-[1.0] sm:leading-[0.93] tracking-tight sm:tracking-tighter text-[clamp(50px,11vw,90px)] drop-shadow-2xl">
+                  <span className={`block ${slide.titleClass}`}>{slide.title}</span>
+                </h1>
+                
+                <p className="mt-4 sm:mt-6 max-w-[50ch] font-body text-[0.95rem] sm:text-[1.05rem] font-light leading-relaxed text-white/90">
+                  {slide.subtitle}
+                </p>
+              </div>
+            ))}
           </div>
-
-          {/* H1 — tre righe. leading-[1.0] su mobile evita il salto CLS verso sm:leading-[0.93] */}
-          <h1 className="hero-reveal mt-5 font-display font-black leading-[1.0] sm:leading-[0.93] tracking-tight sm:tracking-tighter text-[clamp(42px,10vw,84px)] drop-shadow-2xl">
-            <span className="block text-white">Puliamo il Futuro</span>
-            <span className="block text-outline-accent">con l&apos;Energia</span>
-            <span className="block text-[var(--accent)]">della Natura</span>
-          </h1>
-
-          {/* Subtitle */}
-          <p className="hero-reveal mt-5 sm:mt-7 max-w-[50ch] font-body text-[0.95rem] sm:text-[1.05rem] font-light leading-relaxed text-white/80">
-            Impresa di pulizie professionali a{' '}
-            <strong className="font-medium text-white">Parma e provincia</strong>.
-            30 anni di esperienza, tecnologie all&apos;avanguardia,
-            soluzioni sostenibili per ogni ambiente.
-          </p>
 
           {/* Stats inline */}
           <div className="hero-reveal mt-6 sm:mt-7 grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-y-4 gap-x-2 sm:gap-x-5 font-mono-fulgur text-[10.5px] sm:text-[11px] font-bold uppercase tracking-[0.08em] sm:tracking-[0.15em] text-white/80">
             <span className="flex items-center gap-2">
-              <span className="text-[var(--accent)] text-[16px] sm:text-base font-black">30+</span> anni
+              <span className="text-[var(--accent)] text-[16px] sm:text-base font-black">40+</span> anni
             </span>
             <span className="hidden sm:inline text-white/30">·</span>
             <span className="flex items-center gap-2">
-              <span className="text-[var(--accent)] text-[16px] sm:text-base font-black">500+</span> clienti
-            </span>
-            <span className="hidden sm:inline text-white/30">·</span>
-            <span className="flex items-center gap-2">
-              <span className="text-[var(--accent)] text-[16px] sm:text-base font-black">12</span> settori
+              <span className="text-[var(--accent)] text-[16px] sm:text-base font-black">12</span> aree di intervento
             </span>
             <span className="hidden sm:inline text-white/30">·</span>
             <span className="col-span-2 text-[var(--accent)] tracking-widest mt-1 sm:mt-0 opacity-90">Sopralluogo 100% gratuito</span>
@@ -186,7 +251,7 @@ export function HeroSection() {
           <div className="hero-reveal mt-4 sm:mt-6 flex flex-col sm:flex-row flex-wrap gap-x-5 gap-y-3 font-mono-fulgur text-[9.5px] font-medium uppercase tracking-widest text-white/70">
             <div className="flex items-center gap-2">
               <ShieldCheck size={14} className="text-[var(--accent)]" aria-hidden="true" />
-              <span>Assicurati RCT €2M</span>
+              <span>Copertura Assicurativa</span>
             </div>
             <div className="flex items-center gap-2">
               <Leaf size={14} className="text-[var(--accent)]" aria-hidden="true" />
@@ -202,7 +267,7 @@ export function HeroSection() {
         {/* ── DESTRA (Hidden su mobile per risparmiare spazio e velocizzare lettura) ── */}
         <div
           ref={rightRef}
-          className="relative hidden lg:flex items-center justify-center opacity-0"
+          className="relative hidden md:flex items-center justify-center opacity-0"
         >
           {/* Grande cerchio immagine */}
           <div className="relative flex h-[260px] w-[260px] mt-10 sm:mt-0 items-center justify-center sm:h-[320px] sm:w-[320px] md:h-[380px] md:w-[380px] lg:h-[440px] lg:w-[440px] xl:h-[460px] xl:w-[460px]">
@@ -248,9 +313,9 @@ export function HeroSection() {
               className="absolute -right-4 top-10 z-20 sm:-right-5 sm:top-10 lg:-right-14 lg:top-16 glass-white rounded-2xl px-5 py-4 min-w-[120px] sm:min-w-[130px] shadow-xl"
             >
               <div className="flex flex-col items-start leading-tight">
-                <div className="font-display text-3xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-3xl md:text-4xl">30+</div>
+                <div className="font-display text-3xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-3xl md:text-3.5xl">ECO</div>
                 <div className="mt-1 font-mono-fulgur text-[9px] font-bold uppercase tracking-widest text-[var(--tx-2)]">
-                  Anni<br />di know-how
+                  100% Prodotti<br />Certificati
                 </div>
               </div>
             </motion.div>
@@ -263,14 +328,14 @@ export function HeroSection() {
               className="absolute -left-6 bottom-12 z-20 sm:-left-6 sm:bottom-14 lg:-left-16 lg:bottom-20 glass-white rounded-2xl px-5 py-4 min-w-[120px] sm:min-w-[130px] shadow-xl"
             >
               <div className="flex flex-col items-start leading-tight">
-                <div className="font-display text-3xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-3xl md:text-4xl">500+</div>
+                <div className="font-display text-2.5xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-2.5xl md:text-3xl">GREEN</div>
                 <div className="mt-1 font-mono-fulgur text-[9px] font-bold uppercase tracking-widest text-[var(--tx-2)]">
-                  Clienti<br />soddisfatti
+                  Impatto<br />Ambientale
                 </div>
               </div>
             </motion.div>
 
-            {/* Card float: 12 settori */}
+            {/* Card float: 12 aree di intervento */}
             <motion.div
               initial={{ y: -4 }}
               animate={{ y: [-4, 8, -4] }}
@@ -280,7 +345,52 @@ export function HeroSection() {
               <div className="flex flex-col items-start leading-tight">
                 <div className="font-display text-3xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-4xl">12</div>
                 <div className="mt-1 font-mono-fulgur text-[9px] font-bold uppercase tracking-widest text-[var(--tx-2)]">
-                  Settori<br />serviti
+                  Aree di<br />intervento
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Card float: Superfici */}
+            <motion.div
+              initial={{ x: -10 }}
+              animate={{ x: [-10, 10, -10], y: [0, 8, 0] }}
+              transition={{ repeat: Infinity, duration: 5.5, ease: 'easeInOut', delay: 0.8 }}
+              className="absolute -right-10 bottom-4 z-20 md:-right-16 md:bottom-6 glass-white rounded-2xl px-5 py-4 min-w-[120px] shadow-xl"
+            >
+              <div className="flex flex-col items-start leading-tight">
+                <div className="font-display text-2xl font-extrabold text-[var(--accent)] tracking-tighter md:text-2.5xl">SUPERFICI</div>
+                <div className="mt-1 font-mono-fulgur text-[9px] font-bold uppercase tracking-widest text-[var(--tx-2)]">
+                  Trattamenti<br />Protettivi
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Card float: Pannelli */}
+            <motion.div
+              initial={{ x: 8 }}
+              animate={{ x: [8, -8, 8], y: [0, -10, 0] }}
+              transition={{ repeat: Infinity, duration: 6.5, ease: 'easeInOut', delay: 1.5 }}
+              className="absolute -left-12 top-0 z-20 md:-left-24 md:top-2 glass-white rounded-2xl px-5 py-4 min-w-[120px] shadow-xl hidden lg:flex"
+            >
+              <div className="flex flex-col items-start leading-tight">
+                <div className="font-display text-2xl font-extrabold text-[var(--accent)] tracking-tighter md:text-2.5xl">PANNELLI</div>
+                <div className="mt-1 font-mono-fulgur text-[9px] font-bold uppercase tracking-widest text-[var(--tx-2)]">
+                  Pulizia<br />Fotovoltaico
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Card float: Tecnologie e Metodo */}
+            <motion.div
+              initial={{ y: 10 }}
+              animate={{ y: [10, -10, 10], x: [0, 5, 0] }}
+              transition={{ repeat: Infinity, duration: 6.2, ease: 'easeInOut', delay: 2.2 }}
+              className="absolute left-1/2 -bottom-10 z-20 -translate-x-1/2 glass-white rounded-2xl px-5 py-3 min-w-[140px] shadow-xl hidden xl:flex"
+            >
+              <div className="flex flex-col items-center text-center leading-tight">
+                <div className="font-display text-lg font-extrabold text-[var(--accent)] tracking-tighter md:text-xl leading-[0.95]">TECNOLOGIE<br />& METODO</div>
+                <div className="mt-1 font-mono-fulgur text-[8px] font-bold uppercase tracking-widest text-[var(--tx-2)]">
+                  Attrezzature<br />Professionali
                 </div>
               </div>
             </motion.div>

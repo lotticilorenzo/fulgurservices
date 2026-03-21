@@ -11,7 +11,7 @@ const VALORI = [
   { icon: Leaf,         text: 'Prodotti a basso impatto ambientale quando possibile' },
   { icon: UsersThree,   text: 'Referente unico per tutti i servizi integrati' },
   { icon: ShieldCheck,  text: 'Team qualificato, assicurato e formato continuamente' },
-  { icon: Hourglass,    text: 'Sopralluogo sempre gratuito, preventivo in 24 ore' },
+  { icon: Hourglass,    text: 'Sopralluogo sempre gratuito, preventivo in 48 ore' },
 ]
 
 export function AboutSection() {
@@ -52,7 +52,7 @@ export function AboutSection() {
               
               {/* Badge sovrapposto — left-0 su mobile evita overflow del viewport <375px */}
               <div className="absolute -bottom-5 left-0 sm:-bottom-6 sm:-left-3 md:-left-5 z-20 rounded-2xl bg-[var(--accent)] px-5 py-3 sm:px-7 sm:py-5 text-white shadow-2xl flex flex-col items-center">
-                <span className="font-display text-4xl sm:text-5xl font-black leading-none">30</span>
+                <span className="font-display text-4xl sm:text-5xl font-black leading-none">40</span>
                 <span className="font-mono-fulgur text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.18em] opacity-85 text-center leading-tight mt-1">
                   anni di<br />know-how
                 </span>
@@ -61,8 +61,8 @@ export function AboutSection() {
               {/* Second small badge: reviews — right-0 su mobile evita ghost scroll */}
               <div className="absolute -top-5 right-0 sm:-right-4 z-20 rounded-2xl bg-white border border-[var(--br)] px-5 py-3.5 shadow-xl flex items-center gap-3">
                 <div className="flex flex-col">
-                  <span className="font-display text-sm font-bold text-[var(--tx-1)] leading-none">500+</span>
-                  <span className="font-mono-fulgur text-[9px] uppercase tracking-widest text-[var(--tx-3)] mt-0.5">Clienti</span>
+                  <span className="font-display text-sm font-bold text-[var(--accent)] leading-none">4.9★</span>
+                  <span className="font-mono-fulgur text-[9px] uppercase tracking-widest text-[var(--tx-3)] mt-0.5">Google</span>
                 </div>
                 <div className="h-8 w-px bg-[var(--br)]" />
                 <div className="flex flex-col">
@@ -87,7 +87,7 @@ export function AboutSection() {
               <div className="mt-5 sm:mt-7 space-y-4 sm:space-y-5 font-body text-[0.95rem] sm:text-[1.05rem] font-light text-[var(--tx-2)] leading-relaxed">
                 <p>
                   Fulgur Service è un&apos;impresa giovane, nata da idee chiare e innovative,
-                  con alle spalle 30 anni di esperienza: siamo il punto d&apos;incontro tra
+                  con alle spalle 40 anni di esperienza: siamo il punto d&apos;incontro tra
                   la visione fresca di una nuova generazione e la solidità del lavoro
                   costruito da mio padre.
                 </p>

@@ -16,8 +16,8 @@ const STEPS = [
   },
   {
     id: '02',
-    title: 'Preventivo in 24 ore',
-    desc: 'Entro 24 ore ricevi un preventivo dettagliato e trasparente. Prezzi chiari, zero sorprese, zero costi nascosti.',
+    title: 'Preventivo in 48 ore',
+    desc: 'Entro 48 ore ricevi un preventivo dettagliato e trasparente. Prezzi chiari, zero sorprese, zero costi nascosti.',
     icon: Receipt,
     detail: 'Trasparenza totale dal primo contatto.',
   },

@@ -8,30 +8,34 @@ import { ScrollReveal } from './ScrollReveal'
 const GUARANTEES = [
   {
     id: 1,
-    title: "30 anni di esperienza",
-    data: "1994-2024",
-    img: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80",
+    title: "40 anni di esperienza",
+    data: "Dal 1984",
+    // [TODO/CLIENTE]: Inserire foto reale "storica" o del team storico (w=600px minimo)
+    img: "/images/40-anni-esperienza-impresa-pulizie-parma.jpg",
     size: "large"
   },
   {
     id: 2,
-    title: "Assicurazione RCT",
-    data: "€2.000.000",
-    img: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80",
+    title: "Copertura Assicurativa",
+    data: "RCT/RCA",
+    // [TODO/CLIENTE]: Inserire foto reale attestato/polizza assicurativa RCT (w=600px minimo)
+    img: "/images/assicurazione-rct-parma.png",
     size: "medium"
   },
   {
     id: 3,
     title: "Prodotti HACCP",
     data: "100%",
-    img: "https://images.unsplash.com/photo-1542601906897-630a98e33db0?w=600&q=80",
+    // [TODO/CLIENTE]: Inserire foto reale dei prodotti usati (w=600px minimo)
+    img: "/images/prodotti-haccp-pulizie-parma.jpg",
     size: "medium"
   },
   {
     id: 4,
     title: "Team Qualificato",
     data: "Certificato",
-    img: "https://images.unsplash.com/photo-1506784365847-bbad939e9335?w=600&q=80",
+    // [TODO/CLIENTE]: Inserire foto reale della squadra (w=600px minimo)
+    img: "/images/team-qualificato-impresa-pulizie-parma.jpg",
     size: "large"
   }
 ]
@@ -44,7 +48,7 @@ const GUARANTEES = [
           <div className="text-center mb-12 sm:mb-16 px-4">
             <ScrollReveal>
               <h2 className="font-display text-[32px] sm:text-4xl font-bold text-[var(--tx-1)] mb-4 text-balance leading-tight">
-                Perché oltre 500 aziende <br className="hidden sm:block" /> ci hanno scelto.
+                Le nostre garanzie <br className="hidden sm:block" /> per la tua azienda.
               </h2>
               <p className="font-sans text-[var(--tx-2)] font-light max-w-2xl mx-auto text-balance">
               Non solo promesse, ma garanzie scritte e standard certificati per proteggere il tuo ambiente di lavoro.

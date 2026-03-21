@@ -24,7 +24,7 @@ export default function PreventivoPage() {
             Raccontaci il tuo <span className="text-[var(--accent)]">spazio.</span>
           </h1>
           <p className="mt-4 sm:mt-6 font-sans text-base sm:text-xl font-light text-[var(--tx-2)] leading-relaxed text-balance">
-            Rispondi a poche semplici domande per permetterci di studiare la soluzione perfetta per te. Il preventivo elaborato arriverà entro 24 ore.
+            Rispondi a poche semplici domande per permetterci di studiare la soluzione perfetta per te. Il preventivo elaborato arriverà entro 48 ore.
           </p>
         </div>
 
@@ -71,7 +71,7 @@ export default function PreventivoPage() {
               <div className="absolute -right-6 -top-6 text-[var(--accent)] opacity-10">
                 <Clock size={120} weight="fill" />
               </div>
-              <h3 className="font-display text-lg font-bold text-[var(--tx-1)] relative z-10 mb-2">Risposta in 24 Ore</h3>
+              <h3 className="font-display text-lg font-bold text-[var(--tx-1)] relative z-10 mb-2">Risposta in 48 Ore</h3>
               <p className="font-sans text-sm font-light text-[var(--tx-2)] relative z-10 leading-relaxed">
                 Elaboriamo ogni richiesta in tempi record perché sappiamo quanto valga il tuo tempo. Un nostro responsabile commerciale valuterà i tuoi dati prima di rispondere.
               </p>

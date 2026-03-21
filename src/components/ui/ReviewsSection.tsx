@@ -43,7 +43,7 @@ const REVIEWS = [
                 Cosa dicono i nostri clienti.
               </h2>
               <p className="font-sans text-[var(--tx-2)] font-light max-w-2xl mx-auto text-balance">
-              Oltre 500 clienti soddisfatti in Emilia-Romagna hanno scelto <br className="hidden md:block" /> 
+              Centinaia di clienti soddisfatti in Emilia-Romagna hanno scelto <br className="hidden md:block" /> 
               di affidare i loro spazi alla nostra cura professionale.
             </p>
           </ScrollReveal>

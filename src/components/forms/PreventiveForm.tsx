@@ -447,7 +447,7 @@ export function PreventiveForm() {
               >
                 <div className="mb-8">
                   <h3 className="font-display text-2xl sm:text-3xl font-bold text-[var(--tx-1)]">Come possiamo contattarti?</h3>
-                  <p className="font-sans text-sm font-light mt-2 text-[var(--tx-2)]">Inserisci i tuoi contatti, ti risponderemo entro 24 ore lavorative.</p>
+                  <p className="font-sans text-sm font-light mt-2 text-[var(--tx-2)]">Inserisci i tuoi contatti, ti risponderemo entro 48 ore lavorative.</p>
                 </div>
 
                 <div className="flex flex-col gap-5">
@@ -555,7 +555,7 @@ export function PreventiveForm() {
                 
                 <h3 className="font-display text-3xl sm:text-4xl font-extrabold text-[var(--tx-1)]">Richiesta inviata!</h3>
                 <p className="mt-4 font-sans text-base text-[var(--tx-2)] max-w-sm">
-                  Grazie per averci contattato. Abbiamo ricevuto la tua richiesta e un membro del nostro team ti risponderà entro 24 ore.
+                  Grazie per averci contattato. Abbiamo ricevuto la tua richiesta e un membro del nostro team ti risponderà entro 48 ore.
                 </p>
 
                 <div className="mt-10 px-6 py-4 rounded-full border border-[var(--br)] bg-[var(--bg-2)] inline-flex items-center gap-3">

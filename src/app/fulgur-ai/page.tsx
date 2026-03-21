@@ -19,7 +19,7 @@ const BENEFITS = [
   {
     icon: ShieldCheck,
     title: 'Precisione Fulgur',
-    desc: 'Risposte basate su 30 anni di esperienza reale nel settore cleaning.'
+    desc: 'Risposte basate su 40 anni di esperienza reale nel settore cleaning.'
   },
   {
     icon: Sparkle,
