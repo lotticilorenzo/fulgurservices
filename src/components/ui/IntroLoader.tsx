@@ -58,7 +58,7 @@ export function IntroLoader() {
                 alt="Fulgur Service Logo — Impresa Pulizie Parma"
                 width={400}
                 height={100}
-                className="h-auto w-full object-contain drop-shadow-[0_10px_30px_rgba(42,140,122,0.15)]"
+                className="h-auto w-full object-contain drop-shadow-[0_10px_30px_rgba(42,140,122,0.15)] mix-blend-multiply"
                 priority
               />
             </div>

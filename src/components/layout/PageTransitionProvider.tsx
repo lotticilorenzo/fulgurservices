@@ -123,13 +123,14 @@ export function PageTransitionProvider({ children }: { children: React.ReactNode
             animate={{ opacity: phase === 'hold' ? 1 : 0 }}
             transition={{ duration: 0.2 }}
           >
-            <div className="flex h-32 w-32 items-center justify-center rounded-full bg-white shadow-[0_8px_40px_rgba(0,0,0,0.15)]">
+            <div className="flex items-center justify-center">
               <Image
                 src="/images/logo-fulgur-service-impresa-pulizie-parma.webp"
                 alt="Fulgur Service"
-                width={104}
-                height={104}
+                width={120}
+                height={120}
                 priority
+                className="mix-blend-multiply"
               />
             </div>
           </motion.div>
