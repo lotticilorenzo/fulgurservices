@@ -127,57 +127,6 @@ export function SliderSection() {
           ))}
         </div>
       </div>
-
-      {/* Flying Cards — Decorative floating elements */}
-      <div className="absolute inset-0 z-20 pointer-events-none hidden lg:block overflow-hidden">
-        {/* Card: ECO */}
-        <motion.div
-          animate={{ y: [0, -15, 0], x: [0, 10, 0] }}
-          transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute right-[10%] top-[20%] glass-white rounded-2xl px-5 py-4 min-w-[140px] shadow-2xl"
-        >
-          <div className="font-display text-2xl font-extrabold text-[var(--accent)] tracking-tighter">ECO</div>
-          <div className="mt-1 font-mono-fulgur text-[9px] font-bold uppercase tracking-widest text-[var(--tx-2)]">
-            Protetti da<br />Certificati
-          </div>
-        </motion.div>
-
-        {/* Card: GREEN */}
-        <motion.div
-          animate={{ y: [0, 20, 0], x: [0, -15, 0] }}
-          transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-          className="absolute left-[5%] bottom-[25%] glass-white rounded-2xl px-5 py-4 min-w-[140px] shadow-2xl"
-        >
-          <div className="font-display text-2xl font-extrabold text-[var(--accent)] tracking-tighter">GREEN</div>
-          <div className="mt-1 font-mono-fulgur text-[9px] font-bold uppercase tracking-widest text-[var(--tx-2)]">
-            Basso Impatto<br />Ambientale
-          </div>
-        </motion.div>
-
-        {/* Card: PANNELLI */}
-        <motion.div
-          animate={{ y: [0, -10, 0], x: [0, -10, 0] }}
-          transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
-          className="absolute right-[15%] bottom-[15%] glass-white rounded-2xl px-5 py-4 min-w-[140px] shadow-2xl"
-        >
-          <div className="font-display text-2xl font-extrabold text-[var(--accent)] tracking-tighter">SUN</div>
-          <div className="mt-1 font-mono-fulgur text-[9px] font-bold uppercase tracking-widest text-[var(--tx-2)]">
-            Pulizia<br />Fotovoltaico
-          </div>
-        </motion.div>
-
-        {/* Card: TECNOLOGIE */}
-        <motion.div
-          animate={{ y: [0, 12, 0], scale: [1, 1.05, 1] }}
-          transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
-          className="absolute left-[50%] top-[15%] -translate-x-1/2 glass-white rounded-2xl px-6 py-4 min-w-[180px] shadow-2xl flex flex-col items-center text-center"
-        >
-          <div className="font-display text-xl font-extrabold text-[var(--accent)] tracking-tight leading-none">TECNOLOGIE<br />& METODO</div>
-          <div className="mt-2 font-mono-fulgur text-[8px] font-bold uppercase tracking-widest text-[var(--tx-2)]">
-            Attrezzature<br />Professionali
-          </div>
-        </motion.div>
-      </div>
     </section>
   )
 }

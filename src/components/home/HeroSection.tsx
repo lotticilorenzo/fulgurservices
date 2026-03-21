@@ -74,7 +74,7 @@ export function HeroSection() {
         suppressHydrationWarning
         aria-hidden="true"
         className="absolute inset-0 h-full w-full object-cover pointer-events-none"
-        src="/videos/entrata-fulgur.mp4"
+        src="/videos/impresa-pulizie-parma-videopresentazione.mp4"
         poster="/images/team-operatori-pulizie-professionali-parma.webp"
         autoPlay
         loop
@@ -234,12 +234,12 @@ export function HeroSection() {
               </div>
             </div>
 
-            {/* Card float: 40+ anni */}
+            {/* Card float: 30+ anni (Restored & Shifted) */}
             <motion.div
               initial={{ y: -6 }}
               animate={{ y: [-6, 6, -6] }}
               transition={{ repeat: Infinity, duration: 4.2, ease: 'easeInOut' }}
-              className="absolute -right-4 top-10 z-20 sm:-right-5 sm:top-10 lg:-right-14 lg:top-16 glass-white rounded-2xl px-5 py-4 min-w-[120px] sm:min-w-[130px] shadow-xl"
+              className="absolute -right-8 top-20 z-20 sm:-right-10 sm:top-20 lg:-right-16 lg:top-24 glass-white rounded-2xl px-5 py-4 min-w-[120px] sm:min-w-[130px] shadow-xl"
             >
               <div className="flex flex-col items-start leading-tight">
                 <div className="font-display text-3xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-3xl md:text-4xl">30+</div>
@@ -249,12 +249,12 @@ export function HeroSection() {
               </div>
             </motion.div>
 
-            {/* Card float: Aree */}
+            {/* Card float: 12 aree (Shifted) */}
             <motion.div
               initial={{ y: 8 }}
               animate={{ y: [8, -8, 8] }}
               transition={{ repeat: Infinity, duration: 5.2, ease: 'easeInOut', delay: 1.2 }}
-              className="absolute -left-6 bottom-12 z-20 sm:-left-6 sm:bottom-14 lg:-left-16 lg:bottom-20 glass-white rounded-2xl px-5 py-4 min-w-[120px] sm:min-w-[130px] shadow-xl"
+              className="absolute -left-10 bottom-20 z-20 glass-white rounded-2xl px-5 py-4 min-w-[120px] shadow-xl"
             >
               <div className="flex flex-col items-start leading-tight">
                 <div className="font-display text-3xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-3xl md:text-4xl">12</div>
@@ -262,6 +262,50 @@ export function HeroSection() {
                   Aree di<br />intervento
                 </div>
               </div>
+            </motion.div>
+
+            {/* Card float: TECNOLOGIE (New - Top Left dot) */}
+            <motion.div
+              initial={{ y: 0, x: 0 }}
+              animate={{ y: [-4, 4, -4], x: [2, -2, 2] }}
+              transition={{ repeat: Infinity, duration: 5.5, ease: 'easeInOut', delay: 0.5 }}
+              className="absolute left-[-5%] top-[-5%] z-20 glass-white rounded-2xl px-5 py-3 min-w-[150px] shadow-xl hidden md:flex"
+            >
+              <div className="flex flex-col items-start leading-tight text-center w-full">
+                <div className="font-display text-lg font-extrabold text-[var(--accent)] tracking-tight uppercase leading-[0.9]">TECNOLOGIE<br />& METODO</div>
+                <div className="mt-1 font-mono-fulgur text-[8px] font-bold uppercase tracking-widest text-[var(--tx-2)]">Attrezzature PRO</div>
+              </div>
+            </motion.div>
+
+            {/* Card float: ECO (New - Top Right dot) */}
+            <motion.div
+              initial={{ scale: 1 }}
+              animate={{ scale: [1, 1.05, 1], rotate: [0, 2, 0] }}
+              transition={{ repeat: Infinity, duration: 6, ease: 'easeInOut', delay: 1.5 }}
+              className="absolute right-[10%] top-[-10%] z-20 glass-white rounded-2xl px-5 py-3 min-w-[110px] shadow-xl"
+            >
+              <div className="font-display text-2xl font-extrabold text-[var(--accent)] tracking-tighter">ECO</div>
+              <div className="mt-0.5 font-mono-fulgur text-[8px] font-bold uppercase tracking-widest text-[var(--tx-2)]">Certificati</div>
+            </motion.div>
+
+            {/* Card float: GREEN (New - Mid Left dot) */}
+            <motion.div
+              animate={{ x: [-10, 10, -10] }}
+              transition={{ repeat: Infinity, duration: 7, ease: 'easeInOut' }}
+              className="absolute -left-20 top-[40%] z-20 glass-white rounded-2xl px-5 py-3 min-w-[120px] shadow-xl hidden lg:flex flex-col items-start"
+            >
+              <div className="font-display text-2xl font-extrabold text-[var(--accent)] tracking-tighter leading-none">GREEN</div>
+              <div className="mt-1.5 font-mono-fulgur text-[8px] font-bold uppercase tracking-widest text-[var(--tx-2)]">Impatto Zero</div>
+            </motion.div>
+
+            {/* Card float: SUN (New - Bottom Right dot) */}
+            <motion.div
+              animate={{ y: [0, -12, 0] }}
+              transition={{ repeat: Infinity, duration: 5, ease: 'easeInOut', delay: 2.2 }}
+              className="absolute -right-12 bottom-0 z-20 glass-white rounded-2xl px-5 py-3 min-w-[120px] shadow-xl"
+            >
+              <div className="font-display text-2xl font-extrabold text-[var(--accent)] tracking-tighter">SUN</div>
+              <div className="mt-0.5 font-mono-fulgur text-[8px] font-bold uppercase tracking-widest text-[var(--tx-2)]">Fotovoltaico</div>
             </motion.div>
           </div>
         </div>
