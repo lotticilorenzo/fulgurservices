@@ -52,8 +52,8 @@ export function ReviewsStrip() {
 
           <ScrollReveal delay={0.2} className="hidden lg:block">
             <div className="flex -space-x-3 mb-4">
-              {REVIEWS.map((review, i) => (
-                <div key={i} className="h-10 w-10 rounded-full border-2 border-white overflow-hidden shadow-sm">
+              {REVIEWS.map((review) => (
+                <div key={review.name} className="h-10 w-10 rounded-full border-2 border-white overflow-hidden shadow-sm">
                   <Image src={review.image} alt={review.name} width={40} height={40} className="object-cover" />
                 </div>
               ))}
@@ -66,7 +66,7 @@ export function ReviewsStrip() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {REVIEWS.map((review, i) => (
-            <ScrollReveal key={i} delay={i * 0.1}>
+            <ScrollReveal key={review.name} delay={i * 0.1}>
               <SpotlightCard className="h-full flex flex-col p-6 sm:p-8 lg:p-10 bg-white border border-[var(--br)] rounded-[32px] shadow-sm hover:shadow-[0_20px_50px_rgba(42,140,122,0.1)] transition-all duration-500 group">
                 
                 <div className="flex justify-between items-start mb-8">
@@ -97,11 +97,12 @@ export function ReviewsStrip() {
 
                 <div className="flex items-center gap-4 mt-auto pt-8 border-t border-[var(--br)]/50">
                   <div className="relative h-14 w-14 rounded-2xl overflow-hidden shadow-md group-hover:shadow-[var(--accent-glow)] transition-all duration-500">
-                    <Image 
-                      src={review.image} 
-                      alt={review.name} 
-                      fill 
-                      className="object-cover" 
+                    <Image
+                      src={review.image}
+                      alt={review.name}
+                      fill
+                      sizes="56px"
+                      className="object-cover"
                     />
                   </div>
                   <div>

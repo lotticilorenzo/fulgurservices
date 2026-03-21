@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
@@ -31,7 +31,6 @@ const IconMap: Record<string, React.ElementType> = {
 }
 
 export function ServiceCard({ service, size = 'small', index, className }: ServiceCardProps) {
-  const [isHovered, setIsHovered] = useState(false)
   const Icon = IconMap[service.icon] || IconMap.Buildings
 
   const sizeClasses = {
@@ -44,8 +43,6 @@ export function ServiceCard({ service, size = 'small', index, className }: Servi
     <ScrollReveal delay={index * 0.1} className={cn(sizeClasses[size], className, 'group block')}>
       <Link href={`/servizi/${service.slug}`} tabIndex={-1} className="h-full w-full outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] rounded-2xl block relative">
         <SpotlightCard
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
           className={cn(
             'relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-black/40 transition-all duration-500 glass-premium shine-effect hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(78,203,160,0.15)] hover:border-[var(--accent)]/50'
           )}
@@ -59,7 +56,6 @@ export function ServiceCard({ service, size = 'small', index, className }: Servi
               className="object-cover transition-transform duration-[700ms] ease-in-out group-hover:scale-[1.05]"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               priority={index < 2}
-              loading={index < 2 ? 'eager' : 'lazy'}
             />
             {/* Direct Gradient Overlay (Stronger for readability) */}
             <div

@@ -40,10 +40,11 @@ export function PartnershipSection() {
               <SpotlightCard className="h-full">
                 <div className="aspect-[3/2] flex flex-col items-center justify-center p-8 rounded-2xl bg-white border border-[var(--br)] hover:border-[var(--accent)]/40 transition-all duration-500 group card-lift">
                   <div className="relative w-full h-12 mb-4">
-                    <Image 
-                      src={partner.logo} 
+                    <Image
+                      src={partner.logo}
                       alt={`Logo ${partner.name}`}
                       fill
+                      sizes="(max-width: 640px) 140px, 160px"
                       className="object-contain grayscale group-hover:grayscale-0 transition-all duration-500 opacity-50 group-hover:opacity-100"
                     />
                   </div>

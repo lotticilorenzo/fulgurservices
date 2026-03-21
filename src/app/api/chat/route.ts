@@ -183,13 +183,19 @@ export async function POST(req: NextRequest): Promise<Response> {
     () => 'Sei Fulgur AI, assistente di Fulgur Service.'
   )
 
-  // 6. Chiamata DeepSeek con stream: true
+  // 6. Verifica chiave API + chiamata DeepSeek con stream: true
   // AbortSignal.timeout: se DeepSeek non risponde entro 25s → 502 pulito, nessun hang
+  const apiKey = process.env.DEEPSEEK_API_KEY ?? ''
+  if (!apiKey) {
+    console.error('[Fulgur AI] DEEPSEEK_API_KEY mancante — configurare su Vercel Environment Variables')
+    return jsonError('Servizio AI non configurato.', 503)
+  }
+
   const dsRes = await fetch('https://api.deepseek.com/v1/chat/completions', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${process.env.DEEPSEEK_API_KEY ?? ''}`,
+      Authorization: `Bearer ${apiKey}`,
     },
     body: JSON.stringify({
       model: 'deepseek-chat',
@@ -202,6 +208,8 @@ export async function POST(req: NextRequest): Promise<Response> {
   }).catch(() => null)
 
   if (!dsRes?.ok || !dsRes.body) {
+    const errBody = dsRes ? await dsRes.text().catch(() => '') : ''
+    console.error(`[Fulgur AI] DeepSeek ${dsRes?.status ?? 'network-error'}: ${errBody.slice(0, 200)}`)
     return jsonError('Servizio AI non disponibile', 502)
   }
 
@@ -232,13 +240,13 @@ export async function POST(req: NextRequest): Promise<Response> {
 
             try {
               const parsed = JSON.parse(raw) as DSChunk
-              const token = parsed.choices[0]?.delta.content ?? ''
+              const token = parsed.choices[0]?.delta?.content ?? ''
               if (token) {
                 accumulated += token
                 controller.enqueue(encoder.encode(`data: ${JSON.stringify({ t: token })}\n\n`))
               }
             } catch {
-              // chunk malformato — skip
+              // chunk SSE malformato da DeepSeek — skip silenzioso
             }
           }
         }

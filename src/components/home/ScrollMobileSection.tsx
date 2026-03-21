@@ -18,8 +18,6 @@ export function ScrollMobileSection() {
   const [videoReady,     setVideoReady]     = useState(false)
   const [videoError,     setVideoError]     = useState(false)
   const [isMobile,       setIsMobile]       = useState(() => typeof window !== 'undefined' && window.matchMedia('(max-width: 768px)').matches)
-  // lazy: true quando la sezione si avvicina al viewport — nessun download prima
-  const [srcLoaded,      setSrcLoaded]      = useState(false)
 
   // Previene setState dopo unmount
   useEffect(() => {
@@ -43,29 +41,6 @@ export function ScrollMobileSection() {
     }
   }, [])
 
-  // ── Lazy loading: inietta <source> solo quando la sezione è vicina ────────
-  useEffect(() => {
-    if (!isMobile || !sectionRef.current) return
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting && mountedRef.current) {
-          setSrcLoaded(true)
-          observer.disconnect()
-        }
-      },
-      { rootMargin: '300px' }
-    )
-    observer.observe(sectionRef.current)
-    return () => observer.disconnect()
-  }, [isMobile])
-
-  // ── Chiama video.load() dopo che i <source> sono stati montati nel DOM ────
-  useEffect(() => {
-    if (srcLoaded && videoRef.current) {
-      videoRef.current.load()
-    }
-  }, [srcLoaded])
-
   // ── GSAP ScrollTrigger + video scrub — SOLO mobile ───────────────────────
   useEffect(() => {
     if (!isMobile || !sectionRef.current || !videoRef.current) return
@@ -74,50 +49,27 @@ export function ScrollMobileSection() {
     const video   = videoRef.current
 
     let st: ReturnType<typeof ScrollTrigger.create> | null = null
-    let rafId        = 0
-    let targetProgress = 0
-    let currentLerp    = 0
-
-    // LERP loop — fluido senza jank, si ferma fuori viewport
-    const lerpLoop = () => {
-      currentLerp += (targetProgress - currentLerp) * 0.08
-      if (video.duration && Math.abs(currentLerp - video.currentTime) > 0.005) {
-        video.currentTime = currentLerp * video.duration
-      }
-      rafId = requestAnimationFrame(lerpLoop)
-    }
-
-    const startRAF = () => { if (!rafId) rafId = requestAnimationFrame(lerpLoop) }
-    const stopRAF  = () => { cancelAnimationFrame(rafId); rafId = 0 }
-
-    // IntersectionObserver — avvia/ferma RAF solo quando visibile
-    const scrubObserver = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          startRAF()
-        } else {
-          video.pause()
-          stopRAF()
-        }
-      },
-      { threshold: 0 }
-    )
-    scrubObserver.observe(section)
 
     const initST = () => {
+      if (!mountedRef.current) return
       st = ScrollTrigger.create({
         trigger:             section,
         start:               'top top',
         end:                 '+=250%',
-        scrub:               1.5,
+        // scrub: 0.3 — GSAP gestisce il suo smoothing interno via ticker RAF.
+        // NON usare scrub > 0.5 + LERP esterno: doppio smoothing = video disconnesso dal dito.
+        scrub:               0.3,
         pin:                 true,
         anticipatePin:       1,
         invalidateOnRefresh: true,
         refreshPriority:     1,
         onUpdate: (self) => {
-          targetProgress = self.progress
+          // Assign diretto: nessun RAF esterno, nessun LERP manuale.
+          // GSAP chiama onUpdate già a 60fps durante il suo tween interno.
+          if (video.duration) {
+            video.currentTime = self.progress * video.duration
+          }
           if (mountedRef.current) {
-            // Aggiorna solo i booleani — setState si attiva solo ai 4 threshold crossing, non ogni tick
             setShowText1(self.progress >= 0.0 && self.progress <= 0.3)
             setShowText2(self.progress >= 0.35 && self.progress <= 0.65)
           }
@@ -125,17 +77,15 @@ export function ScrollMobileSection() {
       })
     }
 
-    if (video.readyState >= 1) {
+    // readyState >= 2 = HAVE_CURRENT_DATA: primo frame decodificato, duration nota.
+    // Con preload="auto" ci arriviamo rapidamente — non serve aspettare canplaythrough.
+    if (video.readyState >= 2) {
       initST()
     } else {
-      video.addEventListener('loadedmetadata', initST, { once: true })
+      video.addEventListener('loadeddata', initST, { once: true })
     }
 
-    return () => {
-      st?.kill()
-      stopRAF()
-      scrubObserver.disconnect()
-    }
+    return () => { st?.kill() }
   }, [isMobile])
 
   // ── Fallback errore video ─────────────────────────────────────────────────
@@ -201,26 +151,20 @@ export function ScrollMobileSection() {
           )}
         </AnimatePresence>
 
-        {/* ── Video con <source> multipli, iniettati lazy via IntersectionObserver ── */}
-        {/*    preload="metadata" — scarica solo i primi KB (durata/dimensioni),    */}
-        {/*    nessun buffering anticipato del file intero.                          */}
-        {/*    willChange rimosso: non usiamo CSS transform, ma currentTime scrub.   */}
+        {/* ── Video con <source> statici — preload="auto" necessario per scrubbing GSAP fluido. ── */}
+        {/*    Il browser pre-bufferizza i frame prima che ScrollTrigger inizi a fare seek.       */}
         <video
           ref={videoRef}
           poster="/images/fulgur-service-pulizie-sostenibili.jpg"
-          preload="metadata"
+          preload="auto"
           muted
           playsInline
           className="w-full h-full object-cover"
-          onLoadedMetadata={() => { if (mountedRef.current) setVideoReady(true) }}
+          onLoadedData={() => { if (mountedRef.current) setVideoReady(true) }}
           onError={() => { if (mountedRef.current) setVideoError(true) }}
         >
-          {srcLoaded && (
-            <>
-              <source src="/videos/scroll-mobile.webm" type="video/webm" />
-              <source src="/videos/scroll-mobile-opt.mp4" type="video/mp4" />
-            </>
-          )}
+          <source src="/videos/scroll-mobile.webm" type="video/webm" />
+          <source src="/videos/scroll-mobile-opt.mp4" type="video/mp4" />
         </video>
 
         {/* ── Gradient bottom permanente per leggibilità ── */}

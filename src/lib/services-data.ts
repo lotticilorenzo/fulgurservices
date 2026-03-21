@@ -61,7 +61,7 @@ export const SERVICES: Service[] = [
     sectors: ['Studi Medici e Dentistici', 'Cliniche e Poliambulatori', 'Farmacie', 'Centri Estetici'],
     metaTitle: 'Sanificazione e Pulizie Sanitarie Parma | Fulgur Service',
     metaDescription: 'Servizi di sanificazione e pulizia per studi medici e cliniche a Parma. Protocolli HACCP e massima sicurezza igienica.',
-    image: '/images/servizi/pulizie-palestre-strutture-sportive-parma.jpg',
+    image: '/images/operatori-pulizie-professionali-parma.jpg',
   },
   {
     id: '04',
