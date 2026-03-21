@@ -23,10 +23,10 @@ export const METADATA = {
   servizi: {
     title: 'Tutti i Servizi | Fulgur Service Parma',
     description:
-      '15 aree di intervento: pulizie aziendali, industriali, sanitarie, condomini, hotel, trattamento superfici e molto altro. Parma e provincia.',
+      '12 aree di intervento: pulizie aziendali, industriali, sanitarie, condomini, hotel, trattamento superfici e molto altro. Parma e provincia.',
     openGraph: {
       title: 'Tutti i Servizi — Fulgur Service Parma',
-      description: '15 aree di intervento con team specializzato e macchinari professionali.',
+      description: '12 aree di intervento con team specializzato e macchinari professionali.',
       url: `${BASE_URL}/servizi`,
       siteName: 'Fulgur Service',
       images: [{ url: OG_DEFAULT, width: 1200, height: 630, alt: 'Servizi Fulgur Service Parma' }],
@@ -49,7 +49,7 @@ export const METADATA = {
     },
   },
   preventivo: {
-    title: 'Richiedi Preventivo Gratuito | Fulgur Service Parma',
+    title: 'Richiedi Preventivo Gratuito | Sopralluogo in 24h — Fulgur Service',
     description:
       'Richiedi un sopralluogo gratuito. Preventivo personalizzato in 48 ore, nessun impegno. Fulgur Service, impresa di pulizie a Parma.',
     openGraph: {

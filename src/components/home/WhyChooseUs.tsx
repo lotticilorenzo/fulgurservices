@@ -62,13 +62,8 @@ export function WhyChooseUs() {
 
               {/* Glassy stats bar at bottom */}
               <div className="absolute bottom-6 left-6 right-6 backdrop-blur-xl bg-white/15 border border-white/25 px-6 py-5 rounded-2xl z-10">
-                <div className="flex items-center justify-between text-white">
-                  <div className="flex flex-col">
-                    <span className="font-display text-2xl font-bold leading-none">4.9★</span>
-                    <span className="font-mono-fulgur text-[9px] uppercase tracking-widest opacity-70 mt-1">Google</span>
-                  </div>
-                  <div className="h-8 w-px bg-white/20" />
-                  <div className="flex flex-col">
+                <div className="flex items-center gap-6 text-white justify-center w-full">
+                  <div className="flex flex-col items-center">
                     <div className="flex text-yellow-400">
                       {[...Array(5)].map((_, i) => <Star key={i} size={14} weight="fill" />)}
                     </div>
@@ -93,7 +88,7 @@ export function WhyChooseUs() {
                 <span className="text-[var(--accent)]">scelta a Parma.</span>
               </h2>
               <p className="mt-6 font-sans text-lg font-light text-[var(--tx-2)] leading-relaxed max-w-lg">
-                Affidarsi a Fulgur Service significa scegliere un partner locale con 40 anni di esperienza,
+                Affidarsi a Fulgur Service significa scegliere un partner locale con 40 anni di esperienza, 
                 tecnologie industriali e un impegno per la qualità su tutto il territorio.
               </p>
             </ScrollReveal>

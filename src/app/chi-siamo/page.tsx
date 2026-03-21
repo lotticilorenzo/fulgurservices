@@ -66,8 +66,8 @@ export default function ChiSiamoPage() {
           sizes="100vw"
           priority
         />
-            <div className="absolute inset-x-0 bottom-0 aspect-[21/6] bg-gradient-to-t from-[var(--bg)] via-[var(--bg)]/40 to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6 sm:bottom-8 sm:left-8 sm:right-8 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6">
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0D1117]/95 via-[#0D1117]/40 to-transparent" />
+            <div className="absolute bottom-6 left-6 right-6 sm:bottom-8 sm:left-8 sm:right-8 z-10 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6">
               <div className="text-left max-w-lg">
                 <h3 className="font-display text-xl sm:text-2xl font-bold text-white mb-2">Una promessa di valore</h3>
                 <p className="font-sans text-sm text-white/90">Per noi la pulizia non è un&apos;attività meccanica: non siamo semplici fornitori, ma partner che si prendono cura dell&apos;ambiente del cliente a 360°.</p>

@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { InstagramLogo, WhatsappLogo, EnvelopeSimple, Phone, MapPin } from '@phosphor-icons/react/dist/ssr'
 import Image from 'next/image'
 import { SERVICES } from '@/lib/services-data'
+import { WhatsAppHybridLink } from '@/components/ui/WhatsAppHybridLink'
 
 const COMPANY_LINKS = [
   { label: 'Chi Siamo', href: '/#chi-siamo' },
@@ -73,15 +74,13 @@ export function Footer() {
               >
                 <InstagramLogo size={22} weight="duotone" className="sm:w-[18px] sm:h-[18px]" />
               </a>
-              <a
+              <WhatsAppHybridLink
                 href="https://wa.me/393383160091?text=Ciao%2C%20vorrei%20richiedere%20un%20sopralluogo%20gratuito"
-                target="_blank"
-                rel="noopener noreferrer"
                 aria-label="Contattaci su WhatsApp"
                 className="inline-flex h-12 w-12 sm:h-10 sm:w-10 items-center justify-center rounded-full border border-[var(--br)] bg-white text-[var(--tx-1)] transition-all hover:border-[#25D366] hover:text-[#25D366] hover:bg-[rgba(37,211,102,0.1)] shadow-sm"
               >
                 <WhatsappLogo size={22} weight="duotone" className="sm:w-[18px] sm:h-[18px]" />
-              </a>
+              </WhatsAppHybridLink>
             </div>
           </div>
 
@@ -158,6 +157,15 @@ export function Footer() {
                 >
                   <EnvelopeSimple size={16} weight="duotone" className="shrink-0 text-[var(--accent)]" />
                   <span>fulgurservice@gmail.com</span>
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="mailto:fulgurservice@pec.it" 
+                  className="flex items-center gap-3 hover:text-[var(--accent)] transition-colors"
+                >
+                  <EnvelopeSimple size={16} weight="duotone" className="shrink-0 text-[var(--accent)]" />
+                  <span>fulgurservice@pec.it</span>
                 </a>
               </li>
             </ul>

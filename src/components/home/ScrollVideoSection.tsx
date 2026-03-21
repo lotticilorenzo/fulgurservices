@@ -3,6 +3,7 @@
 import { useRef, useMemo } from 'react'
 import { type Variants, motion, AnimatePresence } from 'framer-motion'
 import { useScrollVideoScrub } from '@/lib/useScrollVideoScrub'
+import { WhatsAppHybridLink } from '@/components/ui/WhatsAppHybridLink'
 
 /* ─── Easing curves ─── */
 const EASE_OUT = [0.16, 1, 0.3, 1] as const
@@ -13,29 +14,29 @@ const CHAPTERS = [
   {
     id: 1,
     eyebrow: '01 / 04',
-    title: 'Puliamo…',
+    title: 'Dal disordine…',
     subtitle: 'Ogni ambiente ha una storia da raccontare.',
     cta: null,
   },
   {
     id: 2,
     eyebrow: '02 / 04',
-    title: 'Il futuro…',
+    title: '…alla perfezione.',
     subtitle: 'Il nostro team interviene con precisione chirurgica.',
     cta: null,
   },
   {
     id: 3,
     eyebrow: '03 / 04',
-    title: "…con l'energia…",
+    title: "Energia della natura.",
     subtitle: 'Prodotti eco-certificati. Impatto zero sull\'ambiente.',
     cta: null,
   },
   {
     id: 4,
     eyebrow: '04 / 04',
-    title: 'della Natura.',
-    subtitle: 'Il futuro è pulito con Fulgur Service.',
+    title: 'Il futuro è pulito.',
+    subtitle: '40+ anni di esperienza · Valutazione 4.9 su Google.',
     cta: 'Richiedi Sopralluogo Gratuito',
   },
 ]
@@ -92,63 +93,7 @@ export function ScrollVideoSection() {
     return 3
   }, [progress])
 
-  /* ─── MOBILE: layout statico pulito a card chiare ─── */
-  if (isMobile) {
-    return (
-      <section ref={sectionRef} className="relative bg-[var(--bg)] py-16 px-5 sm:px-8 border-t border-b border-[var(--br)] overflow-hidden">
-        {/* Decorative background element */}
-        <div className="absolute top-0 right-0 -m-32 w-96 h-96 bg-[var(--accent)]/5 rounded-full blur-3xl pointer-events-none" />
-        
-        <div className="max-w-2xl mx-auto relative z-10">
-          <div className="mb-10 text-left sm:text-center">
-            <span className="font-mono-fulgur text-xs font-bold text-[var(--accent)] tracking-widest uppercase block mb-3">
-              Processo Operativo
-            </span>
-            <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-[var(--tx-1)] text-balance">
-              Il nostro metodo
-            </h2>
-          </div>
-
-          <div className="flex flex-col gap-4 sm:gap-6">
-            {CHAPTERS.map((ch, i) => (
-              <div 
-                key={ch.id} 
-                className="relative p-5 sm:p-8 rounded-3xl bg-[var(--bg-2)] border border-[var(--br)] shadow-sm hover:shadow-md transition-shadow"
-              >
-                <div className="flex items-start gap-4 flex-col sm:flex-row">
-                  <div className="flex shrink-0 items-center justify-center w-12 h-12 rounded-xl bg-white border border-[var(--br)] shadow-sm">
-                    <span className="font-mono-fulgur text-sm font-bold text-[var(--accent)]">
-                      0{i + 1}
-                    </span>
-                  </div>
-                  <div className="flex-1 w-full">
-                    <h3 className="font-display text-[20px] sm:text-2xl font-bold text-[var(--tx-1)] mb-2 mt-1 sm:mt-0 text-balance leading-tight">
-                      {ch.title}
-                    </h3>
-                    <p className="font-sans text-sm sm:text-base text-[var(--tx-2)] leading-relaxed mb-1">
-                      {ch.subtitle}
-                    </p>
-                    {ch.cta && (
-                      <a
-                        href="https://wa.me/393383160091?text=Ciao%2C%20vorrei%20richiedere%20un%20sopralluogo%20gratuito"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mt-5 flex min-h-[44px] items-center justify-center gap-2 bg-[var(--accent)] hover:bg-[var(--accent-d)] text-white font-display font-bold text-[15px] px-6 py-3 rounded-xl transition-all shadow-[0_4px_16px_rgba(78,203,160,0.3)] w-full"
-                      >
-                        {ch.cta}
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    )
-  }
-
-  /* ─── DESKTOP: video scrub + testi animati ─── */
+  /* ─── DESKTOP E MOBILE: video scrub + testi animati ─── */
   return (
     <section
       ref={sectionRef}
@@ -226,17 +171,15 @@ export function ScrollVideoSection() {
                   {/* CTA opzionale nell'ultimo capitolo */}
                   {CHAPTERS[activeChapter].cta && (
                     <motion.div variants={ctaVariants}>
-                      <a
+                      <WhatsAppHybridLink
                         href="https://wa.me/393383160091?text=Ciao%2C%20vorrei%20richiedere%20un%20sopralluogo%20gratuito"
-                        target="_blank"
-                        rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 bg-[#4ECBA0] hover:bg-[#6DD9B2] text-[#0D1117] font-bold text-base px-7 py-4 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(78,203,160,0.4)]"
                       >
                         {CHAPTERS[activeChapter].cta}
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                           <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
-                      </a>
+                      </WhatsAppHybridLink>
                     </motion.div>
                   )}
                 </motion.div>

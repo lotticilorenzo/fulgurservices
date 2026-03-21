@@ -73,7 +73,7 @@ export function HeroSection() {
       <video
         suppressHydrationWarning
         aria-hidden="true"
-        className="absolute inset-0 h-[100dvh] w-full object-cover pointer-events-none"
+        className="absolute inset-0 h-full w-full object-cover pointer-events-none"
         poster="/images/team-operatori-pulizie-professionali-parma.webp"
         autoPlay
         loop
@@ -136,22 +136,18 @@ export function HeroSection() {
           <p className="hero-reveal mt-5 sm:mt-7 max-w-[50ch] font-body text-[0.95rem] sm:text-[1.05rem] font-light leading-relaxed text-white/80">
             Impresa di pulizie professionali a{' '}
             <strong className="font-medium text-white">Parma e provincia</strong>.
-            40 anni di esperienza, tecnologie all&apos;avanguardia,
+            30 anni di esperienza, tecnologie all&apos;avanguardia,
             soluzioni sostenibili per ogni ambiente.
           </p>
 
           {/* Stats inline */}
           <div className="hero-reveal mt-6 sm:mt-7 grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-y-4 gap-x-2 sm:gap-x-5 font-mono-fulgur text-[10.5px] sm:text-[11px] font-bold uppercase tracking-[0.08em] sm:tracking-[0.15em] text-white/80">
             <span className="flex items-center gap-2">
-              <span className="text-[var(--accent)] text-[16px] sm:text-base font-black">40+</span> anni
+              <span className="text-[var(--accent)] text-[16px] sm:text-base font-black">30+</span> anni
             </span>
             <span className="hidden sm:inline text-white/30">·</span>
             <span className="flex items-center gap-2">
-              <span className="text-[var(--accent)] text-[16px] sm:text-base font-black">4.9★</span> Google
-            </span>
-            <span className="hidden sm:inline text-white/30">·</span>
-            <span className="flex items-center gap-2">
-              <span className="text-[var(--accent)] text-[16px] sm:text-base font-black">15</span> aree
+              <span className="text-[var(--accent)] text-[16px] sm:text-base font-black">12</span> aree di intervento
             </span>
             <span className="hidden sm:inline text-white/30">·</span>
             <span className="col-span-2 text-[var(--accent)] tracking-widest mt-1 sm:mt-0 opacity-90">Sopralluogo 100% gratuito</span>
@@ -186,7 +182,7 @@ export function HeroSection() {
           <div className="hero-reveal mt-4 sm:mt-6 flex flex-col sm:flex-row flex-wrap gap-x-5 gap-y-3 font-mono-fulgur text-[9.5px] font-medium uppercase tracking-widest text-white/70">
             <div className="flex items-center gap-2">
               <ShieldCheck size={14} className="text-[var(--accent)]" aria-hidden="true" />
-              <span>Assicurati RCT €2M</span>
+              <span>Assicurati RCT</span>
             </div>
             <div className="flex items-center gap-2">
               <Leaf size={14} className="text-[var(--accent)]" aria-hidden="true" />
@@ -194,7 +190,7 @@ export function HeroSection() {
             </div>
             <div className="flex items-center gap-2">
               <Clock size={14} className="text-[var(--accent)]" aria-hidden="true" />
-              <span>Risposta 48h</span>
+              <span>Risposta 24h</span>
             </div>
           </div>
         </div>
@@ -231,7 +227,7 @@ export function HeroSection() {
               <div className="relative h-full w-full overflow-hidden rounded-full">
                 <Image
                   src="/images/team-operatori-pulizie-professionali-parma.webp"
-                  alt="Operatori Fulgur Service a Parma — impresa di pulizie professionali"
+                  alt="Il team Fulgur Service a Parma — impresa di pulizie professionali"
                   fill
                   sizes="(max-width: 640px) 320px, (max-width: 1024px) 380px, 460px"
                   className="object-cover transition-transform duration-700 hover:scale-105"
@@ -240,49 +236,78 @@ export function HeroSection() {
               </div>
             </div>
 
-            {/* Card float: 40+ anni */}
+            {/* Card float: 30+ anni (Restored & Shifted) */}
             <motion.div
               initial={{ y: -6 }}
               animate={{ y: [-6, 6, -6] }}
               transition={{ repeat: Infinity, duration: 4.2, ease: 'easeInOut' }}
-              className="absolute -right-4 top-10 z-20 sm:-right-5 sm:top-10 lg:-right-14 lg:top-16 glass-white rounded-2xl px-5 py-4 min-w-[120px] sm:min-w-[130px] shadow-xl"
+              className="absolute -right-8 top-20 z-20 sm:-right-10 sm:top-20 lg:-right-16 lg:top-24 glass-white rounded-2xl px-5 py-4 min-w-[120px] sm:min-w-[130px] shadow-xl"
             >
               <div className="flex flex-col items-start leading-tight">
-                <div className="font-display text-3xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-3xl md:text-4xl">40+</div>
+                <div className="font-display text-3xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-3xl md:text-4xl">30+</div>
                 <div className="mt-1 font-mono-fulgur text-[9px] font-bold uppercase tracking-widest text-[var(--tx-2)]">
                   Anni<br />di know-how
                 </div>
               </div>
             </motion.div>
 
-            {/* Card float: 500+ clienti */}
+            {/* Card float: 12 aree (Shifted) */}
             <motion.div
               initial={{ y: 8 }}
               animate={{ y: [8, -8, 8] }}
               transition={{ repeat: Infinity, duration: 5.2, ease: 'easeInOut', delay: 1.2 }}
-              className="absolute -left-6 bottom-12 z-20 sm:-left-6 sm:bottom-14 lg:-left-16 lg:bottom-20 glass-white rounded-2xl px-5 py-4 min-w-[120px] sm:min-w-[130px] shadow-xl"
+              className="absolute -left-10 bottom-20 z-20 glass-white rounded-2xl px-5 py-4 min-w-[120px] shadow-xl"
             >
               <div className="flex flex-col items-start leading-tight">
-                <div className="font-display text-3xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-3xl md:text-4xl">4.9★</div>
+                <div className="font-display text-3xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-3xl md:text-4xl">12</div>
                 <div className="mt-1 font-mono-fulgur text-[9px] font-bold uppercase tracking-widest text-[var(--tx-2)]">
-                  Rating<br />su Google
+                  Aree di<br />intervento
                 </div>
               </div>
             </motion.div>
 
-            {/* Card float: 15 aree */}
+            {/* Card float: TECNOLOGIE (New - Top Left dot) */}
             <motion.div
-              initial={{ y: -4 }}
-              animate={{ y: [-4, 8, -4] }}
-              transition={{ repeat: Infinity, duration: 4.8, ease: 'easeInOut', delay: 2.5 }}
-              className="absolute -left-4 top-20 z-20 lg:-left-12 lg:top-32 glass-white rounded-2xl px-5 py-4 min-w-[120px] shadow-xl hidden sm:flex"
+              initial={{ y: 0, x: 0 }}
+              animate={{ y: [-4, 4, -4], x: [2, -2, 2] }}
+              transition={{ repeat: Infinity, duration: 5.5, ease: 'easeInOut', delay: 0.5 }}
+              className="absolute left-[-5%] top-[-5%] z-20 glass-white rounded-2xl px-5 py-3 min-w-[150px] shadow-xl hidden md:flex"
             >
-              <div className="flex flex-col items-start leading-tight">
-                <div className="font-display text-3xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-4xl">15</div>
-                <div className="mt-1 font-mono-fulgur text-[9px] font-bold uppercase tracking-widest text-[var(--tx-2)]">
-                  Aree<br />servite
-                </div>
+              <div className="flex flex-col items-start leading-tight text-center w-full">
+                <div className="font-display text-lg font-extrabold text-[var(--accent)] tracking-tight uppercase leading-[0.9]">TECNOLOGIE<br />& METODO</div>
+                <div className="mt-1 font-mono-fulgur text-[8px] font-bold uppercase tracking-widest text-[var(--tx-2)]">Attrezzature PRO</div>
               </div>
+            </motion.div>
+
+            {/* Card float: ECO (New - Top Right dot) */}
+            <motion.div
+              initial={{ scale: 1 }}
+              animate={{ scale: [1, 1.05, 1], rotate: [0, 2, 0] }}
+              transition={{ repeat: Infinity, duration: 6, ease: 'easeInOut', delay: 1.5 }}
+              className="absolute right-[10%] top-[-10%] z-20 glass-white rounded-2xl px-5 py-3 min-w-[110px] shadow-xl"
+            >
+              <div className="font-display text-2xl font-extrabold text-[var(--accent)] tracking-tighter">ECO</div>
+              <div className="mt-0.5 font-mono-fulgur text-[8px] font-bold uppercase tracking-widest text-[var(--tx-2)]">Certificati</div>
+            </motion.div>
+
+            {/* Card float: GREEN (New - Mid Left dot) */}
+            <motion.div
+              animate={{ x: [-10, 10, -10] }}
+              transition={{ repeat: Infinity, duration: 7, ease: 'easeInOut' }}
+              className="absolute -left-20 top-[40%] z-20 glass-white rounded-2xl px-5 py-3 min-w-[120px] shadow-xl hidden lg:flex flex-col items-start"
+            >
+              <div className="font-display text-2xl font-extrabold text-[var(--accent)] tracking-tighter leading-none">GREEN</div>
+              <div className="mt-1.5 font-mono-fulgur text-[8px] font-bold uppercase tracking-widest text-[var(--tx-2)]">Impatto Zero</div>
+            </motion.div>
+
+            {/* Card float: SUN (New - Bottom Right dot) */}
+            <motion.div
+              animate={{ y: [0, -12, 0] }}
+              transition={{ repeat: Infinity, duration: 5, ease: 'easeInOut', delay: 2.2 }}
+              className="absolute -right-12 bottom-0 z-20 glass-white rounded-2xl px-5 py-3 min-w-[120px] shadow-xl"
+            >
+              <div className="font-display text-2xl font-extrabold text-[var(--accent)] tracking-tighter">SUN</div>
+              <div className="mt-0.5 font-mono-fulgur text-[8px] font-bold uppercase tracking-widest text-[var(--tx-2)]">Fotovoltaico</div>
             </motion.div>
           </div>
         </div>

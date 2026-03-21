@@ -5,25 +5,25 @@ import { CounterUp } from '@/components/ui/CounterUp'
 
 const STATS = [
   {
-    value: 30,
+    value: 40,
     suffix: '+',
     label: 'Anni di esperienza',
     sub: 'Nel settore pulizie professionali',
   },
   {
-    value: 500,
-    suffix: '+',
+    value: 100,
+    suffix: '%',
     label: 'Clienti soddisfatti',
     sub: 'In Emilia-Romagna',
   },
   {
     value: 12,
     suffix: '',
-    label: 'Settori di intervento',
+    label: 'Aree di intervento',
     sub: "Dal civile all'industriale",
   },
   {
-    value: 24,
+    value: 48,
     suffix: 'h',
     label: 'Preventivo garantito',
     sub: 'Sopralluogo sempre gratuito',

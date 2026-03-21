@@ -63,7 +63,6 @@ export function useScrollVideoScrub(
   // 5. Disaccoppiamento per performance (Bypass the Video Decoder bottleneck):
   const targetTime = useRef(0)
   useMotionValueEvent(bufferedProgress, 'change', (latest) => {
-    if (isMobile) return
     const video = videoRef.current
     if (video && video.duration) {
       targetTime.current = latest * video.duration
@@ -73,7 +72,6 @@ export function useScrollVideoScrub(
   // ...e applichiamo il `currentTime` al video DOM solo se NON sta già decodificando (seeking).
   // Questo previene scatti violenti (stutter) quando il file MP4 è complesso o ha pochi keyframe.
   useEffect(() => {
-    if (isMobile) return
     const video = videoRef.current
     if (!video) return
 
@@ -83,6 +81,7 @@ export function useScrollVideoScrub(
     let rafId: number
     let currentLerp = 0
     const lerpFactor = 0.1 // Smorzamento inerziale della testina
+    const minDiff = isMobile ? 0.08 : 0.01 // Less frequent decoding calls on mobile
 
     const renderLoop = () => {
       // 1. Calcolo matematico disaccoppiato dal decoder (Insegue targetTime)
@@ -91,7 +90,7 @@ export function useScrollVideoScrub(
       if (video.readyState >= 2) {
         // 2. Controllo scostamento reale
         const diff = Math.abs(video.currentTime - currentLerp)
-        if (!video.seeking && diff > 0.01) {
+        if (!video.seeking && diff > minDiff) {
           video.currentTime = currentLerp
         }
       }

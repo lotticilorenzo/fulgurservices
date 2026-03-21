@@ -46,7 +46,7 @@ export function ReviewsStrip() {
           <ScrollReveal className="max-w-2xl text-center md:text-left">
             <SectionLabel className="mb-4">— COSA DICONO I CLIENTI</SectionLabel>
             <h2 className="font-display text-4xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl lg:text-6xl text-balance">
-              Oltre <span className="text-[var(--accent)]">500</span> clienti <br className="hidden lg:block" /> soddisfatti.
+              Clienti <span className="text-[var(--accent)]">soddisfatti</span> in tutta <br className="hidden lg:block" /> l&apos;Emilia-Romagna.
             </h2>
           </ScrollReveal>
 
@@ -58,7 +58,7 @@ export function ReviewsStrip() {
                 </div>
               ))}
               <div className="h-10 w-10 rounded-full border-2 border-white bg-[var(--accent)] flex items-center justify-center text-white text-[10px] font-bold shadow-sm">
-                +497
+                4.9★
               </div>
             </div>
           </ScrollReveal>

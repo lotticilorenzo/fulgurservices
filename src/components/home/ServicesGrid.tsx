@@ -50,7 +50,7 @@ export function ServicesGrid() {
             Ogni ambiente, <br className="hidden sm:block" /> un’unica soluzione.
           </h2>
           <p className="mt-4 sm:mt-6 font-sans text-base sm:text-lg font-light text-[var(--tx-2)]">
-            15 aree di intervento, team specializzato, preventivo in 48 ore.
+            12 aree di intervento, team specializzato, preventivo in 48 ore.
           </p>
         </div>
 
@@ -100,7 +100,7 @@ export function ServicesGrid() {
             href="/servizi" 
             className="group flex min-h-[44px] w-full sm:w-auto items-center justify-center gap-2 rounded-xl sm:rounded-none bg-[var(--bg-2)] sm:bg-transparent border sm:border-transparent border-[var(--br)] px-6 py-3 sm:p-0 font-display text-base sm:text-sm font-bold text-[var(--tx-1)] sm:text-[var(--tx-2)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-all"
           >
-            <span>Vedi tutte le 15 aree di intervento</span>
+            <span>Vedi tutte le 12 aree di intervento</span>
             <span className="transition-transform group-hover:translate-x-1">→</span>
           </Link>
         </div>
@@ -123,9 +123,6 @@ export function ServicesGrid() {
                   Un partner unico <br className="hidden sm:block" />
                   <span className="text-[var(--accent)]">per tutto.</span>
                 </h2>
-                <p className="mt-3 font-mono-fulgur text-[11px] font-bold uppercase tracking-[0.18em] text-[var(--tx-3)]">
-                  Un partner unico — manutenzione integrata
-                </p>
                 <p className="mt-5 max-w-lg font-sans text-base font-light leading-relaxed text-[var(--tx-2)]">
                   Per i clienti Fulgur, oltre alle pulizie gestiamo anche manutenzione
                   idraulica, edile ed elettrica ordinaria. Un solo referente per tutto

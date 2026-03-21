@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { List, X, PhoneCall, ArrowRight, WhatsappLogo, CaretDown } from '@phosphor-icons/react'
 import { cn } from '@/lib/utils'
 import { Logo } from '@/components/ui/Logo'
+import { WhatsAppHybridLink } from '@/components/ui/WhatsAppHybridLink'
 
 /* ── Nav structure ── */
 const SERVICE_PREVIEWS = [
@@ -359,15 +360,13 @@ export default function Navbar() {
                   <PhoneCall size={18} weight="fill" className="text-[var(--accent)]" aria-hidden="true" />
                   Chiama
                 </a>
-                <a
+                <WhatsAppHybridLink
                   href="https://wa.me/393383160091?text=Ciao%2C%20vorrei%20richiedere%20un%20sopralluogo%20gratuito"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="flex flex-1 min-h-[44px] items-center justify-center gap-1.5 rounded-xl border border-[#25D366]/30 bg-[#25D366]/10 py-3 font-display text-[14px] font-semibold text-[#1DA851] shadow-sm hover:bg-[#25D366]/20 transition-all"
                 >
                   <WhatsappLogo size={18} weight="fill" aria-hidden="true" />
                   WhatsApp
-                </a>
+                </WhatsAppHybridLink>
               </div>
               <Link
                 href="/preventivo"
