@@ -1,72 +1,73 @@
-# Fulgur AI — Structured Knowledge Base (v1.0)
+# Fulgur AI — Structured Knowledge Base (v1.1 - Updated 2026-03-21)
 
-## 1. Company Identity
-- **Name**: Fulgur Service SRL
-- **Location**: Parma, Emilia-Romagna, Italy
-- **Tagline**: "Puliamo il futuro con l'energia della natura" (We clean the future with the energy of nature).
-- **History**: Founded in 1994. Represents the junction between 30 years of generational experience and modern, innovative vision.
-- **Core Values**: Energy, Nature, Precision, Care.
-- **Unique Selling Proposition**: Young and innovative firm with a deep respect for traditional quality. Partners with clients to take total care of their environments.
+## 1. Dati Aziendali & Identità
+- **Nome Azienda**: Fulgur Service S.R.L.
+- **Esperienza**: Attivi dal 1994 (oltre 30 anni di storia nel settore delle pulizie).
+- **Tagline**: "Puliamo il futuro con l'energia della natura".
+- **Contatti Primari**: 
+  - WhatsApp: +39 338 316 0091 (Canale preferito)
+  - Telefono: +39 338 316 0091
+- **Contatti Secondari**: 
+  - Email: fulgurservice@gmail.com
+  - PEC: Disponibile su richiesta
+- **Orari Operativi**: Operativi 24 ore su 24, 7 giorni su 7 (24/7), inclusi sabato e domenica, in base alle specifiche esigenze del cliente.
+- **Zone di Competenza**: Sede a Parma (PR). Operativi su Parma e provincia. Disponibili per interventi in tutta Italia (comprese le isole, es. Sardegna) previa valutazione logistica.
 
-## 2. Services Portfolio
+## 2. Logica Prezzi & Preventivazione
+- **Politica Prezzi**: Non esiste un listino prezzi fisso o standard. Ogni preventivo è "su misura".
+- **Processo**: Il prezzo viene definito esclusivamente dopo un **sopralluogo gratuito**, necessario per valutare le condizioni reali e le esigenze specifiche.
+- **Costi Fissi**: Nessun diritto di chiamata, nessun minimo d'ordine prefissato.
+- **Sconti**: Valutati caso per caso in base alla frequenza e alla tipologia di contratto; non esistono percentuali di sconto fisse.
+- **Maggiorazioni**: Interventi in orario notturno o trasferte possono comportare costi aggiuntivi, quantificati in fase di preventivo.
+- **Tempistiche**: Sopralluogo garantito entro la settimana dalla richiesta; preventivo inviato entro 48 ore dal sopralluogo.
 
-### 2.1 Corporate & Industrial
-- **Business Cleaning**: Offices, headquarters, showrooms. Tailored programs, eco-certified products.
-- **Industrial Cleaning**: Warehouses, logistics plants, factories. High-performance machinery for scale and oil/grease removal.
-- **End-of-Construction**: Specialized post-renovation cleanup, removal of lime, cement, and dust.
+## 3. Servizi Offerti (Tailor-made)
+L'offerta è flessibile e adattata alle necessità dei diversi settori:
 
-### 2.2 Specialized & Technical
-- **Sanitary & Healthcare**: HACCP protocols, virucidal/bactericidal certified products for clinics, dental studios, and pharmacies.
-- **Photovoltaic Maintenance**: Cleaning with demineralized water and non-abrasive tools. Recovers up to 30% efficiency loss.
-- **180° Steam Sanitization**: Chemical-free, 99.9% bacterial elimination using dry saturated steam.
-- **High-Altitude Glass**: Certified rope and platform operators for façades and skylights.
-- **Surface Treatment**: Crystallization of marble, treatment for gres, parquet, terracotta, and resin.
+### 3.1 Business & Industrial
+- **Pulizie Aziendali**: Uffici, sedi operative, negozi e showroom.
+- **Pulizie Industriali**: Capannoni, magazzini, impianti produttivi e aree di carico.
+- **Fine Cantiere**: Pulizie post-costruzione e post-ristrutturazione (rimozione calce, cemento, polveri edili).
+- **Locali Notturni**: Discoteche, club e pub (gestione ambienti ad alta affluenza).
 
-### 2.3 Hospitality & Residential
-- **Hotel Sector**: Standards for 3-5 star hotels and B&Bs. Room cleaning and common area management.
-- **Condominium**: Management of stairs, halls, elevators, and external areas for administrators.
-- **Civil Cleaning**: Trusted, discrete cleaning for private homes and villas.
+### 3.2 Settori Specializzati
+- **Settore Sanitario**: Sanificazione HACCP per cliniche, poliambulatori, farmacie e studi medici.
+- **Cantiere Navale**: Pulizia specialistica imbarcazioni, scafi e aree portuali.
+- **Strutture Sportive**: Palestre, piscine, centri sportivi.
+- **Pannelli Fotovoltaici**: Pulizia per il ripristino dell'efficienza energetica (fino al +30%).
+- **Vetrate in Altezza**: Facciate vetrate e lucernari con operatori certificati per lavoro in quota.
 
-## 3. Technical Infrastructure (Machinery)
-- **Klindex**: Precision machinery for marble polishing and floor restoration.
-- **CFM/Nilfisk**: Industrial vacuum systems for fine dust and large-scale industrial washing.
-- **Lindhaus**: Healthcare-grade filtration and high-efficiency cleaners.
-- **Vapor Systems**: Continuous 180° steam generators for eco-friendly sanitization.
+### 3.3 Hospitality & Residential
+- **Settore Alberghiero**: Housekeeping per hotel, B&B e strutture ricettive.
+- **Pulizie Condomini**: Scale, androni, aree comuni e gestione bidoni/rifiuti.
+- **Pulizie Civili**: Pulizia e igienizzazione abitazioni private e ville (massima discrezione).
 
-## 4. Operational Protocols
-- **24h Quote**: Detailed and transparent quotes provided within 24 hours of inspection.
-- **Free Inspection**: Every project starts with a free, no-obligation on-site evaluation.
-- **Sustainability**: Preference for Ecolabel certified products and reduced chemical usage.
-- **Assurance**: Insured and continuously trained staff (HACCP, Safety).
+### 3.4 Trattamenti & Sanificazione
+- **Trattamento Superfici**: Cristallizzazione marmo, trattamento gres, parquet, cotto e resina.
+- **Sanificazione Vapore 180°**: Metodo naturale a vapore saturo (senza prodotti chimici aggressivi), ideale per eliminare il 99.9% di batteri e virus.
+- **Pulizia Facciate**: Rimozione sporco atmosferico e ripristino estetico.
 
-## 5. Contact & Trust Signals
-- **Phone**: +39 338 316 0091
-- **Email**: fulgurservice@gmail.com
-- **Social**: Instagram @fulgurservice
-- **Rating**: 4.9/5 stars based on dozens of reviews in the Parma area.
-- **Legal**: VAT 03063010346 | REA 353051 | Cap. Soc. €10.000
+### 3.5 Servizi Extra (Global Service)
+Per i clienti attivi, Fulgur Service funge da referente unico per piccole manutenzioni ordinarie:
+- **Manutenzione Idraulica**
+- **Manutenzione Elettrica**
+- **Manutenzione Edile Leggera** (riparazioni murarie, tinteggiature)
 
-## 6. Preventivo AI Guidelines (Estimation Persona)
+## 4. Metodi, Attrezzature & Garanzie
+- **Prodotti**: Utilizzo preferenziale di prodotti certificati **Ecolabel** (basso impatto ambientale). Il chimico tradizionale è riservato solo a interventi straordinari complessi.
+- **Macchinari**: Partnership con brand leader di settore (Klindex, Nilfisk, Kiter, Lindhaus, ecc.).
+- **Gestione Chiavi**: In caso di consegna chiavi da parte del cliente, l'azienda rilascia un **modulo formale di presa in consegna** a tutela di entrambe le parti.
+- **Personale**: Tutti gli operatori sono assunti regolarmente, assicurati e sottoposti a formazione continua su sicurezza e procedure.
+- **Assicurazione**: Copertura totale per danni accidentali tramite **polizza RCT** (Responsabilità Civile verso Terzi) con massimale di 1 Milione di Euro. (Nota: rassicurare sulla copertura senza citare il massimale se non richiesto).
 
-### 6.1 Persona Rules
-- **Role**: Specialized Quote Assistant.
-- **Goal**: Collect (1) Service Type and (2) Square Footage (Metratura) to provide a "Bozza di Preventivo" (Draft Quote).
-- **Tone**: Professional, precise, encouraging towards human inspection.
-- **Mandatory Disclaimer**: Every estimate MUST include: "Questa è una stima indicativa (bozza). Il prezzo finale può variare in base alle condizioni reali e verrà confermato solo dopo il sopralluogo gratuito."
+## 5. FAQ (Domande Frequenti)
+- **Operatore Fisso**: Per i servizi di pulizia ordinaria, l'azienda assegna solitamente lo stesso operatore ("operatore battezzato") per garantire continuità e fiducia.
+- **Attrezzature**: Fulgur Service porta sempre tutto il necessario (macchinari e detergenti); il cliente non deve fornire nulla.
+- **Disponibilità**: Operativi 24/7. Interventi possibili anche sabato, domenica e festivi.
+- **Garanzia Danni**: In caso di danni a oggetti, interviene la polizza RCT aziendale che garantisce il risarcimento totale.
 
-### 6.2 Pricing Heuristics (Estimates for Parma Area)
-*Note: These are ranges for draft simulation.*
-
-- **Professional Offices**: €1.50 — €2.50 / mq (depends on frequency).
-- **Industrial/Warehouses**: €0.80 — €1.50 / mq (large scale).
-- **Marble Crystallization**: €12.00 — €18.00 / mq (highly specialized).
-- **End-of-Construction**: €3.00 — €5.00 / mq (heavy duty cleanup).
-- **Sanitization (180° Steam)**: €2.00 — €4.00 / mq.
-- **Apartments (Civil)**: €4.00 — €7.00 / mq or hourly rates (€20-25/h).
-
-### 6.3 Flow Logic
-1. Ask for the service type.
-2. Ask for the metratura (sqm).
-3. Calculate range: mq * rate.
-4. Output draft price.
-5. Call to action: "Richiedi sopralluogo gratuito per bloccare il prezzo."
+## 6. Linee Guida per AI (RAG Persona)
+- **Ruolo**: Assistente Senior Fulgur Service.
+- **Obiettivo**: Fornire informazioni precise e orientare l'utente verso il sopralluogo gratuito.
+- **Comunicazione**: Tono professionale, trasparente e orientato alla "cura dell'ambiente del cliente".
+- **Limitazione**: Non inventare mai prezzi fissi. Usare i range di prezzo solo come "bozza indicativa" e sottolinearne il valore non vincolante fino al sopralluogo.

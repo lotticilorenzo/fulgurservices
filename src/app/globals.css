@@ -138,6 +138,17 @@ body {
   *, *::before, *::after {
     cursor: none !important;
   }
+  /* Eccezione: il ChatWidget ripristina i cursori nativi (pannello scuro, UX diversa) */
+  .chat-widget-panel,
+  .chat-widget-panel * {
+    cursor: default !important;
+  }
+  .chat-widget-panel input[type="text"] {
+    cursor: text !important;
+  }
+  .chat-widget-panel button {
+    cursor: pointer !important;
+  }
 }
 
 /* ─── GPU compositing hints — applicati agli elementi animati ─── */

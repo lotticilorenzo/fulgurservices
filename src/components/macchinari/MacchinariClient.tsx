@@ -50,8 +50,7 @@ export function MacchinariClient() {
           playsInline
           preload="none"
         >
-          <source src="/videos/pulizie-industriali-macchinari-parma-mobile.mp4" media="(max-width: 767px)" type="video/mp4" />
-          <source src="/videos/pulizie-industriali-macchinari-parma.mp4" media="(min-width: 768px)" type="video/mp4" />
+          <source src="/videos/pulizie-industriali-macchinari-parma.mp4" type="video/mp4" />
         </video>
 
         {/* Overlay scuro + gradiente in basso per fade verso contenuto bianco (più coprente su mobile) */}

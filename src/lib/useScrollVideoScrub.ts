@@ -71,24 +71,23 @@ export function useScrollVideoScrub(
 
   // ...e applichiamo il `currentTime` al video DOM solo se NON sta già decodificando (seeking).
   // Questo previene scatti violenti (stutter) quando il file MP4 è complesso o ha pochi keyframe.
+  // IntersectionObserver: il RAF si ferma quando la sezione è fuori viewport → zero CPU a riposo.
   useEffect(() => {
     const video = videoRef.current
-    if (!video) return
+    const section = sectionRef.current
+    if (!video || !section) return
 
     // Assicuriamo il corretto pre-loading logico all'inizio
     video.currentTime = 0
 
-    let rafId: number
+    let rafId: number | null = null
     let currentLerp = 0
     const lerpFactor = 0.1 // Smorzamento inerziale della testina
     const minDiff = isMobile ? 0.08 : 0.01 // Less frequent decoding calls on mobile
 
     const renderLoop = () => {
-      // 1. Calcolo matematico disaccoppiato dal decoder (Insegue targetTime)
       currentLerp += (targetTime.current - currentLerp) * lerpFactor
-
       if (video.readyState >= 2) {
-        // 2. Controllo scostamento reale
         const diff = Math.abs(video.currentTime - currentLerp)
         if (!video.seeking && diff > minDiff) {
           video.currentTime = currentLerp
@@ -97,9 +96,17 @@ export function useScrollVideoScrub(
       rafId = requestAnimationFrame(renderLoop)
     }
 
-    rafId = requestAnimationFrame(renderLoop)
-    return () => cancelAnimationFrame(rafId)
-  }, [isMobile, videoRef])
+    const startRAF = () => { if (rafId === null) rafId = requestAnimationFrame(renderLoop) }
+    const stopRAF  = () => { if (rafId !== null) { cancelAnimationFrame(rafId); rafId = null } }
+
+    const observer = new IntersectionObserver(
+      (entries) => { entries[0].isIntersecting ? startRAF() : stopRAF() },
+      { threshold: 0 }
+    )
+    observer.observe(section)
+
+    return () => { stopRAF(); observer.disconnect() }
+  }, [isMobile, videoRef, sectionRef])
 
   return { progress, isMobile }
 }

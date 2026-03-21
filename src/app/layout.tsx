@@ -11,6 +11,7 @@ import { LenisProvider } from '@/components/layout/LenisProvider'
 import { IntroLoader } from '@/components/ui/IntroLoader'
 import { PageTransitionProvider } from '@/components/layout/PageTransitionProvider'
 import { CookieBanner } from '@/components/layout/CookieBanner'
+import ChatWidgetLoader from '@/components/ai/ChatWidgetLoader'
 import React from 'react'
 
 const syne = Syne({
@@ -82,6 +83,7 @@ export default function RootLayout({
           <Footer />
           <FloatingActions />
           <CookieBanner />
+          <ChatWidgetLoader />
         </PageTransitionProvider>
       </body>
     </html>

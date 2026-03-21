@@ -10,7 +10,6 @@ const SLIDES = [
     type: 'video',
     title: 'Puliamo',
     subtitle: 'Ogni ambiente una sola missione: la perfezione. Cura ed energia per i tuoi spazi.',
-    srcMobile: '/videos/impresa-pulizie-parma-videopresentazione-mobile.mp4',
     srcDesktop: '/videos/impresa-pulizie-parma-videopresentazione.mp4',
     poster: '/images/team-operatori-pulizie-professionali-parma.webp',
     titleClass: 'text-white'
@@ -73,8 +72,7 @@ export function SliderSection() {
               preload="none"
               disablePictureInPicture
             >
-              <source src={SLIDES[currentSlide].srcMobile} media="(max-width: 767px)" type="video/mp4" />
-              <source src={SLIDES[currentSlide].srcDesktop} media="(min-width: 768px)" type="video/mp4" />
+              <source src={SLIDES[currentSlide].srcDesktop} type="video/mp4" />
             </video>
           ) : (
             <Image

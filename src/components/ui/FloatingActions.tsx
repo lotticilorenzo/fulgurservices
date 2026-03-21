@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { X, ArrowLeft, ArrowRight, CheckCircle } from '@phosphor-icons/react'
+import { X, ArrowLeft, ArrowRight, CheckCircle, Robot } from '@phosphor-icons/react'
 import { QRCodeSVG } from 'qrcode.react'
 import { MagneticButton } from '@/components/ui/MagneticButton'
 import { WhatsAppHybridLink } from '@/components/ui/WhatsAppHybridLink'
@@ -274,7 +274,7 @@ export function FloatingActions() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
             transition={{ type: 'spring', stiffness: 260, damping: 22 }}
-            className="fixed bottom-6 right-4 sm:right-6 z-[90] flex flex-col items-end gap-3 pointer-events-none"
+            className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[90] flex flex-col items-end gap-3 pointer-events-none"
           >
             {/* ── Preventivo Rapido button ── */}
             <motion.button
@@ -295,11 +295,46 @@ export function FloatingActions() {
               <ArrowRight size={14} className="text-white/70 transition-transform group-hover:translate-x-0.5" />
             </motion.button>
 
+            {/* ── AI Assistant (Robot) button ── */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.7 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.22, type: 'spring', stiffness: 280, damping: 22 }}
+              className="flex items-center justify-end group pointer-events-auto"
+            >
+              <AnimatePresence>
+                {waHovered && (
+                  <motion.div
+                    initial={{ opacity: 0, x: 16, scale: 0.9 }}
+                    animate={{ opacity: 1, x: 0, scale: 1 }}
+                    exit={{ opacity: 0, x: 10, scale: 0.9 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute right-[72px] sm:right-[80px] rounded-2xl bg-[#161B24] border border-white/10 shadow-2xl px-4 py-2 flex items-center justify-center origin-right z-50 whitespace-nowrap"
+                  >
+                    <span className="font-mono-fulgur text-[10px] uppercase tracking-widest text-[#4ECBA0]">
+                      Chiedi a Fulgur AI
+                    </span>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              <button
+                onClick={() => window.dispatchEvent(new CustomEvent('toggle-fulgur-ai'))}
+                onMouseEnter={() => setWaHovered(true)}
+                onMouseLeave={() => setWaHovered(false)}
+                className="relative flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-[#1A1A2E] border border-[#4ECBA0]/30 text-[#4ECBA0] shadow-[0_8px_30px_rgba(78,203,160,0.2)] transition-all hover:scale-110 hover:border-[#4ECBA0] group"
+                aria-label="Chiedi all'AI"
+              >
+                <div className="absolute -inset-1 bg-[#4ECBA0]/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
+                <Robot size={isMobileDevice ? 24 : 28} weight="fill" className="relative z-10" />
+              </button>
+            </motion.div>
+
             {/* ── WhatsApp button ── */}
             <motion.div
               initial={{ opacity: 0, scale: 0.7 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.18, type: 'spring', stiffness: 280, damping: 22 }}
+              transition={{ delay: 0.28, type: 'spring', stiffness: 280, damping: 22 }}
               className="flex items-center justify-end group"
               onMouseEnter={() => setWaHovered(true)}
               onMouseLeave={() => setWaHovered(false)}

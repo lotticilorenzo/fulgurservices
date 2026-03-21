@@ -10,12 +10,16 @@ gsap.registerPlugin(ScrollTrigger)
 export function ScrollMobileSection() {
   const sectionRef = useRef<HTMLElement>(null)
   const videoRef   = useRef<HTMLVideoElement>(null)
-  const mountedRef = useRef(true)                // previene setState dopo unmount
+  const mountedRef = useRef(true)
 
-  const [scrollProgress, setScrollProgress] = useState(0)
+  // Tracciamo solo i booleani di visibilità, non il float raw — evita re-render ad ogni tick
+  const [showText1, setShowText1] = useState(true)
+  const [showText2, setShowText2] = useState(false)
   const [videoReady,     setVideoReady]     = useState(false)
   const [videoError,     setVideoError]     = useState(false)
   const [isMobile,       setIsMobile]       = useState(() => typeof window !== 'undefined' && window.matchMedia('(max-width: 768px)').matches)
+  // lazy: true quando la sezione si avvicina al viewport — nessun download prima
+  const [srcLoaded,      setSrcLoaded]      = useState(false)
 
   // Previene setState dopo unmount
   useEffect(() => {
@@ -38,6 +42,29 @@ export function ScrollMobileSection() {
       mq.removeEventListener('change', handler)
     }
   }, [])
+
+  // ── Lazy loading: inietta <source> solo quando la sezione è vicina ────────
+  useEffect(() => {
+    if (!isMobile || !sectionRef.current) return
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && mountedRef.current) {
+          setSrcLoaded(true)
+          observer.disconnect()
+        }
+      },
+      { rootMargin: '300px' }
+    )
+    observer.observe(sectionRef.current)
+    return () => observer.disconnect()
+  }, [isMobile])
+
+  // ── Chiama video.load() dopo che i <source> sono stati montati nel DOM ────
+  useEffect(() => {
+    if (srcLoaded && videoRef.current) {
+      videoRef.current.load()
+    }
+  }, [srcLoaded])
 
   // ── GSAP ScrollTrigger + video scrub — SOLO mobile ───────────────────────
   useEffect(() => {
@@ -64,7 +91,7 @@ export function ScrollMobileSection() {
     const stopRAF  = () => { cancelAnimationFrame(rafId); rafId = 0 }
 
     // IntersectionObserver — avvia/ferma RAF solo quando visibile
-    const observer = new IntersectionObserver(
+    const scrubObserver = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
           startRAF()
@@ -75,7 +102,7 @@ export function ScrollMobileSection() {
       },
       { threshold: 0 }
     )
-    observer.observe(section)
+    scrubObserver.observe(section)
 
     const initST = () => {
       st = ScrollTrigger.create({
@@ -89,7 +116,11 @@ export function ScrollMobileSection() {
         refreshPriority:     1,
         onUpdate: (self) => {
           targetProgress = self.progress
-          if (mountedRef.current) setScrollProgress(self.progress)
+          if (mountedRef.current) {
+            // Aggiorna solo i booleani — setState si attiva solo ai 4 threshold crossing, non ogni tick
+            setShowText1(self.progress >= 0.0 && self.progress <= 0.3)
+            setShowText2(self.progress >= 0.35 && self.progress <= 0.65)
+          }
         },
       })
     }
@@ -103,14 +134,9 @@ export function ScrollMobileSection() {
     return () => {
       st?.kill()
       stopRAF()
-      observer.disconnect()
-      // NON svuotare video.src — evita onError sul dismount
+      scrubObserver.disconnect()
     }
   }, [isMobile])
-
-  // ── Visibilità testi ──────────────────────────────────────────────────────
-  const showText1 = scrollProgress >= 0.0  && scrollProgress <= 0.3
-  const showText2 = scrollProgress >= 0.35 && scrollProgress <= 0.65
 
   // ── Fallback errore video ─────────────────────────────────────────────────
   if (videoError) {
@@ -175,19 +201,27 @@ export function ScrollMobileSection() {
           )}
         </AnimatePresence>
 
-        {/* ── Video — src solo su mobile, nessun download su desktop ── */}
+        {/* ── Video con <source> multipli, iniettati lazy via IntersectionObserver ── */}
+        {/*    preload="metadata" — scarica solo i primi KB (durata/dimensioni),    */}
+        {/*    nessun buffering anticipato del file intero.                          */}
+        {/*    willChange rimosso: non usiamo CSS transform, ma currentTime scrub.   */}
         <video
           ref={videoRef}
-          src={isMobile ? '/videos/scroll-mobile.mp4' : undefined}
           poster="/images/fulgur-service-pulizie-sostenibili.jpg"
-          preload={isMobile ? 'auto' : 'none'}
+          preload="metadata"
           muted
           playsInline
           className="w-full h-full object-cover"
-          style={{ willChange: 'transform' }}
-          onCanPlay={() => { if (mountedRef.current) setVideoReady(true) }}
+          onLoadedMetadata={() => { if (mountedRef.current) setVideoReady(true) }}
           onError={() => { if (mountedRef.current) setVideoError(true) }}
-        />
+        >
+          {srcLoaded && (
+            <>
+              <source src="/videos/scroll-mobile.webm" type="video/webm" />
+              <source src="/videos/scroll-mobile-opt.mp4" type="video/mp4" />
+            </>
+          )}
+        </video>
 
         {/* ── Gradient bottom permanente per leggibilità ── */}
         <div

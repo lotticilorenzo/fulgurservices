@@ -91,7 +91,7 @@ export const SERVICES: Service[] = [
     sectors: ['Hotel e Alberghi', 'B&B e affittacamere', 'Agriturismi', 'Residence Turistici'],
     metaTitle: 'Pulizie Hotel e Settore Alberghiero Parma | Fulgur Service',
     metaDescription: 'Servizi professionali di pulizia e housekeeping per hotel e B&B a Parma. Esperienza e discrezione garantite.',
-    image: '/images/servizi/pulizie-settore-alberghiero-hotel-bed-breakfast-parma.png',
+    image: '/images/servizi/pulizie-settore-alberghiero-hotel-bed-breakfast-parma.webp',
   },
   {
     id: '06',
@@ -151,7 +151,7 @@ export const SERVICES: Service[] = [
     sectors: ['Impianti Fotovoltaici Casa', 'Aziende con impianti solari', 'Campi fotovoltaici industriali'],
     metaTitle: 'Pulizia Pannelli Fotovoltaici e Solari Parma | Fulgur Service',
     metaDescription: 'Ottimizza la resa del tuo impianto fotovoltaico a Parma. Pulizia professionale con acqua demineralizzata. Preventivo gratuito.',
-    image: '/images/servizi/lavaggio-pulizia-pannelli-fotovoltaici-parma.png',
+    image: '/images/servizi/lavaggio-pulizia-pannelli-fotovoltaici-parma.webp',
   },
   {
     id: '10',
@@ -226,7 +226,7 @@ export const SERVICES: Service[] = [
     sectors: ['Discoteche', 'Pub e Birrerie', 'Lounge Bar', 'Sale Concerti'],
     metaTitle: 'Pulizie Locali Notturni e Discoteche Parma | Fulgur Service',
     metaDescription: 'Servizi di pulizia rapida post-serata per discoteche e pub a Parma. Ripristino totale dell\'igiene prima della riapertura.',
-    image: '/images/servizi/pulizie-locali-notturni-parma.png',
+    image: '/images/servizi/pulizie-locali-notturni-parma.webp',
   },
   {
     id: '15',
@@ -241,7 +241,7 @@ export const SERVICES: Service[] = [
     sectors: ['Case e Condomini', 'Capannoni Industriali', 'Edifici Storici', 'Centri Commerciali'],
     metaTitle: 'Pulizia Facciate e Lavaggio Esterni Parma | Fulgur Service',
     metaDescription: 'Servizi di lavaggio facciate esterne a Parma. Rimozione di smog, muschio e graffiti per ripristinare il decoro del tuo edificio.',
-    image: '/images/servizi/pulizia-facciate-esterne-parma.jpg',
+    image: '/images/servizi/pulizia-facciate-parma.jpg',
   },
 ]
 

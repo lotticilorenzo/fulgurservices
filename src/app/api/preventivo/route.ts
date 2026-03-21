@@ -104,7 +104,6 @@ export async function POST(req: Request) {
         secure: true,
         auth: { user: smtpUser, pass: smtpPass },
       })
-      await transporter.verify()
       await transporter.sendMail(mailOptions)
     } else {
       // Modalità sviluppo — simula delay senza inviare
