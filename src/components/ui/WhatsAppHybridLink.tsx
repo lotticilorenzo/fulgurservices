@@ -50,9 +50,9 @@ export function WhatsAppHybridLink({ href, children, className, target, rel, 'ar
     <>
       <a 
         href={href} 
-        onClick={handleClick} 
+        onClick={isMobile ? undefined : handleClick} 
         className={className} 
-        target={target || (isMobile ? "_blank" : undefined)}
+        target={isMobile ? "_self" : (target || undefined)}
         rel={rel || (isMobile ? "noopener noreferrer" : undefined)}
         aria-label={ariaLabel}
       >
