@@ -82,7 +82,7 @@ export function HeroSection() {
         preload="none"
         disablePictureInPicture
       >
-        <source src="/videos/sfondo-mobile-hero.mp4" type="video/mp4" />
+        <source src="/videos/sfondo-mobile-hero.mp4" media="(max-width: 767px)" type="video/mp4" />
         <source src="/videos/impresa-pulizie-parma-videopresentazione.mp4" type="video/mp4" />
       </video>
 
