@@ -111,10 +111,10 @@ export function ScrollVideoSection() {
         {/* Video fullscreen scrubbed */}
         <video
           ref={videoRef}
-          src="/videos/metodo-lavoro-pulizie-parma-processo.mp4"
+          src="/videos/metodo-lavoro-pulizie-parma-processo-scrub.mp4"
           muted
           playsInline
-          preload="metadata"
+          preload="auto"
           disablePictureInPicture
           className="absolute inset-0 w-full h-full object-cover"
           aria-hidden="true"
