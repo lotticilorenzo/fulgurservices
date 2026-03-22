@@ -15,10 +15,6 @@ export function HeroSection() {
   const leftRef = useRef<HTMLDivElement>(null)
   const rightRef = useRef<HTMLDivElement>(null)
   const [showScroll, setShowScroll] = useState(true)
-  // Scegli il video in base al device — <source media=""> non è supportato da Safari su <video>
-  const videoSrc = typeof window !== 'undefined' && window.innerWidth < 768
-    ? '/videos/sfondo-mobile-hero.mp4'
-    : '/videos/impresa-pulizie-parma-videopresentazione.mp4'
 
   /* scroll indicator hide */
   React.useEffect(() => {
@@ -86,7 +82,8 @@ export function HeroSection() {
         preload="none"
         disablePictureInPicture
       >
-        <source src={videoSrc} type="video/mp4" />
+        <source src="/videos/sfondo-mobile-hero.mp4" type="video/mp4" />
+        <source src="/videos/impresa-pulizie-parma-videopresentazione.mp4" type="video/mp4" />
       </video>
 
       {/* Overlay scuro — mantiene brand leggibile col contrasto del video */}
