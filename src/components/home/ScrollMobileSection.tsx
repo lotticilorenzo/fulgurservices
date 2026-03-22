@@ -57,14 +57,7 @@ export function ScrollMobileSection() {
     const video   = videoRef.current
 
     let st: ReturnType<typeof ScrollTrigger.create> | null = null
-
-    // Forza caricamento video (browser mobile ignorano preload="auto")
-    video.load()
-
-    // Fallback: se loadeddata non scatta entro 3s mostriamo comunque la sezione
-    const fallbackTimer = setTimeout(() => {
-      if (mountedRef.current) setVideoReady(true)
-    }, 3000)
+    let fallbackTimer: ReturnType<typeof setTimeout> | undefined
 
     const initST = () => {
       if (!mountedRef.current) return
@@ -98,13 +91,29 @@ export function ScrollMobileSection() {
       })
     }
 
-    if (video.readyState >= 2) {
-      initST()
-    } else {
-      video.addEventListener('loadeddata', initST, { once: true })
+    const startLoad = () => {
+      // Carica il video solo quando vicino al viewport — evita conflitti iOS
+      // con altri video autoPlay (es. HeroSection sfondo)
+      video.load()
+      fallbackTimer = setTimeout(() => {
+        if (mountedRef.current) setVideoReady(true)
+      }, 3000)
+      if (video.readyState >= 2) {
+        initST()
+      } else {
+        video.addEventListener('loadeddata', initST, { once: true })
+      }
     }
 
+    // IntersectionObserver: carica solo quando la sezione è a 400px dal viewport
+    const loadIO = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { startLoad(); loadIO.disconnect() } },
+      { rootMargin: '400px' }
+    )
+    loadIO.observe(section)
+
     return () => {
+      loadIO.disconnect()
       clearTimeout(fallbackTimer)
       st?.kill()
     }
