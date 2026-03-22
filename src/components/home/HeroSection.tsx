@@ -122,7 +122,7 @@ export function HeroSection() {
 
           {/* GlowBadge */}
           <div className="hero-reveal">
-            <GlowBadge>Parma · Dal 1994</GlowBadge>
+            <GlowBadge>Parma</GlowBadge>
           </div>
 
           {/* H1 — tre righe. leading-[1.0] su mobile evita il salto CLS verso sm:leading-[0.93] */}
