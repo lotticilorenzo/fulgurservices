@@ -1,25 +1,29 @@
 'use client'
 
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 /**
  * ScrollMobileSection — solo mobile (block md:hidden)
  *
- * Approccio: CSS sticky + video auto-play normale.
- * NON si usa video.currentTime scrubbing perché su mobile l'hardware
- * decoder non è ottimizzato per seek continui → jank inevitabile.
+ * Video scrubbing GSAP con file ottimizzato per seeking istantaneo.
+ * scroll-mobile-scrub.mp4 è codificato con keyframe ogni frame (-g 1):
+ * il browser non deve decodificare frame intermedi → zero jank.
  *
- * Il video gira fluidamente (hardware-accelerated), i testi appaiono
- * in base alla posizione scroll (calcolo scroll leggero, zero seeking).
+ * scrub: true = posizione 1:1 con lo scroll, nessun lag di smoothing.
+ * setState solo quando cambia la soglia (ref-based check) → zero re-render
+ * durante lo scrubbing.
  */
 export function ScrollMobileSection() {
-  const outerRef   = useRef<HTMLDivElement>(null)
-  const stickyRef  = useRef<HTMLElement>(null)
+  const sectionRef = useRef<HTMLElement>(null)
   const videoRef   = useRef<HTMLVideoElement>(null)
   const mountedRef = useRef(true)
 
-  // Ref per evitare setState ad ogni tick scroll — solo sui cambi di soglia
+  // Ref per evitare setState ad ogni tick GSAP
   const showText1Ref = useRef(true)
   const showText2Ref = useRef(false)
 
@@ -45,42 +49,16 @@ export function ScrollMobileSection() {
     return () => { clearTimeout(t); mq.removeEventListener('change', handler) }
   }, [])
 
-  // ── Testi basati su scroll progress — ZERO video seeking ─────────────────
+  // ── GSAP ScrollTrigger + video scrub ─────────────────────────────────────
   useEffect(() => {
-    if (!isMobile || !outerRef.current) return
+    if (!isMobile || !sectionRef.current || !videoRef.current) return
 
-    const outer = outerRef.current
+    const section = sectionRef.current
+    const video   = videoRef.current
 
-    const onScroll = () => {
-      const rect         = outer.getBoundingClientRect()
-      const scrollable   = outer.offsetHeight - window.innerHeight
-      const progress     = Math.max(0, Math.min(1, -rect.top / scrollable))
+    let st: ReturnType<typeof ScrollTrigger.create> | null = null
 
-      const t1 = progress <= 0.3
-      const t2 = progress >= 0.35 && progress <= 0.68
-
-      if (t1 !== showText1Ref.current) {
-        showText1Ref.current = t1
-        if (mountedRef.current) setShowText1(t1)
-      }
-      if (t2 !== showText2Ref.current) {
-        showText2Ref.current = t2
-        if (mountedRef.current) setShowText2(t2)
-      }
-    }
-
-    window.addEventListener('scroll', onScroll, { passive: true })
-    onScroll()
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [isMobile])
-
-  // ── Video: forza load + play/pause via IntersectionObserver ──────────────
-  useEffect(() => {
-    if (!isMobile || !stickyRef.current || !videoRef.current) return
-
-    const video = videoRef.current
-
-    // Forza il browser a iniziare il buffering (Safari/Chrome mobile ignorano preload="auto")
+    // Forza caricamento video (browser mobile ignorano preload="auto")
     video.load()
 
     // Fallback: se loadeddata non scatta entro 3s mostriamo comunque la sezione
@@ -88,25 +66,47 @@ export function ScrollMobileSection() {
       if (mountedRef.current) setVideoReady(true)
     }, 3000)
 
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        if (!mountedRef.current) return
-        if (entry.isIntersecting) {
-          video.play().catch(() => {})
-        } else {
-          video.pause()
-          video.currentTime = 0
-        }
-      },
-      { threshold: 0.1 }
-    )
+    const initST = () => {
+      if (!mountedRef.current) return
+      st = ScrollTrigger.create({
+        trigger:             section,
+        start:               'top top',
+        end:                 '+=250%',
+        // scrub: true = 1:1 con scroll, zero lag.
+        // Funziona perché scroll-mobile-scrub.mp4 ha keyframe ogni frame.
+        scrub:               true,
+        pin:                 true,
+        anticipatePin:       1,
+        invalidateOnRefresh: true,
+        refreshPriority:     1,
+        onUpdate: (self) => {
+          if (video.duration) {
+            video.currentTime = self.progress * video.duration
+          }
+          // setState solo quando si attraversa la soglia — evita re-render continui
+          const t1 = self.progress >= 0.0 && self.progress <= 0.3
+          const t2 = self.progress >= 0.35 && self.progress <= 0.65
+          if (t1 !== showText1Ref.current) {
+            showText1Ref.current = t1
+            if (mountedRef.current) setShowText1(t1)
+          }
+          if (t2 !== showText2Ref.current) {
+            showText2Ref.current = t2
+            if (mountedRef.current) setShowText2(t2)
+          }
+        },
+      })
+    }
 
-    io.observe(stickyRef.current)
+    if (video.readyState >= 2) {
+      initST()
+    } else {
+      video.addEventListener('loadeddata', initST, { once: true })
+    }
 
     return () => {
       clearTimeout(fallbackTimer)
-      io.disconnect()
-      video.pause()
+      st?.kill()
     }
   }, [isMobile])
 
@@ -139,17 +139,14 @@ export function ScrollMobileSection() {
     )
   }
 
-  // ── Render principale ─────────────────────────────────────────────────────
-  // outerRef crea lo spazio di scroll (300dvh).
-  // stickyRef è sticky top-0 — si comporta come un'area "pinned" ma via CSS puro, zero GSAP.
+  // ── Render ────────────────────────────────────────────────────────────────
   return (
-    <div ref={outerRef} className="block md:hidden" style={{ height: '300dvh' }}>
-      <section
-        ref={stickyRef}
-        className="sticky top-0 w-full overflow-hidden"
-        style={{ height: '100dvh' }}
-        aria-label="Il nostro metodo sostenibile"
-      >
+    <section
+      ref={sectionRef}
+      className="block md:hidden relative"
+      aria-label="Il nostro metodo sostenibile"
+    >
+      <div className="h-[100dvh] w-full overflow-hidden">
 
         {/* ── Skeleton loader ── */}
         <AnimatePresence>
@@ -173,30 +170,28 @@ export function ScrollMobileSection() {
           )}
         </AnimatePresence>
 
-        {/* ── Video: auto-play hardware-accelerated, niente seeking ── */}
+        {/* ── Video ottimizzato per scrubbing (-g 1 all-keyframe) ── */}
         <video
           ref={videoRef}
           poster="/images/fulgur-service-pulizie-sostenibili.jpg"
           preload="auto"
           muted
           playsInline
-          loop
-          className="absolute inset-0 w-full h-full object-cover"
+          className="w-full h-full object-cover"
           onLoadedData={() => { if (mountedRef.current) setVideoReady(true) }}
           onError={() => { if (mountedRef.current) setVideoError(true) }}
         >
-          <source src="/videos/scroll-mobile.webm" type="video/webm" />
-          <source src="/videos/scroll-mobile-opt.mp4" type="video/mp4" />
+          <source src="/videos/scroll-mobile-scrub.mp4" type="video/mp4" />
         </video>
 
-        {/* ── Gradient bottom per leggibilità testi ── */}
+        {/* ── Gradient bottom ── */}
         <div
           aria-hidden="true"
-          className="absolute inset-x-0 bottom-0 z-10 h-[150px] pointer-events-none"
-          style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.5), transparent)' }}
+          className="absolute inset-x-0 bottom-0 z-10 h-[120px] pointer-events-none"
+          style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.45), transparent)' }}
         />
 
-        {/* ── Overlay testi basati su scroll progress ── */}
+        {/* ── Overlay testi ── */}
         <AnimatePresence mode="wait">
 
           {showText1 && (
@@ -204,7 +199,7 @@ export function ScrollMobileSection() {
               key="t1"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
+              exit={{ opacity: 0 }}
               transition={{ duration: 0.4, ease: 'easeOut' }}
               className="absolute inset-x-0 z-20 flex justify-center px-6"
               style={{ bottom: '15%' }}
@@ -223,7 +218,7 @@ export function ScrollMobileSection() {
               key="t2"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
+              exit={{ opacity: 0 }}
               transition={{ duration: 0.4, ease: 'easeOut' }}
               className="absolute inset-0 z-20 flex flex-col items-center justify-center px-6 text-center"
               style={{ background: 'rgba(0,0,0,0.12)' }}
@@ -247,23 +242,7 @@ export function ScrollMobileSection() {
 
         </AnimatePresence>
 
-        {/* Indicatore scroll — sparisce dopo 30% di progresso */}
-        <AnimatePresence>
-          {showText1 && (
-            <motion.div
-              key="scroll-hint"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ delay: 1, duration: 0.5 }}
-              className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1"
-            >
-              <div className="w-[1px] h-8 animate-pulse" style={{ background: 'rgba(255,255,255,0.4)' }} />
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-      </section>
-    </div>
+      </div>
+    </section>
   )
 }
