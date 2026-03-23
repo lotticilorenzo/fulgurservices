@@ -17,7 +17,7 @@ const GUARANTEES = [
   {
     id: 2,
     title: "Copertura Assicurativa",
-    data: "RCT/RCA",
+    data: "RCT/RCO",
     // [TODO/CLIENTE]: Inserire foto reale attestato/polizza assicurativa RCT (w=600px minimo)
     img: "/images/logo-fulgur-service-impresa-pulizie-parma.webp",
     size: "medium"
