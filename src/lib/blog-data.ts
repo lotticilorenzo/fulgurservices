@@ -105,6 +105,50 @@ export const BLOG_POSTS: BlogPost[] = [
     keywords: ['sanificazione HACCP Parma', 'pulizie ristoranti', 'igiene alimentare']
   },
   {
+    id: '05',
+    slug: 'pulizia-pannelli-fotovoltaici-parma-guida-completa',
+    title: 'Pulizia Pannelli Fotovoltaici a Parma: Guida Completa per Massimizzare la Resa',
+    excerpt: 'I pannelli fotovoltaici sporchi perdono fino al 30% di efficienza. Scopri come la pulizia professionale con acqua demineralizzata recupera tutta la produzione energetica del tuo impianto.',
+    content: `
+      <h2>Perché i tuoi pannelli fotovoltaici perdono efficienza</h2>
+      <p>Se hai un impianto fotovoltaico a Parma o in provincia, probabilmente hai notato che la produzione di energia varia nel corso dell'anno. Molti pensano sia solo una questione di stagionalità o irraggiamento solare. In realtà, uno dei fattori più sottovalutati è lo sporco che si accumula sui pannelli.</p>
+
+      <p>Polvere sottile, pollini primaverili, guano di piccioni e uccelli, depositi calcarei dell'acqua piovana: tutti questi elementi creano una pellicola opaca che blocca parzialmente la luce solare prima che raggiunga le celle fotovoltaiche.</p>
+
+      <h2>Quanto sporco costa davvero?</h2>
+      <p>Studi tecnici dimostrano che uno strato sottile di sporco può ridurre la resa di un pannello tra il 15% e il 30%. Tradotto in numeri reali: se il tuo impianto da 6 kWp produce mediamente 7.200 kWh all'anno, con i pannelli sporchi potresti perdere fino a 2.160 kWh — equivalenti a centinaia di euro in bolletta ogni anno.</p>
+
+      <blockquote>"La pioggia non basta. Anzi, spesso aggrava il problema depositando calcare e trascinando lo sporco solo parzialmente, lasciando aloni persistenti."</blockquote>
+
+      <h2>Il metodo Fulgur Service: acqua demineralizzata e spazzole certificate</h2>
+      <p>Il nostro intervento di pulizia pannelli fotovoltaici a Parma segue un protocollo specifico:</p>
+      <ul>
+        <li><strong>Acqua demineralizzata ad osmosi inversa:</strong> elimina il calcare alla radice. Nessun alone, nessun residuo. Il pannello rimane pulito più a lungo rispetto alla pulizia con acqua di rete.</li>
+        <li><strong>Spazzole rotanti a setole morbide certificate:</strong> rimuovono lo sporco aderente senza graffiare il vetro temperato dei pannelli. La superficie rimane integra e la garanzia del produttore non viene compromessa.</li>
+        <li><strong>Nessun detergente chimico aggressivo:</strong> usiamo solo acqua purificata. Zero residui chimici che potrebbero degradare i materiali nel tempo.</li>
+      </ul>
+
+      <h2>Con quale frequenza pulire i pannelli?</h2>
+      <p>La risposta dipende dall'ambiente in cui si trova l'impianto:</p>
+      <ul>
+        <li><strong>Zone urbane e industriali (come molte aree di Parma):</strong> almeno due interventi l'anno, in primavera dopo i pollini e in autunno prima dell'inverno.</li>
+        <li><strong>Zone agricole e rurali:</strong> tre interventi l'anno, con attenzione ai periodi di raccolta che aumentano la polvere in circolazione.</li>
+        <li><strong>Impianti a terra di grandi dimensioni:</strong> monitoraggio trimestrale con pulizia programmata in base all'analisi della produzione.</li>
+      </ul>
+
+      <h2>Il risultato: fino al +30% di produzione recuperata</h2>
+      <p>Dopo ogni nostro intervento, i clienti misurano mediamente un recupero di produzione tra il 20% e il 30%. Un investimento che si ripaga in pochi mesi attraverso il risparmio in bolletta e l'aumento della vita utile dell'impianto.</p>
+
+      <p>Operiamo su impianti residenziali, aziendali e su campi fotovoltaici industriali in tutta la provincia di Parma e l'Emilia-Romagna. <strong>Sopralluogo sempre gratuito, preventivo in 24 ore.</strong></p>
+    `,
+    date: '23 Marzo 2026',
+    author: 'Team Fulgur',
+    category: 'Fotovoltaico',
+    image: '/images/servizi/pannelli-fotovoltaici-parma.jpg',
+    readTime: '5 min',
+    keywords: ['pulizia pannelli fotovoltaici Parma', 'manutenzione fotovoltaico Parma', 'lavaggio pannelli solari', 'efficienza fotovoltaico']
+  },
+  {
     id: '03',
     slug: 'efficienza-fotovoltaico-pulizia-pannelli',
     title: 'Efficienza Fotovoltaico: Come lo Sporco Riduce la Tua Rendita Energetica',
@@ -129,7 +173,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: '05 Marzo 2026',
     author: 'Team Fulgur',
     category: 'Tecniche',
-    image: '/images/servizi/lavaggio-pulizia-pannelli-fotovoltaici-parma.webp',
+    image: '/images/servizi/pannelli-fotovoltaici-parma.jpg',
     readTime: '6 min',
     keywords: ['pulizia pannelli fotovoltaici Parma', 'manutenzione solare', 'efficienza energetica']
   }

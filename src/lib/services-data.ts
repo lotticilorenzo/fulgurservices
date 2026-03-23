@@ -151,7 +151,7 @@ export const SERVICES: Service[] = [
     sectors: ['Impianti Fotovoltaici Casa', 'Aziende con impianti solari', 'Campi fotovoltaici industriali'],
     metaTitle: 'Pulizia Pannelli Fotovoltaici e Solari Parma | Fulgur Service',
     metaDescription: 'Ottimizza la resa del tuo impianto fotovoltaico a Parma. Pulizia professionale con acqua demineralizzata. Preventivo gratuito.',
-    image: '/images/servizi/lavaggio-pulizia-pannelli-fotovoltaici-parma.webp',
+    image: '/images/servizi/pannelli-fotovoltaici-parma.jpg',
   },
   {
     id: '10',
