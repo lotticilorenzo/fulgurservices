@@ -16,6 +16,38 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    id: '04',
+    slug: 'fulgur-service-socio-kilometroverde-parma',
+    title: 'Fulgur Service entra in KilometroVerde Parma: pulizia professionale per un futuro più verde',
+    excerpt: 'Siamo ufficialmente nuovi soci di KilometroVerde Parma, la comunità che riunisce aziende e cittadini impegnati per un\'aria più pulita e una città più vivibile. Un passo naturale per chi ha sempre creduto nella sostenibilità.',
+    content: `
+      <h2>Un'adesione che parla da sola</h2>
+      <p>A febbraio 2026, KilometroVerde Parma ha dato il benvenuto a tre nuovi soci: Casalasco, Rotary Club Parma Est e <strong>Fulgur Service</strong>. Un riconoscimento che ci riempie di orgoglio, perché riflette esattamente ciò in cui crediamo ogni giorno sul lavoro.</p>
+
+      <p>KilometroVerde Parma è una comunità di 133 soci — aziende, associazioni e cittadini — uniti da un obiettivo concreto: contribuire a un futuro con aria più pulita, temperature più miti e una città più vivibile. Esattamente la direzione in cui lavoriamo da sempre.</p>
+
+      <h2>Perché questa scelta è stata naturale</h2>
+      <p>Il nostro claim non è solo uno slogan: <em>"Puliamo il futuro con l'energia della natura"</em>. Da anni scegliamo prodotti a basso impatto ambientale, utilizziamo tecnologie a vapore che eliminano la chimica aggressiva, e formiamo il nostro team su metodi di lavoro rispettosi degli ambienti in cui operiamo.</p>
+
+      <p>Entrare in KilometroVerde Parma è il passo successivo di un percorso già avviato. Significa fare parte di una rete che condivide valori, si supporta a vicenda e prende impegni concreti verso il territorio.</p>
+
+      <h2>Cosa significa per i nostri clienti</h2>
+      <p>Se scegli Fulgur Service per le pulizie della tua azienda, del tuo condominio o della tua abitazione, stai scegliendo un'impresa che non si limita a rendere gli spazi impeccabili: sceglie come farlo. Con prodotti, attrezzature e metodi pensati per ridurre l'impatto sull'ambiente.</p>
+
+      <blockquote>"Anche un albero con il tronco così grande da non riuscire ad abbracciarlo ha inizio da un delicato germoglio. E KilometroVerdeParma continua a germogliare." — KilometroVerde Parma</blockquote>
+
+      <p>Siamo fieri di far parte di questa comunità. E continuiamo a crescere insieme.</p>
+
+      <p>Seguici su Instagram <a href="https://www.instagram.com/fulgurservicesrl_" target="_blank" rel="noopener noreferrer">@fulgurservicesrl_</a> e vai a vedere il post originale di KilometroVerde Parma per scoprire tutti i nuovi soci.</p>
+    `,
+    date: '23 Marzo 2026',
+    author: 'Team Fulgur',
+    category: 'Sostenibilità',
+    image: '/images/blog-kilometroverde-fulgur-parma.jpg',
+    readTime: '3 min',
+    keywords: ['KilometroVerde Parma', 'sostenibilità Parma', 'impresa pulizie ecologica', 'pulizie verdi Parma']
+  },
+  {
     id: '01',
     slug: 'pulizie-industriali-parma-guida-manutenzione',
     title: 'Pulizie Industriali a Parma: Guida alla Manutenzione dei Grandi Spazi',
