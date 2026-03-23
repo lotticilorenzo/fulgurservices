@@ -125,12 +125,11 @@ export function PageTransitionProvider({ children }: { children: React.ReactNode
           >
             <div className="flex items-center justify-center">
               <Image
-                src="/images/logo-fulgur-service-impresa-pulizie-parma.webp"
+                src="/images/logo-senza-sfondo.png"
                 alt="Fulgur Service"
                 width={120}
                 height={120}
                 priority
-                className="mix-blend-multiply"
               />
             </div>
           </motion.div>
