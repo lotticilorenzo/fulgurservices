@@ -69,7 +69,7 @@ export function ServiceContent({ service }: ServiceContentProps) {
             { label: 'Efficienza', value: '100%', icon: Gauge },
             { label: 'Sostenibile', value: 'ECO', icon: ShieldCheck },
             { label: 'Esperienza', value: '30Y', icon: Star },
-            { label: 'Settore', value: service.id, icon: Icons.Fingerprint },
+            { label: 'Preventivo', value: '24H', icon: Icons.Fingerprint },
           ].map((stat, i) => (
             <ScrollReveal key={i} delay={i * 0.1}>
               <div className="glass-premium p-6 flex flex-col items-center justify-center text-center border border-[var(--br)] rounded-2xl">
