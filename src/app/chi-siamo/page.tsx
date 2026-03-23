@@ -72,9 +72,6 @@ export default function ChiSiamoPage() {
                 <h3 className="font-display text-xl sm:text-2xl font-bold text-white mb-2">Una promessa di valore</h3>
                 <p className="font-sans text-sm text-white/90">Per noi la pulizia non è un&apos;attività meccanica: non siamo semplici fornitori, ma partner che si prendono cura dell&apos;ambiente del cliente a 360°.</p>
               </div>
-              <div className="px-6 py-3 rounded-xl bg-[var(--accent)] text-[var(--bg)] font-mono-fulgur text-sm font-bold tracking-widest shrink-0">
-                DAL 1994
-              </div>
             </div>
           </div>
         </ScrollReveal>
@@ -91,7 +88,6 @@ export default function ChiSiamoPage() {
             <ScrollReveal>
               <div className="relative pl-8 sm:pl-12">
                 <div className="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full bg-[var(--accent)] shadow-[0_0_10px_var(--accent)]" />
-                <h3 className="font-mono-fulgur text-[var(--accent)] font-bold mb-2 uppercase tracking-widest text-xs">1994</h3>
                 <h4 className="font-display text-2xl font-bold text-[var(--tx-1)] mb-4">Le fondamenta</h4>
                 <p className="font-sans font-light text-[var(--tx-2)] leading-relaxed text-lg">
                   L&apos;inizio dell&apos;avventura nel cleaning professionale. Anni dedicati a sviluppare la conoscenza perfetta dei materiali, delle superfici e delle reazioni chimiche dei detergenti per garantire l&apos;eccellenza.
