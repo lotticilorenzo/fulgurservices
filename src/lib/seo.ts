@@ -171,7 +171,7 @@ export const STRUCTURED_DATA = {
   vatID: '03063010346',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Via Alfredo Veroni, 20',
+    streetAddress: 'Via Alfredo Veroni, 22',
     addressLocality: 'Parma',
     addressRegion: 'PR',
     postalCode: '43122',
@@ -228,7 +228,7 @@ export function makeServiceJsonLd(service: {
       telephone: '+39-338-316-0091',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Via Alfredo Veroni, 20',
+        streetAddress: 'Via Alfredo Veroni, 22',
         addressLocality: 'Parma',
         addressRegion: 'PR',
         postalCode: '43122',

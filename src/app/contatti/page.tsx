@@ -75,7 +75,7 @@ export default function ContattiPage() {
                     rel="noopener noreferrer"
                     className="font-sans text-lg font-medium text-[var(--tx-1)] hover:text-[var(--accent)] transition-colors"
                   >
-                    Via Alfredo Veroni, 20<br/>
+                    Via Alfredo Veroni, 22<br/>
                     43122 Parma (PR)
                   </a>
                 </div>

@@ -138,7 +138,7 @@ export function Footer() {
                   className="flex items-start gap-3 hover:text-[var(--accent)] transition-colors group"
                 >
                   <MapPin size={16} weight="duotone" className="mt-0.5 shrink-0 text-[var(--accent)]" />
-                  <span className="leading-snug">Via Alfredo Veroni, 20<br />43122 Parma (PR)</span>
+                  <span className="leading-snug">Via Alfredo Veroni, 22<br />43122 Parma (PR)</span>
                 </a>
               </li>
               <li>
