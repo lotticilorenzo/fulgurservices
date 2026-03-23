@@ -57,8 +57,8 @@ export default function ContattiPage() {
                     fulgurservice@gmail.com
                   </a>
                   <h3 className="font-mono-fulgur text-xs font-bold tracking-widest uppercase text-[var(--tx-3)] mt-3 mb-1">PEC</h3>
-                  <a href="mailto:fulgurservice@pec.it" className="font-sans text-lg font-medium text-[var(--tx-1)] hover:text-[var(--accent)] transition-colors">
-                    fulgurservice@pec.it
+                  <a href="mailto:fulgurservicesrl@pec.it" className="font-sans text-lg font-medium text-[var(--tx-1)] hover:text-[var(--accent)] transition-colors">
+                    fulgurservicesrl@pec.it
                   </a>
                 </div>
               </div>

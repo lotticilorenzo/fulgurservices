@@ -161,11 +161,11 @@ export function Footer() {
               </li>
               <li>
                 <a 
-                  href="mailto:fulgurservice@pec.it" 
+                  href="mailto:fulgurservicesrl@pec.it" 
                   className="flex items-center gap-3 hover:text-[var(--accent)] transition-colors"
                 >
                   <EnvelopeSimple size={16} weight="duotone" className="shrink-0 text-[var(--accent)]" />
-                  <span>fulgurservice@pec.it</span>
+                  <span>fulgurservicesrl@pec.it</span>
                 </a>
               </li>
             </ul>
