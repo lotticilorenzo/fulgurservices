@@ -83,7 +83,7 @@ export function CustomCursor() {
       {/* ── Aura — scia morbida più lenta, radial glow ── */}
       <motion.div
         aria-hidden="true"
-        className="pointer-events-none fixed top-0 left-0 z-[9997]"
+        className="pointer-events-none fixed top-0 left-0 z-[100000]"
         style={{
           x: auraX,
           y: auraY,
@@ -104,7 +104,7 @@ export function CustomCursor() {
       {/* ── Ring — cerchio leggero centrato sul fulmine ── */}
       <motion.div
         aria-hidden="true"
-        className="pointer-events-none fixed top-0 left-0 z-[9998]"
+        className="pointer-events-none fixed top-0 left-0 z-[100001]"
         style={{
           x: boltX,
           y: boltY,
@@ -128,7 +128,7 @@ export function CustomCursor() {
       {/* ── Fulmine SVG — sopra il ring ── */}
       <motion.div
         aria-hidden="true"
-        className="pointer-events-none fixed top-0 left-0 z-[9999] text-[var(--accent)]"
+        className="pointer-events-none fixed top-0 left-0 z-[100002] text-[var(--accent)]"
         style={{
           x: boltX,
           y: boltY,
