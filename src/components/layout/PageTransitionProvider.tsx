@@ -111,7 +111,7 @@ export function PageTransitionProvider({ children }: { children: React.ReactNode
           initial={{ scaleX: 0 }}
           animate={{ scaleX: phase === 'out' ? 0 : 1 }}
           transition={{ duration: 0.65, ease: EASE_CURTAIN }}
-          style={{ backgroundColor: 'var(--accent)', transformOrigin }}
+          style={{ backgroundColor: '#FFFFFF', transformOrigin }}
           onAnimationComplete={
             phase === 'in'  ? onCoverComplete  :
             phase === 'out' ? onRevealComplete : undefined
@@ -127,8 +127,8 @@ export function PageTransitionProvider({ children }: { children: React.ReactNode
               <Image
                 src="/images/logo-senza-sfondo.png"
                 alt="Fulgur Service"
-                width={160}
-                height={160}
+                width={220}
+                height={220}
                 priority
               />
             </div>
