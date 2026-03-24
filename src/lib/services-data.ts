@@ -97,7 +97,7 @@ export const SERVICES: Service[] = [
     id: '06',
     slug: 'trattamento-superfici',
     title: 'Trattamento Superfici',
-    shortDesc: 'Cristallizzazione marmo e trattamento pavimenti in gres, cotto e parquet a Parma.',
+    shortDesc: 'Lavaggio meccanizzato e trattamento di marmo, cotto, parquet e altre superfici a Parma.',
     longDesc: 'Proteggiamo e valorizziamo i tuoi pavimenti con tecniche avanzate. Da oltre 40 anni siamo specialisti nella cristallizzazione del marmo, trattamenti per gres porcellanato e oliatura parquet a Parma.',
     icon: 'Sparkle',
     featured: true,
