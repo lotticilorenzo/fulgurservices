@@ -246,6 +246,90 @@ export function ServiceContent({ service }: ServiceContentProps) {
         </div>
       )}
 
+      {/* SEZIONE TRATTAMENTO SUPERFICI — tipologie */}
+      {service.slug === 'trattamento-superfici' && (
+        <div className="w-full bg-[var(--bg-2)] border-t border-[var(--br)] py-16 sm:py-24 relative z-10">
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8">
+            <SectionLabel className="mb-4">— SUPERFICI CHE TRATTIAMO</SectionLabel>
+            <h2 className="font-display text-3xl sm:text-4xl font-bold text-[#0F1F1A] mb-12 tracking-tight">
+              Ogni superficie ha il suo protocollo.
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {[
+                {
+                  icon: Icons.Cube,
+                  title: 'Calcestruzzo e Cemento',
+                  desc: 'Levigatura e lucidatura a secco senza cere: trasformiamo un pavimento in cemento ordinario in una superficie a specchio, resistente all\'usura, igienica e facile da mantenere.',
+                },
+                {
+                  icon: Icons.Fire,
+                  title: 'Cotto',
+                  desc: 'Interveniamo su cotto nuovo e antico: rimuoviamo incrostazioni e strati di vecchie cere, trattiamo la superficie con prodotti protettivi che esaltano il colore naturale.',
+                },
+                {
+                  icon: Icons.Diamond,
+                  title: 'Marmo',
+                  desc: 'Cristallizzazione professionale: metodo rapido e preciso che ripristina la lucentezza del marmo consumato senza sporcare, con effetto protettivo a lungo termine.',
+                },
+                {
+                  icon: Icons.Swatches,
+                  title: 'Moquette',
+                  desc: 'Iniezione di acqua e detergente ecologico tra le fibre seguita da immediata aspirazione: rimuoviamo sporco fondo, batteri e allergeni con tempi di asciugatura ridotti.',
+                },
+                {
+                  icon: Icons.Drop,
+                  title: 'Resina',
+                  desc: 'Detersione profonda con macchinari dedicati: eliminiamo sporco, segni e residui di cere senza aggredire la superficie. Risultato uniforme, brillante e pronto in tempi rapidi.',
+                },
+                {
+                  icon: Icons.Buildings,
+                  title: 'Pulizia Facciate',
+                  desc: 'Rimozione di smog, muffe, polveri e incrostazioni da superfici esterne con idropulitrici a bassa o alta pressione e detergenti specifici per materiale.',
+                },
+                {
+                  icon: Icons.SquaresFour,
+                  title: 'Grès Porcellanato',
+                  desc: 'Rimozione di aloni, residui di cantiere e sporco da posa. Ripristiniamo uniformità e brillantezza del gres nel pieno rispetto di superfici e fughe.',
+                },
+                {
+                  icon: Icons.Sun,
+                  title: 'Pavimento Esterno',
+                  desc: 'Pulizia a fondo di terrazze e pavimentazioni esterne: sporco, muschio e macchie ostinate eliminati con attrezzatura professionale e trattamenti idrorepellenti protettivi.',
+                },
+                {
+                  icon: Icons.Rows,
+                  title: 'Parquet',
+                  desc: 'Rigenerazione del legno: rimozione dello strato di vernice deteriorato e ritrattamento con vernici o cere di qualità per un risultato duraturo che rispetta le fibre del legno.',
+                },
+                {
+                  icon: Icons.Mountains,
+                  title: 'Pietre Naturali',
+                  desc: 'Cere trasparenti specifiche per superfici in pietra: eliminiamo residui calcarei e di cemento e valorizziamo la texture e la bellezza naturale del materiale.',
+                },
+                {
+                  icon: Icons.Stack,
+                  title: 'PVC e Linoleum',
+                  desc: 'Applicazione di cere resistenti che creano un film flessibile e protettivo: riduciamo l\'attrito, preveniamo l\'usura e manteniamo il colore vivo nel tempo.',
+                },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="p-7 rounded-3xl bg-[var(--bg)] border border-[var(--br)] shadow-sm hover:border-[var(--accent)]/40 hover:shadow-md transition-all duration-200 flex flex-col gap-4"
+                >
+                  <div className="w-11 h-11 rounded-2xl bg-[var(--accent)]/10 flex items-center justify-center text-[var(--accent)] shrink-0">
+                    <item.icon size={22} weight="duotone" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-lg font-bold text-[#0F1F1A] mb-2">{item.title}</h3>
+                    <p className="font-sans text-sm text-[var(--tx-2)] leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* CALL TO ACTION MONUMENTALE */}
       <div className="w-full bg-[var(--bg)] py-16 sm:py-32 border-t border-[var(--br)] relative z-10">
         <WipeReveal direction="top">
