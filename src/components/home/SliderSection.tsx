@@ -23,7 +23,7 @@ const SLIDES = [
   },
   {
     type: 'image',
-    title: 'L\'energia',
+    title: "Con l'energia",
     subtitle: 'Interventi mirati con personale qualificato e protocolli certificati.',
     srcDesktop: '/images/servizi/pulizie-industriali-parma.jpg',
     titleClass: 'text-outline-accent'

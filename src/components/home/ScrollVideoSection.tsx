@@ -30,7 +30,7 @@ const CHAPTERS = [
   {
     id: 3,
     eyebrow: '03 / 04',
-    title: "L'energia",
+    title: "Con l'energia",
     titleClass: 'text-outline-accent',
     subtitle: 'Interventi mirati con personale qualificato e protocolli certificati.',
     cta: null,
