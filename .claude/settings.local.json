@@ -6,7 +6,21 @@
       "Bash(.node_modules.binnext build:*)",
       "Bash(node_modules/.bin/next build:*)",
       "Bash(node -e \"const p = require\\(''./node_modules/lenis/package.json''\\); console.log\\(p.version, Object.keys\\(p.exports || {}\\)\\)\")",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(ffmpeg -version)",
+      "Bash(git commit:*)",
+      "Bash(ffmpeg -y -i \"public/videos/scroll-mobile-opt.mp4\" -c:v libx264 -g 1 -keyint_min 1 -sc_threshold 0 -crf 30 -preset slow -vf \"scale=540:-2\" -movflags faststart -an \"public/videos/scroll-mobile-scrub.mp4\")",
+      "Bash(ffmpeg -y -i \"public/videos/scroll-mobile.webm\" -c:v libvpx-vp9 -g 1 -crf 40 -b:v 0 -vf \"scale=540:-2\" -an \"public/videos/scroll-mobile-scrub.webm\")",
+      "Bash(ls -lh public/videos/scroll-mobile-scrub.*)",
+      "Bash(ffmpeg -y -i \"public/videos/scroll-mobile-opt.mp4\" -c:v libx264 -g 1 -keyint_min 1 -sc_threshold 0 -crf 23 -preset slow -vf \"scale=540:-2\" -movflags faststart -an \"public/videos/scroll-mobile-scrub.mp4\")",
+      "Bash(ffmpeg -y -i \"public/videos/scroll-mobile-opt.mp4\" -c:v libx264 -g 1 -keyint_min 1 -sc_threshold 0 -crf 26 -preset slow -vf \"scale=540:-2\" -movflags faststart -an \"public/videos/scroll-mobile-scrub.mp4\")",
+      "Bash(ffprobe -v quiet -print_format json -show_streams \"c:/Users/lotti/Desktop/fulgurservices/public/videos/dasporcoapulito_scrub.mp4\")",
+      "Bash(ffmpeg -y -i \"public/videos/scroll-mobile.mp4\" -c:v libx264 -g 1 -keyint_min 1 -sc_threshold 0 -crf 24 -preset slow -vf \"scale=540:-2\" -movflags faststart -an \"public/videos/scroll-mobile-scrub.mp4\")",
+      "Bash(ffprobe -v quiet -show_entries stream=width,height,bit_rate,codec_name -show_entries format=duration,size -of csv \"c:/Users/lotti/Desktop/fulgurservices/public/videos/sfondo-mobile-hero.mp4\")",
+      "Bash(ffmpeg -y -i \"c:/Users/lotti/Desktop/scrollsectionmobile.mp4\" -c:v libx264 -g 1 -keyint_min 1 -sc_threshold 0 -crf 30 -preset slow -vf \"scale=540:-2\" -movflags faststart -an \"public/videos/scroll-mobile-scrub.mp4\")",
+      "Bash(ffprobe -v quiet -show_entries stream=codec_name,profile,pix_fmt,width,height,bit_rate -of csv \"c:/Users/lotti/Desktop/fulgurservices/public/videos/sfondo-mobile-hero.mp4\")",
+      "Bash(ffmpeg -y -i \"public/videos/sfondo-mobile-hero.mp4\" -c:v libx264 -profile:v baseline -level 3.1 -pix_fmt yuv420p -crf 30 -preset slow -movflags +faststart -an \"public/videos/sfondo-mobile-hero.mp4.tmp.mp4\")",
+      "Bash(python3 -:*)"
     ]
   }
 }

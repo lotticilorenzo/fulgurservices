@@ -8,11 +8,11 @@ export const METADATA = {
   home: {
     title: 'Fulgur Service — Impresa di Pulizie Professionali a Parma e Provincia',
     description:
-      'Cerchi un’impresa di pulizie a Parma? Fulgur Service offre pulizie professionali per uffici, industrie, condomini e studi medici. Sopralluogo gratuito in 24h. Puliamo il futuro.',
-    keywords: 'impresa pulizie Parma, ditta pulizie Parma, pulizie uffici Parma, pulizie industriali Parma, sanificazione ambienti Parma, pulizie condomini Parma, pulizie Parma e provincia',
+      'Fulgur Service — impresa di pulizie professionali con sede a Parma, operativa in tutta Italia. Pulizie per uffici, industrie, condomini e studi medici. Sopralluogo gratuito in 24h.',
+    keywords: 'impresa pulizie Parma, ditta pulizie Parma, pulizie uffici Parma, pulizie industriali Parma, sanificazione ambienti Parma, pulizie condomini Parma, impresa pulizie Italia, pulizie professionali Italia',
     openGraph: {
-      title: 'Fulgur Service — Impresa di Pulizie Professionali a Parma',
-      description: 'Soluzioni di pulizia avanzate per aziende e privati a Parma e provincia. 40 anni di esperienza, risultati garantiti.',
+      title: 'Fulgur Service — Impresa di Pulizie Professionali a Parma e in tutta Italia',
+      description: 'Soluzioni di pulizia avanzate per aziende e privati. Sede a Parma, operativi in tutta Italia. 40 anni di esperienza, risultati garantiti.',
       url: BASE_URL,
       siteName: 'Fulgur Service',
       images: [{ url: OG_DEFAULT, width: 1200, height: 630, alt: 'Fulgur Service — Leader Pulizie Parma' }],
@@ -23,7 +23,7 @@ export const METADATA = {
   servizi: {
     title: 'Tutti i Servizi | Fulgur Service Parma',
     description:
-      '12 aree di intervento: pulizie aziendali, industriali, sanitarie, condomini, hotel, trattamento superfici e molto altro. Parma e provincia.',
+      '12 aree di intervento: pulizie aziendali, industriali, sanitarie, condomini, hotel, trattamento superfici e molto altro. Sede a Parma, operativi in tutta Italia.',
     openGraph: {
       title: 'Tutti i Servizi — Fulgur Service Parma',
       description: '12 aree di intervento con team specializzato e macchinari professionali.',
@@ -78,7 +78,7 @@ export const METADATA = {
   },
   gallery: {
     title: 'Gallery | Fulgur Service Parma — Pulizie Professionali',
-    description: 'Guarda i nostri lavori: pulizie aziendali, industriali, cantieri navali, pannelli fotovoltaici e molto altro a Parma e provincia.',
+    description: 'Guarda i nostri lavori: pulizie aziendali, industriali, cantieri navali, pannelli fotovoltaici e molto altro. Operativi in tutta Italia.',
     openGraph: {
       title: 'Gallery — Fulgur Service Parma',
       description: 'I nostri lavori in foto: pulizie professionali a Parma in tutti i settori.',
@@ -128,7 +128,7 @@ export const METADATA = {
   blog: {
     title: 'Blog & News | Consigli e Guide sulle Pulizie — Fulgur Service Parma',
     description:
-      'Approfondimenti, guide e news sul mondo delle pulizie industriali, sanificazioni HACCP e manutenzione pannelli fotovoltaici a Parma e provincia.',
+      'Approfondimenti, guide e news sul mondo delle pulizie industriali, sanificazioni HACCP e manutenzione pannelli fotovoltaici. Operativi in tutta Italia.',
     openGraph: {
       title: 'Blog Fulgur Service — Authority nel Cleaning a Parma',
       description: 'Scopri i segreti della pulizia professionale e della manutenzione industriale.',
@@ -165,7 +165,7 @@ export const STRUCTURED_DATA = {
   url: BASE_URL,
   logo: `${BASE_URL}/images/logo-fulgur-service-impresa-pulizie-parma.webp`,
   image: OG_DEFAULT,
-  description: 'Fulgur Service è l’impresa di pulizie di riferimento a Parma per pulizie civili, industriali e sanificazioni certificate. Operiamo a Parma, Fidenza, Salsomaggiore e tutta la provincia.',
+  description: 'Fulgur Service è l\'impresa di pulizie di riferimento con sede a Parma per pulizie civili, industriali e sanificazioni certificate. Operativi in tutta Italia.',
   telephone: '+39-338-316-0091',
   email: 'fulgurservice@gmail.com',
   vatID: '03063010346',
@@ -193,13 +193,8 @@ export const STRUCTURED_DATA = {
   sameAs: ['https://www.instagram.com/fulgurservice/'],
   priceRange: '€€',
   areaServed: {
-    '@type': 'GeoCircle',
-    geoMidpoint: {
-      '@type': 'GeoCoordinates',
-      latitude: 44.8197,
-      longitude: 10.3541,
-    },
-    geoRadius: '50000',
+    '@type': 'Country',
+    name: 'Italy',
   },
   aggregateRating: {
     '@type': 'AggregateRating',
@@ -236,13 +231,8 @@ export function makeServiceJsonLd(service: {
       },
     },
     areaServed: {
-      '@type': 'GeoCircle',
-      geoMidpoint: {
-        '@type': 'GeoCoordinates',
-        latitude: 44.8197,
-        longitude: 10.3541,
-      },
-      geoRadius: '50000',
+      '@type': 'Country',
+      name: 'Italy',
     },
   }
 }

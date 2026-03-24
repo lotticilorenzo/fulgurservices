@@ -5,19 +5,14 @@ import { motion as m, AnimatePresence as AP } from 'framer-motion'
 import {
   Users,
   RocketLaunch,
-  Handshake,
   CheckCircle,
   PaperPlaneRight,
   UploadSimple,
-  Briefcase,
-  TrendUp,
   Heart
 } from '@phosphor-icons/react'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
 import { MagneticButton } from '@/components/ui/MagneticButton'
-import { SpotlightCard } from '@/components/ui/SpotlightCard'
-import { WipeReveal } from '@/components/ui/WipeReveal'
 
 const VALUES = [
   {
@@ -38,7 +33,6 @@ const VALUES = [
 ]
 
 export function LavoraConNoiClient() {
-  const [formStep, setFormStep] = useState(1)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSent, setIsSent] = useState(false)
   const [formData, setFormData] = useState({
@@ -48,11 +42,6 @@ export function LavoraConNoiClient() {
     lettera: '',
   })
   const [cvFile, setCvFile] = useState<File | null>(null)
-
-  const handleNext = (e: React.FormEvent) => {
-    e.preventDefault()
-    setFormStep(prev => prev + 1)
-  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -181,124 +170,94 @@ export function LavoraConNoiClient() {
                            Compila i campi sottostanti per entrare nel nostro database.
                          </p>
 
-                         <form onSubmit={formStep < 2 ? handleNext : handleSubmit} className="space-y-6">
-                            {formStep === 1 ? (
-                              <m.div
-                                initial={{ opacity: 0, x: 20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                className="space-y-6"
-                              >
-                                <div>
-                                  <label className="block font-mono-fulgur text-[10px] uppercase tracking-widest text-[var(--accent)] mb-2">Nome e Cognome</label>
-                                  <input 
-                                    type="text" 
-                                    required 
-                                    placeholder="Mario Rossi" 
-                                    value={formData.nome}
-                                    onChange={(e) => setFormData({ ...formData, nome: e.target.value })}
-                                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-base appearance-none focus:ring-2 focus:ring-[var(--accent)] outline-none transition-all" 
-                                  />
-                                </div>
-                                <div>
-                                  <label className="block font-mono-fulgur text-[10px] uppercase tracking-widest text-[var(--accent)] mb-2">Email</label>
-                                  <input 
-                                    type="email" 
-                                    required 
-                                    placeholder="mario@email.it" 
-                                    value={formData.email}
-                                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-base appearance-none focus:ring-2 focus:ring-[var(--accent)] outline-none transition-all" 
-                                  />
-                                </div>
-                                <div className="flex justify-end pt-4">
-                                  <MagneticButton as="div">
-                                    <button type="submit" className="px-8 py-4 bg-[var(--accent)] text-white rounded-full font-display font-bold text-sm shadow-lg hover:bg-[var(--accent-d)] transition-colors flex items-center gap-2">
-                                      Continua <PaperPlaneRight weight="fill" />
-                                    </button>
-                                  </MagneticButton>
-                                </div>
-                              </m.div>
-                            ) : (
-                              <m.div
-                                initial={{ opacity: 0, x: 20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                className="space-y-6"
-                              >
-                                <div>
-                                  <label className="block font-mono-fulgur text-[10px] uppercase tracking-widest text-[var(--accent)] mb-2">Città di residenza</label>
-                                  <input 
-                                    type="text" 
-                                    required 
-                                    placeholder="es. Parma" 
-                                    value={formData.citta}
-                                    onChange={(e) => setFormData({ ...formData, citta: e.target.value })}
-                                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-base appearance-none focus:ring-2 focus:ring-[var(--accent)] outline-none transition-all" 
-                                  />
-                                </div>
-                                <div>
-                                  <label className="block font-mono-fulgur text-[10px] uppercase tracking-widest text-[var(--accent)] mb-2">Perché dovrei lavorare con voi? (Note)</label>
-                                  <textarea 
-                                    placeholder="Parlaci brevemente di te..." 
-                                    rows={4}
-                                    value={formData.lettera}
-                                    onChange={(e) => setFormData({ ...formData, lettera: e.target.value })}
-                                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-base appearance-none focus:ring-2 focus:ring-[var(--accent)] outline-none transition-all resize-none"
-                                  />
-                                </div>
-                                 <div className="relative">
-                                   <label className="block font-mono-fulgur text-[10px] uppercase tracking-widest text-[var(--accent)] mb-2">Il tuo CV (PDF o Word)</label>
-                                   <div className={`relative h-28 w-full border-2 border-dashed rounded-2xl flex flex-col items-center justify-center gap-2 transition-all cursor-pointer group ${cvFile ? 'border-[var(--accent)] bg-[var(--accent)]/5' : 'border-white/10 hover:border-[var(--accent)]/50'}`}>
-                                      <UploadSimple size={24} className={cvFile ? 'text-[var(--accent)]' : 'text-white/20 group-hover:text-[var(--accent)]'} aria-hidden="true" />
-                                      <span className="text-[10px] font-mono-fulgur text-white/40 uppercase tracking-widest px-4 text-center">
-                                        {cvFile ? `File pronto: ${cvFile.name}` : 'Trascina qui o clicca per caricare il CV'}
-                                      </span>
-                                      <input 
-                                        type="file" 
-                                        accept=".pdf"
-                                        required
-                                        onChange={(e) => setCvFile(e.target.files?.[0] || null)}
-                                        className="absolute inset-0 opacity-0 cursor-pointer" 
-                                        aria-label="Carica il tuo curriculum" 
-                                      />
-                                   </div>
-                                    <p className="mt-2 text-[10px] text-white/30 font-sans leading-tight">
-                                     Formato accettato: PDF. Max 5MB.
-                                   </p>
-                                </div>
-
-                                {/* Privacy Consent Checkbox */}
-                                <div className="pt-2">
-                                  <label className="flex items-start gap-3 cursor-pointer group">
-                                    <div className="relative flex items-start pt-1">
-                                      <input
-                                        type="checkbox"
-                                        required
-                                        className="peer sr-only"
-                                      />
-                                      <div className="w-5 h-5 rounded-[4px] border border-white/20 bg-white/5 peer-checked:bg-[var(--accent)] peer-checked:border-[var(--accent)] transition-colors flex items-center justify-center">
-                                        <CheckCircle weight="bold" className="text-white opacity-0 peer-checked:opacity-100 transition-opacity" size={14} />
-                                      </div>
-                                    </div>
-                                    <span className="font-sans text-[12px] text-white/60 leading-tight">
-                                      Dichiaro di aver letto la <a href="/privacy" target="_blank" className="text-[var(--accent)] underline underline-offset-2">Privacy Policy</a> e acconsento al trattamento dei miei dati. *
-                                    </span>
-                                  </label>
-                                </div>
-                                <div className="flex justify-between pt-4">
-                                  <button onClick={() => setFormStep(1)} className="text-[var(--accent)] text-xs font-mono-fulgur uppercase tracking-widest hover:underline" type="button">Indietro</button>
-                                  <MagneticButton as="div">
-                                    <button
-                                      type="submit"
-                                      disabled={isSubmitting}
-                                      className="px-10 py-5 bg-[var(--accent)] text-white rounded-full font-display font-extrabold text-sm shadow-[0_10px_30px_rgba(78,203,160,0.3)] hover:scale-105 transition-all flex items-center gap-2 disabled:opacity-50"
-                                    >
-                                      {isSubmitting ? 'Invio in corso...' : 'Invia Candidatura'}
-                                      <CheckCircle weight="fill" aria-hidden="true" />
-                                    </button>
-                                  </MagneticButton>
-                                </div>
-                              </m.div>
-                            )}
+                         <form onSubmit={handleSubmit} className="space-y-5">
+                           <div>
+                             <label className="block font-mono-fulgur text-[10px] uppercase tracking-widest text-[var(--accent)] mb-2">Nome e Cognome *</label>
+                             <input
+                               type="text"
+                               required
+                               placeholder="Mario Rossi"
+                               value={formData.nome}
+                               onChange={(e) => setFormData({ ...formData, nome: e.target.value })}
+                               className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-base appearance-none focus:ring-2 focus:ring-[var(--accent)] outline-none transition-all"
+                             />
+                           </div>
+                           <div>
+                             <label className="block font-mono-fulgur text-[10px] uppercase tracking-widest text-[var(--accent)] mb-2">Email *</label>
+                             <input
+                               type="email"
+                               required
+                               placeholder="mario@email.it"
+                               value={formData.email}
+                               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                               className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-base appearance-none focus:ring-2 focus:ring-[var(--accent)] outline-none transition-all"
+                             />
+                           </div>
+                           <div>
+                             <label className="block font-mono-fulgur text-[10px] uppercase tracking-widest text-[var(--accent)] mb-2">Città di residenza</label>
+                             <input
+                               type="text"
+                               placeholder="es. Parma"
+                               value={formData.citta}
+                               onChange={(e) => setFormData({ ...formData, citta: e.target.value })}
+                               className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-base appearance-none focus:ring-2 focus:ring-[var(--accent)] outline-none transition-all"
+                             />
+                           </div>
+                           <div>
+                             <label className="block font-mono-fulgur text-[10px] uppercase tracking-widest text-[var(--accent)] mb-2">Presentati (Note)</label>
+                             <textarea
+                               placeholder="Parlaci brevemente di te..."
+                               rows={4}
+                               value={formData.lettera}
+                               onChange={(e) => setFormData({ ...formData, lettera: e.target.value })}
+                               className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-base appearance-none focus:ring-2 focus:ring-[var(--accent)] outline-none transition-all resize-none"
+                             />
+                           </div>
+                           <div className="relative">
+                             <label className="block font-mono-fulgur text-[10px] uppercase tracking-widest text-[var(--accent)] mb-2">Curriculum Vitae (PDF) *</label>
+                             <div className={`relative h-24 w-full border-2 border-dashed rounded-2xl flex flex-col items-center justify-center gap-2 transition-all cursor-pointer group ${cvFile ? 'border-[var(--accent)] bg-[var(--accent)]/5' : 'border-white/10 hover:border-[var(--accent)]/50'}`}>
+                               <UploadSimple size={22} className={cvFile ? 'text-[var(--accent)]' : 'text-white/20 group-hover:text-[var(--accent)]'} aria-hidden="true" />
+                               <span className="text-[10px] font-mono-fulgur text-white/40 uppercase tracking-widest px-4 text-center">
+                                 {cvFile ? `File pronto: ${cvFile.name}` : 'Trascina o clicca per caricare'}
+                               </span>
+                               <input
+                                 type="file"
+                                 accept=".pdf"
+                                 required
+                                 onChange={(e) => setCvFile(e.target.files?.[0] || null)}
+                                 className="absolute inset-0 opacity-0 cursor-pointer"
+                                 aria-label="Carica il tuo curriculum in formato PDF"
+                               />
+                             </div>
+                             <p className="mt-2 text-[10px] text-white/30 font-sans">Formato accettato: PDF. Max 5MB.</p>
+                           </div>
+                           <div className="pt-1">
+                             <label className="flex items-start gap-3 cursor-pointer">
+                               <div className="relative flex items-start pt-0.5">
+                                 <input type="checkbox" required className="peer sr-only" />
+                                 <div className="w-5 h-5 rounded-[4px] border border-white/20 bg-white/5 peer-checked:bg-[var(--accent)] peer-checked:border-[var(--accent)] transition-colors flex items-center justify-center">
+                                   <CheckCircle weight="bold" className="text-white opacity-0 peer-checked:opacity-100 transition-opacity" size={14} />
+                                 </div>
+                               </div>
+                               <span className="font-sans text-[12px] text-white/60 leading-tight">
+                                 Dichiaro di aver letto la{' '}
+                                 <a href="/privacy" target="_blank" className="text-[var(--accent)] underline underline-offset-2">Privacy Policy</a>{' '}
+                                 e acconsento al trattamento dei miei dati. *
+                               </span>
+                             </label>
+                           </div>
+                           <div className="pt-4">
+                             <MagneticButton as="div">
+                               <button
+                                 type="submit"
+                                 disabled={isSubmitting}
+                                 className="w-full px-10 py-5 bg-[var(--accent)] text-white rounded-full font-display font-extrabold text-sm shadow-[0_10px_30px_rgba(78,203,160,0.3)] hover:scale-105 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+                               >
+                                 {isSubmitting ? 'Invio in corso...' : 'Invia'}
+                                 <PaperPlaneRight weight="fill" aria-hidden="true" />
+                               </button>
+                             </MagneticButton>
+                           </div>
                          </form>
                        </m.div>
                      ) : (
@@ -325,22 +284,6 @@ export function LavoraConNoiClient() {
 
           </div>
         </div>
-      </section>
-
-      {/* CALL TO ACTION */}
-      <section className="bg-[var(--accent)] py-20 overflow-hidden">
-        <WipeReveal direction="left">
-          <div className="mx-auto max-w-7xl px-6 xl:px-8 text-center sm:text-left flex flex-col md:flex-row items-center justify-between gap-12">
-            <h2 className="font-display text-3xl lg:text-5xl font-extrabold text-white tracking-tight leading-none">
-              Non trovi la posizione <br /> giusta per te?
-            </h2>
-            <MagneticButton as="div">
-              <a href="mailto:fulgurservice@gmail.com" className="px-8 py-4 sm:px-10 sm:py-5 bg-[var(--tx-1)] text-white rounded-full font-display font-bold text-sm shadow-xl hover:scale-105 transition-all">
-                Candidatura Spontanea
-              </a>
-            </MagneticButton>
-          </div>
-        </WipeReveal>
       </section>
 
     </main>

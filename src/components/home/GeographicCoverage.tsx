@@ -36,13 +36,12 @@ export function GeographicCoverage() {
             <ScrollReveal>
               <SectionLabel className="mb-5">— DOVE OPERIAMO</SectionLabel>
               <h2 className="font-display text-4xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl text-balance leading-[1.1]">
-                Parma e tutta<br />
-                <span className="text-[var(--accent)]">la provincia.</span>
+                Sede a Parma,<br />
+                <span className="text-[var(--accent)]">operativi in tutta Italia.</span>
               </h2>
               <p className="mt-6 font-sans text-lg font-light text-[var(--tx-2)] leading-relaxed max-w-lg">
-                Come impresa di pulizie a Parma, copriamo ogni comune della provincia 
-                e le aree limitrofe dell&apos;Emilia-Romagna. Puntualità garantita, 
-                interventi in 24h su tutto il territorio.
+                Con sede a Parma, operiamo su tutto il territorio nazionale. Puntualità garantita,
+                interventi in 24h ovunque tu sia in Italia.
               </p>
             </ScrollReveal>
 

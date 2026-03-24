@@ -67,7 +67,7 @@ export const BLOG_POSTS: BlogPost[] = [
       
       <blockquote>"Un ambiente di lavoro pulito non è solo un obbligo normativo, ma un investimento sulla longevità dell'azienda."</blockquote>
       
-      <p>Fulgur Service offre sopralluoghi gratuiti in tutta la provincia di Parma per definire piani di manutenzione programmata su misura per il settore industriale.</p>
+      <p>Fulgur Service offre sopralluoghi gratuiti su tutto il territorio nazionale per definire piani di manutenzione programmata su misura per il settore industriale.</p>
     `,
     date: '17 Marzo 2026',
     author: 'Team Fulgur',
@@ -139,7 +139,7 @@ export const BLOG_POSTS: BlogPost[] = [
       <h2>Il risultato: fino al +30% di produzione recuperata</h2>
       <p>Dopo ogni nostro intervento, i clienti misurano mediamente un recupero di produzione tra il 20% e il 30%. Un investimento che si ripaga in pochi mesi attraverso il risparmio in bolletta e l'aumento della vita utile dell'impianto.</p>
 
-      <p>Operiamo su impianti residenziali, aziendali e su campi fotovoltaici industriali in tutta la provincia di Parma e l'Emilia-Romagna. <strong>Sopralluogo sempre gratuito, preventivo in 24 ore.</strong></p>
+      <p>Operiamo su impianti residenziali, aziendali e su campi fotovoltaici industriali in tutta Italia. <strong>Sopralluogo sempre gratuito, preventivo in 24 ore.</strong></p>
     `,
     date: '23 Marzo 2026',
     author: 'Team Fulgur',

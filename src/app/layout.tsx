@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   },
   description:
     'Cerchi un’impresa di pulizie a Parma? Fulgur Service offre pulizie professionali per uffici, industrie, condomini e studi medici. Sopralluogo gratuito in 24h.',
-  keywords: ['impresa pulizie Parma', 'ditta pulizie Parma', 'pulizie uffici Parma', 'pulizie industriali Parma', 'sanificazione ambienti Parma', 'pulizie condomini Parma', 'pulizie Parma e provincia'],
+  keywords: ['impresa pulizie Parma', 'ditta pulizie Parma', 'pulizie uffici Parma', 'pulizie industriali Parma', 'sanificazione ambienti Parma', 'pulizie condomini Parma', 'impresa pulizie Italia', 'pulizie professionali Italia'],
   authors: [{ name: 'Fulgur Service SRL' }],
   creator: 'Fulgur Service SRL',
   robots: { index: true, follow: true },

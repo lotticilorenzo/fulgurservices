@@ -177,7 +177,7 @@ export function ReviewsSection() {
               Cosa dicono i nostri clienti.
             </h2>
             <p className="font-sans text-[var(--tx-2)] font-light max-w-2xl mx-auto text-balance">
-              Recensioni reali di Google da clienti in tutta Emilia-Romagna.
+              Recensioni reali di Google da clienti in tutta Italia.
             </p>
           </div>
         </ScrollReveal>

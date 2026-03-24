@@ -3,7 +3,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { Drop, Wrench, Recycle, Lightning, ListChecks, ArrowRight } from '@phosphor-icons/react'
+import { Drop, Wrench, Recycle, Lightning, ListChecks, Leaf } from '@phosphor-icons/react'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
 import { SpotlightCard } from '@/components/ui/SpotlightCard'
@@ -18,7 +18,10 @@ export function IntegratedBento() {
           {/* LEFT: TEXT & BADGE */}
           <div className="w-full">
             <ScrollReveal>
-              <SectionLabel className="mb-6">— IMPRESA 360°</SectionLabel>
+              <div className="flex flex-wrap items-center gap-3 mb-6">
+                <SectionLabel>— IMPRESA 360°</SectionLabel>
+                <span className="font-mono-fulgur text-[9px] sm:text-[10px] uppercase tracking-widest text-[var(--tx-muted)] border border-[var(--br)] rounded-full px-3 py-1">Servizi esclusivi per i nostri clienti</span>
+              </div>
               <h2 className="font-display text-[32px] sm:text-4xl lg:text-5xl font-extrabold text-[var(--tx-1)] leading-[1.1] mb-4 text-balance">
                 Un partner <br className="hidden sm:block" />
                 unico per tutto.
@@ -32,7 +35,7 @@ export function IntegratedBento() {
               
               <div className="inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/20 text-[var(--accent)] font-mono-fulgur text-[9px] sm:text-[10px] font-bold uppercase tracking-widest w-full sm:w-auto justify-center">
                 <ListChecks size={18} weight="bold" />
-                4 servizi integrati inclusi
+                5 servizi integrati inclusi
               </div>
             </ScrollReveal>
           </div>
@@ -62,11 +65,19 @@ export function IntegratedBento() {
               icon={Recycle}
             />
             {/* ELETTRICA */}
-            <BentoCard 
+            <BentoCard
               index={3}
               title="Manutenzione elettrica"
               img="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=600&q=80"
               icon={Lightning}
+            />
+            {/* GIARDINAGGIO */}
+            <BentoCard
+              index={4}
+              title="Manutenzione giardinaggio"
+              img="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80"
+              icon={Leaf}
+              className="sm:col-span-2"
             />
           </div>
         </div>
@@ -75,9 +86,9 @@ export function IntegratedBento() {
   )
 }
 
-function BentoCard({ index, title, img, icon: Icon, overlayOpacity = "bg-black/40" }: { index: number, title: string, img: string, icon: React.ElementType, overlayOpacity?: string }) {
+function BentoCard({ index, title, img, icon: Icon, overlayOpacity = "bg-black/40", className }: { index: number, title: string, img: string, icon: React.ElementType, overlayOpacity?: string, className?: string }) {
   return (
-    <ScrollReveal delay={index * 0.1} className="h-full">
+    <ScrollReveal delay={index * 0.1} className={cn("h-full", className)}>
       <SpotlightCard className="relative h-full min-h-[240px] rounded-2xl overflow-hidden group bg-[#0A140F]">
         {/* Main Visual */}
         <div className="absolute inset-0 z-0">

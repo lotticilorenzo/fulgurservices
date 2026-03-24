@@ -133,7 +133,7 @@ export default function ContattiPage() {
                   ))}
                 </div>
                 <p className="mt-6 font-sans text-xs text-[var(--tx-3)] italic">
-                  * Operiamo in tutta la provincia di Parma ed Emilia-Romagna per grandi insediamenti industriali e logistici.
+                  * Con sede a Parma, operiamo su tutto il territorio nazionale per grandi insediamenti industriali e logistici.
                 </p>
               </div>
             </div>

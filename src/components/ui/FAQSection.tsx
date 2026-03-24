@@ -26,7 +26,7 @@ const FAQS = [
   },
   {
     q: 'In quali zone operate?',
-    a: 'La nostra sede è a Parma, ma operiamo attivamente in tutta la provincia e su richiesta in tutta l\'Emilia-Romagna, specialmente per interventi industriali o di fine cantiere. Il nostro obiettivo è essere sempre vicini a te.',
+    a: 'La nostra sede è a Parma, ma operiamo in tutta Italia. Interveniamo su tutto il territorio nazionale per interventi aziendali, industriali, di fine cantiere e molto altro. Il nostro obiettivo è essere sempre vicini a te.',
   },
   {
     q: 'Quanto tempo ci vuole per ricevere il preventivo?',

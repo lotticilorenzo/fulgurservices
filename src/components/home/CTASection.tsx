@@ -116,7 +116,7 @@ export function CTASection() {
             <span className="hidden sm:block opacity-30">|</span>
             <span className="flex items-center gap-2">
               <MapPin size={14} weight="duotone" className="text-[var(--accent)]" />
-              Parma, Emilia-Romagna
+              Parma · Tutta Italia
             </span>
           </div>
         </ScrollReveal>

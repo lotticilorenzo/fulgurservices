@@ -135,7 +135,7 @@ export function ReviewsStrip() {
             <ScrollReveal className="max-w-2xl text-center md:text-left">
               <SectionLabel className="mb-4">— COSA DICONO I CLIENTI</SectionLabel>
               <h2 className="font-display text-4xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl lg:text-6xl text-balance">
-                Clienti <span className="text-[var(--accent)]">soddisfatti</span> in tutta <br className="hidden lg:block" /> l&apos;Emilia-Romagna.
+                Clienti <span className="text-[var(--accent)]">soddisfatti</span> in tutta <br className="hidden lg:block" /> Italia.
               </h2>
             </ScrollReveal>
 

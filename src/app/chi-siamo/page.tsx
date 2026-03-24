@@ -160,7 +160,7 @@ export default function ChiSiamoPage() {
                </h2>
                <p className="font-sans text-xl font-light text-[var(--tx-2)] leading-relaxed mb-10 opacity-90">
                   Ogni professionista di Fulgur Service viene selezionato per garantire discrezione, affidabilità e competenza tecnica superiore. 
-                  Il nostro team, attivo su tutta la <strong>provincia di Parma</strong>, partecipa regolarmente a corsi di aggiornamento su protocolli HACCP, sicurezza e nuove tecnologie eco-friendly.
+                  Il nostro team, attivo su <strong>tutto il territorio nazionale</strong> con base a Parma, partecipa regolarmente a corsi di aggiornamento su protocolli HACCP, sicurezza e nuove tecnologie eco-friendly.
                </p>
                <ul className="flex flex-col gap-5">
                   {[

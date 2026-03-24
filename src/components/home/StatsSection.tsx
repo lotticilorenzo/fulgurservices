@@ -14,7 +14,7 @@ const STATS = [
     value: 100,
     suffix: '%',
     label: 'Clienti soddisfatti',
-    sub: 'In Emilia-Romagna',
+    sub: 'In tutta Italia',
   },
   {
     value: 12,

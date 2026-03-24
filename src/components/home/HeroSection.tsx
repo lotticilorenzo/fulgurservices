@@ -134,8 +134,8 @@ export function HeroSection() {
 
           {/* Subtitle */}
           <p className="hero-reveal mt-5 sm:mt-7 max-w-[50ch] font-body text-[0.95rem] sm:text-[1.05rem] font-light leading-relaxed text-white/80">
-            Impresa di pulizie professionali a{' '}
-            <strong className="font-medium text-white">Parma e provincia</strong>.
+            Impresa di pulizie professionali con sede a{' '}
+            <strong className="font-medium text-white">Parma</strong>, operativa in tutta Italia.
             30 anni di esperienza, tecnologie all&apos;avanguardia,
             soluzioni sostenibili per ogni ambiente.
           </p>
@@ -182,7 +182,7 @@ export function HeroSection() {
           <div className="hero-reveal mt-4 sm:mt-6 flex flex-col sm:flex-row flex-wrap gap-x-5 gap-y-3 font-mono-fulgur text-[9.5px] font-medium uppercase tracking-widest text-white/70">
             <div className="flex items-center gap-2">
               <ShieldCheck size={14} className="text-[var(--accent)]" aria-hidden="true" />
-              <span>Assicurati RCT</span>
+              <span>Polizza RCT/RCO</span>
             </div>
             <div className="flex items-center gap-2">
               <Leaf size={14} className="text-[var(--accent)]" aria-hidden="true" />
