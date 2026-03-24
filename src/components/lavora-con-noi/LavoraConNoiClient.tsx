@@ -254,7 +254,7 @@ export function LavoraConNoiClient() {
                                       </span>
                                       <input 
                                         type="file" 
-                                        accept=".pdf,.doc,.docx"
+                                        accept=".pdf"
                                         required
                                         onChange={(e) => setCvFile(e.target.files?.[0] || null)}
                                         className="absolute inset-0 opacity-0 cursor-pointer" 
@@ -262,7 +262,7 @@ export function LavoraConNoiClient() {
                                       />
                                    </div>
                                     <p className="mt-2 text-[10px] text-white/30 font-sans leading-tight">
-                                     Formati accettati: PDF, Word. Max 5MB.
+                                     Formato accettato: PDF. Max 5MB.
                                    </p>
                                 </div>
 

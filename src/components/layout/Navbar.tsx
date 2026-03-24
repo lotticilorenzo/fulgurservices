@@ -20,11 +20,12 @@ const SERVICE_PREVIEWS = [
 ]
 
 const NAV_ITEMS = [
-  { label: 'Servizi',   href: '/servizi',   dropdown: true },
-  { label: 'Gallery',   href: '/gallery' },
-  { label: 'Blog',      href: '/blog' },
-  { label: 'Chi Siamo', href: '/chi-siamo' },
-  { label: 'Macchinari',href: '/macchinari' },
+  { label: 'Servizi',       href: '/servizi',        dropdown: true },
+  { label: 'Gallery',       href: '/gallery' },
+  { label: 'Blog',          href: '/blog' },
+  { label: 'Chi Siamo',     href: '/chi-siamo' },
+  { label: 'Macchinari',    href: '/macchinari' },
+  { label: 'Lavora con noi',href: '/lavora-con-noi' },
 ]
 
 const MOBILE_LINKS = [

@@ -19,8 +19,8 @@ export async function POST(req: NextRequest) {
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
+        user: process.env.GMAIL_USER,
+        pass: process.env.GMAIL_PASS,
       },
     });
 
@@ -35,7 +35,7 @@ export async function POST(req: NextRequest) {
     }
 
     const mailOptions = {
-      from: `"Sito Web Fulgur" <${process.env.SMTP_USER}>`,
+      from: `"Sito Web Fulgur" <${process.env.GMAIL_USER}>`,
       to: 'fulgurservice@gmail.com',
       replyTo: email,
       subject: `LAVORA CON NOI - Nuova Candidatura: ${nome}`,
