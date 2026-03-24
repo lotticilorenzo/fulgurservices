@@ -10,18 +10,18 @@ export interface CaseStudy {
 
 export const CASE_STUDIES: CaseStudy[] = [
   {
-    id: 'marble-restoration',
-    title: 'Ripristino Marmo Hotel Elite',
-    description: 'Trattamento di cristallizzazione su superficie opacizzata e graffiata. Risultato a specchio con protezione a lungo termine.',
+    id: 'carpet-office-cleaning',
+    title: 'Lavaggio Moquette Ufficio Open Space',
+    description: 'Aspirazione profonda e lavaggio di moquette in ufficio open space con forte accumulo di polvere e sporco da traffico pedonale intenso. Risultato uniforme e igienizzato.',
     category: 'Trattamento Superfici',
     beforeImage: '/images/case-studies/primapulizia.png',
     afterImage: '/images/case-studies/dopopulizia.png',
     serviceSlug: 'trattamento-superfici',
   },
   {
-    id: 'industrial-degreasing',
-    title: 'Sgrassatura Padiglione Logistico',
-    description: 'Rimozione di residui gommosi, oli e sporco stratificato da pavimentazione industriale in cemento al quarzo.',
+    id: 'industrial-workshop-cleaning',
+    title: 'Pulizia Pavimentazione Officina Industriale',
+    description: 'Intervento di pulizia profonda in officina meccanica con lavasciuga industriale. Pavimento ripristinato da sporco oleoso, residui di lavorazione e polvere accumulata.',
     category: 'Pulizie Industriali',
     beforeImage: '/images/case-studies/prima-reale.png',
     afterImage: '/images/case-studies/dopo-reale.png',
