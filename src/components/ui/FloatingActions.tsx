@@ -335,7 +335,7 @@ export function FloatingActions() {
               initial={{ opacity: 0, scale: 0.7 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.28, type: 'spring', stiffness: 280, damping: 22 }}
-              className="flex items-center justify-end group"
+              className="flex items-center justify-end group pointer-events-auto"
               onMouseEnter={() => setWaHovered(true)}
               onMouseLeave={() => setWaHovered(false)}
             >
