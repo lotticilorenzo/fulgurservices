@@ -267,4 +267,9 @@ export const INTEGRATED_SERVICES = [
     desc: 'Interventi di manutenzione elettrica ordinaria',
     icon: 'Lightning',
   },
+  {
+    title: 'Manutenzione giardinaggio',
+    desc: 'Cura di aree verdi, potature e manutenzione ordinaria del verde',
+    icon: 'Leaf',
+  },
 ]

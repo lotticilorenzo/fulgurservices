@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 import { InstagramLogo, WhatsappLogo, EnvelopeSimple, Phone, MapPin } from '@phosphor-icons/react/dist/ssr'
 import Image from 'next/image'
 import { SERVICES } from '@/lib/services-data'
@@ -208,6 +209,28 @@ export function Footer() {
               <span className="font-mono-fulgur text-[10px] font-bold uppercase tracking-widest text-[var(--tx-1)] sm:text-[var(--tx-3)]">Operativi</span>
             </div>
           </div>
+        </div>
+
+        {/* Made by credit */}
+        <div className="pt-4 pb-2 sm:pb-0 flex items-center justify-center gap-1.5 font-mono-fulgur text-[10px] uppercase tracking-widest text-[var(--tx-3)]">
+          <span>Made with</span>
+          <motion.span
+            animate={{ scale: [1, 1.35, 1] }}
+            transition={{ duration: 0.8, repeat: Infinity, ease: 'easeInOut', repeatDelay: 0.6 }}
+            className="inline-block text-[#e05a6d] select-none"
+            aria-hidden="true"
+          >
+            ♥
+          </motion.span>
+          <span>passion by</span>
+          <a
+            href="https://www.lorenzodigital.it/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-bold text-[var(--tx-2)] hover:text-[var(--accent)] transition-colors underline underline-offset-2 decoration-[var(--br)] hover:decoration-[var(--accent)]"
+          >
+            DigitalByLorenzo
+          </a>
         </div>
 
       </div>

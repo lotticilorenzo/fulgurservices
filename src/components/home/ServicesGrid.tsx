@@ -9,11 +9,11 @@ import { SectionLabel } from '@/components/ui/SectionLabel'
 import { ParallaxText } from '@/components/ui/ParallaxText'
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
 import {
-  Drop, Wrench, Recycle, Lightning,
+  Drop, Wrench, Recycle, Lightning, Leaf,
 } from '@phosphor-icons/react'
 
 const IntegratedIconMap: Record<string, React.ElementType> = {
-  Drop, Wrench, Recycle, Lightning,
+  Drop, Wrench, Recycle, Lightning, Leaf,
 }
 
 export function ServicesGrid() {
