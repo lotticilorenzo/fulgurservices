@@ -9,7 +9,7 @@ const GUARANTEES = [
   {
     id: 1,
     title: "40 anni di esperienza",
-    data: "Dal 1984",
+    data: "",
     // [TODO/CLIENTE]: Inserire foto reale "storica" o del team storico (w=600px minimo)
     img: "/images/fondatore-impresa-pulizie-fulgur-service-parma.webp",
     size: "large"
