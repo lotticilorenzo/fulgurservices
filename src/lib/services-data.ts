@@ -102,7 +102,7 @@ export const SERVICES: Service[] = [
     icon: 'Sparkle',
     featured: true,
     keywords: ['lucidatura marmo Parma', 'trattamento gres Parma', 'cristallizzazione marmo Parma', 'levigatura pavimenti'],
-    benefits: ['Cristallizzazione professionale marmo', 'Trattamento antimacchia per gres', 'Oliatura e ripristino parquet', 'Pulizia profonda cotto e resina', 'Sistemi Klindex ad alta precisione'],
+    benefits: ['Lavaggio meccanizzato marmo e pietra', 'Trattamento e lucidatura cotto', 'Pulizia e ripristino parquet', 'Lavaggio profondo gres e resina', 'Trattamento antimacchia e protezione superfici'],
     sectors: ['Abitazioni private', 'Uffici di rappresentanza', 'Negozi e showroom', 'Hotel di lusso'],
     metaTitle: 'Trattamento Pavimenti e Lucidatura Marmo Parma | Fulgur Service',
     metaDescription: 'Esperti nel trattamento superfici a Parma: marmo, gres, parquet e cotto. Risultati duraturi con tecnologie all’avanguardia.',
