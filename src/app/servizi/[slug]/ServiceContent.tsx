@@ -137,7 +137,7 @@ export function ServiceContent({ service }: ServiceContentProps) {
                             className="shadow-xl"
                           />
                           <div className="flex flex-col justify-center">
-                             <h3 className="font-display text-3xl font-bold text-[var(--tx-1)] mb-6 leading-tight">
+                             <h3 className="font-display text-3xl font-bold text-[#0F1F1A] mb-6 leading-tight">
                                {study.title}
                              </h3>
                              <p className="font-sans text-lg font-light text-[var(--tx-2)] leading-relaxed italic mb-8 border-l-2 border-[var(--accent)] pl-6">

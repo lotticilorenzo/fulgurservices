@@ -14,9 +14,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: 'Ripristino Marmo Hotel Elite',
     description: 'Trattamento di cristallizzazione su superficie opacizzata e graffiata. Risultato a specchio con protezione a lungo termine.',
     category: 'Trattamento Superfici',
-    // [TODO/CLIENTE]: Sostituire con FOTO REALI del "Prima" in formato orizzontale
-    beforeImage: '/images/case-studies/prima-reale.png',
-    afterImage: '/images/case-studies/dopo-reale.png',
+    beforeImage: '/images/case-studies/primapulizia.png',
+    afterImage: '/images/case-studies/dopopulizia.png',
     serviceSlug: 'trattamento-superfici',
   },
   {
@@ -24,9 +23,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: 'Sgrassatura Padiglione Logistico',
     description: 'Rimozione di residui gommosi, oli e sporco stratificato da pavimentazione industriale in cemento al quarzo.',
     category: 'Pulizie Industriali',
-    // [TODO/CLIENTE]: Sostituire con FOTO REALI del "Prima" in formato orizzontale
-    beforeImage: '/images/case-studies/prima-reale.png',
-    afterImage: '/images/case-studies/dopo-reale.png',
+    beforeImage: '/images/case-studies/primapulizia.png',
+    afterImage: '/images/case-studies/dopopulizia.png',
     serviceSlug: 'pulizie-industriali',
   },
 ]

@@ -237,7 +237,7 @@ export function GalleryClient() {
                           {study.category}
                        </span>
                     </div>
-                    <h3 className="font-display text-2xl font-bold text-white mb-3">{study.title}</h3>
+                    <h3 className="font-display text-2xl font-bold text-[#0F1F1A] mb-3">{study.title}</h3>
                     <p className="font-sans text-sm font-light text-[var(--tx-2)] leading-relaxed">
                        {study.description}
                     </p>
