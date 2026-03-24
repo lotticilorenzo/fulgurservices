@@ -72,7 +72,7 @@ export function BeforeAfterSlider({
           src={afterImage}
           alt="Dopo il trattamento"
           fill
-          className="object-cover object-top"
+          className="object-cover object-top scale-[1.2] origin-top-left"
           draggable={false}
         />
         <div className="absolute bottom-4 right-6 bg-black/50 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold text-white tracking-widest border border-white/10">
@@ -92,7 +92,7 @@ export function BeforeAfterSlider({
               src={beforeImage}
               alt="Prima del trattamento"
               fill
-              className="object-cover object-top"
+              className="object-cover object-top scale-[1.2] origin-top-left"
               draggable={false}
             />
           </div>

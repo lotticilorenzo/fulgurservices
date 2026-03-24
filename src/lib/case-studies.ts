@@ -23,8 +23,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: 'Sgrassatura Padiglione Logistico',
     description: 'Rimozione di residui gommosi, oli e sporco stratificato da pavimentazione industriale in cemento al quarzo.',
     category: 'Pulizie Industriali',
-    beforeImage: '/images/case-studies/primapulizia.png',
-    afterImage: '/images/case-studies/dopopulizia.png',
+    beforeImage: '/images/case-studies/prima-reale.png',
+    afterImage: '/images/case-studies/dopo-reale.png',
     serviceSlug: 'pulizie-industriali',
   },
 ]
