@@ -52,7 +52,7 @@ export function AboutSection() {
               
               {/* Badge sovrapposto — left-0 su mobile evita overflow del viewport <375px */}
               <div className="absolute -bottom-5 left-0 sm:-bottom-6 sm:-left-3 md:-left-5 z-20 rounded-2xl bg-[var(--accent)] px-5 py-3 sm:px-7 sm:py-5 text-white shadow-2xl flex flex-col items-center">
-                <span className="font-display text-4xl sm:text-5xl font-black leading-none">40</span>
+                <span className="font-display text-4xl sm:text-5xl font-black leading-none">35</span>
                 <span className="font-mono-fulgur text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.18em] opacity-85 text-center leading-tight mt-1">
                   anni di<br />know-how
                 </span>

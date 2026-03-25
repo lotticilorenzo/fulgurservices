@@ -745,7 +745,7 @@ SEO:
   [x] Structured data JSON-LD
   [ ] OG images per ogni pagina
 
-ULTIMO AGGIORNAMENTO: Aggiunta brochure tecnica PDF nella sezione Macchine a Osmosi. Recensioni a 4.9. Raffinatezze tipografiche e diciture artigiani/imprese completate. Card Fornitura/Lavanderia aggiunta. Anni esperienza (35+) e Polizza corretti. Push su GitHub finale.
+ULTIMO AGGIORNAMENTO: Corretto badge 40 -> 35 anni in AboutSection. Aggiunta brochure tecnica PDF Macchine a Osmosi. Recensioni a 4.9. Raffinatezze tipografiche e diciture artigiani/imprese completate. Card Fornitura/Lavanderia aggiunta. Push su GitHub finale.
 SESSIONE PRECEDENTE: Progetto Next.js inizializzato, configurazione Tailwind (v4) CSS, dipendenze installate, componenti layout/UI base creati, JSON-LD in app/layout.tsx e check TypeScript superato senza errori.
 NOTE: La configurazione Tailwind è in v4 (@theme in globals.css) anziché tailwind.config.ts, aggiornato per Next.js 15.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
