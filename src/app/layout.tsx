@@ -46,6 +46,9 @@ export const metadata: Metadata = {
   keywords: ['impresa pulizie Parma', 'ditta pulizie Parma', 'pulizie uffici Parma', 'pulizie industriali Parma', 'sanificazione ambienti Parma', 'pulizie condomini Parma', 'impresa pulizie Italia', 'pulizie professionali Italia'],
   authors: [{ name: 'Fulgur Service SRL' }],
   creator: 'Fulgur Service SRL',
+  verification: {
+    google: 'WxKNsSCEnsQKzdUY0BwaXG1ItSgJ33Ob25PWpn92vG8', 
+  },
   robots: { index: true, follow: true },
   openGraph: {
     type: 'website',

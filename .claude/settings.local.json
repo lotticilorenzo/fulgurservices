@@ -20,7 +20,11 @@
       "Bash(ffmpeg -y -i \"c:/Users/lotti/Desktop/scrollsectionmobile.mp4\" -c:v libx264 -g 1 -keyint_min 1 -sc_threshold 0 -crf 30 -preset slow -vf \"scale=540:-2\" -movflags faststart -an \"public/videos/scroll-mobile-scrub.mp4\")",
       "Bash(ffprobe -v quiet -show_entries stream=codec_name,profile,pix_fmt,width,height,bit_rate -of csv \"c:/Users/lotti/Desktop/fulgurservices/public/videos/sfondo-mobile-hero.mp4\")",
       "Bash(ffmpeg -y -i \"public/videos/sfondo-mobile-hero.mp4\" -c:v libx264 -profile:v baseline -level 3.1 -pix_fmt yuv420p -crf 30 -preset slow -movflags +faststart -an \"public/videos/sfondo-mobile-hero.mp4.tmp.mp4\")",
-      "Bash(python3 -:*)"
+      "Bash(python3 -:*)",
+      "Bash(cp \"C:/Users/lotti/Desktop/primapulizia.png\" \"c:/Users/lotti/Desktop/fulgurservices/public/images/case-studies/primapulizia.png\")",
+      "Bash(cp \"C:/Users/lotti/Desktop/dopopulizia.png\" \"c:/Users/lotti/Desktop/fulgurservices/public/images/case-studies/dopopulizia.png\")",
+      "Bash(node -e \"require\\(''''sharp''''\\)\")",
+      "Bash(node -e \":*)"
     ]
   }
 }

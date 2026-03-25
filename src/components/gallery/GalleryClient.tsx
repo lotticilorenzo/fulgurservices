@@ -84,9 +84,9 @@ const GALLERY_ITEMS = [
   { id: 60, src: '/images/gallery/furgone-fulgur-service-capannone-notte.jpg', alt: 'Furgone Fulgur Service durante un intervento notturno presso un capannone industriale', label: 'Intervento Notturno', category: 'azienda', span: 'col-span-1 row-span-1' },
   { id: 61, src: '/images/gallery/prima-durante-dopo-lucidatura-marmo-fulgur.jpg', alt: 'Tre fasi a confronto: prima, durante e dopo il trattamento di lucidatura di un pavimento in marmo', label: 'Prima e Dopo', category: 'speciali', span: 'col-span-2 row-span-1' },
   { id: 62, src: '/images/gallery/sanificazione-pavimento-capannone-fulgur.jpg', alt: 'Trattamento di pavimento in cemento di un capannone industriale con attrezzatura di sanificazione', label: 'Capannone Industriale', category: 'industriali', span: 'col-span-1 row-span-2' },
-  { id: 63, src: '/images/gallery/pulizia-pavimento-garage-industriale-fulgur.jpg', alt: 'Pulizia di un garage privato con pavimento in cemento e auto parcheggiata', label: 'Pulizia Garage', category: 'industriali', span: 'col-span-1 row-span-1' },
+  { id: 63, src: '/images/gallery/pulizia-pavimento-garage-industriale-fulgur.jpg', alt: 'Pulizia di un garage privato con pavimento in cemento e auto parcheggiata', label: 'Piccola concessionaria di auto d’epoca', category: 'industriali', span: 'col-span-1 row-span-1' },
   { id: 64, src: '/images/gallery/pulizia-infissi-esterni-villa-fulgur.jpg', alt: 'Operatore pulisce serramenti e infissi sulla facciata esterna di una casa con portico in legno', label: 'Serramenti Esterni', category: 'residenziali', span: 'col-span-1 row-span-1' },
-  { id: 65, src: '/images/gallery/pulizia-salone-villa-lusso-macchinari-fulgur.jpg', alt: 'Pulizia di ampio salone con grandi lastre di marmo bianco e attrezzatura professionale', label: 'Salone Marmo', category: 'residenziali', span: 'col-span-2 row-span-1' },
+  { id: 65, src: '/images/gallery/pulizia-salone-villa-lusso-macchinari-fulgur.jpg', alt: 'Pulizia di ampio salone con grandi lastre di marmo bianco e attrezzatura professionale', label: 'Salone', category: 'residenziali', span: 'col-span-2 row-span-1' },
   { id: 66, src: '/images/gallery/pulizia-facciata-industriale-operatori-fulgur.jpg', alt: 'Due operatrici Fulgur Service su scala puliscono persiane metalliche su facciata di edificio commerciale', label: 'Pulizia Esterna', category: 'aziendali', span: 'col-span-1 row-span-1' },
   { id: 67, src: '/images/gallery/fine-cantiere-appartamento-nuovo-fulgur.jpg', alt: 'Pulizia fine cantiere in appartamento di nuova costruzione con macchinari industriali professionale', label: 'Fine Cantiere', category: 'speciali', span: 'col-span-1 row-span-1' },
   { id: 68, src: '/images/gallery/furgone-fulgur-service-centro-storico-parma.jpg', alt: 'Furgone Fulgur Service parcheggiato in una piazza del centro storico cittadino', label: 'Centro Storico', category: 'azienda', span: 'col-span-1 row-span-1' },
@@ -278,15 +278,15 @@ export function GalleryClient() {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="relative aspect-video w-full max-w-6xl rounded-3xl overflow-hidden border border-white/10 shadow-2xl"
+              className="relative w-full max-w-6xl h-[70vh] md:h-[80vh] rounded-3xl overflow-hidden border border-white/10 shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               <Image
                 src={selectedImage.src}
                 alt={selectedImage.alt}
                 fill
-                className="object-cover"
-                sizes="100vw"
+                className="object-contain"
+                sizes="(max-width: 1280px) 100vw, 1280px"
                 priority
               />
               <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 via-black/20 to-transparent" aria-hidden="true">
