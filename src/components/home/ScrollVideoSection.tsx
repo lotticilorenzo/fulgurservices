@@ -24,7 +24,7 @@ const CHAPTERS = [
     eyebrow: '02 / 04',
     title: 'Il futuro',
     titleClass: 'text-white',
-    subtitle: "Tecnologie all'avanguardia e 30 anni di esperienza per spazi sempre all'altezza.",
+    subtitle: "Tecnologie all'avanguardia e 35 anni di esperienza per spazi sempre all'altezza.",
     cta: null,
   },
   {

@@ -30,7 +30,7 @@ const CERTS = [
   {
     icon: Handshake,
     title: "Partner di Fiducia",
-    desc: "Oltre 40 anni di referenze dimostrabili in tutta Italia.",
+    desc: "Oltre 35 anni di referenze dimostrabili in tutta Italia.",
     color: "from-teal-500/10 to-teal-600/5",
     iconColor: "text-teal-500"
   }

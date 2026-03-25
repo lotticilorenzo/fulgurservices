@@ -87,7 +87,7 @@ export function AboutSection() {
               <div className="mt-5 sm:mt-7 space-y-4 sm:space-y-5 font-body text-[0.95rem] sm:text-[1.05rem] font-light text-[var(--tx-2)] leading-relaxed">
                 <p>
                   Fulgur Service è un&apos;impresa giovane, nata da idee chiare e innovative,
-                  con alle spalle 40 anni di esperienza: siamo il punto d&apos;incontro tra
+                  con alle spalle 35 anni di esperienza: siamo il punto d&apos;incontro tra
                   la visione fresca di una nuova generazione e la solidità del lavoro
                   costruito da mio padre.
                 </p>

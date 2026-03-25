@@ -8,7 +8,7 @@ import { ScrollReveal } from './ScrollReveal'
 const GUARANTEES = [
   {
     id: 1,
-    title: "40 anni di esperienza",
+    title: "35 anni di esperienza",
     data: "",
     // [TODO/CLIENTE]: Inserire foto reale "storica" o del team storico (w=600px minimo)
     img: "/images/fondatore-impresa-pulizie-fulgur-service-parma.webp",

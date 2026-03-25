@@ -3,7 +3,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { Drop, Wrench, Recycle, Lightning, ListChecks, Leaf } from '@phosphor-icons/react'
+import { Drop, Wrench, Recycle, Lightning, ListChecks, Leaf, Basket } from '@phosphor-icons/react'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
 import { SpotlightCard } from '@/components/ui/SpotlightCard'
@@ -35,7 +35,7 @@ export function IntegratedBento() {
               
               <div className="inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/20 text-[var(--accent)] font-mono-fulgur text-[9px] sm:text-[10px] font-bold uppercase tracking-widest w-full sm:w-auto justify-center">
                 <ListChecks size={18} weight="bold" />
-                5 servizi integrati inclusi
+                6 servizi integrati inclusi
               </div>
             </ScrollReveal>
           </div>
@@ -77,7 +77,13 @@ export function IntegratedBento() {
               title="Manutenzione giardinaggio"
               img="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80"
               icon={Leaf}
-              className="sm:col-span-2"
+            />
+            {/* LAVANDERIA & FORNITURE */}
+            <BentoCard
+              index={5}
+              title="Fornitura carta e sapone"
+              img="https://images.unsplash.com/photo-1583947581924-860bda3a4669?w=600&q=80"
+              icon={Basket}
             />
           </div>
         </div>

@@ -17,7 +17,7 @@ const SLIDES = [
   {
     type: 'image',
     title: 'Il futuro',
-    subtitle: 'Tecnologie all\'avanguardia e 30 anni di esperienza per spazi sempre all\'altezza.',
+    subtitle: 'Tecnologie all\'avanguardia e 35 anni di esperienza per spazi sempre all\'altezza.',
     srcDesktop: '/images/macchinari-pulizie-professionali.jpg',
     titleClass: 'text-white'
   },

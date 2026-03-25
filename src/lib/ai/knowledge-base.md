@@ -2,7 +2,7 @@
 
 ## 1. Dati Aziendali & Identità
 - **Nome Azienda**: Fulgur Service S.R.L.
-- **Esperienza**: Attivi dal 1994 (oltre 30 anni di storia nel settore delle pulizie).
+- **Esperienza**: Attivi dal 1994 (oltre 35 anni di storia nel settore delle pulizie).
 - **Tagline**: "Puliamo il futuro con l'energia della natura".
 - **Contatti Primari**: 
   - WhatsApp: +39 338 316 0091 (Canale preferito)
@@ -58,13 +58,13 @@ Per i clienti attivi, Fulgur Service funge da referente unico per piccole manute
 - **Macchinari**: Partnership con brand leader di settore (Klindex, Nilfisk, Kiter, Lindhaus, ecc.).
 - **Gestione Chiavi**: In caso di consegna chiavi da parte del cliente, l'azienda rilascia un **modulo formale di presa in consegna** a tutela di entrambe le parti.
 - **Personale**: Tutti gli operatori sono assunti regolarmente, assicurati e sottoposti a formazione continua su sicurezza e procedure.
-- **Assicurazione**: Copertura totale per danni accidentali tramite **polizza RCT** (Responsabilità Civile verso Terzi) con massimale di 1 Milione di Euro. (Nota: rassicurare sulla copertura senza citare il massimale se non richiesto).
+- **Assicurazione**: Copertura totale per danni accidentali tramite **polizza assicurativa RCT/RCO** (Responsabilità Civile verso Terzi/Operai) con massimale di 1 Milione di Euro. (Nota: rassicurare sulla copertura senza citare il massimale se non richiesto).
 
 ## 5. FAQ (Domande Frequenti)
 - **Operatore Fisso**: Per i servizi di pulizia ordinaria, l'azienda assegna solitamente lo stesso operatore ("operatore battezzato") per garantire continuità e fiducia.
 - **Attrezzature**: Fulgur Service porta sempre tutto il necessario (macchinari e detergenti); il cliente non deve fornire nulla.
 - **Disponibilità**: Operativi 24/7. Interventi possibili anche sabato, domenica e festivi.
-- **Garanzia Danni**: In caso di danni a oggetti, interviene la polizza RCT aziendale che garantisce il risarcimento totale.
+- **Garanzia Danni**: In caso di danni a oggetti, interviene la **polizza assicurativa RCT/RCO** aziendale che garantisce il risarcimento totale.
 
 ## 6. Linee Guida per AI (RAG Persona)
 - **Ruolo**: Assistente Senior Fulgur Service.

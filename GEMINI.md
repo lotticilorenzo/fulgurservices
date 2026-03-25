@@ -47,7 +47,7 @@ PRINCIPI OPERATIVI:
 > "Puliamo il futuro con l'energia della natura"
 
 ### Il brand in una frase
-Impresa giovane e innovativa con 30 anni di esperienza del padre — il punto d'incontro tra la visione fresca di una nuova generazione e la solidità del lavoro costruito nel tempo.
+Impresa giovane e innovativa con 35 anni di esperienza del padre — il punto d'incontro tra la visione fresca di una nuova generazione e la solidità del lavoro costruito nel tempo.
 
 ### Logo
 - Cerchio `#1A1A2E` come forma base con fulmine al centro
@@ -126,7 +126,7 @@ export const SERVICES: Service[] = [
     benefits: ['Pulizia pavimenti industriali', 'Rimozione oli e grassi', 'Pulizia macchinari e linee', 'Smaltimento rifiuti industriali', 'Interventi in orari produzione ferma'],
     sectors: ['Capannoni produttivi', 'Magazzini logistici', 'Impianti alimentari', 'Officine meccaniche', 'Centri distribuzione'],
     metaTitle: 'Pulizie Industriali Parma | Capannoni e Magazzini — Fulgur Service',
-    metaDescription: 'Pulizie industriali a Parma per capannoni, magazzini e impianti produttivi. Macchinari professionali, operatori specializzati. Preventivo gratuito.',
+    metaDescription: 'Pulizie industriali a Parma per capannoni, magazzini e impianti produttivi. Macchinari professionali, operatori specializzati. 35 anni di esperienza. Preventivo gratuito.',
   },
   {
     id: '03',
@@ -297,6 +297,11 @@ export const INTEGRATED_SERVICES = [
     desc: 'Interventi di manutenzione elettrica ordinaria',
     icon: 'Lightning',
   },
+  {
+    title: 'Fornitura carta e sapone',
+    desc: 'Fornitura materiali di consumo e servizio lavanderia',
+    icon: 'Basket',
+  },
 ]
 ```
 
@@ -312,13 +317,13 @@ H1 Line 3: "della Natura"      ← in var(--accent) pieno
 
 Subtitle:
 "Impresa di pulizie professionali a Parma e provincia.
-30 anni di esperienza, tecnologie all'avanguardia,
+35 anni di esperienza, tecnologie all'avanguardia,
 soluzioni sostenibili per ogni ambiente."
 
 Badge: "Parma · Dal 1994"
 
 Stats inline:
-"30+ anni  ·  500+ clienti  ·  12 settori  ·  100% sopralluogo gratuito"
+"35+ anni  ·  500+ clienti  ·  12 settori  ·  100% sopralluogo gratuito"
 
 CTA primaria: "Richiedi Sopralluogo Gratuito"
 CTA secondaria: "Scopri i Servizi"
@@ -331,7 +336,7 @@ H2: "Tradizione e innovazione,\ninsieme."
 
 Paragrafo 1:
 "Fulgur Service è un'impresa giovane, nata da idee chiare e innovative,
-con alle spalle 30 anni di esperienza: siamo il punto d'incontro tra
+con alle spalle 35 anni di esperienza: siamo il punto d'incontro tra
 la visione fresca di una nuova generazione e la solidità del lavoro
 costruito da mio padre."
 
@@ -382,7 +387,7 @@ come se fosse nostro."
 
 ### Stats
 ```
-30+   "Anni di esperienza" / "Nel settore pulizie professionali"
+35+   "Anni di esperienza" / "Nel settore pulizie professionali"
 500+  "Clienti soddisfatti" / "In Emilia-Romagna"
 12    "Settori di intervento" / "Dal civile all'industriale"
 24h   "Preventivo garantito" / "Sopralluogo sempre gratuito"
@@ -740,7 +745,8 @@ SEO:
   [x] Structured data JSON-LD
   [ ] OG images per ogni pagina
 
-COMPLETATO QUESTA SESSIONE: Progetto Next.js inizializzato, configurazione Tailwind (v4) CSS, dipendenze installate, componenti layout/UI base creati, JSON-LD in app/layout.tsx e check TypeScript superato senza errori.
+ULTIMO AGGIORNAMENTO: Aggiornamento globale degli anni di esperienza (35+) e formalizzazione dicitura "Polizza assicurativa RCT/RCO" in tutti i componenti UI, metadati SEO, base di conoscenza AI e documentazione di progetto (GEMINI.md).
+SESSIONE PRECEDENTE: Progetto Next.js inizializzato, configurazione Tailwind (v4) CSS, dipendenze installate, componenti layout/UI base creati, JSON-LD in app/layout.tsx e check TypeScript superato senza errori.
 NOTE: La configurazione Tailwind è in v4 (@theme in globals.css) anziché tailwind.config.ts, aggiornato per Next.js 15.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```

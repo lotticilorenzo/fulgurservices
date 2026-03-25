@@ -12,7 +12,7 @@ export const METADATA = {
     keywords: 'impresa pulizie Parma, ditta pulizie Parma, pulizie uffici Parma, pulizie industriali Parma, sanificazione ambienti Parma, pulizie condomini Parma, impresa pulizie Italia, pulizie professionali Italia',
     openGraph: {
       title: 'Fulgur Service — Impresa di Pulizie Professionali a Parma e in tutta Italia',
-      description: 'Soluzioni di pulizia avanzate per aziende e privati. Sede a Parma, operativi in tutta Italia. 40 anni di esperienza, risultati garantiti.',
+      description: 'Soluzioni di pulizia avanzate per aziende e privati. Sede a Parma, operativi in tutta Italia. 35 anni di esperienza, risultati garantiti.',
       url: BASE_URL,
       siteName: 'Fulgur Service',
       images: [{ url: OG_DEFAULT, width: 1200, height: 630, alt: 'Fulgur Service — Leader Pulizie Parma' }],
@@ -35,12 +35,12 @@ export const METADATA = {
     },
   },
   chiSiamo: {
-    title: 'Chi Siamo | 40 Anni di Esperienza — Fulgur Service Parma',
+    title: 'Chi Siamo | 35 Anni di Esperienza — Fulgur Service Parma',
     description:
-      'Fulgur Service: impresa giovane con 40 anni di esperienza del settore. Team qualificato, prodotti eco-sostenibili, referente unico per tutti i tuoi spazi.',
+      'Fulgur Service: impresa giovane con 35 anni di esperienza del settore. Team qualificato, prodotti eco-sostenibili, referente unico per tutti i tuoi spazi.',
     openGraph: {
       title: 'Chi Siamo — Fulgur Service',
-      description: '40 anni di esperienza, visione nuova. La nostra storia.',
+      description: '35 anni di esperienza, visione nuova. La nostra storia.',
       url: `${BASE_URL}/chi-siamo`,
       siteName: 'Fulgur Service',
       images: [{ url: OG_DEFAULT, width: 1200, height: 630, alt: 'Team Fulgur Service' }],

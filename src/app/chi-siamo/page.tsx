@@ -82,7 +82,7 @@ export default function ChiSiamoPage() {
         <div className="mx-auto w-full max-w-4xl px-5 sm:px-6 xl:px-8">
           {/* FIX SEM-01: h2 sr-only ripristina cascata H1→H2→H3→H4 senza alterare il design */}
           <h2 className="sr-only">La nostra storia</h2>
-          <SectionLabel className="mb-10 lg:mb-12 text-center">— 40 ANNI DI ESPERIENZA</SectionLabel>
+          <SectionLabel className="mb-10 lg:mb-12 text-center">— 35 ANNI DI ESPERIENZA</SectionLabel>
           <div className="relative border-l border-[var(--br)] ml-4 sm:ml-8 flex flex-col gap-12 sm:gap-16">
             
             <ScrollReveal>
@@ -112,7 +112,7 @@ export default function ChiSiamoPage() {
                 <h3 className="font-mono-fulgur text-[var(--tx-1)] font-bold mb-2 uppercase tracking-widest text-xs">Oggi</h3>
                 <h4 className="font-display text-2xl font-bold text-[var(--tx-1)] mb-4">Fulgur Service SRL</h4>
                 <p className="font-sans font-light text-[var(--tx-2)] leading-relaxed text-lg">
-                  Il passaggio generazionale fonda Fulgur Service: un brand giovane che eredita 40 anni di know-how paterno unendolo a gestioni digitali smart, sostenibilità ambientale certificata ed engineering dei processi integrati.
+                  Il passaggio generazionale fonda Fulgur Service: un brand giovane che eredita 35 anni di know-how paterno unendolo a gestioni digitali smart, sostenibilità ambientale certificata ed engineering dei processi integrati.
                 </p>
               </div>
             </ScrollReveal>

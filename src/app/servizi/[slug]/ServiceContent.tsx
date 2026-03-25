@@ -68,7 +68,7 @@ export function ServiceContent({ service }: ServiceContentProps) {
           {[
             { label: 'Efficienza', value: '100%', icon: Gauge },
             { label: 'Sostenibile', value: 'ECO', icon: ShieldCheck },
-            { label: 'Esperienza', value: '30Y', icon: Star },
+            { label: 'Esperienza', value: '35Y', icon: Star },
             { label: 'Preventivo', value: '48H', icon: Icons.Fingerprint },
           ].map((stat, i) => (
             <ScrollReveal key={i} delay={i * 0.1}>

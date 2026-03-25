@@ -1,13 +1,13 @@
 'use client'
 
 import React from 'react'
-import { Drop, Wrench, Recycle, Lightning } from '@phosphor-icons/react'
+import { Drop, Wrench, Recycle, Lightning, Leaf, Basket } from '@phosphor-icons/react'
 import { SpotlightCard } from '@/components/ui/SpotlightCard'
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
 
 // Map icons based on string name
 const IntIconMap: Record<string, React.ElementType> = {
-  Drop, Wrench, Recycle, Lightning
+  Drop, Wrench, Recycle, Lightning, Leaf, Basket
 }
 
 interface SpotLightIntegrationCardProps {

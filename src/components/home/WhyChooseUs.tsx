@@ -88,7 +88,7 @@ export function WhyChooseUs() {
                 <span className="text-[var(--accent)]">scelta a Parma.</span>
               </h2>
               <p className="mt-6 font-sans text-lg font-light text-[var(--tx-2)] leading-relaxed max-w-lg">
-                Affidarsi a Fulgur Service significa scegliere un partner locale con 40 anni di esperienza, 
+                Affidarsi a Fulgur Service significa scegliere un partner locale con 35 anni di esperienza, 
                 tecnologie industriali e un impegno per la qualità su tutto il territorio.
               </p>
             </ScrollReveal>

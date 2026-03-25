@@ -98,7 +98,7 @@ export const SERVICES: Service[] = [
     slug: 'trattamento-superfici',
     title: 'Trattamento Superfici',
     shortDesc: 'Lavaggio meccanizzato e trattamento di marmo, cotto, parquet e altre superfici a Parma.',
-    longDesc: 'Proteggiamo e valorizziamo i tuoi pavimenti con tecniche avanzate. Da oltre 40 anni siamo specialisti nella cristallizzazione del marmo, trattamenti per gres porcellanato e oliatura parquet a Parma.',
+    longDesc: 'Proteggiamo e valorizziamo i tuoi pavimenti con tecniche avanzate. Da oltre 35 anni siamo specialisti nella cristallizzazione del marmo, trattamenti per gres porcellanato e oliatura parquet a Parma.',
     icon: 'Sparkle',
     featured: true,
     keywords: ['lucidatura marmo Parma', 'trattamento gres Parma', 'cristallizzazione marmo Parma', 'levigatura pavimenti'],
@@ -269,7 +269,12 @@ export const INTEGRATED_SERVICES = [
   },
   {
     title: 'Manutenzione giardinaggio',
-    desc: 'Cura di aree verdi, potature e manutenzione ordinaria del verde',
+    desc: 'Cura di aree dei verde, potature e manutenzione ordinaria del verde',
     icon: 'Leaf',
   },
-]
+  {
+    title: 'Fornitura carta e sapone',
+    desc: 'Fornitura materiali di consumo e servizio lavanderia per i clienti Fulgur',
+    icon: 'Basket',
+  },
+];

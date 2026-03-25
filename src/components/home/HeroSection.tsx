@@ -136,14 +136,14 @@ export function HeroSection() {
           <p className="hero-reveal mt-5 sm:mt-7 max-w-[50ch] font-body text-[0.95rem] sm:text-[1.05rem] font-light leading-relaxed text-white/80">
             Impresa di pulizie professionali con sede a{' '}
             <strong className="font-medium text-white">Parma</strong>, operativa in tutta Italia.
-            30 anni di esperienza, tecnologie all&apos;avanguardia,
+            35 anni di esperienza, tecnologie all&apos;avanguardia,
             soluzioni sostenibili per ogni ambiente.
           </p>
 
           {/* Stats inline */}
           <div className="hero-reveal mt-6 sm:mt-7 grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-y-4 gap-x-2 sm:gap-x-5 font-mono-fulgur text-[10.5px] sm:text-[11px] font-bold uppercase tracking-[0.08em] sm:tracking-[0.15em] text-white/80">
             <span className="flex items-center gap-2">
-              <span className="text-[var(--accent)] text-[16px] sm:text-base font-black">30+</span> anni
+              <span className="text-[var(--accent)] text-[16px] sm:text-base font-black">35+</span> anni
             </span>
             <span className="hidden sm:inline text-white/30">·</span>
             <span className="flex items-center gap-2">
@@ -182,7 +182,7 @@ export function HeroSection() {
           <div className="hero-reveal mt-4 sm:mt-6 flex flex-col sm:flex-row flex-wrap gap-x-5 gap-y-3 font-mono-fulgur text-[9.5px] font-medium uppercase tracking-widest text-white/70">
             <div className="flex items-center gap-2">
               <ShieldCheck size={14} className="text-[var(--accent)]" aria-hidden="true" />
-              <span>Polizza RCT/RCO</span>
+              <span>Polizza assicurativa RCT/RCO</span>
             </div>
             <div className="flex items-center gap-2">
               <Leaf size={14} className="text-[var(--accent)]" aria-hidden="true" />
@@ -236,7 +236,7 @@ export function HeroSection() {
               </div>
             </div>
 
-            {/* Card float: 30+ anni (Restored & Shifted) */}
+            {/* Card float: 35+ anni (Restored & Shifted) */}
             <motion.div
               initial={{ y: -6 }}
               animate={{ y: [-6, 6, -6] }}
