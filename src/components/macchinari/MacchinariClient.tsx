@@ -20,7 +20,7 @@ const BRANDS = [
   { name: 'Nilfisk', logo: '/images/macchinari/nilfisk.png' },
   { name: 'Künzle & Tasin', logo: '/images/macchinari/kunzle-tasin.jpg' },
   { name: 'Gioel', logo: '/images/macchinari/gioel.svg' },
-  { name: 'EU Ecolabel', logo: '/images/macchinari/EU_Ecolabel_logo.png' },
+  { name: 'EU Ecolabel', logo: '/images/macchinari/logoecolabel.jpeg' },
 ]
 
 export function MacchinariClient() {
