@@ -745,7 +745,7 @@ SEO:
   [x] Structured data JSON-LD
   [ ] OG images per ogni pagina
 
-ULTIMO AGGIORNAMENTO: Aggiornamento globale degli anni di esperienza (35+) e formalizzazione dicitura "Polizza assicurativa RCT/RCO" in tutti i componenti UI, metadati SEO, base di conoscenza AI e documentazione di progetto (GEMINI.md).
+ULTIMO AGGIORNAMENTO: Aggiornata card "Soluzione Integrata 360°" con riferimento a artigiani/imprese. Raffinatezza tipografica Manifesto. Aggiunta card Fornitura/Lavanderia. Aggiornamento globale anni esperienza (35+) e dicitura Polizza. Push su GitHub completato.
 SESSIONE PRECEDENTE: Progetto Next.js inizializzato, configurazione Tailwind (v4) CSS, dipendenze installate, componenti layout/UI base creati, JSON-LD in app/layout.tsx e check TypeScript superato senza errori.
 NOTE: La configurazione Tailwind è in v4 (@theme in globals.css) anziché tailwind.config.ts, aggiornato per Next.js 15.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

@@ -93,7 +93,7 @@ export function PhilosophySection() {
           {/* Arrow down */}
           <div className="flex flex-col items-center mt-6 gap-1">
             <div className="h-8 w-px bg-gradient-to-b from-[var(--br-h)] to-[var(--accent)] opacity-60" />
-            <div className="font-mono-fulgur text-[10px] uppercase tracking-[0.2em] text-[var(--accent)]">
+            <div className="font-mono-fulgur text-[13px] sm:text-sm font-bold uppercase tracking-[0.2em] text-[var(--accent)]">
               Noi invece
             </div>
           </div>

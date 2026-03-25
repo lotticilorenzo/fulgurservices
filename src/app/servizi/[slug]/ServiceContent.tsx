@@ -182,7 +182,7 @@ export function ServiceContent({ service }: ServiceContentProps) {
                   </div>
                   <h3 className="font-display text-[var(--tx-1)] font-bold text-2xl mb-4 leading-tight">Soluzione Integrata 360°</h3>
                   <p className="font-sans text-[var(--tx-2)] text-base mb-8 leading-relaxed font-light">
-                    Oltre alle pulizie, gestiamo manutenzione ordinaria direttamente col nostro personale interno.
+                    Oltre alle pulizie, gestiamo manutenzione ordinaria direttamente col nostro personale interno e i nostri artigiani/imprese.
                   </p>
                   <Link href="/chi-siamo" className="font-mono-fulgur text-xs font-bold tracking-[0.2em] text-[var(--accent)] hover:text-[var(--tx-1)] uppercase flex items-center gap-2 transition-colors">
                     Scopri i vantaggi <ArrowRight size={16} />
