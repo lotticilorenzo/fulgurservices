@@ -10,8 +10,8 @@ import { motion } from 'framer-motion'
 const BENEFITS = [
   {
     num: '01',
-    title: 'Esperienza Trentennale',
-    desc: 'Tre decenni di storia fondono know-how profondo con la visione innovativa di una nuova generazione.',
+    title: '35 Anni di Esperienza',
+    desc: 'Trentacinque anni di storia fondono know-how profondo con la visione innovativa di una nuova generazione.',
   },
   {
     num: '02',
@@ -54,7 +54,7 @@ export function WhyChooseUs() {
               
               {/* Floating experience badge */}
               <div className="absolute top-8 right-8 bg-[var(--accent)] text-white p-6 rounded-2xl shadow-xl z-10">
-                <div className="font-display text-5xl font-black leading-none">40</div>
+                <div className="font-display text-5xl font-black leading-none">35</div>
                 <div className="font-mono-fulgur text-[9px] font-bold uppercase tracking-widest opacity-85 mt-1 leading-tight">
                   anni di<br />know-how
                 </div>

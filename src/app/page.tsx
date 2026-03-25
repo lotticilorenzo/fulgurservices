@@ -9,7 +9,7 @@ import { StatsSection } from '@/components/home/StatsSection'
 import { BrandsMarquee } from '@/components/home/BrandsMarquee'
 import { CTASection } from '@/components/home/CTASection'
 import { ScrollVideoSection } from '@/components/home/ScrollVideoSection'
-import { ScrollMobileSection } from '@/components/home/ScrollMobileSection'
+import { WhyChooseUs } from '@/components/home/WhyChooseUs'
 
 export const metadata: Metadata = {
   title: METADATA.home.title,
@@ -42,6 +42,9 @@ export default function Home() {
       <div id="servizi" className="scroll-mt-24">
         <ServicesGrid />
       </div>
+
+      {/* 3. Why Choose Us — Trust & Value */}
+      <WhyChooseUs />
 
       {/* 3. Chi Siamo — La Storia */}
       <div id="chi-siamo" className="scroll-mt-24">
