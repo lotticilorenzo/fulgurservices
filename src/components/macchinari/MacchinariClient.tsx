@@ -126,12 +126,13 @@ export function MacchinariClient() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <ScrollReveal delay={0.1}>
               <div className="group relative aspect-[4/5] md:aspect-[16/10] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
-                <Image
-                  src="/images/macchinari-pulizie-professionali.jpg"
-                  alt="Lavasciuga pavimenti professionale"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                <video
+                  src="/videos/videolavasciuga.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A140F]/80 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute bottom-0 left-0 right-0 p-8 translate-y-2 opacity-90 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
