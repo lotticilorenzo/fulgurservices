@@ -150,7 +150,7 @@ export function HeroSection() {
               <span className="text-[var(--accent)] text-[16px] sm:text-base font-black">12</span> aree di intervento
             </span>
             <span className="hidden sm:inline text-white/30">·</span>
-            <span className="col-span-2 text-[var(--accent)] tracking-widest mt-1 sm:mt-0 opacity-90">Sopralluogo 100% gratuito</span>
+            <span className="col-span-2 text-[var(--accent)] tracking-widest mt-1 sm:mt-0 opacity-90">Sopralluogo sempre gratuito</span>
           </div>
 
           {/* CTAs — gap-4 (16px) per separazione pollice sicura */}

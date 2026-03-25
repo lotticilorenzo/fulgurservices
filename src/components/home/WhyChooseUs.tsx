@@ -69,11 +69,6 @@ export function WhyChooseUs() {
                     </div>
                     <span className="font-mono-fulgur text-[9px] uppercase tracking-widest opacity-70 mt-1">4.9 Google</span>
                   </div>
-                  <div className="h-8 w-px bg-white/20" />
-                  <div className="flex flex-col">
-                    <span className="font-display text-2xl font-bold leading-none">100%</span>
-                    <span className="font-mono-fulgur text-[9px] uppercase tracking-widest opacity-70 mt-1">Gratuito</span>
-                  </div>
                 </div>
               </div>
             </div>

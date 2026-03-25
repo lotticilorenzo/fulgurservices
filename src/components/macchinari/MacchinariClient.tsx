@@ -125,7 +125,7 @@ export function MacchinariClient() {
           <SectionLabel className="mb-6">— LAVAGGIO PRINCIPALE</SectionLabel>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <ScrollReveal delay={0.1}>
-              <div className="group relative aspect-[4/5] md:aspect-[16/10] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
+              <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
                 <video
                   src="/videos/videolavasciuga.mp4"
                   autoPlay
@@ -143,7 +143,7 @@ export function MacchinariClient() {
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
-              <div className="group relative aspect-[4/5] md:aspect-[16/10] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
+              <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
                 <Image
                   src="/images/macchinari/monospazzola-lucidatrice-parma-klindex.png"
                   alt="Monospazzola professionale Klindex usata per la lucidatura e la cristallizzazione dei pavimenti"
@@ -185,8 +185,8 @@ export function MacchinariClient() {
             <ScrollReveal delay={0.2}>
               <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
                 <Image
-                  src="/images/fulgur-service-pulizie-sostenibili.jpg"
-                  alt="Macchina pulizia a vapore 180°"
+                  src="/images/macchinari/macchinavapore-180.jpg"
+                  alt="Macchina professionale per sanificazione a vapore 180°C Fulgur Service"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -260,9 +260,13 @@ export function MacchinariClient() {
 
             <ScrollReveal delay={0.5}>
               <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
-                <div className="absolute inset-0 bg-[var(--bg)] flex items-center justify-center">
-                  <span className="font-mono-fulgur text-xs text-white/20 uppercase tracking-widest">Placeholder Lava Moquette</span>
-                </div>
+                <Image
+                  src="/images/macchinari/lavamoquette-fulgur.jpg"
+                  alt="Macchina professionale lava moquette a estrazione Fulgur Service"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A140F]/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-2 opacity-90 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                   <h3 className="font-display text-xl font-bold text-white mb-2">Lava Moquette</h3>
@@ -270,7 +274,28 @@ export function MacchinariClient() {
                 </div>
               </div>
             </ScrollReveal>
+
+            <ScrollReveal delay={0.6}>
+              <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
+                <div className="absolute inset-0 bg-[var(--bg)] flex items-center justify-center">
+                  <span className="font-mono-fulgur text-xs text-white/20 uppercase tracking-widest">Placeholder Pulivapor</span>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A140F]/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-2 opacity-90 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                  <h3 className="font-display text-xl font-bold text-white mb-2">Pulivapor</h3>
+                  <p className="font-sans text-sm text-white/70">Pulizia ad alta pressione per la rimozione di sporco ostinato, oli e grassi su superfici industriali e pavimentazioni esterne.</p>
+                </div>
+              </div>
+            </ScrollReveal>
           </div>
+
+          <ScrollReveal delay={0.7}>
+            <div className="mt-16 text-center">
+              <p className="font-mono-fulgur text-[10px] uppercase tracking-[0.3em] text-[var(--tx-3)] opacity-60">
+                ... E MOLTI ALTRI: SELEZIONIAMO SOLO IL MEGLIO PER I TUOI SPAZI
+              </p>
+            </div>
+          </ScrollReveal>
         </div>
       </div>
 
