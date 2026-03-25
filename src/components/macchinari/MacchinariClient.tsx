@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import Image from 'next/image'
+import { FilePdf } from '@phosphor-icons/react'
 import { CTASection } from '@/components/home/CTASection'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
@@ -210,6 +211,15 @@ export function MacchinariClient() {
                 <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-2 opacity-90 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                   <h3 className="font-display text-xl font-bold text-white mb-2">Macchine a Osmosi</h3>
                   <p className="font-sans text-sm text-white/70">Lavaggio ecologico di facciate e vetrate continue in altezza utilizzando acqua pura demineralizzata.</p>
+                  <a 
+                    href="/docs/Brochure_Fulgur_Service_Whistle_clean_16.pdf" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex items-center gap-2 text-[10px] font-mono-fulgur font-bold uppercase tracking-widest text-[var(--accent)] hover:text-white transition-colors bg-[var(--accent)]/10 px-3 py-2 rounded-xl border border-[var(--accent)]/30 backdrop-blur-sm group-hover:bg-[var(--accent)] group-hover:text-white group-hover:border-transparent transition-all duration-300"
+                  >
+                    <FilePdf size={18} weight="duotone" />
+                    Sfoglia Brochure Technical
+                  </a>
                 </div>
               </div>
             </ScrollReveal>
