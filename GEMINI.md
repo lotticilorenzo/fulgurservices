@@ -745,7 +745,7 @@ SEO:
   [x] Structured data JSON-LD
   [ ] OG images per ogni pagina
 
-ULTIMO AGGIORNAMENTO: Allineamento totale anni esperienza (35+) incluse TrustBar e WhyChooseUs. Nuova sezione "Perché Sceglierci" e brochure PDF Macchine a Osmosi attivate. Recensioni a 4.9. Push su GitHub finale.
+ULTIMO AGGIORNAMENTO: Corretta etichetta Gallery (La Nostra Sede -> Uscita team operativo). Allineamento anni esperienza (35+) e brochure PDF completati. Push su GitHub finale.
 SESSIONE PRECEDENTE: Progetto Next.js inizializzato, configurazione Tailwind (v4) CSS, dipendenze installate, componenti layout/UI base creati, JSON-LD in app/layout.tsx e check TypeScript superato senza errori.
 NOTE: La configurazione Tailwind è in v4 (@theme in globals.css) anziché tailwind.config.ts, aggiornato per Next.js 15.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
