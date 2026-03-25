@@ -9,6 +9,7 @@ import { StatsSection } from '@/components/home/StatsSection'
 import { BrandsMarquee } from '@/components/home/BrandsMarquee'
 import { CTASection } from '@/components/home/CTASection'
 import { ScrollVideoSection } from '@/components/home/ScrollVideoSection'
+import { ScrollMobileSection } from '@/components/home/ScrollMobileSection'
 import { WhyChooseUs } from '@/components/home/WhyChooseUs'
 
 export const metadata: Metadata = {
