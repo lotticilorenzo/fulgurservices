@@ -164,7 +164,7 @@ export function MacchinariClient() {
         {/* GRUPPO 2: TECNOLOGIE SPECIALISTICHE */}
         <div>
           <SectionLabel className="mb-6">— TECNOLOGIE SPECIALISTICHE</SectionLabel>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <ScrollReveal delay={0.1}>
               <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
                 <Image
@@ -241,6 +241,32 @@ export function MacchinariClient() {
                     <FilePdf size={18} weight="duotone" />
                     Sfoglia Brochure Technical
                   </a>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.4}>
+              <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
+                <div className="absolute inset-0 bg-[var(--bg)] flex items-center justify-center">
+                  <span className="font-mono-fulgur text-xs text-white/20 uppercase tracking-widest">Placeholder Monospazzola</span>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A140F]/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-2 opacity-90 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                  <h3 className="font-display text-xl font-bold text-white mb-2">Monospazzola</h3>
+                  <p className="font-sans text-sm text-white/70">Versatilità estrema per il ripristino, la levigatura e la lucidatura di ogni tipo di pavimento rigido o resiliente.</p>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.5}>
+              <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
+                <div className="absolute inset-0 bg-[var(--bg)] flex items-center justify-center">
+                  <span className="font-mono-fulgur text-xs text-white/20 uppercase tracking-widest">Placeholder Lava Moquette</span>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A140F]/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-2 opacity-90 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                  <h3 className="font-display text-xl font-bold text-white mb-2">Lava Moquette</h3>
+                  <p className="font-sans text-sm text-white/70">Sistemi a estrazione e iniezione per la pulizia profonda e la sanificazione di moquette, tappeti e superfici tessili.</p>
                 </div>
               </div>
             </ScrollReveal>
