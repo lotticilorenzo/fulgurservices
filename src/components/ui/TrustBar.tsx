@@ -21,10 +21,10 @@ const TRUST_DATA = [
     link: "/chi-siamo#certificazioni"
   },
   {
-    value: 30,
+    value: 35,
     suffix: "+",
     label: "Anni di Esperienza",
-    desc: "Know-how consolidato in tre decenni di attività nel settore delle pulizie professionali.",
+    desc: "Know-how consolidato in 35 anni di attività nel settore delle pulizie professionali.",
     link: "/chi-siamo"
   },
   {
