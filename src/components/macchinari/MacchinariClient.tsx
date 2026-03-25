@@ -195,6 +195,26 @@ export function MacchinariClient() {
                 <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-2 opacity-90 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                   <h3 className="font-display text-xl font-bold text-white mb-2">Macchine a Vapore 180°C</h3>
                   <p className="font-sans text-sm text-white/70">Sanificazione naturale e profonda. Ideale per ambienti sanitari e superfici sensibili.</p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    <a 
+                      href="/docs/macchinavapore1.pdf" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-[10px] font-mono-fulgur font-bold uppercase tracking-widest text-[var(--accent)] hover:text-white transition-colors bg-[var(--accent)]/10 px-3 py-2 rounded-xl border border-[var(--accent)]/30 backdrop-blur-sm group-hover:bg-[var(--accent)] group-hover:text-white group-hover:border-transparent transition-all duration-300"
+                    >
+                      <FilePdf size={18} weight="duotone" />
+                      Technical PDF 1
+                    </a>
+                    <a 
+                      href="/docs/macchinavapore2.pdf" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-[10px] font-mono-fulgur font-bold uppercase tracking-widest text-[var(--accent)] hover:text-white transition-colors bg-[var(--accent)]/10 px-3 py-2 rounded-xl border border-[var(--accent)]/30 backdrop-blur-sm group-hover:bg-[var(--accent)] group-hover:text-white group-hover:border-transparent transition-all duration-300"
+                    >
+                      <FilePdf size={18} weight="duotone" />
+                      Technical PDF 2
+                    </a>
+                  </div>
                 </div>
               </div>
             </ScrollReveal>
