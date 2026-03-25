@@ -5,7 +5,7 @@ import { CounterUp } from '@/components/ui/CounterUp'
 
 const STATS = [
   {
-    value: 40,
+    value: 35,
     suffix: '+',
     label: 'Anni di esperienza',
     sub: 'Nel settore pulizie professionali',
