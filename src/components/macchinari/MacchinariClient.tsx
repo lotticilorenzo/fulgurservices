@@ -222,7 +222,7 @@ export function MacchinariClient() {
             <ScrollReveal delay={0.3}>
               <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
                 <Image
-                  src="/images/servizi/pulizia-vetrate-altezza-parma.jpg"
+                  src="/images/macchinari/macchinaosmosi.jpeg"
                   alt="Sistema ad osmosi inversa per vetrate"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"

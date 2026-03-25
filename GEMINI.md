@@ -745,7 +745,7 @@ SEO:
   [x] Structured data JSON-LD
   [ ] OG images per ogni pagina
 
-ULTIMO AGGIORNAMENTO: Aggiornati anni esperienza (40+ -> 35+) in StatsSection. Ripristinato logo EU Ecolabel con versione locale. Aggiunte brochure PDF per Macchine a Vapore. Sostituita immagine Lavasciuga con video in loop in Macchinari. Corretta etichetta Gallery. Allineamento anni esperienza (35+) completato. Push su GitHub finale.
+ULTIMO AGGIORNAMENTO: Aggiornata immagine Macchina a Osmosi. Ripristinato logo EU Ecolabel con versione locale. Aggiunte brochure PDF per Macchine a Vapore. Sostituita immagine Lavasciuga con video in loop in Macchinari. Corretta etichetta Gallery. Allineamento anni esperienza (35+) completato. Push su GitHub finale.
 SESSIONE PRECEDENTE: Progetto Next.js inizializzato, configurazione Tailwind (v4) CSS, dipendenze installate, componenti layout/UI base creati, JSON-LD in app/layout.tsx e check TypeScript superato senza errori.
 NOTE: La configurazione Tailwind è in v4 (@theme in globals.css) anziché tailwind.config.ts, aggiornato per Next.js 15.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
