@@ -214,7 +214,7 @@ export function ReviewsSection() {
               ))}
             </div>
             <p className="font-sans text-sm font-bold text-[var(--tx-1)]">
-              4.7 <span className="text-[var(--tx-3)] font-normal">su Google</span>
+              4.9 <span className="text-[var(--tx-3)] font-normal">su Google</span>
             </p>
           </div>
         </ScrollReveal>

@@ -745,7 +745,7 @@ SEO:
   [x] Structured data JSON-LD
   [ ] OG images per ogni pagina
 
-ULTIMO AGGIORNAMENTO: Aggiornata card "Soluzione Integrata 360°" con riferimento a artigiani/imprese. Raffinatezza tipografica Manifesto. Aggiunta card Fornitura/Lavanderia. Aggiornamento globale anni esperienza (35+) e dicitura Polizza. Push su GitHub completato.
+ULTIMO AGGIORNAMENTO: Recensioni aggiornate a 4.9 su Google. Raffinatezze tipografiche e diciture artigiani/imprese completate. Card Fornitura/Lavanderia aggiunta. Anni esperienza (35+) e Polizza corretti. Push su GitHub finale.
 SESSIONE PRECEDENTE: Progetto Next.js inizializzato, configurazione Tailwind (v4) CSS, dipendenze installate, componenti layout/UI base creati, JSON-LD in app/layout.tsx e check TypeScript superato senza errori.
 NOTE: La configurazione Tailwind è in v4 (@theme in globals.css) anziché tailwind.config.ts, aggiornato per Next.js 15.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

@@ -143,7 +143,7 @@ export function ReviewsStrip() {
               <div className="flex gap-0.5 text-yellow-400">
                 {[...Array(5)].map((_, i) => <Star key={i} size={20} weight="fill" />)}
               </div>
-              <span className="font-display text-4xl font-extrabold text-[var(--tx-1)]">4.7</span>
+              <span className="font-display text-4xl font-extrabold text-[var(--tx-1)]">4.9</span>
               <span className="font-sans text-sm text-[var(--tx-3)]">su Google</span>
             </ScrollReveal>
           </div>
@@ -190,7 +190,7 @@ export function ReviewsStrip() {
               </div>
               <div className="h-6 w-px bg-slate-200" />
               <span className="font-mono-fulgur text-[12px] font-bold text-[var(--tx-1)]">
-                4.7 su Google · <span className="text-[var(--tx-3)]">recensioni verificate</span>
+                4.9 su Google · <span className="text-[var(--tx-3)]">recensioni verificate</span>
               </span>
               <span className="text-[var(--tx-3)] group-hover:text-[var(--accent)] group-hover:translate-x-1 transition-all">→</span>
             </a>
