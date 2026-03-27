@@ -11,17 +11,17 @@ const BENEFITS = [
   {
     num: '01',
     title: '35 Anni di Esperienza',
-    desc: 'Trentacinque anni di storia fondono know-how profondo con la visione innovativa di una nuova generazione.',
+    desc: 'Trentacinque anni di storia in cui know-how profondo e visione innovativa delle nuove generazioni si fondono tra loro.',
   },
   {
     num: '02',
     title: 'Eco Innovazione',
-    desc: 'Prodotti certificati Ecolabel e HACCP per un\'igiene al top, senza compromettere l\'ambiente.',
+    desc: "Prodotti certificati Ecolabel e HACCP per un'igiene che non compromette l'ambiente.",
   },
   {
     num: '03',
     title: 'Partner 360°',
-    desc: 'Pulizie + manutenzione idraulica, elettrica ed edile: un unico referente per la cura completa dei tuoi spazi.',
+    desc: 'Pulizie + manutenzione idraulica, elettrica ed edile: un solo referente per la cura dei tuoi spazi.',
   },
   {
     num: '04',
@@ -35,10 +35,10 @@ export function WhyChooseUs() {
     <section className="relative w-full bg-[var(--bg-2)] py-16 sm:py-20 lg:py-32 overflow-hidden">
       {/* Decorative blobs */}
       <div className="absolute -right-24 top-20 w-64 h-64 rounded-full bg-[var(--accent)] opacity-[0.06] blur-[80px] pointer-events-none" />
-      
+
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16 lg:gap-24 items-center">
-          
+
           {/* Left: Image Visual */}
           <ScrollReveal className="relative order-2 lg:order-1">
             <div className="relative aspect-[4/5] rounded-[32px] overflow-hidden border border-[var(--br)] shadow-2xl">
@@ -51,7 +51,7 @@ export function WhyChooseUs() {
               />
               {/* Color overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-[var(--tx-1)]/60 via-transparent to-transparent" />
-              
+
               {/* Floating experience badge */}
               <div className="absolute top-8 right-8 bg-[var(--accent)] text-white p-6 rounded-2xl shadow-xl z-10">
                 <div className="font-display text-5xl font-black leading-none">35</div>
@@ -83,8 +83,7 @@ export function WhyChooseUs() {
                 <span className="text-[var(--accent)]">scelta a Parma.</span>
               </h2>
               <p className="mt-6 font-sans text-lg font-light text-[var(--tx-2)] leading-relaxed max-w-lg">
-                Affidarsi a Fulgur Service significa scegliere un partner locale con 35 anni di esperienza, 
-                tecnologie industriali e un impegno per la qualità su tutto il territorio.
+                Affidarsi a Fulgur Service significa scegliere un partner locale con 35 anni di esperienza e strumentazione tecnologica avanzata.
               </p>
             </ScrollReveal>
 

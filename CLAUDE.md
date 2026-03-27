@@ -11,7 +11,7 @@ Leggi questo file INTERO prima di scrivere qualsiasi riga di codice.
 **P.IVA:** 03063010346
 **Tel:** +39 338 316 0091
 **Email:** fulgurservice@gmail.com
-**Instagram:** https://www.instagram.com/fulgurservice/
+**Instagram:** https://www.instagram.com/fulgurservicesrl_/
 **WhatsApp:** https://wa.me/393383160091?text=Ciao%2C%20vorrei%20richiedere%20un%20sopralluogo%20gratuito
 
 **Brand in tre parole:** Energia · Natura · Precisione
@@ -253,7 +253,7 @@ export const metadata: Metadata = {
     "addressRegion": "Emilia-Romagna",
     "addressCountry": "IT"
   },
-  "sameAs": ["https://www.instagram.com/fulgurservice/"]
+  "sameAs": ["https://www.instagram.com/fulgurservicesrl_/"]
 }
 ```
 

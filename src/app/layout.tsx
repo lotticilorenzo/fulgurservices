@@ -57,6 +57,10 @@ export const metadata: Metadata = {
     images: [{ url: '/images/team-operatori-pulizie-professionali-parma.webp', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/icon.png',
+  },
 }
 
 export default function RootLayout({

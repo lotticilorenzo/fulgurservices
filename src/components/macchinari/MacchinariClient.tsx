@@ -20,7 +20,7 @@ const BRANDS = [
   { name: 'Nilfisk', logo: '/images/macchinari/nilfisk.png' },
   { name: 'Künzle & Tasin', logo: '/images/macchinari/kunzle-tasin.jpg' },
   { name: 'Gioel', logo: '/images/macchinari/gioel.svg' },
-  { name: 'EU Ecolabel', logo: '/images/macchinari/logoecolabel.jpeg' },
+  { name: 'EU Ecolabel', logo: '/images/macchinari/ecolabel.png' },
 ]
 
 export function MacchinariClient() {
@@ -247,9 +247,13 @@ export function MacchinariClient() {
 
             <ScrollReveal delay={0.4}>
               <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
-                <div className="absolute inset-0 bg-[var(--bg)] flex items-center justify-center">
-                  <span className="font-mono-fulgur text-xs text-white/20 uppercase tracking-widest">Placeholder Monospazzola</span>
-                </div>
+                <Image
+                  src="/images/macchinari/monospazzola.png"
+                  alt="Monospazzola professionale multiuso per il trattamento di superfici rigide"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A140F]/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-2 opacity-90 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                   <h3 className="font-display text-xl font-bold text-white mb-2">Monospazzola</h3>
@@ -277,9 +281,13 @@ export function MacchinariClient() {
 
             <ScrollReveal delay={0.6}>
               <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
-                <div className="absolute inset-0 bg-[var(--bg)] flex items-center justify-center">
-                  <span className="font-mono-fulgur text-xs text-white/20 uppercase tracking-widest">Placeholder Pulivapor</span>
-                </div>
+                <Image
+                  src="/images/macchinari/pulivapor.png"
+                  alt="Idropulitrice professionale Pulivapor ad alta pressione per pulizie industriali"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A140F]/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-2 opacity-90 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                   <h3 className="font-display text-xl font-bold text-white mb-2">Pulivapor</h3>

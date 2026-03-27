@@ -75,7 +75,7 @@ export default function ContattiPage() {
                     rel="noopener noreferrer"
                     className="font-sans text-lg font-medium text-[var(--tx-1)] hover:text-[var(--accent)] transition-colors"
                   >
-                    Via Alfredo Veroni, 22<br/>
+                    Via Alfredo Veroni, 20<br/>
                     43122 Parma (PR)
                   </a>
                 </div>
@@ -99,7 +99,7 @@ export default function ContattiPage() {
             <div className="flex flex-col gap-6 w-full">
               <div className="w-full aspect-[4/3] sm:aspect-[21/9] rounded-3xl overflow-hidden relative border border-[var(--br)] bg-[var(--bg-2)] shadow-xl">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m12!1m3!1d2828.9734375051187!2d10.3479!3d44.8015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4780164c4c4c4c4d%3A0x4c4c4c4c4c4c4c4c!2sVia%20Alfredo%20Veroni%2C%2020%2C%2043122%20Parma%20PR!5e0!3m2!1sit!2sit!4v1620000000000!5m2!1sit!2sit" 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2829.4188074855715!2d10.344178776068746!3d44.8334036710706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4780401f21043fcb%3A0xc314075781670410!2sVia%20Alfredo%20Veroni%2C%2020%2C%2043122%20Parma%20PR!5e0!3m2!1sit!2sit!4v1774531336978!5m2!1sit!2sit" 
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
@@ -112,7 +112,7 @@ export default function ContattiPage() {
               
               <div className="flex items-center gap-4">
                 <a 
-                  href="https://www.instagram.com/fulgurservice/" 
+                  href="https://www.instagram.com/fulgurservicesrl_/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex min-h-[44px] items-center justify-center gap-2 px-6 py-3 rounded-xl border border-[var(--br)] bg-[var(--bg)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all font-mono-fulgur text-sm font-bold uppercase tracking-widest text-[var(--tx-2)]"

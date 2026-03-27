@@ -7,7 +7,7 @@ import { WhatsAppHybridLink } from '@/components/ui/WhatsAppHybridLink'
 
 /* ─── Easing curves ─── */
 const EASE_OUT = [0.16, 1, 0.3, 1] as const
-const EASE_IN  = [0.4, 0, 0.6, 1] as const
+const EASE_IN = [0.4, 0, 0.6, 1] as const
 
 /* ─── Dati testuali per ogni capitolo ─── */
 const CHAPTERS = [
@@ -16,7 +16,7 @@ const CHAPTERS = [
     eyebrow: '01 / 04',
     title: 'Puliamo',
     titleClass: 'text-white',
-    subtitle: 'Ogni ambiente una sola missione: la perfezione. Cura ed energia per i tuoi spazi.',
+    subtitle: 'La nostra missione? Ordine e armonia per i tuoi spazi.',
     cta: null,
   },
   {
@@ -24,7 +24,7 @@ const CHAPTERS = [
     eyebrow: '02 / 04',
     title: 'Il futuro',
     titleClass: 'text-white',
-    subtitle: "Tecnologie all'avanguardia e 35 anni di esperienza per spazi sempre all'altezza.",
+    subtitle: "Tecnologie all'avanguardia e 35 anni di esperienza nel settore.",
     cta: null,
   },
   {
@@ -40,7 +40,7 @@ const CHAPTERS = [
     eyebrow: '04 / 04',
     title: 'della Natura.',
     titleClass: 'text-[var(--accent)]',
-    subtitle: 'Soluzioni sostenibili, prodotti eco-compatibili e rispetto totale per ogni ambiente.',
+    subtitle: "Soluzioni sostenibili, prodotti eco-compatibili e rispetto per l'ambiente.",
     cta: 'Richiedi Sopralluogo Gratuito',
   },
 ]
@@ -49,7 +49,7 @@ const CHAPTERS = [
 
 /* ─── Motion variants ─── */
 const textVariants: Variants = {
-  hidden:  { opacity: 0, y: 32, filter: 'blur(6px)' },
+  hidden: { opacity: 0, y: 32, filter: 'blur(6px)' },
   visible: {
     opacity: 1,
     y: 0,
@@ -65,27 +65,27 @@ const textVariants: Variants = {
 }
 
 const eyebrowVariants: Variants = {
-  hidden:  { opacity: 0, x: -16 },
+  hidden: { opacity: 0, x: -16 },
   visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: EASE_OUT, delay: 0.05 } },
-  exit:    { opacity: 0, x: 16, transition: { duration: 0.25 } },
+  exit: { opacity: 0, x: 16, transition: { duration: 0.25 } },
 }
 
 const subtitleVariants: Variants = {
-  hidden:  { opacity: 0, y: 32, filter: 'blur(6px)' },
+  hidden: { opacity: 0, y: 32, filter: 'blur(6px)' },
   visible: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 0.65, ease: EASE_OUT, delay: 0.12 } },
-  exit:    { opacity: 0, y: -20, filter: 'blur(4px)', transition: { duration: 0.35, ease: EASE_IN } },
+  exit: { opacity: 0, y: -20, filter: 'blur(4px)', transition: { duration: 0.35, ease: EASE_IN } },
 }
 
 const ctaVariants: Variants = {
-  hidden:  { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { delay: 0.22, duration: 0.55, ease: EASE_OUT } },
-  exit:    { opacity: 0, transition: { duration: 0.2 } },
+  exit: { opacity: 0, transition: { duration: 0.2 } },
 }
 
 /* ─── Componente principale ─── */
 export function ScrollVideoSection() {
   const sectionRef = useRef<HTMLDivElement>(null)
-  const videoRef   = useRef<HTMLVideoElement>(null)
+  const videoRef = useRef<HTMLVideoElement>(null)
 
   const { progress, isMobile } = useScrollVideoScrub(sectionRef, videoRef, { totalVh: 500 })
 
@@ -181,7 +181,7 @@ export function ScrollVideoSection() {
                       >
                         {CHAPTERS[activeChapter].cta}
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                       </WhatsAppHybridLink>
                     </motion.div>
@@ -199,7 +199,7 @@ export function ScrollVideoSection() {
               key={i}
               className="transition-all duration-500"
               style={{
-                width:  i === activeChapter ? 3 : 2,
+                width: i === activeChapter ? 3 : 2,
                 height: i === activeChapter ? 32 : 16,
                 borderRadius: 4,
                 background: i === activeChapter ? '#4ECBA0' : 'rgba(255,255,255,0.2)',

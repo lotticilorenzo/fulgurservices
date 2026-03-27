@@ -189,13 +189,21 @@ export function ContactForm() {
         )}
       </div>
 
+      {/* Error Message */}
+      {submitError && (
+        <div role="alert" className="flex items-start gap-3 p-4 rounded-xl bg-red-50 border border-red-200 text-red-600 text-sm font-medium animate-in fade-in slide-in-from-top-2">
+          <Warning size={18} weight="fill" className="shrink-0 mt-0.5" />
+          <span>{submitError}</span>
+        </div>
+      )}
+
       <button
         type="submit"
         disabled={isSubmitting}
         className="mt-2 flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-[var(--tx-1)] text-[var(--bg)] font-display font-bold text-sm hover:bg-[var(--accent)] transition-all duration-300 hover:shadow-[0_8px_30px_var(--accent-glow-h)] hover:-translate-y-0.5 hover:scale-[1.01] disabled:transform-none disabled:shadow-none disabled:opacity-50 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2"
       >
         {isSubmitting
-          ? 'Invio in corso...'
+          ? <span className="flex items-center gap-2">Invio in corso... <Check size={16} className="animate-pulse" /></span>
           : <><span>Invia Messaggio</span><PaperPlaneRight weight="fill" aria-hidden="true" /></>
         }
       </button>

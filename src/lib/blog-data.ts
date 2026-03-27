@@ -38,7 +38,7 @@ export const BLOG_POSTS: BlogPost[] = [
 
       <p>Siamo fieri di far parte di questa comunità. E continuiamo a crescere insieme.</p>
 
-      <p>Seguici su Instagram <a href="https://www.instagram.com/fulgurservicesrl_" target="_blank" rel="noopener noreferrer">@fulgurservicesrl_</a> e vai a vedere il post originale di KilometroVerde Parma per scoprire tutti i nuovi soci.</p>
+      <p>Seguici su Instagram <a href="https://www.instagram.com/fulgurservicesrl_/" target="_blank" rel="noopener noreferrer">@fulgurservicesrl_</a> e vai a vedere il post originale di KilometroVerde Parma per scoprire tutti i nuovi soci.</p>
     `,
     date: '23 Marzo 2026',
     author: 'Team Fulgur',

@@ -10,7 +10,7 @@ const STEPS = [
   {
     id: '01',
     title: 'Sopralluogo gratuito',
-    desc: 'Veniamo da te senza impegno. Valutiamo l\'ambiente, ascoltiamo ogni esigenza e raccogliamo tutti i dettagli necessari.',
+    desc: 'Valutiamo il tuo ambiente, ascoltiamo ogni esigenza e raccogliamo tutti i dettagli necessari.',
     icon: MagnifyingGlass,
     detail: 'Nessun costo, nessun vincolo. Solo ascolto.',
   },
@@ -73,7 +73,7 @@ export function ProcessStepper() {
 
 function StepCard({ step, index, total }: { step: { id: string; title: string; desc: string; icon: React.ElementType; detail: string }; index: number; total: number }) {
   const containerRef = useRef<HTMLDivElement>(null)
-  
+
   // Track scroll inside the space taken by the margin below this card
   // When top of container is at 15vh (the sticky top), progress starts
   // When top of container is at -60vh (meaning it has scrolled up 75vh), progress is 1
@@ -84,7 +84,7 @@ function StepCard({ step, index, total }: { step: { id: string; title: string; d
 
   // We only scale down if it's NOT the last card
   const isLast = index === total - 1
-  
+
   const scale = useTransform(scrollYProgress, [0, 1], [1, isLast ? 1 : 0.92])
   const opacity = useTransform(scrollYProgress, [0, 1], [1, isLast ? 1 : 0.25])
   const filter = useTransform(scrollYProgress, [0, 1], ['blur(0px)', isLast ? 'blur(0px)' : 'blur(8px)'])
@@ -156,11 +156,10 @@ function StepCard({ step, index, total }: { step: { id: string; title: string; d
             {Array.from({ length: total }).map((_, j) => (
               <div
                 key={j}
-                className={`h-1.5 rounded-full transition-all duration-300 ${
-                  j <= index
-                    ? 'bg-[var(--accent)] shadow-[0_0_10px_rgba(78,203,160,0.5)] w-5 sm:w-6'
-                    : 'bg-[var(--br-h)] w-1.5 sm:w-2'
-                }`}
+                className={`h-1.5 rounded-full transition-all duration-300 ${j <= index
+                  ? 'bg-[var(--accent)] shadow-[0_0_10px_rgba(78,203,160,0.5)] w-5 sm:w-6'
+                  : 'bg-[var(--br-h)] w-1.5 sm:w-2'
+                  }`}
               />
             ))}
           </div>

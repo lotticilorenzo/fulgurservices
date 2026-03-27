@@ -190,7 +190,7 @@ export const STRUCTURED_DATA = {
       closes: '18:00',
     },
   ],
-  sameAs: ['https://www.instagram.com/fulgurservice/'],
+  sameAs: ['https://www.instagram.com/fulgurservicesrl_/'],
   priceRange: '€€',
   areaServed: {
     '@type': 'Country',
@@ -223,7 +223,7 @@ export function makeServiceJsonLd(service: {
       telephone: '+39-338-316-0091',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Via Alfredo Veroni, 22',
+        streetAddress: 'Via Alfredo Veroni, 20',
         addressLocality: 'Parma',
         addressRegion: 'PR',
         postalCode: '43122',

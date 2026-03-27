@@ -23,7 +23,7 @@ export const SERVICES: Service[] = [
     slug: 'pulizie-aziendali',
     title: 'Pulizie Aziendali',
     shortDesc: 'Servizi di pulizia professionale per uffici, negozi e spazi commerciali a Parma e provincia.',
-    longDesc: 'Garantiamo ambienti di lavoro impeccabili. Gestiamo pulizie ordinarie e straordinarie per uffici, sedi aziendali, showroom e spazi commerciali a Parma di ogni dimensione. Team dedicato, prodotti eco-certificati e interventi su misura.',
+    longDesc: 'Garantiamo ambienti di lavoro impeccabili. Gestiamo pulizie ordinarie e straordinarie per uffici, sedi aziendali, showroom e spazi commerciali a Parma di ogni dimensione.',
     icon: 'Buildings',
     featured: true,
     keywords: ['pulizie uffici Parma', 'pulizie aziendali Parma', 'pulizie commerciali Parma', 'pulizia negozi Parma'],
@@ -31,7 +31,7 @@ export const SERVICES: Service[] = [
     sectors: ['Uffici direzionali', 'Negozi e Showroom', 'Banche e Assicurazioni', 'Spazi Co-working'],
     metaTitle: 'Pulizie Uffici e Aziendali Parma | Fulgur Service',
     metaDescription: 'Pulizie professionali per uffici e aziende a Parma. Massima igiene, prodotti eco e preventivi rapidi. Scopri i nostri servizi aziendali.',
-    image: '/images/servizi/pulizie-aziendali-parma.jpg',
+    image: '/images/servizi/pulizia_uffici.png',
   },
   {
     id: '02',
@@ -61,7 +61,7 @@ export const SERVICES: Service[] = [
     sectors: ['Studi Medici e Dentistici', 'Cliniche e Poliambulatori', 'Farmacie', 'Centri Estetici'],
     metaTitle: 'Sanificazione e Pulizie Sanitarie Parma | Fulgur Service',
     metaDescription: 'Servizi di sanificazione e pulizia per studi medici e cliniche a Parma. Protocolli HACCP e massima sicurezza igienica.',
-    image: '/images/operatori-pulizie-professionali-parma.jpg',
+    image: '/images/servizi/donne-pulizie.png',
   },
   {
     id: '04',
@@ -83,7 +83,7 @@ export const SERVICES: Service[] = [
     slug: 'settore-alberghiero',
     title: 'Settore Alberghiero',
     shortDesc: 'Servizi di housekeeping e pulizia per hotel e B&B a Parma e provincia.',
-    longDesc: 'Standard di pulizia elevati per il settore ricettivo. Gestiamo pulizia camere, lobby, spa e aree comuni con la massima discrezione, garantendo un’esperienza eccellente ai tuoi ospiti a Parma.',
+    longDesc: 'Gestiamo pulizia camere, lobby, spa e aree comuni con la massima discrezione, garantendo un’esperienza di qualità ai tuoi ospiti a Parma.',
     icon: 'Bed',
     featured: false,
     keywords: ['pulizie hotel Parma', 'housekeeping Parma', 'pulizie B&B Parma', 'pulizia strutture ricettive'],
@@ -91,14 +91,14 @@ export const SERVICES: Service[] = [
     sectors: ['Hotel e Alberghi', 'B&B e affittacamere', 'Agriturismi', 'Residence Turistici'],
     metaTitle: 'Pulizie Hotel e Settore Alberghiero Parma | Fulgur Service',
     metaDescription: 'Servizi professionali di pulizia e housekeeping per hotel e B&B a Parma. Esperienza e discrezione garantite.',
-    image: '/images/servizi/pulizie-settore-alberghiero-hotel-bed-breakfast-parma.webp',
+    image: '/images/servizi/pulizie-alberghiere.png',
   },
   {
     id: '06',
     slug: 'trattamento-superfici',
     title: 'Trattamento Superfici',
     shortDesc: 'Lavaggio meccanizzato e trattamento di marmo, cotto, parquet e altre superfici a Parma.',
-    longDesc: 'Proteggiamo e valorizziamo i tuoi pavimenti con tecniche avanzate. Da oltre 35 anni siamo specialisti nella cristallizzazione del marmo, trattamenti per gres porcellanato e oliatura parquet a Parma.',
+    longDesc: 'Lavaggio Moquette Ufficio Open Space Aspirazione profonda e lavaggio di moquette in ufficio open space con forte accumulo di polvere e sporco da calpestio intenso. Risultato uniforme e igienizzato.',
     icon: 'Sparkle',
     featured: true,
     keywords: ['lucidatura marmo Parma', 'trattamento gres Parma', 'cristallizzazione marmo Parma', 'levigatura pavimenti'],
@@ -106,7 +106,7 @@ export const SERVICES: Service[] = [
     sectors: ['Abitazioni private', 'Uffici di rappresentanza', 'Negozi e showroom', 'Hotel di lusso'],
     metaTitle: 'Trattamento Pavimenti e Lucidatura Marmo Parma | Fulgur Service',
     metaDescription: 'Esperti nel trattamento superfici a Parma: marmo, gres, parquet e cotto. Risultati duraturi con tecnologie all’avanguardia.',
-    image: '/images/trattamento-superfici-parma.jpg',
+    image: '/images/servizi/trattamentisuperfici.png',
   },
   {
     id: '07',
@@ -121,7 +121,7 @@ export const SERVICES: Service[] = [
     sectors: ['Ristrutturazioni Private', 'Nuove costruzioni immobiliari', 'Uffici recentemente rinnovati'],
     metaTitle: 'Pulizie Fine Cantiere e Post-Ristrutturazione Parma | Fulgur Service',
     metaDescription: 'Servizi di pulizia post-cantiere a Parma. Rimozione residui edili e consegna locali impeccabili. Preventivi rapidi.',
-    image: '/images/servizi/pulizie-fine-cantiere-parma.jpg',
+    image: '/images/servizi/puliziefinecantiere.png',
   },
   {
     id: '08',
@@ -151,7 +151,7 @@ export const SERVICES: Service[] = [
     sectors: ['Impianti Fotovoltaici Casa', 'Aziende con impianti solari', 'Campi fotovoltaici industriali'],
     metaTitle: 'Pulizia Pannelli Fotovoltaici e Solari Parma | Fulgur Service',
     metaDescription: 'Ottimizza la resa del tuo impianto fotovoltaico a Parma. Pulizia professionale con acqua demineralizzata. Preventivo gratuito.',
-    image: '/images/servizi/pannelli-fotovoltaici-parma.jpg',
+    image: '/images/servizi/pannelli-fotovoltaici.jpeg',
   },
   {
     id: '10',
@@ -196,7 +196,7 @@ export const SERVICES: Service[] = [
     sectors: ['Ville e Appartamenti', 'Case in affitto / Airbnb', 'Abitazioni in fase di trasloco'],
     metaTitle: 'Pulizie Civili e Casa Parma | Fulgur Service',
     metaDescription: 'Servizi di pulizia per abitazioni private a Parma. Pulizie ordinarie e straordinarie con la qualità garantita di Fulgur Service.',
-    image: '/images/servizi/pulizie-civili-parma.jpg',
+    image: '/images/servizi/pulizia-interni-casa.jpeg',
   },
   {
     id: '13',
@@ -234,7 +234,7 @@ export const SERVICES: Service[] = [
     title: 'Pulizia Facciate',
     shortDesc: 'Lavaggio e ripristino di facciate esterne civili e industriali a Parma.',
     longDesc: 'Restituiamo decoro agli edifici rimuovendo smog, muschio, graffiti e segni del tempo. Interveniamo su facciate in mattoni, pietra, intonaco e rivestimenti moderni con tecniche ad alta pressione, sabbiatura leggera o macchinari a osmosi.',
-    icon: 'Buildings', 
+    icon: 'Buildings',
     featured: false,
     keywords: ['pulizia facciate Parma', 'lavaggio muri esterni Parma', 'rimozione graffiti Parma'],
     benefits: ['Idrolavaggio a pressione controllata', 'Rimozione smog e agenti inquinanti', 'Sistemi ad osmosi per rivestimenti', 'Trattamenti idrorepellenti protettivi', 'Sverniciatura e rimozione graffiti'],
@@ -249,7 +249,7 @@ export const SERVICES: Service[] = [
 export const INTEGRATED_SERVICES = [
   {
     title: 'Manutenzione idraulica',
-    desc: 'Interventi idraulici di manutenzione ordinaria inclusi per i clienti Fulgur',
+    desc: 'Interventi idraulici di manutenzione ordinaria',
     icon: 'Drop',
   },
   {
@@ -274,7 +274,7 @@ export const INTEGRATED_SERVICES = [
   },
   {
     title: 'Fornitura carta e sapone',
-    desc: 'Fornitura materiali di consumo e servizio lavanderia per i clienti Fulgur',
+    desc: 'Fornitura materiali di consumo e servizio lavanderia',
     icon: 'Basket',
   },
 ];

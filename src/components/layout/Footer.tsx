@@ -67,7 +67,7 @@ export function Footer() {
             {/* Social + WhatsApp */}
             <div className="mt-8 flex items-center gap-4">
               <a
-                href="https://www.instagram.com/fulgurservice/"
+                href="https://www.instagram.com/fulgurservicesrl_/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Seguici su Instagram"

@@ -86,14 +86,10 @@ export function AboutSection() {
             <ScrollReveal delay={0.1}>
               <div className="mt-5 sm:mt-7 space-y-4 sm:space-y-5 font-body text-[0.95rem] sm:text-[1.05rem] font-light text-[var(--tx-2)] leading-relaxed">
                 <p>
-                  Fulgur Service è un&apos;impresa giovane, nata da idee chiare e innovative,
-                  con alle spalle 35 anni di esperienza: siamo il punto d&apos;incontro tra
-                  la visione fresca di una nuova generazione e la solidità del lavoro
-                  costruito da mio padre.
+                  Fulgur Service è un&apos;impresa giovane, nata da idee chiare e innovative e la voglia di mettersi in gioco. I nostri 35 anni di esperienza ci rendono il punto d&apos;incontro tra la visione fresca di una nuova generazione e la solidità del lavoro costruito nei decenni.
                 </p>
                 <p>
-                  Per noi la pulizia non è un&apos;attività meccanica: non siamo semplici
-                  fornitori, ma partner che si prendono cura dell&apos;ambiente del cliente a 360°.
+                  Per noi la pulizia non è un&apos;attività meccanica: siamo i partner che si prendono cura del tuo ambiente a 360°.
                 </p>
               </div>
             </ScrollReveal>

@@ -26,6 +26,7 @@ const NAV_ITEMS = [
   { label: 'Chi Siamo',     href: '/chi-siamo' },
   { label: 'Macchinari',    href: '/macchinari' },
   { label: 'Lavora con noi',href: '/lavora-con-noi' },
+  { label: 'Contatti',      href: '/contatti' },
 ]
 
 const MOBILE_LINKS = [

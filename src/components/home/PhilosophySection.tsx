@@ -94,7 +94,7 @@ export function PhilosophySection() {
           <div className="flex flex-col items-center mt-6 gap-1">
             <div className="h-8 w-px bg-gradient-to-b from-[var(--br-h)] to-[var(--accent)] opacity-60" />
             <div className="font-mono-fulgur text-[13px] sm:text-sm font-bold uppercase tracking-[0.2em] text-[var(--accent)]">
-              Noi invece
+              Al contrario
             </div>
           </div>
         </div>
@@ -115,7 +115,7 @@ export function PhilosophySection() {
           </div>
 
           <div className="flex flex-wrap justify-center">
-            {renderWords('prendersi', 'text-[var(--tx-1)]')}
+            {renderWords('Noi ci prendiamo', 'text-[var(--tx-1)]')}
             <span
               className="anim-word inline-block text-[var(--accent)]"
               style={{ fontStyle: 'italic' }}
@@ -124,10 +124,10 @@ export function PhilosophySection() {
             </span>
           </div>
           <div className="flex flex-wrap justify-center w-full mt-1 lg:mt-2">
-            {renderWords("dell'ambiente del cliente", 'text-[var(--tx-1)]')}
+            {renderWords('del tuo ambiente', 'text-[var(--tx-1)]')}
           </div>
           <div className="flex flex-wrap justify-center w-full mt-1 lg:mt-2">
-            {renderWords('come se fosse nostro.', 'text-[var(--tx-1)]')}
+            {renderWords('come fosse il nostro.', 'text-[var(--tx-1)]')}
           </div>
         </div>
       </div>

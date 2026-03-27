@@ -17,10 +17,12 @@ export async function POST(req: NextRequest) {
     // Configurazione Trasportatore Nodemailer
     // Nota: SMTP_USER e SMTP_PASS devono essere settati nel .env
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
+      host: process.env.SMTP_HOST || 'smtp.gmail.com',
+      port: Number(process.env.SMTP_PORT) || 465,
+      secure: true,
       auth: {
-        user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_PASS,
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
       },
     });
 
@@ -35,7 +37,7 @@ export async function POST(req: NextRequest) {
     }
 
     const mailOptions = {
-      from: `"Sito Web Fulgur" <${process.env.GMAIL_USER}>`,
+      from: `"Sito Web Fulgur" <${process.env.SMTP_USER}>`,
       to: 'fulgurservice@gmail.com',
       replyTo: email,
       subject: `LAVORA CON NOI - Nuova Candidatura: ${nome}`,

@@ -59,7 +59,7 @@ export default function ChiSiamoPage() {
         <ScrollReveal>
           <div className="w-full aspect-[4/3] sm:aspect-[21/9] rounded-3xl overflow-hidden relative border border-[var(--br)] bg-[var(--bg-2)] shadow-xl">
             <Image
-          src="/images/team-operatori-pulizie-professionali-parma.webp"
+          src="/images/servizi/pulizia-interni-casa.jpeg"
           alt="Il team di operatori professionisti di Fulgur Service al lavoro a Parma"
           fill
           className="object-cover transition-transform duration-700 hover:scale-105"

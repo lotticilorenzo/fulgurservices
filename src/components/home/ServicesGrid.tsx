@@ -18,11 +18,11 @@ const IntegratedIconMap: Record<string, React.ElementType> = {
 
 export function ServicesGrid() {
   // Row 1: Aziendali (large) + Sanitario (medium)
-  const aziendali  = SERVICES.find((s) => s.slug === 'pulizie-aziendali')!
-  const sanitario  = SERVICES.find((s) => s.slug === 'settore-sanitario')!
+  const aziendali = SERVICES.find((s) => s.slug === 'pulizie-aziendali')!
+  const sanitario = SERVICES.find((s) => s.slug === 'settore-sanitario')!
 
   // Row 2: Superfici (medium) + Industriali (large)
-  const superfici  = SERVICES.find((s) => s.slug === 'trattamento-superfici')!
+  const superfici = SERVICES.find((s) => s.slug === 'trattamento-superfici')!
   const industriali = SERVICES.find((s) => s.slug === 'pulizie-industriali')!
 
   // Row 3: 3 medium cards
@@ -42,7 +42,7 @@ export function ServicesGrid() {
 
       {/* Container */}
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8 relative z-10">
-        
+
         {/* Header Section */}
         <div className="mb-8 md:mb-16 max-w-2xl lg:mb-20">
           <SectionLabel className="mb-4">— I NOSTRI SERVIZI</SectionLabel>
@@ -96,8 +96,8 @@ export function ServicesGrid() {
 
         {/* View All Services CTA */}
         <div className="mt-8 sm:mt-12 mb-16 flex justify-center">
-          <Link 
-            href="/servizi" 
+          <Link
+            href="/servizi"
             className="group flex min-h-[44px] w-full sm:w-auto items-center justify-center gap-2 rounded-xl sm:rounded-none bg-[var(--bg-2)] sm:bg-transparent border sm:border-transparent border-[var(--br)] px-6 py-3 sm:p-0 font-display text-base sm:text-sm font-bold text-[var(--tx-1)] sm:text-[var(--tx-2)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-all"
           >
             <span>Vedi tutte le 12 aree di intervento</span>
@@ -109,13 +109,13 @@ export function ServicesGrid() {
         {/* IMPRESA 360° — Servizi Integrati */}
         {/* ────────────────────────────────────────── */}
         <div className="mt-12 md:mt-20 relative overflow-hidden rounded-3xl md:rounded-[2.5rem] border border-[var(--br)] bg-gradient-to-br from-[var(--bg-2)] to-[var(--bg-3)] p-6 sm:p-10 lg:p-14">
-          
+
           {/* Decorative glow */}
           <div className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-[var(--accent)] opacity-[0.06] blur-[80px] pointer-events-none" />
-          
+
           <ScrollReveal>
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 lg:gap-16 items-start">
-              
+
               {/* Left: Intro text */}
               <div>
                 <SectionLabel className="mb-5">— IMPRESA 360°</SectionLabel>
@@ -124,9 +124,7 @@ export function ServicesGrid() {
                   <span className="text-[var(--accent)]">per tutto.</span>
                 </h2>
                 <p className="mt-5 max-w-lg font-sans text-base font-light leading-relaxed text-[var(--tx-2)]">
-                  Per i clienti Fulgur, oltre alle pulizie gestiamo anche manutenzione
-                  idraulica, edile ed elettrica ordinaria. Un solo referente per tutto
-                  ciò che riguarda i tuoi spazi.
+                  Per i clienti Fulgur, oltre alle pulizie gestiamo anche manutenzione idraulica, edile ed elettrica ordinaria.
                 </p>
               </div>
 

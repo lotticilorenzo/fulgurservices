@@ -32,7 +32,7 @@ PRINCIPI OPERATIVI:
 **Cap. Soc.:** €10.000  
 **Tel:** +39 338 316 0091 *(cliccabile su mobile)*  
 **Email:** fulgurservice@gmail.com  
-**Instagram:** https://www.instagram.com/fulgurservice/  
+**Instagram:** https://www.instagram.com/fulgurservicesrl_/  
 **Sito attuale (obsoleto):** https://www.fulgurservice.it *(su Shopify — da sostituire)*  
 **WhatsApp link:** https://wa.me/393383160091?text=Ciao%2C%20vorrei%20richiedere%20un%20sopralluogo%20gratuito
 

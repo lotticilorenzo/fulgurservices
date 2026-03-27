@@ -12,7 +12,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     id: 'carpet-office-cleaning',
     title: 'Lavaggio Moquette Ufficio Open Space',
-    description: 'Aspirazione profonda e lavaggio di moquette in ufficio open space con forte accumulo di polvere e sporco da traffico pedonale intenso. Risultato uniforme e igienizzato.',
+    description: 'Aspirazione profonda e lavaggio di moquette in ufficio open space con forte accumulo di polvere e sporco da calpestio intenso. Risultato uniforme e igienizzato.',
     category: 'Trattamento Superfici',
     beforeImage: '/images/case-studies/primapulizia.png',
     afterImage: '/images/case-studies/dopopulizia.png',
