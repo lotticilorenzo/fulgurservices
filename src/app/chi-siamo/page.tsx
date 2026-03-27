@@ -70,7 +70,7 @@ export default function ChiSiamoPage() {
             <div className="absolute bottom-6 left-6 right-6 sm:bottom-8 sm:left-8 sm:right-8 z-10 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6">
               <div className="text-left max-w-lg">
                 <h3 className="font-display text-xl sm:text-2xl font-bold text-white mb-2">Una promessa di valore</h3>
-                <p className="font-sans text-sm text-white/90">Per noi la pulizia non è un&apos;attività meccanica: non siamo semplici fornitori, ma partner che si prendono cura dell&apos;ambiente del cliente a 360°.</p>
+                <p className="font-sans text-sm text-white/90">Per noi la pulizia non è un&apos;attività meccanica: siamo i partner che si prendono cura del tuo ambiente a 360°.</p>
               </div>
             </div>
           </div>
