@@ -10,7 +10,7 @@ const TRUST_DATA = [
     value: 2,
     suffix: "M+",
     label: "Massimale RCT",
-    desc: "Assicurazione completa per la totale tutela del patrimonio dei nostri clienti.",
+    desc: "Assicurazione completa per la tutela del patrimonio dei nostri clienti.",
     link: "/chi-siamo#garanzie"
   },
   {
