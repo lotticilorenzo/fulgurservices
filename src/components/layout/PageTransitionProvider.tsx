@@ -107,33 +107,37 @@ export function PageTransitionProvider({ children }: { children: React.ReactNode
 
       {showCurtain && (
         <motion.div
-          className="fixed inset-0 z-[700] flex items-center justify-center"
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: phase === 'out' ? 0 : 1 }}
-          transition={{ duration: 0.65, ease: EASE_CURTAIN }}
-          style={{ backgroundColor: '#FFFFFF', transformOrigin }}
-          onAnimationComplete={
-            phase === 'in'  ? onCoverComplete  :
-            phase === 'out' ? onRevealComplete : undefined
-          }
-        >
-          {/* Logo reale visibile mentre il curtain è a schermo intero */}
-          <motion.div
-            className="flex items-center justify-center pointer-events-none"
-            animate={{ opacity: phase === 'hold' ? 1 : 0 }}
-            transition={{ duration: 0.2 }}
-          >
-            <div className="flex items-center justify-center">
-              <Image
-                src="/images/logo-senza-sfondo.png"
-                alt="Fulgur Service"
-                width={220}
-                height={220}
-                priority
-              />
-            </div>
-          </motion.div>
-        </motion.div>
+           className="fixed inset-0 z-[700] flex items-center justify-center bg-white"
+           initial={{ scaleX: 0 }}
+           animate={{ scaleX: phase === 'out' ? 0 : 1 }}
+           transition={{ duration: 0.65, ease: EASE_CURTAIN }}
+           style={{ transformOrigin }}
+           onAnimationComplete={
+             phase === 'in'  ? onCoverComplete  :
+             phase === 'out' ? onRevealComplete : undefined
+           }
+         >
+           {/* Logo reale visibile mentre il curtain è a schermo intero */}
+           <motion.div
+             className="flex items-center justify-center pointer-events-none"
+             initial={{ opacity: 0, scale: 0.8 }}
+             animate={{ 
+               opacity: phase === 'hold' ? 1 : 0,
+               scale: phase === 'hold' ? 1 : 0.8
+             }}
+             transition={{ duration: 0.35, ease: 'easeOut' }}
+           >
+             <div className="relative w-40 h-40 md:w-64 md:h-64">
+               <Image
+                 src="/images/logo-senza-sfondo.png"
+                 alt="Fulgur Service"
+                 fill
+                 className="object-contain"
+                 priority
+               />
+             </div>
+           </motion.div>
+         </motion.div>
       )}
     </>
   )
