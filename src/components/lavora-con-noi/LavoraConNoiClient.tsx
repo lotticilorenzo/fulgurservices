@@ -278,15 +278,14 @@ export function LavoraConNoiClient() {
                              </label>
                            </div>
                            <div className="pt-4">
-                             <MagneticButton as="div">
-                               <button
-                                 type="submit"
-                                 disabled={isSubmitting}
-                                 className="w-full px-10 py-5 bg-[var(--accent)] text-white rounded-full font-display font-extrabold text-sm shadow-[0_10px_30px_rgba(78,203,160,0.3)] hover:scale-105 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
-                               >
-                                 {isSubmitting ? 'Invio in corso...' : 'Invia'}
-                                 <PaperPlaneRight weight="fill" aria-hidden="true" />
-                               </button>
+                             <MagneticButton
+                               as="button"
+                               type="submit"
+                               disabled={isSubmitting}
+                               className="w-full px-10 py-5 bg-[var(--accent)] text-white rounded-full font-display font-extrabold text-sm shadow-[0_10px_30px_rgba(78,203,160,0.3)] hover:scale-105 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+                             >
+                               {isSubmitting ? 'Invio in corso...' : 'Invia'}
+                               <PaperPlaneRight weight="fill" aria-hidden="true" />
                              </MagneticButton>
                            </div>
                          </form>
