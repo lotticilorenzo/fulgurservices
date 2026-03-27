@@ -65,5 +65,18 @@ export const MACHINERY_DATA: MachineBrand[] = [
       { label: 'Igienizzazione', value: '99.9% Batteri/Virus' },
       { label: 'Settore', value: 'Ecologico & FOOD' },
     ]
+  },
+  {
+    id: 'ecolabel',
+    name: 'EU Ecolabel',
+    description: 'Il marchio di qualità ecologica dell\'Unione Europea (Ecolabel UE) premia i prodotti e i servizi che hanno un basso impatto ambientale durante tutto il loro ciclo di vita.',
+    usage: 'Certificazione di eccellenza per i detergenti e i processi di pulizia a basso impatto ambientale utilizzati da Fulgur Service.',
+    image: '/images/macchinari/ecolabel.jpeg',
+    specs: [
+      { label: 'Certificazione', value: 'EU Ecolabel' },
+      { label: 'Impatto Materie Prime', value: 'Minimo & Biodegradabile' },
+      { label: 'Efficacia Pulizia', value: 'Testata & Garantita' },
+      { label: 'Settore', value: 'Sostenibilità & Ambiente' },
+    ]
   }
 ]
