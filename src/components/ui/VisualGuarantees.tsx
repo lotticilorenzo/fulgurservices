@@ -11,7 +11,7 @@ const GUARANTEES = [
     title: "35 anni di esperienza",
     data: "",
     // [TODO/CLIENTE]: Inserire foto reale "storica" o del team storico (w=600px minimo)
-    img: "/images/fondatore-impresa-pulizie-fulgur-service-parma.webp",
+    img: "/images/gallery/furgone-fulgur-service-centro-storico-parma.jpg",
     size: "large"
   },
   {

@@ -147,34 +147,5 @@ export const BLOG_POSTS: BlogPost[] = [
     image: '/images/servizi/pannelli-fotovoltaici-parma.jpg',
     readTime: '5 min',
     keywords: ['pulizia pannelli fotovoltaici Parma', 'manutenzione fotovoltaico Parma', 'lavaggio pannelli solari', 'efficienza fotovoltaico']
-  },
-  {
-    id: '03',
-    slug: 'efficienza-fotovoltaico-pulizia-pannelli',
-    title: 'Efficienza Fotovoltaico: Come lo Sporco Riduce la Tua Rendita Energetica',
-    excerpt: 'I pannelli fotovoltaici sporchi possono perdere fino al 30% della loro efficienza. Scopri perché la pioggia non basta a pulirli.',
-    content: `
-      <h2>Pannelli sporchi = Energia persa</h2>
-      <p>Molti proprietari di impianti fotovoltaici a Parma credono erroneamente che la pioggia sia sufficiente a mantenere puliti i pannelli. In realtà, la pioggia spesso deposita polveri sottili, pollini e sabbia che creano una patina opaca persistente.</p>
-
-      <h3>Le cause principali dell'inefficienza</h3>
-      <p>Depositi calcarei, guano di uccelli e inquinamento atmosferico creano delle "micro-ombre" sulle celle fotovoltaiche. Anche se sembra un problema minore, queste ombre possono causare il surriscaldamento delle celle (hot-spots) e ridurre drasticamente la produzione di tutto l'ordine di pannelli.</p>
-
-      <h3>La nostra tecnologia di pulizia</h3>
-      <p>Utilizziamo acqua demineralizzata purificata con sistemi ad osmosi inversa e spazzole rotanti a setole morbide certificate. Questo approccio garantisce:</p>
-      <ul>
-        <li>Assenza di aloni calcarei (tipici dell'acqua di rete).</li>
-        <li>Nessun graffio sul vetro temperato del pannello.</li>
-        <li>Ripristino immediato della massima resa energetica (fino al +30%).</li>
-      </ul>
-
-      <p>Un intervento di pulizia professionale si ripaga da solo attraverso il maggior risparmio in bolletta e la longevità dell'impianto.</p>
-    `,
-    date: '05 Marzo 2026',
-    author: 'Team Fulgur',
-    category: 'Tecniche',
-    image: '/images/servizi/pannelli-fotovoltaici-parma.jpg',
-    readTime: '6 min',
-    keywords: ['pulizia pannelli fotovoltaici Parma', 'manutenzione solare', 'efficienza energetica']
   }
 ]

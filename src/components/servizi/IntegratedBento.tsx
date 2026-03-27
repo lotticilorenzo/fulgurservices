@@ -46,7 +46,7 @@ export function IntegratedBento() {
             <BentoCard 
               index={0}
               title="Manutenzione idraulica"
-              img="/images/servizi/pulizie-industriali-parma.jpg"
+              img="/images/servizi/manutenzione_idrica.png"
               icon={Drop}
               overlayOpacity="bg-black/60"
             />
@@ -75,14 +75,14 @@ export function IntegratedBento() {
             <BentoCard
               index={4}
               title="Manutenzione giardinaggio"
-              img="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80"
+              img="/images/servizi/giardinaggio.png"
               icon={Leaf}
             />
             {/* LAVANDERIA & FORNITURE */}
             <BentoCard
               index={5}
               title="Fornitura carta e sapone"
-              img="https://images.unsplash.com/photo-1583947581924-860bda3a4669?w=600&q=80"
+              img="/images/servizi/fornitura-carta-sapone.png"
               icon={Basket}
             />
           </div>

@@ -181,7 +181,7 @@ export const SERVICES: Service[] = [
     sectors: ['Scuole e Asili', 'Abitazioni Private', 'Studi Medici', 'Settore Food'],
     metaTitle: 'Sanificazione a Vapore 180° Parma | Igiene Naturale | Fulgur Service',
     metaDescription: 'Sanificazione professionale a vapore 180° a Parma. Igienizzazione profonda, ecologica e sicura per ogni ambiente.',
-    image: '/images/fulgur-service-pulizie-sostenibili.jpg',
+    image: '/images/servizi/sanificazione_vapore.png',
   },
   {
     id: '12',
@@ -211,7 +211,7 @@ export const SERVICES: Service[] = [
     sectors: ['Palestre e Fitness Club', 'Piscine', 'Palazzetti dello Sport', 'Centri Padel e Tennis'],
     metaTitle: 'Pulizia Strutture Sportive e Palestre Parma | Fulgur Service',
     metaDescription: 'Sanificazione e pulizia professionale per palestre, piscine e centri sportivi a Parma. Igiene totale e sicurezza per gli atleti.',
-    image: '/images/servizi/pulizie-palestre-strutture-sportive-parma.jpg',
+    image: '/images/servizi/pulizie-palestre.png',
   },
   {
     id: '14',
