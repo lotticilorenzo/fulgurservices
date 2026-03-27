@@ -132,8 +132,7 @@ export function GalleryClient() {
             </span>
           </h1>
           <p className="mt-6 font-sans text-lg font-light text-[var(--tx-2)] max-w-2xl text-balance">
-            Ambienti aziendali, industriali, sanitari, alberghieri e residenziali.
-            Ogni intervento è unico — ogni risultato è garantito.
+            Ambienti aziendali, industriali, sanitari, alberghieri e residenziali. Ogni intervento è unico, ogni risultato è garantito.
           </p>
 
           {/* FILTER PILLS */}

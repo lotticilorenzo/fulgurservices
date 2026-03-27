@@ -55,7 +55,7 @@ export function ProcessStepper() {
               <span className="text-[var(--accent)]">perfetto.</span>
             </h2>
             <p className="mt-5 font-body text-base font-light text-[var(--tx-2)] max-w-md mx-auto leading-relaxed">
-              4 fasi trasparenti per garantirti il massimo risultato, senza complicazioni.
+              4 fasi trasparenti per garantirti il massimo risultato.
             </p>
           </div>
         </ScrollReveal>
