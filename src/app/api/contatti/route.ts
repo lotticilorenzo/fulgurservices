@@ -64,12 +64,13 @@ export async function POST(req: Request) {
     const smtpUser = process.env.SMTP_USER
     const smtpPass = process.env.SMTP_PASS
 
-    if (smtpUser && smtpPass && smtpPass !== 'mock_pass') {
+    if (smtpUser && smtpPass && smtpPass !== 'mock_pass' && smtpPass !== 'TBD_APP_PASSWORD_HERE') {
+      const cleanPass = smtpPass.replace(/\s+/g, '');
       const transporter = nodemailer.createTransport({
         host:   process.env.SMTP_HOST ?? 'smtp.gmail.com',
         port:   Number(process.env.SMTP_PORT ?? 465),
         secure: true,
-        auth: { user: smtpUser, pass: smtpPass },
+        auth: { user: smtpUser, pass: cleanPass },
       })
       await transporter.sendMail(mailOptions)
     } else {

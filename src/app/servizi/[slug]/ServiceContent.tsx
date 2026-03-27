@@ -339,7 +339,7 @@ export function ServiceContent({ service }: ServiceContentProps) {
               Il tuo spazio merita <span className="text-[var(--accent)]">brillantezza.</span>
             </h2>
             <p className="font-sans text-lg sm:text-xl font-light text-[var(--tx-2)] mb-10 sm:mb-12 max-w-2xl text-balance leading-relaxed italic">
-              Sopralluogo gratuito per {service.title} entro 48 ore. Massima professionalità, nessun impegno.
+              Sopralluogo gratuito per {service.title} entro 48 ore.
             </p>
             
             <Link href="/preventivo" className="w-full sm:w-auto">

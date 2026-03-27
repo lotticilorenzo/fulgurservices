@@ -120,8 +120,8 @@ export function ServicesGrid() {
               <div>
                 <SectionLabel className="mb-5">— IMPRESA 360°</SectionLabel>
                 <h2 className="font-display text-3xl font-extrabold tracking-tight text-[var(--tx-1)] lg:text-4xl">
-                  Un partner unico <br className="hidden sm:block" />
-                  <span className="text-[var(--accent)]">per tutto.</span>
+                  Un solo partner <br className="hidden sm:block" />
+                  <span className="text-[var(--accent)]">per ogni tua esigenza</span>
                 </h2>
                 <p className="mt-5 max-w-lg font-sans text-base font-light leading-relaxed text-[var(--tx-2)]">
                   Per i clienti Fulgur, oltre alle pulizie gestiamo anche manutenzione idraulica, edile ed elettrica ordinaria.

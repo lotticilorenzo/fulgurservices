@@ -42,9 +42,16 @@ export function LavoraConNoiClient() {
     lettera: '',
   })
   const [cvFile, setCvFile] = useState<File | null>(null)
+  const [privacyAccepted, setPrivacyAccepted] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    
+    if (!privacyAccepted) {
+      alert("Devi accettare la Privacy Policy per procedere.")
+      return
+    }
+
     setIsSubmitting(true)
 
     try {
@@ -65,12 +72,21 @@ export function LavoraConNoiClient() {
       if (response.ok) {
         setIsSent(true)
       } else {
-        const err = await response.json()
-        alert(err.message || "Errore durante l'invio della candidatura. Riprova più tardi.")
+        // Gestione errori più robusta per catturare 413 (Payload Too Large) o 500
+        let errorMessage = "Errore durante l'invio della candidatura. Riprova più tardi."
+        try {
+          const err = await response.json()
+          errorMessage = err.message || errorMessage
+        } catch (e) {
+          if (response.status === 413) {
+            errorMessage = "Il file allegato è troppo grande (max 4.5MB). Prova con un file più leggero."
+          }
+        }
+        alert(errorMessage)
       }
     } catch (error) {
       console.error('Submission error:', error)
-      alert("Si è verificato un errore di rete. Controlla la tua connessione.")
+      alert("Si è verificato un errore di rete. Controlla la tua connessione o la dimensione del file.")
     } finally {
       setIsSubmitting(false)
     }
@@ -221,21 +237,36 @@ export function LavoraConNoiClient() {
                                  {cvFile ? `File pronto: ${cvFile.name}` : 'Trascina o clicca per caricare'}
                                </span>
                                <input
-                                 type="file"
-                                 accept=".pdf"
-                                 required
-                                 onChange={(e) => setCvFile(e.target.files?.[0] || null)}
-                                 className="absolute inset-0 opacity-0 cursor-pointer"
-                                 aria-label="Carica il tuo curriculum in formato PDF"
-                               />
+                                  type="file"
+                                  accept=".pdf"
+                                  required
+                                  onChange={(e) => {
+                                    const file = e.target.files?.[0] || null
+                                    if (file && file.size > 4.5 * 1024 * 1024) {
+                                      alert("Il file è troppo grande. Il limite massimo è 4.5MB per le restrizioni del server.")
+                                      e.target.value = ""
+                                      setCvFile(null)
+                                      return
+                                    }
+                                    setCvFile(file)
+                                  }}
+                                  className="absolute inset-0 opacity-0 cursor-pointer"
+                                  aria-label="Carica il tuo curriculum in formato PDF"
+                                />
                              </div>
                              <p className="mt-2 text-[10px] text-white/30 font-sans">Formato accettato: PDF. Max 5MB.</p>
                            </div>
                            <div className="pt-1">
-                             <label className="flex items-start gap-3 cursor-pointer">
+                             <label className="flex items-start gap-3 cursor-pointer group/privacy">
                                <div className="relative flex items-start pt-0.5">
-                                 <input type="checkbox" required className="peer sr-only" />
-                                 <div className="w-5 h-5 rounded-[4px] border border-white/20 bg-white/5 peer-checked:bg-[var(--accent)] peer-checked:border-[var(--accent)] transition-colors flex items-center justify-center">
+                                 <input 
+                                   type="checkbox" 
+                                   required 
+                                   checked={privacyAccepted}
+                                   onChange={(e) => setPrivacyAccepted(e.target.checked)}
+                                   className="peer sr-only" 
+                                 />
+                                 <div className="w-5 h-5 rounded-[4px] border border-white/20 bg-white/5 peer-checked:bg-[var(--accent)] peer-checked:border-[var(--accent)] transition-colors flex items-center justify-center group-hover/privacy:border-white/40">
                                    <CheckCircle weight="bold" className="text-white opacity-0 peer-checked:opacity-100 transition-opacity" size={14} />
                                  </div>
                                </div>

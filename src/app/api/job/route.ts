@@ -14,55 +14,63 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ message: 'Nome e Email sono obbligatori.' }, { status: 400 });
     }
 
-    // Configurazione Trasportatore Nodemailer
-    // Nota: SMTP_USER e SMTP_PASS devono essere settati nel .env
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST || 'smtp.gmail.com',
-      port: Number(process.env.SMTP_PORT) || 465,
-      secure: true,
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-    });
+    const smtpUser = process.env.SMTP_USER;
+    const smtpPass = process.env.SMTP_PASS;
 
-    const attachments = [];
-    if (cvFile && cvFile.size > 0) {
-      const arrayBuffer = await cvFile.arrayBuffer();
-      const buffer = Buffer.from(arrayBuffer);
-      attachments.push({
-        filename: cvFile.name,
-        content: buffer,
+    if (smtpUser && smtpPass && smtpPass !== 'TBD_APP_PASSWORD_HERE') {
+      // Pulizia password da eventuali spazi salvati male (comune con Gmail)
+      const cleanPass = smtpPass.replace(/\s+/g, '');
+
+      const transporter = nodemailer.createTransport({
+        host: process.env.SMTP_HOST || 'smtp.gmail.com',
+        port: Number(process.env.SMTP_PORT) || 465,
+        secure: true,
+        auth: { 
+          user: smtpUser, 
+          pass: cleanPass 
+        },
       });
+
+      const attachments = [];
+      if (cvFile && cvFile.size > 0) {
+        const arrayBuffer = await cvFile.arrayBuffer();
+        const buffer = Buffer.from(arrayBuffer);
+        attachments.push({
+          filename: cvFile.name,
+          content: buffer,
+        });
+      }
+
+      const mailOptions = {
+        from: `"Sito Web Fulgur" <${smtpUser}>`,
+        to: 'fulgurservice@gmail.com',
+        replyTo: email,
+        subject: `LAVORA CON NOI - Nuova Candidatura: ${nome}`,
+        text: `
+          Hai ricevuto una nuova candidatura dal modulo "Lavora con Noi" del sito web.
+  
+          DATI CANDIDATO:
+          --------------------------------------------------
+          Nome e Cognome: ${nome}
+          Email: ${email}
+          Città di Residenza: ${citta || 'Non specificata'}
+  
+          LETTERA DI PRESENTAZIONE / NOTE:
+          --------------------------------------------------
+          ${lettera || 'Nessuna nota aggiuntiva fornita.'}
+  
+          --------------------------------------------------
+          L'eventuale CV (curriculum vitae) è allegato a questa email.
+          Rispondi direttamente a questa email per contattare il candidato.
+        `,
+        attachments,
+      };
+
+      await transporter.sendMail(mailOptions);
+    } else {
+      // Mock mode for development
+      await new Promise((resolve) => setTimeout(resolve, 800));
     }
-
-    const mailOptions = {
-      from: `"Sito Web Fulgur" <${process.env.SMTP_USER}>`,
-      to: 'fulgurservice@gmail.com',
-      replyTo: email,
-      subject: `LAVORA CON NOI - Nuova Candidatura: ${nome}`,
-      text: `
-        Hai ricevuto una nuova candidatura dal modulo "Lavora con Noi" del sito web.
-
-        DATI CANDIDATO:
-        --------------------------------------------------
-        Nome e Cognome: ${nome}
-        Email: ${email}
-        Città di Residenza: ${citta || 'Non specificata'}
-
-        LETTERA DI PRESENTAZIONE / NOTE:
-        --------------------------------------------------
-        ${lettera || 'Nessuna nota aggiuntiva fornita.'}
-
-        --------------------------------------------------
-        L'eventuale CV (curriculum vitae) è allegato a questa email.
-        Rispondi direttamente a questa email per contattare il candidato.
-      `,
-      attachments,
-    };
-
-    // Invio email
-    await transporter.sendMail(mailOptions);
 
     return NextResponse.json({ 
       success: true, 

@@ -12,10 +12,6 @@ interface LogoProps {
 }
 
 export function Logo({ size = 40, className = '', variant = 'default', iconOnly = false }: LogoProps) {
-  // Il logo ufficiale è in /images/logo-impresa-di-pulizie-parma-fulgur.png
-  // Se iconOnly è true, potremmo voler croppare o usare un'altra versione, 
-  // ma per ora usiamo la stessa immagine con overflow-hidden se necessario.
-  
   return (
     <div 
       className={cn("relative flex items-center justify-center overflow-visible", className)}

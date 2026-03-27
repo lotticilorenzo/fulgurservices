@@ -10,7 +10,7 @@ const GUARANTEES = [
     id: 1,
     title: "35 anni di esperienza",
     data: "",
-    // [TODO/CLIENTE]: Inserire foto reale "storica" o del team storico (w=600px minimo)
+    // NOTA: Inserire foto reale "storica" o del team storico (w=600px minimo)
     img: "/images/gallery/furgone-fulgur-service-centro-storico-parma.jpg",
     size: "large"
   },
@@ -18,7 +18,7 @@ const GUARANTEES = [
     id: 2,
     title: "Copertura Assicurativa",
     data: "RCT/RCO",
-    // [TODO/CLIENTE]: Inserire foto reale attestato/polizza assicurativa RCT (w=600px minimo)
+    // NOTA: Inserire foto reale attestato/polizza assicurativa RCT (w=600px minimo)
     img: "/images/logo-fulgur-service-impresa-pulizie-parma.webp",
     size: "medium"
   },
@@ -26,7 +26,7 @@ const GUARANTEES = [
     id: 3,
     title: "Prodotti HACCP",
     data: "100%",
-    // [TODO/CLIENTE]: Inserire foto reale dei prodotti usati (w=600px minimo)
+    // NOTA: Inserire foto reale dei prodotti usati (w=600px minimo)
     img: "/images/fulgur-service-pulizie-sostenibili.jpg",
     size: "medium"
   },
@@ -34,7 +34,7 @@ const GUARANTEES = [
     id: 4,
     title: "Team Qualificato",
     data: "Certificato",
-    // [TODO/CLIENTE]: Inserire foto reale della squadra (w=600px minimo)
+    // NOTA: Inserire foto reale della squadra (w=600px minimo)
     img: "/images/team-operatori-pulizie-professionali-parma.webp",
     size: "large"
   }

@@ -79,8 +79,8 @@ export function WhyChooseUs() {
             <ScrollReveal>
               <SectionLabel className="mb-5">— PERCHÉ FULGUR</SectionLabel>
               <h2 className="font-display text-4xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl text-balance leading-[1.1]">
-                L&apos;impresa di pulizie <br />
-                <span className="text-[var(--accent)]">scelta a Parma.</span>
+                Impresa di pulizie <br />
+                <span className="text-[var(--accent)]">a Parma.</span>
               </h2>
               <p className="mt-6 font-sans text-lg font-light text-[var(--tx-2)] leading-relaxed max-w-lg">
                 Affidarsi a Fulgur Service significa scegliere un partner locale con 35 anni di esperienza e strumentazione tecnologica avanzata.

@@ -18,6 +18,26 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      { source: '/pages/chi-siamo', destination: '/chi-siamo', permanent: true },
+      { source: '/pages/contatti', destination: '/contatti', permanent: true },
+      { source: '/pages/preventivo', destination: '/preventivo', permanent: true },
+      { source: '/pages/i-nostri-servizi', destination: '/servizi', permanent: true },
+      { source: '/pages/servizi', destination: '/servizi', permanent: true },
+      { source: '/pages/impresa-360', destination: '/chi-siamo', permanent: true },
+      { source: '/pages/trattamento-superfici', destination: '/servizi/trattamento-superfici', permanent: true },
+      { source: '/pages/pulizie-industriali', destination: '/servizi/pulizie-industriali', permanent: true },
+      { source: '/pages/pulizie-aziendali', destination: '/servizi/pulizie-aziendali', permanent: true },
+      { source: '/pages/pulizie-civili', destination: '/servizi/pulizie-civili', permanent: true },
+      { source: '/pages/pulizie-condomini', destination: '/servizi/pulizie-condomini', permanent: true },
+      { source: '/pages/settore-sanitario', destination: '/servizi/settore-sanitario', permanent: true },
+      { source: '/collections/all', destination: '/servizi', permanent: true },
+      { source: '/collections/frontpage', destination: '/', permanent: true },
+      { source: '/pages/:path*', destination: '/:path*', permanent: true },
+      { source: '/products/:path*', destination: '/servizi/:path*', permanent: true },
+    ];
+  },
   headers: async () => {
     return [
       {

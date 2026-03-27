@@ -105,14 +105,6 @@ export function PhilosophySection() {
           className="font-display font-black leading-[1.02] tracking-tighter text-center"
           style={{ fontSize: 'clamp(34px, 5vw, 68px)' }}
         >
-          <div className="w-full text-center mb-4">
-            <span
-              className="font-mono-fulgur uppercase tracking-[0.12em] text-[var(--tx-3)] opacity-70"
-              style={{ fontSize: 'clamp(13px, 1.5vw, 18px)' }}
-            >
-              Noi ci concentriamo su:
-            </span>
-          </div>
 
           <div className="flex flex-wrap justify-center">
             {renderWords('Noi ci prendiamo', 'text-[var(--tx-1)]')}
