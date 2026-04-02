@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { SERVICES, INTEGRATED_SERVICES } from '@/lib/services-data'
 import { ServiceCard } from '@/components/servizi/ServiceCard'
@@ -153,12 +154,24 @@ export function ServicesGrid() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.1 }}
-                    className="flex flex-col gap-4 rounded-2xl border border-[var(--br)] bg-white p-6 shadow-sm hover:shadow-[0_15px_30px_rgba(42,140,122,0.12)] hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-300 group"
+                    className="group relative flex flex-col gap-4 overflow-hidden rounded-2xl border border-[var(--br)] bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent)] hover:shadow-[0_15px_30px_rgba(42,140,122,0.12)]"
                   >
-                    <div className="h-10 w-10 rounded-xl bg-[var(--accent-glow)] flex items-center justify-center group-hover:bg-[var(--accent)] transition-colors duration-300">
+                    {/* Background Image if available */}
+                    {service.image && (
+                      <div className="absolute inset-0 z-0 opacity-0 transition-opacity duration-500 group-hover:opacity-10">
+                        <Image
+                          src={service.image}
+                          alt={service.title}
+                          fill
+                          className="object-cover grayscale"
+                        />
+                      </div>
+                    )}
+                    
+                    <div className="relative z-10 h-10 w-10 rounded-xl bg-[var(--accent-glow)] flex items-center justify-center group-hover:bg-[var(--accent)] transition-colors duration-300">
                       <Icon size={20} weight="duotone" className="text-[var(--accent)] group-hover:text-white transition-colors" />
                     </div>
-                    <div>
+                    <div className="relative z-10">
                       <div className="font-display text-sm font-bold text-[var(--tx-1)]">{service.title}</div>
                       <div className="mt-1.5 font-sans text-xs font-light text-[var(--tx-2)] leading-relaxed">{service.desc}</div>
                     </div>

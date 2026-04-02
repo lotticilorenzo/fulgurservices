@@ -1,5 +1,5 @@
 // lib/services-data.ts — Fulgur Service
-// Copia esatta da GEMINI.md sezione 3
+// Copia esatta da GEMINI.md sezione 3 con percorsi immagini aggiornati
 
 export interface Service {
   id: string
@@ -17,6 +17,13 @@ export interface Service {
   image: string
 }
 
+export interface IntegratedService {
+  title: string
+  desc: string
+  icon: string
+  image?: string
+}
+
 export const SERVICES: Service[] = [
   {
     id: '01',
@@ -31,7 +38,7 @@ export const SERVICES: Service[] = [
     sectors: ['Uffici direzionali', 'Negozi e Showroom', 'Banche e Assicurazioni', 'Spazi Co-working'],
     metaTitle: 'Pulizie Uffici e Aziendali Parma | Fulgur Service',
     metaDescription: 'Pulizie professionali per uffici e aziende a Parma. Massima igiene, prodotti eco e preventivi rapidi. Scopri i nostri servizi aziendali.',
-    image: '/images/servizi/pulizia_uffici.png',
+    image: '/images/servizi/pulizie-aziendali-parma.jpeg',
   },
   {
     id: '02',
@@ -46,7 +53,7 @@ export const SERVICES: Service[] = [
     sectors: ['Capannoni e Magazzini', 'Officine Meccaniche', 'Stabilimenti Alimentari', 'Centri Logistici'],
     metaTitle: 'Pulizie Industriali e Capannoni Parma | Fulgur Service',
     metaDescription: 'Servizi di pulizia industriale a Parma per capannoni e magazzini. Macchinari professionali, team esperto e preventivi in 48 ore.',
-    image: '/images/servizi/pulizie-industriali-parma.jpg',
+    image: '/images/servizi/pulizie-industriali-parma.jpeg',
   },
   {
     id: '03',
@@ -61,7 +68,7 @@ export const SERVICES: Service[] = [
     sectors: ['Studi Medici e Dentistici', 'Cliniche e Poliambulatori', 'Farmacie', 'Centri Estetici'],
     metaTitle: 'Sanificazione e Pulizie Sanitarie Parma | Fulgur Service',
     metaDescription: 'Servizi di sanificazione e pulizia per studi medici e cliniche a Parma. Protocolli HACCP e massima sicurezza igienica.',
-    image: '/images/servizi/donne-pulizie.png',
+    image: '/images/servizi/settore-sanitario-parma.jpeg',
   },
   {
     id: '04',
@@ -76,7 +83,7 @@ export const SERVICES: Service[] = [
     sectors: ['Condomini residenziali', 'Complessi direzionali', 'Palazzi storici', 'Residence'],
     metaTitle: 'Pulizie Condomini e Scale Parma | Fulgur Service',
     metaDescription: 'Servizi di pulizia professionale per condomini a Parma. Affidabilità, trasparenza e cura delle aree comuni. Contattaci per un preventivo.',
-    image: '/images/servizi/pulizie-condomini-parma.jpg',
+    image: '/images/servizi/pulizie-condomini-parma.jpeg',
   },
   {
     id: '05',
@@ -106,7 +113,7 @@ export const SERVICES: Service[] = [
     sectors: ['Abitazioni private', 'Uffici di rappresentanza', 'Negozi e showroom', 'Hotel di lusso'],
     metaTitle: 'Trattamento Pavimenti e Lucidatura Marmo Parma | Fulgur Service',
     metaDescription: 'Esperti nel trattamento superfici a Parma: marmo, gres, parquet e cotto. Risultati duraturi con tecnologie all’avanguardia.',
-    image: '/images/servizi/trattamentisuperfici.png',
+    image: '/images/servizi/trattamento-superfici-parma.jpeg',
   },
   {
     id: '07',
@@ -196,7 +203,7 @@ export const SERVICES: Service[] = [
     sectors: ['Ville e Appartamenti', 'Case in affitto / Airbnb', 'Abitazioni in fase di trasloco'],
     metaTitle: 'Pulizie Civili e Casa Parma | Fulgur Service',
     metaDescription: 'Servizi di pulizia per abitazioni private a Parma. Pulizie ordinarie e straordinarie con la qualità garantita di Fulgur Service.',
-    image: '/images/servizi/pulizia-interni-casa.jpeg',
+    image: '/images/servizi/pulizie-civili-parma.jpeg',
   },
   {
     id: '13',
@@ -246,11 +253,12 @@ export const SERVICES: Service[] = [
 ]
 
 // Servizi integrati — Impresa 360°
-export const INTEGRATED_SERVICES = [
+export const INTEGRATED_SERVICES: IntegratedService[] = [
   {
     title: 'Manutenzione idraulica',
     desc: 'Interventi idraulici di manutenzione ordinaria',
     icon: 'Drop',
+    image: '/images/servizi/manutenzione_idrica.png',
   },
   {
     title: 'Piccola manutenzione edile',
@@ -271,6 +279,7 @@ export const INTEGRATED_SERVICES = [
     title: 'Manutenzione giardinaggio',
     desc: 'Cura di aree dei verde, potature e manutenzione ordinaria del verde',
     icon: 'Leaf',
+    image: '/images/servizi/giardinaggio.png',
   },
   {
     title: 'Fornitura carta e sapone',

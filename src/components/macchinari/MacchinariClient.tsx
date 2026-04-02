@@ -126,13 +126,12 @@ export function MacchinariClient() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <ScrollReveal delay={0.1}>
               <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
-                <video
-                  src="/videos/videolavasciuga.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                <Image
+                  src="/images/macchinari/lavasciuga.jpeg"
+                  alt="Lavasciuga professionale Uomo a Bordo"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A140F]/80 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute bottom-0 left-0 right-0 p-8 translate-y-2 opacity-90 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
@@ -185,7 +184,7 @@ export function MacchinariClient() {
             <ScrollReveal delay={0.2}>
               <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
                 <Image
-                  src="/images/macchinari/macchinavapore-180.jpg"
+                  src="/images/macchinari/macchinavapore.jpeg"
                   alt="Macchina professionale per sanificazione a vapore 180°C Fulgur Service"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -248,7 +247,7 @@ export function MacchinariClient() {
             <ScrollReveal delay={0.4}>
               <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
                 <Image
-                  src="/images/macchinari/monospazzola.png"
+                  src="/images/macchinari/monospazzola.jpeg"
                   alt="Monospazzola professionale multiuso per il trattamento di superfici rigide"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -290,7 +289,7 @@ export function MacchinariClient() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A140F]/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-2 opacity-90 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                  <h3 className="font-display text-xl font-bold text-white mb-2">Pulivapor</h3>
+                  <h3 className="font-display text-xl font-bold text-white mb-2">Idropulitrice</h3>
                   <p className="font-sans text-sm text-white/70">Pulizia ad alta pressione per la rimozione di sporco ostinato, oli e grassi su superfici industriali e pavimentazioni esterne.</p>
                 </div>
               </div>
