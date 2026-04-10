@@ -60,9 +60,25 @@ export function Footer() {
               </div>
             </Link>
             
-            <p className="mt-6 max-w-[260px] font-sans text-[15px] sm:text-sm font-light leading-relaxed text-[var(--tx-2)]">
-              Puliamo il futuro con l&apos;energia della natura. Sede a Parma, operativi in tutta Italia.
+            <p className="mt-6 max-w-[280px] font-sans text-[14px] sm:text-[13px] font-light leading-relaxed text-[var(--tx-2)]">
+              <strong className="font-medium text-[var(--tx-1)]">Fulgur Service S.r.l.</strong> è specializzata nella
+              sanificazione e pulizia professionale per aziende, condomini e industrie
+              nel territorio di <strong className="font-medium text-[var(--tx-1)]">Parma e provincia</strong>.
+              Operativi anche a Fidenza, Collecchio e Salsomaggiore Terme.
             </p>
+            <div className="mt-4 flex flex-col gap-1.5 font-mono-fulgur text-[9.5px] font-bold uppercase tracking-widest text-[var(--tx-3)]">
+              <span>✓ Polizza Assicurativa RC/RCO</span>
+              <span>✓ Protocolli HACCP Certificati</span>
+              <span>✓ Partner KilometroVerde Parma</span>
+            </div>
+
+            <div className="mt-5 inline-flex flex-col gap-1 rounded-xl border border-[var(--br)] bg-white/50 p-3 shadow-sm">
+              <div className="flex items-center gap-2">
+                <span className="font-display text-sm font-bold text-[var(--accent)]">4.9★</span>
+                <span className="font-mono-fulgur text-[9px] font-bold tracking-widest uppercase text-[var(--tx-2)]">Google Reviews</span>
+              </div>
+              <p className="font-sans text-[10px] text-[var(--tx-2)]">Valutazione media 4,9 su 21 recensioni verificate.</p>
+            </div>
 
             {/* Social + WhatsApp */}
             <div className="mt-8 flex items-center gap-4">

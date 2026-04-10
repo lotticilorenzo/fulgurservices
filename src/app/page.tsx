@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: METADATA.home.title,
     description: METADATA.home.description,
-    images: ['https://www.fulgurservice.it/og/default.jpg'],
+    images: ['https://www.fulgurservice.it/og/default.webp'],
   },
   alternates: { canonical: 'https://www.fulgurservice.it' },
 }
@@ -29,6 +29,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className="min-h-[100dvh] bg-[var(--bg)]">
+
       {/* 1. Hero — The Opening Shot */}
       <HeroSection />
 

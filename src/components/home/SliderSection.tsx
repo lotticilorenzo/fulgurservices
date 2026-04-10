@@ -18,21 +18,21 @@ const SLIDES = [
     type: 'image',
     title: 'Il futuro',
     subtitle: 'Tecnologie all\'avanguardia e 35 anni di esperienza per spazi sempre all\'altezza.',
-    srcDesktop: '/images/macchinari-pulizie-professionali.jpg',
+    srcDesktop: '/images/macchinari-pulizie-professionali.webp',
     titleClass: 'text-white'
   },
   {
     type: 'image',
     title: "Con l'energia",
     subtitle: 'Interventi mirati con personale qualificato e protocolli certificati.',
-    srcDesktop: '/images/servizi/pulizie-industriali-parma.jpg',
+    srcDesktop: '/images/servizi/pulizie-industriali-parma.webp',
     titleClass: 'text-outline-accent'
   },
   {
     type: 'image',
     title: 'Natura',
     subtitle: 'Soluzioni sostenibili, prodotti eco-compatibili e rispetto totale per ogni ambiente.',
-    srcDesktop: '/images/fulgur-service-pulizie-sostenibili.jpg',
+    srcDesktop: '/images/fulgur-service-pulizie-sostenibili.webp',
     titleClass: 'text-[var(--accent)]'
   }
 ]

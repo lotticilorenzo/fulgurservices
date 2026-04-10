@@ -42,8 +42,9 @@ export function AboutSection() {
                 <motion.div style={{ y: imageY }} className="relative w-full h-[110%] -top-[5%]">
                   <Image
                     src="/images/fondatore-impresa-pulizie-fulgur-service-parma.webp"
-                    alt="Il fondatore di Fulgur Service davanti al furgone aziendale: la nostra impresa di pulizie a Parma"
+                    alt="Il fondatore di Fulgur Service in posa fiera davanti a un mezzo aziendale, simbolo di trent'anni di esperienza nelle pulizie a Parma"
                     fill
+                    priority
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 42vw"
                   />
@@ -66,8 +67,8 @@ export function AboutSection() {
                 </div>
                 <div className="h-8 w-px bg-[var(--br)]" />
                 <div className="flex flex-col">
-                  <span className="font-display text-sm font-bold text-[var(--tx-1)] leading-none">47</span>
-                  <span className="font-mono-fulgur text-[9px] uppercase tracking-widest text-[var(--tx-3)] mt-0.5">Recens.</span>
+                  <span className="font-display text-sm font-bold text-[var(--tx-1)] leading-none">21</span>
+                  <span className="font-mono-fulgur text-[9px] uppercase tracking-widest text-[var(--tx-3)] mt-0.5">Recensioni</span>
                 </div>
               </div>
             </div>

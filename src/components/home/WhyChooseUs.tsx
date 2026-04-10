@@ -43,7 +43,7 @@ export function WhyChooseUs() {
           <ScrollReveal className="relative order-2 lg:order-1">
             <div className="relative aspect-[4/5] rounded-[32px] overflow-hidden border border-[var(--br)] shadow-2xl">
               <Image
-                src="/images/operatori-pulizie-professionali-parma.jpg"
+                src="/images/operatori-pulizie-professionali-parma.webp"
                 alt="Operatore Fulgur Service professionale al lavoro a Parma"
                 fill
                 className="object-cover"
@@ -67,7 +67,7 @@ export function WhyChooseUs() {
                     <div className="flex text-yellow-400">
                       {[...Array(5)].map((_, i) => <Star key={i} size={14} weight="fill" />)}
                     </div>
-                    <span className="font-mono-fulgur text-[9px] uppercase tracking-widest opacity-70 mt-1">4.9 Google</span>
+                    <span className="font-mono-fulgur text-[9px] uppercase tracking-widest opacity-70 mt-1">4.9 su 21 Recens.</span>
                   </div>
                 </div>
               </div>

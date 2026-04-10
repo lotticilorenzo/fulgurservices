@@ -1,6 +1,6 @@
 import React from 'react'
 import type { Metadata } from 'next'
-import { METADATA } from '@/lib/seo'
+import { METADATA, makeBreadcrumbsJsonLd } from '@/lib/seo'
 import { BLOG_POSTS } from '@/lib/blog-data'
 import { BlogCard } from '@/components/blog/BlogCard'
 import { SectionLabel } from '@/components/ui/SectionLabel'
@@ -13,8 +13,18 @@ export const metadata: Metadata = {
 }
 
 export default function BlogPage() {
+  const breadcrumbsJsonLd = makeBreadcrumbsJsonLd([
+    { name: 'Home', item: '/' },
+    { name: 'Blog', item: '/blog' },
+  ])
+
   return (
     <main className="min-h-[100dvh] bg-[var(--bg)] pt-32 pb-0 sm:pt-40">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbsJsonLd) }}
+      />
+
       
       {/* HEADER BLOG */}
       <div className="mx-auto w-full max-w-7xl px-6 xl:px-8 mb-20 text-center flex flex-col items-center">

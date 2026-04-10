@@ -8,12 +8,12 @@ import { ScrollReveal } from './ScrollReveal'
 import { SectionLabel } from './SectionLabel'
 
 const PARTNERS = [
-  { name: 'Klindex', logo: '/images/brands/klindex.png' },
-  { name: 'Kiter', logo: '/images/brands/kiter.png' },
-  { name: 'Nilfisk', logo: '/images/brands/nilfisk.png' },
-  { name: 'TMB', logo: '/images/brands/tmb.png' },
-  { name: 'Fimap', logo: '/images/brands/fimap.png' },
-  { name: 'Comac', logo: '/images/brands/comac.png' }
+  { name: 'Klindex', logo: '/images/brands/klindex.webp' },
+  { name: 'Kiter', logo: '/images/brands/kiter.webp' },
+  { name: 'Nilfisk', logo: '/images/brands/nilfisk.webp' },
+  { name: 'TMB', logo: '/images/brands/tmb.webp' },
+  { name: 'Fimap', logo: '/images/brands/fimap.webp' },
+  { name: 'Comac', logo: '/images/brands/comac.webp' }
 ]
 
 export function PartnershipSection() {

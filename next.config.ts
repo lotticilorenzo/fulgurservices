@@ -34,9 +34,51 @@ const nextConfig: NextConfig = {
       { source: '/pages/settore-sanitario', destination: '/servizi/settore-sanitario', permanent: true },
       { source: '/collections/all', destination: '/servizi', permanent: true },
       { source: '/collections/frontpage', destination: '/', permanent: true },
+      // Servizi Shopify non ancora mappati → rotte /servizi/[slug]
+      { source: '/pages/pannelli-fotovoltaici', destination: '/servizi/pannelli-fotovoltaici', permanent: true },
+      { source: '/pages/sanificazione-vapore', destination: '/servizi/sanificazione-vapore', permanent: true },
+      { source: '/pages/vetrate-altezza', destination: '/servizi/vetrate-altezza', permanent: true },
+      { source: '/pages/settore-alberghiero', destination: '/servizi/settore-alberghiero', permanent: true },
+      { source: '/pages/pulizie-fine-cantiere', destination: '/servizi/pulizie-fine-cantiere', permanent: true },
+      { source: '/pages/cantiere-navale', destination: '/servizi/cantiere-navale', permanent: true },
+      { source: '/pages/pulizie-condominio', destination: '/servizi/pulizie-condomini', permanent: true },
+      // Pagine Shopify → nuove rotte
+      { source: '/pages/aree-di-intervento', destination: '/zone', permanent: true },
+      { source: '/pages/zone-di-copertura', destination: '/zone', permanent: true },
+      { source: '/pages/gallery', destination: '/gallery', permanent: true },
+      { source: '/pages/macchinari', destination: '/macchinari', permanent: true },
+      { source: '/pages/macchinari-e-prodotti', destination: '/macchinari', permanent: true },
+      { source: '/pages/lavora-con-noi', destination: '/lavora-con-noi', permanent: true },
+      { source: '/pages/blog', destination: '/blog', permanent: true },
+      // Catch-all /pages/* (dopo i redirect specifici)
       { source: '/pages/:path*', destination: '/:path*', permanent: true },
       { source: '/products/:path*', destination: '/servizi/:path*', permanent: true },
+      // URL dirette senza /pages/ che Shopify potrebbe aver indicizzato
+      { source: '/aree-di-intervento', destination: '/zone', permanent: true },
+      { source: '/zone-di-copertura', destination: '/zone', permanent: true },
+      // Redirect puntuali per tutti i servizi (da radice a /servizi/)
+      { source: '/pulizie-aziendali', destination: '/servizi/pulizie-aziendali', permanent: true },
+      { source: '/pulizie-industriali', destination: '/servizi/pulizie-industriali', permanent: true },
+      { source: '/settore-sanitario', destination: '/servizi/settore-sanitario', permanent: true },
+      { source: '/pulizie-condomini', destination: '/servizi/pulizie-condomini', permanent: true },
+      { source: '/settore-alberghiero', destination: '/servizi/settore-alberghiero', permanent: true },
+      { source: '/trattamento-superfici', destination: '/servizi/trattamento-superfici', permanent: true },
+      { source: '/pulizie-fine-cantiere', destination: '/servizi/pulizie-fine-cantiere', permanent: true },
+      { source: '/vetrate-altezza', destination: '/servizi/vetrate-altezza', permanent: true },
+      { source: '/pannelli-fotovoltaici', destination: '/servizi/pannelli-fotovoltaici', permanent: true },
+      { source: '/cantiere-navale', destination: '/servizi/cantiere-navale', permanent: true },
+      { source: '/sanificazione-vapore', destination: '/servizi/sanificazione-vapore', permanent: true },
+      { source: '/pulizie-civili', destination: '/servizi/pulizie-civili', permanent: true },
+      { source: '/strutture-sportive', destination: '/servizi/strutture-sportive', permanent: true },
+      { source: '/locali-notturni', destination: '/servizi/locali-notturni', permanent: true },
+      { source: '/pulizia-facciate', destination: '/servizi/pulizia-facciate', permanent: true },
+      // Redirect Shopify Blog Patterns
+      { source: '/blogs/:blog/:post', destination: '/blog/:post', permanent: true },
+      { source: '/blogs/:path*', destination: '/blog', permanent: true },
+      // Collections Shopify residue
+      { source: '/collections/:path*', destination: '/servizi', permanent: true },
     ];
+
   },
   headers: async () => {
     return [

@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { BLOG_POSTS } from '@/lib/blog-data'
+import { makeBlogPostJsonLd, makeBreadcrumbsJsonLd } from '@/lib/seo'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { Calendar, Clock, ArrowLeft, User, BookmarkSimple } from '@phosphor-icons/react/dist/ssr'
 import { CTASection } from '@/components/home/CTASection'
@@ -42,9 +43,25 @@ export default async function BlogPostPage(props: { params: Promise<{ slug: stri
 
   if (!post) notFound()
 
+  const blogJsonLd = makeBlogPostJsonLd(post)
+  const breadcrumbsJsonLd = makeBreadcrumbsJsonLd([
+    { name: 'Home', item: '/' },
+    { name: 'Blog', item: '/blog' },
+    { name: post.title, item: `/blog/${post.slug}` },
+  ])
+
   return (
     <main className="bg-[var(--bg)] min-h-[100dvh] pt-32 sm:pt-40">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbsJsonLd) }}
+      />
       <article>
+
         {/* Post Header */}
         <header className="mx-auto w-full max-w-4xl px-6 lg:px-8 mb-16">
           <ScrollReveal>

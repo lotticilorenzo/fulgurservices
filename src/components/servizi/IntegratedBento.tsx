@@ -46,7 +46,8 @@ export function IntegratedBento() {
             <BentoCard 
               index={0}
               title="Manutenzione idraulica"
-              img="/images/servizi/manutenzione_idrica.png"
+              img="/images/servizi/manutenzione-idraulica-parma.webp"
+              alt="Dettaglio di un intervento tecnico su tubazioni idrauliche in un contesto aziendale"
               icon={Drop}
               overlayOpacity="bg-black/60"
             />
@@ -54,7 +55,8 @@ export function IntegratedBento() {
             <BentoCard 
               index={1}
               title="Piccola manutenzione edile"
-              img="/images/servizi/pulizie-fine-cantiere-parma.jpg"
+              img="/images/servizi/pulizie-fine-cantiere-parma.webp"
+              alt="Riparazione muraria e stuccatura professionale eseguita dal team di manutenzione"
               icon={Wrench}
             />
             {/* RIFIUTI */}
@@ -62,6 +64,7 @@ export function IntegratedBento() {
               index={2}
               title="Gestione rifiuti"
               img="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=600&q=80"
+              alt="Servizio di movimentazione e organizzazione contenitori per la raccolta differenziata"
               icon={Recycle}
             />
             {/* ELETTRICA */}
@@ -69,20 +72,23 @@ export function IntegratedBento() {
               index={3}
               title="Manutenzione elettrica"
               img="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=600&q=80"
+              alt="Controllo e manutenzione di un quadro elettrico industriale effettuato da tecnici qualificati"
               icon={Lightning}
             />
             {/* GIARDINAGGIO */}
             <BentoCard
               index={4}
               title="Manutenzione giardinaggio"
-              img="/images/servizi/giardinaggio.png"
+              img="/images/servizi/manutenzione-aree-verdi-parma.webp"
+              alt="Cura e potatura di siepi fiorite in un giardino privato perfettamente mantenuto"
               icon={Leaf}
             />
             {/* LAVANDERIA & FORNITURE */}
             <BentoCard
               index={5}
               title="Fornitura carta e sapone"
-              img="/images/servizi/fornitura-carta-sapone.png"
+              img="/images/servizi/fornitura-materiali-consumo.webp"
+              alt="Magazzino scorte per la fornitura periodica di materiali igienici e di consumo"
               icon={Basket}
             />
           </div>
@@ -92,7 +98,7 @@ export function IntegratedBento() {
   )
 }
 
-function BentoCard({ index, title, img, icon: Icon, overlayOpacity = "bg-black/40", className }: { index: number, title: string, img: string, icon: React.ElementType, overlayOpacity?: string, className?: string }) {
+function BentoCard({ index, title, img, alt, icon: Icon, overlayOpacity = "bg-black/40", className }: { index: number, title: string, img: string, alt: string, icon: React.ElementType, overlayOpacity?: string, className?: string }) {
   return (
     <ScrollReveal delay={index * 0.1} className={cn("h-full", className)}>
       <SpotlightCard className="relative h-full min-h-[240px] rounded-2xl overflow-hidden group bg-[#0A140F]">
@@ -100,7 +106,7 @@ function BentoCard({ index, title, img, icon: Icon, overlayOpacity = "bg-black/4
         <div className="absolute inset-0 z-0">
           <Image 
             src={img} 
-            alt={title}
+            alt={alt}
             fill
             className="object-cover transition-transform duration-[700ms] group-hover:scale-110"
             sizes="(max-width: 768px) 100vw, 40vw"

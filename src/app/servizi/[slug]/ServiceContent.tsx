@@ -54,7 +54,8 @@ export function ServiceContent({ service }: ServiceContentProps) {
             <IconComponent size={48} weight="duotone" />
           </div>
           <h1 className="font-display text-[36px] font-extrabold text-[var(--tx-1)] sm:text-7xl lg:text-8xl mb-6 sm:mb-8 tracking-tighter max-w-5xl leading-tight sm:leading-[1.05] text-balance">
-            {service.title}
+            {service.title}{' '}
+            <span className="text-[var(--accent)]">a Parma</span>
           </h1>
           <p className="font-sans text-lg font-light text-[var(--tx-2)] sm:text-2xl leading-relaxed max-w-3xl border-l-[3px] border-[var(--accent)] pl-5 sm:pl-8 py-3 bg-gradient-to-r from-[var(--accent)]/5 to-transparent text-balance">
             {service.shortDesc}
@@ -92,16 +93,20 @@ export function ServiceContent({ service }: ServiceContentProps) {
               {/* DESCRIZIONE LUNGA */}
               <WipeReveal direction="top">
                 <SectionLabel className="mb-10">— DETTAGLI INTERVENTO</SectionLabel>
-                <p className="font-sans font-light text-[var(--tx-2)] leading-relaxed text-base sm:text-lg md:text-2xl opacity-90 first-letter:text-4xl sm:first-letter:text-5xl first-letter:font-display first-letter:font-bold first-letter:text-[var(--accent)] first-letter:mr-3 first-letter:float-left">
-                  {service.longDesc}
-                </p>
+                <div className="font-sans font-light text-[var(--tx-2)] leading-relaxed text-base sm:text-lg md:text-xl opacity-90 space-y-6">
+                  {service.longDesc.split('\n\n').map((para, i) => (
+                    <p key={i} className={i === 0 ? 'first-letter:text-4xl sm:first-letter:text-5xl first-letter:font-display first-letter:font-bold first-letter:text-[var(--accent)] first-letter:mr-3 first-letter:float-left' : ''}>
+                      {para.trim()}
+                    </p>
+                  ))}
+                </div>
               </WipeReveal>
 
               {/* BENEFITS / CHECKLIST */}
               <ScrollReveal>
                 <h2 className="font-display text-2xl sm:text-3xl font-bold text-[var(--tx-1)] mb-8 sm:mb-10 flex items-center gap-3 sm:gap-4 text-balance leading-tight">
                   <CheckCircle size={32} className="text-[var(--accent)] shrink-0" />
-                  Protocollo di eccellenza
+                  Cosa include il nostro servizio di {service.title.toLowerCase()} a Parma
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {service.benefits.map((benefit, i) => (
@@ -152,6 +157,30 @@ export function ServiceContent({ service }: ServiceContentProps) {
                     </div>
                  </ScrollReveal>
               ))}
+
+              {/* FAQ BLOCK — Snippet Targeting */}
+              {service.faq && service.faq.length > 0 && (
+                <ScrollReveal>
+                  <div className="mt-4">
+                    <h2 className="font-display text-2xl sm:text-3xl font-bold text-[var(--tx-1)] mb-8 flex items-center gap-3 text-balance leading-tight">
+                      <Icons.Question size={32} className="text-[var(--accent)] shrink-0" />
+                      Domande frequenti su {service.title.toLowerCase()} a Parma
+                    </h2>
+                    <div className="flex flex-col gap-5">
+                      {service.faq.map((item, i) => (
+                        <div key={i} className="rounded-2xl border border-[var(--br)] bg-[var(--bg)] p-6 sm:p-8 hover:border-[var(--accent)]/30 transition-colors">
+                          <h3 className="font-display text-lg sm:text-xl font-bold text-[var(--tx-1)] mb-3 leading-snug">
+                            {item.q}
+                          </h3>
+                          <p className="font-sans text-[var(--tx-2)] font-light leading-relaxed text-base">
+                            {item.a}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </ScrollReveal>
+              )}
 
             </div>
 

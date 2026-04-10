@@ -190,7 +190,7 @@ export function ReviewsStrip() {
               </div>
               <div className="h-6 w-px bg-slate-200" />
               <span className="font-mono-fulgur text-[12px] font-bold text-[var(--tx-1)]">
-                4.9 su Google · <span className="text-[var(--tx-3)]">recensioni verificate</span>
+                4.9 su Google · <span className="text-[var(--tx-3)]">21 recensioni verificate</span>
               </span>
               <span className="text-[var(--tx-3)] group-hover:text-[var(--accent)] group-hover:translate-x-1 transition-all">→</span>
             </a>

@@ -182,7 +182,7 @@ export function ScrollMobileSection() {
         {/* ── Video ottimizzato per scrubbing (-g 1 all-keyframe) ── */}
         <video
           ref={videoRef}
-          poster="/images/fulgur-service-pulizie-sostenibili.jpg"
+          poster="/images/fulgur-service-pulizie-sostenibili.webp"
           preload="auto"
           muted
           playsInline

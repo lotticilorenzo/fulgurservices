@@ -43,7 +43,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: '23 Marzo 2026',
     author: 'Team Fulgur',
     category: 'Sostenibilità',
-    image: '/images/blog-kilometroverde-fulgur-parma.jpg',
+    image: '/images/blog-kilometroverde-fulgur-parma.webp',
     readTime: '3 min',
     keywords: ['KilometroVerde Parma', 'sostenibilità Parma', 'impresa pulizie ecologica', 'pulizie verdi Parma']
   },
@@ -72,7 +72,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: '17 Marzo 2026',
     author: 'Team Fulgur',
     category: 'Industriale',
-    image: '/images/servizi/pulizie-industriali-parma.jpg',
+    image: '/images/servizi/pulizie-industriali-parma.webp',
     readTime: '5 min',
     keywords: ['pulizie industriali Parma', 'manutenzione capannoni', 'cleaning industriale']
   },
@@ -100,7 +100,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: '12 Marzo 2026',
     author: 'Team Fulgur',
     category: 'Sanitario',
-    image: '/images/servizi/pulizie-aziendali-parma.jpg',
+    image: '/images/servizi/pulizie-aziendali-parma.webp',
     readTime: '4 min',
     keywords: ['sanificazione HACCP Parma', 'pulizie ristoranti', 'igiene alimentare']
   },
@@ -144,7 +144,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: '23 Marzo 2026',
     author: 'Team Fulgur',
     category: 'Fotovoltaico',
-    image: '/images/servizi/pannelli-fotovoltaici-parma.jpg',
+    image: '/images/servizi/pannelli-fotovoltaici-parma.webp',
     readTime: '5 min',
     keywords: ['pulizia pannelli fotovoltaici Parma', 'manutenzione fotovoltaico Parma', 'lavaggio pannelli solari', 'efficienza fotovoltaico']
   }

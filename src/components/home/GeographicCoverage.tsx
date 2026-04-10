@@ -99,7 +99,7 @@ export function GeographicCoverage() {
             <div className="relative">
               <div className="relative aspect-square rounded-[36px] overflow-hidden border border-[var(--br)] shadow-2xl">
                 <Image
-                  src="/images/zone-copertura-servizi-pulizie-parma-provincia.jpg"
+                  src="/images/zone-copertura-servizi-pulizie-parma-provincia.webp"
                   alt="Mappa aerea di Parma e provincia, l'area coperta dai nostri servizi di pulizia professionali"
                   fill
                   className="object-cover"

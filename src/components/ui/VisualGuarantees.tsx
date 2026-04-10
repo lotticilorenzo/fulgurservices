@@ -11,7 +11,7 @@ const GUARANTEES = [
     title: "35 anni di esperienza",
     data: "",
     // NOTA: Inserire foto reale "storica" o del team storico (w=600px minimo)
-    img: "/images/gallery/furgone-fulgur-service-centro-storico-parma.jpg",
+    img: "/images/gallery/furgone-fulgur-service-centro-storico-parma.webp",
     size: "large"
   },
   {
@@ -27,7 +27,7 @@ const GUARANTEES = [
     title: "Prodotti HACCP",
     data: "100%",
     // NOTA: Inserire foto reale dei prodotti usati (w=600px minimo)
-    img: "/images/fulgur-service-pulizie-sostenibili.jpg",
+    img: "/images/fulgur-service-pulizie-sostenibili.webp",
     size: "medium"
   },
   {

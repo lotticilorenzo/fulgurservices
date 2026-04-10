@@ -227,7 +227,7 @@ export function HeroSection() {
               <div className="relative h-full w-full overflow-hidden rounded-full">
                 <Image
                   src="/images/team-operatori-pulizie-professionali-parma.webp"
-                  alt="Il team Fulgur Service a Parma — impresa di pulizie professionali"
+                  alt="Il team operativo di Fulgur Service schierato a Parma con i mezzi aziendali attrezzati"
                   fill
                   sizes="(max-width: 640px) 320px, (max-width: 1024px) 380px, 460px"
                   className="object-cover transition-transform duration-700 hover:scale-105"

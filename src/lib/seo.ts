@@ -192,14 +192,39 @@ export const STRUCTURED_DATA = {
   ],
   sameAs: ['https://www.instagram.com/fulgurservicesrl_/'],
   priceRange: '€€',
-  areaServed: {
-    '@type': 'Country',
-    name: 'Italy',
-  },
+  areaServed: [
+    { '@type': 'City', name: 'Parma', addressCountry: 'IT' },
+    { '@type': 'City', name: 'Fidenza', addressCountry: 'IT' },
+    { '@type': 'City', name: 'Collecchio', addressCountry: 'IT' },
+    { '@type': 'City', name: 'Salsomaggiore Terme', addressCountry: 'IT' },
+    { '@type': 'City', name: 'Langhirano', addressCountry: 'IT' },
+    { '@type': 'City', name: 'Noceto', addressCountry: 'IT' },
+    { '@type': 'City', name: 'Fontevivo', addressCountry: 'IT' },
+    { '@type': 'City', name: 'Sorbolo', addressCountry: 'IT' },
+    { '@type': 'City', name: 'Traversetolo', addressCountry: 'IT' },
+    { '@type': 'City', name: 'Colorno', addressCountry: 'IT' },
+  ],
+  knowsAbout: [
+    'Pulizie industriali',
+    'Pulizie uffici e ambienti aziendali',
+    'Sanificazione HACCP',
+    'Pulizie condomini e parti comuni',
+    'Housekeeping alberghiero',
+    'Trattamento e cristallizzazione del marmo',
+    'Pulizia pannelli fotovoltaici con acqua demineralizzata',
+    'Pulizie fine cantiere',
+    'Pulizia vetrate in altezza',
+    'Sanificazione con vapore saturo a 180 gradi',
+    'Pulizie civili e domestiche',
+    'Pulizia cantieri navali e imbarcazioni',
+    'Pulizia facciate e rimozione graffiti',
+    'Sanificazione strutture sportive e palestre',
+    'Pulizie locali notturni e discoteche',
+  ],
   aggregateRating: {
     '@type': 'AggregateRating',
     ratingValue: '4.9',
-    reviewCount: '47',
+    reviewCount: '21',
   },
 }
 
@@ -230,9 +255,66 @@ export function makeServiceJsonLd(service: {
         addressCountry: 'IT',
       },
     },
-    areaServed: {
-      '@type': 'Country',
-      name: 'Italy',
+    areaServed: [
+      { '@type': 'City', name: 'Parma', addressCountry: 'IT' },
+      { '@type': 'City', name: 'Fidenza', addressCountry: 'IT' },
+      { '@type': 'City', name: 'Collecchio', addressCountry: 'IT' },
+      { '@type': 'City', name: 'Salsomaggiore Terme', addressCountry: 'IT' },
+      { '@type': 'City', name: 'Langhirano', addressCountry: 'IT' },
+      { '@type': 'City', name: 'Noceto', addressCountry: 'IT' },
+    ],
+  }
+}
+
+// ─── Breadcrumbs JSON-LD factory ───────────────────────────────────────────
+export function makeBreadcrumbsJsonLd(items: { name: string; item: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((it, idx) => ({
+      '@type': 'ListItem',
+      position: idx + 1,
+      name: it.name,
+      item: it.item.startsWith('http') ? it.item : `${BASE_URL}${it.item}`,
+    })),
+  }
+}
+
+// ─── Blog Post JSON-LD factory ─────────────────────────────────────────────
+export function makeBlogPostJsonLd(post: {
+  title: string
+  excerpt: string
+  slug: string
+  date: string
+  author: string
+  image: string
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.excerpt,
+    image: post.image.startsWith('http') ? post.image : `${BASE_URL}${post.image}`,
+    author: {
+      '@type': 'Organization',
+      name: 'Fulgur Service SRL',
+      url: BASE_URL,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Fulgur Service SRL',
+      logo: {
+        '@type': 'ImageObject',
+        url: `${BASE_URL}/images/logo-fulgur-service-impresa-pulizie-parma.webp`,
+      },
+    },
+    datePublished: post.date,
+    url: `${BASE_URL}/blog/${post.slug}`,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${BASE_URL}/blog/${post.slug}`,
     },
   }
 }
+
+

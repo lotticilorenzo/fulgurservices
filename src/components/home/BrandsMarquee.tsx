@@ -8,17 +8,17 @@ import { ArrowUpRight } from '@phosphor-icons/react'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 
 const BRANDS = [
-  { name: 'Klindex',        logo: '/images/macchinari/klindex.png' },
-  { name: 'Kiter',          logo: '/images/macchinari/kiter.png' },
-  { name: 'CFM Lombardia',  logo: '/images/macchinari/cfm-lombardia.png' },
-  { name: 'Lindhaus',       logo: '/images/macchinari/lindhaus.jpg' },
-  { name: 'Pulitalia',      logo: '/images/macchinari/pulitalia.png' },
-  { name: 'Viking',         logo: '/images/macchinari/viking.jpg' },
-  { name: 'Pulivax',        logo: '/images/macchinari/pulivax.png' },
-  { name: 'Nilfisk',        logo: '/images/macchinari/nilfisk.png' },
-  { name: 'Künzle & Tasin', logo: '/images/macchinari/kunzle-tasin.jpg' },
+  { name: 'Klindex',        logo: '/images/macchinari/klindex.webp' },
+  { name: 'Kiter',          logo: '/images/macchinari/kiter.webp' },
+  { name: 'CFM Lombardia',  logo: '/images/macchinari/cfm-lombardia.webp' },
+  { name: 'Lindhaus',       logo: '/images/macchinari/lindhaus.webp' },
+  { name: 'Pulitalia',      logo: '/images/macchinari/pulitalia.webp' },
+  { name: 'Viking',         logo: '/images/macchinari/viking.webp' },
+  { name: 'Pulivax',        logo: '/images/macchinari/pulivax.webp' },
+  { name: 'Nilfisk',        logo: '/images/macchinari/nilfisk.webp' },
+  { name: 'Künzle & Tasin', logo: '/images/macchinari/kunzle-tasin.webp' },
   { name: 'Gioel',          logo: '/images/macchinari/gioel.svg' },
-  { name: 'EU Ecolabel',    logo: '/images/macchinari/ecolabel.jpeg' },
+  { name: 'EU Ecolabel',    logo: '/images/macchinari/ecolabel.webp' },
 ]
 
 const EASE = [0.16, 1, 0.3, 1] as const

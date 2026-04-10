@@ -129,7 +129,7 @@ export function PageTransitionProvider({ children }: { children: React.ReactNode
            >
              <div className="relative w-40 h-40 md:w-64 md:h-64">
                <Image
-                 src="/images/logo-senza-sfondo.png"
+                 src="/images/logo-senza-sfondo.webp"
                  alt="Fulgur Service"
                  fill
                  className="object-contain"

@@ -10,17 +10,17 @@ import { MachineryModal } from '@/components/ui/MachineryModal'
 import { MACHINERY_DATA, MachineBrand } from '@/lib/machinery-data'
 
 const BRANDS = [
-  { name: 'Klindex', logo: '/images/macchinari/klindex.png' },
-  { name: 'Kiter', logo: '/images/macchinari/kiter.png' },
-  { name: 'CFM Lombardia', logo: '/images/macchinari/cfm-lombardia.png' },
-  { name: 'Lindhaus', logo: '/images/macchinari/lindhaus.jpg' },
-  { name: 'Pulitalia', logo: '/images/macchinari/pulitalia.png' },
-  { name: 'Viking', logo: '/images/macchinari/viking.jpg' },
-  { name: 'Pulivax', logo: '/images/macchinari/pulivax.png' },
-  { name: 'Nilfisk', logo: '/images/macchinari/nilfisk.png' },
-  { name: 'Künzle & Tasin', logo: '/images/macchinari/kunzle-tasin.jpg' },
+  { name: 'Klindex', logo: '/images/macchinari/klindex.webp' },
+  { name: 'Kiter', logo: '/images/macchinari/kiter.webp' },
+  { name: 'CFM Lombardia', logo: '/images/macchinari/cfm-lombardia.webp' },
+  { name: 'Lindhaus', logo: '/images/macchinari/lindhaus.webp' },
+  { name: 'Pulitalia', logo: '/images/macchinari/pulitalia.webp' },
+  { name: 'Viking', logo: '/images/macchinari/viking.webp' },
+  { name: 'Pulivax', logo: '/images/macchinari/pulivax.webp' },
+  { name: 'Nilfisk', logo: '/images/macchinari/nilfisk.webp' },
+  { name: 'Künzle & Tasin', logo: '/images/macchinari/kunzle-tasin.webp' },
   { name: 'Gioel', logo: '/images/macchinari/gioel.svg' },
-  { name: 'EU Ecolabel', logo: '/images/macchinari/ecolabel.jpeg' },
+  { name: 'EU Ecolabel', logo: '/images/macchinari/ecolabel.webp' },
 ]
 
 export function MacchinariClient() {
@@ -127,7 +127,7 @@ export function MacchinariClient() {
             <ScrollReveal delay={0.1}>
               <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
                 <Image
-                  src="/images/macchinari/lavasciuga.jpeg"
+                  src="/images/macchinari/lavasciuga.webp"
                   alt="Lavasciuga professionale Uomo a Bordo"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -144,7 +144,7 @@ export function MacchinariClient() {
             <ScrollReveal delay={0.2}>
               <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
                 <Image
-                  src="/images/macchinari/monospazzola-lucidatrice-parma-klindex.png"
+                  src="/images/macchinari/monospazzola-lucidatrice-parma-klindex.webp"
                   alt="Monospazzola professionale Klindex usata per la lucidatura e la cristallizzazione dei pavimenti"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -167,7 +167,7 @@ export function MacchinariClient() {
             <ScrollReveal delay={0.1}>
               <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
                 <Image
-                  src="/images/macchinari/aspiratore-industriale-polveri-cfm-parma.png"
+                  src="/images/macchinari/aspiratore-industriale-polveri-cfm-parma.webp"
                   alt="Aspiratore industriale professionale CFM utilizzato per l'aspirazione di polveri e macerie nei capannoni"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -184,7 +184,7 @@ export function MacchinariClient() {
             <ScrollReveal delay={0.2}>
               <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
                 <Image
-                  src="/images/macchinari/macchinavapore.jpeg"
+                  src="/images/macchinari/macchinavapore.webp"
                   alt="Macchina professionale per sanificazione a vapore 180°C Fulgur Service"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -221,7 +221,7 @@ export function MacchinariClient() {
             <ScrollReveal delay={0.3}>
               <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
                 <Image
-                  src="/images/macchinari/macchinaosmosi.jpeg"
+                  src="/images/macchinari/macchinaosmosi.webp"
                   alt="Sistema ad osmosi inversa per vetrate"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -247,7 +247,7 @@ export function MacchinariClient() {
             <ScrollReveal delay={0.4}>
               <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
                 <Image
-                  src="/images/macchinari/monospazzola.jpeg"
+                  src="/images/macchinari/monospazzola.webp"
                   alt="Monospazzola professionale multiuso per il trattamento di superfici rigide"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -264,7 +264,7 @@ export function MacchinariClient() {
             <ScrollReveal delay={0.5}>
               <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
                 <Image
-                  src="/images/macchinari/lavamoquette-fulgur.jpg"
+                  src="/images/macchinari/lavamoquette-fulgur.webp"
                   alt="Macchina professionale lava moquette a estrazione Fulgur Service"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -281,7 +281,7 @@ export function MacchinariClient() {
             <ScrollReveal delay={0.6}>
               <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
                 <Image
-                  src="/images/macchinari/pulivapor.png"
+                  src="/images/macchinari/pulivapor.webp"
                   alt="Idropulitrice professionale Pulivapor ad alta pressione per pulizie industriali"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"

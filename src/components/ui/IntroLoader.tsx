@@ -54,7 +54,7 @@ export function IntroLoader() {
           >
             <div className="flex w-[75vw] max-w-[400px] items-center justify-center">
               <Image
-                src="/images/logo-impresa-di-pulizie-parma-fulgur.png"
+                src="/images/logo-impresa-di-pulizie-parma-fulgur.webp"
                 alt="Fulgur Service Logo — Impresa Pulizie Parma"
                 width={400}
                 height={100}

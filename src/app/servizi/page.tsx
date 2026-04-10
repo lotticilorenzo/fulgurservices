@@ -1,6 +1,6 @@
 import React from 'react'
 import type { Metadata } from 'next'
-import { METADATA } from '@/lib/seo'
+import { METADATA, makeBreadcrumbsJsonLd } from '@/lib/seo'
 import { SERVICES, INTEGRATED_SERVICES } from '@/lib/services-data'
 import { ServiceCard } from '@/components/servizi/ServiceCard'
 import { CTASection } from '@/components/home/CTASection'
@@ -18,8 +18,18 @@ export const metadata: Metadata = {
 }
 
 export default function ServiziPage() {
+  const breadcrumbsJsonLd = makeBreadcrumbsJsonLd([
+    { name: 'Home', item: '/' },
+    { name: 'Servizi', item: '/servizi' },
+  ])
+
   return (
     <main className="min-h-[100dvh] bg-[var(--bg)] pt-32 pb-0 sm:pt-40">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbsJsonLd) }}
+      />
+
       
       {/* HEADER SERVIZI */}
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8 mb-8 text-center flex flex-col items-center">

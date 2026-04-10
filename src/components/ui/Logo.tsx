@@ -18,8 +18,8 @@ export function Logo({ size = 40, className = '', variant = 'default', iconOnly 
       style={{ width: iconOnly ? size : size * 3.8, height: size }}
     >
       <Image
-        src="/images/logo-senza-sfondo.png"
-        alt="Fulgur Service Logo — Impresa Pulizie Parma"
+        src="/images/logo-fulgur-service-pulizie-parma.webp"
+        alt="Logo Fulgur Service — Impresa di Pulizie Professionali a Parma e Provincia"
         width={300}
         height={80}
         className={cn(

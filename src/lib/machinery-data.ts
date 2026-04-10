@@ -19,7 +19,7 @@ export const MACHINERY_DATA: MachineBrand[] = [
     name: 'Klindex',
     description: 'Eccellenza italiana nel trattamento marmo e ripristino superfici.',
     usage: 'Levigatura, lucidatura e cristallizzazione marmo, granito, cemento e pietre naturali.',
-    image: '/images/brands/klindex.png',
+    image: '/images/brands/klindex.webp',
     specs: [
       { label: 'Sistema', value: 'Planetario Monofase/Trifase' },
       { label: 'Velocità', value: '300-1300', unit: 'RPM' },
@@ -32,7 +32,7 @@ export const MACHINERY_DATA: MachineBrand[] = [
     name: 'Lindhaus',
     description: 'Specialisti mondiali nella filtrazione e pulizia sanitaria.',
     usage: 'Sanificazione ambienti medici, cliniche, hotel 5 stelle e uffici ad alto traffico.',
-    image: '/images/macchinari/lindhaus.jpg',
+    image: '/images/macchinari/lindhaus.webp',
     specs: [
       { label: 'Filtrazione', value: 'HEPA S-Class Certificata' },
       { label: 'Efficienza', value: '99.97% a 0.3 micron' },
@@ -45,7 +45,7 @@ export const MACHINERY_DATA: MachineBrand[] = [
     name: 'Nilfisk / CFM',
     description: 'Soluzioni industriali per la gestione di polveri sottili e grandi superfici.',
     usage: 'Pulizia capannoni, magazzini logistici, industrie meccaniche e asportazione polveri edili.',
-    image: '/images/brands/nilfisk.png',
+    image: '/images/brands/nilfisk.webp',
     specs: [
       { label: 'Portata Aria', value: '8100', unit: 'L/min' },
       { label: 'Depressione', value: '250', unit: 'mBar' },
@@ -71,7 +71,7 @@ export const MACHINERY_DATA: MachineBrand[] = [
     name: 'EU Ecolabel',
     description: 'Il marchio di qualità ecologica dell\'Unione Europea (Ecolabel UE) premia i prodotti e i servizi che hanno un basso impatto ambientale durante tutto il loro ciclo di vita.',
     usage: 'Certificazione di eccellenza per i detergenti e i processi di pulizia a basso impatto ambientale utilizzati da Fulgur Service.',
-    image: '/images/macchinari/ecolabel.jpeg',
+    image: '/images/macchinari/ecolabel.webp',
     specs: [
       { label: 'Certificazione', value: 'EU Ecolabel' },
       { label: 'Impatto Materie Prime', value: 'Minimo & Biodegradabile' },

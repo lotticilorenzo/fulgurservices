@@ -50,6 +50,14 @@ export const metadata: Metadata = {
     google: 'WxKNsSCEnsQKzdUY0BwaXG1ItSgJ33Ob25PWpn92vG8', 
   },
   robots: { index: true, follow: true },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.webp', type: 'image/png' },
+    ],
+    apple: '/icon.webp',
+    shortcut: '/favicon.ico',
+  },
   openGraph: {
     type: 'website',
     locale: 'it_IT',

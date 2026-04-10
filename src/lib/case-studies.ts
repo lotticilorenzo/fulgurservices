@@ -14,8 +14,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: 'Lavaggio Moquette Ufficio Open Space',
     description: 'Aspirazione profonda e lavaggio di moquette in ufficio open space con forte accumulo di polvere e sporco da calpestio intenso. Risultato uniforme e igienizzato.',
     category: 'Trattamento Superfici',
-    beforeImage: '/images/case-studies/primapulizia.png',
-    afterImage: '/images/case-studies/dopopulizia.png',
+    beforeImage: '/images/case-studies/primapulizia.webp',
+    afterImage: '/images/case-studies/dopopulizia.webp',
     serviceSlug: 'trattamento-superfici',
   },
   {
@@ -23,8 +23,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: 'Pulizia Pavimentazione Officina Industriale',
     description: 'Intervento di pulizia profonda in officina meccanica con lavasciuga industriale. Pavimento ripristinato da sporco oleoso, residui di lavorazione e polvere accumulata.',
     category: 'Pulizie Industriali',
-    beforeImage: '/images/case-studies/prima-reale.png',
-    afterImage: '/images/case-studies/dopo-reale.png',
+    beforeImage: '/images/case-studies/prima-reale.webp',
+    afterImage: '/images/case-studies/dopo-reale.webp',
     serviceSlug: 'pulizie-industriali',
   },
 ]

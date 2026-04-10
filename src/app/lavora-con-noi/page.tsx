@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     description: 'Entra nel team di una delle imprese di pulizie più innovative di Parma.',
     url: 'https://www.fulgurservice.it/lavora-con-noi',
     siteName: 'Fulgur Service',
-    images: [{ url: 'https://www.fulgurservice.it/og/default.jpg', width: 1200, height: 630, alt: 'Lavora con Fulgur Service' }],
+    images: [{ url: 'https://www.fulgurservice.it/og/default.webp', width: 1200, height: 630, alt: 'Lavora con Fulgur Service' }],
     locale: 'it_IT',
     type: 'website',
   },

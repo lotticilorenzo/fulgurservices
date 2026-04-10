@@ -2,7 +2,9 @@ import React from 'react'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { TOWNS } from '@/lib/towns-data'
+import { makeServiceJsonLd, makeBreadcrumbsJsonLd } from '@/lib/seo'
 import { SectionLabel } from '@/components/ui/SectionLabel'
+
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
 import { TrustBar } from '@/components/ui/TrustBar'
 import { IntegratedBento } from '@/components/servizi/IntegratedBento'
@@ -38,10 +40,41 @@ export default function TownPage({ params }: TownPageProps) {
   const town = TOWNS.find(t => t.slug === params.slug)
   if (!town) notFound()
 
+  // SEO: Create Service JSON-LD with AreaServed and Breadcrumbs
+  const serviceJsonLd = makeServiceJsonLd({
+    title: `Impresa di Pulizie Professionali a ${town.name}`,
+    shortDesc: town.heroSub,
+    slug: `zone/${town.slug}`, // Non usato direttamente dal helper ma passato per coerenza
+    metaDescription: town.metaDescription,
+  })
+  
+  // Override areaServed specifically for the town
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  ;(serviceJsonLd as any).areaServed = {
+    '@type': 'City',
+    name: town.name,
+    addressCountry: 'IT',
+  }
+
+  const breadcrumbsJsonLd = makeBreadcrumbsJsonLd([
+    { name: 'Home', item: '/' },
+    { name: 'Zone', item: '/zone' },
+    { name: town.name, item: `/zone/${town.slug}` },
+  ])
+
   return (
     <main className="bg-[var(--bg)] min-h-[100dvh]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbsJsonLd) }}
+      />
       {/* LOCAL HERO */}
       <section className="relative pt-32 pb-24 sm:pt-48 sm:pb-32 overflow-hidden border-b border-[var(--br)]">
+
         <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
           <div className="absolute top-[10%] right-[5%] w-[500px] h-[500px] bg-[var(--accent)]/10 rounded-full blur-[120px]" />
           <div className="absolute bottom-[10%] left-[5%] w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[100px]" />
