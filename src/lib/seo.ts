@@ -139,6 +139,20 @@ export const METADATA = {
       type: 'website' as const,
     },
   },
+  storage: {
+    title: 'Box Archivio Sicuri a Parma | Fulgur Storage — Deposito Documenti con Accesso H24',
+    description:
+      'Box archivio riservati a Parma con telecamera, allarme certificato e accesso illimitato 24/7. Prezzo fisso mensile, box dedicato esclusivo. Ideale per avvocati, commercialisti e aziende. Sopralluogo gratuito.',
+    openGraph: {
+      title: 'Fulgur Storage — Box Archivio Sicuri a Parma | Accesso H24 · Prezzo Fisso',
+      description: 'Box archivio privati con sorveglianza, allarme e accesso 24/7 a Parma. Prezzo fisso mensile senza sorprese.',
+      url: `${BASE_URL}/storage`,
+      siteName: 'Fulgur Service',
+      images: [{ url: OG_DEFAULT, width: 1200, height: 630, alt: 'Fulgur Storage — Box Archivio Parma' }],
+      locale: 'it_IT',
+      type: 'website' as const,
+    },
+  },
   fulgurAI: {
     title: 'Fulgur AI | Il tuo Consulente Intelligente — Fulgur Service',
     description:
