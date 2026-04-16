@@ -131,7 +131,7 @@ A fine intervento rilasciamo sempre una scheda documentata: prodotti usati, aree
     sectors: ['Studi medici e dentistici', 'Cliniche e poliambulatori', 'Farmacie e parafarmacie', 'Centri estetici e fisioterapici'],
     metaTitle: 'Sanificazione Studi Medici e Cliniche Parma | Protocolli HACCP | Fulgur Service',
     metaDescription: 'Sanificazione certificata HACCP per studi medici, dentistici e cliniche a Parma. PMC ministeriali, vapore 180°, report ASL. Prevenzione infezioni crociate. Preventivo gratis.',
-    image: '/images/servizi/settore-sanitario-parma.webp',
+    image: '/images/gallery/pulizia-studio-medico-fulgur-service.webp',
     imageAlt: 'Sanificazione certificata di uno studio medico con protocolli HACCP e prodotti presidio medico chirurgico',
     faq: [
       {
@@ -253,7 +253,7 @@ Ogni superficie ha il suo protocollo. È la differenza tra un risultato che dura
     sectors: ['Appartamenti e ville private di Parma', 'Palazzi storici e uffici di rappresentanza', 'Hotel e strutture ricettive di lusso', 'Negozi e showroom con pavimentazioni pregiate'],
     metaTitle: 'Lucidatura Marmo e Trattamento Pavimenti Parma | Fulgur Service',
     metaDescription: 'Cristallizzazione marmo, trattamento gres e rigenerazione parquet a Parma. Non sempre serve sostituire: spesso bastano i macchinari e il metodo giusti. Richiedi sopralluogo.',
-    image: '/images/servizi/trattamento-superfici-parma.webp',
+    image: '/images/servizi/trattamento-superfici-pavimenti-parma.webp',
     imageAlt: 'Dettaglio della cristallizzazione di un pavimento in marmo che mostra un effetto a specchio riflettente',
     faq: [
       {

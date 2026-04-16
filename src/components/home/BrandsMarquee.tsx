@@ -11,13 +11,13 @@ const BRANDS = [
   { name: 'Klindex',        logo: '/images/macchinari/klindex.webp' },
   { name: 'Kiter',          logo: '/images/macchinari/kiter.webp' },
   { name: 'CFM Lombardia',  logo: '/images/macchinari/cfm-lombardia.webp' },
-  { name: 'Lindhaus',       logo: '/images/macchinari/lindhaus.webp' },
+  { name: 'Lindhaus',       logo: '/images/macchinari/scopa-elettrica-lindhaus.webp' },
   { name: 'Pulitalia',      logo: '/images/macchinari/pulitalia.webp' },
-  { name: 'Viking',         logo: '/images/macchinari/viking.webp' },
-  { name: 'Pulivax',        logo: '/images/macchinari/pulivax.webp' },
+  { name: 'Viking',         logo: '/images/macchinari/lavasciuga-viking-pulizia-industriale.webp' },
+  { name: 'Pulivax',        logo: '/images/macchinari/pulivax-lucidatrice.webp' },
   { name: 'Nilfisk',        logo: '/images/macchinari/nilfisk.webp' },
   { name: 'Künzle & Tasin', logo: '/images/macchinari/kunzle-tasin.webp' },
-  { name: 'Gioel',          logo: '/images/macchinari/gioel.svg' },
+  { name: 'Gioel',          logo: '/images/macchinari/sistema-gioel-vapore.svg' },
   { name: 'EU Ecolabel',    logo: '/images/macchinari/ecolabel.webp' },
 ]
 

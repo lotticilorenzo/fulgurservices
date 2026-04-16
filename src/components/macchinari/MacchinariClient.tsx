@@ -13,13 +13,13 @@ const BRANDS = [
   { name: 'Klindex', logo: '/images/macchinari/klindex.webp' },
   { name: 'Kiter', logo: '/images/macchinari/kiter.webp' },
   { name: 'CFM Lombardia', logo: '/images/macchinari/cfm-lombardia.webp' },
-  { name: 'Lindhaus', logo: '/images/macchinari/lindhaus.webp' },
+  { name: 'Lindhaus', logo: '/images/macchinari/scopa-elettrica-lindhaus.webp' },
   { name: 'Pulitalia', logo: '/images/macchinari/pulitalia.webp' },
-  { name: 'Viking', logo: '/images/macchinari/viking.webp' },
-  { name: 'Pulivax', logo: '/images/macchinari/pulivax.webp' },
+  { name: 'Viking', logo: '/images/macchinari/lavasciuga-viking-pulizia-industriale.webp' },
+  { name: 'Pulivax', logo: '/images/macchinari/pulivax-lucidatrice.webp' },
   { name: 'Nilfisk', logo: '/images/macchinari/nilfisk.webp' },
   { name: 'Künzle & Tasin', logo: '/images/macchinari/kunzle-tasin.webp' },
-  { name: 'Gioel', logo: '/images/macchinari/gioel.svg' },
+  { name: 'Gioel', logo: '/images/macchinari/sistema-gioel-vapore.svg' },
   { name: 'EU Ecolabel', logo: '/images/macchinari/ecolabel.webp' },
 ]
 
@@ -184,7 +184,7 @@ export function MacchinariClient() {
             <ScrollReveal delay={0.2}>
               <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
                 <Image
-                  src="/images/macchinari/macchinavapore.webp"
+                  src="/images/macchinari/macchina-vapore-professionale.webp"
                   alt="Macchina professionale per sanificazione a vapore 180°C Fulgur Service"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -221,7 +221,7 @@ export function MacchinariClient() {
             <ScrollReveal delay={0.3}>
               <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
                 <Image
-                  src="/images/macchinari/macchinaosmosi.webp"
+                  src="/images/macchinari/sistema-osmosi-inversa-vetrate.webp"
                   alt="Sistema ad osmosi inversa per vetrate"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -281,7 +281,7 @@ export function MacchinariClient() {
             <ScrollReveal delay={0.6}>
               <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
                 <Image
-                  src="/images/macchinari/pulivapor.webp"
+                  src="/images/macchinari/idropulitrice-pulivapor-alta-pressione.webp"
                   alt="Idropulitrice professionale Pulivapor ad alta pressione per pulizie industriali"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
