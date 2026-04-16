@@ -259,7 +259,7 @@ export function HeroSection() {
               className="absolute -left-10 bottom-20 z-20 glass-white rounded-2xl px-5 py-4 min-w-[120px] shadow-xl"
             >
               <div className="flex flex-col items-start leading-tight">
-                <div className="font-display text-3xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-3xl md:text-4xl">12</div>
+                <div className="font-display text-3xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-3xl md:text-4xl">16</div>
                 <div className="mt-1 font-mono-fulgur text-[9px] font-bold uppercase tracking-widest text-[var(--tx-2)]">
                   Aree di<br />intervento
                 </div>

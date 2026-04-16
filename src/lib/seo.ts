@@ -23,10 +23,10 @@ export const METADATA = {
   servizi: {
     title: 'Tutti i Servizi | Fulgur Service Parma',
     description:
-      '12 aree di intervento: pulizie aziendali, industriali, sanitarie, condomini, hotel, trattamento superfici e molto altro. Sede a Parma, operativi in tutta Italia.',
+      '16 aree di intervento: pulizie aziendali, industriali, sanitarie, salumifici, condomini, hotel, trattamento superfici e molto altro. Sede a Parma, operativi in tutta Italia.',
     openGraph: {
       title: 'Tutti i Servizi — Fulgur Service Parma',
-      description: '12 aree di intervento con team specializzato e macchinari professionali.',
+      description: '16 aree di intervento con team specializzato e macchinari professionali.',
       url: `${BASE_URL}/servizi`,
       siteName: 'Fulgur Service',
       images: [{ url: OG_DEFAULT, width: 1200, height: 630, alt: 'Servizi Fulgur Service Parma' }],

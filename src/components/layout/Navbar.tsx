@@ -167,7 +167,7 @@ export default function Navbar() {
                           onClick={() => setServicesOpen(false)}
                           className="flex w-full items-center justify-center gap-1.5 rounded-xl bg-[var(--bg-2)] px-3 py-2.5 border border-[var(--br)] font-mono-fulgur text-[10px] font-bold uppercase tracking-widest text-[var(--tx-3)] hover:text-[var(--accent)] hover:border-[var(--accent)]/30 transition-colors"
                         >
-                          Vedi tutti i 12 servizi
+                          Vedi tutti i 16 servizi
                           <ArrowRight size={10} weight="bold" />
                         </Link>
                       </motion.div>
@@ -316,7 +316,7 @@ export default function Navbar() {
                                 onClick={() => setIsMobileOpen(false)}
                                 className="inline-flex mt-2 ml-3 items-center gap-1.5 font-mono-fulgur text-[11px] font-bold uppercase tracking-widest text-[var(--accent)]"
                               >
-                                Vedi tutti i 12 servizi <ArrowRight size={12} weight="bold" />
+                                Vedi tutti i 16 servizi <ArrowRight size={12} weight="bold" />
                               </Link>
                             </div>
                           </motion.div>

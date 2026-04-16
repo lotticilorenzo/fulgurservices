@@ -16,6 +16,7 @@ export interface Service {
   image: string
   imageAlt?: string
   faq?: { q: string; a: string }[]
+  relatedSlugs?: string[]
 }
 
 export interface IntegratedService {
@@ -133,6 +134,7 @@ A fine intervento rilasciamo sempre una scheda documentata: prodotti usati, aree
     metaDescription: 'Sanificazione certificata HACCP per studi medici, dentistici e cliniche a Parma. PMC ministeriali, vapore 180°, report ASL. Prevenzione infezioni crociate. Preventivo gratis.',
     image: '/images/gallery/pulizia-studio-medico-fulgur-service.webp',
     imageAlt: 'Sanificazione certificata di uno studio medico con protocolli HACCP e prodotti presidio medico chirurgico',
+    relatedSlugs: ['sanificazione-salumifici', 'sanificazione-vapore', 'settore-alberghiero'],
     faq: [
       {
         q: 'Che differenza c\'è tra pulizia ordinaria e sanificazione HACCP?',
@@ -453,6 +455,7 @@ Gli ambiti di applicazione sono molti: materassi e imbottiture, divani in tessut
     metaDescription: 'Sanificazione a vapore saturo 180° a Parma: elimina batteri e virus senza prodotti chimici. Sicuro per bambini e allergici. Materassi, studi medici, ristoranti. Preventivo gradito.',
     image: '/images/servizi/sanificazione-vapore-parma.webp',
     imageAlt: 'Igienizzazione naturale di un divano in tessuto tramite generatore di vapore secco a 180 gradi',
+    relatedSlugs: ['settore-sanitario', 'sanificazione-salumifici', 'pulizie-industriali'],
     faq: [
       {
         q: 'Cos\'è la sanificazione a vapore saturo e come funziona?',
@@ -621,6 +624,66 @@ Operiamo su edifici civili, condomini, capannoni industriali e strutture commerc
       {
         q: 'Con quale frequenza andrebbe pulita la facciata di un condominio?',
         a: 'In ambiente urbano come Parma, un intervento ogni 5-7 anni è sufficiente per facciate trattate con idrorepellente. Senza protezione, la sporcizia si fissa prima e potrebbe richiedere interventi più ravvicinati (ogni 3-4 anni).',
+      },
+    ],
+  },
+  {
+    id: '16',
+    slug: 'sanificazione-salumifici',
+    title: 'Sanificazione Salumifici',
+    shortDesc: 'Sanificazione industriale HACCP per salumifici, prosciuttifici e stabilimenti alimentari nel distretto food di Parma. Detergenti food-grade, zero residui chimici, conformità CE 852/2004.',
+    longDesc: `Parma è la capitale mondiale del prosciutto e dei salumi. È il territorio dove ogni fase di lavorazione — dalla macellazione alla stagionatura, dal confezionamento alla spedizione — è soggetta ai controlli più rigorosi d'Europa. In questo contesto, la sanificazione non è un servizio accessorio: è parte integrante del processo produttivo, e un errore può bloccare una linea intera o aprire la porta a un richiamo di prodotto.
+
+Lavoriamo con salumifici e prosciuttifici della provincia di Parma da anni. Conosciamo le specificità di questi ambienti: le celle di stagionatura con temperature e umidità controllate che non possono essere alterate, i pavimenti in calcestruzzo trattato che richiedono prodotti compatibili con la normativa CE 852/2004, le cappe di aspirazione delle nebbie di grasso che vanno sgrassate senza lasciare residui a contatto con il prodotto. Dettagli che chi non lavora nel settore alimentare non conosce e non può improvvisare.
+
+Il protocollo di intervento viene scritto insieme al responsabile HACCP di ogni stabilimento: nessuno conosce la linea meglio di chi ci lavora ogni giorno, e noi siamo lì per eseguire — con precisione, con i prodotti giusti, con le registrazioni che servono per ogni audit. Utilizziamo esclusivamente detergenti e disinfettanti food-grade con omologazione ministeriale e numero DIN, le cui schede tecniche rimangono nel dossier del cliente a disposizione per qualsiasi ispezione ASL o richiesta RASFF.
+
+Gli interventi sono pianificati nelle finestre di fermo produzione — di notte, nel weekend, nei giorni di manutenzione programmata — per non interferire con i cicli produttivi e rispettare i tempi di carenza dei disinfettanti. Il turno del lunedì mattina trova la linea già pronta. Nessun ritardo, nessuna scusa.
+
+È questa capacità di lavorare dentro i vincoli operativi dell'industria alimentare — rispettando norme, processi e persone — che distingue Fulgur Service da un'impresa di pulizie generica. Operiamo in tutta la Food Valley emiliana: da Langhirano a Felino, da Collecchio a San Secondo Parmense.`,
+    icon: 'ForkKnife',
+    featured: true,
+    keywords: [
+      'sanificazione salumificio Parma',
+      'pulizia prosciuttificio Parma',
+      'sanificazione HACCP industria alimentare Parma',
+      'pulizia stabilimento alimentare Parma',
+      'sanificazione food grade Parma',
+      'disinfezione salumi Emilia Romagna',
+      'sanificazione celle stagionatura prosciutto',
+      'HACCP food valley emiliana',
+    ],
+    benefits: [
+      'Detergenti e disinfettanti food-grade certificati CE 852/2004 e D.Lgs. 193/2007',
+      'Operatori formati HACCP con registrazioni firmate per ogni audit ASL',
+      'Interventi notturni o nel weekend: produzione mai interrotta, zero downtime',
+      'Sgrassaggio intensivo cappe, vasche e linee senza residui a contatto alimentare',
+      'Sanificazione celle di stagionatura con prodotti compatibili con temperature controllate',
+      'Dossier di conformità completo: schede tecniche, registrazioni, certificati a disposizione',
+    ],
+    sectors: [
+      'Salumifici e prosciuttifici del distretto di Parma e Langhirano',
+      'Laboratori di trasformazione carni certificati UE',
+      'Stabilimenti di confezionamento prodotti DOP e IGP',
+      'Industria alimentare della Food Valley emiliana',
+    ],
+    metaTitle: 'Sanificazione Salumifici e Prosciuttifici Parma | HACCP | Fulgur Service',
+    metaDescription: 'Sanificazione HACCP per salumifici e prosciuttifici a Parma. Detergenti food-grade, zero residui chimici, interventi notturni. Conformi CE 852/2004. Food Valley emiliana. Preventivo gratuito.',
+    image: '/images/gallery/sanificazione-pavimento-capannone-fulgur.webp',
+    imageAlt: 'Sanificazione professionale HACCP di un pavimento industriale in uno stabilimento alimentare del distretto food di Parma con attrezzatura certificata',
+    relatedSlugs: ['settore-sanitario', 'sanificazione-vapore', 'pulizie-industriali'],
+    faq: [
+      {
+        q: 'Quali normative rispettate per la sanificazione nei salumifici?',
+        a: 'Lavoriamo in conformità con il Regolamento CE 852/2004 sull\'igiene dei prodotti alimentari e il D.Lgs. 193/2007 sui prodotti biocidi. Tutti i detergenti e disinfettanti sono food-grade con omologazione ministeriale e numero DIN. Per ogni intervento rilasciamo una registrazione firmata da conservare nel manuale HACCP, valida per audit ASL e ispezioni RASFF.',
+      },
+      {
+        q: 'Come lavorate nelle celle di stagionatura senza compromettere prosciutti e salumi?',
+        a: 'Operiamo esclusivamente nelle finestre di fermo produzione concordate con il responsabile HACCP, usando prodotti specifici per ambienti a temperatura e umidità controllata. Rispettiamo rigorosamente i tempi di carenza richiesti prima del rientro del prodotto. La nostra esperienza nel distretto parmense ci permette di capire ogni fase del ciclo di stagionatura e agire di conseguenza.',
+      },
+      {
+        q: 'Sanificate anche le linee di confezionamento e i macchinari?',
+        a: 'Sì. Interveniamo su affettatrici, linee di confezionamento, nastri trasportatori e vasche di salamoia con prodotti specifici per contatto con superfici alimentari. Il protocollo di CIP (Clean In Place) e COP (Clean Out of Place) viene definito con il responsabile di produzione per garantire efficacia igienica senza compromettere i materiali delle attrezzature.',
       },
     ],
   },

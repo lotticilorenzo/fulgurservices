@@ -12,7 +12,7 @@ import { WipeReveal } from '@/components/ui/WipeReveal'
 import { MagneticButton } from '@/components/ui/MagneticButton'
 import { BeforeAfterSlider } from '@/components/ui/BeforeAfterSlider'
 import { CASE_STUDIES } from '@/lib/case-studies'
-import { Service } from '@/lib/services-data'
+import { Service, SERVICES } from '@/lib/services-data'
 import { CTASection } from '@/components/home/CTASection'
 
 interface ServiceContentProps {
@@ -199,6 +199,34 @@ export function ServiceContent({ service }: ServiceContentProps) {
                   ))}
                 </div>
               </div>
+
+              {/* SERVIZI CORRELATI */}
+              {service.relatedSlugs && service.relatedSlugs.length > 0 && (() => {
+                const related = SERVICES.filter(s => service.relatedSlugs!.includes(s.slug))
+                if (!related.length) return null
+                const IconLookupR = Icons as unknown as Record<string, React.ElementType>
+                return (
+                  <div className="glass-premium rounded-3xl border border-[var(--br)] bg-white/60 p-5 sm:p-7 shadow-xl backdrop-blur-xl">
+                    <SectionLabel className="mb-5">— SERVIZI CORRELATI</SectionLabel>
+                    <div className="flex flex-col gap-3">
+                      {related.map((rel) => {
+                        const RelIcon: React.ElementType = IconLookupR[rel.icon] ?? Icons.Briefcase
+                        return (
+                          <Link
+                            key={rel.slug}
+                            href={`/servizi/${rel.slug}`}
+                            className="flex items-center gap-3 rounded-xl border border-[var(--br)] bg-[var(--bg-2)] px-4 py-3 hover:border-[var(--accent)]/40 hover:bg-[var(--card-hover)] transition-all group/rel"
+                          >
+                            <RelIcon size={18} weight="duotone" className="text-[var(--accent)] shrink-0" />
+                            <span className="font-sans text-[14px] text-[var(--tx-2)] group-hover/rel:text-[var(--tx-1)] transition-colors flex-1">{rel.title}</span>
+                            <ArrowRight size={12} className="text-[var(--tx-3)] group-hover/rel:text-[var(--accent)] transition-colors shrink-0" />
+                          </Link>
+                        )
+                      })}
+                    </div>
+                  </div>
+                )
+              })()}
 
               {/* TEASER IMPRESA 360 */}
               <div className="rounded-3xl border border-[var(--accent)]/20 bg-gradient-to-br from-[var(--bg)] to-[var(--accent)]/10 p-6 sm:p-8 text-center relative overflow-hidden group">
