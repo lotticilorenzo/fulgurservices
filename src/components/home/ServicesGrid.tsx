@@ -89,7 +89,7 @@ export function ServicesGrid() {
                 service={service}
                 size="small"
                 index={7 + idx}
-                className={idx === remainingServices.length - 1 ? 'sm:col-span-2 lg:col-span-2' : ''}
+                className=""
               />
             ))}
           </div>

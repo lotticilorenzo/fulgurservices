@@ -745,8 +745,8 @@ SEO:
   [x] Structured data JSON-LD
   [ ] OG images per ogni pagina
 
-ULTIMO AGGIORNAMENTO: Aggiunte card Monospazzola e Lava Moquette (con placeholder) in Macchinari. Aggiornata immagine Macchina a Osmosi. Ripristinato logo EU Ecolabel con versione locale. Push su GitHub finale.
-SESSIONE PRECEDENTE: Progetto Next.js inizializzato, configurazione Tailwind (v4) CSS, dipendenze installate, componenti layout/UI base creati, JSON-LD in app/layout.tsx e check TypeScript superato senza errori.
+ULTIMO AGGIORNAMENTO: Corretto layout Bento Grid nella sezione Servizi. Rimossa col-span-2 dalla card "Sanificazione Salumifici" per eliminare lo spazio vuoto e completare la griglia 3x3 in modo simmetrico. Verificato allineamento corretto in localhost.
+SESSIONE PRECEDENTE: Aggiunte card Monospazzola e Lava Moquette (con placeholder) in Macchinari. Aggiornata immagine Macchina a Osmosi. Ripristinato logo EU Ecolabel con versione locale. Push su GitHub finale.
 NOTE: La configurazione Tailwind è in v4 (@theme in globals.css) anziché tailwind.config.ts, aggiornato per Next.js 15.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
