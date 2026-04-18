@@ -18,7 +18,7 @@ export default function ContattiPage() {
         
         {/* HEADER */}
         <div className="mb-12 md:mb-20 text-center flex flex-col items-center">
-          <SectionLabel className="mb-4">— SIAMO QUI PER TE</SectionLabel>
+          <SectionLabel className="mb-4">SIAMO QUI PER TE</SectionLabel>
           <h1 className="font-display text-[32px] sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--tx-1)] max-w-3xl text-balance leading-tight sm:leading-[1.1]">
             Entriamo in <span className="text-[var(--accent)]">contatto.</span>
           </h1>

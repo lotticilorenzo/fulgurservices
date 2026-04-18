@@ -13,7 +13,7 @@ interface ScrollRevealProps {
 }
 
 /**
- * ScrollReveal — due implementazioni:
+ * ScrollReveal | due implementazioni:
  *
  * staggerChildren=false (default):
  *   CSS animation + IntersectionObserver nativo.

@@ -48,7 +48,7 @@ export function Footer() {
               <div className="rounded-xl bg-white p-1 shadow-sm border border-[var(--br)]">
                 <Image
                   src="/images/logo-fulgur-service-impresa-pulizie-parma.webp"
-                  alt="Fulgur Service — Logo Ufficiale dell'impresa di pulizie professionali a Parma"
+                  alt="Fulgur Service Logo Ufficiale dell'impresa di pulizie professionali a Parma"
                   width={44}
                   height={44}
                   className="object-contain"
@@ -198,7 +198,7 @@ export function Footer() {
 
         </div>
 
-        {/* Bottom Bar — maintain pb-32 on mobile to not be covered by floating actions (WhatsApp, N badge) */}
+        {/* Bottom Bar | maintain pb-32 on mobile to not be covered by floating actions (WhatsApp, N badge) */}
         <div className="mt-12 sm:mt-14 border-t border-[var(--br)] pt-8 sm:pt-7 pb-24 sm:pb-0 flex flex-col items-center justify-between gap-6 sm:flex-row">
           <p className="font-mono-fulgur text-[10px] sm:text-[10px] uppercase tracking-wider text-[var(--tx-2)] text-center sm:text-left leading-relaxed">
             © {year} Fulgur Service S.R.L.<br className="block sm:hidden" /> P.IVA 03063010346 · REA PR-353051<br className="block sm:hidden" /> Cap. Soc. €10.000 i.v.

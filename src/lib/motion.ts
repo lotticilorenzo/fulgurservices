@@ -1,12 +1,12 @@
-// lib/motion.ts — Framer Motion variants — Fulgur Service
+// lib/motion.ts | Framer Motion variants | Fulgur Service
 import type { Variants } from 'framer-motion'
 
-// Easing esponenziale — "snappy" e naturale
+// Easing esponenziale | "snappy" e naturale
 const EASE = [0.16, 1, 0.3, 1] as const
 // Easing più morbido per elementi grandi
 const EASE_SOFT = [0.25, 0.46, 0.45, 0.94] as const
 
-/* ── Reveal base — fade + rise + lieve scala ── */
+/* ── Reveal base | fade + rise + lieve scala ── */
 export const fadeUp: Variants = {
   hidden:  { opacity: 0, y: 28, scale: 0.985 },
   visible: {
@@ -25,7 +25,7 @@ export const staggerContainer: Variants = {
   },
 }
 
-/* ── Stagger item — più espressivo del fadeUp base ── */
+/* ── Stagger item | più espressivo del fadeUp base ── */
 export const staggerItem: Variants = {
   hidden:  { opacity: 0, y: 22, scale: 0.97 },
   visible: {
@@ -36,13 +36,13 @@ export const staggerItem: Variants = {
   },
 }
 
-/* ── Fade puro — per overlay, tooltip, ecc ── */
+/* ── Fade puro | per overlay, tooltip, ecc ── */
 export const fadeIn: Variants = {
   hidden:  { opacity: 0 },
   visible: { opacity: 1, transition: { duration: 0.4, ease: EASE_SOFT } },
 }
 
-/* ── Scale in — per cards, modal ── */
+/* ── Scale in | per cards, modal ── */
 export const scaleIn: Variants = {
   hidden:  { opacity: 0, scale: 0.9 },
   visible: {

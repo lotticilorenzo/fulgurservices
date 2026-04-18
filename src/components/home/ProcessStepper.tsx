@@ -46,7 +46,7 @@ export function ProcessStepper() {
       <div className="mx-auto w-full max-w-4xl px-6 py-16 xl:px-8 lg:py-32">
         <ScrollReveal>
           <div className="text-center mb-12 sm:mb-24">
-            <SectionLabel className="mb-5 mx-auto">— IL NOSTRO PROCESSO</SectionLabel>
+            <SectionLabel className="mb-5 mx-auto">IL NOSTRO PROCESSO</SectionLabel>
             <h2
               className="font-display font-extrabold tracking-tight text-[var(--tx-1)] text-balance"
               style={{ fontSize: 'clamp(32px, 4vw, 56px)' }}

@@ -10,7 +10,7 @@ interface Message {
   content: string
 }
 
-// Stesso pattern del server — strip il tag [LEAD:{...}] dal testo visualizzato
+// Stesso pattern del server | strip il tag [LEAD:{...}] dal testo visualizzato
 const LEAD_STRIP_RE = /\[LEAD:\{[^}]+\}\]/g
 
 // SSE packet inviato dalla route
@@ -112,7 +112,7 @@ export default function ChatWidget() {
               setStreamingContent(rawAccumulated.replace(LEAD_STRIP_RE, '').trim())
             }
             // Il pacchetto { lead } è gestito server-side (webhook).
-            // Non serve azione UI aggiuntiva — il testo dell'AI conferma all'utente.
+            // Non serve azione UI aggiuntiva | il testo dell'AI conferma all'utente.
           } catch {
             // chunk SSE malformato — skip
           }
@@ -204,7 +204,7 @@ export default function ChatWidget() {
               ref={scrollRef}
               className="flex-1 overflow-y-auto p-5 space-y-6 scroll-smooth custom-scrollbar"
             >
-              {/* Schermata di benvenuto — visibile solo se non ci sono messaggi e non sta scrivendo */}
+              {/* Schermata di benvenuto | visibile solo se non ci sono messaggi e non sta scrivendo */}
               {messages.length === 0 && !isTyping && (
                 <div className="h-full flex flex-col items-center justify-center text-center p-6 space-y-6">
                   <motion.div
@@ -220,7 +220,7 @@ export default function ChatWidget() {
                       Sono a sua disposizione per preventivi, informazioni tecniche e assistenza sui servizi Fulgur.
                     </p>
                   </div>
-                  {/* Quick chips — clic = auto-submit immediato */}
+                  {/* Quick chips | clic = auto-submit immediato */}
                   <div className="flex flex-wrap gap-2 justify-center pt-4">
                     {QUICK_CHIPS.map((chip, idx) => (
                       <motion.button
@@ -260,7 +260,7 @@ export default function ChatWidget() {
                 </motion.div>
               ))}
 
-              {/* Bolla di streaming — mostra dots finché non arriva il primo token */}
+              {/* Bolla di streaming | mostra dots finché non arriva il primo token */}
               {isTyping && (
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}

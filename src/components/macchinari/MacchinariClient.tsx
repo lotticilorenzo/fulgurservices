@@ -122,7 +122,7 @@ export function MacchinariClient() {
       <div className="mx-auto w-full max-w-7xl px-6 xl:px-8 pt-20 mb-32">
         {/* GRUPPO 1: LAVAGGIO PRINCIPALE */}
         <div className="mb-12">
-          <SectionLabel className="mb-6">— LAVAGGIO PRINCIPALE</SectionLabel>
+          <SectionLabel className="mb-6">LAVAGGIO PRINCIPALE</SectionLabel>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <ScrollReveal delay={0.1}>
               <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
@@ -162,7 +162,7 @@ export function MacchinariClient() {
 
         {/* GRUPPO 2: TECNOLOGIE SPECIALISTICHE */}
         <div>
-          <SectionLabel className="mb-6">— TECNOLOGIE SPECIALISTICHE</SectionLabel>
+          <SectionLabel className="mb-6">TECNOLOGIE SPECIALISTICHE</SectionLabel>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <ScrollReveal delay={0.1}>
               <div className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--br)] bg-[var(--bg-2)] shadow-lg hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] hover:-translate-y-1 transition-all duration-700">
@@ -309,7 +309,7 @@ export function MacchinariClient() {
       {/* GRID BRANDS */}
       <div className="w-full bg-[var(--bg-3)] py-24 border-y border-[var(--br)]">
         <div className="mx-auto w-full max-w-6xl px-6 xl:px-8">
-          <SectionLabel className="mb-12 text-center">— I NOSTRI BRAND PARTNER</SectionLabel>
+          <SectionLabel className="mb-12 text-center">I NOSTRI BRAND PARTNER</SectionLabel>
           
           <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-6">
             {BRANDS.map((brand, i) => {
@@ -330,7 +330,7 @@ export function MacchinariClient() {
                     <div className="relative w-full h-12 z-10 flex flex-col items-center justify-center">
                       <Image
                         src={brand.logo}
-                        alt={`Logo ${brand.name} — partner macchinari Fulgur Service`}
+                        alt={`Logo ${brand.name} partner macchinari Fulgur Service`}
                         fill
                         className="object-contain filter grayscale group-hover:grayscale-0 brightness-[0.9] group-hover:brightness-100 transition-all duration-500 scale-[0.85] group-hover:scale-[1.05]"
                         sizes="180px"

@@ -8,7 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 /**
- * LenisProvider — smooth scroll globale, connesso a GSAP ScrollTrigger.
+ * LenisProvider | smooth scroll globale, connesso a GSAP ScrollTrigger.
  * Nessun markup: puro effetto collaterale.
  */
 export function LenisProvider() {
@@ -18,7 +18,7 @@ export function LenisProvider() {
 
     const lenis = new Lenis({
       duration: 1.15,
-      // Easing esponenziale — accelerazione immediata, deceleration naturale
+      // Easing esponenziale | accelerazione immediata, deceleration naturale
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
@@ -31,7 +31,7 @@ export function LenisProvider() {
     // Sync Lenis → GSAP ScrollTrigger (cruciale per evitare desync)
     lenis.on('scroll', ScrollTrigger.update)
 
-    // Usa il ticker di GSAP come RAF — impedisce il doppio requestAnimationFrame
+    // Usa il ticker di GSAP come RAF | impedisce il doppio requestAnimationFrame
     const onTick = (time: number) => lenis.raf(time * 1000)
     gsap.ticker.add(onTick)
     gsap.ticker.lagSmoothing(0) // elimina lag compensation che causa micro-stuttering

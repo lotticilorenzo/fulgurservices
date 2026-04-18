@@ -33,7 +33,7 @@ export default function ServiziPage() {
       
       {/* HEADER SERVIZI */}
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8 mb-8 text-center flex flex-col items-center">
-        <SectionLabel className="mb-4">— I NOSTRI SERVIZI</SectionLabel>
+        <SectionLabel className="mb-4">I NOSTRI SERVIZI</SectionLabel>
         <h1 className="font-display text-[32px] sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--tx-1)] max-w-4xl text-balance leading-[1.1] pb-1">
           Ogni ambiente ha bisogno di una <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--accent)] to-[var(--br-h)]">cura specifica.</span>
         </h1>

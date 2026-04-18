@@ -23,7 +23,7 @@ export function PartnershipSection() {
         
         <div className="text-center mb-16">
           <ScrollReveal>
-            <SectionLabel className="mb-4 mx-auto">— I NOSTRI MACCHINARI</SectionLabel>
+            <SectionLabel className="mb-4 mx-auto">I NOSTRI MACCHINARI</SectionLabel>
             <h2 className="font-display text-3xl font-bold text-[var(--tx-1)] sm:text-4xl mb-4">
               Operiamo solo con il meglio.
             </h2>

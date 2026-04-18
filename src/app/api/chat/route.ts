@@ -66,7 +66,7 @@ async function fireLead(data: LeadPayload): Promise<void> {
   const html = `
     <div style="font-family:'DM Sans',Arial,sans-serif; color:#0F1F1A; max-width:600px; margin:0 auto; border:1px solid #e0ede9; border-radius:12px; overflow:hidden;">
       <div style="background-color:#4ECBA0; padding:28px 32px; text-align:center;">
-        <h2 style="color:#ffffff; margin:0; font-size:20px; font-weight:700;">🤖 Nuovo Lead — Fulgur AI</h2>
+        <h2 style="color:#ffffff; margin:0; font-size:20px; font-weight:700;">🤖 Nuovo Lead | Fulgur AI</h2>
         <p style="color:rgba(255,255,255,0.85); margin-top:6px; font-size:13px;">
           Richiesta ricevuta tramite il chatbot del sito
         </p>
@@ -101,7 +101,7 @@ async function fireLead(data: LeadPayload): Promise<void> {
     await transporter.sendMail({
       from:    `"Fulgur AI" <${smtpUser}>`,
       to:      'fulgurservice@gmail.com',
-      subject: `[Lead AI] ${data.nome} — richiesta sopralluogo`,
+      subject: `[Lead AI] ${data.nome} | richiesta sopralluogo`,
       text:    `Nuovo lead dal chatbot.\nNome: ${data.nome}\n${data.tel ? `Tel: ${data.tel}` : `Email: ${data.email}`}`,
       html,
     })
@@ -187,7 +187,7 @@ export async function POST(req: NextRequest): Promise<Response> {
   // AbortSignal.timeout: se DeepSeek non risponde entro 25s → 502 pulito, nessun hang
   const apiKey = process.env.DEEPSEEK_API_KEY ?? ''
   if (!apiKey) {
-    console.error('[Fulgur AI] DEEPSEEK_API_KEY mancante — configurare su Vercel Environment Variables')
+    console.error('[Fulgur AI] DEEPSEEK_API_KEY mancante | configurare su Vercel Environment Variables')
     return jsonError('Servizio AI non configurato.', 503)
   }
 

@@ -7,7 +7,7 @@ import { QRCodeSVG } from 'qrcode.react'
 import { MagneticButton } from '@/components/ui/MagneticButton'
 import { WhatsAppHybridLink } from '@/components/ui/WhatsAppHybridLink'
 
-/* ── WhatsApp URL smart: web su desktop, app su mobile ── */
+/* ── WhatsApp URL smart | web su desktop, app su mobile ── */
 function getWhatsAppUrl(text: string): string {
   const phone = '393383160091'
   const encoded = encodeURIComponent(text)
@@ -32,8 +32,8 @@ const STEP_SERVIZI = [
 
 const STEP_METRATURA = [
   { id: 'xs',  label: '< 50 mq' },
-  { id: 'sm',  label: '50 – 200 mq' },
-  { id: 'md',  label: '200 – 500 mq' },
+  { id: 'sm',  label: '50 a 200 mq' },
+  { id: 'md',  label: '200 a 500 mq' },
   { id: 'lg',  label: '500+ mq' },
 ]
 
@@ -118,7 +118,7 @@ function PreventivoModal({ onClose }: { onClose: () => void }) {
           </button>
         </div>
 
-        {/* Progress bar — FIX VIOL-04: scaleX puro → compositor thread, zero layout */}
+        {/* Progress bar | FIX VIOL-04: scaleX puro | compositor thread, zero layout */}
         <div className="h-[2px] bg-[var(--br)] mx-6 overflow-hidden">
           <motion.div
             className="h-full w-full bg-[var(--accent)] rounded-full origin-left"
@@ -132,7 +132,7 @@ function PreventivoModal({ onClose }: { onClose: () => void }) {
         <div className="px-6 py-6 min-h-[260px] overflow-y-auto overscroll-contain">
           <AnimatePresence mode="wait">
 
-            {/* Step 0 — Servizio */}
+            {/* Step 0 | Servizio */}
             {step === 0 && (
               <motion.div key="s0"
                 initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }}
@@ -156,7 +156,7 @@ function PreventivoModal({ onClose }: { onClose: () => void }) {
               </motion.div>
             )}
 
-            {/* Step 1 — Metratura */}
+            {/* Step 1 Spazio */}
             {step === 1 && (
               <motion.div key="s1"
                 initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }}
@@ -177,7 +177,7 @@ function PreventivoModal({ onClose }: { onClose: () => void }) {
               </motion.div>
             )}
 
-            {/* Step 2 — Frequenza */}
+            {/* Step 2 Frequenza */}
             {step === 2 && (
               <motion.div key="s2"
                 initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }}
@@ -198,7 +198,7 @@ function PreventivoModal({ onClose }: { onClose: () => void }) {
               </motion.div>
             )}
 
-            {/* Step 3 — Riepilogo */}
+            {/* Step 3 Riepilogo */}
             {step === 3 && (
               <motion.div key="s3"
                 initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }}
@@ -248,7 +248,7 @@ function PreventivoModal({ onClose }: { onClose: () => void }) {
   )
 }
 
-/* ── FloatingActions — due bottoni sovrapposti in basso a destra ── */
+/* ── FloatingActions | due bottoni sovrapposti in basso a destra ── */
 export function FloatingActions() {
   const [visible, setVisible] = useState(false)
   const [modalOpen, setModalOpen] = useState(false)
@@ -295,7 +295,7 @@ export function FloatingActions() {
               <ArrowRight size={14} className="text-white/70 transition-transform group-hover:translate-x-0.5" />
             </motion.button>
 
-            {/* ── AI Assistant (Robot) button ── */}
+            {/* ── AI Assistant | Robot button ── */}
             <motion.div
               initial={{ opacity: 0, scale: 0.7 }}
               animate={{ opacity: 1, scale: 1 }}

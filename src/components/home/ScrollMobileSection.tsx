@@ -8,7 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 /**
- * ScrollMobileSection — solo mobile (block md:hidden)
+ * ScrollMobileSection | solo mobile (block md:hidden)
  *
  * Video scrubbing GSAP con file ottimizzato per seeking istantaneo.
  * scroll-mobile-scrub.mp4 è codificato con keyframe ogni frame (-g 1):
@@ -76,7 +76,7 @@ export function ScrollMobileSection() {
           if (video.duration) {
             video.currentTime = self.progress * video.duration
           }
-          // setState solo quando si attraversa la soglia — evita re-render continui
+          // setState solo quando si attraversa la soglia | evita re-render continui
           const t1 = self.progress >= 0.0 && self.progress <= 0.3
           const t2 = self.progress >= 0.35 && self.progress <= 0.65
           if (t1 !== showText1Ref.current) {
@@ -92,7 +92,7 @@ export function ScrollMobileSection() {
     }
 
     const startLoad = () => {
-      // Carica il video solo quando vicino al viewport — evita conflitti iOS
+      // Carica il video solo quando vicino al viewport | evita conflitti iOS
       // con altri video autoPlay (es. HeroSection sfondo)
       video.load()
       fallbackTimer = setTimeout(() => {

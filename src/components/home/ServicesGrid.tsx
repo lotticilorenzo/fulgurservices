@@ -30,13 +30,13 @@ export function ServicesGrid() {
   const row3Slugs = ['pulizie-condomini', 'settore-alberghiero', 'pulizie-fine-cantiere']
   const row3Cards = SERVICES.filter((s) => row3Slugs.includes(s.slug))
 
-  // Row 4: remaining — shown as a horizontal scrollable pill strip
+  // Row 4: remaining | shown as a horizontal scrollable pill strip
   const usedSlugs = ['pulizie-aziendali', 'settore-sanitario', 'trattamento-superfici', 'pulizie-industriali', ...row3Slugs]
   const remainingServices = SERVICES.filter((s) => !usedSlugs.includes(s.slug))
 
   return (
     <section className="relative w-full bg-white py-12 md:py-16 lg:py-24 border-y border-[var(--br)] overflow-x-clip" id="servizi">
-      {/* Background Architectural Text — overflow-x:clip previene ghost scroll su mobile */}
+      {/* Background Architectural Text | overflow-x:clip previene ghost scroll su mobile */}
       <div className="absolute top-10 left-0 w-full opacity-[0.035] pointer-events-none select-none hidden sm:block">
         <ParallaxText text="SERVIZI" direction="left" distance={150} />
       </div>
@@ -46,7 +46,7 @@ export function ServicesGrid() {
 
         {/* Header Section */}
         <div className="mb-8 md:mb-16 max-w-2xl lg:mb-20">
-          <SectionLabel className="mb-4">— I NOSTRI SERVIZI</SectionLabel>
+          <SectionLabel className="mb-4">I NOSTRI SERVIZI</SectionLabel>
           <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-[var(--tx-1)] lg:text-5xl text-balance">
             Ogni ambiente, <br className="hidden sm:block" /> un’unica soluzione.
           </h2>
@@ -107,7 +107,7 @@ export function ServicesGrid() {
         </div>
 
         {/* ────────────────────────────────────────── */}
-        {/* IMPRESA 360° — Servizi Integrati */}
+        {/* IMPRESA 360° | Servizi Integrati */}
         {/* ────────────────────────────────────────── */}
         <div className="mt-12 md:mt-20 relative overflow-hidden rounded-3xl md:rounded-[2.5rem] border border-[var(--br)] bg-gradient-to-br from-[var(--bg-2)] to-[var(--bg-3)] p-6 sm:p-10 lg:p-14">
 
@@ -119,7 +119,7 @@ export function ServicesGrid() {
 
               {/* Left: Intro text */}
               <div>
-                <SectionLabel className="mb-5">— IMPRESA 360°</SectionLabel>
+                <SectionLabel className="mb-5">IMPRESA 360°</SectionLabel>
                 <h2 className="font-display text-3xl font-extrabold tracking-tight text-[var(--tx-1)] lg:text-4xl">
                   Un solo partner <br className="hidden sm:block" />
                   <span className="text-[var(--accent)]">per ogni tua esigenza</span>

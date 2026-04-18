@@ -38,7 +38,7 @@ const dmMono = DM_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.fulgurservice.it'),
   title: {
-    default: 'Fulgur Service — Pulizie Professionali Parma',
+    default: 'Fulgur Service Pulizie Professionali Parma',
     template: '%s | Fulgur Service',
   },
   description:

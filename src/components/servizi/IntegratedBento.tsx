@@ -19,7 +19,7 @@ export function IntegratedBento() {
           <div className="w-full">
             <ScrollReveal>
               <div className="flex flex-wrap items-center gap-3 mb-6">
-                <SectionLabel>— IMPRESA 360°</SectionLabel>
+                <SectionLabel>IMPRESA 360°</SectionLabel>
                 <span className="font-mono-fulgur text-[9px] sm:text-[10px] uppercase tracking-widest text-[var(--tx-muted)] border border-[var(--br)] rounded-full px-3 py-1">Servizi esclusivi per i nostri clienti</span>
               </div>
               <h2 className="font-display text-[32px] sm:text-4xl lg:text-5xl font-extrabold text-[var(--tx-1)] leading-[1.1] mb-4 text-balance">
@@ -27,7 +27,7 @@ export function IntegratedBento() {
                 unico per tutto.
               </h2>
               <div className="font-display text-xl sm:text-2xl font-bold text-[var(--accent)] mb-6 sm:mb-8 text-balance">
-                Un partner unico - manutenzione integrata
+                Un partner unico manutenzione integrata
               </div>
               <div className="font-sans text-base sm:text-lg font-light text-[var(--tx-2)] leading-relaxed mb-8 sm:mb-10 max-w-md">
                 Per i nostri clienti la pulizia è solo l&apos;inizio. Garantiamo stabilità e continuità ai tuoi spazi occupandoci anche delle manutenzioni ordinarie.

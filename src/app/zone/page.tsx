@@ -8,10 +8,10 @@ import { MapPin, ArrowRight } from '@phosphor-icons/react/dist/ssr'
 import { makeBreadcrumbsJsonLd } from '@/lib/seo'
 
 export const metadata: Metadata = {
-  title: 'Zone di Copertura — Pulizie Parma e Provincia | Fulgur Service',
+  title: 'Zone di Copertura | Pulizie Parma e Provincia | Fulgur Service',
   description: 'Fulgur Service opera a Parma e in tutta la provincia: Fidenza, Salsomaggiore, Collecchio e oltre. Sopralluogo gratuito ovunque tu sia in Emilia-Romagna.',
   openGraph: {
-    title: 'Zone di Copertura — Pulizie Parma e Provincia | Fulgur Service',
+    title: 'Zone di Copertura | Pulizie Parma e Provincia | Fulgur Service',
     description: 'Fulgur Service opera a Parma e in tutta la provincia: Fidenza, Salsomaggiore, Collecchio e oltre. Sopralluogo gratuito ovunque tu sia in Emilia-Romagna.',
     url: 'https://www.fulgurservice.it/zone',
     images: [{ url: '/images/zone-copertura-servizi-pulizie-parma-provincia.webp', width: 1200, height: 630 }],
@@ -35,7 +35,7 @@ export default function ZonePage() {
 
       {/* HEADER */}
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8 mb-12 text-center flex flex-col items-center">
-        <SectionLabel className="mb-4">— DOVE OPERIAMO</SectionLabel>
+        <SectionLabel className="mb-4">DOVE OPERIAMO</SectionLabel>
         <h1 className="font-display text-[32px] sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--tx-1)] max-w-4xl text-balance leading-[1.1] pb-1">
           Parma e Provincia:{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--accent)] to-[var(--br-h)]">
@@ -100,7 +100,7 @@ export default function ZonePage() {
               <Link href="/contatti" className="font-medium text-[var(--accent)] underline underline-offset-2 hover:text-[var(--accent-d)]">
                 Contattaci comunque
               </Link>
-              {' '}— operiamo in tutta la provincia di Parma e nelle zone limitrofe dell'Emilia-Romagna.
+              {' '}| operiamo in tutta la provincia di Parma e nelle zone limitrofe dell'Emilia-Romagna.
               Il sopralluogo è sempre gratuito e senza impegno.
             </p>
           </div>

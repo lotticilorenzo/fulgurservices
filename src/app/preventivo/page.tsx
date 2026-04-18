@@ -19,7 +19,7 @@ export default function PreventivoPage() {
         
         {/* Header Section */}
         <div className="mb-12 sm:mb-16 text-center max-w-3xl mx-auto flex flex-col items-center">
-          <SectionLabel className="mb-4">— PREVENTIVO GRATUITO E SENZA IMPEGNO</SectionLabel>
+          <SectionLabel className="mb-4">PREVENTIVO GRATUITO E SENZA IMPEGNO</SectionLabel>
           <h1 className="font-display text-[32px] sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--tx-1)] text-balance leading-tight sm:leading-[1.1]">
             Raccontaci il tuo <span className="text-[var(--accent)]">spazio.</span>
           </h1>

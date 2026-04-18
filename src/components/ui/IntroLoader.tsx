@@ -8,7 +8,7 @@ const EASE_OUT = [0.16, 1, 0.3, 1] as [number, number, number, number]
 const EASE_IN  = [0.76, 0, 0.24, 1] as [number, number, number, number]
 
 /**
- * IntroLoader — animazione di benvenuto al primo accesso della sessione.
+ * IntroLoader | animazione di benvenuto al primo accesso della sessione.
  * Si mostra una volta sola (sessionStorage), poi esce con una wipe verso l'alto.
  * Non usa immagini: solo CSS + Framer Motion.
  */
@@ -24,7 +24,7 @@ export function IntroLoader() {
 
     const tInit = setTimeout(() => setShow(true), 0)
 
-    // VIOL-09: ridotto da 2000ms a 1000ms — abbassa LCP misurato da Lighthouse
+    // VIOL-09: ridotto da 2000ms a 1000ms | abbassa LCP misurato da Lighthouse
     const t = setTimeout(() => setExiting(true), 1000)
     return () => {
       clearTimeout(tInit)
@@ -55,7 +55,7 @@ export function IntroLoader() {
             <div className="flex w-[75vw] max-w-[400px] items-center justify-center">
               <Image
                 src="/images/logo-impresa-di-pulizie-parma-fulgur.webp"
-                alt="Fulgur Service Logo — Impresa Pulizie Parma"
+                alt="Fulgur Service Logo | Impresa Pulizie Parma"
                 width={400}
                 height={100}
                 className="h-auto w-full object-contain drop-shadow-[0_10px_30px_rgba(42,140,122,0.15)] mix-blend-multiply"

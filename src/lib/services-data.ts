@@ -1,4 +1,4 @@
-// lib/services-data.ts — Fulgur Service
+// lib/services-data.ts Fulgur Service
 
 export interface Service {
   id: string
@@ -32,11 +32,11 @@ export const SERVICES: Service[] = [
     slug: 'pulizie-aziendali',
     title: 'Pulizie Aziendali',
     shortDesc: 'Elimina gli allergeni e migliora il benessere del team. Servizio di pulizia per uffici, negozi e studi professionali a Parma, senza sorprese in fattura.',
-    longDesc: `Quasi sempre, quando facciamo un sopralluogo in un ufficio a Parma, la prima cosa che ci mostrano è il pavimento. Capisco: è quello che si vede. Ma quello su cui ci soffermiamo sono le griglie dell'aria condizionata, i bordi delle scrivanie, gli spazi sotto le sedute. Sono i posti che le pulizie rapide saltano per abitudine — e dove si accumula la polvere che poi tutti respirano.
+    longDesc: `Quasi sempre, quando facciamo un sopralluogo in un ufficio a Parma, la prima cosa che ci mostrano è il pavimento. Capisco: è quello che si vede. Ma quello su cui ci soffermiamo sono le griglie dell'aria condizionata, i bordi delle scrivanie, gli spazi sotto le sedute. Sono i posti che le pulizie rapide saltano per abitudine e dove si accumula la polvere che poi tutti respirano.
 
 Molti clienti ci dicono che prima di noi cambiavano ditta ogni sei mesi. Il motivo, quasi sempre, era lo stesso: lavoro fatto di fretta, qualcosa sempre dimenticato, e nessuno con cui parlare quando c'era un problema. Noi lavoriamo con un referente unico per ogni azienda: una persona che conosce i vostri spazi e che risponde al telefono.
 
-Operiamo in tutta la città — dal quartiere Oltretorrente agli uffici della zona industriale SPIP — con contratti mensili a prezzo fisso concordato dopo il sopralluogo. Nessun rincaro imprevisto, nessuna sorpresa. Un ambiente di lavoro pulito riduce l'assenteismo e migliora la concentrazione: lo dicono i dati, ma lo vediamo anche noi ogni volta che entriamo in un ufficio il giorno dopo il primo intervento.
+Operiamo in tutta la città dal quartiere Oltretorrente agli uffici della zona industriale SPIP con contratti mensili a prezzo fisso concordato dopo il sopralluogo. Nessun rincaro imprevisto, nessuna sorpresa. Un ambiente di lavoro pulito riduce l'assenteismo e migliora la concentrazione: lo dicono i dati, ma lo vediamo anche noi ogni volta che entriamo in un ufficio il giorno dopo il primo intervento.
 
 È proprio questo tipo di cura quotidiana che rende Fulgur Service un punto di riferimento per le pulizie professionali a Parma e provincia.`,
     icon: 'Buildings',
@@ -110,13 +110,13 @@ Operiamo nell'intera area produttiva di Parma: dall'interporto di Fontevivo ai p
     slug: 'settore-sanitario',
     title: 'Settore Sanitario',
     shortDesc: 'Sanificazione certificata HACCP con Presidi Medico Chirurgici e vapore 180°. Per cliniche, studi medici e dentistici a Parma.',
-    longDesc: `Uno studio medico in apparenza pulito non è necessariamente un ambiente sanificato. È una distinzione che fa molta differenza — soprattutto in ambienti dove ogni giorno passano pazienti con sistemi immunitari compromessi, anziani, bambini.
+    longDesc: `Uno studio medico in apparenza pulito non è necessariamente un ambiente sanificato. È una distinzione che fa molta differenza soprattutto in ambienti dove ogni giorno passano pazienti con sistemi immunitari compromessi, anziani, bambini.
 
 Quando lavoriamo in cliniche o studi dentistici nella provincia di Parma, utilizziamo Presidi Medico Chirurgici (PMC) registrati al Ministero della Salute. Non prodotti generici: formulazioni specifiche per livello di rischio biologico. La sala d'attesa e il bagno paziente sono trattati diversamente dal corridoio o dall'archivio.
 
 Per molti studi, affianchiamo anche la sanificazione a vapore saturo a 180 gradi. Non è la stessa cosa degli steamer casalinghi: parliamo di apparecchiature professionali che portano il vapore secco a una temperatura che elimina il 99,9% di virus e batteri senza lasciare umidità sulle superfici e senza residui chimici nell'aria.
 
-A fine intervento rilasciamo sempre una scheda documentata: prodotti usati, aree trattate, orario di intervento. Molti nostri clienti la usano come prassi standard in caso di ispezione ASL — non come eccezione per un'emergenza.
+A fine intervento rilasciamo sempre una scheda documentata: prodotti usati, aree trattate, orario di intervento. Molti nostri clienti la usano come prassi standard in caso di ispezione ASL non come eccezione per un'emergenza.
 
 È proprio questa documentazione e precisione che rende Fulgur Service un punto di riferimento per la sanificazione di strutture sanitarie a Parma e provincia.`,
     icon: 'FirstAidKit',
@@ -151,11 +151,11 @@ A fine intervento rilasciamo sempre una scheda documentata: prodotti usati, aree
     slug: 'pulizie-condomini',
     title: 'Pulizie Condomini',
     shortDesc: 'Gestione completa delle parti comuni: scale, androni, ascensori e garage. Con reportistica mensile per gli amministratori di Parma.',
-    longDesc: `La cosa che sentiamo più spesso dagli amministratori di condominio a Parma è che il servizio precedente funzionava... finché non smetteva. Ditte che saltano appuntamenti, qualità che cala con il tempo, nessuno con cui parlare quando c'è un problema. Capiamo la frustrazione — ed è esattamente per questo che lavoriamo in modo diverso.
+    longDesc: `La cosa che sentiamo più spesso dagli amministratori di condominio a Parma è che il servizio precedente funzionava... finché non smetteva. Ditte che saltano appuntamenti, qualità che cala con il tempo, nessuno con cui parlare quando c'è un problema. Capiamo la frustrazione ed è esattamente per questo che lavoriamo in modo diverso.
 
 Per ogni condominio assegniamo un referente fisso: una persona che conosce le scale, gli androni, la posizione dell'ascensore e le aree critiche. Non manda squadre diverse ogni settimana. È sempre la stessa persona, con la stessa cura.
 
-Gli interventi coprono tutto ciò che è parte comune: scale e pianerottoli, androni e hall d'ingresso, vani ascensore, corsie garage e cantine, aree cortilizie. Nei condomini di pregio o nei palazzi storici del centro di Parma, prestiamo particolare attenzione ai pavimenti in marmo e ai corrimano — superfici che con la pulizia sbagliata si rovinano, non si puliscono.
+Gli interventi coprono la pulizia delle parti comuni condominiali: scale e pianerottoli, androni e hall d'ingresso, vani ascensore, corsie garage e cantine, aree cortilizie. Nei condomini di pregio o nei palazzi storici del centro di Parma, prestiamo particolare attenzione ai pavimenti in marmo e ai corrimano, superfici che con la pulizia sbagliata si rovinano, non si puliscono.
 
 A fine mese inviamo all'amministratore un report degli interventi effettuati: date, ore, aree trattate. Uno strumento semplice che rende tutto trasparente e gestibile, anche in sede di assemblea condominiale.
 
@@ -191,7 +191,7 @@ A fine mese inviamo all'amministratore un report degli interventi effettuati: da
     slug: 'settore-alberghiero',
     title: 'Settore Alberghiero',
     shortDesc: 'Housekeeping professionale per hotel, B&B e agriturismi a Parma. Standard da ospitalità di qualità, personale formato e discreto.',
-    longDesc: `Nel settore alberghiero, la pulizia non è un dettaglio: è parte dell'esperienza dell'ospite. Una camera rimessa male, un bagno con i capelli della persona precedente, una lobby con l'odore stantio — sono cose che si notano subito e che finiscono nelle recensioni online ancora più in fretta.
+    longDesc: `Nel settore alberghiero, la pulizia non è un dettaglio: è parte dell'esperienza dell'ospite. Una camera rimessa male, un bagno con i capelli della persona precedente, una lobby con l'odore stantio sono cose che si notano subito e che finiscono nelle recensioni online ancora più in fretta.
 
 Molti gestori di hotel a Parma ci contattano dopo aver ricevuto una recensione negativa sull'igiene. Capiamo la situazione: a volte non è colpa del personale, ma di procedure non strutturate o di macchinari non adeguati. Il nostro primo intervento, di solito, serve a capire dove si trova davvero il problema.
 
@@ -317,7 +317,7 @@ Operiamo in tutta la provincia di Parma, spesso in sinergia con imprese edili e 
 
 I nostri operatori sono certificati per il lavoro in quota secondo la normativa italiana. Utilizziamo piattaforme aeree omologate o sistemi a fune per edifici dove non è possibile avvicinare un mezzo, sempre con imbracature e DPI completi. Non è glamour, ma è quello che serve per farlo in modo sicuro.
 
-Per le vetrate, utilizziamo l'acqua osmotizzata: priva di calcare e impurità, asciuga senza lasciare aloni. È la stessa tecnologia che usiamo per i pannelli fotovoltaici — e per lo stesso motivo: l'acqua di rete lascia sempre una traccia bianca.
+Per le vetrate, utilizziamo l'acqua osmotizzata: priva di calcare e impurità, asciuga senza lasciare aloni. È la stessa tecnologia che usiamo per i pannelli fotovoltaici e per lo stesso motivo: l'acqua di rete lascia sempre una traccia bianca.
 
 Interveniamo su palazzi direzionali, centri commerciali, showroom con facciate vetrate e edifici industriali con lucernari in quota. Operiamo in tutta la zona di Parma e nell'intera provincia.
 
@@ -353,7 +353,7 @@ Interveniamo su palazzi direzionali, centri commerciali, showroom con facciate v
     slug: 'pannelli-fotovoltaici',
     title: 'Pulizia Pannelli Fotovoltaici',
     shortDesc: 'Recupera fino al +30% di produzione. Lavaggio pannelli solari con acqua demineralizzata ad osmosi per impianti residenziali e industriali a Parma.',
-    longDesc: `La cosa che sentiamo più spesso da chi ha un impianto fotovoltaico a Parma è: "Ma tanto ci pensa la pioggia." Capisco l'idea, ma purtroppo non è così. La pioggia sposta lo sporco, non lo rimuove. E quello che lascia — depositi di calcare, residui di guano semicoagulato, pollini primaverili — si indurisce col sole e blocca una parte della luce prima che raggiunga le celle.
+    longDesc: `La cosa che sentiamo più spesso da chi ha un impianto fotovoltaico a Parma è: "Ma tanto ci pensa la pioggia." Capisco l'idea, ma purtroppo non è così. La pioggia sposta lo sporco, non lo rimuove. E quello che lascia (depositi di calcare, residui di guano semicoagulato, pollini primaverili) si indurisce col sole e blocca una parte della luce prima che raggiunga le celle.
 
 Il risultato, in termini di produzione persa, oscilla tra il 15 e il 30% a seconda del periodo e dell'esposizione. Non è poco. Traducendo in cifre reali su un impianto da 6 kWp, possono essere anche 1.500-2.000 kWh all'anno regalati alla rete invece di consumarli.
 
@@ -393,7 +393,7 @@ Lavoriamo su impianti residenziali tetto e a terra, e su campi fotovoltaici indu
     slug: 'cantiere-navale',
     title: 'Cantiere Navale',
     shortDesc: 'Pulizia scafi, pulizia interna imbarcazioni e strutture portuali. Prodotti specifici per ambienti marini.',
-    longDesc: `Il mare — o anche solo un rimessaggio al coperto — lascia sui natanti un tipo di sporco che non somiglia a nessun altro: sale cristallizzato, alghe, barnacle, residui di carena. Pulire uno scafo non è come pulire un pavimento industriale. Richiede prodotti compatibili con l'ambiente marino, metodi che rispettano i trattamenti antifouling e una certa dose di esperienza su cosa si può usare e cosa no.
+    longDesc: `Il mare o anche solo un rimessaggio al coperto lascia sui natanti un tipo di sporco che non somiglia a nessun altro: sale cristallizzato, alghe, barnacle, residui di carena. Pulire uno scafo non è come pulire un pavimento industriale. Richiede prodotti compatibili con l'ambiente marino, metodi che rispettano i trattamenti antifouling e una certa dose di esperienza su cosa si può usare e cosa no.
 
 Interveniamo su imbarcazioni da diporto, scafi in vetroresina e alluminio, pontili e strutture portuali. Puliamo sia gli esterni che gli interni: coperta, pozzetto, cabina, bagni di bordo. Per strutture portuali come pontili e banchine, utilizziamo idropulitrici ad alta pressione con recupero d'acqua.
 
@@ -472,11 +472,11 @@ Gli ambiti di applicazione sono molti: materassi e imbottiture, divani in tessut
     slug: 'pulizie-civili',
     title: 'Pulizie Civili',
     shortDesc: 'Pulizie ordinarie e straordinarie per case, appartamenti e ville a Parma. Personale di fiducia, orari flessibili, discrezione garantita.',
-    longDesc: `Mandare qualcuno a casa propria richiede fiducia. Non è come chiamare un idraulico — la persona sarà nella tua cucina, nel tuo bagno, tra le cose di ogni giorno. Per questo nella selezione del personale per le pulizie civili siamo particolarmente attenti: contratti regolari, assicurazione INAIL, referenze verificate.
+    longDesc: `Mandare qualcuno a casa propria richiede fiducia. Non è come chiamare un idraulico la persona sarà nella tua cucina, nel tuo bagno, tra le cose di ogni giorno. Per questo nella selezione del personale per le pulizie civili siamo particolarmente attenti: contratti regolari, assicurazione INAIL, referenze verificate.
 
 Il servizio che offriamo non è una ripulita veloce: è un piano personalizzato in base alle vostre abitudini. C'è chi ha bisogno di una pulizia profonda mensile e chi preferisce un passaggio settimanale leggero. C'è la signora anziana che vuole qualcuno di fisso ogni martedì mattina e c'è chi affitta su Airbnb e ha bisogno di un cambio rapido tra un ospite e l'altro.
 
-Utilizziamo prodotti a basso impatto ambientale — detergenti certificati, pochi e specifici — perché in una casa ci vivono persone, non si fanno esperimenti chimici.
+Utilizziamo prodotti a basso impatto ambientale (detergenti certificati, pochi e specifici) perché in una casa ci vivono persone, non si fanno esperimenti chimici.
 
 Operiamo in tutta la città di Parma, dai quartieri residenziali di Montanara e San Lazzaro alle ville sulla collina parmense. Possiamo anche gestire le chiavi in totale sicurezza per chi non è sempre presente.
 
@@ -512,7 +512,7 @@ Operiamo in tutta la città di Parma, dai quartieri residenziali di Montanara e 
     slug: 'strutture-sportive',
     title: 'Strutture Sportive',
     shortDesc: 'Sanificazione profonda di palestre, piscine e centri sportivi a Parma. Prodotti antifungini e antibatterici per spogliatoi e aree comuni.',
-    longDesc: `Spogliatoi e docce di palestre e piscine sono tra gli ambienti più difficili da tenere davvero igienici. Il combinato di umidità, temperatura e traffico intenso crea le condizioni ideali per batteri, funghi e muffe. Non è un problema estetico — è un rischio sanitario reale per i frequentatori.
+    longDesc: `Spogliatoi e docce di palestre e piscine sono tra gli ambienti più difficili da tenere davvero igienici. Il combinato di umidità, temperatura e traffico intenso crea le condizioni ideali per batteri, funghi e muffe. Non è un problema estetico è un rischio sanitario reale per i frequentatori.
 
 Le pulizie ordinarie non bastano: serve una sanificazione con prodotti antifungini e antibatterici certificati, applicati sulle superfici giuste con la frequenza giusta. Le griglie dei pavimenti, le pareti delle docce, i tappetini antiscivolo e i corrimano sono i punti critici dove la carica batterica si accumula più rapidamente.
 
@@ -552,11 +552,11 @@ Lavoriamo su centri fitness, palesti da combattimento, piscine comunali e privat
     slug: 'locali-notturni',
     title: 'Locali Notturni',
     shortDesc: 'Ripristino completo di discoteche, pub e locali notturni a Parma nelle ore mattutine. Pronti alla riapertura serale.',
-    longDesc: `Dopo una serata in discoteca, la pulizia di un locale non è una questione di estetica: è una questione di tempo. La squadra che lavora di notte deve finire prima dell'orario di apertura della sera successiva — spesso con pochissime ore a disposizione, soprattutto nel fine settimana.
+    longDesc: `Dopo una serata in discoteca, la pulizia di un locale non è una questione di estetica: è una questione di tempo. La squadra che lavora di notte deve finire prima dell'orario di apertura della sera successiva spesso con pochissime ore a disposizione, soprattutto nel fine settimana.
 
 Lavoriamo nelle prime ore del mattino, quando il locale è ancora vuoto. Il protocollo di un locale notturno è specifico: rimozione di bicchieri e residui, lavaggio meccanizzato del pavimento (spesso in superficie scivolosa dopo una serata danzante), sanificazione intensiva dei bagni, smaltimento differenziato di vetro e rifiuti.
 
-Le macchie più ostinate — drink versati sui divani, rossetto sulle pareti, cera delle candele sul pavimento — richiedono prodotti specifici e la conoscenza dei materiali su cui si lavora. Non tutto si toglie con il detergente universale.
+Le macchie più ostinate (drink versati sui divani, rossetto sulle pareti, cera delle candele sul pavimento) richiedono prodotti specifici e la conoscenza dei materiali su cui si lavora. Non tutto si toglie con il detergente universale.
 
 Operiamo su pub, bar, lounge bar, discoteche e sale concerti nella zona di Parma. Siamo abituati ai ritmi del settore: lavoriamo con tempi comunicati, senza ritardi e senza che il gestore debba pensarci due volte.
 
@@ -592,7 +592,7 @@ Operiamo su pub, bar, lounge bar, discoteche e sale concerti nella zona di Parma
     slug: 'pulizia-facciate',
     title: 'Pulizia Facciate',
     shortDesc: 'Idrolavaggio professionale e rimozione graffiti per facciate esterne di edifici civili e industriali a Parma.',
-    longDesc: `Una facciata esterna subisce ogni giorno l'attacco di smog, umidità, muffe, alghe e — nelle aree urbane — graffiti. Il degrado è lento ma progressivo, e spesso ci si accorge del problema solo quando è già avanzato: la pietra scurita, l'intonaco macchiato, il clinker ricoperto di muschio.
+    longDesc: `Una facciata esterna subisce ogni giorno l'attacco di smog, umidità, muffe, alghe e (nelle aree urbane) graffiti. Il degrado è lento ma progressivo, e spesso ci si accorge del problema solo quando è già avanzato: la pietra scurita, l'intonaco macchiato, il clinker ricoperto di muschio.
 
 Il metodo dipende sempre dal materiale. Su mattoni faccia a vista e pietre naturali, lavoriamo con idropulitrici a pressione controllata per non erodere la superficie. Su intonaci delicati, utilizziamo sistemi a bassa pressione con detergenti specifici. Per graffiti su facciate, abbiamo prodotti svernicianti selettivi che rimuovono la vernice spray senza attaccare il supporto sottostante.
 
@@ -631,16 +631,16 @@ Operiamo su edifici civili, condomini, capannoni industriali e strutture commerc
     id: '16',
     slug: 'sanificazione-salumifici',
     title: 'Sanificazione Salumifici',
-    shortDesc: 'Sanificazione industriale HACCP per salumifici, prosciuttifici e stabilimenti alimentari nel distretto food di Parma. Detergenti food-grade, zero residui chimici, conformità CE 852/2004.',
-    longDesc: `Parma è la capitale mondiale del prosciutto e dei salumi. È il territorio dove ogni fase di lavorazione — dalla macellazione alla stagionatura, dal confezionamento alla spedizione — è soggetta ai controlli più rigorosi d'Europa. In questo contesto, la sanificazione non è un servizio accessorio: è parte integrante del processo produttivo, e un errore può bloccare una linea intera o aprire la porta a un richiamo di prodotto.
+    shortDesc: 'Sanificazione industriale HACCP per salumifici, prosciuttifici e stabilimenti alimentari nel distretto food di Parma. Detergenti food grade, zero residui chimici, conformità CE 852/2004.',
+    longDesc: `Parma è la capitale mondiale del prosciutto e dei salumi. È il territorio dove ogni fase di lavorazione (dalla macellazione alla stagionatura, dal confezionamento alla spedizione) è soggetta ai controlli più rigorosi d'Europa. In questo contesto, la sanificazione non è un servizio accessorio: è parte integrante del processo produttivo, e un errore può bloccare una linea intera o aprire la porta a un richiamo di prodotto.
 
 Lavoriamo con salumifici e prosciuttifici della provincia di Parma da anni. Conosciamo le specificità di questi ambienti: le celle di stagionatura con temperature e umidità controllate che non possono essere alterate, i pavimenti in calcestruzzo trattato che richiedono prodotti compatibili con la normativa CE 852/2004, le cappe di aspirazione delle nebbie di grasso che vanno sgrassate senza lasciare residui a contatto con il prodotto. Dettagli che chi non lavora nel settore alimentare non conosce e non può improvvisare.
 
-Il protocollo di intervento viene scritto insieme al responsabile HACCP di ogni stabilimento: nessuno conosce la linea meglio di chi ci lavora ogni giorno, e noi siamo lì per eseguire — con precisione, con i prodotti giusti, con le registrazioni che servono per ogni audit. Utilizziamo esclusivamente detergenti e disinfettanti food-grade con omologazione ministeriale e numero DIN, le cui schede tecniche rimangono nel dossier del cliente a disposizione per qualsiasi ispezione ASL o richiesta RASFF.
+Il protocollo di intervento viene scritto insieme al responsabile HACCP di ogni stabilimento: nessuno conosce la linea meglio di chi ci lavora ogni giorno, e noi siamo lì per eseguire, con precisione, con i prodotti giusti, con le registrazioni che servono per ogni audit. Utilizziamo esclusivamente detergenti e disinfettanti food grade con omologazione ministeriale e numero DIN, le cui schede tecniche rimangono nel dossier del cliente a disposizione per qualsiasi ispezione ASL o richiesta RASFF.
 
-Gli interventi sono pianificati nelle finestre di fermo produzione — di notte, nel weekend, nei giorni di manutenzione programmata — per non interferire con i cicli produttivi e rispettare i tempi di carenza dei disinfettanti. Il turno del lunedì mattina trova la linea già pronta. Nessun ritardo, nessuna scusa.
+Gli interventi sono pianificati nelle finestre di fermo produzione (di notte, nel weekend, nei giorni di manutenzione programmata) per non interferire con i cicli produttivi e rispettare i tempi di carenza dei disinfettanti. Il turno del lunedì mattina trova la linea già pronta. Nessun ritardo, nessuna scusa.
 
-È questa capacità di lavorare dentro i vincoli operativi dell'industria alimentare — rispettando norme, processi e persone — che distingue Fulgur Service da un'impresa di pulizie generica. Operiamo in tutta la Food Valley emiliana: da Langhirano a Felino, da Collecchio a San Secondo Parmense.`,
+È questa capacità di lavorare dentro i vincoli operativi dell'industria alimentare (rispettando norme, processi e persone) che distingue Fulgur Service da un'impresa di pulizie generica. Operiamo in tutta la Food Valley emiliana: da Langhirano a Felino, da Collecchio a San Secondo Parmense.`,
     icon: 'ForkKnife',
     featured: true,
     keywords: [
@@ -654,7 +654,7 @@ Gli interventi sono pianificati nelle finestre di fermo produzione — di notte,
       'HACCP food valley emiliana',
     ],
     benefits: [
-      'Detergenti e disinfettanti food-grade certificati CE 852/2004 e D.Lgs. 193/2007',
+      'Detergenti e disinfettanti food grade certificati CE 852/2004 e D.Lgs. 193/2007',
       'Operatori formati HACCP con registrazioni firmate per ogni audit ASL',
       'Interventi notturni o nel weekend: produzione mai interrotta, zero downtime',
       'Sgrassaggio intensivo cappe, vasche e linee senza residui a contatto alimentare',
@@ -668,14 +668,14 @@ Gli interventi sono pianificati nelle finestre di fermo produzione — di notte,
       'Industria alimentare della Food Valley emiliana',
     ],
     metaTitle: 'Sanificazione Salumifici e Prosciuttifici Parma | HACCP | Fulgur Service',
-    metaDescription: 'Sanificazione HACCP per salumifici e prosciuttifici a Parma. Detergenti food-grade, zero residui chimici, interventi notturni. Conformi CE 852/2004. Food Valley emiliana. Preventivo gratuito.',
+    metaDescription: 'Sanificazione HACCP per salumifici e prosciuttifici a Parma. Detergenti food grade, zero residui chimici, interventi notturni. Conformi CE 852/2004. Food Valley emiliana. Preventivo gratuito.',
     image: '/images/gallery/sanificazione-pavimento-capannone-fulgur.webp',
     imageAlt: 'Sanificazione professionale HACCP di un pavimento industriale in uno stabilimento alimentare del distretto food di Parma con attrezzatura certificata',
     relatedSlugs: ['settore-sanitario', 'sanificazione-vapore', 'pulizie-industriali'],
     faq: [
       {
         q: 'Quali normative rispettate per la sanificazione nei salumifici?',
-        a: 'Lavoriamo in conformità con il Regolamento CE 852/2004 sull\'igiene dei prodotti alimentari e il D.Lgs. 193/2007 sui prodotti biocidi. Tutti i detergenti e disinfettanti sono food-grade con omologazione ministeriale e numero DIN. Per ogni intervento rilasciamo una registrazione firmata da conservare nel manuale HACCP, valida per audit ASL e ispezioni RASFF.',
+        a: 'Lavoriamo in conformità con il Regolamento CE 852/2004 sull\'igiene dei prodotti alimentari e il D.Lgs. 193/2007 sui prodotti biocidi. Tutti i detergenti e disinfettanti sono food grade con omologazione ministeriale e numero DIN. Per ogni intervento rilasciamo una registrazione firmata da conservare nel manuale HACCP, valida per audit ASL e ispezioni RASFF.',
       },
       {
         q: 'Come lavorate nelle celle di stagionatura senza compromettere prosciutti e salumi?',
@@ -689,7 +689,7 @@ Gli interventi sono pianificati nelle finestre di fermo produzione — di notte,
   },
 ]
 
-// Servizi integrati — Impresa 360°
+// Servizi integrati Impresa 360°
 export const INTEGRATED_SERVICES: IntegratedService[] = [
   {
     title: 'Manutenzione idraulica',

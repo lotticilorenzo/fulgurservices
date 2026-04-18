@@ -98,7 +98,7 @@ export function LavoraConNoiClient() {
       <section className="relative px-6 py-20 lg:py-32 overflow-hidden">
         <div className="mx-auto max-w-7xl relative z-10">
           <ScrollReveal>
-             <SectionLabel className="mb-6">— LAVORA CON NOI</SectionLabel>
+             <SectionLabel className="mb-6">LAVORA CON NOI</SectionLabel>
              <h1 className="font-display text-4xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-6xl lg:text-8xl max-w-4xl text-balance leading-[0.9]">
                Cresci con l&apos;energia di <br />
                <span className="text-[var(--accent)]">Fulgur Service.</span>
@@ -152,7 +152,7 @@ export function LavoraConNoiClient() {
             {/* INVITATION TEXT */}
             <div>
               <ScrollReveal>
-                <SectionLabel className="mb-4">— CANDIDATURA</SectionLabel>
+                <SectionLabel className="mb-4">CANDIDATURA</SectionLabel>
                 <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-[var(--tx-1)] tracking-tight text-balance leading-tight">
                   Cerchiamo <span className="text-[var(--accent)]">persone motivate</span> per ampliare il nostro team.
                 </h2>

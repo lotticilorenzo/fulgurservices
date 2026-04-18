@@ -133,7 +133,7 @@ export function ReviewsStrip() {
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8 mb-14 lg:mb-20">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
             <ScrollReveal className="max-w-2xl text-center md:text-left">
-              <SectionLabel className="mb-4">— COSA DICONO I CLIENTI</SectionLabel>
+              <SectionLabel className="mb-4">COSA DICONO I CLIENTI</SectionLabel>
               <h2 className="font-display text-4xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl lg:text-6xl text-balance">
                 Clienti <span className="text-[var(--accent)]">soddisfatti</span> in tutta <br className="hidden lg:block" /> Italia.
               </h2>
@@ -149,7 +149,7 @@ export function ReviewsStrip() {
           </div>
         </div>
 
-        {/* Marquee Row 1 — sinistra */}
+        {/* Marquee Row 1 | sinistra */}
         <div className="relative mb-4 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
           <div className="flex w-max animate-marquee-left hover:[animation-play-state:paused]">
             {[...ROW1, ...ROW1].map((review, i) => (
@@ -158,7 +158,7 @@ export function ReviewsStrip() {
           </div>
         </div>
 
-        {/* Marquee Row 2 — destra */}
+        {/* Marquee Row 2 | destra */}
         <div className="relative [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
           <div className="flex w-max animate-marquee-right hover:[animation-play-state:paused]">
             {[...ROW2, ...ROW2].map((review, i) => (

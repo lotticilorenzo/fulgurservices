@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Fulgur Storage — Box Archivio Sicuri',
+  name: 'Fulgur Storage | Box Archivio Sicuri',
   description: 'Box archivio riservati con telecamera, allarme certificato e accesso illimitato 24/7 a Parma. Prezzo fisso mensile, box dedicato esclusivo.',
   provider: {
     '@type': 'LocalBusiness',
@@ -171,7 +171,7 @@ export default function StoragePage() {
                 </span>
               </div>
 
-              <SectionLabel className="mb-6 justify-center">— BOX ARCHIVIO SICURI A PARMA</SectionLabel>
+              <SectionLabel className="mb-6 justify-center">BOX ARCHIVIO SICURI A PARMA</SectionLabel>
 
               <h1 className="font-display text-[clamp(40px,7vw,80px)] font-extrabold tracking-tighter leading-[0.92] text-[var(--tx-1)] text-balance">
                 Il tuo archivio.{' '}
@@ -258,7 +258,7 @@ export default function StoragePage() {
 
               {/* TEXT */}
               <ScrollReveal>
-                <SectionLabel className="mb-5">— IL SERVIZIO</SectionLabel>
+                <SectionLabel className="mb-5">IL SERVIZIO</SectionLabel>
                 <h2 className="font-display text-[clamp(28px,4vw,52px)] font-bold tracking-tight text-[var(--tx-1)] leading-tight text-balance">
                   Un magazzino acquisito.<br />
                   Trasformato in{' '}
@@ -315,7 +315,7 @@ export default function StoragePage() {
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8">
             <ScrollReveal>
               <div className="text-center max-w-2xl mx-auto mb-14 sm:mb-18">
-                <SectionLabel className="mb-5 justify-center">— COSA È INCLUSO</SectionLabel>
+                <SectionLabel className="mb-5 justify-center">COSA È INCLUSO</SectionLabel>
                 <h2 className="font-display text-[clamp(26px,3.5vw,48px)] font-bold tracking-tight text-[var(--tx-1)] leading-tight">
                   Tutto quello che ti serve.<br />
                   <span className="text-[var(--accent)]">Niente di superfluo.</span>
@@ -352,7 +352,7 @@ export default function StoragePage() {
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8">
             <ScrollReveal>
               <div className="text-center max-w-xl mx-auto mb-14">
-                <SectionLabel className="mb-5 justify-center">— COME FUNZIONA</SectionLabel>
+                <SectionLabel className="mb-5 justify-center">COME FUNZIONA</SectionLabel>
                 <h2 className="font-display text-[clamp(26px,3.5vw,48px)] font-bold tracking-tight text-[var(--tx-1)] leading-tight">
                   Tre passi e il box è tuo.
                 </h2>
@@ -385,7 +385,7 @@ export default function StoragePage() {
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8">
             <ScrollReveal>
               <div className="max-w-2xl mb-14">
-                <SectionLabel className="mb-5">— IDEALE PER</SectionLabel>
+                <SectionLabel className="mb-5">IDEALE PER</SectionLabel>
                 <h2 className="font-display text-[clamp(26px,3.5vw,48px)] font-bold tracking-tight text-[var(--tx-1)] leading-tight">
                   Chi ha bisogno di un archivio{' '}
                   <span className="text-[var(--accent)]">fuori dall&apos;ufficio.</span>
@@ -420,7 +420,7 @@ export default function StoragePage() {
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8">
             <ScrollReveal>
               <div className="text-center max-w-xl mx-auto mb-12">
-                <SectionLabel className="mb-5 justify-center">— LA STRUTTURA</SectionLabel>
+                <SectionLabel className="mb-5 justify-center">LA STRUTTURA</SectionLabel>
                 <h2 className="font-display text-[clamp(24px,3vw,44px)] font-bold tracking-tight text-[var(--tx-1)] leading-tight">
                   Vedi il magazzino.
                 </h2>
@@ -483,7 +483,7 @@ export default function StoragePage() {
 
               {/* Left: perché scegliere */}
               <ScrollReveal>
-                <SectionLabel className="mb-5">— PERCHÉ FULGUR STORAGE</SectionLabel>
+                <SectionLabel className="mb-5">PERCHÉ FULGUR STORAGE</SectionLabel>
                 <h2 className="font-display text-[clamp(26px,3.5vw,48px)] font-bold tracking-tight text-[var(--tx-1)] leading-tight">
                   Non gestiamo spazi di terzi.<br />
                   <span className="text-[var(--accent)]">È il nostro magazzino.</span>

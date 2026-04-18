@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 import { z } from 'zod'
 
-// Replica schema Zod lato server — double validation contro manipolazioni API
+// Replica schema Zod lato server | double validation contro manipolazioni API
 const ApiSchema = z.object({
   servizi:       z.array(z.string()).min(1),
   tipo_ambiente: z.string().min(1),
@@ -49,10 +49,10 @@ export async function POST(req: Request) {
           <h3 style="font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:#7A9E97; border-bottom:1px solid #EDF5F3; padding-bottom:8px; margin-top:0;">Contatti</h3>
           <table style="width:100%; border-collapse:collapse; margin-bottom:24px;">
             <tr><td style="padding:6px 0; color:#3D6B61; font-size:13px; width:140px;">Nome</td><td style="padding:6px 0; font-weight:600; font-size:14px;">${parsedData.nome}</td></tr>
-            <tr><td style="padding:6px 0; color:#3D6B61; font-size:13px;">Azienda</td><td style="padding:6px 0; font-size:14px;">${parsedData.azienda || '—'}</td></tr>
+            <tr><td style="padding:6px 0; color:#3D6B61; font-size:13px;">Azienda</td><td style="padding:6px 0; font-size:14px;">${parsedData.azienda || 'n/d'}</td></tr>
             <tr><td style="padding:6px 0; color:#3D6B61; font-size:13px;">Email</td><td style="padding:6px 0;"><a href="mailto:${parsedData.email}" style="color:#2A8C7A;">${parsedData.email}</a></td></tr>
             <tr><td style="padding:6px 0; color:#3D6B61; font-size:13px;">Telefono</td><td style="padding:6px 0;"><a href="tel:${parsedData.tel}" style="color:#2A8C7A;">${parsedData.tel}</a></td></tr>
-            <tr><td style="padding:6px 0; color:#3D6B61; font-size:13px;">Città</td><td style="padding:6px 0; font-size:14px;">${parsedData.citta}${parsedData.indirizzo ? ` — ${parsedData.indirizzo}` : ''}</td></tr>
+            <tr><td style="padding:6px 0; color:#3D6B61; font-size:13px;">Città</td><td style="padding:6px 0; font-size:14px;">${parsedData.citta}${parsedData.indirizzo ? ` | ${parsedData.indirizzo}` : ''}</td></tr>
           </table>
 
           <h3 style="font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:#7A9E97; border-bottom:1px solid #EDF5F3; padding-bottom:8px;">Dettagli Richiesta</h3>
@@ -88,8 +88,8 @@ export async function POST(req: Request) {
       from:    `"Fulgur Service Web" <${process.env.SMTP_USER ?? 'fulgurservice@gmail.com'}>`,
       to:      'fulgurservice@gmail.com',
       replyTo: parsedData.email,
-      subject: `[Preventivo] ${parsedData.nome} — ${parsedData.tipo_ambiente} a ${parsedData.citta}`,
-      text:    `Preventivo da ${parsedData.nome} (${parsedData.email}) — ${parsedData.tipo_ambiente}, ${parsedData.metratura}m², ${parsedData.frequenza}. Tel: ${parsedData.tel}. Servizi: ${parsedData.servizi.join(', ')}.`,
+      subject: `[Preventivo] ${parsedData.nome} | ${parsedData.tipo_ambiente} a ${parsedData.citta}`,
+      text:    `Preventivo da ${parsedData.nome} (${parsedData.email}) | ${parsedData.tipo_ambiente}, ${parsedData.metratura}m², ${parsedData.frequenza}. Tel: ${parsedData.tel}. Servizi: ${parsedData.servizi.join(', ')}.`,
       html:    htmlBody,
     }
 

@@ -23,7 +23,7 @@ export function HeroSection() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  /* GSAP reveal stagger — left column */
+  /* GSAP reveal stagger | left column */
   useLayoutEffect(() => {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (prefersReduced || !containerRef.current || !leftRef.current) return
@@ -48,7 +48,7 @@ export function HeroSection() {
     return () => ctx.revert()
   }, [])
 
-  /* GSAP reveal — right column */
+  /* GSAP reveal | right column */
   useLayoutEffect(() => {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (prefersReduced || !rightRef.current) return
@@ -86,7 +86,7 @@ export function HeroSection() {
         <source src="/videos/impresa-pulizie-parma-videopresentazione.mp4" type="video/mp4" />
       </video>
 
-      {/* Overlay scuro — mantiene brand leggibile col contrasto del video */}
+      {/* Overlay scuro | mantiene brand leggibile col contrasto del video */}
       <div
         aria-hidden="true"
         className="absolute inset-0 pointer-events-none hidden sm:block"
@@ -99,7 +99,7 @@ export function HeroSection() {
         style={{ background: 'linear-gradient(to bottom, rgba(13,17,23,0.7) 0%, rgba(13,17,23,0.95) 100%)' }}
       />
 
-      {/* Particle field — nascondiamo su mobile per non affaticare la CPU e ripulire il design */}
+      {/* Particle field | nascondiamo su mobile per non affaticare la CPU e ripulire il design */}
       <div className="absolute inset-0 z-0 pointer-events-none hidden md:block">
         <ParticleField />
       </div>
@@ -117,7 +117,7 @@ export function HeroSection() {
       {/* Content */}
       <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-8 md:gap-12 px-6 lg:grid-cols-[55%_45%] xl:gap-20 xl:px-8">
 
-        {/* ── SINISTRA ── */}
+        {/* | SINISTRA | */}
         <div ref={leftRef} className="flex flex-col items-start">
 
           {/* GlowBadge */}
@@ -125,7 +125,7 @@ export function HeroSection() {
             <GlowBadge>Parma</GlowBadge>
           </div>
 
-          {/* H1 — tre righe. leading-[1.0] su mobile evita il salto CLS verso sm:leading-[0.93] */}
+          {/* H1 | tre righe. leading-[1.0] su mobile evita il salto CLS verso sm:leading-[0.93] */}
           <h1 className="hero-reveal mt-5 font-display font-black leading-[1.0] sm:leading-[0.93] tracking-tight sm:tracking-tighter text-[clamp(42px,10vw,84px)] drop-shadow-2xl">
             <span className="block text-white">Puliamo il Futuro</span>
             <span className="block text-outline-accent">con l&apos;Energia</span>
@@ -153,7 +153,7 @@ export function HeroSection() {
             <span className="col-span-2 text-[var(--accent)] tracking-widest mt-1 sm:mt-0 opacity-90">Sopralluogo sempre gratuito</span>
           </div>
 
-          {/* CTAs — gap-4 (16px) per separazione pollice sicura */}
+          {/* CTAs | gap-4 (16px) per separazione pollice sicura */}
           <div className="hero-reveal mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
             <Link href="/preventivo" tabIndex={-1} className="w-full sm:w-auto">
               <MagneticButton
@@ -178,7 +178,7 @@ export function HeroSection() {
             </Link>
           </div>
 
-          {/* Trust micro-badge — mt-4 su mobile (più vicino ai CTA), mt-6 su sm+ */}
+          {/* Trust micro-badge | mt-4 su mobile (più vicino ai CTA), mt-6 su sm+ */}
           <div className="hero-reveal mt-4 sm:mt-6 flex flex-col sm:flex-row flex-wrap gap-x-5 gap-y-3 font-mono-fulgur text-[9.5px] font-medium uppercase tracking-widest text-white/70">
             <div className="flex items-center gap-2">
               <ShieldCheck size={14} className="text-[var(--accent)]" aria-hidden="true" />
@@ -195,7 +195,7 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* ── DESTRA (Hidden su mobile per risparmiare spazio e velocizzare lettura) ── */}
+        {/* | DESTRA | (Hidden su mobile per risparmiare spazio e velocizzare lettura) */}
         <div
           ref={rightRef}
           className="relative hidden lg:flex items-center justify-center opacity-0"

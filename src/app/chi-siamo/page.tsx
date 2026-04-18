@@ -44,7 +44,7 @@ export default function ChiSiamoPage() {
       
       {/* HERO STORIA */}
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8 mb-16 sm:mb-20 text-center flex flex-col items-center">
-        <SectionLabel className="mb-4">— LA NOSTRA STORIA</SectionLabel>
+        <SectionLabel className="mb-4">LA NOSTRA STORIA</SectionLabel>
         <h1 className="font-display text-3xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl lg:text-7xl max-w-4xl text-balance leading-tight sm:leading-[0.9]">
           Tradizione e innovazione nel <span className="text-[var(--accent)]">cleaning a Parma.</span>
         </h1>
@@ -82,7 +82,7 @@ export default function ChiSiamoPage() {
         <div className="mx-auto w-full max-w-4xl px-5 sm:px-6 xl:px-8">
           {/* FIX SEM-01: h2 sr-only ripristina cascata H1→H2→H3→H4 senza alterare il design */}
           <h2 className="sr-only">La nostra storia</h2>
-          <SectionLabel className="mb-10 lg:mb-12 text-center">— 35 ANNI DI ESPERIENZA</SectionLabel>
+          <SectionLabel className="mb-10 lg:mb-12 text-center">35 ANNI DI ESPERIENZA</SectionLabel>
           <div className="relative border-l border-[var(--br)] ml-4 sm:ml-8 flex flex-col gap-12 sm:gap-16">
             
             <ScrollReveal>
@@ -127,7 +127,7 @@ export default function ChiSiamoPage() {
       <div className="w-full bg-[var(--bg-2)] border-y border-[var(--br)] py-16 md:py-24">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8">
           <ScrollReveal>
-            <SectionLabel className="mb-8 lg:mb-10 mx-auto justify-center">— I NOSTRI VALORI</SectionLabel>
+            <SectionLabel className="mb-8 lg:mb-10 mx-auto justify-center">I NOSTRI VALORI</SectionLabel>
           </ScrollReveal>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {VALORI.map((valore, i) => {
@@ -154,7 +154,7 @@ export default function ChiSiamoPage() {
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8 py-16 md:py-32 border-t border-[var(--br)]">
          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-center">
             <ScrollReveal>
-               <SectionLabel className="mb-6">— IL NOSTRO CAPITALE UMANO</SectionLabel>
+               <SectionLabel className="mb-6">IL NOSTRO CAPITALE UMANO</SectionLabel>
                <h2 className="font-display text-[32px] sm:text-5xl font-extrabold text-[var(--tx-1)] mb-6 sm:mb-8 text-balance leading-[1.05] sm:leading-tight tracking-tighter">
                   Specialisti delle pulizie al <span className="text-[var(--accent)]">servizio di Parma.</span>
                </h2>
@@ -180,7 +180,7 @@ export default function ChiSiamoPage() {
                <div className="relative aspect-square rounded-[3rem] overflow-hidden border border-[var(--br)] shadow-2xl bg-[var(--bg-2)] hover:shadow-[0_30px_60px_rgba(78,203,160,0.15)] transition-all duration-700">
                   <Image
                      src="/images/operatori-pulizie-professionali-parma.webp"
-                     alt="Il team Fulgur Service — specialisti di pulizie professionali a Parma"
+                     alt="Il team Fulgur Service specialisti di pulizie professionali a Parma"
                      fill
                      className="object-cover hover:scale-105 transition-transform duration-1000"
                      sizes="(max-width: 1024px) 100vw, 50vw"

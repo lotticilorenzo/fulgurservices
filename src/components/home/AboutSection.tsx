@@ -33,7 +33,7 @@ export function AboutSection() {
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-[42%_58%] gap-8 sm:gap-10 md:gap-14 lg:gap-20 items-center">
           
-          {/* LATO SINISTRO: Immagine — 42% */}
+          {/* LATO SINISTRO: Immagine 42% */}
           <ScrollReveal className="order-2 lg:order-1">
             <div className="relative w-full max-w-[480px] mx-auto lg:mx-0">
               
@@ -51,7 +51,7 @@ export function AboutSection() {
                 </motion.div>
               </div>
               
-              {/* Badge sovrapposto — left-0 su mobile evita overflow del viewport <375px */}
+              {/* Badge sovrapposto left-0 su mobile evita overflow del viewport <375px */}
               <div className="absolute -bottom-5 left-0 sm:-bottom-6 sm:-left-3 md:-left-5 z-20 rounded-2xl bg-[var(--accent)] px-5 py-3 sm:px-7 sm:py-5 text-white shadow-2xl flex flex-col items-center">
                 <span className="font-display text-4xl sm:text-5xl font-black leading-none">35</span>
                 <span className="font-mono-fulgur text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.18em] opacity-85 text-center leading-tight mt-1">
@@ -59,7 +59,7 @@ export function AboutSection() {
                 </span>
               </div>
 
-              {/* Second small badge: reviews — right-0 su mobile evita ghost scroll */}
+              {/* Second small badge: reviews right-0 su mobile evita ghost scroll */}
               <div className="absolute -top-5 right-0 sm:-right-4 z-20 rounded-2xl bg-white border border-[var(--br)] px-5 py-3.5 shadow-xl flex items-center gap-3">
                 <div className="flex flex-col">
                   <span className="font-display text-sm font-bold text-[var(--accent)] leading-none">4.9★</span>
@@ -77,7 +77,7 @@ export function AboutSection() {
           {/* LATO DESTRO: Testi — 58% */}
           <div className="order-1 lg:order-2 flex flex-col items-start">
             <ScrollReveal>
-              <SectionLabel className="mb-6">— CHI SIAMO</SectionLabel>
+              <SectionLabel className="mb-6">CHI SIAMO</SectionLabel>
               <h2 className="font-display text-[32px] sm:text-5xl lg:text-[3.2rem] font-extrabold tracking-tight text-[var(--tx-1)] leading-[1.05] text-balance">
                 Tradizione e innovazione,{' '}<br className="hidden sm:block" />
                 <span className="text-[var(--accent)]">insieme.</span>

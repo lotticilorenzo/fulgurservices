@@ -1,4 +1,4 @@
-// lib/seo.ts — Fulgur Service
+// lib/seo.ts Fulgur Service
 // Metadata completi e Structured Data da GEMINI.md sezione 7
 
 const BASE_URL = 'https://www.fulgurservice.it'
@@ -6,16 +6,16 @@ const OG_DEFAULT = `${BASE_URL}/og/default.jpg`
 
 export const METADATA = {
   home: {
-    title: 'Fulgur Service — Impresa di Pulizie Professionali a Parma e Provincia',
+    title: 'Fulgur Service Impresa di Pulizie Professionali a Parma e Provincia',
     description:
-      'Fulgur Service — impresa di pulizie professionali con sede a Parma, operativa in tutta Italia. Pulizie per uffici, industrie, condomini e studi medici. Sopralluogo gratuito in 24h.',
+      'Fulgur Service impresa di pulizie professionali con sede a Parma, operativa in tutta Italia. Pulizie per uffici, industrie, condomini e studi medici. Sopralluogo gratuito in 24h.',
     keywords: 'impresa pulizie Parma, ditta pulizie Parma, pulizie uffici Parma, pulizie industriali Parma, sanificazione ambienti Parma, pulizie condomini Parma, impresa pulizie Italia, pulizie professionali Italia',
     openGraph: {
-      title: 'Fulgur Service — Impresa di Pulizie Professionali a Parma e in tutta Italia',
+      title: 'Fulgur Service Impresa di Pulizie Professionali a Parma e in tutta Italia',
       description: 'Soluzioni di pulizia avanzate per aziende e privati. Sede a Parma, operativi in tutta Italia. 35 anni di esperienza, risultati garantiti.',
       url: BASE_URL,
       siteName: 'Fulgur Service',
-      images: [{ url: OG_DEFAULT, width: 1200, height: 630, alt: 'Fulgur Service — Leader Pulizie Parma' }],
+      images: [{ url: OG_DEFAULT, width: 1200, height: 630, alt: 'Fulgur Service Leader Pulizie Parma' }],
       locale: 'it_IT',
       type: 'website' as const,
     },
@@ -25,7 +25,7 @@ export const METADATA = {
     description:
       '16 aree di intervento: pulizie aziendali, industriali, sanitarie, salumifici, condomini, hotel, trattamento superfici e molto altro. Sede a Parma, operativi in tutta Italia.',
     openGraph: {
-      title: 'Tutti i Servizi — Fulgur Service Parma',
+      title: 'Tutti i Servizi | Fulgur Service Parma',
       description: '16 aree di intervento con team specializzato e macchinari professionali.',
       url: `${BASE_URL}/servizi`,
       siteName: 'Fulgur Service',
@@ -35,11 +35,11 @@ export const METADATA = {
     },
   },
   chiSiamo: {
-    title: 'Chi Siamo | 35 Anni di Esperienza — Fulgur Service Parma',
+    title: 'Chi Siamo | 35 Anni di Esperienza Fulgur Service Parma',
     description:
       'Fulgur Service: impresa giovane con 35 anni di esperienza del settore. Team qualificato, prodotti eco-sostenibili, referente unico per tutti i tuoi spazi.',
     openGraph: {
-      title: 'Chi Siamo — Fulgur Service',
+      title: 'Chi Siamo Fulgur Service',
       description: '35 anni di esperienza, visione nuova. La nostra storia.',
       url: `${BASE_URL}/chi-siamo`,
       siteName: 'Fulgur Service',
@@ -49,11 +49,11 @@ export const METADATA = {
     },
   },
   preventivo: {
-    title: 'Richiedi Preventivo Gratuito | Sopralluogo in 24h — Fulgur Service',
+    title: 'Richiedi Preventivo Gratuito | Sopralluogo in 24h Fulgur Service',
     description:
       'Richiedi un sopralluogo gratuito. Preventivo personalizzato in 48 ore, nessun impegno. Fulgur Service, impresa di pulizie a Parma.',
     openGraph: {
-      title: 'Preventivo Gratuito — Fulgur Service',
+      title: 'Preventivo Gratuito | Fulgur Service',
       description: 'Sopralluogo gratuito e preventivo personalizzato in 48 ore.',
       url: `${BASE_URL}/preventivo`,
       siteName: 'Fulgur Service',
@@ -67,7 +67,7 @@ export const METADATA = {
     description:
       'Contatta Fulgur Service: +39 338 316 0091 · fulgurservice@gmail.com · Parma, Italia. Risposta garantita entro 48 ore.',
     openGraph: {
-      title: 'Contatti — Fulgur Service',
+      title: 'Contatti | Fulgur Service',
       description: '+39 338 316 0091 · fulgurservice@gmail.com · Parma, Italia.',
       url: `${BASE_URL}/contatti`,
       siteName: 'Fulgur Service',
@@ -77,10 +77,10 @@ export const METADATA = {
     },
   },
   gallery: {
-    title: 'Gallery | Fulgur Service Parma — Pulizie Professionali',
+    title: 'Gallery | Fulgur Service Parma Pulizie Professionali',
     description: 'Guarda i nostri lavori: pulizie aziendali, industriali, cantieri navali, pannelli fotovoltaici e molto altro. Operativi in tutta Italia.',
     openGraph: {
-      title: 'Gallery — Fulgur Service Parma',
+      title: 'Gallery | Fulgur Service Parma',
       description: 'I nostri lavori in foto: pulizie professionali a Parma in tutti i settori.',
       url: `${BASE_URL}/gallery`,
       siteName: 'Fulgur Service',
@@ -93,7 +93,7 @@ export const METADATA = {
     title: 'Privacy Policy | Fulgur Service Parma',
     description: 'Informativa sulla privacy di Fulgur Service SRL. Trasparenza e protezione dei tuoi dati.',
     openGraph: {
-      title: 'Privacy Policy — Fulgur Service',
+      title: 'Privacy Policy | Fulgur Service',
       url: `${BASE_URL}/privacy`,
       siteName: 'Fulgur Service',
       locale: 'it_IT',
@@ -104,7 +104,7 @@ export const METADATA = {
     title: 'Cookie Policy | Fulgur Service Parma',
     description: 'Informativa sui cookie di Fulgur Service SRL. Scopri come utilizziamo i cookie sul nostro sito.',
     openGraph: {
-      title: 'Cookie Policy — Fulgur Service',
+      title: 'Cookie Policy | Fulgur Service',
       url: `${BASE_URL}/cookie-policy`,
       siteName: 'Fulgur Service',
       locale: 'it_IT',
@@ -116,7 +116,7 @@ export const METADATA = {
     description:
       'Utilizziamo solo tecnologie all\'avanguardia: lavasciuga, aspiratori industriali CFM e sistemi Klindex per la lucidatura. Scopri le nostre attrezzature professionali.',
     openGraph: {
-      title: 'Macchinari Professionali — Fulgur Service',
+      title: 'Macchinari Professionali | Fulgur Service',
       description: 'Tecnologia e potenza per pulizie industriali e civili impeccabili.',
       url: `${BASE_URL}/macchinari`,
       siteName: 'Fulgur Service',
@@ -126,11 +126,11 @@ export const METADATA = {
     },
   },
   blog: {
-    title: 'Blog & News | Consigli e Guide sulle Pulizie — Fulgur Service Parma',
+    title: 'Blog & News | Consigli e Guide sulle Pulizie | Fulgur Service Parma',
     description:
       'Approfondimenti, guide e news sul mondo delle pulizie industriali, sanificazioni HACCP e manutenzione pannelli fotovoltaici. Operativi in tutta Italia.',
     openGraph: {
-      title: 'Blog Fulgur Service — Authority nel Cleaning a Parma',
+      title: 'Blog Fulgur Service | Authority nel Cleaning a Parma',
       description: 'Scopri i segreti della pulizia professionale e della manutenzione industriale.',
       url: `${BASE_URL}/blog`,
       siteName: 'Fulgur Service',
@@ -140,25 +140,25 @@ export const METADATA = {
     },
   },
   storage: {
-    title: 'Box Archivio Sicuri a Parma | Fulgur Storage — Deposito Documenti con Accesso H24',
+    title: 'Box Archivio Sicuri a Parma | Fulgur Storage | Deposito Documenti con Accesso H24',
     description:
       'Box archivio riservati a Parma con telecamera, allarme certificato e accesso illimitato 24/7. Prezzo fisso mensile, box dedicato esclusivo. Ideale per avvocati, commercialisti e aziende. Sopralluogo gratuito.',
     openGraph: {
-      title: 'Fulgur Storage — Box Archivio Sicuri a Parma | Accesso H24 · Prezzo Fisso',
+      title: 'Fulgur Storage | Box Archivio Sicuri a Parma | Accesso H24 | Prezzo Fisso',
       description: 'Box archivio privati con sorveglianza, allarme e accesso 24/7 a Parma. Prezzo fisso mensile senza sorprese.',
       url: `${BASE_URL}/storage`,
       siteName: 'Fulgur Service',
-      images: [{ url: OG_DEFAULT, width: 1200, height: 630, alt: 'Fulgur Storage — Box Archivio Parma' }],
+      images: [{ url: OG_DEFAULT, width: 1200, height: 630, alt: 'Fulgur Storage Box Archivio Parma' }],
       locale: 'it_IT',
       type: 'website' as const,
     },
   },
   fulgurAI: {
-    title: 'Fulgur AI | Il tuo Consulente Intelligente — Fulgur Service',
+    title: 'Fulgur AI | Il tuo Consulente Intelligente Fulgur Service',
     description:
       'Incontra Fulgur AI, il consulente virtuale basato su intelligenza artificiale di Fulgur Service. Risposte tecniche istantanee su pulizie industriali, sanificazioni e trattamenti.',
     openGraph: {
-      title: 'Fulgur AI — L\'Intelligenza al servizio del Pulito',
+      title: 'Fulgur AI | L\'Intelligenza al servizio del Pulito',
       description: 'Consulto tecnico istantaneo fornito dal nostro agente AI specializzato.',
       url: `${BASE_URL}/fulgur-ai`,
       siteName: 'Fulgur Service',

@@ -25,7 +25,7 @@ export function CustomCursor() {
     if (isTouch) return
     const initT = setTimeout(() => setIsTouchDevice(false), 0)
 
-    // RAF guard — evita saturazione main thread su display a 120Hz
+    // RAF guard | evita saturazione main thread su display a 120Hz
     let rafPending = false
     let lastX = -200
     let lastY = -200
@@ -47,7 +47,7 @@ export function CustomCursor() {
     const onDown = () => setClicking(true)
     const onUp   = () => setClicking(false)
 
-    // Event delegation — funziona anche per elementi dinamici
+    // Event delegation | funziona anche per elementi dinamici
     const onOver = (e: MouseEvent) => {
       const hoverable = (e.target as Element).closest(
         'a, button, [role="button"], label, input, textarea, select, [data-hover]'
@@ -80,7 +80,7 @@ export function CustomCursor() {
 
   return (
     <>
-      {/* ── Aura — scia morbida più lenta, radial glow ── */}
+      {/* ── Aura | scia morbida più lenta, radial glow ── */}
       <motion.div
         aria-hidden="true"
         className="pointer-events-none fixed top-0 left-0 z-[100000]"
@@ -101,7 +101,7 @@ export function CustomCursor() {
         transition={{ duration: 0.4, ease: 'easeOut' }}
       />
 
-      {/* ── Ring — cerchio leggero centrato sul fulmine ── */}
+      {/* ── Ring | cerchio leggero centrato sul fulmine ── */}
       <motion.div
         aria-hidden="true"
         className="pointer-events-none fixed top-0 left-0 z-[100001]"
@@ -125,7 +125,7 @@ export function CustomCursor() {
         }}
       />
 
-      {/* ── Fulmine SVG — sopra il ring ── */}
+      {/* ── Fulmine SVG | sopra il ring ── */}
       <motion.div
         aria-hidden="true"
         className="pointer-events-none fixed top-0 left-0 z-[100002] text-[var(--accent)]"

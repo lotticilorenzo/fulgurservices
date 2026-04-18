@@ -88,7 +88,7 @@ export function SliderSection() {
       </AnimatePresence>
 
       <div className="mx-auto max-w-7xl px-6 relative z-10 h-full flex flex-col justify-center">
-        <SectionLabel className="mb-8">— TECNOLOGIA & METODO</SectionLabel>
+        <SectionLabel className="mb-8">TECNOLOGIA & METODO</SectionLabel>
         
         <div className="relative h-[200px]">
           <AnimatePresence mode="wait">

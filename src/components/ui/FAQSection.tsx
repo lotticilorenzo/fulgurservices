@@ -101,7 +101,7 @@ export function FAQSection() {
           {/* Left: Sticky header */}
           <div className="lg:sticky lg:top-28">
             <ScrollReveal>
-              <SectionLabel className="mb-5">— FAQ</SectionLabel>
+              <SectionLabel className="mb-5">FAQ</SectionLabel>
               <h2 className="font-display text-4xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl text-balance leading-[1.1]">
                 Tutto quello che<br />
                 <span className="text-[var(--accent)]">c&apos;è da sapere.</span>

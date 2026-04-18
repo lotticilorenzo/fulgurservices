@@ -1,4 +1,4 @@
-# Fulgur AI — Structured Knowledge Base (v1.1 - Updated 2026-03-21)
+# Fulgur AI | Structured Knowledge Base (v1.1 - Updated 2026-03-21)
 
 ## 1. Dati Aziendali & Identità
 - **Nome Azienda**: Fulgur Service S.R.L.

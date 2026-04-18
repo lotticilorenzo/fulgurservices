@@ -11,7 +11,7 @@ export default function PrivacyPage() {
   return (
     <main className="min-h-[100dvh] bg-[var(--bg)] pt-[120px] pb-24">
       <div className="mx-auto max-w-4xl px-6 lg:px-8">
-        <SectionLabel className="mb-8">— LEGALE</SectionLabel>
+        <SectionLabel className="mb-8">LEGALE</SectionLabel>
         <h1 className="font-display text-4xl font-extrabold text-[var(--tx-1)] sm:text-5xl mb-12">
           Privacy Policy
         </h1>

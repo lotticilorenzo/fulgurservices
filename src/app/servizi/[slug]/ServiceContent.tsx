@@ -92,7 +92,7 @@ export function ServiceContent({ service }: ServiceContentProps) {
 
               {/* DESCRIZIONE LUNGA */}
               <WipeReveal direction="top">
-                <SectionLabel className="mb-10">— DETTAGLI INTERVENTO</SectionLabel>
+                <SectionLabel className="mb-10">DETTAGLI INTERVENTO</SectionLabel>
                 <div className="font-sans font-light text-[var(--tx-2)] leading-relaxed text-base sm:text-lg md:text-xl opacity-90 space-y-6">
                   {service.longDesc.split('\n\n').map((para, i) => (
                     <p key={i} className={i === 0 ? 'first-letter:text-4xl sm:first-letter:text-5xl first-letter:font-display first-letter:font-bold first-letter:text-[var(--accent)] first-letter:mr-3 first-letter:float-left' : ''}>
@@ -132,7 +132,7 @@ export function ServiceContent({ service }: ServiceContentProps) {
                           <CheckCircle size={100} weight="fill" />
                        </div>
                        
-                       <SectionLabel className="mb-10 text-[var(--accent)] border-[var(--accent)]/30">— ESEMPIO REALE DI RISULTATO</SectionLabel>
+                       <SectionLabel className="mb-10 text-[var(--accent)] border-[var(--accent)]/30">ESEMPIO REALE DI RISULTATO</SectionLabel>
                        
                        <div className="grid grid-cols-1 xl:grid-cols-[1fr_400px] gap-12 items-center">
                           <BeforeAfterSlider 
@@ -189,7 +189,7 @@ export function ServiceContent({ service }: ServiceContentProps) {
 
               {/* A CHI E' RIVOLTO */}
               <div className="glass-premium rounded-3xl border border-[var(--br)] bg-white/60 p-5 sm:p-8 shadow-2xl backdrop-blur-xl">
-                <SectionLabel className="mb-6">— AMBITI DI APPLICAZIONE</SectionLabel>
+                <SectionLabel className="mb-6">AMBITI DI APPLICAZIONE</SectionLabel>
                 <div className="flex flex-col gap-3">
                   {service.sectors.map((sector, i) => (
                     <div key={i} className="flex items-center gap-3 font-sans text-base text-[var(--tx-2)] py-3 px-4 rounded-xl bg-[var(--bg-2)] border border-[var(--br)] hover:text-[var(--tx-1)] transition-colors">
@@ -207,7 +207,7 @@ export function ServiceContent({ service }: ServiceContentProps) {
                 const IconLookupR = Icons as unknown as Record<string, React.ElementType>
                 return (
                   <div className="glass-premium rounded-3xl border border-[var(--br)] bg-white/60 p-5 sm:p-7 shadow-xl backdrop-blur-xl">
-                    <SectionLabel className="mb-5">— SERVIZI CORRELATI</SectionLabel>
+                    <SectionLabel className="mb-5">SERVIZI CORRELATI</SectionLabel>
                     <div className="flex flex-col gap-3">
                       {related.map((rel) => {
                         const RelIcon: React.ElementType = IconLookupR[rel.icon] ?? Icons.Briefcase
@@ -255,7 +255,7 @@ export function ServiceContent({ service }: ServiceContentProps) {
       {/* SEZIONE SETTORE ALBERGHIERO (Visibile solo per questo servizio) */}
       {service.slug === 'settore-alberghiero' && (
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8 mt-16 mb-24 relative z-10">
-          <SectionLabel className="mb-10 text-center sm:text-left">— I NOSTRI SERVIZI ALBERGHIERI</SectionLabel>
+          <SectionLabel className="mb-10 text-center sm:text-left">I NOSTRI SERVIZI ALBERGHIERI</SectionLabel>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="p-8 rounded-3xl bg-[var(--bg-card)] border border-[var(--br)] shadow-sm hover:border-[var(--accent)]/50 transition-colors">
               <h3 className="font-display text-xl font-bold text-[var(--tx-1)] mb-3 flex items-center gap-3">
@@ -303,11 +303,11 @@ export function ServiceContent({ service }: ServiceContentProps) {
         </div>
       )}
 
-      {/* SEZIONE TRATTAMENTO SUPERFICI — tipologie */}
+      {/* SEZIONE TRATTAMENTO SUPERFICI | tipologie */}
       {service.slug === 'trattamento-superfici' && (
         <div className="w-full bg-[var(--bg-2)] border-t border-[var(--br)] py-16 sm:py-24 relative z-10">
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8">
-            <SectionLabel className="mb-4">— SUPERFICI CHE TRATTIAMO</SectionLabel>
+            <SectionLabel className="mb-4">SUPERFICI CHE TRATTIAMO</SectionLabel>
             <h2 className="font-display text-3xl sm:text-4xl font-bold text-[#0F1F1A] mb-12 tracking-tight">
               Ogni superficie ha il suo protocollo.
             </h2>
@@ -391,7 +391,7 @@ export function ServiceContent({ service }: ServiceContentProps) {
       <div className="w-full bg-[var(--bg)] py-16 sm:py-32 border-t border-[var(--br)] relative z-10">
         <WipeReveal direction="top">
           <div className="mx-auto w-full max-w-4xl px-5 sm:px-6 xl:px-8 text-center flex flex-col items-center">
-            <SectionLabel className="mb-6">— AZIONE IMMEDIATA</SectionLabel>
+            <SectionLabel className="mb-6">AZIONE IMMEDIATA</SectionLabel>
             <h2 className="font-display text-[32px] sm:text-6xl lg:text-7xl font-extrabold text-[var(--tx-1)] mb-6 sm:mb-8 tracking-tighter leading-[1.05] text-balance">
               Il tuo spazio merita <span className="text-[var(--accent)]">brillantezza.</span>
             </h2>

@@ -31,7 +31,7 @@ export function BrandsMarquee() {
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-12 lg:mb-16">
           <div>
-            <SectionLabel className="mb-4">— I NOSTRI PARTNER</SectionLabel>
+            <SectionLabel className="mb-4">I NOSTRI PARTNER</SectionLabel>
             <h2 className="font-display text-2xl sm:text-3xl font-extrabold tracking-tight text-[var(--tx-1)] text-balance">
               Operiamo con i migliori<br className="hidden sm:block" />
               {' '}<span className="text-[var(--accent)]">macchinari al mondo.</span>
@@ -63,7 +63,7 @@ export function BrandsMarquee() {
                 <div className="relative h-10 w-full">
                   <Image
                     src={brand.logo}
-                    alt={`${brand.name} — partner Fulgur Service`}
+                    alt={`${brand.name} partner Fulgur Service`}
                     fill
                     className="object-contain filter grayscale group-hover:grayscale-0 transition-all duration-400"
                     sizes="(max-width: 640px) 140px, (max-width: 1024px) 160px, 180px"

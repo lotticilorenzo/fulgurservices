@@ -21,7 +21,7 @@ export const TOWNS: Town[] = [
     description: 'Fulgur Service ha sede a Parma e conosce il territorio meglio di qualsiasi altra impresa di pulizie. Interveniamo quotidianamente in tutti i quartieri della città: centro storico, Oltretorrente, Montanara, San Lazzaro, zona industriale SPIP. Sopralluogo gratuito entro 24 ore, preventivo fisso senza sorprese.',
     metaTitle: 'Impresa di Pulizie Parma | Preventivo in 24h | Fulgur Service',
     metaDescription: 'Fulgur Service è l\'impresa di pulizie con sede a Parma. Uffici, condomini, capannoni e abitazioni. Sopralluogo gratuito in 24h. Personale assicurato e referente unico.',
-    keySector: 'Tutti i settori — Sede Operativa',
+    keySector: 'Tutti i settori Sede Operativa',
     keyBenefit: 'Sopralluogo in 24h',
   },
   {

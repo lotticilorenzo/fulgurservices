@@ -36,7 +36,7 @@ export function GoogleReviewsPlugin() {
         
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12 mb-16 lg:mb-20">
           <ScrollReveal className="max-w-2xl">
-            <SectionLabel className="mb-4">— RECENSIONI GOOGLE REALI</SectionLabel>
+            <SectionLabel className="mb-4">RECENSIONI GOOGLE REALI</SectionLabel>
             <h2 className="font-display text-4xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl lg:text-6xl">
               Cosa dicono <br /> di <span className="text-[var(--accent)]">noi</span>.
             </h2>

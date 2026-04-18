@@ -31,7 +31,7 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
         url: service.image ? `${BASE_URL}${service.image}` : OG_DEFAULT, 
         width: 1200, 
         height: 630, 
-        alt: service.imageAlt || `${service.title} a Parma — Fulgur Service` 
+        alt: service.imageAlt || `${service.title} a Parma | Fulgur Service` 
       }],
       locale: 'it_IT',
       type: 'website',

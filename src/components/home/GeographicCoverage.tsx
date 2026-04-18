@@ -34,7 +34,7 @@ export function GeographicCoverage() {
           {/* Left: Content */}
           <div>
             <ScrollReveal>
-              <SectionLabel className="mb-5">— DOVE OPERIAMO</SectionLabel>
+              <SectionLabel className="mb-5">DOVE OPERIAMO</SectionLabel>
               <h2 className="font-display text-4xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl text-balance leading-[1.1]">
                 Sede a Parma,<br />
                 <span className="text-[var(--accent)]">operativi in tutta Italia.</span>

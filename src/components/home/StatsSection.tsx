@@ -66,7 +66,7 @@ export function StatsSection() {
           className="mb-8 sm:mb-12 lg:mb-14 text-center"
         >
           <p className="font-mono-fulgur text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.2em] text-white/60 mb-3">
-            — I NUMERI CHE CI DEFINISCONO
+            I NUMERI CHE CI DEFINISCONO
           </p>
           <h2 className="font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
             Risultati concreti,<br />ogni giorno.

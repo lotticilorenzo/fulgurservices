@@ -51,7 +51,7 @@ export function ServiceCard({ service, size = 'small', index, className }: Servi
           <div className="absolute inset-0 z-0">
             <Image
               src={service.image}
-              alt={service.imageAlt || `${service.title} a Parma — Fulgur Service`}
+              alt={service.imageAlt || `${service.title} a Parma Fulgur Service`}
               fill
               className="object-cover transition-transform duration-[700ms] ease-in-out group-hover:scale-[1.05]"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

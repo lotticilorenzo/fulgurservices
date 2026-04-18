@@ -1,4 +1,4 @@
-// lib/blog-data.ts — Blog Content Engine
+// lib/blog-data.ts Blog Content Engine
 
 export interface BlogPost {
   id: string
@@ -24,7 +24,7 @@ export const BLOG_POSTS: BlogPost[] = [
       <h2>Un'adesione che parla da sola</h2>
       <p>A febbraio 2026, KilometroVerde Parma ha dato il benvenuto a tre nuovi soci: Casalasco, Rotary Club Parma Est e <strong>Fulgur Service</strong>. Un riconoscimento che ci riempie di orgoglio, perché riflette esattamente ciò in cui crediamo ogni giorno sul lavoro.</p>
 
-      <p>KilometroVerde Parma è una comunità di 133 soci — aziende, associazioni e cittadini — uniti da un obiettivo concreto: contribuire a un futuro con aria più pulita, temperature più miti e una città più vivibile. Esattamente la direzione in cui lavoriamo da sempre.</p>
+      <p>KilometroVerde Parma è una comunità di 133 soci (aziende, associazioni e cittadini) uniti da un obiettivo concreto: contribuire a un futuro con aria più pulita, temperature più miti e una città più vivibile. Esattamente la direzione in cui lavoriamo da sempre.</p>
 
       <h2>Perché questa scelta è stata naturale</h2>
       <p>Il nostro claim non è solo uno slogan: <em>"Puliamo il futuro con l'energia della natura"</em>. Da anni scegliamo prodotti a basso impatto ambientale, utilizziamo tecnologie a vapore che eliminano la chimica aggressiva, e formiamo il nostro team su metodi di lavoro rispettosi degli ambienti in cui operiamo.</p>
@@ -34,7 +34,7 @@ export const BLOG_POSTS: BlogPost[] = [
       <h2>Cosa significa per i nostri clienti</h2>
       <p>Se scegli Fulgur Service per le pulizie della tua azienda, del tuo condominio o della tua abitazione, stai scegliendo un'impresa che non si limita a rendere gli spazi impeccabili: sceglie come farlo. Con prodotti, attrezzature e metodi pensati per ridurre l'impatto sull'ambiente.</p>
 
-      <blockquote>"Anche un albero con il tronco così grande da non riuscire ad abbracciarlo ha inizio da un delicato germoglio. E KilometroVerdeParma continua a germogliare." — KilometroVerde Parma</blockquote>
+      <blockquote>"Anche un albero con il tronco così grande da non riuscire ad abbracciarlo ha inizio da un delicato germoglio. E KilometroVerdeParma continua a germogliare." KilometroVerde Parma</blockquote>
 
       <p>Siamo fieri di far parte di questa comunità. E continuiamo a crescere insieme.</p>
 
@@ -116,7 +116,7 @@ export const BLOG_POSTS: BlogPost[] = [
       <p>Polvere sottile, pollini primaverili, guano di piccioni e uccelli, depositi calcarei dell'acqua piovana: tutti questi elementi creano una pellicola opaca che blocca parzialmente la luce solare prima che raggiunga le celle fotovoltaiche.</p>
 
       <h2>Quanto sporco costa davvero?</h2>
-      <p>Studi tecnici dimostrano che uno strato sottile di sporco può ridurre la resa di un pannello tra il 15% e il 30%. Tradotto in numeri reali: se il tuo impianto da 6 kWp produce mediamente 7.200 kWh all'anno, con i pannelli sporchi potresti perdere fino a 2.160 kWh — equivalenti a centinaia di euro in bolletta ogni anno.</p>
+      <p>Studi tecnici dimostrano che uno strato sottile di sporco può ridurre la resa di un pannello tra il 15% e il 30%. Tradotto in numeri reali: se il tuo impianto da 6 kWp produce mediamente 7.200 kWh all'anno, con i pannelli sporchi potresti perdere fino a 2.160 kWh equivalenti a centinaia di euro in bolletta ogni anno.</p>
 
       <blockquote>"La pioggia non basta. Anzi, spesso aggrava il problema depositando calcare e trascinando lo sporco solo parzialmente, lasciando aloni persistenti."</blockquote>
 

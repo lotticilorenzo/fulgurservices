@@ -35,7 +35,7 @@ const CONTAINER_VARIANTS = {
 }
 
 /**
- * AnimatedHeading — spezza il testo parola per parola e le anima
+ * AnimatedHeading | spezza il testo parola per parola e le anima
  * in entrata con un reveal dal basso premium.
  * Funziona solo su stringhe semplici (nessun JSX child).
  */

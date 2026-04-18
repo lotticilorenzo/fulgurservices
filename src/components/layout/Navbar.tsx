@@ -77,7 +77,7 @@ export default function Navbar() {
 
   return (
     <>
-      {/* ── FLOATING PILL ── */}
+      {/* | FLOATING PILL | */}
       <header
         className={cn(
           'fixed left-1/2 z-[200] -translate-x-1/2',
@@ -93,7 +93,7 @@ export default function Navbar() {
         {/* LOGO */}
         <Link
           href="/"
-          aria-label="Fulgur Service — home"
+          aria-label="Fulgur Service home"
           className="flex shrink-0 items-center gap-2 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
         >
           <Logo size={44} iconOnly variant="default" className="shrink-0" />
@@ -216,7 +216,7 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* MOBILE HAMBURGER — 44×44px per WCAG touch target */}
+        {/* MOBILE HAMBURGER | 44×44px per WCAG touch target */}
         <button
           className="lg:hidden flex items-center justify-center h-11 w-11 rounded-full border border-[var(--br-h)] text-[var(--tx-1)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
           onClick={() => setIsMobileOpen(true)}
@@ -227,7 +227,7 @@ export default function Navbar() {
         </button>
       </header>
 
-      {/* ── MOBILE OVERLAY ── */}
+      {/* | MOBILE OVERLAY | */}
       <AnimatePresence>
         {isMobileOpen && (
           <motion.div
@@ -354,7 +354,7 @@ export default function Navbar() {
               <div className="h-4 shrink-0" />
             </nav>
 
-            {/* Bottom CTAs (Fissi a fondo schermo) — pb usa safe-area per iPhone con notch */}
+            {/* Bottom CTAs (Fissi a fondo schermo) | pb usa safe-area per iPhone con notch */}
             <div className="shrink-0 bg-[var(--bg)] border-t border-[var(--br)] px-6 pt-4 flex flex-col gap-2.5" style={{ paddingBottom: 'max(2.5rem, env(safe-area-inset-bottom, 2.5rem))' }}>
               <div className="flex flex-col sm:flex-row gap-2">
                 <a

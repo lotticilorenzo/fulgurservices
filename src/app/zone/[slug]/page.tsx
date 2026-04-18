@@ -118,7 +118,7 @@ export default function TownPage({ params }: TownPageProps) {
         <div className="mx-auto w-full max-w-7xl px-6 xl:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
              <ScrollReveal>
-                <SectionLabel className="mb-6">— TERRITORIO E QUALITÀ</SectionLabel>
+                <SectionLabel className="mb-6">TERRITORIO E QUALITÀ</SectionLabel>
                 <h2 className="font-display text-4xl font-bold text-white mb-8">
                   Perché scegliere Fulgur Service a <span className="text-[var(--accent)] text-stroke-thin">{town.name}</span>
                 </h2>
@@ -158,7 +158,7 @@ export default function TownPage({ params }: TownPageProps) {
       <TrustBar />
       
       <div className="py-24">
-         <SectionLabel className="mb-12 text-center">— I NOSTRI SERVIZI A {town.name.toUpperCase()}</SectionLabel>
+         <SectionLabel className="mb-12 text-center">I NOSTRI SERVIZI A {town.name.toUpperCase()}</SectionLabel>
          <ServicesGrid />
       </div>
 
