@@ -130,7 +130,7 @@ export function Footer() {
           {/* Col 3: Zone di Intervento (SEO Local) */}
           <div>
             <h4 className="font-mono-fulgur text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--tx-3)]">
-              Zone
+              Provincia
             </h4>
             <ul className="mt-5 flex flex-col gap-1 sm:gap-0.5 font-sans text-[16px] sm:text-sm text-[var(--tx-1)] sm:text-[var(--tx-2)]">
               {topTowns.map((town) => (
@@ -148,6 +148,25 @@ export function Footer() {
                   Tutte le zone →
                 </Link>
               </li>
+            </ul>
+          </div>
+
+          {/* Col 4: Quartieri Parma (SEO Hyper-Local) */}
+          <div className="hidden lg:block">
+            <h4 className="font-mono-fulgur text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--tx-3)]">
+              Quartieri Parma
+            </h4>
+            <ul className="mt-5 flex flex-col gap-0.5 font-sans text-sm text-[var(--tx-2)]">
+              {['Oltretorrente', 'San Lazzaro', 'Montanara', 'San Leonardo', 'Zona SPIP', 'Cittadella'].map((q) => (
+                <li key={q}>
+                  <Link 
+                    href="/zone/parma" 
+                    className="flex min-h-[32px] items-center transition-colors hover:text-[var(--accent)]"
+                  >
+                    Pulizie {q}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 

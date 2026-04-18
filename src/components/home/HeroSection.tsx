@@ -127,7 +127,9 @@ export function HeroSection() {
 
           {/* H1 | tre righe. leading-[1.0] su mobile evita il salto CLS verso sm:leading-[0.93] */}
           <h1 className="hero-reveal mt-5 font-display font-black leading-[1.0] sm:leading-[0.93] tracking-tight sm:tracking-tighter text-[clamp(42px,10vw,84px)] drop-shadow-2xl">
-            <span className="sr-only">Fulgur Service | Impresa di Pulizie Parma</span>
+            <span className="block text-[0.32em] uppercase tracking-[0.2em] sm:tracking-[0.25em] text-[var(--accent)] opacity-95 mb-1 sm:mb-2 drop-shadow-none">
+              Impresa di Pulizie Parma
+            </span>
             <span className="block text-white">Puliamo il Futuro</span>
             <span className="block text-outline-accent">con l&apos;Energia</span>
             <span className="block text-[var(--accent)]">della Natura</span>

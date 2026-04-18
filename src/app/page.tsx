@@ -11,6 +11,7 @@ import { CTASection } from '@/components/home/CTASection'
 import { ScrollVideoSection } from '@/components/home/ScrollVideoSection'
 import { ScrollMobileSection } from '@/components/home/ScrollMobileSection'
 import { WhyChooseUs } from '@/components/home/WhyChooseUs'
+import { GeographicCoverage } from '@/components/home/GeographicCoverage'
 
 export const metadata: Metadata = {
   title: METADATA.home.title,
@@ -47,6 +48,9 @@ export default function Home() {
 
       {/* 3. Why Choose Us — Trust & Value */}
       <WhyChooseUs />
+
+      {/* 4. Geographic Coverage — Local Authority */}
+      <GeographicCoverage />
 
       {/* 3. Chi Siamo — La Storia */}
       <div id="chi-siamo" className="scroll-mt-24">

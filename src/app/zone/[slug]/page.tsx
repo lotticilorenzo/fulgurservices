@@ -11,7 +11,9 @@ import { IntegratedBento } from '@/components/servizi/IntegratedBento'
 import { CTASection } from '@/components/home/CTASection'
 import { ServicesGrid } from '@/components/home/ServicesGrid'
 import { StatusBadge } from '@/components/ui/StatusBadge'
-import { MapPin, ShieldCheck, Clock } from '@phosphor-icons/react/dist/ssr'
+import { MapPin, ShieldCheck, Clock, Buildings } from '@phosphor-icons/react/dist/ssr'
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs'
+import Link from 'next/link'
 
 interface TownPageProps {
   params: { slug: string }
@@ -81,6 +83,13 @@ export default function TownPage({ params }: TownPageProps) {
         </div>
 
         <div className="mx-auto w-full max-w-7xl px-6 xl:px-8 relative z-10 text-center flex flex-col items-center">
+            <Breadcrumbs 
+              items={[
+                { label: 'Zone', href: '/zone' },
+                { label: town.name, href: `/zone/${town.slug}`, active: true }
+              ]}
+              className="mb-8"
+            />
             <ScrollReveal>
               <div className="mb-8">
                  <StatusBadge icon={MapPin} text={`Operativi a ${town.name}`} color="accent" />
@@ -124,6 +133,24 @@ export default function TownPage({ params }: TownPageProps) {
                 </h2>
                 <div className="font-sans text-lg font-light text-[var(--tx-2)] leading-relaxed space-y-6">
                    <p>{town.description}</p>
+                   {town.neighborhoods && town.neighborhoods.length > 0 && (
+                     <div className="mt-8 pt-8 border-t border-[var(--br)]">
+                       <h4 className="font-display text-xl font-bold text-white mb-4 flex items-center gap-2">
+                         <Buildings size={20} className="text-[var(--accent)]" />
+                         Presenza capillare nei quartieri
+                       </h4>
+                       <div className="flex flex-wrap gap-2">
+                         {town.neighborhoods.map(q => (
+                           <span key={q} className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[12px] text-[var(--tx-2)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors cursor-default">
+                             {q}
+                           </span>
+                         ))}
+                       </div>
+                       <p className="mt-4 text-sm text-[var(--tx-3)]">
+                         Operativi h24 per emergenze e manutenzioni programmate in tutti i distretti di Parma.
+                       </p>
+                     </div>
+                   )}
                    <p>
                       Conosciamo bene le esigenze delle aziende e dei privati di <strong>{town.name}</strong>. 
                       La nostra struttura logistica ci permette di garantire puntualità svizzera e una 

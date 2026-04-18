@@ -13,7 +13,10 @@ import { MagneticButton } from '@/components/ui/MagneticButton'
 import { BeforeAfterSlider } from '@/components/ui/BeforeAfterSlider'
 import { CASE_STUDIES } from '@/lib/case-studies'
 import { Service, SERVICES } from '@/lib/services-data'
+import { TOWNS } from '@/lib/towns-data'
 import { CTASection } from '@/components/home/CTASection'
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs'
+import { MapPin } from '@phosphor-icons/react'
 
 interface ServiceContentProps {
   service: Service
@@ -35,13 +38,12 @@ export function ServiceContent({ service }: ServiceContentProps) {
 
       {/* BREADCRUMBS */}
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8 mb-8 relative z-10">
-        <nav aria-label="Breadcrumb" className="flex items-center gap-2 font-mono-fulgur text-[10px] font-bold tracking-[0.2em] uppercase text-[var(--tx-3)]">
-          <Link href="/" className="hover:text-[var(--accent)] transition-colors" aria-label="Vai alla home page">Home</Link>
-          <CaretRight size={10} aria-hidden="true" />
-          <Link href="/servizi" className="hover:text-[var(--accent)] transition-colors" aria-label="Vai a tutti i servizi">Servizi</Link>
-          <CaretRight size={10} aria-hidden="true" />
-          <span className="text-[var(--tx-1)]" aria-current="page">{service.title}</span>
-        </nav>
+        <Breadcrumbs 
+          items={[
+            { label: 'Servizi', href: '/servizi' },
+            { label: service.title, href: `/servizi/${service.slug}`, active: true }
+          ]}
+        />
       </div>
 
       {/* HERO DEL SERVIZIO */}
@@ -181,6 +183,40 @@ export function ServiceContent({ service }: ServiceContentProps) {
                   </div>
                 </ScrollReveal>
               )}
+
+              {/* LOCAL PRESENCE SILO SECTION */}
+              <ScrollReveal>
+                <div className="mt-12 p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-[var(--bg)] to-[var(--bg-2)] border border-[var(--br)] relative overflow-hidden group">
+                  <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:scale-110 transition-transform duration-700">
+                    <MapPin size={120} weight="fill" />
+                  </div>
+                  <h2 className="font-display text-2xl sm:text-3xl font-bold text-[var(--tx-1)] mb-6 flex items-center gap-3">
+                    <MapPin size={28} className="text-[var(--accent)]" />
+                    Operativi in tutta la Provincia
+                  </h2>
+                  <p className="font-sans text-[var(--tx-2)] text-lg mb-8 leading-relaxed font-light">
+                    Offriamo il nostro servizio di <strong>{service.title.toLowerCase()}</strong> con la massima tempestività in tutta la provincia di Parma. Scopri le nostre zone di copertura principale:
+                  </p>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
+                    {TOWNS.slice(0, 9).map((town) => (
+                      <Link 
+                        key={town.slug}
+                        href={`/zone/${town.slug}`}
+                        className="flex items-center gap-2 p-3 rounded-xl bg-[var(--bg-2)] border border-[var(--br)] text-sm text-[var(--tx-2)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all font-medium"
+                      >
+                        <div className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
+                        {town.name}
+                      </Link>
+                    ))}
+                    <Link 
+                      href="/zone"
+                      className="flex items-center gap-2 p-3 rounded-xl bg-[var(--accent)]/5 border border-[var(--accent)]/20 text-sm text-[var(--accent)] hover:bg-[var(--accent)]/10 transition-all font-bold"
+                    >
+                      Tutte le zone →
+                    </Link>
+                  </div>
+                </div>
+              </ScrollReveal>
 
             </div>
 

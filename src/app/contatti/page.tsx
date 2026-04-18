@@ -4,6 +4,7 @@ import { METADATA } from '@/lib/seo'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { ContactForm } from '@/components/forms/ContactForm'
 import { Phone, EnvelopeSimple, MapPin, InstagramLogo, Clock } from '@phosphor-icons/react/dist/ssr'
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: METADATA.contatti.title,
@@ -18,6 +19,10 @@ export default function ContattiPage() {
         
         {/* HEADER */}
         <div className="mb-12 md:mb-20 text-center flex flex-col items-center">
+          <Breadcrumbs 
+            items={[{ label: 'Contatti', href: '/contatti', active: true }]} 
+            className="mb-8"
+          />
           <SectionLabel className="mb-4">SIAMO QUI PER TE</SectionLabel>
           <h1 className="font-display text-[32px] sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--tx-1)] max-w-3xl text-balance leading-tight sm:leading-[1.1]">
             Entriamo in <span className="text-[var(--accent)]">contatto.</span>

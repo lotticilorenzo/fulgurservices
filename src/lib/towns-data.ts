@@ -9,6 +9,7 @@ export interface Town {
   metaDescription: string
   keySector: string
   keyBenefit: string
+  neighborhoods?: string[]
 }
 
 export const TOWNS: Town[] = [
@@ -18,11 +19,12 @@ export const TOWNS: Town[] = [
     title: 'Impresa di Pulizie Parma',
     heroTitle: 'Il Riferimento per le Pulizie a Parma',
     heroSub: 'Dalla zona SPIP al centro storico: pulizie professionali per aziende, condomini e privati.',
-    description: 'Fulgur Service ha sede a Parma e conosce il territorio meglio di qualsiasi altra impresa di pulizie. Interveniamo quotidianamente in tutti i quartieri della città: centro storico, Oltretorrente, Montanara, San Lazzaro, zona industriale SPIP. Sopralluogo gratuito entro 24 ore, preventivo fisso senza sorprese.',
+    description: 'Fulgur Service ha sede a Parma e conosce il territorio meglio di qualsiasi altra ditta del settore. Interveniamo quotidianamente in tutti i quartieri della città: dal fascino storico dell\'Oltretorrente alle zone residenziali di San Lazzaro e Montanara, fino al cuore produttivo della zona industriale SPIP e del comparto San Leonardo. La nostra radice è qui, tra le mura di Parma, dove offriamo sopralluoghi gratuiti entro 24 ore e la certezza di un referente unico per ogni cliente parmigiano.',
     metaTitle: 'Impresa di Pulizie Parma | Preventivo in 24h | Fulgur Service',
-    metaDescription: 'Fulgur Service è l\'impresa di pulizie con sede a Parma. Uffici, condomini, capannoni e abitazioni. Sopralluogo gratuito in 24h. Personale assicurato e referente unico.',
+    metaDescription: 'Fulgur Service è l\'impresa di pulizie con sede a Parma. Uffici, condomini, zona SPIP e abitazioni private. Sopralluogo gratuito in 24h. Personale di fiducia assicurato.',
     keySector: 'Tutti i settori Sede Operativa',
     keyBenefit: 'Sopralluogo in 24h',
+    neighborhoods: ['Oltretorrente', 'San Lazzaro', 'San Leonardo', 'Zona SPIP', 'Montanara', 'Molinetto', 'Cittadella', 'San Pancrazio'],
   },
   {
     slug: 'fidenza',

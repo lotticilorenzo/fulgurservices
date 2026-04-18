@@ -6,6 +6,7 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal'
 import { CTASection } from '@/components/home/CTASection'
 import { MapPin, ArrowRight } from '@phosphor-icons/react/dist/ssr'
 import { makeBreadcrumbsJsonLd } from '@/lib/seo'
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Zone di Copertura | Pulizie Parma e Provincia | Fulgur Service',
@@ -35,6 +36,10 @@ export default function ZonePage() {
 
       {/* HEADER */}
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8 mb-12 text-center flex flex-col items-center">
+        <Breadcrumbs 
+          items={[{ label: 'Zone', href: '/zone', active: true }]} 
+          className="mb-8"
+        />
         <SectionLabel className="mb-4">DOVE OPERIAMO</SectionLabel>
         <h1 className="font-display text-[32px] sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--tx-1)] max-w-4xl text-balance leading-[1.1] pb-1">
           Parma e Provincia:{' '}

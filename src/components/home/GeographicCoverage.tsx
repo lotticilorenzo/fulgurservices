@@ -2,138 +2,105 @@
 
 import React from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
-import { motion } from 'framer-motion'
-import { MapPin, ArrowRight } from '@phosphor-icons/react'
+import { TOWNS } from '@/lib/towns-data'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
-
-const CITIES = [
-  { name: 'Parma', isMain: true },
-  { name: 'Fidenza', isMain: false },
-  { name: 'Salsomaggiore Terme', isMain: false },
-  { name: 'Collecchio', isMain: false },
-  { name: 'Noceto', isMain: false },
-  { name: 'Montechiarugolo', isMain: false },
-  { name: 'Langhirano', isMain: false },
-  { name: 'Sorbolo Mezzani', isMain: false },
-  { name: 'Traversetolo', isMain: false },
-]
+import { MapPin, ArrowRight, Buildings, Globe } from '@phosphor-icons/react'
+import { motion } from 'framer-motion'
 
 export function GeographicCoverage() {
+  const parmaTown = TOWNS.find(t => t.slug === 'parma')
+  const topTowns = TOWNS.filter(t => t.slug !== 'parma').slice(0, 5)
+
   return (
-    <section className="relative w-full bg-white py-20 lg:py-32 overflow-hidden">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-[0.025] pointer-events-none"
-        style={{ backgroundImage: 'radial-gradient(circle, var(--tx-1) 1px, transparent 1px)', backgroundSize: '28px 28px' }} 
-      />
-      
+    <section className="relative py-24 sm:py-32 overflow-hidden bg-[var(--bg)]">
+      {/* Background Decor */}
+      <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[var(--accent)]/5 rounded-full blur-[120px]" />
+      </div>
+
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_450px] gap-20 items-start">
           
-          {/* Left: Content */}
-          <div>
+          {/* Left Column: Authority & Districts */}
+          <div className="flex flex-col">
             <ScrollReveal>
-              <SectionLabel className="mb-5">DOVE OPERIAMO</SectionLabel>
-              <h2 className="font-display text-4xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl text-balance leading-[1.1]">
-                Sede a Parma,<br />
-                <span className="text-[var(--accent)]">operativi in tutta Italia.</span>
+              <SectionLabel className="mb-6">CAPILLARITÀ LOCALE</SectionLabel>
+              <h2 className="font-display text-4xl sm:text-6xl font-extrabold text-[var(--tx-1)] mb-8 tracking-tighter leading-tight text-balance">
+                Presenza costante a <span className="text-[var(--accent)]">Parma</span> e in tutta la Provincia.
               </h2>
-              <p className="mt-6 font-sans text-lg font-light text-[var(--tx-2)] leading-relaxed max-w-lg">
-                Con sede a Parma, operiamo su tutto il territorio nazionale. Puntualità garantita,
-                interventi in 24h ovunque tu sia in Italia.
+              <p className="font-sans text-lg sm:text-xl font-light text-[var(--tx-2)] leading-relaxed max-w-2xl mb-12">
+                Con sede operativa nel cuore di Parma, garantiamo tempi di intervento rapidissimi. Non siamo una ditta esterna: siamo parte integrante del tessuto produttivo e residenziale parmigiano.
               </p>
             </ScrollReveal>
 
-            <ScrollReveal delay={0.15}>
-              <div className="mt-10 grid grid-cols-3 gap-2">
-                {CITIES.map((city, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.06, duration: 0.4 }}
-                    className={`flex min-h-[36px] items-center gap-2 rounded-xl px-3 py-2 text-left transition-all ${
-                      city.isMain 
-                        ? 'bg-[var(--accent)] shadow-lg' 
-                        : 'bg-[var(--bg-2)] hover:bg-[var(--accent-glow)] border border-[var(--br)] hover:border-[var(--accent)]'
-                    }`}
-                  >
-                    <MapPin 
-                      size={12} 
-                      weight="fill" 
-                      className={city.isMain ? 'text-white' : 'text-[var(--accent)]'} 
-                    />
-                    <span className={`font-sans text-xs font-medium leading-tight ${
-                      city.isMain ? 'text-white' : 'text-[var(--tx-1)]'
-                    }`}>
-                      {city.name}
-                    </span>
-                  </motion.div>
-                ))}
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.3}>
-              <div className="mt-10 flex items-center gap-4">
-                <Link
-                  href="/preventivo"
-                  className="inline-flex min-h-[44px] items-center gap-2 rounded-full bg-[var(--accent)] px-7 py-3 font-display text-sm font-bold text-white shadow-md transition-all hover:bg-[var(--accent-d)] hover:shadow-xl"
+            {/* Parma Neighborhoods Authority Block */}
+            <ScrollReveal delay={0.2}>
+              <div className="glass-premium p-8 rounded-[2.5rem] border border-[var(--br)] bg-gradient-to-br from-white/5 to-white/[0.02]">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="h-14 w-14 rounded-2xl bg-[var(--accent)]/10 flex items-center justify-center text-[var(--accent)] border border-[var(--accent)]/20 shadow-glow">
+                    <Buildings size={32} weight="duotone" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-2xl font-bold text-white leading-tight">Città di Parma</h3>
+                    <p className="font-mono-fulgur text-[10px] font-bold uppercase tracking-widest text-[var(--accent)]">Sede Operativa • Intervento 24h</p>
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                  {parmaTown?.neighborhoods?.map((q) => (
+                    <div 
+                      key={q} 
+                      className="flex items-center gap-2 px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-[12px] text-[var(--tx-2)] group hover:border-[var(--accent)]/40 hover:text-white transition-all cursor-default"
+                    >
+                      <div className="h-1.5 w-1.5 rounded-full bg-[var(--accent)] opacity-60 group-hover:opacity-100 group-hover:scale-125 transition-all" />
+                      {q}
+                    </div>
+                  ))}
+                </div>
+                
+                <Link 
+                  href="/zone/parma" 
+                  className="mt-8 flex items-center gap-2 font-mono-fulgur text-[11px] font-bold uppercase tracking-widest text-[var(--tx-3)] hover:text-[var(--accent)] transition-colors group"
                 >
-                  Richiedi preventivo
-                  <ArrowRight size={16} />
-                </Link>
-                <Link
-                  href="/contatti"
-                  className="inline-flex min-h-[44px] items-center gap-2 font-display text-sm font-bold text-[var(--tx-2)] hover:text-[var(--accent)] transition-colors"
-                >
-                  Contatti →
+                  Scopri di più su Parma <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </ScrollReveal>
           </div>
 
-          {/* Right: AI Aerial Photo */}
-          <ScrollReveal delay={0.1}>
-            <div className="relative">
-              <div className="relative aspect-square rounded-[36px] overflow-hidden border border-[var(--br)] shadow-2xl">
-                <Image
-                  src="/images/zone-copertura-servizi-pulizie-parma-provincia.webp"
-                  alt="Mappa aerea di Parma e provincia, l'area coperta dai nostri servizi di pulizia professionali"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-                {/* Overlay gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent)]/10 to-transparent" />
-                
-                {/* Floating badge */}
-                <div className="absolute bottom-8 left-8 right-8 rounded-2xl bg-white/90 backdrop-blur-md border border-white/60 p-5 shadow-xl">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <div className="font-display text-2xl font-black text-[var(--tx-1)]">
-                        Parma
-                      </div>
-                      <div className="font-mono-fulgur text-[10px] uppercase tracking-widest text-[var(--tx-3)] mt-0.5">
-                        e tutta la provincia
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <div className="font-display text-2xl font-black text-[var(--accent)]">24h</div>
-                      <div className="font-mono-fulgur text-[10px] uppercase tracking-widest text-[var(--tx-3)] mt-0.5">
-                        risposta garantita
-                      </div>
-                    </div>
-                  </div>
-                </div>
+          {/* Right Column: Province Hub */}
+          <aside className="lg:mt-8">
+            <ScrollReveal delay={0.4}>
+              <div className="flex items-center gap-3 mb-8">
+                <Globe size={24} className="text-[var(--accent)]" />
+                <h3 className="font-display text-xl font-bold text-white uppercase tracking-tight">Focus Provincia</h3>
               </div>
-
-              {/* Decorative glow */}
-              <div className="absolute -bottom-10 -right-10 h-64 w-64 rounded-full bg-[var(--accent)] opacity-[0.08] blur-[80px] pointer-events-none" />
-            </div>
-          </ScrollReveal>
-
+              
+              <div className="space-y-4">
+                {topTowns.map((town) => (
+                  <Link
+                    key={town.slug}
+                    href={`/zone/${town.slug}`}
+                    className="flex flex-col gap-1 p-6 rounded-3xl bg-[var(--bg-2)] border border-[var(--br)] hover:border-[var(--accent)]/40 hover:bg-[var(--card-hover)] transition-all group"
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="font-display text-lg font-bold text-white group-hover:text-[var(--accent)] transition-colors">{town.name}</span>
+                      <ArrowRight size={16} className="text-[var(--tx-3)] group-hover:translate-x-1 group-hover:text-[var(--accent)] transition-all" />
+                    </div>
+                    <span className="font-mono-fulgur text-[9px] font-bold uppercase tracking-[0.15em] text-[var(--tx-3)]">{town.keySector}</span>
+                  </Link>
+                ))}
+                
+                <Link 
+                  href="/zone" 
+                  className="flex items-center justify-center w-full py-5 rounded-3xl border border-[var(--accent)]/20 bg-[var(--accent)]/5 text-[var(--accent)] font-display font-bold text-[15px] hover:bg-[var(--accent)]/10 transition-all shadow-glow-sm"
+                >
+                  Tutte le Zone di Intervento
+                </Link>
+              </div>
+            </ScrollReveal>
+          </aside>
         </div>
       </div>
     </section>

@@ -42,6 +42,7 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
       description: service.metaDescription,
       images: [service.image ? `${BASE_URL}${service.image}` : OG_DEFAULT],
     },
+    alternates: { canonical: `${BASE_URL}/servizi/${service.slug}` },
   }
 }
 

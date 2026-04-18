@@ -7,6 +7,7 @@ import { VisualGuarantees } from '@/components/ui/VisualGuarantees'
 import { ReviewsSection } from '@/components/ui/ReviewsSection'
 import { CTASection } from '@/components/home/CTASection'
 import Image from 'next/image'
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs'
 import { Leaf, ShieldStar, UsersThree, Handshake, CheckCircle } from '@phosphor-icons/react/dist/ssr'
 
 export const metadata: Metadata = {
@@ -44,6 +45,10 @@ export default function ChiSiamoPage() {
       
       {/* HERO STORIA */}
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8 mb-16 sm:mb-20 text-center flex flex-col items-center">
+        <Breadcrumbs 
+          items={[{ label: 'Chi Siamo', href: '/chi-siamo', active: true }]} 
+          className="mb-8"
+        />
         <SectionLabel className="mb-4">LA NOSTRA STORIA</SectionLabel>
         <h1 className="font-display text-3xl font-extrabold tracking-tight text-[var(--tx-1)] sm:text-5xl lg:text-7xl max-w-4xl text-balance leading-tight sm:leading-[0.9]">
           Tradizione e innovazione nel <span className="text-[var(--accent)]">cleaning a Parma.</span>

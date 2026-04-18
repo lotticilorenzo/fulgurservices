@@ -34,34 +34,32 @@ export const SERVICES: Service[] = [
     shortDesc: 'Elimina gli allergeni e migliora il benessere del team. Servizio di pulizia per uffici, negozi e studi professionali a Parma, senza sorprese in fattura.',
     longDesc: `Quasi sempre, quando facciamo un sopralluogo in un ufficio a Parma, la prima cosa che ci mostrano è il pavimento. Capisco: è quello che si vede. Ma quello su cui ci soffermiamo sono le griglie dell'aria condizionata, i bordi delle scrivanie, gli spazi sotto le sedute. Sono i posti che le pulizie rapide saltano per abitudine e dove si accumula la polvere che poi tutti respirano.
 
-Molti clienti ci dicono che prima di noi cambiavano ditta ogni sei mesi. Il motivo, quasi sempre, era lo stesso: lavoro fatto di fretta, qualcosa sempre dimenticato, e nessuno con cui parlare quando c'era un problema. Noi lavoriamo con un referente unico per ogni azienda: una persona che conosce i vostri spazi e che risponde al telefono.
+Molti clienti ci dicono che prima di noi cambiavano ditta ogni sei mesi. Il motivo, quasi sempre, era lo stesso: lavoro fatto di fretta, qualità che calava dopo le prime settimane, e nessuno con cui parlare davvero. Noi abbiamo scelto un approccio diverso: un referente unico che conosce i vostri spazi, dai palazzi storici del quartiere Oltretorrente agli uffici moderni della zona Repubblica.
 
-Operiamo in tutta la città dal quartiere Oltretorrente agli uffici della zona industriale SPIP con contratti mensili a prezzo fisso concordato dopo il sopralluogo. Nessun rincaro imprevisto, nessuna sorpresa. Un ambiente di lavoro pulito riduce l'assenteismo e migliora la concentrazione: lo dicono i dati, ma lo vediamo anche noi ogni volta che entriamo in un ufficio il giorno dopo il primo intervento.
-
-È proprio questo tipo di cura quotidiana che rende Fulgur Service un punto di riferimento per le pulizie professionali a Parma e provincia.`,
+Un ambiente di lavoro pulito non è un lusso, è uno strumento di produttività. Ridurre gli allergeni e l'accumulo di polvere significa concretamente ridurre l'assenteismo e migliorare la concentrazione del team. È proprio questo tipo di cura quotidiana che rende Fulgur Service il partner di fiducia per le pulizie professionali a Parma e provincia.`,
     icon: 'Buildings',
     featured: true,
     keywords: ['pulizie uffici Parma', 'pulizie aziendali Parma', 'pulizie negozi Parma', 'sanificazione postazioni lavoro', 'impresa pulizie studi professionali Parma'],
     benefits: [
-      'Spolveratura postazioni PC con panni antistatici (tastiere incluse)',
-      'Igienizzazione battericida dei bagni aziendali a ogni intervento',
-      'Interventi fuori orario lavorativo: il team trova tutto pronto al mattino',
-      'Contratto mensile a prezzo fisso: sai esattamente cosa paghi',
-      'Aspiratori con filtri HEPA per chi soffre di allergie stagionali',
+      'Spolveratura postazioni PC con panni antistatici per tastiere e schermi',
+      'Igienizzazione battericida dei bagni aziendali a ogni singolo intervento',
+      'Interventi fuori orario lavorativo per non interferire con l\'operatività',
+      'Contratto mensile a prezzo fisso: pianificazione finanziaria chiara',
+      'Aspiratori industriali con filtri HEPA per la massima qualità dell\'aria',
     ],
-    sectors: ['Uffici direzionali e open space', 'Negozi, boutique e showroom', 'Banche e studi legali', 'Spazi co-working e coworking hub'],
-    metaTitle: 'Pulizie Uffici Parma: Igiene Garantita, Zero Sorprese | Fulgur Service',
-    metaDescription: 'La polvere negli uffici fa ammalare il team e cala la produttività. Fulgur Service pulisce uffici e negozi a Parma con personale assicurato e preventivo fisso. Sopralluogo gratis.',
+    sectors: ['Uffici direzionali e open space', 'Negozi, boutique e showroom di Parma centro', 'Banche e studi legali', 'Spazi co-working e hub digitali'],
+    metaTitle: 'Pulizie Uffici Parma | Igiene Professionale e Benessere Team | Fulgur Service',
+    metaDescription: 'Trasforma il tuo ufficio a Parma in un ambiente sano e produttivo. Fulgur Service offre pulizie professionali con referente unico e prodotti certificati. Sopralluogo gratuito.',
     image: '/images/servizi/pulizie-aziendali-parma.webp',
-    imageAlt: 'Interno di un ufficio moderno a Parma perfettamente pulito e ordinato dopo un intervento di igienizzazione',
+    imageAlt: 'Ufficio di rappresentanza a Parma centro (zona Repubblica) perfettamente igienizzato da Fulgur Service',
     faq: [
       {
         q: 'Quanto costano le pulizie di un ufficio a Parma?',
-        a: 'Il costo per la pulizia di un ufficio a Parma dipende da metratura, numero di bagni e frequenza degli interventi. Preferiamo lavorare con preventivi a corpo fissi: nessun rincaro a fine mese. Il sopralluogo gratuito ci permette di darti un prezzo definitivo entro 24 ore.',
+        a: 'Il costo dipende dalla metratura, dal numero di postazioni e dalla frequenza desiderata. Lavoriamo esclusivamente con preventivi a corpo fissi stabiliti dopo un sopralluogo: nessuna sorpresa in fattura e massima trasparenza.',
       },
       {
-        q: 'Ogni quanto bisogna pulire un ufficio in modo professionale?',
-        a: 'Per uffici con 10+ postazioni, consigliamo almeno due interventi settimanali. Un singolo studio professionale può bastare con uno. La frequenza ideale dipende dal traffico di persone e dalla presenza di sale riunioni o aree comuni ad alto utilizzo.',
+        q: 'Ogni quanto consigliate la pulizia professionale per un ufficio?',
+        a: 'Per spazi con alta densità di personale consigliamo almeno due interventi settimanali. Un singolo studio professionale può essere gestito con un intervento a settimana, programmando pulizie di fondo mensili.',
       },
     ],
   },
@@ -69,39 +67,35 @@ Operiamo in tutta la città dal quartiere Oltretorrente agli uffici della zona i
     id: '02',
     slug: 'pulizie-industriali',
     title: 'Pulizie Industriali',
-    shortDesc: 'Lavasciuga uomo a bordo, rimozione oli e grassi, interventi senza fermare la produzione. Per capannoni e magazzini di Parma e dintorni.',
-    longDesc: `Quando entriamo in un capannone per la prima volta, spesso la situazione è più complicata di quello che ci avevano descritto al telefono. Non per malafede: è che chi lavora in quel posto ogni giorno non riesce più a vedere certi accumuli. Il grasso sulle guide dei muletti, la polvere di cartone negli angoli, i residui di lavorazione sotto le linee.
+    shortDesc: 'Lavasciuga uomo a bordo, rimozione oli e grassi specialistica. Per capannoni e magazzini nella zona SPIP e nell\'intera provincia di Parma.',
+    longDesc: `La pulizia industriale non è una versione "più grande" delle pulizie civili. È manutenzione tecnica degli asset aziendali. Un pavimento industriale unto o coperto di polvere di cartone non è solo brutto: è un rischio di infortuni concreto e una potenziale causa di malfunzionamento dei mezzi di movimentazione.
 
-Un pavimento industriale sporco non è solo un problema estetico. È un rischio di infortuni concreto, rilevante ai fini del D.Lgs 81/08 sulla sicurezza sul lavoro. Un muletto che slitta su un pavimento unto può costare molto più di una pulizia professionale.
+Interveniamo nei poli logistici di Fontevivo, nei capannoni della zona industriale SPIP e nei distretti meccanici tra Noceto e Collecchio. Utilizziamo lavasciuga uomo a bordo ad alte prestazioni capaci di pulire e asciugare centinaia di metri quadri in pochi minuti, garantendo corsie sicure e immediatamente percorribili.
 
-La nostra risposta è semplice: lavasciuga uomo a bordo che coprono 3.000 mq in due ore, asciugando istantaneamente. Nessun pavimento bagnato in mezzo alla corsia. Lavoriamo di notte o nel weekend, pianificando ogni zona con il responsabile di stabilimento prima di iniziare.
-
-Operiamo nell'intera area produttiva di Parma: dall'interporto di Fontevivo ai poli logistici di Langhirano, dai distretti meccanici di Noceto alle cooperative alimentari di Collecchio. Dove c'è un capannone con un problema, c'è un modo per risolverlo senza bloccare la produzione.
-
-È proprio questo approccio operativo che rende Fulgur Service un punto di riferimento per le pulizie industriali a Parma e provincia.`,
+La nostra squadra è formata per operare nel rispetto del D.Lgs 81/08 sulla sicurezza. Non siamo solo fornitori, siamo un supporto per il vostro RSPP nel mantenere gli standard di sicurezza e igiene richiesti dalle certificazioni ISO e BRC. Dove c'è un capannone che deve performare al massimo, Fulgur Service porta il metodo e la tecnologia giusti.`,
     icon: 'Factory',
     featured: true,
     keywords: ['pulizie industriali Parma', 'pulizia capannoni Parma', 'lavasciuga industriale Parma', 'pulizia magazzini logistici', 'rimozione oli pavimenti industriali', 'pulizie capannoni industriali Parma', 'pulizia officine Parma'],
     benefits: [
-      'Lavasciuga uomo a bordo: pulisce e asciuga senza lasciare pavimento bagnato',
-      'Rimozione macchie d\'olio e grasso conformemente al D.Lgs 81/08',
-      'Interventi notturni o nel weekend: nessuna interruzione alla produzione',
-      'Aspirazione polveri sottili (trucioli, cartone, polvere di lavorazione)',
-      'Report dell\'intervento disponibile per audit ISO, BRC o IFS',
+      'Utilizzo di lavasciuga uomo a bordo per grandi metrature ed elevata efficacia',
+      'Rimozione specialistica di oli, grassi e residui di lavorazione meccanica',
+      'Interventi programmati in orari notturni o weekend per zero fermo produzione',
+      'Aspirazione polveri sottili e pulizia tecnica di scaffalature e impianti',
+      'Report post-intervento dettagliato per audit di qualità e ispezioni',
     ],
-    sectors: ['Capannoni produttivi e magazzini logistici', 'Officine meccaniche e metalmeccanica', 'Stabilimenti alimentari (Food Valley)', 'Centri di distribuzione e interporti'],
-    metaTitle: 'Pulizie Industriali Parma | Capannoni e Magazzini Senza Fermare la Produzione',
-    metaDescription: 'Pulizia industriale pesante a Parma con lavasciuga uomo a bordo. Rimozione oli e polveri, interventi notturni. Food Valley, interporto, SPIP. Preventivo in 24h.',
+    sectors: ['Capannoni produttivi e magazzini logistici', 'Officine meccaniche e distretti metalmeccanici', 'Stabilimenti della Food Valley parmense', 'Centri di distribuzione e poli interportuali'],
+    metaTitle: 'Pulizie Industriali Parma | Manutenzione Capannoni e Logistica | Fulgur Service',
+    metaDescription: 'Efficienza e sicurezza per il tuo stabilimento a Parma. Fulgur Service è specializzata in pulizie industriali pesanti con lavasciuga uomo a bordo. Sopralluogo immediato.',
     image: '/images/servizi/pulizie-industriali-parma.webp',
-    imageAlt: 'Macchinario lavasciuga uomo a bordo in funzione su un pavimento industriale in un magazzino logistico',
+    imageAlt: 'Igiene industriale meccanizzata con lavasciuga uomo a bordo in un magazzino della zona SPIP di Parma',
     faq: [
       {
-        q: 'Quando è necessario un intervento di pulizia industriale professionale?',
-        a: 'Serve quando i metodi ordinari non bastano: accumulo di oli e grassi sulle corsie, polveri sottili nei reparti di lavorazione, o prima di un audit di qualità (ISO, BRC, IFS). Anche un cambio di destinazione d\'uso di un capannone richiede un intervento di fondo.',
+        q: 'Potete intervenire senza fermare la nostra produzione?',
+        a: 'Assolutamente sì. Pianifichiamo gli interventi nei momenti di cambio turno, di notte o durante il weekend proprio per garantire la continuità operativa del vostro stabilimento.',
       },
       {
-        q: 'Quanto costa la pulizia di un capannone industriale a Parma?',
-        a: 'Il costo dipende dalla superficie, dallo stato del pavimento e dai macchinari necessari. Un capannone da 1.000 mq ha esigenze molto diverse da uno da 5.000 mq con linee produttive attive. Facciamo sempre un sopralluogo gratuito prima di emettere qualsiasi preventivo.',
+        q: 'Quanto costa pulire un capannone industriale a Parma?',
+        a: 'Il prezzo varia in base allo sporco da trattare e alla regolarità degli interventi. Effettuiamo sempre un sopralluogo tecnico gratuito per valutare i macchinari necessari e fornire un preventivo fisso entro 24 ore.',
       },
     ],
   },
@@ -109,40 +103,36 @@ Operiamo nell'intera area produttiva di Parma: dall'interporto di Fontevivo ai p
     id: '03',
     slug: 'settore-sanitario',
     title: 'Settore Sanitario',
-    shortDesc: 'Sanificazione certificata HACCP con Presidi Medico Chirurgici e vapore 180°. Per cliniche, studi medici e dentistici a Parma.',
-    longDesc: `Uno studio medico in apparenza pulito non è necessariamente un ambiente sanificato. È una distinzione che fa molta differenza soprattutto in ambienti dove ogni giorno passano pazienti con sistemi immunitari compromessi, anziani, bambini.
+    shortDesc: 'Igiene clinica certificata HACCP con Presidi Medico Chirurgici. Sanificazione per cliniche, poliambulatori e studi dentistici a Parma.',
+    longDesc: `In ambito sanitario, la parola "pulito" è insufficiente. Parliamo di ambienti che richiedono igiene clinica, dove l'abbattimento della carica batterica e virale è l'unica misura del successo. Sanificare uno studio medico a Parma significa proteggere non solo i pazienti, ma anche il personale e la reputazione della struttura.
 
-Quando lavoriamo in cliniche o studi dentistici nella provincia di Parma, utilizziamo Presidi Medico Chirurgici (PMC) registrati al Ministero della Salute. Non prodotti generici: formulazioni specifiche per livello di rischio biologico. La sala d'attesa e il bagno paziente sono trattati diversamente dal corridoio o dall'archivio.
+Utilizziamo protocolli validati e Presidi Medico Chirurgici (PMC) registrati al Ministero della Salute. Ogni area della clinica — dalla sala d'attesa ai locali operativi — viene trattata con prodotti specifici per il livello di rischio biologico. Il nostro personale è formato per gestire le criticità di questi ambienti, garantendo discrezione e massima attenzione ai dettagli.
 
-Per molti studi, affianchiamo anche la sanificazione a vapore saturo a 180 gradi. Non è la stessa cosa degli steamer casalinghi: parliamo di apparecchiature professionali che portano il vapore secco a una temperatura che elimina il 99,9% di virus e batteri senza lasciare umidità sulle superfici e senza residui chimici nell'aria.
-
-A fine intervento rilasciamo sempre una scheda documentata: prodotti usati, aree trattate, orario di intervento. Molti nostri clienti la usano come prassi standard in caso di ispezione ASL non come eccezione per un'emergenza.
-
-È proprio questa documentazione e precisione che rende Fulgur Service un punto di riferimento per la sanificazione di strutture sanitarie a Parma e provincia.`,
+Spesso integriamo il servizio con la sanificazione a vapore saturo a 180°, una tecnologia naturale e potente che elimina il 99,9% dei patogeni senza lasciare umidità né residui chimici. Al termine di ogni intervento, rilasciamo la documentazione tecnica necessaria per i vostri protocolli interni e per eventuali ispezioni ASL, assicurando conformità e sicurezza totale.`,
     icon: 'FirstAidKit',
     featured: true,
     keywords: ['sanificazione studi medici Parma', 'pulizia cliniche Parma', 'HACCP Parma', 'sanificazione studio dentistico', 'presidi medico chirurgici PMC'],
     benefits: [
-      'Presidi Medico Chirurgici (PMC) certificati dal Ministero della Salute',
-      'Vapore saturo 180°: elimina il 99,9% di patogeni senza residui chimici',
-      'Classificazione delle zone per livello di rischio biologico (alto/medio/basso)',
-      'Scheda documentata post-intervento per ispezioni ASL e audit interni',
-      'Personale formato sulla gestione di ambienti sanitari e dispositivi di protezione',
+      'Impiego esclusivo di Presidi Medico Chirurgici (PMC) certificati',
+      'Protocolli di sanificazione validati per l\'abbattimento di virus e batteri',
+      'Vapore saturo 180° per una disinfezione profonda e naturale',
+      'Documentazione tecnica completa rilasciata per ispezioni ASL',
+      'Personale formato sulla gestione del rischio biologico e DPI sanitari',
     ],
-    sectors: ['Studi medici e dentistici', 'Cliniche e poliambulatori', 'Farmacie e parafarmacie', 'Centri estetici e fisioterapici'],
-    metaTitle: 'Sanificazione Studi Medici e Cliniche Parma | Protocolli HACCP | Fulgur Service',
-    metaDescription: 'Sanificazione certificata HACCP per studi medici, dentistici e cliniche a Parma. PMC ministeriali, vapore 180°, report ASL. Prevenzione infezioni crociate. Preventivo gratis.',
+    sectors: ['Studi medici specialistici e dentistici', 'Cliniche private e poliambulatori a Parma', 'Farmacie, parafarmacie e laboratori analisi', 'Centri estetici, fisioterapici e di riabilitazione'],
+    metaTitle: 'Sanificazione Studi Medici e Cliniche Parma | Igiene Clinica Sicura | Fulgur Service',
+    metaDescription: 'Proteggi i tuoi pazienti con la sanificazione professionale Fulgur Service. Protocolli HACCP, Presidi Medico Chirurgici e vapore 180°. Prevenzione totale a Parma.',
     image: '/images/gallery/pulizia-studio-medico-fulgur-service.webp',
-    imageAlt: 'Sanificazione certificata di uno studio medico con protocolli HACCP e prodotti presidio medico chirurgico',
+    imageAlt: 'Sanificazione certificata Fulgur Service in un ambulatorio medico specialistico di Parma con protocolli PMC',
     relatedSlugs: ['sanificazione-salumifici', 'sanificazione-vapore', 'settore-alberghiero'],
     faq: [
       {
-        q: 'Che differenza c\'è tra pulizia ordinaria e sanificazione HACCP?',
-        a: 'La pulizia ordinaria rimuove lo sporco visibile. La sanificazione HACCP abbatte la carica microbica e virale su superfici critiche usando Presidi Medico Chirurgici specifici per livello di rischio. È obbligatoria nei contesti alimentari e raccomandata in tutti gli ambienti sanitari.',
+        q: 'Rilasciate la documentazione per i controlli ASL?',
+        a: 'Sì, ad ogni intervento forniamo una scheda tecnica documentata che attesta i prodotti PMC utilizzati, le aree trattate e le modalità, fondamentale per dimostrare la corretta gestione igienica della struttura.',
       },
       {
-        q: 'Rilasciate documentazione per le ispezioni ASL?',
-        a: 'Sì, sempre. A fine di ogni intervento emettiamo una scheda tecnica con prodotti utilizzati, aree trattate e orario, firmata dal responsabile. Molti nostri clienti la tengono in cartella come prassi standard.',
+        q: 'La sanificazione a vapore è sicura per le attrezzature mediche?',
+        a: 'Il vapore secco a 180° è estremamente sicuro poiché non bagna le superfici e non lascia umidità residua. È ideale per igienizzare tappezzerie, poltrone odontoiatriche e aree d\'attesa senza residui chimici.',
       },
     ],
   },
@@ -150,39 +140,35 @@ A fine intervento rilasciamo sempre una scheda documentata: prodotti usati, aree
     id: '04',
     slug: 'pulizie-condomini',
     title: 'Pulizie Condomini',
-    shortDesc: 'Gestione completa delle parti comuni: scale, androni, ascensori e garage. Con reportistica mensile per gli amministratori di Parma.',
-    longDesc: `La cosa che sentiamo più spesso dagli amministratori di condominio a Parma è che il servizio precedente funzionava... finché non smetteva. Ditte che saltano appuntamenti, qualità che cala con il tempo, nessuno con cui parlare quando c'è un problema. Capiamo la frustrazione ed è esattamente per questo che lavoriamo in modo diverso.
+    shortDesc: 'Androni, scale e aree comuni sempre in ordine. Gestione professionale per condomini e palazzi storici di Parma centro.',
+    longDesc: `Il decoro di un condominio inizia dall'ingresso. Androni, ascensori e scale sono le "biglietto da visita" di ogni palazzo, e mantenerli puliti richiede costanza e un metodo rigoroso. Spesso gli amministratori di condominio a Parma si scontrano con servizi approssimativi o turnover continuo del personale: noi offriamo l'esatto opposto.
 
-Per ogni condominio assegniamo un referente fisso: una persona che conosce le scale, gli androni, la posizione dell'ascensore e le aree critiche. Non manda squadre diverse ogni settimana. È sempre la stessa persona, con la stessa cura.
+Assegniamo ad ogni condominio un operatore fisso di fiducia. Questa stabilità ci permette di conoscere le esigenze specifiche di ogni palazzo — che si tratti di un condominio moderno o di un palazzo storico nel centro di Parma con pavimenti in marmo pregiato che richiedono prodotti delicati e non aggressivi.
 
-Gli interventi coprono la pulizia delle parti comuni condominiali: scale e pianerottoli, androni e hall d'ingresso, vani ascensore, corsie garage e cantine, aree cortilizie. Nei condomini di pregio o nei palazzi storici del centro di Parma, prestiamo particolare attenzione ai pavimenti in marmo e ai corrimano, superfici che con la pulizia sbagliata si rovinano, non si puliscono.
-
-A fine mese inviamo all'amministratore un report degli interventi effettuati: date, ore, aree trattate. Uno strumento semplice che rende tutto trasparente e gestibile, anche in sede di assemblea condominiale.
-
-È proprio questa affidabilità documentata che rende Fulgur Service un punto di riferimento per le pulizie condominiali a Parma e provincia.`,
+Il nostro servizio include la pulizia delle scale e dei pianerottoli, l'igienizzazione delle cabine ascensore, la cura degli androni e dei portoni d'ingresso, oltre alla pulizia periodica di garage e cantine. Offriamo trasparenza totale agli amministratori tramite report mensili degli interventi effettuati, garantendo un servizio puntuale e verificabile ad ogni assemblea.`,
     icon: 'BuildingApartment',
     featured: false,
     keywords: ['pulizie condomini Parma', 'pulizia scale condominio Parma', 'pulizie parti comuni Parma', 'impresa pulizie amministratori condominio'],
     benefits: [
-      'Referente fisso per ogni condominio: sempre la stessa persona, non squadre a rotazione',
-      'Pulizia scale, androni, ascensori, garage e aree esterne condominiali',
-      'Attenzione speciale ai pavimenti in marmo e materiali sensibili',
-      'Report mensile degli interventi per amministratori di condominio',
-      'Contratto annuale con prezzo bloccato: nessun adeguamento sorpresa',
+      'Operatore fisso di riferimento per garantire continuità e fiducia',
+      'Trattamento specifico per materiali pregiati (marmi boschetti, pietre naturali)',
+      'Pulizia completa di garage, cantine e aree cortilizie su base periodica',
+      'Rendicontazione digitale mensile per gli amministratori di condominio',
+      'Pianificazione oraria flessibile per ridurre il disturbo ai condòmini',
     ],
-    sectors: ['Condomini residenziali di Parma centro', 'Palazzi storici con marmi e materiali pregiati', 'Complessi condominiali moderni', 'Residence e case a schiera'],
-    metaTitle: 'Pulizie Condomini Parma | Scale, Androni e Garage | Fulgur Service',
-    metaDescription: 'Pulizia professionali delle parti comuni per condomini a Parma. Referente fisso, report mensile per amministratori, attenzione ai materiali pregiati. Preventivo gratuito.',
+    sectors: ['Condomini residenziali di pregio in Parma centro', 'Palazzi storici con marmi e scale di valore', 'Complessi condominiali moderni e residence', 'Amministrazioni condominiali professionali'],
+    metaTitle: 'Pulizie Condomini Parma | Gestione Professionale Parti Comuni | Fulgur Service',
+    metaDescription: 'Androni e scale impeccabili per il tuo condominio a Parma. Operatori fissi, attenzione ai materiali di pregio e report per amministratori. Sopralluogo veloce.',
     image: '/images/servizi/pulizie-condomini-parma.webp',
-    imageAlt: 'Androne condominiale e scale in marmo lucide e igienizzate in un palazzo residenziale di Parma',
+    imageAlt: 'Androne condominiale lussuoso a Parma perfettamente pulito con scale in marmo lucente',
     faq: [
       {
-        q: 'Con quale frequenza bisogna pulire le parti comuni di un condominio?',
-        a: 'Dipende dal numero di unità abitative e dal traffico di persone. Per condomini con 10+ appartamenti, consigliamo almeno 2 interventi settimanali sulle scale e pulizia mensile di garage e cantine. Per i vani ascensore, idealmente un intervento settimanale.',
+        q: 'Cosa include il servizio di pulizia condominiale standard?',
+        a: 'Include la pulizia e l\'aspirazione di scale e pianerottoli, lavaggio dell\'androne e dei vetri dell\'ingresso, igienizzazione dell\'ascensore coordinato con il calendario di raccolta rifiuti condominiale.',
       },
       {
-        q: 'Fornite documentazione per gli amministratori di condominio?',
-        a: 'Sì. A fine mese inviamo un report digitale con date, orari e aree trattate per ogni intervento. Molti amministratori lo usano come allegato durante le assemblee condominiali per dimostrare la corretta gestione del servizio.',
+        q: 'Potete occuparvi anche della pulizia dei vetri e delle aree esterne?',
+        a: 'Certamente. Inseriamo nel preventivo anche la pulizia periodica di vetrate, verande condominiali e la spazzatura delle aree esterne come ingressi e rampe garage.',
       },
     ],
   },
@@ -190,39 +176,35 @@ A fine mese inviamo all'amministratore un report degli interventi effettuati: da
     id: '05',
     slug: 'settore-alberghiero',
     title: 'Settore Alberghiero',
-    shortDesc: 'Housekeeping professionale per hotel, B&B e agriturismi a Parma. Standard da ospitalità di qualità, personale formato e discreto.',
-    longDesc: `Nel settore alberghiero, la pulizia non è un dettaglio: è parte dell'esperienza dell'ospite. Una camera rimessa male, un bagno con i capelli della persona precedente, una lobby con l'odore stantio sono cose che si notano subito e che finiscono nelle recensioni online ancora più in fretta.
+    shortDesc: 'Housekeeping e sanificazione camere per hotel, B&B e agriturismi a Parma. Standard da ospitalità superiore e massima discrezione.',
+    longDesc: `Nell'ospitalità, l'igiene è il primo pilastro della reputazione. Un ospite che entra in una camera d'hotel a Parma o in un centro termale a Salsomaggiore si aspetta la perfezione: lenzuola fresche, bagni sanificati e superfici prive di polvere. Una sola recensione negativa sulla pulizia può costare carissimo al gestore.
 
-Molti gestori di hotel a Parma ci contattano dopo aver ricevuto una recensione negativa sull'igiene. Capiamo la situazione: a volte non è colpa del personale, ma di procedure non strutturate o di macchinari non adeguati. Il nostro primo intervento, di solito, serve a capire dove si trova davvero il problema.
+Noi di Fulgur Service offriamo un servizio di housekeeping professionale che si integra con l'operatività della vostra struttura. Gestiamo il riassetto quotidiano delle camere, la pulizia profonda delle hall, dei corridoi e delle aree lobby, oltre alla sanificazione certificata delle cucine e dei ristoranti interni (HACCP).
 
-Gestiamo il riassetto completo delle camere, la pulizia profonda delle aree comuni (lobby, corridoi, ascensori), la sanificazione di spa e piscine, il lavaggio a fondo di moquette e tessuti con macchinari ad estrazione e la pulizia delle cucine e dei ristoranti secondo i protocolli HACCP. Lavoriamo rispettando i ritmi operativi della struttura: sappiamo che non si può entrare in una camera mentre c'è ancora un ospite dentro.
-
-Operiamo su strutture ricettive in tutto il territorio parmense, incluse le zone termali di Salsomaggiore Terme e gli agriturismi della val Taro.
-
-È proprio questa flessibilità operativa che rende Fulgur Service un punto di riferimento per la pulizia nel settore alberghiero a Parma e provincia.`,
+Il nostro personale è formato per operare con discrezione e rapidità, seguendo checklist rigorose per non dimenticare alcun dettaglio. Offriamo anche servizi specialistici come il lavaggio a fondo di moquette, tendaggi e testate dei letti a vapore, garantendo ambienti anallergici e freschi che faranno la differenza nella valutazione finale dei vostri ospiti.`,
     icon: 'Bed',
     featured: false,
     keywords: ['pulizie hotel Parma', 'housekeeping Parma', 'pulizie B&B Parma', 'sanificazione strutture ricettive', 'pulizie alberghi Salsomaggiore'],
     benefits: [
-      'Riassetto camere secondo standard hospitality con personale formato e discreto',
-      'Pulizia profonda lobby, corridoi e aree comuni con macchinari a vapore',
-      'Sanificazione spa, piscine e centri benessere con prodotti antifungini',
-      'Lavaggio moquette e tessuti con macchinari ad estrazione e iniezione',
-      'Cucine e ristoranti sanificati secondo protocollo HACCP',
+      'Personale formato per standard di housekeeping internazionale e discrezione',
+      'Sanificazione profonda di camere, suite e bagni a ogni cambio ospite',
+      'Trattamento specialistico di moquette e tessuti con macchinari professionali',
+      'Igienizzazione HACCP di cucine, aree colazione e sale ristorante',
+      'Gestione flessibile delle squadre in base all\'occupazione stagionale',
     ],
-    sectors: ['Hotel 3-5 stelle di Parma e Provincia', 'B&B e affittacamere', 'Agriturismi della val Taro e dintorni', 'Strutture termali di Salsomaggiore Terme'],
-    metaTitle: 'Pulizie Hotel e B&B Parma | Housekeeping Professionale | Fulgur Service',
-    metaDescription: 'Housekeeping e sanificazione per hotel, B&B e agriturismi a Parma. Personale formato e discreto, standard alberghieri garantiti. Operiamo anche a Salsomaggiore. Preventivo gratis.',
+    sectors: ['Hotel 3-5 stelle di Parma e della provincia termale', 'B&B e appartamenti per brevi periodi (Airbnb)', 'Agriturismi e residenze storiche della Provincia', 'Centri benessere, spa e località termali'],
+    metaTitle: 'Pulizie Hotel e B&B Parma | Housekeeping e standard Hospitality | Fulgur Service',
+    metaDescription: 'Assicura recensioni eccellenti alla tua struttura. Fulgur Service offre housekeeping professionale e sanificazione hotel a Parma e Salsomaggiore. Richiedi preventivo.',
     image: '/images/servizi/pulizia-hotel-alberghi-parma.webp',
-    imageAlt: 'Riassetto impeccabile di una camera matrimoniale in un hotel di lusso con standard di pulizia alberghiera',
+    imageAlt: 'Camera d\'albergo a Parma perfettamente ordinata e sanificata dopo il servizio di housekeeping professionale',
     faq: [
       {
-        q: 'Gestite il servizio di housekeeping quotidiano per hotel?',
-        a: 'Sì. Ci integriamo con i turni operativi della struttura, garantendo il riassetto delle camere nei tempi concordati. Lavoriamo con personale fisso assegnato alla struttura per garantire discrezione e conoscenza degli spazi.',
+        q: 'Gestite anche il cambio biancheria e il rifacimento letti?',
+        a: 'Sì, offriamo il servizio completo di riassetto camera con rifacimento letti e sostituzione biancheria secondo gli standard richiesti dalla categoria della struttura (hotel, B&B o agriturismo).',
       },
       {
-        q: 'Sanificate anche le aree spa e piscine degli hotel?',
-        a: 'Assolutamente sì. Per spa, saune e bordovasca utilizziamo prodotti antifungini e antiscivolo specifici. Rilasciamo documentazione degli interventi su richiesta.',
+        q: 'Siete operativi anche per strutture con check-in automatizzato (Airbnb)?',
+        a: 'Assolutamente. Coordiniamo le pulizie in base alle prenotazioni per garantire la camera pronta e perfetta tra un ospite e l\'altro, con comunicazione rapida tramite app o WhatsApp.',
       },
     ],
   },
@@ -230,41 +212,35 @@ Operiamo su strutture ricettive in tutto il territorio parmense, incluse le zone
     id: '06',
     slug: 'trattamento-superfici',
     title: 'Trattamento Superfici',
-    shortDesc: 'Cristallizzazione marmo, trattamento gres, levigatura parquet e cotto. Risultati a specchio senza cantieri costosi a Parma.',
-    longDesc: `La cosa che sentiamo più spesso in questo tipo di lavoro è: "Pensavo di dover sostituire tutto." Un marmo opaco che sembra sempre sporco anche dopo il lavaggio, un cotto consumato che non si riesce più a pulire davvero, un parquet pieno di graffi. Quasi sempre non serve rifare. Serve il metodo giusto.
+    shortDesc: 'Cristallizzazione marmo, trattamento gres e protezione pietre naturali. Ridai vita ai tuoi pavimenti con sistemi Klindex a Parma.',
+    longDesc: `Ogni superficie ha una sua anima e una sua chimica. Pulire un pavimento non significa solo togliere lo sporco, ma rispettare il materiale e proteggerlo dal tempo. Un marmo che ha perso lucentezza o un gres macchiato non sono necessariamente da cambiare: spesso basta il trattamento giusto per riportarli alla bellezza originale.
 
-La cristallizzazione del marmo, per esempio, è un processo che la maggior parte delle persone non conosce. Non è cera, non è trattamento chimico aggressivo: è una reazione termo-chimica tra disco e prodotto che ricostruisce uno strato protettivo sulla pietra, riportando la lucentezza originale. Lo facciamo nei palazzi storici del centro di Parma, nelle hall dei hotel, negli studi legali di rappresentanza.
+Siamo specializzati nella cristallizzazione del marmo, un processo scientifico che — tramite l'azione meccanica di macchinari Klindex e prodotti cristallizzanti — ricrea lo strato lucido e protettivo della pietra in modo duraturo, senza la necessità di levigature costose e invadenti.
 
-Sul gres porcellanato, invece, il problema più comune sono gli aloni e le fughe annerite. Usiamo macchinari specifici con dischi calibrati per tipo di finitura: il gres lucidato e quello satinato si trattano diversamente, e il primo errore sarebbe usare lo stesso prodotto per entrambi.
-
-Per il parquet, lavoriamo sulla rigenerazione: rimozione dello strato di vernice deteriorata e riapplicazione con vernici o cere di qualità, rispettando le fibre del legno.
-
-Ogni superficie ha il suo protocollo. È la differenza tra un risultato che dura sei mesi e uno che dura anni.
-
-È proprio questa competenza tecnica specifica che rende Fulgur Service un punto di riferimento per il trattamento e la lucidatura di pavimenti a Parma e provincia.`,
+Che si tratti di un ufficio di rappresentanza nel centro di Parma o di un'abitazione privata, interveniamo su gres, cotto, pietre naturali e pavimenti in resina, applicando trattamenti idro e oleo-repellenti che facilitano la pulizia quotidiana e impediscono alle macchie di penetrare. La nostra consulenza tecnica vi aiuterà a scegliere il percorso di manutenzione ideale per valorizzare il vostro immobile.`,
     icon: 'Sparkle',
     featured: true,
     keywords: ['cristallizzazione marmo Parma', 'lucidatura pavimenti Parma', 'trattamento gres porcellanato', 'rigenerazione parquet Parma', 'levigatura cotto Parma'],
     benefits: [
-      'Cristallizzazione marmo: ripristino della lucentezza senza sostituzione',
-      'Trattamento gres con dischi calibrati per tipo di finitura (lucido/satinato)',
-      'Rigenerazione parquet: rimozione vernice e ritrattamento con prodotti di qualità',
-      'Levigatura cotto e pietre naturali con protezione antimacchia finale',
-      'Lavaggio profondo moquette e tappeti con estrazione e asciugatura rapida',
+      'Cristallizzazione marmo professionale per un effetto a specchio duraturo',
+      'Trattamento gres e ceramiche per la rimozione profonda di aloni e residui',
+      'Protezione antimacchia idro-oleorepellente per pietre naturali e cotto',
+      'Lavaggio meccaniizzato pavimenti in resina e cemento con macchinari Klindex',
+      'Consulenza tecnica sul mantenimento corretto di ogni tipo di superficie',
     ],
-    sectors: ['Appartamenti e ville private di Parma', 'Palazzi storici e uffici di rappresentanza', 'Hotel e strutture ricettive di lusso', 'Negozi e showroom con pavimentazioni pregiate'],
-    metaTitle: 'Lucidatura Marmo e Trattamento Pavimenti Parma | Fulgur Service',
-    metaDescription: 'Cristallizzazione marmo, trattamento gres e rigenerazione parquet a Parma. Non sempre serve sostituire: spesso bastano i macchinari e il metodo giusti. Richiedi sopralluogo.',
+    sectors: ['Abitazioni private e dimore storiche di Parma', 'Uffici legali e sedi di alta rappresentanza', 'Showroom, negozi e aree espositive con pavimenti di valore', 'Edifici commerciali con alti flussi di passaggio'],
+    metaTitle: 'Trattamento Superfici Parma | Lucidatura Marmo e Protezione Gres | Fulgur Service',
+    metaDescription: 'Fai risplendere i tuoi spazi. Cristallizzazione marmo e trattamenti protettivi per ogni superficie a Parma. Tecnici specializzati e risultati garantiti.',
     image: '/images/servizi/trattamento-superfici-pavimenti-parma.webp',
-    imageAlt: 'Dettaglio della cristallizzazione di un pavimento in marmo che mostra un effetto a specchio riflettente',
+    imageAlt: 'Operatore esperto durante il trattamento di cristallizzazione marmo per un effetto lucido specchiato',
     faq: [
       {
-        q: 'Come si elimina l\'opacità dal pavimento in marmo senza sostituirlo?',
-        a: 'Con la cristallizzazione professionale: un processo termo-chimico che usa dischi rotanti e prodotti specifici per ricostruire lo strato protettivo della pietra. Il risultato è un marmo a specchio duraturo, senza cere che si consumano in poche settimane.',
+        q: 'Cosa si intende per cristallizzazione del marmo?',
+        a: 'È un processo termo-chimico che chiude le porosità naturali del marmo e ne ripristina la lucentezza originale. È meno invasivo della levigatura classica e può essere ripetuto periodicamente per mantenere il pavimento sempre perfetto.',
       },
       {
-        q: 'Quanto costa il trattamento di un pavimento in marmo a Parma?',
-        a: 'Il costo dipende dalla superficie, dallo stato del marmo e dal tipo di trattamento necessario (cristallizzazione, levigatura o solo lucidatura). Il sopralluogo gratuito ci permette di valutare esattamente cosa serve senza impegno.',
+        q: 'Fate anche trattamenti per i pavimenti in gres esterni?',
+        a: 'Sì. Per le pavimentazioni esterne consigliamo trattamenti idrorepellenti specifici che impediscono la formazione di muschi, muffe e l\'assorbimento dello smog, facilitando di molto la pulizia stagionale.',
       },
     ],
   },
@@ -272,39 +248,35 @@ Ogni superficie ha il suo protocollo. È la differenza tra un risultato che dura
     id: '07',
     slug: 'pulizie-fine-cantiere',
     title: 'Pulizie Edili e Fine Cantiere',
-    shortDesc: 'Pulizie edili e post-ristrutturazione a Parma: rimozione calce, cemento, polveri sottili. Consegna l\'immobile pronto senza tracce di lavori.',
-    longDesc: `Chi ha ristrutturato casa o un locale commerciale sa come finisce: il cantiere chiude, gli operai se ne vanno, e rimane quella patina di polvere ovunque che sembra impossibile da togliere. Calce sulle fughe del gres, silicone sui vetri, aloni di vernice sulle maniglie, polvere sottile che si deposita su tutto.
+    shortDesc: 'Rimozione calce, cemento, silicone e polveri fini post-ristrutturazione. Consegna il tuo immobile pronto all\'uso a Parma e provincia.',
+    longDesc: `La fine di una ristrutturazione o di un cantiere edile è un momento emozionante, ma lo sporco che residua può essere scoraggiante. Polvere sottile ovunque, residui di cemento sulle fughe, calce sui profili dei serramenti e tracce di silicone sui vetri nuovi: queste sono le "sfide di fine cantiere" che noi gestiamo ogni giorno.
 
-La pulizia post-cantiere non si fa con una passata di straccio. Richiede prodotti specifici per tipo di residuo: un decappante per la calce non è lo stesso che serve per rimuovere il cemento dai pavimenti. E soprattutto richiede di sapere cosa non fare: certi prodotti acidi su certi marmi creano danni permanenti.
+Una pulizia post-cantiere richiede molto più di una scopa e un panno. Utilizziamo aspiratori industriali con filtri HEPA per bloccare le polveri edili nocive e prodotti deceranti o acidi tamponati specifici per rimuovere la calce senza intaccare i materiali nuovi appena posati. Conosciamo i pericoli: usare il prodotto sbagliato su un rubinetto di design o un pavimento di pregio può causare danni permanenti.
 
-Interveniamo su nuove costruzioni, ristrutturazioni complete e parziali, sia per privati che per agenzie immobiliari e costruttori. Il tempo di consegna è sempre una priorità: sappiamo che chi ha appena finito un cantiere ha la firma del rogito o l'inaugurazione del locale già fissata.
-
-Operiamo in tutta la provincia di Parma, spesso in sinergia con imprese edili e general contractor che ci inseriscono come tappa finale del loro processo di consegna.
-
-È proprio questa specializzazione post-cantiere che rende Fulgur Service un punto di riferimento per le pulizie di fine lavori a Parma e provincia.`,
+Che si tratti di un singolo appartamento ristrutturato a Parma o di un nuovo complesso immobiliare pronto per la vendita, interveniamo con squadre rapide ed efficienti per consegnare ogni spazio "pronto al rogito" o "pronto all'apertura". Fulgur Service è il tassello finale che trasforma un cantiere nella vostra nuova casa o nella vostra nuova sede aziendale.`,
     icon: 'HardHat',
     featured: false,
     keywords: ['pulizie fine cantiere Parma', 'pulizie edili Parma', 'pulizie post ristrutturazione Parma', 'rimozione calce cemento pavimenti', 'pulizie post cantiere edilizi Parma', 'ditta pulizie edili Parma'],
     benefits: [
-      'Rimozione calce, cemento e residui edili con prodotti specifici per materiale',
-      'Pulizia vetri da silicone e vernici senza rigature',
-      'Aspirazione polveri sottili con macchinari industriali (non aspiratori domestici)',
-      'Lucidatura pavimenti nuovi per la prima volta',
-      'Interventi rapidi per rispettare le date di consegna o rogito',
+      'Rimozione professionale di calce, cemento, pittura e residui siliconici',
+      'Aspirazione intensiva polveri edili con filtri HEPA ad alta efficienza',
+      'Lavaggio tecnico di vetrate, infissi e tapparelle da residui di posa',
+      'Interventi rapidi per rispettare date di rogito, consegna chiavi o inaugurazioni',
+      'Squadre specializzate che sanno come non rovinare i materiali nuovi',
     ],
-    sectors: ['Nuove costruzioni residenziali e commerciali', 'Ristrutturazioni complete di appartamenti', 'Locali commerciali nuovi da inaugurare', 'Cantieri edilizi con general contractor'],
-    metaTitle: 'Pulizie Edili e Fine Cantiere Parma | Post Ristrutturazione | Fulgur Service',
-    metaDescription: 'Specialisti in pulizie edili e fine cantiere a Parma. Rimozione calce, cemento, silicone e polveri sottili. Interventi rapidi per la consegna immobile. Preventivo gratis.',
+    sectors: ['Abitazioni private post-ristrutturazione completa o parziale', 'Imprese edili e General Contractor per nuove costruzioni', 'Negozi e uffici pronti per l\'apertura commerciale a Parma', 'Sviluppi immobiliari e appartamenti campione per agenzie'],
+    metaTitle: 'Pulizie Edili e Fine Cantiere Parma | Pronti alla Consegna Immobiliare | Fulgur Service',
+    metaDescription: 'Elimina lo sporco del cantiere in tempi record. Pulizie post-ristrutturazione a Parma per privati e imprese. Personale esperto e macchinari potenti. Richiedi preventivo.',
     image: '/images/servizi/pulizie-fine-cantiere-parma.webp',
-    imageAlt: 'Rimozione professionale di polveri edili e residui di cemento dopo una ristrutturazione in un appartamento',
+    imageAlt: 'Intervento di pulizia post-ristrutturazione a Parma con rimozione polveri e lucidatura finale pavimentazione',
     faq: [
       {
-        q: 'Come si rimuove la calce dai pavimenti nuovi dopo un cantiere?',
-        a: 'Con decappanti specifici per tipo di superficie, applicati a pH controllato. La calce su gres e su marmo si rimuove con prodotti diversi: usare quello sbagliato può rovinare la superficie permanentemente. Per questo è importante affidarsi a chi conosce i materiali.',
+        q: 'Quando è il momento giusto per chiamarvi per la pulizia post-cantiere?',
+        a: 'Idealmente 48-72 ore prima del trasloco o della consegna delle chiavi. È fondamentale che i lavori degli operai (soprattutto tinteggiatura e posa fughe) siano completamente terminati e asciutti.',
       },
       {
-        q: 'Quanto tempo ci vuole per la pulizia di fine cantiere di un appartamento?',
-        a: 'Un appartamento di 80-100 mq richiede in genere 1-2 giorni di lavoro, a seconda della quantità di residui e del tipo di pavimentazione. Forniamo una stima precisa dopo un rapido sopralluogo gratuito.',
+        q: 'Riuscite a togliere la pittura e il silicone dai pavimenti nuovi?',
+        a: 'Sì, utilizziamo spatole gommate professionali e solventi selettivi che sciolgono pittura e silicone senza graffiare o aggredire i pavimenti in marmo, legno o gres appena posati.',
       },
     ],
   },
@@ -454,7 +426,7 @@ Gli ambiti di applicazione sono molti: materassi e imbottiture, divani in tessut
     metaTitle: 'Sanificazione Vapore 180° Parma | Igiene Naturale Senza Chimica | Fulgur Service',
     metaDescription: 'Sanificazione a vapore saturo 180° a Parma: elimina batteri e virus senza prodotti chimici. Sicuro per bambini e allergici. Materassi, studi medici, ristoranti. Preventivo gradito.',
     image: '/images/servizi/sanificazione-vapore-parma.webp',
-    imageAlt: 'Igienizzazione naturale di un divano in tessuto tramite generatore di vapore secco a 180 gradi',
+    imageAlt: 'Igienizzazione anallergica a vapore 180 gradi di un divano in tessuto a Parma centro con Fulgur Service',
     relatedSlugs: ['settore-sanitario', 'sanificazione-salumifici', 'pulizie-industriali'],
     faq: [
       {
@@ -495,7 +467,7 @@ Operiamo in tutta la città di Parma, dai quartieri residenziali di Montanara e 
     metaTitle: 'Pulizie Civili e Casa Parma | Personale di Fiducia | Fulgur Service',
     metaDescription: 'Pulizie per casa e appartamenti a Parma con personale assicurato e di fiducia. Interventi settimanali, cambio Airbnb, deep cleaning. Gestione chiavi disponibile. Preventivo gratis.',
     image: '/images/servizi/pulizie-civili-parma.webp',
-    imageAlt: 'Pulizia domestica accurata di una zona living con attenzione ai dettagli e prodotti a basso impatto ambientale',
+    imageAlt: 'Pulizia domestica professionale Fulgur Service in un appartamento dei quartieri residenziali di Parma',
     faq: [
       {
         q: 'Come scegliete il personale per le pulizie domestiche?',
@@ -535,7 +507,7 @@ Lavoriamo su centri fitness, palesti da combattimento, piscine comunali e privat
     metaTitle: 'Sanificazione Palestre e Strutture Sportive Parma | Antifungino Certificato | Fulgur Service',
     metaDescription: 'Pulizia e sanificazione professionale per palestre, piscine e centri sportivi a Parma. Prodotti antifungini e antibatterici per spogliatoi, docce e aree comuni. Preventivo gratis.',
     image: '/images/gallery/lucidatura-pavimento-palestra-fulgur-service.webp',
-    imageAlt: 'Pulizia e sanificazione professionale pavimentazione in parquet termico per palestre e strutture sportive a Parma',
+    imageAlt: 'Sanificazione certificata di una palestra a Parma con trattamento antifungino specifico per spogliatoi e docce',
     faq: [
       {
         q: 'Con quale frequenza andrebbero sanificati gli spogliatoi di una palestra?',
@@ -575,7 +547,7 @@ Operiamo su pub, bar, lounge bar, discoteche e sale concerti nella zona di Parma
     metaTitle: 'Pulizie Discoteche e Locali Notturni Parma | Interventi Mattutini | Fulgur Service',
     metaDescription: 'Pulizia rapida e completa di discoteche, pub e locali notturni a Parma. Interventi nelle prime ore del mattino: pronti alla riapertura. Sanificazione bagni garantita.',
     image: '/images/gallery/pulizia-locale-commerciale-operatore-fulgur.webp',
-    imageAlt: 'Intervento di pulizia post-evento e sanificazione in un locale a Parma con operazione di lavaggio meccanizzato',
+    imageAlt: 'Operatore Fulgur Service durante la pulizia mattutina intensiva di un locale notturno a Parma centro',
     faq: [
       {
         q: 'In quanto tempo riuscite a pulire una discoteca dopo la chiusura?',
@@ -615,7 +587,7 @@ Operiamo su edifici civili, condomini, capannoni industriali e strutture commerc
     metaTitle: 'Pulizia Facciate ed Esterni Parma | Graffiti e Smog Rimossi | Fulgur Service',
     metaDescription: 'Idrolavaggio professionale e rimozione graffiti per facciate di edifici a Parma. Mattoni, intonaco, pietra e clinker trattati con il metodo giusto. Trattamento idrorepellente su richiesta.',
     image: '/images/gallery/pulizia-facciata-industriale-operatori-fulgur.webp',
-    imageAlt: 'Pulizia facciata esterna in quota a Parma con operatori Fulgur Service e sistemi ad acqua in alta pressione per rimozione smog',
+    imageAlt: 'Idrolavaggio professionale per rimozione smog e graffiti da una facciata esterna a Parma',
     faq: [
       {
         q: 'Come si rimuovono i graffiti da una facciata senza danneggiare il muro?',
