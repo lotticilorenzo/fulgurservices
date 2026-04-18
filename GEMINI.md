@@ -749,4 +749,20 @@ ULTIMO AGGIORNAMENTO: Corretto layout Bento Grid nella sezione Servizi. Rimossa 
 SESSIONE PRECEDENTE: Aggiunte card Monospazzola e Lava Moquette (con placeholder) in Macchinari. Aggiornata immagine Macchina a Osmosi. Ripristinato logo EU Ecolabel con versione locale. Push su GitHub finale.
 NOTE: La configurazione Tailwind è in v4 (@theme in globals.css) anziché tailwind.config.ts, aggiornato per Next.js 15.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SESSIONE PRECEDENTE — Data: 18/04/2026
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Status: CLEANUP ESTETICO COMPLETO (RIMOZIONE TRATTINI)
+
+INTERVENTI:
+  [x] Rimozione sistematica di trattini (`-`), n-dash (`–`) ed em-dash (`—`) visivi.
+  [x] Aggiornamento SEO Metadata: sostituiti trattini con pipe (`|`) in tutto il sito.
+  [x] Cleanup SectionLabel: rimossi i prefissi "—" da tutte le etichette di sezione.
+  [x] Correzione testi dati: `food-grade` -> `food grade` e cleanup meta-description.
+  [x] API & Email: sostituiti trattini con pipe negli oggetti email e nei template.
+  [x] Cleanup commenti interni e range numerici (es. `50 a 200 mq`).
+  [x] Verifica finale: `npm run build` completato con successo.
+  [x] Deploy: Push su GitHub eseguito.
+
+NOTE: I trattini tecnici (URL, classi CSS, ID) sono stati preservati per garantire il funzionamento del sito.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
