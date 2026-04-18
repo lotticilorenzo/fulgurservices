@@ -81,7 +81,7 @@ Operiamo nell'intera area produttiva di Parma: dall'interporto di Fontevivo ai p
 È proprio questo approccio operativo che rende Fulgur Service un punto di riferimento per le pulizie industriali a Parma e provincia.`,
     icon: 'Factory',
     featured: true,
-    keywords: ['pulizie industriali Parma', 'pulizia capannoni Parma', 'lavasciuga industriale Parma', 'pulizia magazzini logistici', 'rimozione oli pavimenti industriali'],
+    keywords: ['pulizie industriali Parma', 'pulizia capannoni Parma', 'lavasciuga industriale Parma', 'pulizia magazzini logistici', 'rimozione oli pavimenti industriali', 'pulizie capannoni industriali Parma', 'pulizia officine Parma'],
     benefits: [
       'Lavasciuga uomo a bordo: pulisce e asciuga senza lasciare pavimento bagnato',
       'Rimozione macchie d\'olio e grasso conformemente al D.Lgs 81/08',
@@ -271,8 +271,8 @@ Ogni superficie ha il suo protocollo. È la differenza tra un risultato che dura
   {
     id: '07',
     slug: 'pulizie-fine-cantiere',
-    title: 'Fine Cantiere',
-    shortDesc: 'Pulizie post-ristrutturazione a Parma: rimozione calce, cemento, polveri edili. Consegna l\'immobile pronto senza tracce di lavori.',
+    title: 'Pulizie Edili e Fine Cantiere',
+    shortDesc: 'Pulizie edili e post-ristrutturazione a Parma: rimozione calce, cemento, polveri sottili. Consegna l\'immobile pronto senza tracce di lavori.',
     longDesc: `Chi ha ristrutturato casa o un locale commerciale sa come finisce: il cantiere chiude, gli operai se ne vanno, e rimane quella patina di polvere ovunque che sembra impossibile da togliere. Calce sulle fughe del gres, silicone sui vetri, aloni di vernice sulle maniglie, polvere sottile che si deposita su tutto.
 
 La pulizia post-cantiere non si fa con una passata di straccio. Richiede prodotti specifici per tipo di residuo: un decappante per la calce non è lo stesso che serve per rimuovere il cemento dai pavimenti. E soprattutto richiede di sapere cosa non fare: certi prodotti acidi su certi marmi creano danni permanenti.
@@ -284,7 +284,7 @@ Operiamo in tutta la provincia di Parma, spesso in sinergia con imprese edili e 
 È proprio questa specializzazione post-cantiere che rende Fulgur Service un punto di riferimento per le pulizie di fine lavori a Parma e provincia.`,
     icon: 'HardHat',
     featured: false,
-    keywords: ['pulizie fine cantiere Parma', 'pulizie post ristrutturazione Parma', 'rimozione calce cemento pavimenti', 'pulizie post cantiere edilizi Parma'],
+    keywords: ['pulizie fine cantiere Parma', 'pulizie edili Parma', 'pulizie post ristrutturazione Parma', 'rimozione calce cemento pavimenti', 'pulizie post cantiere edilizi Parma', 'ditta pulizie edili Parma'],
     benefits: [
       'Rimozione calce, cemento e residui edili con prodotti specifici per materiale',
       'Pulizia vetri da silicone e vernici senza rigature',
@@ -293,8 +293,8 @@ Operiamo in tutta la provincia di Parma, spesso in sinergia con imprese edili e 
       'Interventi rapidi per rispettare le date di consegna o rogito',
     ],
     sectors: ['Nuove costruzioni residenziali e commerciali', 'Ristrutturazioni complete di appartamenti', 'Locali commerciali nuovi da inaugurare', 'Cantieri edilizi con general contractor'],
-    metaTitle: 'Pulizie Fine Cantiere Parma | Post Ristrutturazione Senza Tracce | Fulgur Service',
-    metaDescription: 'Pulizie di fine cantiere a Parma: rimozione calce, cemento, silicone e polveri edili. Interventi rapidi per rispettare le date di consegna. Preventivo gratuito in 24h.',
+    metaTitle: 'Pulizie Edili e Fine Cantiere Parma | Post Ristrutturazione | Fulgur Service',
+    metaDescription: 'Specialisti in pulizie edili e fine cantiere a Parma. Rimozione calce, cemento, silicone e polveri sottili. Interventi rapidi per la consegna immobile. Preventivo gratis.',
     image: '/images/servizi/pulizie-fine-cantiere-parma.webp',
     imageAlt: 'Rimozione professionale di polveri edili e residui di cemento dopo una ristrutturazione in un appartamento',
     faq: [

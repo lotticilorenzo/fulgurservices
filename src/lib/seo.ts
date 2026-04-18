@@ -6,13 +6,13 @@ const OG_DEFAULT = `${BASE_URL}/og/default.jpg`
 
 export const METADATA = {
   home: {
-    title: 'Fulgur Service Impresa di Pulizie Professionali a Parma e Provincia',
+    title: 'Impresa di Pulizie Parma | Fulgur Service | Professionalità e Sanificazioni',
     description:
-      'Fulgur Service impresa di pulizie professionali con sede a Parma, operativa in tutta Italia. Pulizie per uffici, industrie, condomini e studi medici. Sopralluogo gratuito in 24h.',
-    keywords: 'impresa pulizie Parma, ditta pulizie Parma, pulizie uffici Parma, pulizie industriali Parma, sanificazione ambienti Parma, pulizie condomini Parma, impresa pulizie Italia, pulizie professionali Italia',
+      'Cerchi un’impresa di pulizie a Parma? Fulgur Service offre pulizie professionali per uffici, industrie, condomini e studi medici. Sopralluogo gratuito in 24h a Parma e provincia.',
+    keywords: 'impresa pulizie Parma, ditta pulizie Parma, pulizie uffici Parma, pulizie industriali Parma, sanificazione ambienti Parma, pulizie condomini Parma, pulizie edili Parma, pulizie professionali Parma',
     openGraph: {
-      title: 'Fulgur Service Impresa di Pulizie Professionali a Parma e in tutta Italia',
-      description: 'Soluzioni di pulizia avanzate per aziende e privati. Sede a Parma, operativi in tutta Italia. 35 anni di esperienza, risultati garantiti.',
+      title: 'Impresa di Pulizie Parma | Fulgur Service',
+      description: 'Soluzioni di pulizia avanzate per aziende e privati a Parma e provincia. 35 anni di esperienza, risultati garantiti e sopralluogo gratuito.',
       url: BASE_URL,
       siteName: 'Fulgur Service',
       images: [{ url: OG_DEFAULT, width: 1200, height: 630, alt: 'Fulgur Service Leader Pulizie Parma' }],
@@ -49,12 +49,12 @@ export const METADATA = {
     },
   },
   preventivo: {
-    title: 'Richiedi Preventivo Gratuito | Sopralluogo in 24h Fulgur Service',
+    title: 'Richiedi Preventivo Gratuito | Sopralluogo Gratis in 24h a Parma',
     description:
-      'Richiedi un sopralluogo gratuito. Preventivo personalizzato in 48 ore, nessun impegno. Fulgur Service, impresa di pulizie a Parma.',
+      'Ottieni un preventivo personalizzato per le tue pulizie a Parma entro 24-48 ore. Sopralluogo gratuito e senza impegno. Fulgur Service: efficienza e trasparenza.',
     openGraph: {
-      title: 'Preventivo Gratuito | Fulgur Service',
-      description: 'Sopralluogo gratuito e preventivo personalizzato in 48 ore.',
+      title: 'Preventivo Gratuito Pulizie Parma | Fulgur Service',
+      description: 'Sopralluogo gratuito e preventivo su misura in 24-48 ore a Parma.',
       url: `${BASE_URL}/preventivo`,
       siteName: 'Fulgur Service',
       images: [{ url: OG_DEFAULT, width: 1200, height: 630, alt: 'Preventivo Fulgur Service' }],
@@ -63,12 +63,12 @@ export const METADATA = {
     },
   },
   contatti: {
-    title: 'Contatti | Fulgur Service Parma',
+    title: 'Contatti e Sede | Fulgur Service Impresa Pulizie Parma',
     description:
-      'Contatta Fulgur Service: +39 338 316 0091 · fulgurservice@gmail.com · Parma, Italia. Risposta garantita entro 48 ore.',
+      'Contatta Fulgur Service a Parma: +39 338 316 0091 | fulgurservice@gmail.com. Via Alfredo Veroni, 22 - Parma. Risposta rapida garantita.',
     openGraph: {
-      title: 'Contatti | Fulgur Service',
-      description: '+39 338 316 0091 · fulgurservice@gmail.com · Parma, Italia.',
+      title: 'Contatti | Fulgur Service Parma',
+      description: '+39 338 316 0091 | fulgurservice@gmail.com | Sede a Parma.',
       url: `${BASE_URL}/contatti`,
       siteName: 'Fulgur Service',
       images: [{ url: OG_DEFAULT, width: 1200, height: 630, alt: 'Contatti Fulgur Service' }],

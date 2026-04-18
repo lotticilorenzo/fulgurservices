@@ -122,11 +122,12 @@ export function HeroSection() {
 
           {/* GlowBadge */}
           <div className="hero-reveal">
-            <GlowBadge>Parma</GlowBadge>
+            <GlowBadge>Impresa di Pulizie Parma</GlowBadge>
           </div>
 
           {/* H1 | tre righe. leading-[1.0] su mobile evita il salto CLS verso sm:leading-[0.93] */}
           <h1 className="hero-reveal mt-5 font-display font-black leading-[1.0] sm:leading-[0.93] tracking-tight sm:tracking-tighter text-[clamp(42px,10vw,84px)] drop-shadow-2xl">
+            <span className="sr-only">Fulgur Service | Impresa di Pulizie Parma</span>
             <span className="block text-white">Puliamo il Futuro</span>
             <span className="block text-outline-accent">con l&apos;Energia</span>
             <span className="block text-[var(--accent)]">della Natura</span>

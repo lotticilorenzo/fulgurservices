@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 import { InstagramLogo, WhatsappLogo, EnvelopeSimple, Phone, MapPin } from '@phosphor-icons/react/dist/ssr'
 import Image from 'next/image'
 import { SERVICES } from '@/lib/services-data'
+import { TOWNS } from '@/lib/towns-data'
 import { WhatsAppHybridLink } from '@/components/ui/WhatsAppHybridLink'
 
 const COMPANY_LINKS = [
@@ -30,6 +31,7 @@ export function Footer() {
   }, [])
 
   const topServices = SERVICES.slice(0, 7)
+  const topTowns = TOWNS.filter(t => t.slug !== 'parma').slice(0, 7)
 
   return (
     <footer className="w-full mt-auto border-t border-[var(--br)] bg-[var(--bg-3)] overflow-hidden">
@@ -39,8 +41,8 @@ export function Footer() {
 
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 xl:px-8 pt-14 pb-6 sm:pt-20 sm:pb-8 lg:pb-12">
         
-        {/* Main Grid: 4 columns */}
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-8 lg:grid-cols-[2fr_1fr_1fr_1.4fr] lg:gap-10">
+        {/* Main Grid: 5 columns for SEO optimization */}
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-8 lg:grid-cols-[2fr_1fr_1fr_1fr_1.4fr] lg:gap-8">
           
           {/* Col 1: Brand */}
           <div className="flex flex-col">
@@ -120,6 +122,30 @@ export function Footer() {
               <li>
                 <Link href="/servizi" className="flex min-h-[44px] sm:min-h-[32px] items-center font-medium text-[var(--accent)] hover:text-[var(--accent-d)] hover:underline underline-offset-4 transition-colors">
                   Tutti i servizi →
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Col 3: Zone di Intervento (SEO Local) */}
+          <div>
+            <h4 className="font-mono-fulgur text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--tx-3)]">
+              Zone
+            </h4>
+            <ul className="mt-5 flex flex-col gap-1 sm:gap-0.5 font-sans text-[16px] sm:text-sm text-[var(--tx-1)] sm:text-[var(--tx-2)]">
+              {topTowns.map((town) => (
+                <li key={town.slug}>
+                  <Link 
+                    href={`/zone/${town.slug}`} 
+                    className="flex min-h-[44px] sm:min-h-[32px] items-center transition-colors hover:text-[var(--accent)]"
+                  >
+                    {town.name}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link href="/zone" className="flex min-h-[44px] sm:min-h-[32px] items-center font-medium text-[var(--accent)] hover:text-[var(--accent-d)] hover:underline underline-offset-4 transition-colors">
+                  Tutte le zone →
                 </Link>
               </li>
             </ul>
