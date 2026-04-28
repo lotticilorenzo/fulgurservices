@@ -9,6 +9,7 @@ import { ArrowDown, ShieldCheck, Leaf, Clock } from '@phosphor-icons/react'
 import { GlowBadge } from '@/components/ui/GlowBadge'
 import { MagneticButton } from '@/components/ui/MagneticButton'
 import { ParticleField } from '@/components/ui/ParticleField'
+import { SERVICE_AREAS_COUNT } from '@/lib/site-constants'
 
 export function HeroSection() {
   const containerRef = useRef<HTMLElement>(null)
@@ -150,7 +151,7 @@ export function HeroSection() {
             </span>
             <span className="hidden sm:inline text-white/30">·</span>
             <span className="flex items-center gap-2">
-              <span className="text-[var(--accent)] text-[16px] sm:text-base font-black">12</span> aree di intervento
+              <span className="text-[var(--accent)] text-[16px] sm:text-base font-black">{SERVICE_AREAS_COUNT}</span> aree di intervento
             </span>
             <span className="hidden sm:inline text-white/30">·</span>
             <span className="col-span-2 text-[var(--accent)] tracking-widest mt-1 sm:mt-0 opacity-90">Sopralluogo sempre gratuito</span>
@@ -254,7 +255,7 @@ export function HeroSection() {
               </div>
             </motion.div>
 
-            {/* Card float: 12 aree (Shifted) */}
+            {/* Card float: aree di intervento */}
             <motion.div
               initial={{ y: 8 }}
               animate={{ y: [8, -8, 8] }}
@@ -262,7 +263,7 @@ export function HeroSection() {
               className="absolute -left-10 bottom-20 z-20 glass-white rounded-2xl px-5 py-4 min-w-[120px] shadow-xl"
             >
               <div className="flex flex-col items-start leading-tight">
-                <div className="font-display text-3xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-3xl md:text-4xl">16</div>
+                <div className="font-display text-3xl font-extrabold text-[var(--accent)] tracking-tighter sm:text-3xl md:text-4xl">{SERVICE_AREAS_COUNT}</div>
                 <div className="mt-1 font-mono-fulgur text-[9px] font-bold uppercase tracking-widest text-[var(--tx-2)]">
                   Aree di<br />intervento
                 </div>

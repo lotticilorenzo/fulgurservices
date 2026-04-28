@@ -5,8 +5,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { BLOG_POSTS } from '@/lib/blog-data'
 import { makeBlogPostJsonLd, makeBreadcrumbsJsonLd } from '@/lib/seo'
-import { SectionLabel } from '@/components/ui/SectionLabel'
-import { Calendar, Clock, ArrowLeft, User, BookmarkSimple } from '@phosphor-icons/react/dist/ssr'
+import { Calendar, Clock, ArrowLeft, User } from '@phosphor-icons/react/dist/ssr'
 import { CTASection } from '@/components/home/CTASection'
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
 
@@ -25,14 +24,24 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
   return {
     title: `${post.title} | Blog Fulgur Service`,
     description: post.excerpt,
+    keywords: post.keywords,
+    alternates: {
+      canonical: `${BASE_URL}/blog/${post.slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
       url: `${BASE_URL}/blog/${post.slug}`,
       siteName: 'Fulgur Service',
-      images: [{ url: post.image || OG_DEFAULT, width: 1200, height: 630, alt: post.title }],
+      images: [{ url: post.image || OG_DEFAULT, width: 1200, height: 630, alt: post.imageAlt || post.title }],
       locale: 'it_IT',
       type: 'article',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      images: [post.image || OG_DEFAULT],
     },
   }
 }
@@ -100,7 +109,7 @@ export default async function BlogPostPage(props: { params: Promise<{ slug: stri
              <div className="relative aspect-[21/9] rounded-[2rem] sm:rounded-[3rem] overflow-hidden border border-[var(--br)] shadow-2xl">
                 <Image
                   src={post.image}
-                  alt={post.title}
+                  alt={post.imageAlt || post.title}
                   fill
                   className="object-cover"
                   priority

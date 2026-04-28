@@ -1,6 +1,8 @@
 // lib/seo.ts Fulgur Service
 // Metadata completi e Structured Data da GEMINI.md sezione 7
 
+import { SERVICE_AREAS_COUNT } from '@/lib/site-constants'
+
 const BASE_URL = 'https://www.fulgurservice.it'
 const OG_DEFAULT = `${BASE_URL}/og/default.jpg`
 
@@ -23,10 +25,10 @@ export const METADATA = {
   servizi: {
     title: 'Tutti i Servizi | Fulgur Service Parma',
     description:
-      '16 aree di intervento: pulizie aziendali, industriali, sanitarie, salumifici, condomini, hotel, trattamento superfici e molto altro. Sede a Parma, operativi in tutta Italia.',
+      `${SERVICE_AREAS_COUNT} aree di intervento: pulizie aziendali, industriali, sanitarie, salumifici, condomini, hotel, trattamento superfici e molto altro. Sede a Parma, operativi in tutta Italia.`,
     openGraph: {
       title: 'Tutti i Servizi | Fulgur Service Parma',
-      description: '16 aree di intervento con team specializzato e macchinari professionali.',
+      description: `${SERVICE_AREAS_COUNT} aree di intervento con team specializzato e macchinari professionali.`,
       url: `${BASE_URL}/servizi`,
       siteName: 'Fulgur Service',
       images: [{ url: OG_DEFAULT, width: 1200, height: 630, alt: 'Servizi Fulgur Service Parma' }],
@@ -204,7 +206,11 @@ export const STRUCTURED_DATA = {
       closes: '18:00',
     },
   ],
-  sameAs: ['https://www.instagram.com/fulgurservicesrl_/'],
+  sameAs: [
+    'https://www.instagram.com/fulgurservicesrl_/',
+    'https://www.facebook.com/fulgurservicesrl/',
+    'https://www.linkedin.com/company/fulgurservice/',
+  ],
   priceRange: '€€',
   areaServed: [
     { '@type': 'City', name: 'Parma', addressCountry: 'IT' },
@@ -304,6 +310,8 @@ export function makeBlogPostJsonLd(post: {
   date: string
   author: string
   image: string
+  category?: string
+  keywords?: string[]
 }) {
   return {
     '@context': 'https://schema.org',
@@ -311,6 +319,8 @@ export function makeBlogPostJsonLd(post: {
     headline: post.title,
     description: post.excerpt,
     image: post.image.startsWith('http') ? post.image : `${BASE_URL}${post.image}`,
+    articleSection: post.category,
+    keywords: post.keywords?.join(', '),
     author: {
       '@type': 'Organization',
       name: 'Fulgur Service SRL',

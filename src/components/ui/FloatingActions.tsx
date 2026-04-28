@@ -3,7 +3,6 @@
 import React, { useEffect, useState, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, ArrowLeft, ArrowRight, CheckCircle, Robot } from '@phosphor-icons/react'
-import { QRCodeSVG } from 'qrcode.react'
 import { MagneticButton } from '@/components/ui/MagneticButton'
 import { WhatsAppHybridLink } from '@/components/ui/WhatsAppHybridLink'
 
@@ -253,17 +252,19 @@ export function FloatingActions() {
   const [visible, setVisible] = useState(false)
   const [modalOpen, setModalOpen] = useState(false)
   const [waHovered, setWaHovered] = useState(false)
-  const [isMobileDevice, setIsMobileDevice] = useState(true)
+  const [isMobileDevice] = useState(() => (
+    typeof navigator === 'undefined'
+      ? true
+      : /Android|Windows Phone|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+  ))
 
   useEffect(() => {
-    setIsMobileDevice(/Android|Windows Phone|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
     const t = setTimeout(() => setVisible(true), 2500)
     return () => clearTimeout(t)
   }, [])
 
   const waPreset = 'Ciao Fulgur Service, vi contatto dal sito per richiedere informazioni sui vostri servizi di pulizia.'
   const qrCodeUrl = `https://wa.me/393383160091?text=${encodeURIComponent(waPreset)}`
-  const fallbackDesktopUrl = `https://web.whatsapp.com/send?phone=393383160091&text=${encodeURIComponent(waPreset)}`
 
   return (
     <>

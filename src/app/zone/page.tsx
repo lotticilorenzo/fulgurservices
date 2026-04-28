@@ -105,7 +105,7 @@ export default function ZonePage() {
               <Link href="/contatti" className="font-medium text-[var(--accent)] underline underline-offset-2 hover:text-[var(--accent-d)]">
                 Contattaci comunque
               </Link>
-              {' '}| operiamo in tutta la provincia di Parma e nelle zone limitrofe dell'Emilia-Romagna.
+              {' '}| operiamo in tutta la provincia di Parma e nelle zone limitrofe dell&apos;Emilia-Romagna.
               Il sopralluogo è sempre gratuito e senza impegno.
             </p>
           </div>

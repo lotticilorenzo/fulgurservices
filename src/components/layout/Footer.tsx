@@ -3,7 +3,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { InstagramLogo, WhatsappLogo, EnvelopeSimple, Phone, MapPin } from '@phosphor-icons/react/dist/ssr'
+import { InstagramLogo, WhatsappLogo, EnvelopeSimple, Phone, MapPin, TiktokLogo, LinkedinLogo, FacebookLogo } from '@phosphor-icons/react/dist/ssr'
 import Image from 'next/image'
 import { SERVICES } from '@/lib/services-data'
 import { TOWNS } from '@/lib/towns-data'
@@ -22,6 +22,14 @@ const LEGAL_LINKS = [
   { label: 'Privacy Policy', href: '/privacy' },
   { label: 'Cookie Policy', href: '/cookie-policy' },
 ]
+
+const SOCIAL_URLS = {
+  instagram: 'https://www.instagram.com/fulgurservicesrl_/',
+  whatsapp: 'https://wa.me/393383160091?text=Ciao%2C%20vorrei%20richiedere%20un%20sopralluogo%20gratuito',
+  facebook: 'https://www.facebook.com/fulgurservicesrl/',
+  linkedin: 'https://www.linkedin.com/company/fulgurservice/',
+  tiktok: 'https://www.tiktok.com/@fulgurservicesrl',
+}
 
 export function Footer() {
   const [year, setYear] = React.useState<number | string>('2025')
@@ -83,9 +91,9 @@ export function Footer() {
             </div>
 
             {/* Social + WhatsApp */}
-            <div className="mt-8 flex items-center gap-4">
+            <div className="mt-8 flex flex-wrap items-center gap-4">
               <a
-                href="https://www.instagram.com/fulgurservicesrl_/"
+                href={SOCIAL_URLS.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Seguici su Instagram"
@@ -93,8 +101,35 @@ export function Footer() {
               >
                 <InstagramLogo size={22} weight="duotone" className="sm:w-[18px] sm:h-[18px]" />
               </a>
+              <a
+                href={SOCIAL_URLS.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Seguici su Facebook"
+                className="inline-flex h-12 w-12 sm:h-10 sm:w-10 items-center justify-center rounded-full border border-[var(--br)] bg-white text-[var(--tx-1)] transition-all hover:border-[#1877F2] hover:text-[#1877F2] hover:bg-[rgba(24,119,242,0.1)] shadow-sm"
+              >
+                <FacebookLogo size={22} weight="duotone" className="sm:w-[18px] sm:h-[18px]" />
+              </a>
+              <a
+                href={SOCIAL_URLS.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Seguici su LinkedIn"
+                className="inline-flex h-12 w-12 sm:h-10 sm:w-10 items-center justify-center rounded-full border border-[var(--br)] bg-white text-[var(--tx-1)] transition-all hover:border-[#0A66C2] hover:text-[#0A66C2] hover:bg-[rgba(10,102,194,0.1)] shadow-sm"
+              >
+                <LinkedinLogo size={22} weight="duotone" className="sm:w-[18px] sm:h-[18px]" />
+              </a>
+              <a
+                href={SOCIAL_URLS.tiktok}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Seguici su TikTok"
+                className="inline-flex h-12 w-12 sm:h-10 sm:w-10 items-center justify-center rounded-full border border-[var(--br)] bg-white text-[var(--tx-1)] transition-all hover:border-[#111111] hover:text-[#111111] hover:bg-[rgba(17,17,17,0.06)] shadow-sm"
+              >
+                <TiktokLogo size={22} weight="duotone" className="sm:w-[18px] sm:h-[18px]" />
+              </a>
               <WhatsAppHybridLink
-                href="https://wa.me/393383160091?text=Ciao%2C%20vorrei%20richiedere%20un%20sopralluogo%20gratuito"
+                href={SOCIAL_URLS.whatsapp}
                 aria-label="Contattaci su WhatsApp"
                 className="inline-flex h-12 w-12 sm:h-10 sm:w-10 items-center justify-center rounded-full border border-[var(--br)] bg-white text-[var(--tx-1)] transition-all hover:border-[#25D366] hover:text-[#25D366] hover:bg-[rgba(37,211,102,0.1)] shadow-sm"
               >

@@ -10,18 +10,19 @@ const PIXEL_ID = '6489438914488358'
 
 export function CookieBanner() {
   const [showBanner, setShowBanner] = useState(false)
-  const [consent, setConsent] = useState<boolean | null>(null)
+  const [consent, setConsent] = useState<boolean | null>(() => {
+    if (typeof window === 'undefined') return null
+    const savedConsent = window.localStorage.getItem('fulgur_cookie_consent')
+    return savedConsent === null ? null : savedConsent === 'true'
+  })
 
   useEffect(() => {
-    const savedConsent = localStorage.getItem('fulgur_cookie_consent')
-    if (savedConsent === null) {
-      // Aspettiamo un po' prima di mostrare il banner per non disturbare l'LCP
-      const timer = setTimeout(() => setShowBanner(true), 2000)
-      return () => clearTimeout(timer)
-    } else {
-      setConsent(savedConsent === 'true')
-    }
-  }, [])
+    if (consent !== null) return
+
+    // Aspettiamo un po' prima di mostrare il banner per non disturbare l'LCP
+    const timer = setTimeout(() => setShowBanner(true), 2000)
+    return () => clearTimeout(timer)
+  }, [consent])
 
   const handleAccept = () => {
     localStorage.setItem('fulgur_cookie_consent', 'true')

@@ -28,7 +28,7 @@ export function BlogCard({ post, index }: BlogCardProps) {
           <div className="relative aspect-[16/10] overflow-hidden">
             <Image
               src={post.image}
-              alt={post.title}
+              alt={post.imageAlt || post.title}
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-110"
             />

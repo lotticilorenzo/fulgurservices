@@ -10,16 +10,123 @@ export interface BlogPost {
   author: string
   category: string
   image: string
+  imageAlt?: string
   readTime: string
   keywords: string[]
 }
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    id: '06',
+    slug: 'pulizia-pannelli-fotovoltaici-aziendali-case-study-sgig',
+    title: 'Pulizia Pannelli Fotovoltaici Aziendali: case study SGIG su oltre 600 mq',
+    excerpt:
+      'Presso SGIG abbiamo pulito oltre 600 mq di pannelli fotovoltaici in copertura con acqua osmotizzata a pochi ppm, zero chimica e massima sicurezza operativa.',
+    content: `
+      <h2>Un impianto sporco perde resa. Spesso senza che nessuno se ne accorga subito.</h2>
+      <p>Quando si parla di manutenzione fotovoltaica, l'attenzione si concentra quasi sempre su inverter, monitoraggi e produzione. Molto meno spesso si guarda la superficie dei moduli. Eppure è proprio lì che nasce una parte rilevante delle perdite invisibili.</p>
+
+      <p>Polveri, residui atmosferici, depositi sottili e sporco aderente possono ridurre sensibilmente la quantità di luce che raggiunge le celle. In termini pratici, un impianto fotovoltaico sporco può perdere fino al <strong>20-30% di rendimento</strong>. Per un'azienda, questo significa meno efficienza, meno ritorno economico e un investimento che rende meno del dovuto.</p>
+
+      <blockquote>La pulizia dei pannelli fotovoltaici non è un intervento estetico: è manutenzione che protegge prestazioni, continuità e valore reale dell'impianto.</blockquote>
+
+      <h2>Il case study: intervento presso Società Generale Impianti Gas SpA (SGIG)</h2>
+      <p>Nel nostro intervento presso <strong>Società Generale Impianti Gas SpA (SGIG)</strong> abbiamo eseguito la pulizia di oltre <strong>600 mq di pannelli fotovoltaici</strong>, lavorando direttamente in copertura e completando l'intervento in <strong>mezza giornata</strong>.</p>
+
+      <p>Il risultato non dipende solo dalla velocità operativa, ma dal metodo. In contesti aziendali il punto non è semplicemente "pulire", ma farlo con procedure corrette, in sicurezza e senza compromettere nel tempo l'impianto.</p>
+
+      <ul>
+        <li><strong>Superficie trattata:</strong> oltre 600 mq di moduli fotovoltaici</li>
+        <li><strong>Contesto:</strong> copertura di edificio aziendale</li>
+        <li><strong>Tempo operativo:</strong> mezza giornata</li>
+        <li><strong>Metodo utilizzato:</strong> acqua osmotizzata ad osmosi inversa</li>
+        <li><strong>Prodotti chimici:</strong> nessuno</li>
+      </ul>
+
+      <figure class="my-10 overflow-hidden rounded-[2rem] border border-[var(--br)] bg-[var(--bg-2)]">
+        <img
+          src="/images/blog/pulizia-pannelli-fotovoltaici-sgig-operatore-copertura.webp"
+          alt="Operatore Fulgur Service al lavoro in copertura durante la pulizia di pannelli fotovoltaici aziendali presso SGIG"
+          loading="lazy"
+          class="h-auto w-full object-cover"
+        />
+        <figcaption class="px-5 py-4 text-sm leading-relaxed text-[var(--tx-3)]">
+          Intervento in copertura presso SGIG: pulizia tecnica dei moduli con attrezzatura dedicata e gestione operativa in sicurezza.
+        </figcaption>
+      </figure>
+
+      <h2>Perché usiamo acqua osmotizzata a pochi ppm</h2>
+      <p>Il vero valore del nostro approccio sta nel <strong>come</strong> lavoriamo. Per la pulizia dei pannelli utilizziamo <strong>acqua osmotizzata ottenuta tramite osmosi inversa</strong>. Questo ci permette di pulire efficacemente evitando tre problemi tipici dei lavaggi non professionali:</p>
+
+      <ul>
+        <li><strong>0 prodotti chimici:</strong> nessun detergente aggressivo sulla superficie dei moduli</li>
+        <li><strong>0 residui:</strong> asciugatura pulita senza lasciare film o patine</li>
+        <li><strong>0 calcare:</strong> niente aloni o depositi minerali dovuti all'acqua di rete</li>
+      </ul>
+
+      <p>Nella foto qui sotto si vede il controllo della qualità dell'acqua con TDS meter: siamo nell'ordine di <strong>pochi ppm</strong>, cioè una qualità compatibile con una pulizia molto più efficace rispetto a un lavaggio tradizionale. Questo è il dettaglio che fa la differenza tra una superficie semplicemente bagnata e un pannello davvero pulito.</p>
+
+      <figure class="my-10 overflow-hidden rounded-[2rem] border border-[var(--br)] bg-[var(--bg-2)]">
+        <img
+          src="/images/blog/pulizia-pannelli-fotovoltaici-sgig-acqua-osmotizzata.webp"
+          alt="Misurazione TDS dell'acqua osmotizzata utilizzata da Fulgur Service per la pulizia di pannelli fotovoltaici"
+          loading="lazy"
+          class="h-auto w-full object-cover"
+        />
+        <figcaption class="px-5 py-4 text-sm leading-relaxed text-[var(--tx-3)]">
+          Controllo TDS dell'acqua osmotizzata: pochi ppm, nessun calcare e nessun alone sulla superficie dei pannelli.
+        </figcaption>
+      </figure>
+
+      <h2>Sicurezza operativa e rispetto dell'impianto</h2>
+      <p>La pulizia dei pannelli fotovoltaici aziendali richiede un equilibrio preciso tra <strong>efficacia, sicurezza e tutela dei materiali</strong>. Operare in copertura non lascia spazio all'improvvisazione: servono organizzazione, attrezzatura corretta e procedure coerenti con il contesto.</p>
+
+      <p>Per questo lavoriamo con una logica da partner operativo. L'obiettivo non è "passare a lavare", ma aiutare l'azienda a mantenere nel tempo il proprio impianto in condizioni di massima efficienza, evitando lavorazioni invasive e metodi che possano generare residui o usura non necessaria.</p>
+
+      <h2>Sostenibilità concreta, non dichiarata</h2>
+      <p>Su questo tipo di interventi la sostenibilità non può essere solo un messaggio di comunicazione. Deve essere una scelta tecnica. Utilizzare acqua osmotizzata e ridurre a zero la chimica significa ottenere una pulizia efficace senza introdurre sostanze superflue e senza compromettere il comportamento della superficie nel tempo.</p>
+
+      <p>Questo approccio riflette il modo in cui lavoriamo ogni giorno. Siamo soci sostenitori di <strong>KilometroVerde Parma</strong> e portiamo questa visione anche negli interventi operativi: meno impatto, più controllo, più coerenza tra risultato tecnico e responsabilità ambientale.</p>
+
+      <figure class="my-10 overflow-hidden rounded-[2rem] border border-[var(--br)] bg-[var(--bg-2)]">
+        <img
+          src="/images/blog/pulizia-pannelli-fotovoltaici-sgig-impianto-copertura.webp"
+          alt="Vista dell'impianto fotovoltaico aziendale in copertura presso SGIG dopo la pulizia professionale"
+          loading="lazy"
+          class="h-auto w-full object-cover"
+        />
+        <figcaption class="px-5 py-4 text-sm leading-relaxed text-[var(--tx-3)]">
+          L'impianto in copertura dopo l'intervento: una superficie pulita favorisce resa, continuità di prestazione e tutela dell'investimento.
+        </figcaption>
+      </figure>
+
+      <h2>Perché la pulizia protegge anche il valore dell'investimento</h2>
+      <p>Sporco e residui non riducono solo la produzione istantanea. Nel tempo riducono anche il <strong>valore reale dell'investimento</strong>, perché peggiorano il rapporto tra energia attesa e energia effettivamente prodotta. Ecco perché la pulizia professionale va considerata come parte del piano di manutenzione, non come intervento accessorio.</p>
+
+      <p>Se vuoi approfondire il nostro <a href="/servizi/pannelli-fotovoltaici">servizio dedicato alla pulizia dei pannelli fotovoltaici</a>, trovi qui il metodo completo. Se invece vuoi una valutazione sul tuo impianto, possiamo organizzare un <a href="/preventivo">sopralluogo tecnico gratuito</a> e capire insieme frequenza, criticità e approccio più corretto per il tuo contesto operativo.</p>
+    `,
+    date: '28 Aprile 2026',
+    author: 'Team Fulgur',
+    category: 'Case Study',
+    image: '/images/blog/pulizia-pannelli-fotovoltaici-sgig-cover.webp',
+    imageAlt:
+      'Impianto fotovoltaico aziendale SGIG in copertura dopo la pulizia professionale eseguita da Fulgur Service',
+    readTime: '4 min',
+    keywords: [
+      'pulizia pannelli fotovoltaici aziendali',
+      'case study SGIG fotovoltaico',
+      'acqua osmotizzata pannelli fotovoltaici',
+      'manutenzione impianto fotovoltaico industriale',
+      'pulizia pannelli fotovoltaici Parma',
+      'efficienza impianto fotovoltaico',
+    ],
+  },
+  {
     id: '04',
     slug: 'fulgur-service-socio-kilometroverde-parma',
     title: 'Fulgur Service entra in KilometroVerde Parma: pulizia professionale per un futuro più verde',
-    excerpt: 'Siamo ufficialmente nuovi soci di KilometroVerde Parma, la comunità che riunisce aziende e cittadini impegnati per un\'aria più pulita e una città più vivibile. Un passo naturale per chi ha sempre creduto nella sostenibilità.',
+    excerpt:
+      "Siamo ufficialmente nuovi soci di KilometroVerde Parma, la comunità che riunisce aziende e cittadini impegnati per un'aria più pulita e una città più vivibile. Un passo naturale per chi ha sempre creduto nella sostenibilità.",
     content: `
       <h2>Un'adesione che parla da sola</h2>
       <p>A febbraio 2026, KilometroVerde Parma ha dato il benvenuto a tre nuovi soci: Casalasco, Rotary Club Parma Est e <strong>Fulgur Service</strong>. Un riconoscimento che ci riempie di orgoglio, perché riflette esattamente ciò in cui crediamo ogni giorno sul lavoro.</p>
@@ -45,17 +152,23 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Sostenibilità',
     image: '/images/blog-kilometroverde-fulgur-parma.webp',
     readTime: '3 min',
-    keywords: ['KilometroVerde Parma', 'sostenibilità Parma', 'impresa pulizie ecologica', 'pulizie verdi Parma']
+    keywords: [
+      'KilometroVerde Parma',
+      'sostenibilità Parma',
+      'impresa pulizie ecologica',
+      'pulizie verdi Parma',
+    ],
   },
   {
     id: '01',
     slug: 'pulizie-industriali-parma-guida-manutenzione',
     title: 'Pulizie Industriali a Parma: Guida alla Manutenzione dei Grandi Spazi',
-    excerpt: 'Gestire un capannone o un magazzino logistico richiede protocolli specifici. Scopri come mantenere l\'efficienza operativa attraverso il pulito professionale.',
+    excerpt:
+      "Gestire un capannone o un magazzino logistico richiede protocolli specifici. Scopri come mantenere l'efficienza operativa attraverso il pulito professionale.",
     content: `
       <h2>L'impatto della pulizia sulla produttività industriale</h2>
       <p>In un ambiente industriale, la pulizia non è solo una questione estetica: è una componente fondamentale della sicurezza e dell'efficienza operativa. A Parma, cuore della Food Valley, i capannoni industriali e i magazzini logistici affrontano sfide uniche legate alla polvere, ai residui di lavorazione e alla necessità di rispettare standard igienici rigorosi.</p>
-      
+
       <h3>1. Sicurezza dei lavoratori</h3>
       <p>Pavimenti scivolosi per residui di olio o polveri sottili accumulate possono causare incidenti gravi. Utilizzare lavasciuga professionali uomo a bordo (come quelle dei nostri partner Klindex e Nilfisk) garantisce superfici asciutte e sicure immediatamente dopo l'intervento.</p>
 
@@ -64,9 +177,9 @@ export const BLOG_POSTS: BlogPost[] = [
 
       <h3>3. Immagine aziendale e audit</h3>
       <p>Per le aziende che ricevono audit esterni (ISO, BRC, IFS), lo stato di pulizia dello stabilimento è il primo biglietto da visita. Un ambiente impeccabile comunica ordine, controllo e qualità del prodotto finale.</p>
-      
+
       <blockquote>"Un ambiente di lavoro pulito non è solo un obbligo normativo, ma un investimento sulla longevità dell'azienda."</blockquote>
-      
+
       <p>Fulgur Service offre sopralluoghi gratuiti su tutto il territorio nazionale per definire piani di manutenzione programmata su misura per il settore industriale.</p>
     `,
     date: '17 Marzo 2026',
@@ -74,13 +187,14 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Industriale',
     image: '/images/servizi/pulizie-industriali-parma.webp',
     readTime: '5 min',
-    keywords: ['pulizie industriali Parma', 'manutenzione capannoni', 'cleaning industriale']
+    keywords: ['pulizie industriali Parma', 'manutenzione capannoni', 'cleaning industriale'],
   },
   {
     id: '02',
     slug: 'sanificazione-haccp-sicurezza-alimentare',
     title: 'Sanificazione HACCP: Perché la Sicurezza Alimentare Inizia dal Pulito',
-    excerpt: 'Il protocollo HACCP è fondamentale per ogni attività alimentare. Scopri la differenza tra pulizia ordinaria e sanificazione certificata.',
+    excerpt:
+      "Il protocollo HACCP è fondamentale per ogni attività alimentare. Scopri la differenza tra pulizia ordinaria e sanificazione certificata.",
     content: `
       <h2>Oltre la semplice pulizia: la sanificazione profonda</h2>
       <p>Nel settore alimentare, la differenza tra "pulito" e "sanificato" può determinare il successo o il fallimento di un'attività. Il sistema HACCP (Hazard Analysis and Critical Control Points) impone rigorosi controlli per prevenire contaminazioni biologiche, chimiche e fisiche.</p>
@@ -90,25 +204,26 @@ export const BLOG_POSTS: BlogPost[] = [
 
       <h3>Punti critici in cucina e laboratori</h3>
       <ul>
-        <li><strong>Filtri cappa:</strong> Accumulo di grassi che possono favorire incendi e proliferazione batterica.</li>
-        <li><strong>Guarnizioni frigo:</strong> Luoghi d'elezione per muffe silenziose.</li>
-        <li><strong>Scoli e canaline:</strong> Dove si annidano i biofilm più resistenti.</li>
+        <li><strong>Filtri cappa:</strong> accumulo di grassi che possono favorire incendi e proliferazione batterica.</li>
+        <li><strong>Guarnizioni frigo:</strong> luoghi d'elezione per muffe silenziose.</li>
+        <li><strong>Scoli e canaline:</strong> dove si annidano i biofilm più resistenti.</li>
       </ul>
 
-      <p>I nostri interventi a Parma seguono protocolli documentati che facilitano il superamento di ogni controllo da parte delle autorità sanitarie, fornendo pace mentale a ristoratori e produttori alimentari.</p>
+      <p>I nostri interventi a Parma seguono protocolli documentati che facilitano il superamento di ogni controllo da parte delle autorità sanitarie, fornendo serenità a ristoratori e produttori alimentari.</p>
     `,
     date: '12 Marzo 2026',
     author: 'Team Fulgur',
     category: 'Sanitario',
     image: '/images/servizi/pulizie-aziendali-parma.webp',
     readTime: '4 min',
-    keywords: ['sanificazione HACCP Parma', 'pulizie ristoranti', 'igiene alimentare']
+    keywords: ['sanificazione HACCP Parma', 'pulizie ristoranti', 'igiene alimentare'],
   },
   {
     id: '05',
     slug: 'pulizia-pannelli-fotovoltaici-parma-guida-completa',
     title: 'Pulizia Pannelli Fotovoltaici a Parma: Guida Completa per Massimizzare la Resa',
-    excerpt: 'I pannelli fotovoltaici sporchi perdono fino al 30% di efficienza. Scopri come la pulizia professionale con acqua demineralizzata recupera tutta la produzione energetica del tuo impianto.',
+    excerpt:
+      "I pannelli fotovoltaici sporchi perdono fino al 30% di efficienza. Scopri come la pulizia professionale con acqua demineralizzata recupera tutta la produzione energetica del tuo impianto.",
     content: `
       <h2>Perché i tuoi pannelli fotovoltaici perdono efficienza</h2>
       <p>Se hai un impianto fotovoltaico a Parma o in provincia, probabilmente hai notato che la produzione di energia varia nel corso dell'anno. Molti pensano sia solo una questione di stagionalità o irraggiamento solare. In realtà, uno dei fattori più sottovalutati è lo sporco che si accumula sui pannelli.</p>
@@ -146,6 +261,11 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Fotovoltaico',
     image: '/images/servizi/pannelli-fotovoltaici-parma.webp',
     readTime: '5 min',
-    keywords: ['pulizia pannelli fotovoltaici Parma', 'manutenzione fotovoltaico Parma', 'lavaggio pannelli solari', 'efficienza fotovoltaico']
-  }
+    keywords: [
+      'pulizia pannelli fotovoltaici Parma',
+      'manutenzione fotovoltaico Parma',
+      'lavaggio pannelli solari',
+      'efficienza fotovoltaico',
+    ],
+  },
 ]

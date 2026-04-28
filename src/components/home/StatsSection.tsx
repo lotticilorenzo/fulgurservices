@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { CounterUp } from '@/components/ui/CounterUp'
+import { SERVICE_AREAS_COUNT } from '@/lib/site-constants'
 
 const STATS = [
   {
@@ -17,7 +18,7 @@ const STATS = [
     sub: 'In tutta Italia',
   },
   {
-    value: 12,
+    value: SERVICE_AREAS_COUNT,
     suffix: '',
     label: 'Aree di intervento',
     sub: "Dal civile all'industriale",

@@ -1,30 +1,30 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useEffect, useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as [number, number, number, number]
-const EASE_IN  = [0.76, 0, 0.24, 1] as [number, number, number, number]
+const EASE_IN = [0.76, 0, 0.24, 1] as [number, number, number, number]
 
 /**
  * IntroLoader | animazione di benvenuto al primo accesso della sessione.
  * Si mostra una volta sola (sessionStorage), poi esce con una wipe verso l'alto.
- * Non usa immagini: solo CSS + Framer Motion.
+ * Mostra il logo del brand con transizione breve al primo accesso della sessione.
  */
 export function IntroLoader() {
-  const [show,    setShow]    = useState(false)
+  const [show, setShow] = useState(false)
   const [exiting, setExiting] = useState(false)
 
   useEffect(() => {
     // Mostra solo alla prima visita della sessione
     if (typeof sessionStorage === 'undefined') return
-    if (sessionStorage.getItem('fs-intro-v3')) return
-    sessionStorage.setItem('fs-intro-v3', '1')
+    if (sessionStorage.getItem('fs-intro-v4')) return
+    sessionStorage.setItem('fs-intro-v4', '1')
 
     const tInit = setTimeout(() => setShow(true), 0)
 
-    // VIOL-09: ridotto da 2000ms a 1000ms | abbassa LCP misurato da Lighthouse
+    // Ridotto per contenere l'impatto sul caricamento percepito
     const t = setTimeout(() => setExiting(true), 1000)
     return () => {
       clearTimeout(tInit)
@@ -45,41 +45,40 @@ export function IntroLoader() {
           exit={{ y: '-100%' }}
           transition={{ duration: 0.7, ease: EASE_IN }}
         >
-          {/* ── Official Logo ── */}
           <motion.div
             initial={{ scale: 0.8, opacity: 0, y: 20 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             transition={{ delay: 0.15, duration: 0.8, ease: EASE_OUT }}
-            className="mb-8 flex items-center justify-center pointer-events-none"
+            className="mb-8 flex items-center justify-center"
           >
-            <div className="flex w-[75vw] max-w-[400px] items-center justify-center">
+            <div className="flex w-[56vw] max-w-[220px] items-center justify-center sm:max-w-[250px]">
               <Image
-                src="/images/logo-impresa-di-pulizie-parma-fulgur.webp"
+                src="/images/logo-fulgur-service-pulizie-parma.webp"
                 alt="Fulgur Service Logo | Impresa Pulizie Parma"
-                width={400}
-                height={100}
-                className="h-auto w-full object-contain drop-shadow-[0_10px_30px_rgba(42,140,122,0.15)] mix-blend-multiply"
+                width={512}
+                height={512}
+                className="h-auto w-full object-contain"
                 priority
               />
             </div>
           </motion.div>
 
-          {/* ── Tagline ── */}
-          <div className="overflow-hidden mb-10">
-            <motion.p
-              className="font-mono-fulgur text-[10px] font-bold uppercase tracking-[0.24em] text-[var(--tx-3)]"
+          <div className="mb-10 overflow-hidden">
+            <motion.div
+              className="flex flex-col items-center text-center font-display text-[clamp(1.55rem,5.6vw,2.5rem)] font-black leading-[0.95] tracking-tight text-[var(--tx-1)]"
               initial={{ y: '110%' }}
               animate={{ y: '0%' }}
               transition={{ delay: 0.52, duration: 0.6, ease: EASE_OUT }}
             >
-              Puliamo il futuro · Parma
-            </motion.p>
+              <span>Puliamo il Futuro</span>
+              <span className="text-[var(--tx-2)]">con l&apos;Energia</span>
+              <span className="text-[var(--accent)]">della Natura</span>
+            </motion.div>
           </div>
 
-          {/* ── Progress bar ── */}
-          <div className="w-44 h-[1.5px] overflow-hidden rounded-full bg-[var(--br)]">
+          <div className="h-[1.5px] w-44 overflow-hidden rounded-full bg-[var(--br)]">
             <motion.div
-              className="h-full bg-[var(--accent)] rounded-full"
+              className="h-full rounded-full bg-[var(--accent)]"
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               style={{ originX: 0 }}

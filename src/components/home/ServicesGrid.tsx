@@ -9,6 +9,7 @@ import { ServiceCard } from '@/components/servizi/ServiceCard'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { ParallaxText } from '@/components/ui/ParallaxText'
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
+import { SERVICE_AREAS_COUNT } from '@/lib/site-constants'
 import {
   Drop, Wrench, Recycle, Lightning, Leaf,
 } from '@phosphor-icons/react'
@@ -51,7 +52,7 @@ export function ServicesGrid() {
             Ogni ambiente, <br className="hidden sm:block" /> un’unica soluzione.
           </h2>
           <p className="mt-4 sm:mt-6 font-sans text-base sm:text-lg font-light text-[var(--tx-2)]">
-            16 aree di intervento, team specializzato, preventivo in 48 ore.
+            {SERVICE_AREAS_COUNT} aree di intervento, team specializzato, preventivo in 48 ore.
           </p>
         </div>
 
@@ -101,7 +102,7 @@ export function ServicesGrid() {
             href="/servizi"
             className="group flex min-h-[44px] w-full sm:w-auto items-center justify-center gap-2 rounded-xl sm:rounded-none bg-[var(--bg-2)] sm:bg-transparent border sm:border-transparent border-[var(--br)] px-6 py-3 sm:p-0 font-display text-base sm:text-sm font-bold text-[var(--tx-1)] sm:text-[var(--tx-2)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-all"
           >
-            <span>Vedi tutte le 16 aree di intervento</span>
+            <span>Vedi tutte le {SERVICE_AREAS_COUNT} aree di intervento</span>
             <span className="transition-transform group-hover:translate-x-1">→</span>
           </Link>
         </div>

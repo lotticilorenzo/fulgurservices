@@ -15,19 +15,23 @@ interface WhatsAppHybridLinkProps {
   'aria-label'?: string
 }
 
+type WindowWithOpera = Window & {
+  opera?: string
+}
+
+function detectMobileDevice() {
+  if (typeof window === 'undefined' || typeof navigator === 'undefined') return true
+
+  const opera = (window as WindowWithOpera).opera ?? ''
+  const userAgent = navigator.userAgent || navigator.vendor || opera
+  return /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(String(userAgent).toLowerCase()) || window.innerWidth <= 768
+}
+
 export function WhatsAppHybridLink({ href, children, className, target, rel, 'aria-label': ariaLabel }: WhatsAppHybridLinkProps) {
-  const [isMobile, setIsMobile] = useState(true) // Default true for hydration matching, then precise check
+  const [isMobile] = useState(detectMobileDevice)
   const [showModal, setShowModal] = useState(false)
-  const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
-    setIsMounted(true)
-    const checkMobile = () => {
-      const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera
-      return /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent.toLowerCase()) || window.innerWidth <= 768
-    }
-    setIsMobile(checkMobile())
-    
     // Lock body text scroll when modal open
     if (showModal) {
       document.body.style.overflow = 'hidden'
@@ -59,7 +63,7 @@ export function WhatsAppHybridLink({ href, children, className, target, rel, 'ar
         {children}
       </a>
 
-      {isMounted && createPortal(
+      {typeof document !== 'undefined' && createPortal(
         <AnimatePresence>
           {showModal && (
             <motion.div 

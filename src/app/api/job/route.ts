@@ -77,14 +77,15 @@ export async function POST(req: NextRequest) {
       message: 'Candidatura inviata correttamente.' 
     }, { status: 200 });
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Submission Error:', error);
+    const errorMessage = error instanceof Error ? error.message : undefined
     
     // Gestione errori SMTP o parsing
     return NextResponse.json({ 
       success: false, 
       message: 'Si è verificato un errore nell\'elaborazione della richiesta. Riprova più tardi.',
-      error: process.env.NODE_ENV === 'development' ? error.message : undefined
+      error: process.env.NODE_ENV === 'development' ? errorMessage : undefined
     }, { status: 500 });
   }
 }
