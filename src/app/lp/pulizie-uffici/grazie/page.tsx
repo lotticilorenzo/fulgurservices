@@ -1,17 +1,19 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
 import { LP_DATA } from '@/lib/lp-data'
-import { LPThankYou } from '@/components/lp/LPThankYou'
-
-const data = LP_DATA.uffici
+import { LPThankYouHero } from '@/components/lp/LPThankYouHero'
+import { LPThankYouTimeline } from '@/components/lp/LPThankYouTimeline'
+import { LPThankYouSaveContact } from '@/components/lp/LPThankYouSaveContact'
 
 export const metadata: Metadata = {
-  title: 'Richiesta ricevuta | Fulgur Service',
-  description: 'Grazie per la tua richiesta. Ti richiamiamo entro 24 ore lavorative.',
+  title: 'Grazie — Richiesta ricevuta | Fulgur Service',
+  description: 'La tua richiesta è stata ricevuta. Ti contattiamo entro 4 ore lavorative.',
   robots: { index: false, follow: false },
 }
 
-export default function UfficiLPGraziePage() {
+const data = LP_DATA.uffici
+
+export default function GraziePulizieUfficiPage() {
   return (
     <>
       <Script id="lp-conversion-uffici" strategy="afterInteractive">
@@ -23,11 +25,9 @@ window.dataLayer.push({
   currency: 'EUR'
 });`}
       </Script>
-      <LPThankYou
-        thankYou={data.thankYou}
-        ctaPhoneRaw={data.hero.ctaPhoneRaw}
-        whatsappUrl={data.hero.whatsappUrl}
-      />
+      <LPThankYouHero variant="uffici" whatsAppText={data.thankYou.ctaWhatsAppText} />
+      <LPThankYouTimeline />
+      <LPThankYouSaveContact />
     </>
   )
 }
