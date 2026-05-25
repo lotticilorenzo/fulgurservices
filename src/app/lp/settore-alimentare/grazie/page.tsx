@@ -24,9 +24,8 @@ window.dataLayer.push({
 });`}
       </Script>
       <LPThankYou
-        grazie={data.grazie}
+        thankYou={data.thankYou}
         ctaPhoneRaw={data.hero.ctaPhoneRaw}
-        ctaPhone={data.hero.ctaPhone}
         whatsappUrl={data.hero.whatsappUrl}
       />
     </>

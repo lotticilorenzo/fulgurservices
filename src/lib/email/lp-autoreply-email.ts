@@ -13,8 +13,8 @@ export function getAutoreplySubject(variant: 'uffici' | 'alimentare'): string {
 export function buildAutoreplyHtml(payload: AutoreplyEmailPayload): string {
   const isUffici = payload.variant === 'uffici'
   const contextLine = isUffici
-    ? 'per il sopralluogo di fine cantiere'
-    : 'per il sopralluogo dello studio'
+    ? 'nella tua sede'
+    : 'nel tuo locale'
 
   return `
     <div style="font-family:'DM Sans',Arial,sans-serif; color:#0F1F1A; max-width:560px; margin:0 auto; border:1px solid #e0ede9; border-radius:12px; overflow:hidden;">

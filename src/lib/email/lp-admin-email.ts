@@ -23,7 +23,7 @@ export function buildAdminEmailHtml(payload: AdminEmailPayload): string {
   const isUffici = payload.variant === 'uffici'
   const subjectLabel = isUffici ? 'Pulizie Uffici' : 'Settore Alimentare'
   const lpPath = isUffici ? 'pulizie-uffici' : 'settore-alimentare'
-  const qualifierLabel = isUffici ? 'Metratura' : 'Tipo struttura'
+  const qualifierLabel = isUffici ? 'Tipo di sede' : 'Tipo di attività'
 
   const utmRows = payload.utm
     ? Object.entries(payload.utm)

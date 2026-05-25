@@ -3,10 +3,8 @@ import { LP_DATA } from '@/lib/lp-data'
 import { LPHero } from '@/components/lp/LPHero'
 import { LPTrustBar } from '@/components/lp/LPTrustBar'
 import { LPContactForm } from '@/components/lp/LPContactForm'
-import { LPBenefits } from '@/components/lp/LPBenefits'
 import { LPProcess } from '@/components/lp/LPProcess'
 import { LPObjections } from '@/components/lp/LPObjections'
-import { LPCaseStudy } from '@/components/lp/LPCaseStudy'
 import { LPSocialProof } from '@/components/lp/LPSocialProof'
 import { LPFinalCTA } from '@/components/lp/LPFinalCTA'
 
@@ -35,46 +33,37 @@ export default function UfficiLPPage() {
       <LPTrustBar items={data.trustBar} />
 
       {/* Form section */}
-      <section id="lp-form" data-scroll-section className="py-24 md:py-40 bg-[var(--bg)]">
+      <section id={FORM_ID} data-scroll-section className="py-24 md:py-40 bg-[var(--bg)]">
         <div className="mx-auto max-w-3xl px-5 sm:px-8 text-center">
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-[var(--accent-d)] mb-6">
-            02 — RICHIEDI SOPRALLUOGO
+            {data.form.eyebrow}
           </p>
           <h2
             className="font-display font-extrabold text-[var(--tx-1)] tracking-tight mb-6"
             style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}
-          >
-            Una telefonata in{' '}
-            <span className="text-[var(--accent)]">24 ore</span>
-            . Sopralluogo gratuito.
-          </h2>
+            dangerouslySetInnerHTML={{ __html: data.form.h2 }}
+          />
           <p className="font-body text-lg text-[var(--tx-2)] max-w-xl mx-auto">
-            Lascia i tuoi dati. Ti richiamiamo per fissare un sopralluogo gratuito a Parma e provincia.
+            {data.form.subhead}
           </p>
           <div className="mt-12">
             <LPContactForm
               variant={data.variant}
               form={data.form}
               ctaPhoneRaw={data.hero.ctaPhoneRaw}
-              ctaPhone={data.hero.ctaPhone}
             />
           </div>
         </div>
       </section>
 
-      <LPBenefits benefits={data.benefits} />
-      <div className="lp-section-divider" aria-hidden="true" />
       <LPProcess process={data.process} />
-      <div className="lp-section-divider" aria-hidden="true" />
-      <LPCaseStudy />
       <div className="lp-section-divider" aria-hidden="true" />
       <LPObjections objections={data.objections} />
       <div className="lp-section-divider" aria-hidden="true" />
-      <LPSocialProof testimonial={data.testimonial} />
+      <LPSocialProof socialProof={data.socialProof} />
       <LPFinalCTA
         finalCta={data.finalCta}
         ctaPhoneRaw={data.hero.ctaPhoneRaw}
-        ctaPhone={data.hero.ctaPhone}
         whatsappUrl={data.hero.whatsappUrl}
         formId={FORM_ID}
       />
