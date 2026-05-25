@@ -1,5 +1,5 @@
 export interface AdminEmailPayload {
-  variant: 'cantiere' | 'sanitario'
+  variant: 'uffici' | 'alimentare'
   nome: string
   telefono: string
   qualifier: string
@@ -15,15 +15,15 @@ export interface AdminEmailPayload {
 }
 
 export function getAdminEmailSubject(payload: AdminEmailPayload): string {
-  const tag = payload.variant === 'cantiere' ? '[LP-CANTIERE-LEAD]' : '[LP-SANITARIO-LEAD]'
+  const tag = payload.variant === 'uffici' ? '[LP-UFFICI-LEAD]' : '[LP-ALIMENTARE-LEAD]'
   return `${tag} ${payload.nome} · ${payload.telefono} · ${payload.qualifier}`
 }
 
 export function buildAdminEmailHtml(payload: AdminEmailPayload): string {
-  const isCantiere = payload.variant === 'cantiere'
-  const subjectLabel = isCantiere ? 'Fine Cantiere' : 'Sanitario'
-  const lpPath = isCantiere ? 'fine-cantiere' : 'sanitario'
-  const qualifierLabel = isCantiere ? 'Metratura' : 'Tipo struttura'
+  const isUffici = payload.variant === 'uffici'
+  const subjectLabel = isUffici ? 'Pulizie Uffici' : 'Settore Alimentare'
+  const lpPath = isUffici ? 'pulizie-uffici' : 'settore-alimentare'
+  const qualifierLabel = isUffici ? 'Metratura' : 'Tipo struttura'
 
   const utmRows = payload.utm
     ? Object.entries(payload.utm)

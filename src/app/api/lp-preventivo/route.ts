@@ -6,7 +6,7 @@ import { buildAutoreplyHtml, getAutoreplySubject } from '@/lib/email/lp-autorepl
 import { appendLeadToSheet } from '@/lib/sheets/append-lead'
 
 const ApiSchema = z.object({
-  variant: z.enum(['cantiere', 'sanitario']),
+  variant: z.enum(['uffici', 'alimentare']),
   nome: z.string().min(2).max(100),
   telefono: z.string().regex(/^[+]?[\d\s]{8,15}$/),
   email: z.string().email('Inserisci un indirizzo email valido'),

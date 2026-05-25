@@ -10,7 +10,7 @@ import { LPCaseStudy } from '@/components/lp/LPCaseStudy'
 import { LPSocialProof } from '@/components/lp/LPSocialProof'
 import { LPFinalCTA } from '@/components/lp/LPFinalCTA'
 
-const data = LP_DATA.cantiere
+const data = LP_DATA.uffici
 const FORM_ID = 'lp-form'
 
 export const metadata: Metadata = {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   twitter: { card: 'summary_large_image' },
 }
 
-export default function FineCantiereLPPage() {
+export default function UfficiLPPage() {
   return (
     <>
       <LPHero data={data} formId={FORM_ID} />

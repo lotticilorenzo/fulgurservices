@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils'
 import type { LPData, LPVariant } from '@/lib/lp-data'
 
 const schema = z.object({
-  variant: z.enum(['cantiere', 'sanitario']),
+  variant: z.enum(['uffici', 'alimentare']),
   nome: z.string().min(2, 'Inserisci il tuo nome'),
   telefono: z
     .string()
@@ -96,7 +96,7 @@ export function LPContactForm({
         setServerError(json.error ?? 'Errore imprevisto. Riprova.')
         return
       }
-      router.push(`/lp/${variant === 'cantiere' ? 'fine-cantiere' : 'sanitario'}/grazie`)
+      router.push(`/lp/${variant === 'uffici' ? 'pulizie-uffici' : 'settore-alimentare'}/grazie`)
     } catch {
       setServerError('Errore di rete. Controlla la connessione e riprova.')
     }

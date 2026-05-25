@@ -1,18 +1,18 @@
 export interface AutoreplyEmailPayload {
-  variant: 'cantiere' | 'sanitario'
+  variant: 'uffici' | 'alimentare'
   nome: string
   email: string
 }
 
-export function getAutoreplySubject(variant: 'cantiere' | 'sanitario'): string {
-  return variant === 'cantiere'
+export function getAutoreplySubject(variant: 'uffici' | 'alimentare'): string {
+  return variant === 'uffici'
     ? 'Abbiamo ricevuto la tua richiesta — Fulgur Service'
     : 'La tua richiesta è arrivata — Fulgur Service'
 }
 
 export function buildAutoreplyHtml(payload: AutoreplyEmailPayload): string {
-  const isCantiere = payload.variant === 'cantiere'
-  const contextLine = isCantiere
+  const isUffici = payload.variant === 'uffici'
+  const contextLine = isUffici
     ? 'per il sopralluogo di fine cantiere'
     : 'per il sopralluogo dello studio'
 

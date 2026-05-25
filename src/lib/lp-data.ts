@@ -1,5 +1,5 @@
 // lib/lp-data.ts — Single source of truth for PPC landing page content
-export type LPVariant = 'cantiere' | 'sanitario'
+export type LPVariant = 'uffici' | 'alimentare'
 
 export interface LPQualifierOption {
   value: string
@@ -29,7 +29,7 @@ export interface LPTestimonial {
 }
 
 export interface LeadPayload {
-  variant: 'cantiere' | 'sanitario'
+  variant: 'uffici' | 'alimentare'
   nome: string
   telefono: string
   email: string
@@ -108,13 +108,13 @@ export interface LPData {
 }
 
 export const LP_DATA: Record<LPVariant, LPData> = {
-  cantiere: {
-    variant: 'cantiere',
+  uffici: {
+    variant: 'uffici',
     meta: {
       title: 'Pulizie Fine Cantiere a Parma | Consegna in 48 Ore | Fulgur Service',
       description:
         'Rimuoviamo calce, cemento, silicone e polveri di levigatura. Sopralluogo gratuito a Parma e provincia, squadra in cantiere entro 48 ore lavorative.',
-      canonical: 'https://www.fulgurservice.it/lp/fine-cantiere',
+      canonical: 'https://www.fulgurservice.it/lp/pulizie-uffici',
       ogImage: '/images/gallery/fine-cantiere-boutique-zegna-parma-1.webp',
     },
     hero: {
@@ -129,7 +129,7 @@ export const LP_DATA: Record<LPVariant, LPData> = {
       ctaPhone: 'Chiama: 338 316 0091',
       ctaPhoneRaw: '+393383160091',
       whatsappUrl:
-        'https://wa.me/393383160091?text=Ciao%2C%20ho%20visto%20la%20vostra%20landing%20%5BCANTIERE%5D',
+        'https://wa.me/393383160091?text=Ciao%2C%20ho%20visto%20la%20vostra%20landing%20%5BUFFICI%5D',
       image: {
         src: '/images/gallery/fine-cantiere-boutique-zegna-parma-1.webp',
         alt: 'Pulizia fine cantiere boutique a Parma — Fulgur Service rimuove calce e residui edilizi professionalmente',
@@ -225,17 +225,17 @@ export const LP_DATA: Record<LPVariant, LPData> = {
         'Concordiamo il sopralluogo gratuito in cantiere',
         'Ricevi il preventivo scritto entro 24h dal sopralluogo',
       ],
-      eventLabel: 'lp-cantiere',
+      eventLabel: 'lp-uffici',
     },
   },
 
-  sanitario: {
-    variant: 'sanitario',
+  alimentare: {
+    variant: 'alimentare',
     meta: {
       title: 'Sanificazione Studi Medici Parma | Protocolli HACCP | Fulgur Service',
       description:
         'Protocolli HACCP, Presidi Medico Chirurgici autorizzati Ministero della Salute, vapore a 180°. Sanifichiamo fuori orario visite, con schede prodotto sempre disponibili.',
-      canonical: 'https://www.fulgurservice.it/lp/sanitario',
+      canonical: 'https://www.fulgurservice.it/lp/settore-alimentare',
       ogImage: '/images/servizi/pulizie-aziendali-parma.webp',
     },
     hero: {
@@ -250,7 +250,7 @@ export const LP_DATA: Record<LPVariant, LPData> = {
       ctaPhone: 'Chiama: 338 316 0091',
       ctaPhoneRaw: '+393383160091',
       whatsappUrl:
-        'https://wa.me/393383160091?text=Ciao%2C%20ho%20visto%20la%20vostra%20landing%20%5BSANITARIO%5D',
+        'https://wa.me/393383160091?text=Ciao%2C%20ho%20visto%20la%20vostra%20landing%20%5BALIMENTARE%5D',
       image: {
         src: '/images/servizi/pulizie-aziendali-parma.webp',
         alt: 'Sanificazione professionale con protocolli HACCP per studio medico a Parma — Fulgur Service',
@@ -346,7 +346,7 @@ export const LP_DATA: Record<LPVariant, LPData> = {
         'Sopralluogo discreto fuori orario visite',
         'Ricevi il programma di sanificazione personalizzato',
       ],
-      eventLabel: 'lp-sanitario',
+      eventLabel: 'lp-alimentare',
     },
   },
 }

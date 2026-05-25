@@ -3,22 +3,22 @@ import Script from 'next/script'
 import { LP_DATA } from '@/lib/lp-data'
 import { LPThankYou } from '@/components/lp/LPThankYou'
 
-const data = LP_DATA.cantiere
+const data = LP_DATA.alimentare
 
 export const metadata: Metadata = {
   title: 'Richiesta ricevuta | Fulgur Service',
-  description: 'Grazie per la tua richiesta. Ti richiamiamo entro 24 ore lavorative.',
+  description: 'Grazie per la tua richiesta. Ti contattiamo entro 24 ore lavorative.',
   robots: { index: false, follow: false },
 }
 
-export default function FineCantiereLPGraziePage() {
+export default function AlimentareLPGraziePage() {
   return (
     <>
-      <Script id="lp-conversion-cantiere" strategy="afterInteractive">
+      <Script id="lp-conversion-alimentare" strategy="afterInteractive">
         {`window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({
   event: 'lp_conversion',
-  lp_variant: 'cantiere',
+  lp_variant: 'alimentare',
   conversion_value: 1,
   currency: 'EUR'
 });`}

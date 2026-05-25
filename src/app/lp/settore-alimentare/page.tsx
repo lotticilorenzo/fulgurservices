@@ -10,7 +10,7 @@ import { LPCredentials } from '@/components/lp/LPCredentials'
 import { LPSocialProof } from '@/components/lp/LPSocialProof'
 import { LPFinalCTA } from '@/components/lp/LPFinalCTA'
 
-const data = LP_DATA.sanitario
+const data = LP_DATA.alimentare
 const FORM_ID = 'lp-form'
 
 export const metadata: Metadata = {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   twitter: { card: 'summary_large_image' },
 }
 
-export default function SanitarioLPPage() {
+export default function AlimentareLPPage() {
   return (
     <>
       <LPHero data={data} formId={FORM_ID} />
