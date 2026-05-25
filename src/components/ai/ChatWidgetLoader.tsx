@@ -26,5 +26,5 @@ export default function ChatWidgetLoader() {
     return () => clearTimeout(t)
   }, [])
 
-  return shouldLoad ? <ChatWidget /> : null
+  return shouldLoad ? <div data-chat-widget><ChatWidget /></div> : null
 }

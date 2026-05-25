@@ -13,6 +13,7 @@ export default function NoiseOverlay() {
   return (
     <div
       aria-hidden="true"
+      data-noise-overlay
       className="pointer-events-none fixed inset-0 z-10 opacity-[0.025]"
       style={{
         backgroundImage: "url('/images/noise.svg')",

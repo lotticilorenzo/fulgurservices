@@ -422,3 +422,19 @@ body {
     );
   }
 }
+
+/* ─── LP Mode — nasconde wrappers globali nelle landing PPC ─── */
+html[data-lp-mode="true"] header,
+html[data-lp-mode="true"] footer:not([data-lp-footer]),
+html[data-lp-mode="true"] [data-noise-overlay],
+html[data-lp-mode="true"] [data-cookie-banner],
+html[data-lp-mode="true"] [data-floating-actions],
+html[data-lp-mode="true"] [data-chat-widget] {
+  display: none !important;
+}
+
+html[data-lp-mode="true"] *,
+html[data-lp-mode="true"] *::before,
+html[data-lp-mode="true"] *::after {
+  cursor: auto !important;
+}
