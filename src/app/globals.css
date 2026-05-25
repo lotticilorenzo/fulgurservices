@@ -424,17 +424,52 @@ body {
 }
 
 /* ─── LP Mode — nasconde wrappers globali nelle landing PPC ─── */
-html[data-lp-mode="true"] header,
-html[data-lp-mode="true"] footer:not([data-lp-footer]),
-html[data-lp-mode="true"] [data-noise-overlay],
-html[data-lp-mode="true"] [data-cookie-banner],
+/* Nasconde la Navbar del sito (LP usa la propria header[data-lp-header]) */
+html[data-lp-mode="true"] header:not([data-lp-header]) {
+  display: none !important;
+}
+/* Nasconde elementi che distraggono dalla conversione */
 html[data-lp-mode="true"] [data-floating-actions],
 html[data-lp-mode="true"] [data-chat-widget] {
   display: none !important;
 }
+/* Footer, NoiseOverlay e CookieBanner restano visibili (come il sito) */
 
+/* Cursori nativi attivi nelle LP (nessun cursore custom) */
 html[data-lp-mode="true"] *,
 html[data-lp-mode="true"] *::before,
 html[data-lp-mode="true"] *::after {
   cursor: auto !important;
+}
+
+/* ─── LP Background Atmosphere ─── */
+.lp-bg-noise {
+  position: relative;
+}
+.lp-bg-noise::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url('/images/noise.svg');
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.lp-bg-cream {
+  background-color: #FDFCFA;
+}
+
+.lp-section-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--br-h) 30%, var(--br-h) 70%, transparent);
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lp-bg-noise::after { display: none; }
 }

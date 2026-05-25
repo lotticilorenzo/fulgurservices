@@ -14,26 +14,15 @@ export const metadata: Metadata = {
 export default function FineCantiereLPGraziePage() {
   return (
     <>
-      {/* Google Ads conversion tracking — TODO: sostituire AW-XXXXXXXXX/YYYYYYYYY con il conversion ID reale */}
-      <Script
-        id="gtag-lp-cantiere-conversion"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            if (typeof window.gtag === 'function') {
-              window.gtag('event', 'conversion', {
-                send_to: 'AW-XXXXXXXXX/YYYYYYYYY',
-                value: 1.0,
-                currency: 'EUR'
-              });
-              window.gtag('event', 'lp_conversion', {
-                event_category: 'lead',
-                event_label: '${data.grazie.eventLabel}'
-              });
-            }
-          `,
-        }}
-      />
+      <Script id="lp-conversion-cantiere" strategy="afterInteractive">
+        {`window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+  event: 'lp_conversion',
+  lp_variant: 'cantiere',
+  conversion_value: 1,
+  currency: 'EUR'
+});`}
+      </Script>
       <LPThankYou
         grazie={data.grazie}
         ctaPhoneRaw={data.hero.ctaPhoneRaw}

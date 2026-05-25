@@ -9,7 +9,6 @@ import { LPObjections } from '@/components/lp/LPObjections'
 import { LPCaseStudy } from '@/components/lp/LPCaseStudy'
 import { LPSocialProof } from '@/components/lp/LPSocialProof'
 import { LPFinalCTA } from '@/components/lp/LPFinalCTA'
-import { LPStickyCTABar } from '@/components/lp/LPStickyCTABar'
 
 const data = LP_DATA.cantiere
 const FORM_ID = 'lp-form'
@@ -64,9 +63,13 @@ export default function FineCantiereLPPage() {
       </section>
 
       <LPBenefits benefits={data.benefits} />
+      <div className="lp-section-divider" aria-hidden="true" />
       <LPProcess process={data.process} />
+      <div className="lp-section-divider" aria-hidden="true" />
       <LPCaseStudy />
+      <div className="lp-section-divider" aria-hidden="true" />
       <LPObjections objections={data.objections} />
+      <div className="lp-section-divider" aria-hidden="true" />
       <LPSocialProof testimonial={data.testimonial} />
       <LPFinalCTA
         finalCta={data.finalCta}
@@ -75,7 +78,6 @@ export default function FineCantiereLPPage() {
         whatsappUrl={data.hero.whatsappUrl}
         formId={FORM_ID}
       />
-      <LPStickyCTABar ctaPhoneRaw={data.hero.ctaPhoneRaw} whatsappUrl={data.hero.whatsappUrl} />
     </>
   )
 }

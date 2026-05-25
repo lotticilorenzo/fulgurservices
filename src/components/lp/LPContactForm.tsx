@@ -61,11 +61,15 @@ export function LPContactForm({
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors, isSubmitting },
   } = useForm<FormData>({
     resolver: zodResolver(schema),
     defaultValues: { variant },
   })
+
+  const qualifierValue = watch('qualifier')
+  const isQualifierFilled = !!qualifierValue && qualifierValue !== ''
 
   const onSubmit = async (data: FormData) => {
     setServerError(null)
@@ -98,20 +102,39 @@ export function LPContactForm({
     }
   }
 
-  const inputClass = cn(
-    'w-full h-14 px-5 rounded-lg border border-[var(--br)] bg-white',
-    'font-body text-[var(--tx-1)] text-base placeholder:text-[var(--tx-3)]',
+  /* ── Floating-label input class ── */
+  const inputFloatClass = cn(
+    'w-full h-16 px-5 pt-6 pb-2 rounded-lg border border-[var(--br)] bg-white',
+    'font-body text-[var(--tx-1)] text-base',
     'focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2',
-    'transition-colors hover:border-[var(--br-h)]'
+    'transition-colors hover:border-[var(--br-h)]',
+    'peer'
   )
 
-  const labelClass = 'block font-body text-sm font-medium text-[var(--tx-1)] mb-1.5'
+  const floatLabelClass = cn(
+    'absolute left-5 top-5 font-body text-base text-[var(--tx-3)]',
+    'pointer-events-none transition-all duration-150 origin-top-left',
+    'peer-[:not(:placeholder-shown)]:top-2 peer-[:not(:placeholder-shown)]:text-[10px] peer-[:not(:placeholder-shown)]:text-[var(--accent-d)]',
+    'peer-focus:top-2 peer-focus:text-[10px] peer-focus:text-[var(--accent-d)]'
+  )
+
+  /* ── Select (no placeholder-shown trick — use watched value) ── */
+  const selectFloatClass = cn(
+    'w-full h-16 px-5 pt-6 pb-2 rounded-lg border border-[var(--br)] bg-white',
+    'font-body text-[var(--tx-1)] text-base',
+    'focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2',
+    'transition-colors hover:border-[var(--br-h)]',
+    'appearance-none bg-[image:url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'16\' height=\'16\' viewBox=\'0 0 24 24\'%3E%3Cpath fill=\'%237A9E97\' d=\'M7 10l5 5 5-5z\'/%3E%3C/svg%3E")] bg-no-repeat bg-[right_16px_center]'
+  )
+
   const microcopyClass = 'font-body text-[11px] text-[var(--tx-3)] mt-1'
   const errorClass = 'flex items-center gap-1.5 text-red-600 text-xs mt-1.5 font-body'
 
   return (
-    <div className="w-full max-w-xl mx-auto bg-[var(--bg-2)] border border-[var(--br)] rounded-2xl shadow-sm p-8 sm:p-10">
-      {/* Server error */}
+    <div
+      className="w-full max-w-xl mx-auto bg-[var(--bg-2)] border border-[var(--br)] rounded-2xl p-8 sm:p-10"
+      style={{ boxShadow: '0 4px 6px -1px rgba(42,140,122,0.06), 0 20px 40px -8px rgba(42,140,122,0.12)' }}
+    >
       {serverError && (
         <div
           role="alert"
@@ -136,7 +159,6 @@ export function LPContactForm({
         initial="hidden"
         animate="visible"
       >
-        {/* Hidden fields */}
         <input type="hidden" {...register('variant')} />
 
         {/* Honeypot */}
@@ -151,19 +173,21 @@ export function LPContactForm({
           />
         </div>
 
-        {/* Nome */}
+        {/* Nome — floating label */}
         <motion.div variants={fieldVariants}>
-          <label htmlFor="lp-nome" className={labelClass}>
-            Nome
-          </label>
-          <input
-            id="lp-nome"
-            type="text"
-            autoComplete="name"
-            placeholder="Mario"
-            className={cn(inputClass, errors.nome && 'border-red-400')}
-            {...register('nome')}
-          />
+          <div className="relative">
+            <input
+              id="lp-nome"
+              type="text"
+              autoComplete="name"
+              placeholder=" "
+              className={cn(inputFloatClass, errors.nome && 'border-red-400')}
+              {...register('nome')}
+            />
+            <label htmlFor="lp-nome" className={floatLabelClass}>
+              Nome
+            </label>
+          </div>
           <p className={microcopyClass}>{form.fieldMicrocopy.nome}</p>
           {errors.nome && (
             <p className={errorClass}>
@@ -173,20 +197,22 @@ export function LPContactForm({
           )}
         </motion.div>
 
-        {/* Telefono */}
+        {/* Telefono — floating label */}
         <motion.div variants={fieldVariants}>
-          <label htmlFor="lp-telefono" className={labelClass}>
-            Telefono
-          </label>
-          <input
-            id="lp-telefono"
-            type="tel"
-            inputMode="numeric"
-            autoComplete="tel"
-            placeholder="338 123 4567"
-            className={cn(inputClass, errors.telefono && 'border-red-400')}
-            {...register('telefono')}
-          />
+          <div className="relative">
+            <input
+              id="lp-telefono"
+              type="tel"
+              inputMode="numeric"
+              autoComplete="tel"
+              placeholder=" "
+              className={cn(inputFloatClass, errors.telefono && 'border-red-400')}
+              {...register('telefono')}
+            />
+            <label htmlFor="lp-telefono" className={floatLabelClass}>
+              Telefono
+            </label>
+          </div>
           <p className={microcopyClass}>{form.fieldMicrocopy.telefono}</p>
           {errors.telefono && (
             <p className={errorClass}>
@@ -196,20 +222,22 @@ export function LPContactForm({
           )}
         </motion.div>
 
-        {/* Email */}
+        {/* Email — floating label */}
         <motion.div variants={fieldVariants}>
-          <label htmlFor="lp-email" className={labelClass}>
-            Email
-          </label>
-          <input
-            id="lp-email"
-            type="email"
-            inputMode="email"
-            autoComplete="email"
-            placeholder="mario@esempio.it"
-            className={cn(inputClass, errors.email && 'border-red-400')}
-            {...register('email')}
-          />
+          <div className="relative">
+            <input
+              id="lp-email"
+              type="email"
+              inputMode="email"
+              autoComplete="email"
+              placeholder=" "
+              className={cn(inputFloatClass, errors.email && 'border-red-400')}
+              {...register('email')}
+            />
+            <label htmlFor="lp-email" className={floatLabelClass}>
+              Email
+            </label>
+          </div>
           <p className={microcopyClass}>{form.fieldMicrocopy.email}</p>
           {errors.email && (
             <p className={errorClass}>
@@ -219,30 +247,34 @@ export function LPContactForm({
           )}
         </motion.div>
 
-        {/* Qualifier */}
+        {/* Qualifier — floating label via watched value */}
         <motion.div variants={fieldVariants}>
-          <label htmlFor="lp-qualifier" className={labelClass}>
-            {form.qualifierLabel}
-          </label>
-          <select
-            id="lp-qualifier"
-            className={cn(
-              inputClass,
-              'appearance-none bg-[image:url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'16\' height=\'16\' viewBox=\'0 0 24 24\'%3E%3Cpath fill=\'%237A9E97\' d=\'M7 10l5 5 5-5z\'/%3E%3C/svg%3E")] bg-no-repeat bg-[right_16px_center]',
-              errors.qualifier && 'border-red-400'
-            )}
-            {...register('qualifier')}
-            defaultValue=""
-          >
-            <option value="" disabled>
-              Seleziona...
-            </option>
-            {form.qualifierOptions.map((opt) => (
-              <option key={opt.value} value={opt.value}>
-                {opt.label}
-              </option>
-            ))}
-          </select>
+          <div className="relative">
+            <select
+              id="lp-qualifier"
+              className={cn(selectFloatClass, errors.qualifier && 'border-red-400')}
+              {...register('qualifier')}
+              defaultValue=""
+            >
+              <option value="" disabled />
+              {form.qualifierOptions.map((opt) => (
+                <option key={opt.value} value={opt.value}>
+                  {opt.label}
+                </option>
+              ))}
+            </select>
+            <label
+              htmlFor="lp-qualifier"
+              className={cn(
+                'absolute left-5 pointer-events-none transition-all duration-150 origin-top-left font-body',
+                isQualifierFilled
+                  ? 'top-2 text-[10px] text-[var(--accent-d)]'
+                  : 'top-5 text-base text-[var(--tx-3)]'
+              )}
+            >
+              {form.qualifierLabel}
+            </label>
+          </div>
           <p className={microcopyClass}>{form.fieldMicrocopy.qualifier}</p>
           {errors.qualifier && (
             <p className={errorClass}>
@@ -348,7 +380,6 @@ export function LPContactForm({
         {ctaPhone}
       </a>
 
-      {/* Post-form reassurance */}
       <p className="font-body text-[11px] text-center text-[var(--tx-3)] mt-3">
         {form.postFormReassurance}
       </p>

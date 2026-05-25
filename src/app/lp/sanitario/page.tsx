@@ -9,7 +9,6 @@ import { LPObjections } from '@/components/lp/LPObjections'
 import { LPCredentials } from '@/components/lp/LPCredentials'
 import { LPSocialProof } from '@/components/lp/LPSocialProof'
 import { LPFinalCTA } from '@/components/lp/LPFinalCTA'
-import { LPStickyCTABar } from '@/components/lp/LPStickyCTABar'
 
 const data = LP_DATA.sanitario
 const FORM_ID = 'lp-form'
@@ -64,9 +63,13 @@ export default function SanitarioLPPage() {
       </section>
 
       <LPBenefits benefits={data.benefits} />
+      <div className="lp-section-divider" aria-hidden="true" />
       <LPProcess process={data.process} />
+      <div className="lp-section-divider" aria-hidden="true" />
       <LPCredentials />
+      <div className="lp-section-divider" aria-hidden="true" />
       <LPObjections objections={data.objections} />
+      <div className="lp-section-divider" aria-hidden="true" />
       <LPSocialProof testimonial={data.testimonial} />
       <LPFinalCTA
         finalCta={data.finalCta}
@@ -75,7 +78,6 @@ export default function SanitarioLPPage() {
         whatsappUrl={data.hero.whatsappUrl}
         formId={FORM_ID}
       />
-      <LPStickyCTABar ctaPhoneRaw={data.hero.ctaPhoneRaw} whatsappUrl={data.hero.whatsappUrl} />
     </>
   )
 }

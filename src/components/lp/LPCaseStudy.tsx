@@ -1,4 +1,7 @@
+'use client'
+
 import Image from 'next/image'
+import { BeforeAfterSlider } from '@/components/ui/BeforeAfterSlider'
 
 export function LPCaseStudy() {
   return (
@@ -17,36 +20,16 @@ export function LPCaseStudy() {
           Boutique, appartamenti, spazi commerciali. Consegnati puliti, nei tempi concordati.
         </p>
 
-        {/* Before / After */}
-        <div className="grid sm:grid-cols-2 gap-8 mb-10">
-          <div>
-            <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-[var(--accent-d)] mb-3">
-              PRIMA
-            </p>
-            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-md">
-              <Image
-                src="/images/case-studies/primapulizia.webp"
-                alt="Appartamento a Parma prima dell'intervento di pulizia fine cantiere — calce e polveri residue"
-                fill
-                sizes="(max-width: 640px) 100vw, 50vw"
-                className="object-cover"
-              />
-            </div>
-          </div>
-          <div>
-            <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-[var(--accent-d)] mb-3">
-              DOPO
-            </p>
-            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-md">
-              <Image
-                src="/images/case-studies/dopopulizia.webp"
-                alt="Appartamento a Parma dopo l'intervento di pulizia fine cantiere — ambienti pronti alla consegna"
-                fill
-                sizes="(max-width: 640px) 100vw, 50vw"
-                className="object-cover"
-              />
-            </div>
-          </div>
+        {/* Interactive before/after slider */}
+        <div className="mb-10">
+          <BeforeAfterSlider
+            beforeImage="/images/case-studies/primapulizia.webp"
+            afterImage="/images/case-studies/dopopulizia.webp"
+            beforeLabel="PRIMA"
+            afterLabel="DOPO"
+            aspectRatio="aspect-[4/3]"
+            className="shadow-lg"
+          />
         </div>
 
         {/* Gallery */}

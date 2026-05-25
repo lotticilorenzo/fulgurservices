@@ -1,9 +1,10 @@
 'use client'
 
 import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, useReducedMotion } from 'framer-motion'
 import type { LPData } from '@/lib/lp-data'
 import { lpContainer, lpItem } from '@/lib/motion'
+import { CounterUp } from '@/components/ui/CounterUp'
 
 interface LPProcessProps {
   process: LPData['process']
@@ -12,6 +13,7 @@ interface LPProcessProps {
 export function LPProcess({ process }: LPProcessProps) {
   const ref = useRef<HTMLElement>(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
+  const prefersReducedMotion = useReducedMotion()
 
   return (
     <section ref={ref} data-scroll-section className="py-24 sm:py-32 bg-[var(--bg-2)]">
@@ -38,13 +40,18 @@ export function LPProcess({ process }: LPProcessProps) {
           <motion.div variants={lpContainer} className="grid md:grid-cols-4 gap-8">
             {process.steps.map((step) => (
               <motion.div key={step.number} variants={lpItem}>
-                <p
+                <div
                   className="font-display font-black text-[var(--accent)] leading-none mb-6 select-none"
                   style={{ fontSize: '5rem', opacity: 0.3 }}
                   aria-hidden="true"
                 >
-                  {step.number}
-                </p>
+                  <CounterUp
+                    value={parseInt(step.number, 10)}
+                    prefix="0"
+                    duration={prefersReducedMotion ? 0 : 1200}
+                    className="font-display font-black"
+                  />
+                </div>
                 <h3 className="font-display text-2xl font-bold text-[var(--tx-1)] mb-3">
                   {step.title}
                 </h3>

@@ -2,10 +2,13 @@
 
 import { useRef } from 'react'
 import Image from 'next/image'
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, useReducedMotion, type Variants } from 'framer-motion'
 import { ArrowRight } from '@phosphor-icons/react'
 import type { LPData } from '@/lib/lp-data'
 import { lpContainer, lpItem } from '@/lib/motion'
+import { MagneticWrapper } from '@/components/ui/MagneticWrapper'
+
+const EASE = [0.16, 1, 0.3, 1] as const
 
 interface LPHeroProps {
   data: LPData
@@ -16,12 +19,21 @@ export function LPHero({ data, formId }: LPHeroProps) {
   const { hero } = data
   const ref = useRef<HTMLElement>(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
+  const prefersReducedMotion = useReducedMotion()
+
+  const wordContainerVariants: Variants = prefersReducedMotion
+    ? lpItem
+    : { hidden: {}, visible: { transition: { staggerChildren: 0.055, delayChildren: 0.35 } } }
+
+  const wordItemVariants: Variants = prefersReducedMotion
+    ? { hidden: { opacity: 1, y: 0 }, visible: { opacity: 1, y: 0 } }
+    : { hidden: { opacity: 0, y: 22 }, visible: { opacity: 1, y: 0, transition: { duration: 0.52, ease: EASE } } }
 
   return (
     <section
       ref={ref}
       data-scroll-section
-      className="relative bg-[var(--bg-2)] pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden"
+      className="relative lp-bg-cream pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden"
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <motion.div
@@ -41,13 +53,36 @@ export function LPHero({ data, formId }: LPHeroProps) {
 
             <div className="my-8" />
 
+            {/* H1 with word-by-word stagger — self-orchestrated, independent of outer stagger */}
             <motion.h1
-              variants={lpItem}
+              initial="hidden"
+              animate={inView ? 'visible' : 'hidden'}
+              variants={wordContainerVariants}
               className="font-display font-extrabold leading-[0.92] tracking-tight text-[var(--tx-1)]"
               style={{ fontSize: 'clamp(2.8rem, 7vw, 7rem)' }}
             >
-              <span className="block">{hero.headline1}</span>
-              <span className="block text-[var(--accent)]">{hero.headline2}</span>
+              <span className="block">
+                {hero.headline1.split(' ').map((word, i) => (
+                  <motion.span
+                    key={i}
+                    variants={wordItemVariants}
+                    className="inline-block mr-[0.22em] last:mr-0"
+                  >
+                    {word}
+                  </motion.span>
+                ))}
+              </span>
+              <span className="block text-[var(--accent)]">
+                {hero.headline2.split(' ').map((word, i) => (
+                  <motion.span
+                    key={i}
+                    variants={wordItemVariants}
+                    className="inline-block mr-[0.22em] last:mr-0"
+                  >
+                    {word}
+                  </motion.span>
+                ))}
+              </span>
             </motion.h1>
 
             <div className="my-10" />
@@ -62,18 +97,20 @@ export function LPHero({ data, formId }: LPHeroProps) {
             <div className="my-12" />
 
             <motion.div variants={lpItem} className="flex flex-col sm:flex-row items-start gap-4">
-              <a
-                href={`#${formId}`}
-                className="inline-flex items-center gap-3 px-8 py-4 bg-[var(--tx-1)] text-white font-body font-medium text-base hover:bg-[var(--accent-d)] transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-[var(--tx-1)] focus-visible:ring-offset-2 group"
-              >
-                {hero.ctaPrimary}
-                <ArrowRight
-                  size={18}
-                  weight="bold"
-                  aria-hidden="true"
-                  className="transition-transform duration-200 group-hover:translate-x-1"
-                />
-              </a>
+              <MagneticWrapper strength={25} isEnabled={!prefersReducedMotion}>
+                <a
+                  href={`#${formId}`}
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-[var(--tx-1)] text-white font-body font-medium text-base hover:bg-[var(--accent-d)] transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-[var(--tx-1)] focus-visible:ring-offset-2 group"
+                >
+                  {hero.ctaPrimary}
+                  <ArrowRight
+                    size={18}
+                    weight="bold"
+                    aria-hidden="true"
+                    className="transition-transform duration-200 group-hover:translate-x-1"
+                  />
+                </a>
+              </MagneticWrapper>
               <a
                 href={`tel:${hero.ctaPhoneRaw}`}
                 className="font-body text-base text-[var(--tx-2)] underline underline-offset-4 decoration-[var(--accent)] decoration-2 hover:text-[var(--tx-1)] transition-colors pt-1 sm:pt-4"
@@ -96,7 +133,6 @@ export function LPHero({ data, formId }: LPHeroProps) {
             variants={lpItem}
             className="lg:col-span-5 relative lg:translate-y-8"
           >
-            {/* Decorative text behind image */}
             <span
               className="absolute -bottom-6 -right-4 lg:-bottom-12 lg:-right-8 font-display font-black text-[var(--accent)] select-none pointer-events-none z-0 leading-none"
               style={{ fontSize: 'clamp(6rem, 18vw, 18rem)', opacity: 0.08 }}
@@ -105,7 +141,6 @@ export function LPHero({ data, formId }: LPHeroProps) {
               {hero.decorativeText}
             </span>
 
-            {/* Image */}
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl shadow-[var(--accent-d)]/10 z-10">
               <Image
                 src={hero.image.src}
