@@ -26,7 +26,7 @@ const credentials = [
 
 export function LPCredentials() {
   return (
-    <section className="py-16 sm:py-20 bg-[var(--bg-2)]">
+    <section data-scroll-section className="py-16 sm:py-20 bg-[var(--bg-2)]">
       <div className="mx-auto max-w-5xl px-5 sm:px-8">
         <p className="font-mono-fulgur text-[10px] uppercase tracking-[0.18em] text-[var(--accent)] mb-3">
           — CERTIFICAZIONI

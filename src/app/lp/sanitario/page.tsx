@@ -12,7 +12,7 @@ import { LPFinalCTA } from '@/components/lp/LPFinalCTA'
 import { LPStickyCTABar } from '@/components/lp/LPStickyCTABar'
 
 const data = LP_DATA.sanitario
-const FORM_ID = 'lp-form-sanitario'
+const FORM_ID = 'lp-form'
 
 export const metadata: Metadata = {
   title: data.meta.title,
@@ -36,48 +36,29 @@ export default function SanitarioLPPage() {
       <LPTrustBar items={data.trustBar} />
 
       {/* Form section */}
-      <section className="py-16 sm:py-20 bg-[var(--bg-2)]">
-        <div className="mx-auto max-w-5xl px-5 sm:px-8">
-          <div className="grid lg:grid-cols-2 gap-10 xl:gap-16 items-start">
-            {/* Left — context */}
-            <div>
-              <p className="font-mono-fulgur text-[10px] uppercase tracking-[0.18em] text-[var(--accent)] mb-4">
-                — SOPRALLUOGO GRATUITO
-              </p>
-              <h2
-                className="font-display font-extrabold text-[var(--tx-1)] tracking-tight mb-4"
-                style={{ fontSize: 'clamp(26px, 3.5vw, 40px)' }}
-              >
-                Valutiamo il tuo studio. Gratis.
-              </h2>
-              <p className="font-body text-[var(--tx-2)] text-base leading-relaxed mb-6">
-                Veniamo fuori orario visite, analizziamo gli ambienti e definiamo il protocollo HACCP
-                adatto alla tua struttura. Preventivo scritto entro 24h.
-              </p>
-              <ul className="space-y-2.5">
-                {[
-                  'Sopralluogo discreto, fuori orario pazienti',
-                  'Preventivo + protocollo HACCP personalizzato',
-                  'Prodotti PMC certificati Ministero della Salute',
-                  'Documentazione per ispezioni ASL inclusa',
-                ].map((item) => (
-                  <li key={item} className="flex items-center gap-2.5 font-body text-sm text-[var(--tx-2)]">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] flex-shrink-0" aria-hidden="true" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            {/* Right — form */}
-            <div>
-              <LPContactForm
-                variant={data.variant}
-                form={data.form}
-                ctaPhoneRaw={data.hero.ctaPhoneRaw}
-                ctaPhone={data.hero.ctaPhone}
-                formId={FORM_ID}
-              />
-            </div>
+      <section id="lp-form" data-scroll-section className="py-24 md:py-40 bg-[var(--bg)]">
+        <div className="mx-auto max-w-3xl px-5 sm:px-8 text-center">
+          <p className="font-mono text-xs uppercase tracking-[0.25em] text-[var(--accent-d)] mb-6">
+            02 — RICHIEDI SOPRALLUOGO
+          </p>
+          <h2
+            className="font-display font-extrabold text-[var(--tx-1)] tracking-tight mb-6"
+            style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}
+          >
+            Una valutazione in{' '}
+            <span className="text-[var(--accent)]">24 ore</span>
+            . Sopralluogo gratuito.
+          </h2>
+          <p className="font-body text-lg text-[var(--tx-2)] max-w-xl mx-auto">
+            Lascia i tuoi dati. Ti contattiamo per fissare un sopralluogo discreto, fuori orario visite.
+          </p>
+          <div className="mt-12">
+            <LPContactForm
+              variant={data.variant}
+              form={data.form}
+              ctaPhoneRaw={data.hero.ctaPhoneRaw}
+              ctaPhone={data.hero.ctaPhone}
+            />
           </div>
         </div>
       </section>

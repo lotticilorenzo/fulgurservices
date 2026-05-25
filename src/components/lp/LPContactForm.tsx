@@ -37,7 +37,6 @@ interface LPContactFormProps {
   form: LPData['form']
   ctaPhoneRaw: string
   ctaPhone: string
-  formId: string
 }
 
 const fieldVariants = {
@@ -55,7 +54,6 @@ export function LPContactForm({
   form,
   ctaPhoneRaw,
   ctaPhone,
-  formId,
 }: LPContactFormProps) {
   const router = useRouter()
   const [serverError, setServerError] = useState<string | null>(null)
@@ -101,8 +99,8 @@ export function LPContactForm({
   }
 
   const inputClass = cn(
-    'w-full h-12 px-4 rounded-xl border border-[var(--br)] bg-[var(--bg)]',
-    'font-body text-[var(--tx-1)] text-sm placeholder:text-[var(--tx-3)]',
+    'w-full h-14 px-5 rounded-lg border border-[var(--br)] bg-white',
+    'font-body text-[var(--tx-1)] text-base placeholder:text-[var(--tx-3)]',
     'focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2',
     'transition-colors hover:border-[var(--br-h)]'
   )
@@ -112,17 +110,7 @@ export function LPContactForm({
   const errorClass = 'flex items-center gap-1.5 text-red-600 text-xs mt-1.5 font-body'
 
   return (
-    <div
-      id={formId}
-      className="w-full bg-[var(--bg-card)] border border-[var(--br)] rounded-2xl shadow-[0_4px_24px_rgba(15,31,26,0.08)] p-6 sm:p-8"
-    >
-      <h2 className="font-display font-bold text-xl text-[var(--tx-1)] mb-1">
-        Richiedi il sopralluogo gratuito
-      </h2>
-      <p className="font-body text-sm text-[var(--tx-2)] mb-6">
-        Compila il form. Ti richiamiamo noi.
-      </p>
-
+    <div className="w-full max-w-xl mx-auto bg-[var(--bg-2)] border border-[var(--br)] rounded-2xl shadow-sm p-8 sm:p-10">
       {/* Server error */}
       {serverError && (
         <div
@@ -240,7 +228,7 @@ export function LPContactForm({
             id="lp-qualifier"
             className={cn(
               inputClass,
-              'appearance-none bg-[image:url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'16\' height=\'16\' viewBox=\'0 0 24 24\'%3E%3Cpath fill=\'%237A9E97\' d=\'M7 10l5 5 5-5z\'/%3E%3C/svg%3E")] bg-no-repeat bg-[right_12px_center]',
+              'appearance-none bg-[image:url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'16\' height=\'16\' viewBox=\'0 0 24 24\'%3E%3Cpath fill=\'%237A9E97\' d=\'M7 10l5 5 5-5z\'/%3E%3C/svg%3E")] bg-no-repeat bg-[right_16px_center]',
               errors.qualifier && 'border-red-400'
             )}
             {...register('qualifier')}
@@ -311,13 +299,12 @@ export function LPContactForm({
             disabled={isSubmitting}
             aria-busy={isSubmitting}
             className={cn(
-              'w-full h-14 rounded-full font-body font-medium text-base',
-              'bg-[var(--accent)] text-white',
-              'hover:bg-[var(--accent-d)] transition-colors',
+              'w-full py-4 rounded-lg font-body font-medium text-base',
+              'bg-[var(--accent-d)] text-white',
+              'hover:bg-[var(--tx-1)] transition-colors duration-300',
               'focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2',
               'disabled:opacity-70 disabled:cursor-not-allowed',
-              'flex items-center justify-center gap-2',
-              'shine-effect'
+              'flex items-center justify-center gap-2'
             )}
           >
             {isSubmitting ? (

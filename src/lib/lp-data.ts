@@ -19,6 +19,7 @@ export interface LPObjection {
 
 export interface TrustBadge {
   label: string
+  desc: string
   icon: 'Star' | 'ShieldCheck' | 'Clock' | 'Certificate' | 'TestTube'
 }
 
@@ -52,6 +53,8 @@ export interface LPData {
     ogImage: string
   }
   hero: {
+    eyebrow: string
+    decorativeText: string
     label: string
     headline1: string
     headline2: string
@@ -115,12 +118,14 @@ export const LP_DATA: Record<LPVariant, LPData> = {
       ogImage: '/images/gallery/fine-cantiere-boutique-zegna-parma-1.webp',
     },
     hero: {
+      eyebrow: '01 — PULIZIE EDILI · PARMA',
+      decorativeText: '48',
       label: 'Pulizie Edili · Parma',
-      headline1: 'Pulizie Fine Cantiere a Parma.',
-      headline2: 'Consegna in 48 Ore.',
+      headline1: 'Pulizie Fine Cantiere,',
+      headline2: 'consegna in 48 ore.',
       subheadline:
         'Rimuoviamo calce, cemento, silicone e polveri di levigatura. Sopralluogo gratuito a Parma e provincia, squadra in cantiere entro 48 ore lavorative.',
-      ctaPrimary: 'Richiedi Sopralluogo Gratuito',
+      ctaPrimary: 'Richiedi sopralluogo gratuito',
       ctaPhone: 'Chiama: 338 316 0091',
       ctaPhoneRaw: '+393383160091',
       whatsappUrl:
@@ -131,9 +136,21 @@ export const LP_DATA: Record<LPVariant, LPData> = {
       },
     },
     trustBar: [
-      { label: '★ 4.9 Google · 21 recensioni', icon: 'Star' },
-      { label: 'Polizza RC/RCO attiva', icon: 'ShieldCheck' },
-      { label: '35+ anni di esperienza', icon: 'Clock' },
+      {
+        label: 'Polizza RC/RCO attiva',
+        icon: 'ShieldCheck',
+        desc: 'Tutti i nostri operatori sono coperti da assicurazione professionale.',
+      },
+      {
+        label: '4.9 su Google · 21 recensioni',
+        icon: 'Star',
+        desc: '21 recensioni verificate di clienti reali a Parma e provincia.',
+      },
+      {
+        label: '35+ anni di esperienza',
+        icon: 'Clock',
+        desc: 'Esperienza ereditata da decenni di lavoro nel settore.',
+      },
     ],
     form: {
       qualifierLabel: 'Metri quadri del cantiere',
@@ -179,7 +196,7 @@ export const LP_DATA: Record<LPVariant, LPData> = {
       items: [
         {
           q: 'Avrò sorprese in fattura?',
-          a: 'No. Preventivo scritto entro 24h dal sopralluogo. Quello che leggi è quello che paghi.',
+          a: 'No. Preventivo scritto entro 24h dal sopralluogo. Quello che leggi è quello che paghi. Senza extra, senza voci nascoste.',
         },
         {
           q: 'E se rovinate qualcosa? Il cantiere è fragile.',
@@ -192,7 +209,6 @@ export const LP_DATA: Record<LPVariant, LPData> = {
       ],
     },
     // TODO: sostituire con review reale estratta da Google Business Profile (4.9★ · 21 reviews).
-    // L'advertiser può fornire screenshot/testo originale. Verificare conformità GDPR del nome utente.
     testimonial: {
       text: 'Hanno consegnato l\'appartamento pulito a un giorno dalla deadline del rogito. Squadra puntuale, zero sorprese in fattura. Da consigliare.',
       author: 'Privato · Quartiere Cittadella, Parma',
@@ -223,12 +239,14 @@ export const LP_DATA: Record<LPVariant, LPData> = {
       ogImage: '/images/servizi/pulizie-aziendali-parma.webp',
     },
     hero: {
+      eyebrow: '01 — SANIFICAZIONE SANITARIA · PARMA',
+      decorativeText: 'HACCP',
       label: 'Sanificazione Sanitaria · Parma',
-      headline1: 'Sanificazione Studi Medici e Ambulatori',
+      headline1: 'Sanificazione Studi Medici',
       headline2: 'a Parma.',
       subheadline:
         'Protocolli HACCP, Presidi Medico Chirurgici autorizzati Ministero della Salute, vapore a 180°. Sanifichiamo fuori orario visite, con schede prodotto sempre disponibili.',
-      ctaPrimary: 'Richiedi Sopralluogo Gratuito',
+      ctaPrimary: 'Richiedi sopralluogo gratuito',
       ctaPhone: 'Chiama: 338 316 0091',
       ctaPhoneRaw: '+393383160091',
       whatsappUrl:
@@ -239,9 +257,21 @@ export const LP_DATA: Record<LPVariant, LPData> = {
       },
     },
     trustBar: [
-      { label: 'Protocolli HACCP certificati', icon: 'Certificate' },
-      { label: 'Presidi Medico Chirurgici (Reg. UE 528/2012)', icon: 'TestTube' },
-      { label: '★ 4.9 Google · 21 recensioni', icon: 'Star' },
+      {
+        label: 'Protocolli HACCP certificati',
+        icon: 'Certificate',
+        desc: 'Protocolli personalizzati per ogni tipo di struttura sanitaria.',
+      },
+      {
+        label: 'Presidi Medico Chirurgici',
+        icon: 'TestTube',
+        desc: 'Prodotti autorizzati dal Ministero della Salute, schede tecniche su richiesta.',
+      },
+      {
+        label: '4.9 su Google · 21 recensioni',
+        icon: 'Star',
+        desc: '21 recensioni verificate di clienti reali a Parma e provincia.',
+      },
     ],
     form: {
       qualifierLabel: 'Tipo di struttura',
@@ -300,7 +330,6 @@ export const LP_DATA: Record<LPVariant, LPData> = {
       ],
     },
     // TODO: sostituire con review reale estratta da Google Business Profile (4.9★ · 21 reviews).
-    // L'advertiser può fornire screenshot/testo originale. Verificare conformità GDPR del nome utente.
     testimonial: {
       text: 'Lavorano in studio fuori orario visite, senza disturbare i pazienti. Forniscono le schede dei prodotti su richiesta. Discreti e seri.',
       author: 'Studio dentistico associato · Parma centro',

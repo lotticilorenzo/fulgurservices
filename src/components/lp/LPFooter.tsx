@@ -1,88 +1,121 @@
 export function LPFooter() {
   return (
-    <footer data-lp-footer="true" className="bg-[var(--bg-2)] border-t border-[var(--br)] py-10">
-      <div className="mx-auto max-w-5xl px-5 sm:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-          {/* Brand */}
-          <div>
-            <p className="font-display font-bold text-[var(--tx-1)] text-base mb-2">
-              Fulgur Service SRL
-            </p>
-            <p className="font-body text-xs text-[var(--tx-3)] leading-relaxed">
-              Impresa di pulizie professionali.
-              <br />
-              Parma e provincia.
-              <br />
-              P.IVA 03063010346
+    <footer data-lp-footer="true" className="bg-[var(--tx-1)] py-20 md:py-32">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        {/* Main grid */}
+        <div className="grid md:grid-cols-12 gap-12">
+          {/* Column A — brand (5/12) */}
+          <div className="md:col-span-5">
+            <div className="font-display font-bold text-2xl text-white tracking-tight mb-6">
+              Fulgur<span className="text-[var(--accent-l)]">.</span>
+            </div>
+            <h3 className="font-display text-3xl font-bold text-white leading-tight mb-4">
+              Pulizie professionali a Parma da decenni.
+            </h3>
+            <p className="font-body text-sm text-white/60 max-w-md leading-relaxed">
+              35 anni di esperienza nel settore, 21 recensioni verificate, polizza RC/RCO attiva.
+              Operatori formati, prodotti certificati, sopralluogo sempre gratuito.
             </p>
           </div>
 
-          {/* Links */}
-          <div>
-            <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-[var(--tx-3)] mb-3">
-              Informazioni
+          {/* Column B — links (3/12) */}
+          <div className="md:col-span-3">
+            <p className="font-mono uppercase tracking-[0.25em] text-xs text-white/40 mb-6">
+              ESPLORA IL SITO
             </p>
-            <ul className="space-y-1.5">
-              {[
-                { label: 'Privacy Policy', href: '/privacy' },
-                { label: 'Cookie Policy', href: '/cookie' },
-                { label: 'Sito ufficiale', href: 'https://www.fulgurservice.it' },
-              ].map(({ label, href }) => (
-                <li key={href}>
-                  <a
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-body text-xs text-[var(--tx-2)] hover:text-[var(--accent-d)] transition-colors"
-                  >
-                    {label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <nav aria-label="Link del sito">
+              <ul>
+                {[
+                  { href: '/servizi', label: 'Tutti i servizi' },
+                  { href: '/macchinari', label: 'Macchinari professionali' },
+                  { href: '/chi-siamo', label: 'Chi siamo' },
+                  { href: '/gallery', label: 'Gallery interventi' },
+                  { href: '/zone', label: 'Le 16 zone coperte' },
+                ].map((link) => (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      className="block py-2 font-body text-base text-white/80 hover:text-[var(--accent-l)] transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </div>
 
-          {/* Contacts */}
-          <div>
-            <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-[var(--tx-3)] mb-3">
-              Contatti
+          {/* Column C — contacts (4/12) */}
+          <div className="md:col-span-4">
+            <p className="font-mono uppercase tracking-[0.25em] text-xs text-white/40 mb-6">
+              CONTATTI
             </p>
-            <ul className="space-y-1.5">
-              <li>
+
+            <div className="space-y-6">
+              <div>
+                <p className="font-mono text-white/40 text-[10px] uppercase tracking-wider mb-1">
+                  TELEFONO
+                </p>
                 <a
                   href="tel:+393383160091"
-                  className="font-body text-xs text-[var(--tx-2)] hover:text-[var(--accent-d)] transition-colors"
+                  aria-label="Chiama Fulgur Service al 338 316 0091"
+                  className="font-display text-2xl text-white block hover:text-[var(--accent-l)] transition-colors"
                 >
                   338 316 0091
                 </a>
-              </li>
-              <li>
+              </div>
+
+              <div>
+                <p className="font-mono text-white/40 text-[10px] uppercase tracking-wider mb-1">
+                  EMAIL
+                </p>
                 <a
                   href="mailto:fulgurservice@gmail.com"
-                  className="font-body text-xs text-[var(--tx-2)] hover:text-[var(--accent-d)] transition-colors"
+                  className="font-body text-white/80 hover:text-[var(--accent-l)] transition-colors"
                 >
                   fulgurservice@gmail.com
                 </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.instagram.com/fulgurservicesrl_/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-body text-xs text-[var(--tx-2)] hover:text-[var(--accent-d)] transition-colors"
-                >
-                  Instagram
-                </a>
-              </li>
-            </ul>
+              </div>
+
+              <div>
+                <p className="font-mono text-white/40 text-[10px] uppercase tracking-wider mb-1">
+                  DOVE SIAMO
+                </p>
+                <p className="font-body text-white/80">Via Alfredo Veroni 22, 43122 Parma</p>
+              </div>
+
+              <a
+                href="https://wa.me/393383160091?text=Ciao%2C%20vorrei%20richiedere%20un%20sopralluogo%20gratuito"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block font-body text-sm text-[var(--accent-l)] hover:translate-x-1 transition-transform"
+              >
+                Scrivici su WhatsApp →
+              </a>
+            </div>
           </div>
         </div>
 
-        <div className="mt-8 pt-6 border-t border-[var(--br)]">
-          <p className="font-body text-[10px] text-center text-[var(--tx-3)]">
-            &copy; 2026 Fulgur Service SRL &middot; Via Alfredo Veroni 22, 43122 Parma &middot; Tutti i
-            diritti riservati
+        {/* Bottom row */}
+        <div className="mt-20 pt-10 border-t border-white/10 flex flex-wrap justify-between items-center gap-4">
+          <p className="font-mono text-xs text-white/40 uppercase tracking-wider">
+            © 2026 Fulgur Service SRL — P.IVA 03063010346 — REA PR-353051
           </p>
+          <div className="flex items-center gap-4">
+            <a
+              href="/privacy"
+              className="font-mono text-xs text-white/40 hover:text-white/80 transition-colors"
+            >
+              Privacy Policy
+            </a>
+            <span className="font-mono text-xs text-white/20" aria-hidden="true">·</span>
+            <a
+              href="/cookie-policy"
+              className="font-mono text-xs text-white/40 hover:text-white/80 transition-colors"
+            >
+              Cookie Policy
+            </a>
+          </div>
         </div>
       </div>
     </footer>

@@ -1,49 +1,61 @@
+'use client'
+
+import { useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
 import type { LPData } from '@/lib/lp-data'
+import { lpContainer, lpItem } from '@/lib/motion'
 
 interface LPProcessProps {
   process: LPData['process']
 }
 
 export function LPProcess({ process }: LPProcessProps) {
-  return (
-    <section className="py-16 sm:py-20 bg-[var(--bg)]">
-      <div className="mx-auto max-w-5xl px-5 sm:px-8">
-        <p className="font-mono-fulgur text-[10px] uppercase tracking-[0.18em] text-[var(--accent)] mb-3">
-          — PROCESSO
-        </p>
-        <h2
-          className="font-display font-bold text-[var(--tx-1)] tracking-tight mb-12"
-          style={{ fontSize: 'clamp(26px, 3.5vw, 42px)' }}
-        >
-          {process.title}
-        </h2>
+  const ref = useRef<HTMLElement>(null)
+  const inView = useInView(ref, { once: true, margin: '-80px' })
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {process.steps.map((step, i) => (
-            <div key={step.number} className="relative">
-              {/* Connector line (desktop) */}
-              {i < process.steps.length - 1 && (
-                <div
-                  className="hidden lg:block absolute top-5 left-[calc(100%_-_12px)] w-6 h-px bg-[var(--br-h)] z-0"
+  return (
+    <section ref={ref} data-scroll-section className="py-24 sm:py-32 bg-[var(--bg-2)]">
+      <div className="mx-auto max-w-6xl px-5 sm:px-8">
+        <motion.div
+          variants={lpContainer}
+          initial="hidden"
+          animate={inView ? 'visible' : 'hidden'}
+        >
+          <motion.p
+            variants={lpItem}
+            className="font-mono text-xs uppercase tracking-[0.25em] text-[var(--accent-d)] mb-6"
+          >
+            03 — COME LAVORIAMO
+          </motion.p>
+          <motion.h2
+            variants={lpItem}
+            className="font-display font-extrabold text-[var(--tx-1)] tracking-tight mb-20"
+            style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}
+          >
+            Dal sopralluogo alla consegna, in 4 passi.
+          </motion.h2>
+
+          <motion.div variants={lpContainer} className="grid md:grid-cols-4 gap-8">
+            {process.steps.map((step) => (
+              <motion.div key={step.number} variants={lpItem}>
+                <p
+                  className="font-display font-black text-[var(--accent)] leading-none mb-6 select-none"
+                  style={{ fontSize: '5rem', opacity: 0.3 }}
                   aria-hidden="true"
-                />
-              )}
-              <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="flex-shrink-0 w-10 h-10 rounded-full bg-[var(--accent-glow)] border border-[var(--br)] flex items-center justify-center font-mono-fulgur text-xs font-medium text-[var(--accent-d)]">
-                    {step.number}
-                  </span>
-                </div>
-                <h3 className="font-display font-bold text-[var(--tx-1)] text-lg mb-1">
+                >
+                  {step.number}
+                </p>
+                <h3 className="font-display text-2xl font-bold text-[var(--tx-1)] mb-3">
                   {step.title}
                 </h3>
-                <p className="font-body text-sm text-[var(--tx-2)] leading-relaxed">
+                <div className="w-12 h-px bg-[var(--accent)] mb-4" aria-hidden="true" />
+                <p className="font-body text-base text-[var(--tx-2)] leading-relaxed">
                   {step.desc}
                 </p>
-              </div>
-            </div>
-          ))}
-        </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   )

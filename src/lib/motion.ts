@@ -92,6 +92,17 @@ export const slideStep = {
   }),
 }
 
+/* ── LP landing page variants ── */
+export const lpContainer: Variants = {
+  hidden: {},
+  visible: { transition: { delayChildren: 0.1, staggerChildren: 0.08 } },
+}
+
+export const lpItem: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: EASE } },
+}
+
 /* ── Overlay fullscreen (mobile nav) ── */
 export const overlayVariants: Variants = {
   hidden:  { opacity: 0 },
