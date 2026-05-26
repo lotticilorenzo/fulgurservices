@@ -4,6 +4,7 @@ import { LPHero } from '@/components/lp/LPHero'
 import { LPTrustBar } from '@/components/lp/LPTrustBar'
 import { LPContactForm } from '@/components/lp/LPContactForm'
 import { LPProcess } from '@/components/lp/LPProcess'
+import { LPMidCTA } from '@/components/lp/LPMidCTA'
 import { LPObjections } from '@/components/lp/LPObjections'
 import { LPSocialProof } from '@/components/lp/LPSocialProof'
 import { LPFinalCTA } from '@/components/lp/LPFinalCTA'
@@ -26,13 +27,31 @@ export const metadata: Metadata = {
   twitter: { card: 'summary_large_image' },
 }
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: data.objections.items.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+}
+
 export default function UfficiLPPage() {
   return (
     <>
-      <LPHero data={data} formId={FORM_ID} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      <LPHero data={data} formId={FORM_ID} variant="uffici" />
       <LPTrustBar items={data.trustBar} />
 
-      {/* Form section */}
+      {/* Form section — 4-step */}
       <section id={FORM_ID} data-scroll-section className="py-24 md:py-40 bg-[var(--bg)]">
         <div className="mx-auto max-w-3xl px-5 sm:px-8 text-center">
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-[var(--accent-d)] mb-6">
@@ -57,6 +76,7 @@ export default function UfficiLPPage() {
       </section>
 
       <LPProcess process={data.process} />
+      <LPMidCTA formId={FORM_ID} phoneRaw={data.hero.ctaPhoneRaw} />
       <div className="lp-section-divider" aria-hidden="true" />
       <LPObjections objections={data.objections} />
       <div className="lp-section-divider" aria-hidden="true" />

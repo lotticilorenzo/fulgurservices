@@ -3,18 +3,20 @@
 import { useRef } from 'react'
 import Image from 'next/image'
 import { motion, useInView, useReducedMotion, type Variants } from 'framer-motion'
-import { ArrowRight } from '@phosphor-icons/react'
+import { ArrowRight, Star } from '@phosphor-icons/react'
 import type { LPData } from '@/lib/lp-data'
 import { lpContainer, lpItem } from '@/lib/motion'
+import { LPHeroForm } from '@/components/lp/LPHeroForm'
 
 const EASE = [0.16, 1, 0.3, 1] as const
 
 interface LPHeroProps {
   data: LPData
   formId: string
+  variant: 'uffici' | 'alimentare'
 }
 
-export function LPHero({ data, formId }: LPHeroProps) {
+export function LPHero({ data, formId, variant }: LPHeroProps) {
   const { hero } = data
   const ref = useRef<HTMLElement>(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
@@ -32,34 +34,72 @@ export function LPHero({ data, formId }: LPHeroProps) {
     <section
       ref={ref}
       data-scroll-section
-      className="relative lp-bg-cream pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden"
+      className="relative min-h-[90dvh] flex items-center pt-32 pb-20 md:pt-36 md:pb-24 overflow-hidden"
     >
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <motion.div
-          variants={lpContainer}
-          initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
-          className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center"
-        >
-          {/* Left — text content (7/12) */}
-          <div className="lg:col-span-7">
+      {/* Background image — LCP element: always visible, no motion wrapper */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={hero.heroImage}
+          alt={hero.heroImageAlt}
+          fill
+          priority
+          fetchPriority="high"
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+        {/* Dark left → lighter right so form card "lifts" visually */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(to right, rgba(15,31,26,0.92) 0%, rgba(15,31,26,0.70) 50%, rgba(15,31,26,0.30) 100%)',
+          }}
+          aria-hidden="true"
+        />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8 w-full">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+
+          {/* Left — text on dark overlay */}
+          <motion.div
+            variants={lpContainer}
+            initial="hidden"
+            animate={inView ? 'visible' : 'hidden'}
+            className="lg:col-span-6"
+          >
             <motion.p
               variants={lpItem}
-              className="font-mono text-xs uppercase tracking-[0.25em] text-[var(--accent-d)]"
+              className="font-mono text-xs uppercase tracking-[0.25em] text-[var(--accent-l)]"
             >
               {hero.eyebrow}
             </motion.p>
 
-            <div className="my-8" />
+            {/* Google stars — FIX 2 */}
+            <motion.div
+              variants={lpItem}
+              className="flex items-center gap-2 mt-5 mb-6"
+              aria-label="Valutazione media 4.9 su 5 stelle su Google"
+            >
+              <div className="flex" aria-hidden="true">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <Star key={i} weight="fill" size={16} className="text-yellow-400" />
+                ))}
+              </div>
+              <span className="text-white/90 text-sm font-medium">4.9 su Google</span>
+              <span className="text-white/40 text-sm" aria-hidden="true">·</span>
+              <span className="text-white/70 text-sm">21 recensioni</span>
+            </motion.div>
 
             <motion.h1
               initial="hidden"
               animate={inView ? 'visible' : 'hidden'}
               variants={wordContainerVariants}
-              className="font-display font-extrabold leading-[0.92] tracking-tight text-[var(--tx-1)]"
-              style={{ fontSize: 'clamp(2.8rem, 7vw, 7rem)' }}
+              className="font-display font-extrabold leading-[0.92] tracking-tight"
+              style={{ fontSize: 'clamp(2.6rem, 6vw, 5.5rem)' }}
             >
-              <span className="block">
+              <span className="block text-white">
                 {hero.headlinePrimary.split(' ').map((word, i) => (
                   <motion.span
                     key={i}
@@ -83,70 +123,54 @@ export function LPHero({ data, formId }: LPHeroProps) {
               </span>
             </motion.h1>
 
-            <div className="my-10" />
-
             <motion.p
               variants={lpItem}
-              className="font-body text-lg md:text-xl text-[var(--tx-2)] leading-relaxed max-w-xl"
+              className="font-body text-base md:text-lg text-white/80 leading-relaxed max-w-xl mt-8"
             >
               {hero.subheadline}
             </motion.p>
 
-            <div className="my-12" />
-
-            <motion.div variants={lpItem} className="flex flex-col sm:flex-row items-start gap-4">
-                <a
-                  href={`#${formId}`}
-                  className="inline-flex items-center gap-3 px-8 py-4 bg-[var(--tx-1)] text-white font-body font-medium text-base hover:bg-[var(--accent-d)] transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-[var(--tx-1)] focus-visible:ring-offset-2 group"
-                >
-                  {hero.ctaPrimary}
-                  <ArrowRight
-                    size={18}
-                    weight="bold"
-                    aria-hidden="true"
-                    className="transition-transform duration-200 group-hover:translate-x-1"
-                  />
-                </a>
+            {/* Mobile CTA — scrolls to 4-step form. Hidden on desktop (form is right there) */}
+            <motion.div
+              variants={lpItem}
+              className="mt-10 flex flex-col sm:flex-row items-start gap-4 lg:hidden"
+            >
+              <a
+                href={`#${formId}`}
+                className="inline-flex items-center gap-3 px-8 py-4 bg-white text-[var(--tx-1)] font-body font-medium text-base hover:bg-[var(--accent)] hover:text-white transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent group"
+              >
+                {hero.ctaPrimary}
+                <ArrowRight
+                  size={18}
+                  weight="bold"
+                  aria-hidden="true"
+                  className="transition-transform duration-200 group-hover:translate-x-1"
+                />
+              </a>
               <a
                 href={`tel:${hero.ctaPhoneRaw}`}
-                className="font-body text-base text-[var(--tx-2)] underline underline-offset-4 decoration-[var(--accent)] decoration-2 hover:text-[var(--tx-1)] transition-colors pt-1 sm:pt-4"
+                className="font-body text-base text-white/70 underline underline-offset-4 decoration-[var(--accent)] decoration-2 hover:text-white transition-colors pt-1 sm:pt-4"
               >
                 {hero.ctaSecondary}
               </a>
             </motion.div>
 
-            <div className="my-16" />
-
-            <motion.div variants={lpItem} className="border-t border-[var(--br)] pt-8">
-              <p className="font-mono text-[11px] uppercase tracking-wider text-[var(--tx-3)]">
+            <motion.div
+              variants={lpItem}
+              className="border-t border-white/20 pt-6 mt-10"
+            >
+              <p className="font-mono text-[11px] uppercase tracking-wider text-white/50">
                 {hero.trustInline}
               </p>
             </motion.div>
+          </motion.div>
+
+          {/* Right — form card, desktop only */}
+          <div className="lg:col-span-6 hidden lg:block">
+            <LPHeroForm variant={variant} />
           </div>
 
-          {/* Right — image (5/12) — plain div so LCP element is never opacity:0 */}
-          <div className="lg:col-span-5 relative lg:translate-y-8">
-            <span
-              className="absolute -bottom-6 -right-4 lg:-bottom-12 lg:-right-8 font-display font-black text-[var(--accent)] select-none pointer-events-none z-0 leading-none"
-              style={{ fontSize: 'clamp(6rem, 18vw, 18rem)', opacity: 0.08 }}
-              aria-hidden="true"
-            >
-              {hero.decorativeText}
-            </span>
-
-            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl shadow-[var(--accent-d)]/10 z-10">
-              <Image
-                src={hero.heroImage}
-                alt={hero.heroImageAlt}
-                fill
-                priority
-                fetchPriority="high"
-                sizes="(max-width: 1024px) 90vw, 40vw"
-                className="object-cover"
-              />
-            </div>
-          </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

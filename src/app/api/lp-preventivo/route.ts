@@ -9,7 +9,7 @@ const ApiSchema = z.object({
   variant: z.enum(['uffici', 'alimentare']),
   nome: z.string().min(2).max(100),
   telefono: z.string().regex(/^[+]?[\d\s]{8,15}$/),
-  email: z.string().email('Inserisci un indirizzo email valido'),
+  email: z.string().email('Inserisci un indirizzo email valido').optional(),
   qualifier: z.string().min(1).max(100),
   gdpr: z.literal(true, { message: 'Spunta la casella per procedere' }),
   utm: z
@@ -70,6 +70,7 @@ async function sendAdminEmail(data: ParsedData, timestamp: string): Promise<void
 }
 
 async function sendAutoreply(data: ParsedData): Promise<void> {
+  if (!data.email) return
   const resend = getResendClient()
   const from = process.env.RESEND_FROM_EMAIL ?? 'onboarding@resend.dev'
 
@@ -105,7 +106,7 @@ export async function POST(req: Request) {
           variant: data.variant,
           nome: data.nome,
           telefono: data.telefono,
-          email: data.email,
+          email: data.email ?? '',
           qualifier: data.qualifier,
           utm: data.utm,
           userAgent: data.userAgent,

@@ -178,3 +178,25 @@ La sticky bar compare dopo uno scroll di `window.innerHeight * 0.6` (60% della v
 ### LPFooter nascosto
 
 Se il footer LP non appare, verifica che `globals.css` contenga `footer:not([data-lp-footer])` e non solo `footer` nella regola LP mode. Controlla anche che `LPFooter` abbia `data-lp-footer="true"` sull'elemento `<footer>`.
+
+---
+
+## 6. Microsoft Clarity (gratuito — consigliato)
+
+1. Vai su [clarity.microsoft.com](https://clarity.microsoft.com) → crea account → nuovo progetto "Fulgur LP"
+2. Copia il Clarity ID (es: `abc123def`)
+3. In GTM → New Tag → Custom HTML:
+   ```html
+   <script type="text/javascript">
+     (function(c,l,a,r,i,t,y){
+       c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+       t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+     })(window,document,"clarity","script","abc123def");
+   </script>
+   ```
+4. Trigger: All Pages
+5. Publish container GTM
+6. Dopo 48h avrai dati su dove cliccano e dove abbandonano il form
+
+Usalo per decidere il prossimo A/B test.
