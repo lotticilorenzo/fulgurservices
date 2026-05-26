@@ -3,6 +3,7 @@ import React from 'react'
 import { WhatsappLogo } from '@phosphor-icons/react/dist/ssr'
 import { LPNavbar } from '@/components/lp/LPNavbar'
 import { LPScrollProgress } from '@/components/lp/LPScrollProgress'
+import { CustomCursor } from '@/components/ui/CustomCursor'
 
 export const metadata: Metadata = {
   robots: { index: false, follow: false },
@@ -21,6 +22,7 @@ export default function LPLayout({ children }: { children: React.ReactNode }) {
           __html: `try{document.documentElement.setAttribute('data-lp-mode','true')}catch(e){}`,
         }}
       />
+      <CustomCursor />
       <LPScrollProgress />
       <LPNavbar />
       <main>
