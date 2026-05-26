@@ -13,10 +13,6 @@ const FAQS = [
     a: 'Assolutamente sì. Veniamo presso la tua sede senza alcun impegno per valutare lo stato degli ambienti, ascoltare le tue necessità e fornirti un preventivo dettagliato entro 48 ore. Zero spese, zero impegni.',
   },
   {
-    q: 'Siete assicurati contro eventuali danni?',
-    a: 'Certamente. Fulgur Service dispone di una copertura assicurativa RCT (Responsabilità Civile verso Terzi) completa fino a €2.000.000 per tutelare i nostri clienti e i nostri operatori durante ogni tipo di intervento.',
-  },
-  {
     q: 'Quali prodotti utilizzate? Sono eco-sostenibili?',
     a: 'Utilizziamo esclusivamente prodotti professionali certificati. Ove possibile, prediligiamo soluzioni eco-sostenibili con certificazione Ecolabel per garantire ambienti salubri e ridurre l\'impatto ambientale senza mai compromettere la qualità del risultato.',
   },

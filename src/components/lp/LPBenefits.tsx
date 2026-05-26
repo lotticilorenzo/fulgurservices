@@ -3,11 +3,15 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { CheckCircle } from '@phosphor-icons/react'
-import type { LPData } from '@/lib/lp-data'
 import { lpContainer, lpItem } from '@/lib/motion'
 
+interface BenefitsData {
+  title: string
+  items: string[]
+}
+
 interface LPBenefitsProps {
-  benefits: LPData['benefits']
+  benefits: BenefitsData
 }
 
 export function LPBenefits({ benefits }: LPBenefitsProps) {

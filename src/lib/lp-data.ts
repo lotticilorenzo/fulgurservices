@@ -1,33 +1,6 @@
 // lib/lp-data.ts — Single source of truth for PPC landing page content
 export type LPVariant = 'uffici' | 'alimentare'
 
-export interface LPQualifierOption {
-  value: string
-  label: string
-}
-
-export interface LPStep {
-  number: string
-  title: string
-  desc: string
-}
-
-export interface LPObjection {
-  q: string
-  a: string
-}
-
-export interface TrustBadge {
-  label: string
-  desc: string
-  icon: 'Star' | 'ShieldCheck' | 'Clock' | 'Certificate' | 'TestTube'
-}
-
-export interface LPTestimonial {
-  text: string
-  author: string
-}
-
 export interface LeadPayload {
   variant: 'uffici' | 'alimentare'
   nome: string
@@ -54,24 +27,33 @@ export interface LPData {
   }
   hero: {
     eyebrow: string
+    headlinePrimary: string
+    headlineAccent: string
     decorativeText: string
-    label: string
-    headline1: string
-    headline2: string
     subheadline: string
+    heroImage: string
+    heroImageAlt: string
     ctaPrimary: string
-    ctaPhone: string
+    ctaSecondary: string
     ctaPhoneRaw: string
     whatsappUrl: string
-    image: {
-      src: string
-      alt: string
-    }
+    trustInline: string
   }
-  trustBar: TrustBadge[]
+  trustBar: Array<{
+    icon: 'Users' | 'Clock' | 'Receipt' | 'Certificate' | 'TestTube' | 'Star' | 'ShieldCheck'
+    title: string
+    desc: string
+  }>
   form: {
-    qualifierLabel: string
-    qualifierOptions: LPQualifierOption[]
+    eyebrow: string
+    h2: string
+    subhead: string
+    fields: {
+      qualifier: {
+        label: string
+        options: string[]
+      }
+    }
     fieldMicrocopy: {
       nome: string
       telefono: string
@@ -79,31 +61,48 @@ export interface LPData {
       qualifier: string
     }
     urgencyMicrocopy: string
-    submitMicrocopy: string
     postFormReassurance: string
-  }
-  benefits: {
-    title: string
-    items: string[]
+    submitLabel: string
+    submitLoadingLabel: string
   }
   process: {
-    title: string
-    steps: LPStep[]
+    eyebrow: string
+    h2: string
+    steps: Array<{ num: number; title: string; desc: string }>
   }
   objections: {
-    title: string
-    items: LPObjection[]
+    eyebrow: string
+    h2: string
+    items: Array<{ num: string; question: string; answer: string }>
   }
-  testimonial: LPTestimonial
+  credentials?: {
+    eyebrow: string
+    h2: string
+    items: string[]
+  }
+  caseStudy?: {
+    eyebrow: string
+    h2: string
+    desc: string
+    imageMain: string
+    imageMainAlt: string
+    imageSecondary: string
+    imageSecondaryAlt: string
+  }
   finalCta: {
-    headline: string
-    sub: string
+    h2: string
+    desc: string
+    cta: string
   }
-  grazie: {
-    headline: string
-    sub: string
-    nextSteps: string[]
-    eventLabel: string
+  socialProof: {
+    eyebrow: string
+    text: string
+    author: string
+  }
+  thankYou: {
+    h1: string
+    steps: string[]
+    ctaWhatsAppText: string
   }
 }
 
@@ -111,242 +110,273 @@ export const LP_DATA: Record<LPVariant, LPData> = {
   uffici: {
     variant: 'uffici',
     meta: {
-      title: 'Pulizie Fine Cantiere a Parma | Consegna in 48 Ore | Fulgur Service',
+      title: 'Pulizie Uffici a Parma | Fulgur Service',
       description:
-        'Rimuoviamo calce, cemento, silicone e polveri di levigatura. Sopralluogo gratuito a Parma e provincia, squadra in cantiere entro 48 ore lavorative.',
+        'Pulizie professionali per uffici a Parma. Operatori sempre uguali, orari extra-lavoro, fattura regolare. Sopralluogo gratuito in 24h.',
       canonical: 'https://www.fulgurservice.it/lp/pulizie-uffici',
-      ogImage: '/images/gallery/fine-cantiere-boutique-zegna-parma-1.webp',
+      ogImage: '/images/servizi/pulizie-uffici-aziendali-parma.webp',
     },
     hero: {
-      eyebrow: '01 — PULIZIE EDILI · PARMA',
-      decorativeText: '48',
-      label: 'Pulizie Edili · Parma',
-      headline1: 'Pulizie Fine Cantiere,',
-      headline2: 'consegna in 48 ore.',
+      eyebrow: '01 — PULIZIE AZIENDALI · PARMA',
+      headlinePrimary: 'Pulizie Uffici a Parma,',
+      headlineAccent: 'sempre la stessa squadra.',
+      decorativeText: 'B2B',
       subheadline:
-        'Rimuoviamo calce, cemento, silicone e polveri di levigatura. Sopralluogo gratuito a Parma e provincia, squadra in cantiere entro 48 ore lavorative.',
+        "Pulizie ricorrenti per uffici, studi professionali e sedi aziendali. Operatori formati, orari fuori dall'attività, fattura regolare e referente unico. Sopralluogo gratuito a Parma e provincia.",
+      heroImage: '/images/servizi/pulizie-uffici-aziendali-parma.webp',
+      heroImageAlt: 'Pulizie professionali uffici aziendali a Parma',
       ctaPrimary: 'Richiedi sopralluogo gratuito',
-      ctaPhone: 'Chiama: 338 316 0091',
+      ctaSecondary: 'oppure chiama 338 316 0091',
       ctaPhoneRaw: '+393383160091',
       whatsappUrl:
-        'https://wa.me/393383160091?text=Ciao%2C%20ho%20visto%20la%20vostra%20landing%20%5BUFFICI%5D',
-      image: {
-        src: '/images/gallery/fine-cantiere-boutique-zegna-parma-1.webp',
-        alt: 'Pulizia fine cantiere boutique a Parma — Fulgur Service rimuove calce e residui edilizi professionalmente',
-      },
+        'https://wa.me/393383160091?text=Ciao%2C%20ho%20appena%20inviato%20la%20richiesta%20per%20le%20pulizie%20del%20mio%20ufficio',
+      trustInline:
+        '★ 4.9 Google · 21 recensioni · 35+ anni di esperienza · Partner KilometroVerde',
     },
     trustBar: [
       {
-        label: 'Polizza RC/RCO attiva',
-        icon: 'ShieldCheck',
-        desc: 'Tutti i nostri operatori sono coperti da assicurazione professionale.',
+        icon: 'Users',
+        title: 'SQUADRA FISSA',
+        desc: 'Gli stessi operatori in ufficio ogni intervento. Niente turnover, conoscono la tua sede e i tuoi spazi.',
       },
       {
-        label: '4.9 su Google · 21 recensioni',
-        icon: 'Star',
-        desc: '21 recensioni verificate di clienti reali a Parma e provincia.',
-      },
-      {
-        label: '35+ anni di esperienza',
         icon: 'Clock',
-        desc: 'Esperienza ereditata da decenni di lavoro nel settore.',
+        title: 'ORARI FUORI ATTIVITÀ',
+        desc: "Interveniamo prima dell'apertura o dopo la chiusura. La produttività dei tuoi dipendenti non si ferma.",
+      },
+      {
+        icon: 'Receipt',
+        title: 'FATTURA REGOLARE',
+        desc: 'Contratto trasparente, fattura mensile elettronica, referente unico per ogni dubbio o richiesta.',
       },
     ],
     form: {
-      qualifierLabel: 'Metri quadri del cantiere',
-      qualifierOptions: [
-        { value: '~50mq', label: 'Circa 50 m²' },
-        { value: '~100mq', label: 'Circa 100 m²' },
-        { value: '~150mq', label: 'Circa 150 m²' },
-        { value: '200mq+', label: '200 m² o più' },
-      ],
+      eyebrow: '02 — RICHIEDI SOPRALLUOGO',
+      h2: 'Una telefonata in 24 ore. Sopralluogo gratuito.',
+      subhead: 'Lascia i tuoi dati. Ti contattiamo per fissare un sopralluogo nella tua sede.',
+      fields: {
+        qualifier: {
+          label: 'Tipo di sede',
+          options: [
+            'Ufficio piccolo (fino a 10 dipendenti)',
+            'Ufficio medio (10–30 dipendenti)',
+            'Ufficio grande (oltre 30 dipendenti)',
+            'Studio professionale',
+            'Sede multipla',
+            'Altro',
+          ],
+        },
+      },
       fieldMicrocopy: {
-        nome: 'Solo il nome, non serve cognome',
+        nome: 'Solo nome e cognome',
         telefono: 'Solo per richiamarti. Mai per spam, mai per terzi.',
         email: 'Per ricevere conferma della tua richiesta',
-        qualifier: 'Stima approssimativa, anche al ribasso',
+        qualifier: 'Ci aiuta a stimare costi e frequenze giuste',
       },
-      urgencyMicrocopy: 'Settimana piena di consegne? Ti richiamiamo entro 4 ore lavorative.',
-      submitMicrocopy: 'Ti richiamiamo entro 24 ore lavorative. Nessun impegno.',
+      urgencyMicrocopy: 'Settimana piena? Ti richiamiamo entro 4 ore lavorative.',
       postFormReassurance: 'Sopralluogo gratuito · Nessun impegno · Risposta in 24h lavorative',
-    },
-    benefits: {
-      title: 'Cosa rimuoviamo',
-      items: [
-        'Calce',
-        'Cemento',
-        'Stucco',
-        'Silicone',
-        'Polveri di levigatura',
-        'Schizzi di pittura',
-        'Adesivi',
-      ],
+      submitLabel: 'Richiedi sopralluogo gratuito',
+      submitLoadingLabel: 'Stiamo inviando…',
     },
     process: {
-      title: 'Come funziona',
+      eyebrow: '03 — COME LAVORIAMO',
+      h2: 'Dal primo contatto al contratto, in 4 passi.',
       steps: [
-        { number: '01', title: 'Ti richiamiamo', desc: 'Risposta entro 24 ore lavorative.' },
-        { number: '02', title: 'Veniamo in cantiere', desc: 'Sopralluogo gratuito, anche entro pochi giorni.' },
-        { number: '03', title: 'Ricevi il preventivo', desc: 'Per iscritto, dettagliato, trasparente.' },
-        { number: '04', title: 'Interveniamo in 48h', desc: 'Squadra dedicata, immobile pronto alla consegna.' },
+        { num: 1, title: 'Ti contattiamo', desc: 'Risposta entro 24 ore lavorative dal momento della tua richiesta.' },
+        { num: 2, title: 'Veniamo in ufficio', desc: 'Sopralluogo gratuito nei tuoi spazi per capire metratura, frequenze e priorità.' },
+        { num: 3, title: 'Ricevi il preventivo', desc: 'Per iscritto, dettagliato per voce, con frequenze e costi mensili trasparenti.' },
+        { num: 4, title: 'Partiamo subito', desc: 'Squadra dedicata, orari concordati, primo intervento entro pochi giorni.' },
       ],
     },
     objections: {
-      title: 'Risposte concrete',
+      eyebrow: '04 — RISPOSTE CONCRETE',
+      h2: 'Quello che ti chiedi prima di affidarci la sede.',
       items: [
         {
-          q: 'Avrò sorprese in fattura?',
-          a: 'No. Preventivo scritto entro 24h dal sopralluogo. Quello che leggi è quello che paghi. Senza extra, senza voci nascoste.',
+          num: '01',
+          question: 'Avrò sempre gli stessi operatori?',
+          answer:
+            'Sì. La nostra logica è opposta al turnover delle grandi imprese: la stessa squadra conosce la tua sede, sa dove tieni cosa, rispetta il tuo modo di lavorare.',
         },
         {
-          q: 'E se rovinate qualcosa? Il cantiere è fragile.',
-          a: 'Polizza RC/RCO attiva su tutti i nostri operatori. Eventuali danni accidentali sono coperti.',
+          num: '02',
+          question: 'E i costi? Mi aspetto sorprese.',
+          answer:
+            'Preventivo scritto, voce per voce. Il prezzo include prodotti, materiali di consumo e attrezzatura. Quello che firmi è quello che paghi.',
         },
         {
-          q: 'Lo sporco di cantiere è particolare.',
-          a: 'Macchinari professionali Klindex e Nilfisk. Aspiratori industriali con filtri HEPA. Trent\'anni di pratica fra calce e silicone.',
+          num: '03',
+          question: 'Le pulizie interferiscono con il lavoro?',
+          answer:
+            "No. Lavoriamo prima delle 8 o dopo le 18, weekend se preferisci. I tuoi dipendenti entrano la mattina e trovano un ambiente pronto.",
         },
       ],
-    },
-    // TODO: sostituire con review reale estratta da Google Business Profile (4.9★ · 21 reviews).
-    testimonial: {
-      text: 'Hanno consegnato l\'appartamento pulito a un giorno dalla deadline del rogito. Squadra puntuale, zero sorprese in fattura. Da consigliare.',
-      author: 'Privato · Quartiere Cittadella, Parma',
     },
     finalCta: {
-      headline: 'Quanto tempo manca alla tua consegna?',
-      sub: 'Chiamaci ora. Sopralluogo gratuito, preventivo in 24h.',
+      h2: 'Una sede pulita vale ogni euro che spendi.',
+      desc: 'Un sopralluogo gratuito ti dice quanto costa davvero. Senza impegno, senza pressioni.',
+      cta: 'Richiedi sopralluogo gratuito',
     },
-    grazie: {
-      headline: 'Richiesta ricevuta.',
-      sub: 'Ti richiamiamo entro 24 ore lavorative.',
-      nextSteps: [
-        'Ti richiamiamo entro 24 ore lavorative',
-        'Concordiamo il sopralluogo gratuito in cantiere',
-        'Ricevi il preventivo scritto entro 24h dal sopralluogo',
+    socialProof: {
+      eyebrow: 'COSA DICONO DI NOI',
+      text: 'Hanno preso in gestione la pulizia dei nostri uffici sei mesi fa. Stessa squadra ogni settimana, orario fisso fuori attività, fattura puntuale. Zero pensieri.',
+      author: 'Studio commercialisti — Centro storico, Parma',
+    },
+    thankYou: {
+      h1: 'Abbiamo ricevuto la tua richiesta.',
+      steps: [
+        'Ti contattiamo entro 4 ore lavorative al numero che ci hai lasciato',
+        'Fissiamo un sopralluogo gratuito nella tua sede',
+        'Ricevi un preventivo dettagliato entro 24 ore dal sopralluogo',
       ],
-      eventLabel: 'lp-uffici',
+      ctaWhatsAppText: 'Ciao, ho appena inviato la richiesta per le pulizie del mio ufficio',
     },
   },
 
   alimentare: {
     variant: 'alimentare',
     meta: {
-      title: 'Sanificazione Studi Medici Parma | Protocolli HACCP | Fulgur Service',
+      title: 'Pulizie Settore Alimentare a Parma | Fulgur Service',
       description:
-        'Protocolli HACCP, Presidi Medico Chirurgici autorizzati Ministero della Salute, vapore a 180°. Sanifichiamo fuori orario visite, con schede prodotto sempre disponibili.',
+        'Sanificazione HACCP per ristoranti, bar, pasticcerie a Parma. Prodotti food-grade, documentazione firmata, operatività fuori orario. Sopralluogo gratuito.',
       canonical: 'https://www.fulgurservice.it/lp/settore-alimentare',
-      ogImage: '/images/servizi/pulizie-aziendali-parma.webp',
+      ogImage: '/images/gallery/sanificazione-salumificio-prosciutto-parma.webp',
     },
     hero: {
-      eyebrow: '01 — SANIFICAZIONE SANITARIA · PARMA',
+      eyebrow: '01 — SANIFICAZIONE HACCP · PARMA',
+      headlinePrimary: 'Pulizie Settore Alimentare,',
+      headlineAccent: 'HACCP a norma per legge.',
       decorativeText: 'HACCP',
-      label: 'Sanificazione Sanitaria · Parma',
-      headline1: 'Sanificazione Studi Medici',
-      headline2: 'a Parma.',
       subheadline:
-        'Protocolli HACCP, Presidi Medico Chirurgici autorizzati Ministero della Salute, vapore a 180°. Sanifichiamo fuori orario visite, con schede prodotto sempre disponibili.',
+        'Sanificazione per ristoranti, bar, pasticcerie e laboratori alimentari. Prodotti food-grade certificati, documentazione HACCP firmata, intervento fuori orario di servizio. Parma e provincia.',
+      heroImage: '/images/gallery/sanificazione-salumificio-prosciutto-parma.webp',
+      heroImageAlt: 'Sanificazione professionale settore alimentare a Parma',
       ctaPrimary: 'Richiedi sopralluogo gratuito',
-      ctaPhone: 'Chiama: 338 316 0091',
+      ctaSecondary: 'oppure chiama 338 316 0091',
       ctaPhoneRaw: '+393383160091',
       whatsappUrl:
-        'https://wa.me/393383160091?text=Ciao%2C%20ho%20visto%20la%20vostra%20landing%20%5BALIMENTARE%5D',
-      image: {
-        src: '/images/servizi/pulizie-aziendali-parma.webp',
-        alt: 'Sanificazione professionale con protocolli HACCP per studio medico a Parma — Fulgur Service',
-      },
+        'https://wa.me/393383160091?text=Ciao%2C%20ho%20appena%20inviato%20la%20richiesta%20per%20la%20sanificazione%20HACCP%20del%20mio%20locale',
+      trustInline:
+        'Protocolli HACCP certificati · Presidi Medico Chirurgici · ★ 4.9 Google · 21 recensioni',
     },
     trustBar: [
       {
-        label: 'Protocolli HACCP certificati',
         icon: 'Certificate',
-        desc: 'Protocolli personalizzati per ogni tipo di struttura sanitaria.',
+        title: 'PROTOCOLLI HACCP',
+        desc: 'Procedure operative scritte, conformi alle linee guida del Reg. CE 852/2004. Documentazione firmata e archiviabile.',
       },
       {
-        label: 'Presidi Medico Chirurgici',
         icon: 'TestTube',
-        desc: 'Prodotti autorizzati dal Ministero della Salute, schede tecniche su richiesta.',
+        title: 'PRODOTTI FOOD-GRADE',
+        desc: 'Presidi Medico Chirurgici autorizzati dal Ministero della Salute (Reg. UE 528/2012). Schede tecniche su richiesta.',
       },
       {
-        label: '4.9 su Google · 21 recensioni',
-        icon: 'Star',
-        desc: '21 recensioni verificate di clienti reali a Parma e provincia.',
+        icon: 'Clock',
+        title: 'FUORI ORARIO',
+        desc: "Interveniamo prima dell'apertura o dopo la chiusura. Servizio mai bloccato, ispezioni sempre coperte.",
       },
     ],
     form: {
-      qualifierLabel: 'Tipo di struttura',
-      qualifierOptions: [
-        { value: 'studio-dentistico', label: 'Studio dentistico' },
-        { value: 'studio-medico', label: 'Studio medico' },
-        { value: 'ambulatorio', label: 'Ambulatorio' },
-        { value: 'poliambulatorio', label: 'Poliambulatorio' },
-        { value: 'clinica-privata', label: 'Clinica privata' },
-        { value: 'altro', label: 'Altro' },
-      ],
+      eyebrow: '02 — RICHIEDI SOPRALLUOGO',
+      h2: 'Una telefonata in 24 ore. Sopralluogo gratuito.',
+      subhead: 'Lascia i tuoi dati. Ti contattiamo per fissare un sopralluogo fuori orario di servizio.',
+      fields: {
+        qualifier: {
+          label: 'Tipo di attività',
+          options: [
+            'Ristorante / Trattoria',
+            'Bar / Caffetteria',
+            'Pasticceria / Gelateria',
+            'Pizzeria',
+            'Laboratorio alimentare',
+            'Mensa / Catering',
+            'Altro',
+          ],
+        },
+      },
       fieldMicrocopy: {
-        nome: 'Solo il nome, non serve cognome',
+        nome: 'Solo nome e cognome',
         telefono: 'Solo per richiamarti. Mai per spam, mai per terzi.',
         email: 'Per ricevere conferma della tua richiesta',
-        qualifier: 'Ci serve per pre-preparare il protocollo giusto',
+        qualifier: 'Ci aiuta a preparare il protocollo HACCP giusto',
       },
-      urgencyMicrocopy: 'Studio aperto solo certi giorni? Concordiamo l\'orario che funziona per te.',
-      submitMicrocopy: 'Discrezione garantita. Ti contattiamo entro 24 ore lavorative.',
-      postFormReassurance: 'Sopralluogo gratuito · Nessun impegno · Risposta in 24h lavorative',
-    },
-    benefits: {
-      title: 'Cosa includiamo',
-      items: [
-        'Prodotti PMC registrati Ministero della Salute',
-        'Vapore saturo 180° — zero chimica aggressiva',
-        'Protocollo HACCP personalizzato per la struttura',
-        'Operatori con DPI sanitari e patto di riservatezza',
-        'Documentazione tecnica per ispezioni ASL',
-      ],
+      urgencyMicrocopy: 'Ispezione in arrivo? Ti richiamiamo entro 2 ore.',
+      postFormReassurance: 'Sopralluogo gratuito · Discrezione totale · Risposta in 24h lavorative',
+      submitLabel: 'Richiedi sopralluogo gratuito',
+      submitLoadingLabel: 'Stiamo inviando…',
     },
     process: {
-      title: 'Come funziona',
+      eyebrow: '03 — COME LAVORIAMO',
+      h2: "Dal sopralluogo all'intervento ricorrente, in 4 passi.",
       steps: [
-        { number: '01', title: 'Ti contattiamo', desc: 'Risposta entro 24 ore lavorative.' },
-        { number: '02', title: 'Veniamo nello studio', desc: 'Sopralluogo discreto fuori orario visite.' },
-        { number: '03', title: 'Ricevi protocollo + preventivo', desc: 'Programma di sanificazione personalizzato.' },
-        { number: '04', title: 'Interveniamo ai tuoi orari', desc: 'Squadra dedicata, zero interferenze con pazienti.' },
+        { num: 1, title: 'Ti contattiamo', desc: 'Risposta entro 24 ore lavorative. Discrezione totale, nessun disturbo durante il servizio.' },
+        { num: 2, title: 'Sopralluogo HACCP', desc: 'Veniamo nel tuo locale fuori orario di apertura per valutare cucina, sala, magazzini.' },
+        { num: 3, title: 'Protocollo + preventivo', desc: 'Ricevi protocollo di sanificazione personalizzato + preventivo dettagliato entro 24h.' },
+        { num: 4, title: 'Interventi puntuali', desc: 'Squadra dedicata, ai tuoi orari, con documento firmato dopo ogni intervento.' },
       ],
     },
     objections: {
-      title: 'Risposte concrete',
+      eyebrow: '04 — RISPOSTE CONCRETE',
+      h2: 'Quello che ti chiedi prima di chiamarci.',
       items: [
         {
-          q: 'I vostri prodotti sono certificati per il sanitario?',
-          a: 'Sì. Usiamo Presidi Medico Chirurgici autorizzati dal Ministero della Salute (Reg. UE 528/2012). Su richiesta forniamo le schede tecniche.',
+          num: '01',
+          question: 'I prodotti sono compatibili con il food?',
+          answer:
+            'Sì. Usiamo Presidi Medico Chirurgici autorizzati dal Ministero della Salute (Reg. UE 528/2012). Su richiesta forniamo schede tecniche di ogni prodotto.',
         },
         {
-          q: 'E la riservatezza? Lavoriamo con dati pazienti.',
-          a: 'Tutti i nostri operatori firmano patto di riservatezza. Interveniamo negli orari di chiusura dello studio.',
+          num: '02',
+          question: "E se arriva un'ispezione?",
+          answer:
+            "Sei coperto. Dopo ogni intervento rilasciamo un documento firmato con data, ore, prodotti utilizzati e operatori. Archivio HACCP pronto da mostrare.",
         },
         {
-          q: 'Gli orari devono incastrarsi con le mie visite.',
-          a: 'Pianifichiamo gli interventi quando vuoi tu: sera, mattino presto, sabato pomeriggio. Tu decidi.',
+          num: '03',
+          question: 'I miei orari sono difficili da incastrare.',
+          answer:
+            "Lavoriamo quando vuoi tu: notte, prima dell'apertura, dopo la chiusura, giorni di riposo. Tu chiudi la serranda, noi entriamo.",
         },
       ],
     },
-    // TODO: sostituire con review reale estratta da Google Business Profile (4.9★ · 21 reviews).
-    testimonial: {
-      text: 'Lavorano in studio fuori orario visite, senza disturbare i pazienti. Forniscono le schede dei prodotti su richiesta. Discreti e seri.',
-      author: 'Studio dentistico associato · Parma centro',
+    credentials: {
+      eyebrow: '05 — CREDENZIALI TECNICHE',
+      h2: 'Documenti, certificazioni, numeri pubblici.',
+      items: [
+        'P.IVA 03063010346 · REA PR-353051',
+        'Codice ATECO 81.21.00 (pulizia generale di edifici)',
+        'Prodotti PMC registrati Ministero della Salute',
+        'Conformità Reg. CE 852/2004 · Reg. UE 528/2012',
+        'Operatori formati su protocolli HACCP food',
+      ],
+    },
+    caseStudy: {
+      eyebrow: '06 — INTERVENTI REALI',
+      h2: 'Sanificazione salumificio nel territorio di Parma.',
+      desc: 'Intervento ricorrente in un salumificio parmense. Pavimenti, attrezzature, celle di stagionatura. Documentazione HACCP firmata ad ogni passaggio.',
+      imageMain: '/images/gallery/sanificazione-salumificio-prosciutto-parma.webp',
+      imageMainAlt: 'Sanificazione salumificio nel territorio di Parma',
+      imageSecondary: '/images/gallery/sanificazione-vapore-ambienti-sensibili.webp',
+      imageSecondaryAlt: 'Sanificazione a vapore di ambienti sensibili',
     },
     finalCta: {
-      headline: 'I tuoi pazienti meritano un ambiente impeccabile.',
-      sub: 'Chiamaci ora. Sopralluogo gratuito, preventivo in 24h.',
+      h2: "L'ispezione può arrivare domani. Tu sei pronto?",
+      desc: 'Un sopralluogo gratuito ti dice esattamente cosa serve per essere a norma. Nessuna pressione, nessun impegno.',
+      cta: 'Richiedi sopralluogo gratuito',
     },
-    grazie: {
-      headline: 'Richiesta ricevuta.',
-      sub: 'Ti contattiamo entro 24 ore lavorative.',
-      nextSteps: [
-        'Ti contattiamo entro 24 ore lavorative',
-        'Sopralluogo discreto fuori orario visite',
-        'Ricevi il programma di sanificazione personalizzato',
+    socialProof: {
+      eyebrow: 'COSA DICONO DI NOI',
+      text: 'Sanificano il nostro laboratorio una volta a settimana, sempre la stessa squadra, sempre fuori orario. Ad ogni intervento ci lasciano il documento HACCP firmato. Tranquillità totale.',
+      author: 'Pasticceria — Provincia di Parma',
+    },
+    thankYou: {
+      h1: 'Abbiamo ricevuto la tua richiesta.',
+      steps: [
+        'Ti contattiamo entro 4 ore lavorative al numero che ci hai lasciato',
+        'Fissiamo un sopralluogo fuori orario nel tuo locale',
+        'Ricevi protocollo HACCP personalizzato + preventivo entro 24h',
       ],
-      eventLabel: 'lp-alimentare',
+      ctaWhatsAppText: 'Ciao, ho appena inviato la richiesta per la sanificazione HACCP del mio locale',
     },
   },
 }

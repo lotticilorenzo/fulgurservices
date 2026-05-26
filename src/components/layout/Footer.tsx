@@ -77,7 +77,6 @@ export function Footer() {
               Operativi anche a Fidenza, Collecchio e Salsomaggiore Terme.
             </p>
             <div className="mt-4 flex flex-col gap-1.5 font-mono-fulgur text-[9.5px] font-bold uppercase tracking-widest text-[var(--tx-3)]">
-              <span>✓ Polizza Assicurativa RC/RCO</span>
               <span>✓ Protocolli HACCP Certificati</span>
               <span>✓ Partner KilometroVerde Parma</span>
             </div>

@@ -15,14 +15,6 @@ const GUARANTEES = [
     size: "large"
   },
   {
-    id: 2,
-    title: "Copertura Assicurativa",
-    data: "RCT/RCO",
-    // NOTA: Inserire foto reale attestato/polizza assicurativa RCT (w=600px minimo)
-    img: "/images/logo-fulgur-service-impresa-pulizie-parma.webp",
-    size: "medium"
-  },
-  {
     id: 3,
     title: "Prodotti HACCP",
     data: "100%",

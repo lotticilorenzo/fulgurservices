@@ -1,8 +1,13 @@
-'use client'
-
-import { Star, ShieldCheck, Clock, Certificate, TestTube } from '@phosphor-icons/react'
+import {
+  Star,
+  ShieldCheck,
+  Clock,
+  Certificate,
+  TestTube,
+  Users,
+  Receipt,
+} from '@phosphor-icons/react/dist/ssr'
 import type { LPData } from '@/lib/lp-data'
-import { SpotlightCard } from '@/components/ui/SpotlightCard'
 
 const ICON_MAP = {
   Star,
@@ -10,6 +15,8 @@ const ICON_MAP = {
   Clock,
   Certificate,
   TestTube,
+  Users,
+  Receipt,
 } as const
 
 interface LPTrustBarProps {
@@ -24,7 +31,10 @@ export function LPTrustBar({ items }: LPTrustBarProps) {
           {items.map((item) => {
             const Icon = ICON_MAP[item.icon]
             return (
-              <SpotlightCard key={item.label} className="p-8">
+              <div
+                key={item.title}
+                className="p-8 border border-[var(--br)] rounded-xl bg-[var(--bg)] hover:border-[var(--br-hover)] transition-colors"
+              >
                 <Icon
                   size={32}
                   weight="duotone"
@@ -32,12 +42,12 @@ export function LPTrustBar({ items }: LPTrustBarProps) {
                   aria-hidden="true"
                 />
                 <h3 className="font-mono uppercase tracking-wider text-sm text-[var(--tx-1)] mb-2">
-                  {item.label}
+                  {item.title}
                 </h3>
                 <p className="font-body text-base text-[var(--tx-2)] leading-relaxed">
                   {item.desc}
                 </p>
-              </SpotlightCard>
+              </div>
             )
           })}
         </div>

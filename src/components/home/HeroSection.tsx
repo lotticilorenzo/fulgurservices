@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import gsap from 'gsap'
 import { motion } from 'framer-motion'
-import { ArrowDown, ShieldCheck, Leaf, Clock } from '@phosphor-icons/react'
+import { ArrowDown, Leaf, Clock } from '@phosphor-icons/react'
 import { GlowBadge } from '@/components/ui/GlowBadge'
 import { MagneticButton } from '@/components/ui/MagneticButton'
 import { ParticleField } from '@/components/ui/ParticleField'
@@ -184,10 +184,6 @@ export function HeroSection() {
 
           {/* Trust micro-badge | mt-4 su mobile (più vicino ai CTA), mt-6 su sm+ */}
           <div className="hero-reveal mt-4 sm:mt-6 flex flex-col sm:flex-row flex-wrap gap-x-5 gap-y-3 font-mono-fulgur text-[9.5px] font-medium uppercase tracking-widest text-white/70">
-            <div className="flex items-center gap-2">
-              <ShieldCheck size={14} className="text-[var(--accent)]" aria-hidden="true" />
-              <span>Polizza assicurativa RCT/RCO</span>
-            </div>
             <div className="flex items-center gap-2">
               <Leaf size={14} className="text-[var(--accent)]" aria-hidden="true" />
               <span>Prodotti Eco Certificati</span>

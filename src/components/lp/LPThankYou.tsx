@@ -3,16 +3,14 @@ import type { LPData } from '@/lib/lp-data'
 import { cn } from '@/lib/utils'
 
 interface LPThankYouProps {
-  grazie: LPData['grazie']
+  thankYou: LPData['thankYou']
   ctaPhoneRaw: string
-  ctaPhone: string
   whatsappUrl: string
 }
 
 export function LPThankYou({
-  grazie,
+  thankYou,
   ctaPhoneRaw,
-  ctaPhone,
   whatsappUrl,
 }: LPThankYouProps) {
   return (
@@ -31,14 +29,11 @@ export function LPThankYou({
 
       {/* Headline */}
       <h1
-        className="font-display font-extrabold text-[var(--tx-1)] tracking-tight text-center mb-2"
+        className="font-display font-extrabold text-[var(--tx-1)] tracking-tight text-center mb-10"
         style={{ fontSize: 'clamp(28px, 4vw, 44px)' }}
       >
-        {grazie.headline}
+        {thankYou.h1}
       </h1>
-      <p className="font-body text-[var(--tx-2)] text-base text-center mb-10 max-w-[45ch]">
-        {grazie.sub}
-      </p>
 
       {/* Next steps */}
       <div className="w-full max-w-md bg-[var(--bg-2)] border border-[var(--br)] rounded-2xl p-6 mb-8">
@@ -46,7 +41,7 @@ export function LPThankYou({
           Cosa succede adesso
         </h2>
         <ol className="space-y-3">
-          {grazie.nextSteps.map((step, i) => (
+          {thankYou.steps.map((step, i) => (
             <li key={step} className="flex items-start gap-3">
               <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[var(--accent)] text-white font-mono-fulgur text-[11px] flex items-center justify-center">
                 {i + 1}
@@ -71,7 +66,7 @@ export function LPThankYou({
           )}
         >
           <Phone size={16} weight="bold" aria-hidden="true" />
-          {ctaPhone}
+          338 316 0091
         </a>
         <a
           href={whatsappUrl}

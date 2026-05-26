@@ -2,17 +2,10 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { ShieldCheck, Leaf, Medal, Handshake } from '@phosphor-icons/react'
+import { Leaf, Medal, Handshake } from '@phosphor-icons/react'
 import { ScrollReveal } from './ScrollReveal'
 
 const CERTS = [
-  {
-    icon: ShieldCheck,
-    title: "Assicurazione RCT",
-    desc: "Copertura totale per danni a terzi durante ogni intervento di pulizia.",
-    color: "from-blue-500/10 to-blue-600/5",
-    iconColor: "text-blue-500"
-  },
   {
     icon: Leaf,
     title: "Ecolabel Partner",

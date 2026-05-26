@@ -1,63 +1,46 @@
-'use client'
-
 import Image from 'next/image'
-import { BeforeAfterSlider } from '@/components/ui/BeforeAfterSlider'
+import type { LPData } from '@/lib/lp-data'
 
-export function LPCaseStudy() {
+interface LPCaseStudyProps {
+  caseStudy: NonNullable<LPData['caseStudy']>
+}
+
+export function LPCaseStudy({ caseStudy }: LPCaseStudyProps) {
   return (
     <section data-scroll-section className="py-24 sm:py-32 bg-[var(--bg-3)]">
       <div className="mx-auto max-w-5xl px-5 sm:px-8">
         <p className="font-mono text-xs uppercase tracking-[0.25em] text-[var(--accent-d)] mb-6">
-          05 — LAVORI REALI
+          {caseStudy.eyebrow}
         </p>
         <h2
           className="font-display font-extrabold text-[var(--tx-1)] tracking-tight mb-4"
           style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}
         >
-          Cantieri a Parma. Risultati concreti.
+          {caseStudy.h2}
         </h2>
         <p className="font-body text-[var(--tx-2)] text-lg mb-14 max-w-[55ch]">
-          Boutique, appartamenti, spazi commerciali. Consegnati puliti, nei tempi concordati.
+          {caseStudy.desc}
         </p>
 
-        {/* Interactive before/after slider */}
-        <div className="mb-10">
-          <BeforeAfterSlider
-            beforeImage="/images/case-studies/primapulizia.webp"
-            afterImage="/images/case-studies/dopopulizia.webp"
-            beforeLabel="PRIMA"
-            afterLabel="DOPO"
-            aspectRatio="aspect-[4/3]"
-            className="shadow-lg"
-          />
-        </div>
-
-        {/* Gallery */}
-        <div className="grid grid-cols-3 gap-4">
-          {[
-            {
-              src: '/images/gallery/fine-cantiere-appartamento-nuovo-fulgur.webp',
-              alt: 'Pulizia fine cantiere appartamento nuovo a Parma — Fulgur Service',
-            },
-            {
-              src: '/images/gallery/fine-cantiere-boutique-zegna-parma-2.webp',
-              alt: 'Intervento post cantiere boutique Zegna Parma — rimozione residui edilizi',
-            },
-            {
-              src: '/images/gallery/pulizia-post-cantiere-nuova-costruzione.webp',
-              alt: 'Pulizia post cantiere nuova costruzione a Parma — Fulgur Service',
-            },
-          ].map((img) => (
-            <div key={img.src} className="relative aspect-square rounded-xl overflow-hidden shadow-sm">
-              <Image
-                src={img.src}
-                alt={img.alt}
-                fill
-                sizes="(max-width: 640px) 33vw, (max-width: 1024px) 33vw, 200px"
-                className="object-cover"
-              />
-            </div>
-          ))}
+        <div className="grid sm:grid-cols-2 gap-5">
+          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-md">
+            <Image
+              src={caseStudy.imageMain}
+              alt={caseStudy.imageMainAlt}
+              fill
+              sizes="(max-width: 640px) 100vw, 50vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-md">
+            <Image
+              src={caseStudy.imageSecondary}
+              alt={caseStudy.imageSecondaryAlt}
+              fill
+              sizes="(max-width: 640px) 100vw, 50vw"
+              className="object-cover"
+            />
+          </div>
         </div>
       </div>
     </section>

@@ -27,26 +27,26 @@ export function LPProcess({ process }: LPProcessProps) {
             variants={lpItem}
             className="font-mono text-xs uppercase tracking-[0.25em] text-[var(--accent-d)] mb-6"
           >
-            03 — COME LAVORIAMO
+            {process.eyebrow}
           </motion.p>
           <motion.h2
             variants={lpItem}
             className="font-display font-extrabold text-[var(--tx-1)] tracking-tight mb-20"
             style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}
           >
-            Dal sopralluogo alla consegna, in 4 passi.
+            {process.h2}
           </motion.h2>
 
           <motion.div variants={lpContainer} className="grid md:grid-cols-4 gap-8">
             {process.steps.map((step) => (
-              <motion.div key={step.number} variants={lpItem}>
+              <motion.div key={step.num} variants={lpItem}>
                 <div
                   className="font-display font-black text-[var(--accent)] leading-none mb-6 select-none"
                   style={{ fontSize: '5rem', opacity: 0.3 }}
                   aria-hidden="true"
                 >
                   <CounterUp
-                    value={parseInt(step.number, 10)}
+                    value={step.num}
                     prefix="0"
                     duration={prefersReducedMotion ? 0 : 1200}
                     className="font-display font-black"

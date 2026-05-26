@@ -2,16 +2,12 @@ import type { Metadata } from 'next'
 import { Syne, DM_Sans, DM_Mono } from 'next/font/google'
 import Script from 'next/script'
 import React from 'react'
-import ChatWidgetLoader from '@/components/ai/ChatWidgetLoader'
 import { CookieBanner } from '@/components/layout/CookieBanner'
 import { Footer } from '@/components/layout/Footer'
-import { LenisProvider } from '@/components/layout/LenisProvider'
 import Navbar from '@/components/layout/Navbar'
 import NoiseOverlay from '@/components/layout/NoiseOverlay'
 import { PageTransitionProvider } from '@/components/layout/PageTransitionProvider'
-import { CustomCursor } from '@/components/ui/CustomCursor'
-import { FloatingActions } from '@/components/ui/FloatingActions'
-import { IntroLoader } from '@/components/ui/IntroLoader'
+import { SiteOnlyComponents } from '@/components/layout/SiteOnlyComponents'
 import { STRUCTURED_DATA } from '@/lib/seo'
 import './globals.css'
 
@@ -116,16 +112,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           />
         </noscript>
         <PageTransitionProvider>
-          <LenisProvider />
-          <CustomCursor />
-          <IntroLoader />
+          <SiteOnlyComponents />
           <NoiseOverlay />
           <Navbar />
           {children}
           <Footer />
-          <FloatingActions />
           <CookieBanner />
-          <ChatWidgetLoader />
         </PageTransitionProvider>
       </body>
     </html>

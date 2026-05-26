@@ -6,14 +6,6 @@ import { CounterUp } from './CounterUp'
 
 const TRUST_DATA = [
   {
-    prefix: "€",
-    value: 2,
-    suffix: "M+",
-    label: "Massimale RCT",
-    desc: "Assicurazione completa per la tutela del patrimonio dei nostri clienti.",
-    link: "/chi-siamo#garanzie"
-  },
-  {
     value: 100,
     suffix: "%",
     label: "Prodotti Certificati",
@@ -53,11 +45,10 @@ export function TrustBar() {
                   {item.isText ? (
                     item.value
                   ) : (
-                    <CounterUp 
-                      value={item.value as number} 
-                      prefix={item.prefix} 
-                      suffix={item.suffix} 
-                      duration={2500} 
+                    <CounterUp
+                      value={item.value as number}
+                      suffix={item.suffix}
+                      duration={2500}
                     />
                   )}
                 </div>
