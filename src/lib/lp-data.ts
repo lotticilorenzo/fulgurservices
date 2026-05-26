@@ -1,6 +1,11 @@
 // lib/lp-data.ts — Single source of truth for PPC landing page content
 export type LPVariant = 'uffici' | 'alimentare'
 
+export const LP_SLUG_MAP: Record<LPVariant, string> = {
+  uffici: 'pulizie-uffici',
+  alimentare: 'settore-alimentare',
+}
+
 export interface LeadPayload {
   variant: 'uffici' | 'alimentare'
   nome: string

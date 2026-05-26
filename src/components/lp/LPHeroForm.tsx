@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { ArrowRight, CircleNotch } from '@phosphor-icons/react'
+import { LP_SLUG_MAP } from '@/lib/lp-data'
 
 export function LPHeroForm({ variant }: { variant: 'uffici' | 'alimentare' }) {
   const router = useRouter()
@@ -37,7 +38,7 @@ export function LPHeroForm({ variant }: { variant: 'uffici' | 'alimentare' }) {
       const data = (await res.json()) as { ok: boolean }
       if (data.ok) {
         router.push(
-          `/lp/${variant}/grazie?nome=${encodeURIComponent(nome.split(' ')[0])}`
+          `/lp/${LP_SLUG_MAP[variant]}/grazie?nome=${encodeURIComponent(nome.split(' ')[0])}`
         )
       } else {
         setError('Qualcosa non ha funzionato. Riprova o chiamaci.')

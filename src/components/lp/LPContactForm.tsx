@@ -15,6 +15,7 @@ import {
 import { cn } from '@/lib/utils'
 import { slideStep } from '@/lib/motion'
 import type { LPData, LPVariant } from '@/lib/lp-data'
+import { LP_SLUG_MAP } from '@/lib/lp-data'
 
 // ── Icon map: qualifier option → phosphor icon ──────────────────────────────
 const QUALIFIER_ICONS: Record<string, React.ElementType> = {
@@ -159,8 +160,7 @@ export function LPContactForm({ variant, form, ctaPhoneRaw }: LPContactFormProps
       setPage(([p]) => [p + 1, 1])
       setStep(5)
       const firstName = encodeURIComponent(data.nome.trim().split(' ')[0])
-      const path = data.variant === 'uffici' ? 'pulizie-uffici' : 'settore-alimentare'
-      setTimeout(() => router.push(`/lp/${path}/grazie?nome=${firstName}`), 1500)
+      setTimeout(() => router.push(`/lp/${LP_SLUG_MAP[data.variant]}/grazie?nome=${firstName}`), 1500)
     } catch {
       setServerError('Errore di rete. Controlla la connessione e riprova.')
     }
