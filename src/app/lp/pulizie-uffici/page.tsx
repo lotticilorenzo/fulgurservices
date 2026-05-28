@@ -48,7 +48,7 @@ export default function UfficiLPPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <LPHero data={data} formId={FORM_ID} variant="uffici" />
+      <LPHero data={data} formId={FORM_ID} />
       <LPTrustBar items={data.trustBar} />
 
       {/* Form section — 4-step */}

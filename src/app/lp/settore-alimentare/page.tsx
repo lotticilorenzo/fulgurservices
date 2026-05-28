@@ -50,7 +50,7 @@ export default function AlimentareLPPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <LPHero data={data} formId={FORM_ID} variant="alimentare" />
+      <LPHero data={data} formId={FORM_ID} />
       <LPTrustBar items={data.trustBar} />
 
       {/* Form section — 4-step */}
