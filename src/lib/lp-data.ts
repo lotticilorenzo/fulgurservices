@@ -136,12 +136,12 @@ export const LP_DATA: Record<LPVariant, LPData> = {
       ogImage: '/images/servizi/pulizie-uffici-aziendali-parma.webp',
     },
     hero: {
-      eyebrow: '01 — PULIZIE AZIENDALI · PARMA',
-      headlinePrimary: 'Pulizie Uffici a Parma,',
-      headlineAccent: 'sempre la stessa squadra.',
+      eyebrow: '01 — PULIZIE PER UFFICI E AZIENDE · PARMA',
+      headlinePrimary: 'Pulizie uffici a Parma',
+      headlineAccent: 'fatte da professionisti veri.',
       decorativeText: 'B2B',
       subheadline:
-        "Pulizie ricorrenti per uffici, studi professionali e sedi aziendali. Operatori formati, orari fuori dall'attività, fattura regolare e referente unico. Sopralluogo gratuito a Parma e provincia.",
+        'Niente improvvisati che spariscono dopo due mesi. Operatori formati, macchinari professionali, un referente unico che risponde sempre. Sopralluogo gratuito in 24 ore.',
       heroImage: '/images/servizi/pulizie-uffici-aziendali-parma.webp',
       heroImageAlt: 'Pulizie professionali uffici aziendali a Parma',
       ctaPrimary: 'Richiedi sopralluogo gratuito',
@@ -150,29 +150,29 @@ export const LP_DATA: Record<LPVariant, LPData> = {
       whatsappUrl:
         'https://wa.me/393383160091?text=Ciao%2C%20ho%20appena%20inviato%20la%20richiesta%20per%20le%20pulizie%20del%20mio%20ufficio',
       trustInline:
-        '★ 4.9 Google · 21 recensioni · 35+ anni di esperienza · Partner KilometroVerde',
+        '★ 4.9 su Google · 35 anni di esperienza · Operatori formati · Partner KilometroVerde',
     },
     trustBar: [
       {
+        icon: 'ShieldCheck',
+        title: 'PROFESSIONISTI SERI',
+        desc: 'Operatori formati, macchinari professionali, metodo collaudato in 35 anni. Non l\'ultimo arrivato con uno straccio.',
+      },
+      {
         icon: 'Users',
-        title: 'SQUADRA FISSA',
-        desc: 'Gli stessi operatori in ufficio ogni intervento. Niente turnover, conoscono la tua sede e i tuoi spazi.',
+        title: 'SEMPRE GLI STESSI',
+        desc: 'La stessa squadra ogni settimana. Conosce la tua sede, i tuoi spazi, le tue abitudini. Zero turnover.',
       },
       {
         icon: 'Clock',
-        title: 'ORARI FUORI ATTIVITÀ',
-        desc: "Interveniamo prima dell'apertura o dopo la chiusura. La produttività dei tuoi dipendenti non si ferma.",
-      },
-      {
-        icon: 'Receipt',
-        title: 'FATTURA REGOLARE',
-        desc: 'Contratto trasparente, fattura mensile elettronica, referente unico per ogni dubbio o richiesta.',
+        title: 'QUANDO NON CI SEI',
+        desc: 'Lavoriamo prima dell\'apertura o dopo la chiusura. I tuoi dipendenti trovano tutto pronto, ogni mattina.',
       },
     ],
     form: {
       eyebrow: '02 — RICHIEDI SOPRALLUOGO',
-      h2: 'Una telefonata in 24 ore. Sopralluogo gratuito.',
-      subhead: 'Lascia i tuoi dati. Ti contattiamo per fissare un sopralluogo nella tua sede.',
+      h2: 'Parliamone. Sopralluogo gratuito in 24 ore.',
+      subhead: 'Lasciaci due dati. Ti richiamiamo noi per capire di cosa hai bisogno, senza impegno.',
       fields: {
         qualifier: {
           label: 'Tipo di sede',
@@ -192,56 +192,56 @@ export const LP_DATA: Record<LPVariant, LPData> = {
         email: 'Per ricevere conferma della tua richiesta',
         qualifier: 'Ci aiuta a stimare costi e frequenze giuste',
       },
-      urgencyMicrocopy: 'Settimana piena? Ti richiamiamo entro 4 ore lavorative.',
+      urgencyMicrocopy: 'Ti richiamiamo entro 4 ore lavorative.',
       postFormReassurance: 'Sopralluogo gratuito · Nessun impegno · Risposta in 24h lavorative',
       submitLabel: 'Richiedi sopralluogo gratuito',
       submitLoadingLabel: 'Stiamo inviando…',
     },
     process: {
       eyebrow: '03 — COME LAVORIAMO',
-      h2: 'Dal primo contatto al contratto, in 4 passi.',
+      h2: 'Come iniziamo a lavorare insieme.',
       steps: [
-        { num: 1, title: 'Ti contattiamo', desc: 'Risposta entro 24 ore lavorative dal momento della tua richiesta.' },
-        { num: 2, title: 'Veniamo in ufficio', desc: 'Sopralluogo gratuito nei tuoi spazi per capire metratura, frequenze e priorità.' },
-        { num: 3, title: 'Ricevi il preventivo', desc: 'Per iscritto, dettagliato per voce, con frequenze e costi mensili trasparenti.' },
-        { num: 4, title: 'Partiamo subito', desc: 'Squadra dedicata, orari concordati, primo intervento entro pochi giorni.' },
+        { num: 1, title: 'Ci senti', desc: 'Ti richiamiamo entro 4 ore lavorative. Capiamo subito cosa ti serve.' },
+        { num: 2, title: 'Veniamo da te', desc: 'Sopralluogo gratuito in sede. Guardiamo gli spazi, ascoltiamo le tue priorità.' },
+        { num: 3, title: 'Preventivo chiaro', desc: 'Per iscritto, voce per voce. Niente sorprese, niente costi nascosti.' },
+        { num: 4, title: 'Si parte', desc: 'Squadra fissa, orari concordati, primo intervento in pochi giorni.' },
       ],
     },
     objections: {
       eyebrow: '04 — RISPOSTE CONCRETE',
-      h2: 'Quello che ti chiedi prima di affidarci la sede.',
+      h2: 'Le domande che ti stai facendo.',
       items: [
         {
           num: '01',
-          question: 'Avrò sempre gli stessi operatori?',
+          question: 'Come faccio a sapere che siete seri?',
           answer:
-            'Sì. La nostra logica è opposta al turnover delle grandi imprese: la stessa squadra conosce la tua sede, sa dove tieni cosa, rispetta il tuo modo di lavorare.',
+            'Trentacinque anni di lavoro, 21 recensioni verificate su Google, operatori formati e assicurati. Vieni a vedere chi siamo prima di decidere: il sopralluogo è gratis.',
         },
         {
           num: '02',
-          question: 'E i costi? Mi aspetto sorprese.',
+          question: 'Quanto mi costa davvero?',
           answer:
-            'Preventivo scritto, voce per voce. Il prezzo include prodotti, materiali di consumo e attrezzatura. Quello che firmi è quello che paghi.',
+            'Preventivo scritto, voce per voce. Prodotti, materiali e attrezzatura sono inclusi. Quello che firmi è quello che paghi, ogni mese, senza ritocchi.',
         },
         {
           num: '03',
-          question: 'Le pulizie interferiscono con il lavoro?',
+          question: 'Mi rallentate il lavoro in ufficio?',
           answer:
-            "No. Lavoriamo prima delle 8 o dopo le 18, weekend se preferisci. I tuoi dipendenti entrano la mattina e trovano un ambiente pronto.",
+            'Mai. Entriamo prima delle 8 o dopo le 18, anche nel weekend. Tu apri la mattina e trovi tutto a posto, come se non fossimo passati.',
         },
       ],
     },
     finalCta: {
-      h2: 'Una sede pulita vale ogni euro che spendi.',
-      desc: 'Un sopralluogo gratuito ti dice quanto costa davvero. Senza impegno, senza pressioni.',
+      h2: 'Smetti di pensare alle pulizie.',
+      desc: 'Affidale a chi le fa da 35 anni. Un sopralluogo gratuito e capisci subito la differenza.',
       cta: 'Richiedi sopralluogo gratuito',
-      trustLine: '★ 4.9 su Google · 21 recensioni · 35 anni di esperienza',
+      trustLine: '★ 4.9 su Google · 35 anni di esperienza · Sopralluogo sempre gratuito',
     },
     socialProof: {
       eyebrow: 'COSA DICONO DI NOI',
-      text: 'Gestiscono la pulizia dei nostri uffici da 8 mesi. Stessa squadra ogni settimana, sempre fuori orario, fattura puntuale. Non ci penso più.',
-      author: 'Studio commercialisti associato',
-      location: 'Centro storico, Parma',
+      text: 'Da otto mesi puliscono i nostri uffici. Sempre la stessa squadra, sempre fuori orario, fattura puntuale ogni mese. Onestamente, non ci penso più.',
+      author: 'Cliente verificato',
+      location: 'Studio professionale · Parma',
       verified: true,
     },
     thankYou: {
@@ -266,11 +266,11 @@ export const LP_DATA: Record<LPVariant, LPData> = {
     },
     hero: {
       eyebrow: '01 — SANIFICAZIONE HACCP · FOOD VALLEY PARMA',
-      headlinePrimary: 'Sanificazione Settore Alimentare a Parma,',
-      headlineAccent: 'dal ristorante al salumificio.',
+      headlinePrimary: 'Sanificazione alimentare a Parma.',
+      headlineAccent: 'Quando arriva il controllo, sei a posto.',
       decorativeText: 'HACCP',
       subheadline:
-        'Sanifichiamo cucine, laboratori, celle e ambienti di produzione per ristoranti, pasticcerie, salumifici e caseifici. Protocolli HACCP, prodotti food-grade, intervento fuori orario. Parma e provincia.',
+        'Dalla cucina del ristorante alla cella del salumificio. Sanifichiamo a norma HACCP e ti lasciamo il documento firmato ad ogni intervento. Il tuo registro è sempre pronto per ASL e NAS.',
       heroImage: '/images/gallery/sanificazione-salumificio-prosciutto-parma.webp',
       heroImageAlt: 'Sanificazione professionale settore alimentare a Parma',
       ctaPrimary: 'Richiedi sopralluogo gratuito',
@@ -279,29 +279,29 @@ export const LP_DATA: Record<LPVariant, LPData> = {
       whatsappUrl:
         'https://wa.me/393383160091?text=Ciao%2C%20ho%20appena%20inviato%20la%20richiesta%20per%20la%20sanificazione%20HACCP%20del%20mio%20locale',
       trustInline:
-        'Protocolli HACCP certificati · Presidi Medico Chirurgici · ★ 4.9 Google · 21 recensioni',
+        'Protocolli HACCP · Documento firmato ogni intervento · Prodotti food-grade · ★ 4.9 Google',
     },
     trustBar: [
       {
         icon: 'Certificate',
-        title: 'PROTOCOLLI HACCP',
-        desc: 'Procedure operative scritte, conformi alle linee guida del Reg. CE 852/2004. Documentazione firmata e archiviabile.',
+        title: 'REGISTRO SEMPRE IN ORDINE',
+        desc: 'Documento firmato dopo ogni intervento: data, ore, prodotti, operatori. Il tuo archivio HACCP non ha buchi.',
       },
       {
-        icon: 'TestTube',
-        title: 'PRODOTTI FOOD-GRADE',
-        desc: 'Presidi Medico Chirurgici autorizzati dal Ministero della Salute (Reg. UE 528/2012). Schede tecniche su richiesta.',
+        icon: 'ShieldCheck',
+        title: 'PRONTO PER L\'ISPEZIONE',
+        desc: 'Sanificazione conforme HACCP e Reg. CE 852/2004. Quando ASL o NAS bussano, hai tutto in regola.',
       },
       {
         icon: 'Clock',
-        title: 'FUORI ORARIO',
-        desc: "Interveniamo prima dell'apertura o dopo la chiusura. Servizio mai bloccato, ispezioni sempre coperte.",
+        title: 'SENZA FERMARE LA PRODUZIONE',
+        desc: 'Lavoriamo a fine turno, di notte o nel fermo. La tua attività non perde un\'ora.',
       },
     ],
     form: {
       eyebrow: '02 — RICHIEDI SOPRALLUOGO',
-      h2: 'Una telefonata in 24 ore. Sopralluogo gratuito.',
-      subhead: 'Lascia i tuoi dati. Ti contattiamo per fissare un sopralluogo fuori orario di servizio.',
+      h2: 'Parliamone. Sopralluogo gratuito in 24 ore.',
+      subhead: 'Lasciaci due dati. Veniamo a vedere il tuo locale fuori orario, senza intralciare il servizio.',
       fields: {
         qualifier: {
           label: 'Tipo di attività',
@@ -324,49 +324,49 @@ export const LP_DATA: Record<LPVariant, LPData> = {
         email: 'Per ricevere conferma della tua richiesta',
         qualifier: 'Ci aiuta a preparare il protocollo HACCP giusto',
       },
-      urgencyMicrocopy: 'ASL, NAS e audit di filiera non danno preavviso. Ti richiamiamo entro 2 ore.',
+      urgencyMicrocopy: 'Hai un controllo in arrivo? Ti richiamiamo entro 2 ore.',
       postFormReassurance: 'Sopralluogo gratuito · Discrezione totale · Risposta in 24h lavorative',
       submitLabel: 'Richiedi sopralluogo gratuito',
       submitLoadingLabel: 'Stiamo inviando…',
     },
     process: {
       eyebrow: '03 — COME LAVORIAMO',
-      h2: "Dal sopralluogo all'intervento ricorrente, in 4 passi.",
+      h2: 'Come mettiamo in regola il tuo locale.',
       steps: [
-        { num: 1, title: 'Ti contattiamo', desc: 'Risposta entro 24 ore lavorative. Discrezione totale, nessun disturbo durante il servizio.' },
-        { num: 2, title: 'Sopralluogo HACCP', desc: 'Veniamo nel tuo locale fuori orario di apertura per valutare cucina, sala, magazzini.' },
-        { num: 3, title: 'Protocollo + preventivo', desc: 'Ricevi protocollo di sanificazione personalizzato + preventivo dettagliato entro 24h.' },
-        { num: 4, title: 'Interventi puntuali', desc: 'Squadra dedicata, ai tuoi orari, con documento firmato dopo ogni intervento.' },
+        { num: 1, title: 'Ci senti', desc: 'Ti richiamiamo entro 4 ore lavorative. Discrezione totale, zero disturbo al servizio.' },
+        { num: 2, title: 'Sopralluogo', desc: 'Veniamo fuori orario. Guardiamo cucina, laboratorio, celle, magazzini.' },
+        { num: 3, title: 'Protocollo su misura', desc: 'Ricevi un piano di sanificazione e un preventivo chiaro entro 24 ore.' },
+        { num: 4, title: 'Interventi firmati', desc: 'Squadra fissa, ai tuoi orari, con il documento HACCP firmato ogni volta.' },
       ],
     },
     objections: {
       eyebrow: '06 — RISPOSTE CONCRETE',
-      h2: 'Quello che ti chiedi prima di chiamarci.',
+      h2: 'Le domande che ti stai facendo.',
       items: [
         {
           num: '01',
-          question: 'I prodotti sono compatibili con il food?',
+          question: 'E se domani arriva un\'ispezione?',
           answer:
-            'Sì. Usiamo Presidi Medico Chirurgici autorizzati dal Ministero della Salute (Reg. UE 528/2012). Su richiesta forniamo schede tecniche di ogni prodotto.',
+            'Sei coperto. Ogni intervento finisce con un documento firmato: data, ore, prodotti usati, operatori. Il tuo registro HACCP è sempre pronto da mostrare ad ASL e NAS.',
         },
         {
           num: '02',
-          question: "E se arriva un'ispezione?",
+          question: 'I prodotti sono sicuri per gli alimenti?',
           answer:
-            "Sei coperto. Dopo ogni intervento rilasciamo un documento firmato con data, ore, prodotti utilizzati e operatori. Archivio HACCP pronto da mostrare.",
+            'Sì. Usiamo solo Presidi Medico Chirurgici autorizzati dal Ministero della Salute, compatibili con il contatto alimentare. Le schede tecniche te le diamo su richiesta.',
         },
         {
           num: '03',
-          question: 'I miei orari sono difficili da incastrare.',
+          question: 'Non posso fermare la produzione.',
           answer:
-            "Lavoriamo quando vuoi tu: notte, prima dell'apertura, dopo la chiusura, giorni di riposo. Tu chiudi la serranda, noi entriamo.",
+            'E non la fermi. Lavoriamo di notte, prima dell\'apertura, nei giorni di chiusura. Tu abbassi la serranda, noi entriamo e usciamo prima che riapri.',
         },
       ],
     },
     coverage: {
       eyebrow: '04 — DOVE INTERVENIAMO',
-      h2: 'Tutta la filiera alimentare di Parma.',
-      intro: "Dalla ristorazione all'industria di trasformazione. Conosciamo gli ambienti, i ritmi e i vincoli di ogni realtà food.",
+      h2: 'Conosciamo ogni angolo della Food Valley.',
+      intro: 'Dalla trattoria al prosciuttificio. Sappiamo come si sanifica una cucina, una cella di stagionatura, un laboratorio. E sappiamo cosa cerca l\'ispettore.',
       categories: [
         { icon: 'ForkKnife', label: 'Ristoranti e trattorie' },
         { icon: 'Coffee', label: 'Bar e caffetterie' },
@@ -381,12 +381,12 @@ export const LP_DATA: Record<LPVariant, LPData> = {
     },
     guarantees: {
       eyebrow: '05 — COSA GARANTIAMO',
-      h2: 'Pronti per ogni controllo, ogni giorno.',
+      h2: 'Pronti per ogni controllo. Sempre.',
       items: [
         {
           icon: 'FileText',
           title: 'DOCUMENTO FIRMATO',
-          desc: 'Ad ogni intervento rilasciamo un documento con data, ore, prodotti e operatori. Il tuo registro HACCP sempre in ordine.',
+          desc: 'Ad ogni intervento: data, ore, prodotti, operatori. Il tuo registro HACCP non ha mai un buco.',
         },
         {
           icon: 'TestTube',
@@ -407,24 +407,24 @@ export const LP_DATA: Record<LPVariant, LPData> = {
     },
     caseStudy: {
       eyebrow: '07 — INTERVENTI REALI',
-      h2: 'Sanificazione salumificio nel territorio di Parma.',
-      desc: 'Intervento ricorrente in un salumificio parmense. Pavimenti, attrezzature, celle di stagionatura. Documentazione HACCP firmata ad ogni passaggio.',
+      h2: 'Un salumificio di Parma, sanificato a norma.',
+      desc: 'Intervento ricorrente in un prosciuttificio del territorio: pavimenti, attrezzature, celle di stagionatura. Documento HACCP firmato ad ogni passaggio. Quando è arrivato il controllo, era tutto in regola.',
       imageMain: '/images/gallery/sanificazione-salumificio-prosciutto-parma.webp',
       imageMainAlt: 'Sanificazione salumificio nel territorio di Parma',
       imageSecondary: '/images/gallery/sanificazione-vapore-ambienti-sensibili.webp',
       imageSecondaryAlt: 'Sanificazione a vapore di ambienti sensibili',
     },
     finalCta: {
-      h2: "L'ispezione può arrivare domani. Tu sei pronto?",
-      desc: 'Un sopralluogo gratuito ti dice esattamente cosa serve per essere a norma. Nessuna pressione, nessun impegno.',
+      h2: 'Non aspettare l\'ispezione per metterti in regola.',
+      desc: 'Un sopralluogo gratuito ti dice esattamente cosa serve. Poi ci pensiamo noi, ogni settimana.',
       cta: 'Richiedi sopralluogo gratuito',
-      trustLine: '★ 4.9 su Google · 21 recensioni · Protocolli HACCP certificati',
+      trustLine: '★ 4.9 su Google · Protocolli HACCP · Documento firmato ogni intervento',
     },
     socialProof: {
       eyebrow: 'COSA DICONO DI NOI',
-      text: "Sanificano il laboratorio ogni settimana fuori orario. Ad ogni intervento lasciano il documento HACCP firmato. Quando è arrivata l'ispezione ASL eravamo a posto.",
-      author: 'Pasticceria artigianale',
-      location: 'Provincia di Parma',
+      text: 'Sanificano il laboratorio ogni settimana, sempre fuori orario. Ogni volta ci lasciano il documento HACCP firmato. Quando è arrivata l\'ASL, eravamo a posto senza muovere un dito.',
+      author: 'Cliente verificato',
+      location: 'Pasticceria artigianale · Provincia di Parma',
       verified: true,
     },
     thankYou: {
