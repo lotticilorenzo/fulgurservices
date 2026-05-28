@@ -53,6 +53,8 @@ export default function UfficiLPPage() {
       <div className="lp-section-divider" aria-hidden="true" />
       <LPProcess process={data.process} />
       <div className="lp-section-divider" aria-hidden="true" />
+      <LPObjections objections={data.objections} />
+      <div className="lp-section-divider" aria-hidden="true" />
       <LPSocialProof socialProof={data.socialProof} />
 
       <section id={FORM_ID} data-scroll-section className="py-24 md:py-40 bg-[var(--bg)]">
@@ -78,8 +80,6 @@ export default function UfficiLPPage() {
         </div>
       </section>
 
-      <div className="lp-section-divider" aria-hidden="true" />
-      <LPObjections objections={data.objections} />
       <LPMidCTA formId={FORM_ID} phoneRaw={data.hero.ctaPhoneRaw} />
       <LPFinalCTA
         finalCta={data.finalCta}

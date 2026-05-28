@@ -56,9 +56,13 @@ export default function AlimentareLPPage() {
       <div className="lp-section-divider" aria-hidden="true" />
       <LPCoverage coverage={data.coverage!} />
       <div className="lp-section-divider" aria-hidden="true" />
-      <LPGuarantees guarantees={data.guarantees!} />
-      <div className="lp-section-divider" aria-hidden="true" />
       <LPProcess process={data.process} />
+      <div className="lp-section-divider" aria-hidden="true" />
+      <LPCaseStudy caseStudy={data.caseStudy!} />
+      <div className="lp-section-divider" aria-hidden="true" />
+      <LPObjections objections={data.objections} />
+      <div className="lp-section-divider" aria-hidden="true" />
+      <LPGuarantees guarantees={data.guarantees!} />
       <div className="lp-section-divider" aria-hidden="true" />
       <LPSocialProof socialProof={data.socialProof} />
 
@@ -85,10 +89,6 @@ export default function AlimentareLPPage() {
         </div>
       </section>
 
-      <div className="lp-section-divider" aria-hidden="true" />
-      <LPCaseStudy caseStudy={data.caseStudy!} />
-      <div className="lp-section-divider" aria-hidden="true" />
-      <LPObjections objections={data.objections} />
       <LPMidCTA formId={FORM_ID} phoneRaw={data.hero.ctaPhoneRaw} />
       <LPFinalCTA
         finalCta={data.finalCta}
