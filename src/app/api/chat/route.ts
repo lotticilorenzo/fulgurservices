@@ -289,12 +289,14 @@ export async function POST(req: NextRequest): Promise<Response> {
           }
         }
 
-        // Log domande utente nel foglio Chat Log (fire-and-forget)
+        // Log domande utente nel foglio Chat Log
+        // Awaited prima di close() — Vercel termina la funzione al close() e
+        // un fire-and-forget verrebbe ucciso prima di completare la richiesta HTTP.
         const userQuestions = messages
           .filter(m => m.role === 'user')
           .map(m => m.content)
         if (userQuestions.length >= 1) {
-          void logChat(userQuestions, match !== null)
+          await logChat(userQuestions, match !== null)
         }
 
         controller.enqueue(encoder.encode('data: [DONE]\n\n'))
