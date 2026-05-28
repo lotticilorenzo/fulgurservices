@@ -22,16 +22,16 @@ export function LPObjections({ objections }: LPObjectionsProps) {
           {objections.items.map((item, i) => (
             <div
               key={item.num}
-              className={`py-10 border-t border-[var(--br)]${i === objections.items.length - 1 ? ' border-b' : ''}`}
+              className={`py-8 sm:py-10 border-t border-[var(--br)]${i === objections.items.length - 1 ? ' border-b' : ''}`}
             >
-              <div className="grid md:grid-cols-12 gap-6 md:gap-8">
+              <div className="grid md:grid-cols-12 gap-4 md:gap-12">
                 <div className="md:col-span-5">
-                  <p className="font-mono text-sm text-[var(--accent-d)] mb-3">{item.num}</p>
+                  <p className="font-mono text-sm text-[var(--accent-d)] mb-3 font-medium">{item.num}</p>
                   <h3 className="font-display text-2xl font-bold leading-snug text-[var(--tx-1)]">
                     {item.question}
                   </h3>
                 </div>
-                <div className="md:col-span-7 flex items-center">
+                <div className="md:col-span-7">
                   <p className="font-body text-lg text-[var(--tx-2)] leading-relaxed">
                     {item.answer}
                   </p>
