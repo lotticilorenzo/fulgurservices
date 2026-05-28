@@ -241,8 +241,7 @@ export const LP_DATA: Record<LPVariant, LPData> = {
       eyebrow: 'LA NOSTRA REPUTAZIONE',
       rating: '4.9',
       reviewCount: 21,
-      // TODO: inserire URL reale del profilo Google Business Fulgur Service
-      googleUrl: 'https://www.google.com/search?q=Fulgur+Service+Parma+recensioni',
+      googleUrl: 'https://www.google.it/maps/place/Fulgur+Service+Parma',
       keywords: ['Puntuali', 'Professionali', 'Affidabili'],
     },
     thankYou: {
@@ -425,8 +424,7 @@ export const LP_DATA: Record<LPVariant, LPData> = {
       eyebrow: 'LA NOSTRA REPUTAZIONE',
       rating: '4.9',
       reviewCount: 21,
-      // TODO: inserire URL reale del profilo Google Business Fulgur Service
-      googleUrl: 'https://www.google.com/search?q=Fulgur+Service+Parma+recensioni',
+      googleUrl: 'https://www.google.it/maps/place/Fulgur+Service+Parma',
       keywords: ['Puntuali', 'Professionali', 'Affidabili'],
     },
     thankYou: {
