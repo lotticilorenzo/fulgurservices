@@ -213,21 +213,21 @@ export const LP_DATA: Record<LPVariant, LPData> = {
       items: [
         {
           num: '01',
-          question: 'Come faccio a sapere che siete seri?',
+          question: 'Come faccio a fidarmi di voi?',
           answer:
-            'Trentacinque anni di lavoro, 21 recensioni verificate su Google, operatori formati e assicurati. Vieni a vedere chi siamo prima di decidere: il sopralluogo è gratis.',
+            'La risposta più onesta: i nostri clienti restano. Lavoriamo con le stesse aziende da anni, non gli serve cercare altri. Trentacinque anni in giro per Parma ti lasciano una reputazione che non puoi inventarti. Vieni a conoscerci: il sopralluogo è gratis e senza impegno.',
         },
         {
           num: '02',
-          question: 'Quanto mi costa davvero?',
+          question: 'Ci sono costi nascosti?',
           answer:
-            'Preventivo scritto, voce per voce. Prodotti, materiali e attrezzatura sono inclusi. Quello che firmi è quello che paghi, ogni mese, senza ritocchi.',
+            'No, nessuno. Quello che concordiamo è quello che paghi, ogni mese, sempre uguale. Prodotti, materiali, attrezzatura: tutto incluso. Nessuna sorpresa in fondo alla bolletta, nessun extra spuntato dal nulla.',
         },
         {
           num: '03',
-          question: 'Mi rallentate il lavoro in ufficio?',
+          question: 'Mi intralciate il lavoro in ufficio?',
           answer:
-            'Mai. Entriamo prima delle 8 o dopo le 18, anche nel weekend. Tu apri la mattina e trovi tutto a posto, come se non fossimo passati.',
+            'Mai. Entriamo prima delle 8 o dopo le 18, anche nel weekend se serve. Tu apri la mattina e trovi tutto pulito, come se non fossimo nemmeno passati. I tuoi dipendenti non ci incontrano mai.',
         },
       ],
     },
@@ -347,19 +347,19 @@ export const LP_DATA: Record<LPVariant, LPData> = {
           num: '01',
           question: 'E se domani arriva un\'ispezione?',
           answer:
-            'Sei coperto. Ogni intervento finisce con un documento firmato: data, ore, prodotti usati, operatori. Il tuo registro HACCP è sempre pronto da mostrare ad ASL e NAS.',
+            'Sei tranquillo. Ogni volta che interveniamo ti lasciamo un documento firmato: cosa abbiamo fatto, quando, con quali prodotti. Il tuo registro HACCP è sempre pronto, senza buchi. Quando bussano ASL o NAS, hai tutto in ordine senza muovere un dito.',
         },
         {
           num: '02',
           question: 'I prodotti sono sicuri per gli alimenti?',
           answer:
-            'Sì. Usiamo solo Presidi Medico Chirurgici autorizzati dal Ministero della Salute, compatibili con il contatto alimentare. Le schede tecniche te le diamo su richiesta.',
+            'Sì, tutti. Usiamo solo prodotti autorizzati per il contatto alimentare, registrati al Ministero della Salute. Niente sostanze che lasciano residui o mettono a rischio quello che produci. Le schede te le mostriamo quando vuoi.',
         },
         {
           num: '03',
           question: 'Non posso fermare la produzione.',
           answer:
-            'E non la fermi. Lavoriamo di notte, prima dell\'apertura, nei giorni di chiusura. Tu abbassi la serranda, noi entriamo e usciamo prima che riapri.',
+            'E non la fermi. Veniamo di notte, prima dell\'apertura o nei giorni di chiusura. Tu abbassi la serranda, noi entriamo e usciamo prima che riapri. La tua attività non perde un\'ora.',
         },
       ],
     },
