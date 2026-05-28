@@ -57,14 +57,14 @@ Per i clienti attivi, Fulgur Service funge da referente unico per piccole manute
 - **Prodotti**: Utilizzo preferenziale di prodotti certificati **Ecolabel** (basso impatto ambientale). Il chimico tradizionale è riservato solo a interventi straordinari complessi.
 - **Macchinari**: Partnership con brand leader di settore (Klindex, Nilfisk, Kiter, Lindhaus, ecc.).
 - **Gestione Chiavi**: In caso di consegna chiavi da parte del cliente, l'azienda rilascia un **modulo formale di presa in consegna** a tutela di entrambe le parti.
-- **Personale**: Tutti gli operatori sono assunti regolarmente, assicurati e sottoposti a formazione continua su sicurezza e procedure.
-- **Assicurazione**: Copertura totale per danni accidentali tramite **polizza assicurativa RCT/RCO** (Responsabilità Civile verso Terzi/Operai) con massimale di 1 Milione di Euro. (Nota: rassicurare sulla copertura senza citare il massimale se non richiesto).
+- **Personale**: Tutti gli operatori sono assunti regolarmente, coperti da garanzie aziendali e sottoposti a formazione continua su sicurezza e procedure.
+- **Copertura danni**: Tutti gli interventi sono coperti da garanzia aziendale contro danni accidentali.
 
 ## 5. FAQ (Domande Frequenti)
 - **Operatore Fisso**: Per i servizi di pulizia ordinaria, l'azienda assegna solitamente lo stesso operatore ("operatore battezzato") per garantire continuità e fiducia.
 - **Attrezzature**: Fulgur Service porta sempre tutto il necessario (macchinari e detergenti); il cliente non deve fornire nulla.
 - **Disponibilità**: Operativi 24/7. Interventi possibili anche sabato, domenica e festivi.
-- **Garanzia Danni**: In caso di danni a oggetti, interviene la **polizza assicurativa RCT/RCO** aziendale che garantisce il risarcimento totale.
+- **Garanzia Danni**: In caso di danni accidentali a oggetti, l'azienda garantisce il risarcimento tramite copertura aziendale.
 
 ## 6. Linee Guida per AI (RAG Persona)
 - **Ruolo**: Assistente Senior Fulgur Service.

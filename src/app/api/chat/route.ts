@@ -110,6 +110,30 @@ async function fireLead(data: LeadPayload): Promise<void> {
   }
 }
 
+// ── Chat log ───────────────────────────────────────────────────────────────
+async function logChat(userMessages: string[], leadGenerated: boolean): Promise<void> {
+  const webhookUrl = process.env.GOOGLE_SHEETS_WEBHOOK_URL
+  const token = process.env.GOOGLE_SHEETS_WEBHOOK_TOKEN
+  if (!webhookUrl || !token) return
+
+  try {
+    await fetch(`${webhookUrl}?token=${token}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        type: 'chat',
+        timestamp: new Date().toLocaleString('it-IT', { timeZone: 'Europe/Rome' }),
+        domande: userMessages.join(' | '),
+        numMessaggi: String(userMessages.length),
+        leadGenerato: leadGenerated ? 'Sì' : 'No',
+      }),
+      signal: AbortSignal.timeout(5000),
+    })
+  } catch (err) {
+    console.error('[Fulgur AI] Errore log chat:', err instanceof Error ? err.message : err)
+  }
+}
+
 // ── DeepSeek SSE chunk type ────────────────────────────────────────────────
 interface DSChunk {
   choices: Array<{ delta: { content?: string }; finish_reason: string | null }>
@@ -263,6 +287,14 @@ export async function POST(req: NextRequest): Promise<Response> {
           } catch {
             // JSON del lead malformato — ignora
           }
+        }
+
+        // Log domande utente nel foglio Chat Log (fire-and-forget)
+        const userQuestions = messages
+          .filter(m => m.role === 'user')
+          .map(m => m.content)
+        if (userQuestions.length >= 1) {
+          void logChat(userQuestions, match !== null)
         }
 
         controller.enqueue(encoder.encode('data: [DONE]\n\n'))
