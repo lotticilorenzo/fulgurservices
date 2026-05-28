@@ -3,12 +3,13 @@ import { LP_DATA } from '@/lib/lp-data'
 import { LPHero } from '@/components/lp/LPHero'
 import { LPTrustBar } from '@/components/lp/LPTrustBar'
 import { LPContactForm } from '@/components/lp/LPContactForm'
+import { LPCoverage } from '@/components/lp/LPCoverage'
+import { LPGuarantees } from '@/components/lp/LPGuarantees'
 import { LPProcess } from '@/components/lp/LPProcess'
-import { LPMidCTA } from '@/components/lp/LPMidCTA'
-import { LPObjections } from '@/components/lp/LPObjections'
-import { LPCredentials } from '@/components/lp/LPCredentials'
-import { LPCaseStudy } from '@/components/lp/LPCaseStudy'
 import { LPSocialProof } from '@/components/lp/LPSocialProof'
+import { LPCaseStudy } from '@/components/lp/LPCaseStudy'
+import { LPObjections } from '@/components/lp/LPObjections'
+import { LPMidCTA } from '@/components/lp/LPMidCTA'
 import { LPFinalCTA } from '@/components/lp/LPFinalCTA'
 
 const data = LP_DATA.alimentare
@@ -53,9 +54,11 @@ export default function AlimentareLPPage() {
       <LPHero data={data} formId={FORM_ID} />
       <LPTrustBar items={data.trustBar} />
       <div className="lp-section-divider" aria-hidden="true" />
-      <LPProcess process={data.process} />
+      <LPCoverage coverage={data.coverage!} />
       <div className="lp-section-divider" aria-hidden="true" />
-      <LPCredentials credentials={data.credentials!} />
+      <LPGuarantees guarantees={data.guarantees!} />
+      <div className="lp-section-divider" aria-hidden="true" />
+      <LPProcess process={data.process} />
       <div className="lp-section-divider" aria-hidden="true" />
       <LPSocialProof socialProof={data.socialProof} />
 

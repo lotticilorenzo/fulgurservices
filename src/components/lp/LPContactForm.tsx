@@ -9,7 +9,7 @@ import { z } from 'zod'
 import { useRouter } from 'next/navigation'
 import {
   House, Buildings, Factory, Briefcase, Storefront, Sparkle,
-  ForkKnife, Coffee, CookingPot, Fire, Flask, Tray,
+  ForkKnife, Coffee, CookingPot, Cheese, Fire, Flask, Tray,
   WarningCircle, CaretLeft, CheckCircle, MapPin, CircleNotch,
 } from '@phosphor-icons/react'
 import { cn } from '@/lib/utils'
@@ -28,7 +28,9 @@ const QUALIFIER_ICONS: Record<string, React.ElementType> = {
   'Bar / Caffetteria': Coffee,
   'Pasticceria / Gelateria': CookingPot,
   'Pizzeria': Fire,
-  'Laboratorio alimentare': Flask,
+  'Salumificio / Prosciuttificio': Factory,
+  'Caseificio': Cheese,
+  'Pastificio / Laboratorio': Flask,
   'Mensa / Catering': Tray,
   'Altro': Sparkle,
 }

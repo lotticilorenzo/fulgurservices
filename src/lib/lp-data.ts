@@ -85,6 +85,17 @@ export interface LPData {
     h2: string
     items: string[]
   }
+  coverage?: {
+    eyebrow: string
+    h2: string
+    intro: string
+    categories: Array<{ icon: string; label: string }>
+  }
+  guarantees?: {
+    eyebrow: string
+    h2: string
+    items: Array<{ icon: string; title: string; desc: string }>
+  }
   caseStudy?: {
     eyebrow: string
     h2: string
@@ -247,19 +258,19 @@ export const LP_DATA: Record<LPVariant, LPData> = {
   alimentare: {
     variant: 'alimentare',
     meta: {
-      title: 'Pulizie Settore Alimentare a Parma | Fulgur Service',
+      title: 'Sanificazione Settore Alimentare a Parma | Fulgur Service',
       description:
-        'Sanificazione HACCP per ristoranti, bar, pasticcerie a Parma. Prodotti food-grade, documentazione firmata, operatività fuori orario. Sopralluogo gratuito.',
+        'Sanificazione HACCP per ristoranti, salumifici, caseifici e industria alimentare a Parma. Prodotti food-grade, documentazione firmata, fuori orario. Sopralluogo gratuito.',
       canonical: 'https://www.fulgurservice.it/lp/settore-alimentare',
       ogImage: '/images/gallery/sanificazione-salumificio-prosciutto-parma.webp',
     },
     hero: {
-      eyebrow: '01 — SANIFICAZIONE HACCP · PARMA',
-      headlinePrimary: 'Pulizie Settore Alimentare,',
-      headlineAccent: 'HACCP a norma per legge.',
+      eyebrow: '01 — SANIFICAZIONE HACCP · FOOD VALLEY PARMA',
+      headlinePrimary: 'Sanificazione Settore Alimentare a Parma,',
+      headlineAccent: 'dal ristorante al salumificio.',
       decorativeText: 'HACCP',
       subheadline:
-        'Sanificazione per ristoranti, bar, pasticcerie e laboratori alimentari. Prodotti food-grade certificati, documentazione HACCP firmata, intervento fuori orario di servizio. Parma e provincia.',
+        'Sanifichiamo cucine, laboratori, celle e ambienti di produzione per ristoranti, pasticcerie, salumifici e caseifici. Protocolli HACCP, prodotti food-grade, intervento fuori orario. Parma e provincia.',
       heroImage: '/images/gallery/sanificazione-salumificio-prosciutto-parma.webp',
       heroImageAlt: 'Sanificazione professionale settore alimentare a Parma',
       ctaPrimary: 'Richiedi sopralluogo gratuito',
@@ -299,7 +310,9 @@ export const LP_DATA: Record<LPVariant, LPData> = {
             'Bar / Caffetteria',
             'Pasticceria / Gelateria',
             'Pizzeria',
-            'Laboratorio alimentare',
+            'Salumificio / Prosciuttificio',
+            'Caseificio',
+            'Pastificio / Laboratorio',
             'Mensa / Catering',
             'Altro',
           ],
@@ -311,7 +324,7 @@ export const LP_DATA: Record<LPVariant, LPData> = {
         email: 'Per ricevere conferma della tua richiesta',
         qualifier: 'Ci aiuta a preparare il protocollo HACCP giusto',
       },
-      urgencyMicrocopy: 'Ispezione in arrivo? Ti richiamiamo entro 2 ore.',
+      urgencyMicrocopy: 'ASL, NAS e audit di filiera non danno preavviso. Ti richiamiamo entro 2 ore.',
       postFormReassurance: 'Sopralluogo gratuito · Discrezione totale · Risposta in 24h lavorative',
       submitLabel: 'Richiedi sopralluogo gratuito',
       submitLoadingLabel: 'Stiamo inviando…',
@@ -327,7 +340,7 @@ export const LP_DATA: Record<LPVariant, LPData> = {
       ],
     },
     objections: {
-      eyebrow: '04 — RISPOSTE CONCRETE',
+      eyebrow: '06 — RISPOSTE CONCRETE',
       h2: 'Quello che ti chiedi prima di chiamarci.',
       items: [
         {
@@ -350,19 +363,50 @@ export const LP_DATA: Record<LPVariant, LPData> = {
         },
       ],
     },
-    credentials: {
-      eyebrow: '05 — CREDENZIALI TECNICHE',
-      h2: 'Documenti, certificazioni, numeri pubblici.',
+    coverage: {
+      eyebrow: '04 — DOVE INTERVENIAMO',
+      h2: 'Tutta la filiera alimentare di Parma.',
+      intro: "Dalla ristorazione all'industria di trasformazione. Conosciamo gli ambienti, i ritmi e i vincoli di ogni realtà food.",
+      categories: [
+        { icon: 'ForkKnife', label: 'Ristoranti e trattorie' },
+        { icon: 'Coffee', label: 'Bar e caffetterie' },
+        { icon: 'Oven', label: 'Pasticcerie e gelaterie' },
+        { icon: 'Fire', label: 'Pizzerie' },
+        { icon: 'Factory', label: 'Salumifici e prosciuttifici' },
+        { icon: 'Cheese', label: 'Caseifici' },
+        { icon: 'Flask', label: 'Pastifici e laboratori' },
+        { icon: 'Warehouse', label: 'Magazzini e celle frigorifere' },
+        { icon: 'Tray', label: 'Mense e catering' },
+      ],
+    },
+    guarantees: {
+      eyebrow: '05 — COSA GARANTIAMO',
+      h2: 'Pronti per ogni controllo, ogni giorno.',
       items: [
-        'P.IVA 03063010346 · REA PR-353051',
-        'Codice ATECO 81.21.00 (pulizia generale di edifici)',
-        'Prodotti PMC registrati Ministero della Salute',
-        'Conformità Reg. CE 852/2004 · Reg. UE 528/2012',
-        'Operatori formati su protocolli HACCP food',
+        {
+          icon: 'FileText',
+          title: 'DOCUMENTO FIRMATO',
+          desc: 'Ad ogni intervento rilasciamo un documento con data, ore, prodotti e operatori. Il tuo registro HACCP sempre in ordine.',
+        },
+        {
+          icon: 'TestTube',
+          title: 'PRODOTTI FOOD-GRADE',
+          desc: 'Detergenti e disinfettanti compatibili con il contatto alimentare. Schede tecniche sempre disponibili.',
+        },
+        {
+          icon: 'ShieldCheck',
+          title: 'PRONTI PER ASL E NAS',
+          desc: 'Sanificazione conforme HACCP e Reg. CE 852/2004. Quando arriva il controllo, sei a posto.',
+        },
+        {
+          icon: 'Clock',
+          title: 'FUORI ORARIO',
+          desc: 'Interveniamo a fine turno, di notte o durante il fermo produzione. La tua attività non si ferma mai.',
+        },
       ],
     },
     caseStudy: {
-      eyebrow: '06 — INTERVENTI REALI',
+      eyebrow: '07 — INTERVENTI REALI',
       h2: 'Sanificazione salumificio nel territorio di Parma.',
       desc: 'Intervento ricorrente in un salumificio parmense. Pavimenti, attrezzature, celle di stagionatura. Documentazione HACCP firmata ad ogni passaggio.',
       imageMain: '/images/gallery/sanificazione-salumificio-prosciutto-parma.webp',
