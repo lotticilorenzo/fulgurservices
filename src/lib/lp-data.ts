@@ -113,10 +113,10 @@ export interface LPData {
   }
   socialProof: {
     eyebrow: string
-    text: string
-    author: string
-    location: string
-    verified: boolean
+    rating: string
+    reviewCount: number
+    googleUrl: string
+    keywords: string[]
   }
   thankYou: {
     h1: string
@@ -238,11 +238,12 @@ export const LP_DATA: Record<LPVariant, LPData> = {
       trustLine: '★ 4.9 su Google · 35 anni di esperienza · Sopralluogo sempre gratuito',
     },
     socialProof: {
-      eyebrow: 'COSA DICONO DI NOI',
-      text: 'Da otto mesi puliscono i nostri uffici. Sempre la stessa squadra, sempre fuori orario, fattura puntuale ogni mese. Onestamente, non ci penso più.',
-      author: 'Cliente verificato',
-      location: 'Studio professionale · Parma',
-      verified: true,
+      eyebrow: 'LA NOSTRA REPUTAZIONE',
+      rating: '4.9',
+      reviewCount: 21,
+      // TODO: inserire URL reale del profilo Google Business Fulgur Service
+      googleUrl: 'https://www.google.com/search?q=Fulgur+Service+Parma+recensioni',
+      keywords: ['Puntuali', 'Professionali', 'Affidabili'],
     },
     thankYou: {
       h1: 'Abbiamo ricevuto la tua richiesta.',
@@ -421,11 +422,12 @@ export const LP_DATA: Record<LPVariant, LPData> = {
       trustLine: '★ 4.9 su Google · Protocolli HACCP · Documento firmato ogni intervento',
     },
     socialProof: {
-      eyebrow: 'COSA DICONO DI NOI',
-      text: 'Sanificano il laboratorio ogni settimana, sempre fuori orario. Ogni volta ci lasciano il documento HACCP firmato. Quando è arrivata l\'ASL, eravamo a posto senza muovere un dito.',
-      author: 'Cliente verificato',
-      location: 'Pasticceria artigianale · Provincia di Parma',
-      verified: true,
+      eyebrow: 'LA NOSTRA REPUTAZIONE',
+      rating: '4.9',
+      reviewCount: 21,
+      // TODO: inserire URL reale del profilo Google Business Fulgur Service
+      googleUrl: 'https://www.google.com/search?q=Fulgur+Service+Parma+recensioni',
+      keywords: ['Puntuali', 'Professionali', 'Affidabili'],
     },
     thankYou: {
       h1: 'Abbiamo ricevuto la tua richiesta.',
