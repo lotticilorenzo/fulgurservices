@@ -435,13 +435,6 @@ html[data-lp-mode="true"] [data-chat-widget] {
 }
 /* Footer, NoiseOverlay e CookieBanner restano visibili (come il sito) */
 
-/* Cursori nativi attivi nelle LP (nessun cursore custom) */
-html[data-lp-mode="true"] *,
-html[data-lp-mode="true"] *::before,
-html[data-lp-mode="true"] *::after {
-  cursor: auto !important;
-}
-
 /* ─── LP Background Atmosphere ─── */
 .lp-bg-noise {
   position: relative;
