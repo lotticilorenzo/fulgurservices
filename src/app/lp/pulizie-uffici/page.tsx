@@ -50,8 +50,11 @@ export default function UfficiLPPage() {
 
       <LPHero data={data} formId={FORM_ID} />
       <LPTrustBar items={data.trustBar} />
+      <div className="lp-section-divider" aria-hidden="true" />
+      <LPProcess process={data.process} />
+      <div className="lp-section-divider" aria-hidden="true" />
+      <LPSocialProof socialProof={data.socialProof} />
 
-      {/* Form section — 4-step */}
       <section id={FORM_ID} data-scroll-section className="py-24 md:py-40 bg-[var(--bg)]">
         <div className="mx-auto max-w-3xl px-5 sm:px-8 text-center">
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-[var(--accent-d)] mb-6">
@@ -75,12 +78,9 @@ export default function UfficiLPPage() {
         </div>
       </section>
 
-      <LPProcess process={data.process} />
-      <LPMidCTA formId={FORM_ID} phoneRaw={data.hero.ctaPhoneRaw} />
       <div className="lp-section-divider" aria-hidden="true" />
       <LPObjections objections={data.objections} />
-      <div className="lp-section-divider" aria-hidden="true" />
-      <LPSocialProof socialProof={data.socialProof} />
+      <LPMidCTA formId={FORM_ID} phoneRaw={data.hero.ctaPhoneRaw} />
       <LPFinalCTA
         finalCta={data.finalCta}
         ctaPhoneRaw={data.hero.ctaPhoneRaw}

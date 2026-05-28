@@ -98,11 +98,14 @@ export interface LPData {
     h2: string
     desc: string
     cta: string
+    trustLine: string
   }
   socialProof: {
     eyebrow: string
     text: string
     author: string
+    location: string
+    verified: boolean
   }
   thankYou: {
     h1: string
@@ -221,11 +224,14 @@ export const LP_DATA: Record<LPVariant, LPData> = {
       h2: 'Una sede pulita vale ogni euro che spendi.',
       desc: 'Un sopralluogo gratuito ti dice quanto costa davvero. Senza impegno, senza pressioni.',
       cta: 'Richiedi sopralluogo gratuito',
+      trustLine: '★ 4.9 su Google · 21 recensioni · 35 anni di esperienza',
     },
     socialProof: {
       eyebrow: 'COSA DICONO DI NOI',
-      text: 'Hanno preso in gestione la pulizia dei nostri uffici sei mesi fa. Stessa squadra ogni settimana, orario fisso fuori attività, fattura puntuale. Zero pensieri.',
-      author: 'Studio commercialisti — Centro storico, Parma',
+      text: 'Gestiscono la pulizia dei nostri uffici da 8 mesi. Stessa squadra ogni settimana, sempre fuori orario, fattura puntuale. Non ci penso più.',
+      author: 'Studio commercialisti associato',
+      location: 'Centro storico, Parma',
+      verified: true,
     },
     thankYou: {
       h1: 'Abbiamo ricevuto la tua richiesta.',
@@ -368,11 +374,14 @@ export const LP_DATA: Record<LPVariant, LPData> = {
       h2: "L'ispezione può arrivare domani. Tu sei pronto?",
       desc: 'Un sopralluogo gratuito ti dice esattamente cosa serve per essere a norma. Nessuna pressione, nessun impegno.',
       cta: 'Richiedi sopralluogo gratuito',
+      trustLine: '★ 4.9 su Google · 21 recensioni · Protocolli HACCP certificati',
     },
     socialProof: {
       eyebrow: 'COSA DICONO DI NOI',
-      text: 'Sanificano il nostro laboratorio una volta a settimana, sempre la stessa squadra, sempre fuori orario. Ad ogni intervento ci lasciano il documento HACCP firmato. Tranquillità totale.',
-      author: 'Pasticceria — Provincia di Parma',
+      text: "Sanificano il laboratorio ogni settimana fuori orario. Ad ogni intervento lasciano il documento HACCP firmato. Quando è arrivata l'ispezione ASL eravamo a posto.",
+      author: 'Pasticceria artigianale',
+      location: 'Provincia di Parma',
+      verified: true,
     },
     thankYou: {
       h1: 'Abbiamo ricevuto la tua richiesta.',
