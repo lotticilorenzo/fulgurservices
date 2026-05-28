@@ -9,7 +9,6 @@ import { LPProcess } from '@/components/lp/LPProcess'
 import { LPSocialProof } from '@/components/lp/LPSocialProof'
 import { LPCaseStudy } from '@/components/lp/LPCaseStudy'
 import { LPObjections } from '@/components/lp/LPObjections'
-import { LPMidCTA } from '@/components/lp/LPMidCTA'
 import { LPFinalCTA } from '@/components/lp/LPFinalCTA'
 
 const data = LP_DATA.alimentare
@@ -89,7 +88,6 @@ export default function AlimentareLPPage() {
         </div>
       </section>
 
-      <LPMidCTA formId={FORM_ID} phoneRaw={data.hero.ctaPhoneRaw} />
       <LPFinalCTA
         finalCta={data.finalCta}
         ctaPhoneRaw={data.hero.ctaPhoneRaw}

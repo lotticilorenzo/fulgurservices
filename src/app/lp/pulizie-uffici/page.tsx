@@ -4,7 +4,6 @@ import { LPHero } from '@/components/lp/LPHero'
 import { LPTrustBar } from '@/components/lp/LPTrustBar'
 import { LPContactForm } from '@/components/lp/LPContactForm'
 import { LPProcess } from '@/components/lp/LPProcess'
-import { LPMidCTA } from '@/components/lp/LPMidCTA'
 import { LPObjections } from '@/components/lp/LPObjections'
 import { LPSocialProof } from '@/components/lp/LPSocialProof'
 import { LPFinalCTA } from '@/components/lp/LPFinalCTA'
@@ -80,7 +79,6 @@ export default function UfficiLPPage() {
         </div>
       </section>
 
-      <LPMidCTA formId={FORM_ID} phoneRaw={data.hero.ctaPhoneRaw} />
       <LPFinalCTA
         finalCta={data.finalCta}
         ctaPhoneRaw={data.hero.ctaPhoneRaw}
