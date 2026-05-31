@@ -131,7 +131,7 @@ export const LP_DATA: Record<LPVariant, LPData> = {
     meta: {
       title: 'Pulizie Uffici a Parma | Fulgur Service',
       description:
-        'Pulizie professionali per uffici a Parma. Operatori sempre uguali, orari extra-lavoro, fattura regolare. Sopralluogo gratuito in 24h.',
+        'Pulizie professionali per uffici a Parma. Operatori sempre uguali, orari extra-lavoro, fattura regolare. Sopralluogo gratuito in 72h.',
       canonical: 'https://www.fulgurservice.it/lp/pulizie-uffici',
       ogImage: '/images/servizi/pulizie-uffici-aziendali-parma.webp',
     },
@@ -141,7 +141,7 @@ export const LP_DATA: Record<LPVariant, LPData> = {
       headlineAccent: 'fatte da professionisti veri.',
       decorativeText: 'B2B',
       subheadline:
-        'Niente improvvisati che spariscono dopo due mesi. Operatori formati, macchinari professionali, un referente unico che risponde sempre. Sopralluogo gratuito in 24 ore.',
+        'Niente improvvisati che spariscono dopo due mesi. Operatori formati, macchinari professionali, un referente unico che risponde sempre. Sopralluogo gratuito in 72 ore.',
       heroImage: '/images/servizi/pulizie-uffici-aziendali-parma.webp',
       heroImageAlt: 'Pulizie professionali uffici aziendali a Parma',
       ctaPrimary: 'Richiedi sopralluogo gratuito',
@@ -171,7 +171,7 @@ export const LP_DATA: Record<LPVariant, LPData> = {
     ],
     form: {
       eyebrow: '02 — RICHIEDI SOPRALLUOGO',
-      h2: 'Parliamone. Sopralluogo gratuito in 24 ore.',
+      h2: 'Parliamone. Sopralluogo gratuito in 72 ore.',
       subhead: 'Lasciaci due dati. Ti richiamiamo noi per capire di cosa hai bisogno, senza impegno.',
       fields: {
         qualifier: {
@@ -300,7 +300,7 @@ export const LP_DATA: Record<LPVariant, LPData> = {
     ],
     form: {
       eyebrow: '02 — RICHIEDI SOPRALLUOGO',
-      h2: 'Parliamone. Sopralluogo gratuito in 24 ore.',
+      h2: 'Parliamone. Sopralluogo gratuito in 72 ore.',
       subhead: 'Lasciaci due dati. Veniamo a vedere il tuo locale fuori orario, senza intralciare il servizio.',
       fields: {
         qualifier: {

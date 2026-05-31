@@ -165,7 +165,7 @@ export default function TownPage({ params }: TownPageProps) {
                    <h3 className="font-display text-2xl font-bold text-white mb-6">Pronto Intervento Local</h3>
                    <ul className="space-y-4">
                      {[
-                       'Sopralluogo gratuito in 24h a ' + town.name,
+                       'Sopralluogo gratuito in 72h a ' + town.name,
                        'Referente unico dedicato per la zona',
                        'Squadre locali per abbattere i tempi',
                        'Prodotti eco-sostenibili certificati',

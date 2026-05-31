@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     template: '%s | Fulgur Service',
   },
   description:
-    "Cerchi un'impresa di pulizie a Parma? Fulgur Service offre pulizie professionali per uffici, industrie, condomini e studi medici. Sopralluogo gratuito in 24h.",
+    "Cerchi un'impresa di pulizie a Parma? Fulgur Service offre pulizie professionali per uffici, industrie, condomini e studi medici. Sopralluogo gratuito in 72h.",
   keywords: [
     'impresa pulizie Parma',
     'ditta pulizie Parma',

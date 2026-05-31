@@ -139,7 +139,7 @@ export function ServicesGrid() {
                   Richiedi un sopralluogo
                 </Link>
                 <span className="font-mono-fulgur text-[10px] uppercase tracking-widest text-[var(--tx-3)] mx-auto lg:mx-0">
-                  Sopralluogo gratuito · 24h
+                  Sopralluogo gratuito · 72h
                 </span>
               </div>
             </div>
