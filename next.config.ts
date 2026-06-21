@@ -77,6 +77,11 @@ const nextConfig: NextConfig = {
       { source: '/blogs/:path*', destination: '/blog', permanent: true },
       // Collections Shopify residue
       { source: '/collections/:path*', destination: '/servizi', permanent: true },
+      // ⚠️ LP TEMPORANEAMENTE OSCURATE — Lorenzo, 28/05/2026
+      // Motivo: cliente non ha ancora pagato le landing PPC.
+      // Per RIATTIVARE: rimuovi la voce { source: '/lp/:path*', ... } qui sotto.
+      // Il codice delle LP è intatto in src/app/lp/ e src/components/lp/.
+      { source: '/lp/:path*', destination: '/', permanent: false },
     ];
 
   },
